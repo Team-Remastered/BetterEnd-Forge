@@ -1,0 +1,40 @@
+## MANDATORY ##
+modLoader="javafml"
+loaderVersion="[40,)"  # Forge API Version
+license="MIT License"
+###############
+
+## OPTIONAL ##
+issueTrackerURL="https://github.com/Team-Remastered/BetterEndForge/issues"
+##############
+
+[[mods]]
+## MANDATORY ##
+modId="betterendforge"
+version="1.18.2-3.0" # Mod Version Number
+displayName="BetterEnd Forge"
+description='''This mod adds new content to the end dimension that vastly improves and expands your end game. Now in parity with Fabric'''
+################
+
+## OPTIONAL ##
+## displayURL="https://www.curseforge.com/minecraft/mc-mods/tbd" #optional
+logoFile="icon.png" # Logo File (Must be in META-INF)
+credits="All the artistic rights and credits, except for Forge-specific portions of code, go to the original authors of the BetterEnd mod for the Fabric mod loader. This work wouldn't be possible without the contributions of the previous authors of the port: SomeoneElse, Beethoven92, Vemerion"
+authors="TeamRemastered"
+##############
+
+# Set Forge as Dependency (Used to Limit Compatible Versions)
+[[dependencies.betterendforge]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+
+# Set Minecraft as Dependency (Used to Limit Compatible Versions)
+[[dependencies.betterendforge]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
