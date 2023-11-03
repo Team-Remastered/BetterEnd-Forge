@@ -2,13 +2,13 @@ package ru.betterend.world.generator;
 
 import com.google.common.collect.Maps;
 import net.minecraft.core.BlockPos;
-import ru.bclib.sdf.SDF;
-import ru.bclib.sdf.operator.SDFRadialNoiseMap;
-import ru.bclib.sdf.operator.SDFScale;
-import ru.bclib.sdf.operator.SDFSmoothUnion;
-import ru.bclib.sdf.operator.SDFTranslate;
-import ru.bclib.sdf.primitive.SDFCappedCone;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.sdf.SDF;
+import ru.betterend.bclib.sdf.operator.SDFRadialNoiseMap;
+import ru.betterend.bclib.sdf.operator.SDFScale;
+import ru.betterend.bclib.sdf.operator.SDFSmoothUnion;
+import ru.betterend.bclib.sdf.operator.SDFTranslate;
+import ru.betterend.bclib.sdf.primitive.SDFCappedCone;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.noise.OpenSimplexNoise;
 
 import java.util.ArrayList;

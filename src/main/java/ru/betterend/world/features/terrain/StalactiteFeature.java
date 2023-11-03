@@ -9,10 +9,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import ru.bclib.api.tag.CommonBlockTags;
-import ru.bclib.blocks.StalactiteBlock;
-import ru.bclib.util.BlocksHelper;
-import ru.bclib.world.features.DefaultFeature;
+import ru.betterend.bclib.api.tag.CommonBlockTags;
+import ru.betterend.bclib.blocks.StalactiteBlock;
+import ru.betterend.bclib.util.BlocksHelper;
+import ru.betterend.bclib.world.features.DefaultFeature;
 
 import java.util.Random;
 

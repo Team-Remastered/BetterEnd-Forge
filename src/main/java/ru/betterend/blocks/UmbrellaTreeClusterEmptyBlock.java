@@ -9,8 +9,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.MaterialColor;
-import ru.bclib.blocks.BaseBlock;
-import ru.bclib.util.BlocksHelper;
+import ru.betterend.bclib.blocks.BaseBlock;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.registry.EndBlocks;
 
 import java.util.Random;

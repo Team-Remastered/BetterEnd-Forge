@@ -12,8 +12,8 @@ import net.minecraft.world.level.levelgen.structure.pieces.PieceGenerator;
 import net.minecraft.world.level.levelgen.structure.pieces.PieceGeneratorSupplier;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilder;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
-import ru.bclib.util.StructureHelper;
-import ru.bclib.world.structures.BCLStructureFeature;
+import ru.betterend.bclib.util.StructureHelper;
+import ru.betterend.bclib.world.structures.BCLStructureFeature;
 import ru.betterend.BetterEnd;
 import ru.betterend.world.structures.piece.NBTPiece;
 

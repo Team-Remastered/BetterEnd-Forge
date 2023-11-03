@@ -19,9 +19,9 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.bclib.blocks.BaseBlockNotFull;
-import ru.bclib.client.render.BCLRenderLayer;
-import ru.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.blocks.BaseBlockNotFull;
+import ru.betterend.bclib.client.render.BCLRenderLayer;
+import ru.betterend.bclib.interfaces.RenderLayerProvider;
 import ru.betterend.registry.EndBlocks;
 
 import java.util.Queue;

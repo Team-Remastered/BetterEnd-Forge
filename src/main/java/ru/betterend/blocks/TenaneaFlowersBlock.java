@@ -10,10 +10,10 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import ru.bclib.blocks.BaseVineBlock;
-import ru.bclib.interfaces.CustomColorProvider;
-import ru.bclib.util.ColorUtil;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.blocks.BaseVineBlock;
+import ru.betterend.bclib.interfaces.CustomColorProvider;
+import ru.betterend.bclib.util.ColorUtil;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.registry.EndParticles;
 
 import java.util.Random;

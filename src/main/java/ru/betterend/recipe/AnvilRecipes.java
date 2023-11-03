@@ -1,7 +1,7 @@
 package ru.betterend.recipe;
 
 import net.minecraft.world.item.Items;
-import ru.bclib.recipes.AnvilRecipe;
+import ru.betterend.bclib.recipes.AnvilRecipe;
 import ru.betterend.config.Configs;
 import ru.betterend.item.material.EndToolMaterial;
 import ru.betterend.registry.EndItems;

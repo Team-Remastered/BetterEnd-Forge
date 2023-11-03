@@ -8,8 +8,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import ru.bclib.client.models.ModelsHelper;
-import ru.bclib.items.ModelProviderItem;
+import ru.betterend.bclib.client.models.ModelsHelper;
+import ru.betterend.bclib.items.ModelProviderItem;
 import ru.betterend.registry.EndItems;
 
 public class EnchantedItem extends ModelProviderItem {

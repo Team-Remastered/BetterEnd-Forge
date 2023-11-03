@@ -4,10 +4,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.MaterialColor;
-import ru.bclib.api.tag.NamedCommonBlockTags;
-import ru.bclib.api.tag.TagAPI.TagLocation;
-import ru.bclib.blocks.BaseTerrainBlock;
-import ru.bclib.interfaces.TagProvider;
+import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
+import ru.betterend.bclib.api.tag.TagAPI.TagLocation;
+import ru.betterend.bclib.blocks.BaseTerrainBlock;
+import ru.betterend.bclib.interfaces.TagProvider;
 import ru.betterend.interfaces.PottableTerrain;
 
 import java.util.List;

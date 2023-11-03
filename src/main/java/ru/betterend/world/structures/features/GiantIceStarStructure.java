@@ -9,12 +9,12 @@ import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.structure.pieces.PieceGenerator;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilder;
-import ru.bclib.sdf.SDF;
-import ru.bclib.sdf.operator.SDFRotation;
-import ru.bclib.sdf.operator.SDFTranslate;
-import ru.bclib.sdf.operator.SDFUnion;
-import ru.bclib.sdf.primitive.SDFCappedCone;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.sdf.SDF;
+import ru.betterend.bclib.sdf.operator.SDFRotation;
+import ru.betterend.bclib.sdf.operator.SDFTranslate;
+import ru.betterend.bclib.sdf.operator.SDFUnion;
+import ru.betterend.bclib.sdf.primitive.SDFCappedCone;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.world.structures.piece.VoxelPiece;
 

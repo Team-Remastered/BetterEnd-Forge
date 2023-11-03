@@ -8,9 +8,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MaterialColor;
-import ru.bclib.api.tag.NamedCommonBlockTags;
-import ru.bclib.api.tag.TagAPI.TagLocation;
-import ru.bclib.interfaces.TagProvider;
+import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
+import ru.betterend.bclib.api.tag.TagAPI.TagLocation;
+import ru.betterend.bclib.interfaces.TagProvider;
 import ru.betterend.blocks.basis.EndTerrainBlock;
 import ru.betterend.registry.EndParticles;
 

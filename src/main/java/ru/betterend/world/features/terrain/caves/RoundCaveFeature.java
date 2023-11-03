@@ -6,9 +6,9 @@ import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
-import ru.bclib.api.tag.CommonBlockTags;
-import ru.bclib.util.BlocksHelper;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.api.tag.CommonBlockTags;
+import ru.betterend.bclib.util.BlocksHelper;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.noise.OpenSimplexNoise;
 
 import java.util.Random;

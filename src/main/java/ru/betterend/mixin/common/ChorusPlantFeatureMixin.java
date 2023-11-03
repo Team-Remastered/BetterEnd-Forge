@@ -13,8 +13,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import ru.bclib.util.BlocksHelper;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.util.BlocksHelper;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.registry.EndBlocks;
 
 import java.util.Random;

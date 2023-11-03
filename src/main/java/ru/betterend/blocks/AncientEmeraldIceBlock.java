@@ -13,9 +13,9 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import ru.bclib.blocks.BaseBlock;
-import ru.bclib.util.BlocksHelper;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.blocks.BaseBlock;
+import ru.betterend.bclib.util.BlocksHelper;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndParticles;
 

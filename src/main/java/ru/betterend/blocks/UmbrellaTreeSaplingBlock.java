@@ -4,7 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import ru.bclib.client.render.BCLRenderLayer;
+import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.blocks.basis.PottableFeatureSapling;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndFeatures;

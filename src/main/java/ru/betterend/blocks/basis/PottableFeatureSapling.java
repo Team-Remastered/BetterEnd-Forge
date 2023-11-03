@@ -2,7 +2,7 @@ package ru.betterend.blocks.basis;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import ru.bclib.blocks.FeatureSaplingBlock;
+import ru.betterend.bclib.blocks.FeatureSaplingBlock;
 import ru.betterend.interfaces.PottablePlant;
 
 import java.util.function.Function;

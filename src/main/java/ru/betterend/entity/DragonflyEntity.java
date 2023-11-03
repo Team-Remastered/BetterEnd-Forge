@@ -29,9 +29,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.Vec3;
-import ru.bclib.entity.DespawnableAnimal;
-import ru.bclib.util.BlocksHelper;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.entity.DespawnableAnimal;
+import ru.betterend.bclib.util.BlocksHelper;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.registry.EndEntities;
 import ru.betterend.registry.EndSounds;
 

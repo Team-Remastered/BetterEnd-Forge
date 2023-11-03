@@ -20,9 +20,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import ru.bclib.api.tag.CommonBlockTags;
-import ru.bclib.api.tag.TagAPI;
-import ru.bclib.util.BlocksHelper;
+import ru.betterend.bclib.api.tag.CommonBlockTags;
+import ru.betterend.bclib.api.tag.TagAPI;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.world.generator.GeneratorOptions;
 

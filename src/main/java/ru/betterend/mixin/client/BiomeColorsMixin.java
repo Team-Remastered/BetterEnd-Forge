@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import ru.bclib.util.ColorUtil;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.util.ColorUtil;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.client.ClientOptions;
 import ru.betterend.registry.EndBlocks;
 

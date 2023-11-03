@@ -2,8 +2,8 @@ package ru.betterend.blocks.basis;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import ru.bclib.api.tag.CommonBlockTags;
-import ru.bclib.blocks.BasePlantBlock;
+import ru.betterend.bclib.api.tag.CommonBlockTags;
+import ru.betterend.bclib.blocks.BasePlantBlock;
 import ru.betterend.interfaces.PottablePlant;
 
 public class EndPlantBlock extends BasePlantBlock implements PottablePlant {

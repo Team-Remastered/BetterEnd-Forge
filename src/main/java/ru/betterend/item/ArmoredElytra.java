@@ -12,7 +12,7 @@ import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import ru.bclib.items.BaseArmorItem;
+import ru.betterend.bclib.items.BaseArmorItem;
 import ru.betterend.BetterEnd;
 import ru.betterend.interfaces.FallFlyingItem;
 import ru.betterend.interfaces.MultiModelItem;

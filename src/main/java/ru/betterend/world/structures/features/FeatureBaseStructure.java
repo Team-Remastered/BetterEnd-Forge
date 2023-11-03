@@ -10,7 +10,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.StructureFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.structure.pieces.PieceGeneratorSupplier;
-import ru.bclib.world.structures.BCLStructureFeature;
+import ru.betterend.bclib.world.structures.BCLStructureFeature;
 
 import java.util.Random;
 

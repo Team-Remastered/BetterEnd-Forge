@@ -35,9 +35,9 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
-import ru.bclib.blocks.BaseBlockNotFull;
-import ru.bclib.blocks.BlockProperties;
-import ru.bclib.util.BlocksHelper;
+import ru.betterend.bclib.blocks.BaseBlockNotFull;
+import ru.betterend.bclib.blocks.BlockProperties;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.blocks.entities.BlockEntityHydrothermalVent;
 import ru.betterend.registry.EndBlocks;
 

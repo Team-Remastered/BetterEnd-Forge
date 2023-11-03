@@ -14,8 +14,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
-import ru.bclib.client.models.ModelsHelper;
-import ru.bclib.interfaces.CustomColorProvider;
+import ru.betterend.bclib.client.models.ModelsHelper;
+import ru.betterend.bclib.interfaces.CustomColorProvider;
 import ru.betterend.client.models.Patterns;
 import ru.betterend.registry.EndBlocks;
 

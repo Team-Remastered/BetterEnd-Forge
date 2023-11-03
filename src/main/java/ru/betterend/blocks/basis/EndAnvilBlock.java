@@ -1,7 +1,7 @@
 package ru.betterend.blocks.basis;
 
 import net.minecraft.world.level.material.MaterialColor;
-import ru.bclib.blocks.LeveledAnvilBlock;
+import ru.betterend.bclib.blocks.LeveledAnvilBlock;
 import ru.betterend.complexmaterials.MetalMaterial;
 
 public class EndAnvilBlock extends LeveledAnvilBlock {

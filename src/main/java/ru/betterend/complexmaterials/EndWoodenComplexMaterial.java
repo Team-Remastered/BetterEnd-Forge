@@ -3,7 +3,7 @@ package ru.betterend.complexmaterials;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MaterialColor;
-import ru.bclib.complexmaterials.WoodenComplexMaterial;
+import ru.betterend.bclib.complexmaterials.WoodenComplexMaterial;
 import ru.betterend.BetterEnd;
 import ru.betterend.config.Configs;
 import ru.betterend.registry.EndBlocks;

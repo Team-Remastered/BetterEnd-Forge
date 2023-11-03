@@ -17,10 +17,10 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
-import ru.bclib.client.models.ModelsHelper;
-import ru.bclib.client.render.BCLRenderLayer;
-import ru.bclib.interfaces.BlockModelProvider;
-import ru.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.client.models.ModelsHelper;
+import ru.betterend.bclib.client.render.BCLRenderLayer;
+import ru.betterend.bclib.interfaces.BlockModelProvider;
+import ru.betterend.bclib.interfaces.RenderLayerProvider;
 import ru.betterend.blocks.basis.EndLanternBlock;
 import ru.betterend.client.models.Patterns;
 

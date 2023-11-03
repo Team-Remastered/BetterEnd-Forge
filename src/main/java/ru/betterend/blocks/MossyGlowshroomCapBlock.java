@@ -9,10 +9,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.Material;
-import ru.bclib.api.tag.NamedMineableTags;
-import ru.bclib.api.tag.TagAPI.TagLocation;
-import ru.bclib.blocks.BaseBlock;
-import ru.bclib.interfaces.TagProvider;
+import ru.betterend.bclib.api.tag.NamedMineableTags;
+import ru.betterend.bclib.api.tag.TagAPI.TagLocation;
+import ru.betterend.bclib.blocks.BaseBlock;
+import ru.betterend.bclib.interfaces.TagProvider;
 import ru.betterend.registry.EndBlocks;
 
 import java.util.List;

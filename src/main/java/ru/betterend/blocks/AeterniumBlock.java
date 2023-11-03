@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import ru.bclib.blocks.BaseBlock;
+import ru.betterend.bclib.blocks.BaseBlock;
 
 public class AeterniumBlock extends BaseBlock {
 	

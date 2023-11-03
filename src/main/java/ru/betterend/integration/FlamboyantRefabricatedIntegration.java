@@ -2,8 +2,8 @@ package ru.betterend.integration;
 
 import com.google.common.collect.Maps;
 import net.minecraft.world.level.ItemLike;
-import ru.bclib.integration.ModIntegration;
-import ru.bclib.util.ColorUtil;
+import ru.betterend.bclib.integration.ModIntegration;
+import ru.betterend.bclib.util.ColorUtil;
 import ru.betterend.blocks.HydraluxPetalColoredBlock;
 import ru.betterend.complexmaterials.ColoredMaterial;
 import ru.betterend.registry.EndBlocks;

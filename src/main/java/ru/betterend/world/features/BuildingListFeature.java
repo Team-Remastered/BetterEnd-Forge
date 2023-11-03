@@ -13,7 +13,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.StructureProc
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate.StructureBlockInfo;
 import org.jetbrains.annotations.Nullable;
-import ru.bclib.world.features.ListFeature;
+import ru.betterend.bclib.world.features.ListFeature;
 import ru.betterend.util.LootTableUtil;
 
 import java.util.List;

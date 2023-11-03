@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import ru.bclib.blocks.BaseBlock;
+import ru.betterend.bclib.blocks.BaseBlock;
 import ru.betterend.registry.EndBlocks;
 
 public class GlowingPillarLuminophorBlock extends BaseBlock {

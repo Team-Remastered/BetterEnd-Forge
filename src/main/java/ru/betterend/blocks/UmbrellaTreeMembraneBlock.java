@@ -18,10 +18,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.storage.loot.LootContext;
-import ru.bclib.client.render.BCLRenderLayer;
-import ru.bclib.interfaces.BlockModelProvider;
-import ru.bclib.interfaces.RenderLayerProvider;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.client.render.BCLRenderLayer;
+import ru.betterend.bclib.interfaces.BlockModelProvider;
+import ru.betterend.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.noise.OpenSimplexNoise;
 import ru.betterend.registry.EndBlocks;
 

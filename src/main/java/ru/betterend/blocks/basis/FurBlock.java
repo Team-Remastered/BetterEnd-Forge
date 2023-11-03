@@ -19,12 +19,12 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.bclib.api.tag.NamedBlockTags;
-import ru.bclib.api.tag.TagAPI;
-import ru.bclib.blocks.BaseAttachedBlock;
-import ru.bclib.client.render.BCLRenderLayer;
-import ru.bclib.interfaces.RenderLayerProvider;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.api.tag.NamedBlockTags;
+import ru.betterend.bclib.api.tag.TagAPI;
+import ru.betterend.bclib.blocks.BaseAttachedBlock;
+import ru.betterend.bclib.client.render.BCLRenderLayer;
+import ru.betterend.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.util.MHelper;
 
 import java.util.EnumMap;
 import java.util.List;

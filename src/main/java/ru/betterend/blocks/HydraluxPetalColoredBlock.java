@@ -9,9 +9,9 @@ import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
-import ru.bclib.client.models.ModelsHelper;
-import ru.bclib.interfaces.CustomColorProvider;
-import ru.bclib.util.BlocksHelper;
+import ru.betterend.bclib.client.models.ModelsHelper;
+import ru.betterend.bclib.interfaces.CustomColorProvider;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.client.models.Patterns;
 
 import java.util.Optional;

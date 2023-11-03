@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.lighting.LayerLightEngine;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import ru.bclib.blocks.BaseRotatedPillarBlock;
+import ru.betterend.bclib.blocks.BaseRotatedPillarBlock;
 import ru.betterend.registry.EndBlocks;
 
 import java.util.Collections;

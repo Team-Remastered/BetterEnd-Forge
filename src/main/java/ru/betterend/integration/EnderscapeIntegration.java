@@ -4,11 +4,11 @@ import net.minecraft.core.MappedRegistry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
-import ru.bclib.api.biomes.BiomeAPI;
-import ru.bclib.api.tag.NamedCommonBlockTags;
-import ru.bclib.api.tag.TagAPI;
-import ru.bclib.integration.ModIntegration;
-import ru.bclib.world.features.BCLFeature;
+import ru.betterend.bclib.api.biomes.BiomeAPI;
+import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
+import ru.betterend.bclib.api.tag.TagAPI;
+import ru.betterend.bclib.integration.ModIntegration;
+import ru.betterend.bclib.world.features.BCLFeature;
 
 public class EnderscapeIntegration extends ModIntegration {
 	public EnderscapeIntegration() {

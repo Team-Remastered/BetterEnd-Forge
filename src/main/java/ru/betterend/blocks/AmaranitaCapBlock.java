@@ -4,7 +4,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.Material;
-import ru.bclib.blocks.BaseBlock;
+import ru.betterend.bclib.blocks.BaseBlock;
 
 public class AmaranitaCapBlock extends BaseBlock {
 	public AmaranitaCapBlock() {

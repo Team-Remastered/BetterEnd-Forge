@@ -7,9 +7,9 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext;
-import ru.bclib.blocks.BaseVineBlock;
-import ru.bclib.blocks.BlockProperties.TripleShape;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.blocks.BaseVineBlock;
+import ru.betterend.bclib.blocks.BlockProperties.TripleShape;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;
 

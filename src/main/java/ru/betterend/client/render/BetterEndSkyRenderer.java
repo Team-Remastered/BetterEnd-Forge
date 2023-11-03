@@ -16,8 +16,8 @@ import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext;
 import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
-import ru.bclib.util.BackgroundInfo;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.util.BackgroundInfo;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.BetterEnd;
 
 import java.util.Random;

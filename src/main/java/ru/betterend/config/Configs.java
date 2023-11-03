@@ -2,10 +2,10 @@ package ru.betterend.config;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import ru.bclib.BCLib;
-import ru.bclib.config.EntryConfig;
-import ru.bclib.config.IdConfig;
-import ru.bclib.config.PathConfig;
+import ru.betterend.bclib.BCLib;
+import ru.betterend.bclib.config.EntryConfig;
+import ru.betterend.bclib.config.IdConfig;
+import ru.betterend.bclib.config.PathConfig;
 import ru.betterend.BetterEnd;
 
 public class Configs {

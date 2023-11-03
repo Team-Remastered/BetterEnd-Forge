@@ -20,12 +20,12 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.bclib.api.tag.CommonItemTags;
-import ru.bclib.client.render.BCLRenderLayer;
-import ru.bclib.interfaces.CustomColorProvider;
-import ru.bclib.interfaces.RenderLayerProvider;
-import ru.bclib.util.ColorUtil;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.api.tag.CommonItemTags;
+import ru.betterend.bclib.client.render.BCLRenderLayer;
+import ru.betterend.bclib.interfaces.CustomColorProvider;
+import ru.betterend.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.util.ColorUtil;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.registry.EndItems;
 
 import java.util.List;

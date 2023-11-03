@@ -2,7 +2,7 @@ package ru.betterend.blocks.basis;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MaterialColor;
-import ru.bclib.blocks.BaseLeavesBlock;
+import ru.betterend.bclib.blocks.BaseLeavesBlock;
 import ru.betterend.interfaces.PottablePlant;
 
 public class PottableLeavesBlock extends BaseLeavesBlock implements PottablePlant {

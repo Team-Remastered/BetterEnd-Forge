@@ -4,7 +4,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import ru.bclib.items.tool.BasePickaxeItem;
+import ru.betterend.bclib.items.tool.BasePickaxeItem;
 
 public class EndPickaxe extends BasePickaxeItem {
 	public EndPickaxe(Tier material, int attackDamage, float attackSpeed, Properties settings) {

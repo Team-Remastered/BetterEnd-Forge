@@ -5,10 +5,10 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import ru.bclib.blocks.BlockProperties;
-import ru.bclib.blocks.BlockProperties.TripleShape;
-import ru.bclib.util.BlocksHelper;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.blocks.BlockProperties;
+import ru.betterend.bclib.blocks.BlockProperties.TripleShape;
+import ru.betterend.bclib.util.BlocksHelper;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.registry.EndBlocks;
 
 import java.util.Random;

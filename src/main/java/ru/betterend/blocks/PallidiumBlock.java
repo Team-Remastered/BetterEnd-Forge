@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.phys.BlockHitResult;
-import ru.bclib.util.BlocksHelper;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.blocks.basis.EndTerrainBlock;
 import ru.betterend.registry.EndBlocks;
 

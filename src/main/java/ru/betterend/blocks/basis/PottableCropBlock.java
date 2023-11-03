@@ -2,7 +2,7 @@ package ru.betterend.blocks.basis;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import ru.bclib.blocks.BaseCropBlock;
+import ru.betterend.bclib.blocks.BaseCropBlock;
 import ru.betterend.interfaces.PottablePlant;
 
 public class PottableCropBlock extends BaseCropBlock implements PottablePlant {

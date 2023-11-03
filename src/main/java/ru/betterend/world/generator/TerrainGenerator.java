@@ -5,9 +5,9 @@ import com.google.common.collect.Maps;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.biome.BiomeSource;
 import net.minecraft.world.level.biome.Climate.Sampler;
-import ru.bclib.api.biomes.BiomeAPI;
-import ru.bclib.util.MHelper;
-import ru.bclib.world.biomes.BCLBiome;
+import ru.betterend.bclib.api.biomes.BiomeAPI;
+import ru.betterend.bclib.util.MHelper;
+import ru.betterend.bclib.world.biomes.BCLBiome;
 import ru.betterend.noise.OpenSimplexNoise;
 
 import java.awt.Point;

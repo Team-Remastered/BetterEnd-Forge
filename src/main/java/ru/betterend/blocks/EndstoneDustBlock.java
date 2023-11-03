@@ -13,10 +13,10 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext;
-import ru.bclib.api.tag.NamedCommonBlockTags;
-import ru.bclib.api.tag.TagAPI.TagLocation;
-import ru.bclib.interfaces.TagProvider;
-import ru.bclib.util.ColorUtil;
+import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
+import ru.betterend.bclib.api.tag.TagAPI.TagLocation;
+import ru.betterend.bclib.interfaces.TagProvider;
+import ru.betterend.bclib.util.ColorUtil;
 
 import java.util.Collections;
 import java.util.List;

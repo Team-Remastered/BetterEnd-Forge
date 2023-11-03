@@ -36,7 +36,7 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
-import ru.bclib.blocks.BaseBlockWithEntity;
+import ru.betterend.bclib.blocks.BaseBlockWithEntity;
 import ru.betterend.blocks.entities.EndStoneSmelterBlockEntity;
 import ru.betterend.registry.EndBlockEntities;
 

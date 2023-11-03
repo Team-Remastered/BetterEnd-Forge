@@ -21,9 +21,9 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import org.jetbrains.annotations.Nullable;
-import ru.bclib.client.render.BCLRenderLayer;
-import ru.bclib.interfaces.BlockModelProvider;
-import ru.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.client.render.BCLRenderLayer;
+import ru.betterend.bclib.interfaces.BlockModelProvider;
+import ru.betterend.bclib.interfaces.RenderLayerProvider;
 
 import java.util.Collections;
 import java.util.List;

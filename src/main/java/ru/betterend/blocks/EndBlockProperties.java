@@ -4,7 +4,7 @@ import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import ru.bclib.blocks.BlockProperties;
+import ru.betterend.bclib.blocks.BlockProperties;
 import ru.betterend.registry.EndPortals;
 
 public class EndBlockProperties extends BlockProperties {

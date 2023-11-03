@@ -2,7 +2,7 @@ package ru.betterend.recipe;
 
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
-import ru.bclib.recipes.FurnaceRecipe;
+import ru.betterend.bclib.recipes.FurnaceRecipe;
 import ru.betterend.BetterEnd;
 import ru.betterend.config.Configs;
 import ru.betterend.registry.EndBlocks;

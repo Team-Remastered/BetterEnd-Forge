@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import ru.bclib.api.WorldDataAPI;
+import ru.betterend.bclib.api.WorldDataAPI;
 import ru.betterend.BetterEnd;
 import ru.betterend.world.generator.GeneratorOptions;
 

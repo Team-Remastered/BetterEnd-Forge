@@ -8,7 +8,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import ru.bclib.interfaces.ItemModelProvider;
+import ru.betterend.bclib.interfaces.ItemModelProvider;
 
 import java.util.UUID;
 

@@ -8,7 +8,7 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceSerializationContext;
-import ru.bclib.world.structures.StructureWorld;
+import ru.betterend.bclib.world.structures.StructureWorld;
 import ru.betterend.registry.EndStructures;
 
 import java.util.Random;

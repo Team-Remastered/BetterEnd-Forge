@@ -12,7 +12,7 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.item.ItemStack;
-import ru.bclib.util.ColorUtil;
+import ru.betterend.bclib.util.ColorUtil;
 import ru.betterend.registry.EndParticles;
 
 public class InfusionParticleType extends ParticleType<InfusionParticleType> implements ParticleOptions {

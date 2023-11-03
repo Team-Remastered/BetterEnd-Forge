@@ -14,8 +14,8 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Vec3i;
 import net.minecraft.util.Mth;
-import ru.bclib.util.ColorUtil;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.util.ColorUtil;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.BetterEnd;
 import ru.betterend.blocks.AuroraCrystalBlock;
 

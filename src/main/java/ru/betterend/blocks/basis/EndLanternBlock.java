@@ -22,9 +22,9 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import ru.bclib.blocks.BaseBlockNotFull;
-import ru.bclib.blocks.BlockProperties;
-import ru.bclib.client.models.ModelsHelper;
+import ru.betterend.bclib.blocks.BaseBlockNotFull;
+import ru.betterend.bclib.blocks.BlockProperties;
+import ru.betterend.bclib.client.models.ModelsHelper;
 
 import java.util.Map;
 

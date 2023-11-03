@@ -3,7 +3,7 @@ package ru.betterend.blocks.basis;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.resources.ResourceLocation;
-import ru.bclib.blocks.BaseRotatedPillarBlock;
+import ru.betterend.bclib.blocks.BaseRotatedPillarBlock;
 
 import java.util.Optional;
 

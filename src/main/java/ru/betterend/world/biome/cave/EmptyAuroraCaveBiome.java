@@ -1,9 +1,9 @@
 package ru.betterend.world.biome.cave;
 
 import net.minecraft.resources.ResourceLocation;
-import ru.bclib.api.biomes.BCLBiomeBuilder;
-import ru.bclib.api.biomes.BCLBiomeBuilder.BiomeSupplier;
-import ru.bclib.world.biomes.BCLBiomeSettings;
+import ru.betterend.bclib.api.biomes.BCLBiomeBuilder;
+import ru.betterend.bclib.api.biomes.BCLBiomeBuilder.BiomeSupplier;
+import ru.betterend.bclib.world.biomes.BCLBiomeSettings;
 import ru.betterend.registry.EndFeatures;
 import ru.betterend.registry.EndParticles;
 import ru.betterend.world.biome.EndBiome;

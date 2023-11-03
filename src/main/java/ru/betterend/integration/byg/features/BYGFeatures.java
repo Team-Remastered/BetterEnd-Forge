@@ -2,7 +2,7 @@ package ru.betterend.integration.byg.features;
 
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import ru.bclib.world.features.BCLFeature;
+import ru.betterend.bclib.world.features.BCLFeature;
 import ru.betterend.BetterEnd;
 import ru.betterend.integration.Integrations;
 import ru.betterend.integration.byg.BYGBlocks;

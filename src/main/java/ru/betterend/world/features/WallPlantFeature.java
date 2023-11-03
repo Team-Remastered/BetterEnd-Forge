@@ -6,9 +6,9 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import ru.bclib.blocks.BaseAttachedBlock;
-import ru.bclib.blocks.BaseWallPlantBlock;
-import ru.bclib.util.BlocksHelper;
+import ru.betterend.bclib.blocks.BaseAttachedBlock;
+import ru.betterend.bclib.blocks.BaseWallPlantBlock;
+import ru.betterend.bclib.util.BlocksHelper;
 
 import java.util.Random;
 

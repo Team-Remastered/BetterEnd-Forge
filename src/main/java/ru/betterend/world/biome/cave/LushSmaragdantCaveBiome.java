@@ -2,10 +2,10 @@ package ru.betterend.world.biome.cave;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
-import ru.bclib.api.biomes.BCLBiomeBuilder;
-import ru.bclib.api.biomes.BCLBiomeBuilder.BiomeSupplier;
-import ru.bclib.interfaces.SurfaceMaterialProvider;
-import ru.bclib.world.biomes.BCLBiomeSettings;
+import ru.betterend.bclib.api.biomes.BCLBiomeBuilder;
+import ru.betterend.bclib.api.biomes.BCLBiomeBuilder.BiomeSupplier;
+import ru.betterend.bclib.interfaces.SurfaceMaterialProvider;
+import ru.betterend.bclib.world.biomes.BCLBiomeSettings;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndFeatures;
 import ru.betterend.registry.EndParticles;

@@ -28,12 +28,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
-import ru.bclib.api.tag.CommonItemTags;
-import ru.bclib.api.tag.NamedCommonItemTags;
-import ru.bclib.api.tag.TagAPI.TagLocation;
-import ru.bclib.client.models.ModelsHelper;
-import ru.bclib.interfaces.ItemModelProvider;
-import ru.bclib.interfaces.TagProvider;
+import ru.betterend.bclib.api.tag.CommonItemTags;
+import ru.betterend.bclib.api.tag.NamedCommonItemTags;
+import ru.betterend.bclib.api.tag.TagAPI.TagLocation;
+import ru.betterend.bclib.client.models.ModelsHelper;
+import ru.betterend.bclib.interfaces.ItemModelProvider;
+import ru.betterend.bclib.interfaces.TagProvider;
 
 import java.util.List;
 import java.util.UUID;

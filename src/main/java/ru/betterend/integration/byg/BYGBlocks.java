@@ -1,7 +1,7 @@
 package ru.betterend.integration.byg;
 
 import net.minecraft.world.level.block.Block;
-import ru.bclib.blocks.BaseVineBlock;
+import ru.betterend.bclib.blocks.BaseVineBlock;
 import ru.betterend.blocks.basis.EndWallPlantBlock;
 import ru.betterend.registry.EndBlocks;
 

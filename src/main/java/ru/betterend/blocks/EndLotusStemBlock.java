@@ -22,12 +22,12 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.bclib.blocks.BaseBlock;
-import ru.bclib.blocks.BlockProperties;
-import ru.bclib.blocks.BlockProperties.TripleShape;
-import ru.bclib.client.render.BCLRenderLayer;
-import ru.bclib.interfaces.RenderLayerProvider;
-import ru.bclib.util.BlocksHelper;
+import ru.betterend.bclib.blocks.BaseBlock;
+import ru.betterend.bclib.blocks.BlockProperties;
+import ru.betterend.bclib.blocks.BlockProperties.TripleShape;
+import ru.betterend.bclib.client.render.BCLRenderLayer;
+import ru.betterend.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.util.BlocksHelper;
 
 import java.util.Map;
 

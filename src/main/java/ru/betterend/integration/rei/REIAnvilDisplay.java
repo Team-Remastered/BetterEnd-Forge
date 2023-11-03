@@ -8,7 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import org.jetbrains.annotations.NotNull;
-import ru.bclib.recipes.AnvilRecipe;
+import ru.betterend.bclib.recipes.AnvilRecipe;
 
 import java.util.Collections;
 import java.util.Optional;

@@ -13,7 +13,7 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.client.renderer.RenderType;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.entity.EndSlimeEntity;
 import ru.betterend.registry.EndEntitiesRenders;
 

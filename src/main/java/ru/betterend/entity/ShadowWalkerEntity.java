@@ -20,7 +20,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.registry.EndSounds;
 
 public class ShadowWalkerEntity extends Monster {

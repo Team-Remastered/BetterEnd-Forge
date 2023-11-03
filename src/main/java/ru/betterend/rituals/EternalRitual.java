@@ -27,7 +27,7 @@ import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.material.Material;
 import org.jetbrains.annotations.Nullable;
-import ru.bclib.blocks.BlockProperties;
+import ru.betterend.bclib.blocks.BlockProperties;
 import ru.betterend.BetterEnd;
 import ru.betterend.blocks.EndPortalBlock;
 import ru.betterend.blocks.RunedFlavolite;

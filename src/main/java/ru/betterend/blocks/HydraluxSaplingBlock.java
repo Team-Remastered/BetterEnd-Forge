@@ -5,9 +5,9 @@ import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import ru.bclib.blocks.UnderwaterPlantWithAgeBlock;
-import ru.bclib.util.BlocksHelper;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.blocks.UnderwaterPlantWithAgeBlock;
+import ru.betterend.bclib.util.BlocksHelper;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.blocks.EndBlockProperties.HydraluxShape;
 import ru.betterend.registry.EndBlocks;
 

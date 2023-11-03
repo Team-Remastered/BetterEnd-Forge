@@ -10,7 +10,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 import net.minecraft.world.level.levelgen.structure.pieces.PieceGenerator;
 import net.minecraft.world.level.levelgen.structure.pieces.PieceGeneratorSupplier;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilder;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.world.structures.piece.CrystalMountainPiece;
 
 import java.util.Random;

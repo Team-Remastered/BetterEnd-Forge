@@ -2,8 +2,8 @@ package ru.betterend.world.biome.land;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import ru.bclib.api.biomes.BCLBiomeBuilder;
-import ru.bclib.interfaces.SurfaceMaterialProvider;
+import ru.betterend.bclib.api.biomes.BCLBiomeBuilder;
+import ru.betterend.bclib.interfaces.SurfaceMaterialProvider;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndFeatures;
 import ru.betterend.registry.EndSounds;

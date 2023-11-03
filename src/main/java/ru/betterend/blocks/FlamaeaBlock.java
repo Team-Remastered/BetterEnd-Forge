@@ -19,7 +19,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.bclib.interfaces.CustomItemProvider;
+import ru.betterend.bclib.interfaces.CustomItemProvider;
 import ru.betterend.blocks.basis.EndPlantBlock;
 
 import java.util.List;

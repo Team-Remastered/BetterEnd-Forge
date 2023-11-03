@@ -29,11 +29,11 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.bclib.api.tag.CommonBlockTags;
-import ru.bclib.blocks.BaseAttachedBlock;
-import ru.bclib.client.render.BCLRenderLayer;
-import ru.bclib.interfaces.RenderLayerProvider;
-import ru.bclib.util.BlocksHelper;
+import ru.betterend.bclib.api.tag.CommonBlockTags;
+import ru.betterend.bclib.blocks.BaseAttachedBlock;
+import ru.betterend.bclib.client.render.BCLRenderLayer;
+import ru.betterend.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.interfaces.PottablePlant;
 import ru.betterend.registry.EndFeatures;
 

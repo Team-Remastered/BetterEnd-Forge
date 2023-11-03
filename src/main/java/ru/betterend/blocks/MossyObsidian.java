@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.lighting.LayerLightEngine;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import ru.bclib.blocks.BaseBlock;
+import ru.betterend.bclib.blocks.BaseBlock;
 
 import java.util.Collections;
 import java.util.List;

@@ -5,7 +5,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import ru.bclib.blocks.BaseDoublePlantBlock;
+import ru.betterend.bclib.blocks.BaseDoublePlantBlock;
 import ru.betterend.registry.EndBlocks;
 
 import java.util.Random;

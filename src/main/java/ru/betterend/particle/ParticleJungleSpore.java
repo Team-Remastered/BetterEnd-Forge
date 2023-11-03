@@ -8,7 +8,7 @@ import net.minecraft.client.particle.ParticleProvider;
 import net.minecraft.client.particle.SimpleAnimatedParticle;
 import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.core.particles.SimpleParticleType;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.util.MHelper;
 
 @Environment(EnvType.CLIENT)
 public class ParticleJungleSpore extends SimpleAnimatedParticle {

@@ -12,8 +12,8 @@ import net.minecraft.client.particle.TextureSheetParticle;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
-import ru.bclib.interfaces.CustomColorProvider;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.interfaces.CustomColorProvider;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.registry.EndBlocks;
 
 @Environment(EnvType.CLIENT)

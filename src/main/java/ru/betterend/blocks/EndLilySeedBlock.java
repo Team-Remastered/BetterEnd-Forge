@@ -4,10 +4,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
-import ru.bclib.api.tag.CommonBlockTags;
-import ru.bclib.blocks.BlockProperties.TripleShape;
-import ru.bclib.blocks.UnderwaterPlantWithAgeBlock;
-import ru.bclib.util.BlocksHelper;
+import ru.betterend.bclib.api.tag.CommonBlockTags;
+import ru.betterend.bclib.blocks.BlockProperties.TripleShape;
+import ru.betterend.bclib.blocks.UnderwaterPlantWithAgeBlock;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.registry.EndBlocks;
 
 import java.util.Random;

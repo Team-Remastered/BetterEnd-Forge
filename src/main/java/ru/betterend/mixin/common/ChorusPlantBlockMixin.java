@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import ru.bclib.api.tag.CommonBlockTags;
+import ru.betterend.bclib.api.tag.CommonBlockTags;
 import ru.betterend.registry.EndBlocks;
 
 @Mixin(value = ChorusPlantBlock.class, priority = 100)

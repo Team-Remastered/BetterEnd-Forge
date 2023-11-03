@@ -5,10 +5,10 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
-import ru.bclib.api.tag.CommonBlockTags;
-import ru.bclib.blocks.BlockProperties;
-import ru.bclib.blocks.BlockProperties.TripleShape;
-import ru.bclib.util.BlocksHelper;
+import ru.betterend.bclib.api.tag.CommonBlockTags;
+import ru.betterend.bclib.blocks.BlockProperties;
+import ru.betterend.bclib.blocks.BlockProperties.TripleShape;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.blocks.basis.EndPlantWithAgeBlock;
 import ru.betterend.registry.EndBlocks;
 

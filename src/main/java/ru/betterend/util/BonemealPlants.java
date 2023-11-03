@@ -3,7 +3,7 @@ package ru.betterend.util;
 import com.google.common.collect.Lists;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import ru.bclib.api.BonemealAPI;
+import ru.betterend.bclib.api.BonemealAPI;
 import ru.betterend.blocks.basis.EndTerrainBlock;
 import ru.betterend.registry.EndBiomes;
 import ru.betterend.registry.EndBlocks;

@@ -17,9 +17,9 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.phys.BlockHitResult;
-import ru.bclib.blocks.BaseBlock;
-import ru.bclib.blocks.BlockProperties;
-import ru.bclib.util.BlocksHelper;
+import ru.betterend.bclib.blocks.BaseBlock;
+import ru.betterend.bclib.blocks.BlockProperties;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;
 

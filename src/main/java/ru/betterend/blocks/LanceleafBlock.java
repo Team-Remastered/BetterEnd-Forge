@@ -12,9 +12,9 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.storage.loot.LootContext;
-import ru.bclib.blocks.BlockProperties;
-import ru.bclib.blocks.BlockProperties.PentaShape;
-import ru.bclib.util.MHelper;
+import ru.betterend.bclib.blocks.BlockProperties;
+import ru.betterend.bclib.blocks.BlockProperties.PentaShape;
+import ru.betterend.bclib.util.MHelper;
 import ru.betterend.blocks.basis.EndPlantBlock;
 import ru.betterend.registry.EndBlocks;
 
