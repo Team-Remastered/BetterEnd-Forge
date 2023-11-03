@@ -2,8 +2,8 @@ package ru.betterend.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Vector3f;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.Nullable;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
@@ -22,7 +22,7 @@ import ru.betterend.blocks.entities.PedestalBlockEntity;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;
 
-@Environment(EnvType.CLIENT)
+@OnlyIn(Dist.CLIENT)
 public class PedestalItemRenderer<T extends PedestalBlockEntity> implements BlockEntityRenderer<T> {
 	public PedestalItemRenderer(BlockEntityRendererProvider.Context ctx) {
 		super();

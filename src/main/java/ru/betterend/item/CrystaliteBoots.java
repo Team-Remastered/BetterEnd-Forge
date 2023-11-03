@@ -1,7 +1,7 @@
 package ru.betterend.item;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.Nullable;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -32,7 +32,7 @@ public class CrystaliteBoots extends CrystaliteArmor implements MobEffectApplier
 	}
 	
 	@Override
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> lines, TooltipFlag tooltip) {
 		super.appendHoverText(stack, level, lines, tooltip);
 		lines.add(1, TextComponent.EMPTY);

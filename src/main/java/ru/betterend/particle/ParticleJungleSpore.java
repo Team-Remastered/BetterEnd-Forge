@@ -1,7 +1,7 @@
 package ru.betterend.particle;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.Nullable;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
@@ -10,7 +10,7 @@ import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.core.particles.SimpleParticleType;
 import ru.betterend.bclib.util.MHelper;
 
-@Environment(EnvType.CLIENT)
+@OnlyIn(Dist.CLIENT)
 public class ParticleJungleSpore extends SimpleAnimatedParticle {
 	
 	protected ParticleJungleSpore(ClientLevel world, double x, double y, double z, SpriteSet sprites, double r, double g, double b) {
@@ -54,7 +54,7 @@ public class ParticleJungleSpore extends SimpleAnimatedParticle {
 		this.zd *= 0.99F;
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public static class FactoryJungleSpore implements ParticleProvider<SimpleParticleType> {
 		private final SpriteSet sprites;
 		

@@ -21,8 +21,8 @@
 
 package shadow.fabric.api.client.rendering.v1;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.Nullable;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -47,7 +47,7 @@ import java.util.Arrays;
  * <p>Since armor textures identifier in vanilla is hardcoded to be in the {@code minecraft} namespace, this registry can also be
  * used to use a custom namespace if desired.</p>
  */
-@Environment(EnvType.CLIENT)
+@OnlyIn(Dist.CLIENT)
 public final class ArmorRenderingRegistry {
 	private ArmorRenderingRegistry() {
 	}
@@ -138,7 +138,7 @@ public final class ArmorRenderingRegistry {
 	}
 	
 	@FunctionalInterface
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public interface ModelProvider {
 		/**
 		 * Gets the model of the armor piece.
@@ -153,7 +153,7 @@ public final class ArmorRenderingRegistry {
 	}
 	
 	@FunctionalInterface
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public interface TextureProvider {
 		/**
 		 * Gets the armor texture {@link net.minecraft.resources.ResourceLocation}.

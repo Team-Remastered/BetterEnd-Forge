@@ -1,8 +1,8 @@
 package ru.betterend.item.model;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import org.jetbrains.annotations.Nullable;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.resources.ResourceLocation;
@@ -16,7 +16,7 @@ import ru.betterend.item.CrystaliteArmor;
 import ru.betterend.registry.EndItems;
 import shadow.fabric.api.client.rendering.v1.ArmorRenderingRegistry;
 
-@Environment(EnvType.CLIENT)
+@OnlyIn(Dist.CLIENT)
 public class CrystaliteArmorProvider implements ArmorRenderingRegistry.ModelProvider, ArmorRenderingRegistry.TextureProvider {
 	//TODO: find new registry
 	private final static ResourceLocation FIRST_LAYER = new ResourceLocation(
