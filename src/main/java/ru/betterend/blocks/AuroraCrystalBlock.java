@@ -2,7 +2,6 @@ package ru.betterend.blocks;
 
 import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.core.BlockPos;
@@ -20,17 +19,20 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import ru.betterend.bclib.api.tag.CommonItemTags;
 import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.CustomColorProvider;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.interfaces.tools.AddMineableHammer;
+import ru.betterend.bclib.interfaces.tools.AddMineablePickaxe;
 import ru.betterend.bclib.util.ColorUtil;
 import ru.betterend.bclib.util.MHelper;
 import ru.betterend.registry.EndItems;
 
 import java.util.List;
 
-public class AuroraCrystalBlock extends AbstractGlassBlock implements RenderLayerProvider, CustomColorProvider {
+;
+
+public class AuroraCrystalBlock extends AbstractGlassBlock implements RenderLayerProvider, CustomColorProvider, AddMineablePickaxe, AddMineableHammer {
 	public static final Vec3i[] COLORS;
 	private static final int MIN_DROP = 1;
 	private static final int MAX_DROP = 4;
@@ -38,8 +40,6 @@ public class AuroraCrystalBlock extends AbstractGlassBlock implements RenderLaye
 	public AuroraCrystalBlock() {
 		super(FabricBlockSettings
 			.of(Material.GLASS)
-			 .breakByTool(FabricToolTags.PICKAXES)
-			 .breakByTool(CommonItemTags.HAMMERS)
 			 .hardness(1F)
 			 .resistance(1F)
 			 .luminance(15)

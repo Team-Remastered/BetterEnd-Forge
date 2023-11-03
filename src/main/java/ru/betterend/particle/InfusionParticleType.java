@@ -3,8 +3,8 @@ package ru.betterend.particle;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.serialization.Codec;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.commands.arguments.item.ItemInput;
 import net.minecraft.commands.arguments.item.ItemParser;
 import net.minecraft.core.Registry;
@@ -51,7 +51,7 @@ public class InfusionParticleType extends ParticleType<InfusionParticleType> imp
 		this(EndParticles.INFUSION, stack);
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public float[] getPalette() {
 		int color = ColorUtil.extractColor(itemStack.getItem());
 		return ColorUtil.toFloatArray(color);

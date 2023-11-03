@@ -22,8 +22,8 @@
 package shadow.fabric.mixin.client.rendering;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
@@ -49,7 +49,7 @@ import java.util.Map;
 import java.util.Objects;
 
 @Mixin(HumanoidArmorLayer.class)
-@OnlyIn(Dist.CLIENT)
+@Environment(EnvType.CLIENT)
 public abstract class MixinArmorFeatureRenderer extends RenderLayer {
 	@Shadow
 	@Final

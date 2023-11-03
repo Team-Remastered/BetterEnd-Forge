@@ -1,9 +1,8 @@
 package ru.betterend.blocks;
 
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -16,19 +15,19 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
 import ru.betterend.bclib.api.tag.TagAPI.TagLocation;
 import ru.betterend.bclib.interfaces.TagProvider;
+import ru.betterend.bclib.interfaces.tools.AddMineableShovel;
 import ru.betterend.bclib.util.ColorUtil;
 
 import java.util.Collections;
 import java.util.List;
 
-public class EndstoneDustBlock extends FallingBlock implements TagProvider {
-	@OnlyIn(Dist.CLIENT)
+public class EndstoneDustBlock extends FallingBlock implements TagProvider, AddMineableShovel {
+	@Environment(EnvType.CLIENT)
 	private static final int COLOR = ColorUtil.color(226, 239, 168);
 	
 	public EndstoneDustBlock() {
 		super(FabricBlockSettings
 			.copyOf(Blocks.SAND)
-			.breakByTool(FabricToolTags.SHOVELS)
 			.mapColor(Blocks.END_STONE.defaultMaterialColor())
 		);
 	}
@@ -39,7 +38,7 @@ public class EndstoneDustBlock extends FallingBlock implements TagProvider {
 		return Collections.singletonList(new ItemStack(this));
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public int getDustColor(BlockState state, BlockGetter world, BlockPos pos) {
 		return COLOR;
 	}

@@ -1,9 +1,8 @@
 package ru.betterend.blocks;
 
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.level.BlockGetter;
@@ -15,18 +14,17 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import ru.betterend.bclib.interfaces.tools.AddMineableShears;
 import ru.betterend.blocks.basis.EndUnderwaterPlantBlock;
 
 import java.util.Random;
 
-public class BubbleCoralBlock extends EndUnderwaterPlantBlock {
+public class BubbleCoralBlock extends EndUnderwaterPlantBlock implements AddMineableShears {
 	
 	private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 14, 16);
 	
 	public BubbleCoralBlock() {
 		super(FabricBlockSettings.of(Material.WATER_PLANT)
-								 .breakByTool(FabricToolTags.SHEARS)
-								 .breakByHand(true)
 								 .sound(SoundType.CORAL_BLOCK)
 								 .noCollission());
 	}
@@ -36,7 +34,7 @@ public class BubbleCoralBlock extends EndUnderwaterPlantBlock {
 		return BlockBehaviour.OffsetType.NONE;
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public void animateTick(BlockState state, Level world, BlockPos pos, Random random) {
 		double x = pos.getX() + random.nextDouble();
 		double y = pos.getY() + random.nextDouble() * 0.5F + 0.5F;

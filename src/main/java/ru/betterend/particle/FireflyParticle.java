@@ -1,7 +1,7 @@
 package ru.betterend.particle;
 
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
@@ -11,7 +11,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
 import ru.betterend.bclib.util.MHelper;
 
-@OnlyIn(Dist.CLIENT)
+@Environment(EnvType.CLIENT)
 public class FireflyParticle extends SimpleAnimatedParticle {
 	private double preVX;
 	private double preVY;
@@ -65,7 +65,7 @@ public class FireflyParticle extends SimpleAnimatedParticle {
 		super.tick();
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public static class FireflyParticleFactory implements ParticleProvider<SimpleParticleType> {
 		private final SpriteSet sprites;
 		

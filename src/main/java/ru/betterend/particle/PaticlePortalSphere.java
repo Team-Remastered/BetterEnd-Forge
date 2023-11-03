@@ -1,7 +1,7 @@
 package ru.betterend.particle;
 
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
@@ -59,7 +59,7 @@ public class PaticlePortalSphere extends SimpleAnimatedParticle {
 		super.tick();
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public static class FactoryPortalSphere implements ParticleProvider<SimpleParticleType> {
 		
 		private final SpriteSet sprites;

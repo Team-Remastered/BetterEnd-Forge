@@ -4,14 +4,11 @@ import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
 import io.netty.util.internal.ThreadLocalRandom;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.tool.attribute.v1.DynamicAttributeTool;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -28,7 +25,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
-import ru.betterend.bclib.api.tag.CommonItemTags;
+import ru.betterend.bclib.api.tag.CommonBlockTags;
 import ru.betterend.bclib.api.tag.NamedCommonItemTags;
 import ru.betterend.bclib.api.tag.TagAPI.TagLocation;
 import ru.betterend.bclib.client.models.ModelsHelper;
@@ -38,14 +35,13 @@ import ru.betterend.bclib.interfaces.TagProvider;
 import java.util.List;
 import java.util.UUID;
 
-public class EndHammerItem extends DiggerItem implements DynamicAttributeTool, ItemModelProvider, TagProvider {
+public class EndHammerItem extends DiggerItem implements ItemModelProvider, TagProvider {
 	public final static UUID ATTACK_KNOCKBACK_MODIFIER_ID = Mth.createInsecureUUID(ThreadLocalRandom.current());
 	
 	private final Multimap<Attribute, AttributeModifier> attributeModifiers;
 	
 	public EndHammerItem(Tier material, float attackDamage, float attackSpeed, double knockback, Properties settings) {
-		//we override all methods that access BlockTags.MINEABLE_WITH_PICKAXE in the superclass, so this should not matter
-		super(attackDamage, attackSpeed, material, BlockTags.MINEABLE_WITH_PICKAXE, settings);
+		super(attackDamage, attackSpeed, material, CommonBlockTags.MINABLE_WITH_HAMMER, settings);
 		
 		Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 		builder.put(
@@ -117,22 +113,6 @@ public class EndHammerItem extends DiggerItem implements DynamicAttributeTool, I
 	}
 	
 	@Override
-	public float getMiningSpeedMultiplier(Tag<Item> tag, BlockState state, ItemStack stack, LivingEntity user) {
-		if (tag.equals(CommonItemTags.HAMMERS)) {
-			return this.getDestroySpeed(stack, state);
-		}
-		return 1.0F;
-	}
-	
-	@Override
-	public int getMiningLevel(Tag<Item> tag, BlockState state, ItemStack stack, LivingEntity user) {
-		if (tag.equals(CommonItemTags.HAMMERS)) {
-			return this.getTier().getLevel();
-		}
-		return 0;
-	}
-	
-	@Override
 	public boolean isCorrectToolForDrops(BlockState state) {
 		if (state.getMaterial().equals(Material.GLASS)) {
 			return true;
@@ -162,7 +142,7 @@ public class EndHammerItem extends DiggerItem implements DynamicAttributeTool, I
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public BlockModel getItemModel(ResourceLocation resourceLocation) {
 		return ModelsHelper.createHandheldItem(resourceLocation);
 	}

@@ -2,10 +2,9 @@ package ru.betterend.blocks;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -33,6 +32,7 @@ import ru.betterend.bclib.api.tag.CommonBlockTags;
 import ru.betterend.bclib.blocks.BaseAttachedBlock;
 import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.items.tool.BaseShearsItem;
 import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.interfaces.PottablePlant;
 import ru.betterend.registry.EndFeatures;
@@ -46,7 +46,7 @@ public class SmallJellyshroomBlock extends BaseAttachedBlock implements RenderLa
 	private static final EnumMap<Direction, VoxelShape> BOUNDING_SHAPES = Maps.newEnumMap(Direction.class);
 	
 	public SmallJellyshroomBlock() {
-		super(FabricBlockSettings.of(Material.PLANT).breakByHand(true).sound(SoundType.NETHER_WART).noCollission());
+		super(FabricBlockSettings.of(Material.PLANT).sound(SoundType.NETHER_WART).noCollission());
 	}
 	
 	@Override
@@ -58,7 +58,7 @@ public class SmallJellyshroomBlock extends BaseAttachedBlock implements RenderLa
 	@Override
 	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
 		ItemStack tool = builder.getParameter(LootContextParams.TOOL);
-		if (tool != null && tool.is(FabricToolTags.SHEARS) || EnchantmentHelper.getItemEnchantmentLevel(
+		if (tool != null && BaseShearsItem.isShear(tool) || EnchantmentHelper.getItemEnchantmentLevel(
 			Enchantments.SILK_TOUCH,
 			tool
 		) > 0) {
@@ -113,7 +113,7 @@ public class SmallJellyshroomBlock extends BaseAttachedBlock implements RenderLa
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public String getPottedState() {
 		return "facing=up";
 	}

@@ -1,11 +1,10 @@
 package ru.betterend.registry;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.impl.tool.attribute.ToolManagerImpl;
-import net.fabricmc.fabric.impl.tool.attribute.handlers.ModdedToolsVanillaBlocksToolHandler;
 import net.fabricmc.fabric.mixin.object.builder.AbstractBlockAccessor;
 import net.fabricmc.fabric.mixin.object.builder.AbstractBlockSettingsAccessor;
 import net.minecraft.core.Registry;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -17,14 +16,12 @@ import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.Material;
 import ru.betterend.bclib.api.BonemealAPI;
 import ru.betterend.bclib.api.ComposterAPI;
-import ru.betterend.bclib.api.tag.CommonItemTags;
 import ru.betterend.bclib.api.tag.NamedBlockTags;
 import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
 import ru.betterend.bclib.api.tag.NamedCommonItemTags;
 import ru.betterend.bclib.api.tag.NamedItemTags;
 import ru.betterend.bclib.api.tag.NamedMineableTags;
 import ru.betterend.bclib.api.tag.TagAPI;
-import ru.betterend.bclib.api.tag.TagAPI.TagNamed;
 import ru.betterend.bclib.blocks.BaseVineBlock;
 import ru.betterend.bclib.blocks.SimpleLeavesBlock;
 import ru.betterend.BetterEnd;
@@ -40,12 +37,12 @@ public class EndTags {
 	// https://fabricmc.net/wiki/tutorial:tags
 	
 	// Block Tags
-	public static final TagNamed<Block> PEDESTALS = TagAPI.makeBlockTag(BetterEnd.MOD_ID, "pedestal");
+	public static final TagKey<Block> PEDESTALS = TagAPI.makeBlockTag(BetterEnd.MOD_ID, "pedestal");
 
 	// Item Tags
-	public static final TagNamed<Item> ALLOYING_IRON = TagAPI.makeItemTag(BetterEnd.MOD_ID, "alloying_iron");
-	public static final TagNamed<Item> ALLOYING_GOLD = TagAPI.makeItemTag(BetterEnd.MOD_ID, "alloying_gold");
-	public static final TagNamed<Item> ALLOYING_COPPER = TagAPI.makeItemTag(BetterEnd.MOD_ID, "alloying_copper");
+	public static final TagKey<Item> ALLOYING_IRON = TagAPI.makeItemTag(BetterEnd.MOD_ID, "alloying_iron");
+	public static final TagKey<Item> ALLOYING_GOLD = TagAPI.makeItemTag(BetterEnd.MOD_ID, "alloying_gold");
+	public static final TagKey<Item> ALLOYING_COPPER = TagAPI.makeItemTag(BetterEnd.MOD_ID, "alloying_copper");
 	
 	public static void register() {
 		addEndGround(EndBlocks.THALLASIUM.ore);
@@ -83,7 +80,7 @@ public class EndTags {
 				TagAPI.addBlockTag(NamedBlockTags.CLIMBABLE, block);
 			}
 			else if (block instanceof PedestalBlock) {
-				TagAPI.addBlockTag(PEDESTALS.getName(), block);
+				TagAPI.addBlockTag(PEDESTALS, block);
 			}
 			
 			Material mat = block.defaultBlockState().getMaterial();
@@ -110,8 +107,7 @@ public class EndTags {
 				ITEM_HAMMERS.add(item);
 			}
 		});
-		ToolManagerImpl.tag(CommonItemTags.HAMMERS).register(new ModdedToolsVanillaBlocksToolHandler(ITEM_HAMMERS));
-		
+
 		TagAPI.addBlockTag(
 			NamedCommonBlockTags.GEN_END_STONES,
 			EndBlocks.ENDER_ORE,
@@ -130,9 +126,9 @@ public class EndTags {
 		);
 		TagAPI.addItemTag(NamedCommonItemTags.IRON_INGOTS, EndBlocks.THALLASIUM.ingot);
 		
-		TagAPI.addItemTag(ALLOYING_IRON.getName(), Items.IRON_ORE, Items.DEEPSLATE_IRON_ORE, Items.RAW_IRON);
-		TagAPI.addItemTag(ALLOYING_GOLD.getName(), Items.GOLD_ORE, Items.DEEPSLATE_GOLD_ORE, Items.RAW_GOLD);
-		TagAPI.addItemTag(ALLOYING_COPPER.getName(), Items.COPPER_ORE, Items.DEEPSLATE_COPPER_ORE, Items.RAW_COPPER);
+		TagAPI.addItemTag(ALLOYING_IRON, Items.IRON_ORE, Items.DEEPSLATE_IRON_ORE, Items.RAW_IRON);
+		TagAPI.addItemTag(ALLOYING_GOLD, Items.GOLD_ORE, Items.DEEPSLATE_GOLD_ORE, Items.RAW_GOLD);
+		TagAPI.addItemTag(ALLOYING_COPPER, Items.COPPER_ORE, Items.DEEPSLATE_COPPER_ORE, Items.RAW_COPPER);
 	}
 	
 	public static void addEndGround(Block bl){

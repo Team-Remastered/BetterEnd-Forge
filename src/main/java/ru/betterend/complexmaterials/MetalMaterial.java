@@ -1,6 +1,7 @@
 package ru.betterend.complexmaterials;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
@@ -16,7 +17,6 @@ import ru.betterend.bclib.api.tag.NamedBlockTags;
 import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
 import ru.betterend.bclib.api.tag.NamedItemTags;
 import ru.betterend.bclib.api.tag.TagAPI;
-import ru.betterend.bclib.api.tag.TagAPI.TagNamed;
 import ru.betterend.bclib.blocks.BaseBlock;
 import ru.betterend.bclib.blocks.BaseChainBlock;
 import ru.betterend.bclib.blocks.BaseDoorBlock;
@@ -90,7 +90,7 @@ public class MetalMaterial {
 	public final Item leggings;
 	public final Item boots;
 
-	public final TagNamed<Item> alloyingOre;
+	public final TagKey<Item> alloyingOre;
 
 	public static MetalMaterial makeNormal(String name, MaterialColor color, Tier material, ArmorMaterial armor) {
 		return new MetalMaterial(
@@ -154,7 +154,7 @@ public class MetalMaterial {
 		ore = hasOre ? EndBlocks.registerBlock(name + "_ore", new BaseOreBlock(()->rawOre, 1, 3, 1)) : null;
 		alloyingOre = hasOre ? TagAPI.makeItemTag(BetterEnd.MOD_ID, name + "_alloying") : null;
 		if (hasOre) {
-			TagAPI.addItemTag(alloyingOre.getName(), ore, rawOre);
+			TagAPI.addItemTag(alloyingOre, ore, rawOre);
 		}
 
 		block = EndBlocks.registerBlock(name + "_block", new BaseBlock(settings));

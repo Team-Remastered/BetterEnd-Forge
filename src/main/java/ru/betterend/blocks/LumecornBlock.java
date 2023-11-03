@@ -1,9 +1,8 @@
 package ru.betterend.blocks;
 
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -23,6 +22,7 @@ import ru.betterend.bclib.api.tag.CommonBlockTags;
 import ru.betterend.bclib.blocks.BaseBlockNotFull;
 import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.interfaces.tools.AddMineableAxe;
 import ru.betterend.bclib.util.MHelper;
 import ru.betterend.blocks.EndBlockProperties.LumecornShape;
 import ru.betterend.registry.EndBlocks;
@@ -32,14 +32,13 @@ import java.util.Collections;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
-public class LumecornBlock extends BaseBlockNotFull implements RenderLayerProvider {
+public class LumecornBlock extends BaseBlockNotFull implements RenderLayerProvider, AddMineableAxe {
 	public static final EnumProperty<LumecornShape> SHAPE = EnumProperty.create("shape", LumecornShape.class);
 	private static final VoxelShape SHAPE_BOTTOM = Block.box(6, 0, 6, 10, 16, 10);
 	private static final VoxelShape SHAPE_TOP = Block.box(6, 0, 6, 10, 8, 10);
 	
 	public LumecornBlock() {
 		super(FabricBlockSettings.of(Material.WOOD)
-								 .breakByTool(FabricToolTags.AXES)
 								 .hardness(0.5F)
 								 .luminance(state -> state.getValue(SHAPE).getLight()));
 	}
@@ -97,7 +96,7 @@ public class LumecornBlock extends BaseBlockNotFull implements RenderLayerProvid
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
 		LumecornShape shape = state.getValue(SHAPE);
 		if (shape == LumecornShape.BOTTOM_BIG || shape == LumecornShape.BOTTOM_SMALL || shape == LumecornShape.MIDDLE) {

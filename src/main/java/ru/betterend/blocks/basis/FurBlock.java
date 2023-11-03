@@ -3,7 +3,6 @@ package ru.betterend.blocks.basis;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -24,20 +23,20 @@ import ru.betterend.bclib.api.tag.TagAPI;
 import ru.betterend.bclib.blocks.BaseAttachedBlock;
 import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.interfaces.tools.AddMineableShears;
+import ru.betterend.bclib.items.tool.BaseShearsItem;
 import ru.betterend.bclib.util.MHelper;
 
 import java.util.EnumMap;
 import java.util.List;
 
-public class FurBlock extends BaseAttachedBlock implements RenderLayerProvider {
+public class FurBlock extends BaseAttachedBlock implements RenderLayerProvider, AddMineableShears {
 	private static final EnumMap<Direction, VoxelShape> BOUNDING_SHAPES = Maps.newEnumMap(Direction.class);
 	private final ItemLike drop;
 	private final int dropChance;
 	
 	public FurBlock(ItemLike drop, int light, int dropChance, boolean wet) {
 		super(FabricBlockSettings.of(Material.REPLACEABLE_PLANT)
-								 .breakByTool(FabricToolTags.SHEARS)
-								 .breakByHand(true)
 								 .luminance(light)
 								 .sound(wet ? SoundType.WET_GRASS : SoundType.GRASS)
 								 .noCollission());
@@ -48,8 +47,7 @@ public class FurBlock extends BaseAttachedBlock implements RenderLayerProvider {
 	
 	public FurBlock(ItemLike drop, int dropChance) {
 		super(FabricBlockSettings.of(Material.REPLACEABLE_PLANT)
-								 .breakByTool(FabricToolTags.SHEARS)
-								 .breakByHand(true)
+								 
 								 .sound(SoundType.GRASS)
 								 .noCollission());
 		this.drop = drop;
@@ -66,7 +64,7 @@ public class FurBlock extends BaseAttachedBlock implements RenderLayerProvider {
 	@Override
 	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
 		ItemStack tool = builder.getParameter(LootContextParams.TOOL);
-		if (tool != null && tool.is(FabricToolTags.SHEARS) || EnchantmentHelper.getItemEnchantmentLevel(
+		if (tool != null && BaseShearsItem.isShear(tool) || EnchantmentHelper.getItemEnchantmentLevel(
 			Enchantments.SILK_TOUCH,
 			tool
 		) > 0) {

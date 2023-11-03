@@ -1,7 +1,6 @@
 package ru.betterend.blocks;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -28,6 +27,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import ru.betterend.bclib.blocks.BaseBlock;
+import ru.betterend.bclib.items.tool.BaseShearsItem;
 import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.bclib.util.MHelper;
 import ru.betterend.entity.SilkMothEntity;
@@ -42,7 +42,6 @@ public class SilkMothHiveBlock extends BaseBlock {
 	
 	public SilkMothHiveBlock() {
 		super(FabricBlockSettings.of(Material.WOOD)
-								 .breakByHand(true)
 								 .hardness(0.5F)
 								 .resistance(0.1F)
 								 .sound(SoundType.WOOL)
@@ -101,7 +100,7 @@ public class SilkMothHiveBlock extends BaseBlock {
 	public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
 		if (hand == InteractionHand.MAIN_HAND) {
 			ItemStack stack = player.getMainHandItem();
-			if (stack.is(FabricToolTags.SHEARS) && state.getValue(FULLNESS) == 3) {
+			if (BaseShearsItem.isShear(stack) && state.getValue(FULLNESS) == 3) {
 				BlocksHelper.setWithUpdate(world, pos, state.setValue(FULLNESS, 0));
 				Direction dir = state.getValue(FACING);
 				double px = pos.getX() + dir.getStepX() + 0.5;

@@ -1,7 +1,7 @@
 package ru.betterend.item;
 
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -19,7 +19,6 @@ import ru.betterend.interfaces.MultiModelItem;
 import ru.betterend.registry.EndItems;
 
 public class ArmoredElytra extends BaseArmorItem implements MultiModelItem, FallFlyingItem {
-	
 	private final ResourceLocation wingTexture;
 	private final Item repairItem;
 	private final double movementFactor;
@@ -30,12 +29,11 @@ public class ArmoredElytra extends BaseArmorItem implements MultiModelItem, Fall
 		super(
 			material,
 			EquipmentSlot.CHEST,
-			fireproof ? EndItems.makeEndItemSettings()
-								.durability(durability)
-								.rarity(Rarity.EPIC)
-								.fireResistant() : EndItems.makeEndItemSettings()
-														   .durability(durability)
-														   .rarity(Rarity.EPIC)
+			fireproof ? EndItems
+				.makeEndItemSettings()
+				.durability(durability)
+				.rarity(Rarity.EPIC)
+				.fireResistant() : EndItems.makeEndItemSettings().durability(durability).rarity(Rarity.EPIC)
 		);
 		this.wingTexture = BetterEnd.makeID("textures/entity/" + name + ".png");
 		this.repairItem = repairItem;
@@ -66,7 +64,7 @@ public class ArmoredElytra extends BaseArmorItem implements MultiModelItem, Fall
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public ResourceLocation getModelTexture() {
 		return wingTexture;
 	}
@@ -87,7 +85,7 @@ public class ArmoredElytra extends BaseArmorItem implements MultiModelItem, Fall
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public void registerModelPredicate() {
 		FabricModelPredicateProviderRegistry.register(
 			this,

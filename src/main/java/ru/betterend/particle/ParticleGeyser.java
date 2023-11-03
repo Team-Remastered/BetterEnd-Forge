@@ -1,7 +1,7 @@
 package ru.betterend.particle;
 
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
@@ -12,7 +12,7 @@ import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.core.particles.SimpleParticleType;
 import ru.betterend.bclib.util.MHelper;
 
-@OnlyIn(Dist.CLIENT)
+@Environment(EnvType.CLIENT)
 public class ParticleGeyser extends TextureSheetParticle {
 	private MutableBlockPos mut = new MutableBlockPos();
 	private boolean changeDir = false;
@@ -62,7 +62,7 @@ public class ParticleGeyser extends TextureSheetParticle {
 		return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public static class FactoryGeyser implements ParticleProvider<SimpleParticleType> {
 		
 		private final SpriteSet sprites;

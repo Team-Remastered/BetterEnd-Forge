@@ -1,11 +1,12 @@
 package ru.betterend.registry;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
-import net.minecraft.world.level.levelgen.feature.StructurePieceType;
-import ru.betterend.bclib.api.biomes.BiomeAPI;
+import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceType;
+import ru.betterend.bclib.api.tag.TagAPI;
 import ru.betterend.bclib.world.structures.BCLStructureFeature;
 import ru.betterend.BetterEnd;
 import ru.betterend.world.structures.features.EternalPortalStructure;
@@ -86,9 +87,9 @@ public class EndStructures {
 		return Registry.register(Registry.STRUCTURE_PIECE, BetterEnd.makeID(id), pieceType);
 	}
 	
-	public static void addBiomeStructures(ResourceLocation biomeID, Biome biome) {
+	public static void addBiomeStructures(ResourceLocation biomeID, Holder<Biome> biome) {
 		if (!biomeID.getPath().contains("mountain") && !biomeID.getPath().contains("lake")) {
-			BiomeAPI.addBiomeStructure(BiomeAPI.getBiomeKey(biome), ETERNAL_PORTAL);
+			TagAPI.addBiomeTag(ETERNAL_PORTAL.biomeTag, biome.value());
 		}
 	}
 }

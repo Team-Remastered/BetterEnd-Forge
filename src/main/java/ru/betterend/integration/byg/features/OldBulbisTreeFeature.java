@@ -12,7 +12,6 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.AABB;
 import ru.betterend.bclib.api.tag.CommonBlockTags;
-import ru.betterend.bclib.api.tag.TagAPI;
 import ru.betterend.bclib.sdf.SDF;
 import ru.betterend.bclib.sdf.operator.SDFDisplacement;
 import ru.betterend.bclib.sdf.operator.SDFSubtraction;
