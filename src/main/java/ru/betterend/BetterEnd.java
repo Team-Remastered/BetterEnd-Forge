@@ -7,7 +7,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biomes;
 import ru.betterend.bclib.api.WorldDataAPI;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
-import ru.betterend.bclib.util.Logger;
 import ru.betterend.api.BetterEndPlugin;
 import ru.betterend.config.Configs;
 import ru.betterend.effects.EndPotions;
