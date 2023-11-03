@@ -1,7 +1,7 @@
 package ru.betterend.config;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.config.EntryConfig;
 import ru.betterend.bclib.config.IdConfig;

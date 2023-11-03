@@ -1,8 +1,8 @@
 package ru.betterend.blocks;
 
 import com.google.common.collect.Lists;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.BlockPos;
@@ -71,7 +71,7 @@ public class UmbrellaTreeMembraneBlock extends SlimeBlock implements RenderLayer
 		return state.getValue(COLOR) > 0;
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public boolean skipRendering(BlockState state, BlockState stateFrom, Direction direction) {
 		if (state.getValue(COLOR) > 0) {
 			return super.skipRendering(state, stateFrom, direction);
@@ -82,7 +82,7 @@ public class UmbrellaTreeMembraneBlock extends SlimeBlock implements RenderLayer
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public BlockModel getItemModel(ResourceLocation resourceLocation) {
 		return getBlockModel(resourceLocation, defaultBlockState());
 	}

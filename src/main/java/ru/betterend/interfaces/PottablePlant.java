@@ -1,7 +1,7 @@
 package ru.betterend.interfaces;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.world.level.block.Block;
 
 public interface PottablePlant {
@@ -11,7 +11,7 @@ public interface PottablePlant {
 		return true;
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	default String getPottedState() {
 		return "";
 	}

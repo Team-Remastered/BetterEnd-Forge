@@ -2,8 +2,8 @@ package ru.betterend.blocks;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -113,7 +113,7 @@ public class SmallJellyshroomBlock extends BaseAttachedBlock implements RenderLa
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public String getPottedState() {
 		return "facing=up";
 	}

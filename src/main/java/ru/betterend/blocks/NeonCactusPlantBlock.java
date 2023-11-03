@@ -2,8 +2,8 @@ package ru.betterend.blocks;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockPos.MutableBlockPos;
@@ -421,7 +421,7 @@ public class NeonCactusPlantBlock extends BaseBlockNotFull implements SimpleWate
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public String getPottedState() {
 		return "bottom=moss,shape=top,facing=up";
 	}

@@ -1,7 +1,7 @@
 package ru.betterend.blocks;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockState;
@@ -18,12 +18,12 @@ public class GlowingMossBlock extends EndPlantBlock {
 		return state.getBlock() == EndBlocks.END_MOSS || state.getBlock() == EndBlocks.END_MYCELIUM;
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public boolean hasEmissiveLighting(BlockGetter world, BlockPos pos) {
 		return true;
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public float getAmbientOcclusionLightLevel(BlockGetter world, BlockPos pos) {
 		return 1F;
 	}

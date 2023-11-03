@@ -1,8 +1,8 @@
 package ru.betterend.blocks;
 
 import com.google.common.collect.Maps;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.BlockPos;
@@ -58,7 +58,7 @@ public class BulbVineLanternBlock extends EndLanternBlock implements RenderLayer
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public @Nullable BlockModel getBlockModel(ResourceLocation resourceLocation, BlockState blockState) {
 		Map<String, String> textures = Maps.newHashMap();
 		textures.put("%glow%", getGlowTexture());

@@ -1,7 +1,7 @@
 package ru.betterend.blocks;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -34,7 +34,7 @@ public class BubbleCoralBlock extends EndUnderwaterPlantBlock implements AddMine
 		return BlockBehaviour.OffsetType.NONE;
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public void animateTick(BlockState state, Level world, BlockPos pos, Random random) {
 		double x = pos.getX() + random.nextDouble();
 		double y = pos.getY() + random.nextDouble() * 0.5F + 0.5F;

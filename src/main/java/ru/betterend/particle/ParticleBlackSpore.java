@@ -1,7 +1,7 @@
 package ru.betterend.particle;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
@@ -12,7 +12,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
 import ru.betterend.bclib.util.MHelper;
 
-@OnlyIn(Dist.CLIENT)
+@Environment(EnvType.CLIENT)
 public class ParticleBlackSpore extends SimpleAnimatedParticle {
 	private double preVX;
 	private double preVY;
@@ -75,7 +75,7 @@ public class ParticleBlackSpore extends SimpleAnimatedParticle {
 		return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public static class FactoryBlackSpore implements ParticleProvider<SimpleParticleType> {
 		
 		private final SpriteSet sprites;

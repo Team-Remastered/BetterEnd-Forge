@@ -1,7 +1,7 @@
 package ru.betterend.blocks.basis;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.resources.ResourceLocation;
 import ru.betterend.bclib.blocks.BaseRotatedPillarBlock;
 
@@ -15,7 +15,7 @@ public class LitPillarBlock extends BaseRotatedPillarBlock {
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	protected Optional<String> createBlockPattern(ResourceLocation blockId) {
 		String name = blockId.getPath();
 		return Optional.of(PATTERN.replace("name", name));

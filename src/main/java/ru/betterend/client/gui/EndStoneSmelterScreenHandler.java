@@ -1,7 +1,7 @@
 package ru.betterend.client.gui;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
@@ -184,14 +184,14 @@ public class EndStoneSmelterScreenHandler extends RecipeBookMenu<Container> {
 		return itemStack;
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public int getSmeltProgress() {
 		int time = propertyDelegate.get(2);
 		int timeTotal = propertyDelegate.get(3);
 		return timeTotal != 0 && time != 0 ? time * 24 / timeTotal : 0;
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public int getFuelProgress() {
 		int fuelTime = propertyDelegate.get(1);
 		if (fuelTime == 0) {
@@ -200,7 +200,7 @@ public class EndStoneSmelterScreenHandler extends RecipeBookMenu<Container> {
 		return propertyDelegate.get(0) * 13 / fuelTime;
 	}
 	
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public boolean isBurning() {
 		return propertyDelegate.get(0) > 0;
 	}

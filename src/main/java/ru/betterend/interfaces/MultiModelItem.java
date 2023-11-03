@@ -1,11 +1,11 @@
 package ru.betterend.interfaces;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import ru.betterend.registry.EndItems;
 
 public interface MultiModelItem {
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	void registerModelPredicate();
 	
 	static void register() {

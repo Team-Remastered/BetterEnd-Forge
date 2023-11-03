@@ -1,8 +1,8 @@
 package ru.betterend.blocks;
 
 import com.google.common.collect.Maps;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.BlockModelRotation;
@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.api.distmarker.Dist;
+import org.jetbrains.annotations.Nullable;
 import ru.betterend.bclib.blocks.BaseAttachedBlock;
 import ru.betterend.bclib.blocks.BlockHelper;
 import ru.betterend.bclib.client.models.ModelsHelper;
@@ -52,13 +52,13 @@ public class ChandelierBlock extends BaseAttachedBlock implements RenderLayerPro
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public BlockModel getItemModel(ResourceLocation blockId) {
 		return ModelsHelper.createItemModel(blockId);
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public @Nullable BlockModel getBlockModel(ResourceLocation resourceLocation, BlockState blockState) {
 		Optional<String> pattern;
 		switch (blockState.getValue(FACING)) {
@@ -75,7 +75,7 @@ public class ChandelierBlock extends BaseAttachedBlock implements RenderLayerPro
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public UnbakedModel getModelVariant(ResourceLocation stateId, BlockState blockState, Map<ResourceLocation, UnbakedModel> modelCache) {
 		String state = "_wall";
 		BlockModelRotation rotation = BlockModelRotation.X0_Y0;

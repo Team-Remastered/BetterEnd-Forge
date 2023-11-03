@@ -1,11 +1,11 @@
 package ru.betterend.registry;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import ru.betterend.item.model.CrystaliteArmorProvider;
 import shadow.fabric.api.client.rendering.v1.ArmorRenderingRegistry;
 
-@OnlyIn(Dist.CLIENT)
+@Environment(EnvType.CLIENT)
 public class EndModelProviders {
 	
 	public final static CrystaliteArmorProvider CRYSTALITE_PROVIDER = new CrystaliteArmorProvider();

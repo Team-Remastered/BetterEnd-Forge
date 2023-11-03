@@ -1,7 +1,7 @@
 package ru.betterend.item;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import org.jetbrains.annotations.Nullable;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
@@ -27,7 +27,7 @@ public class EnchantedItem extends ModelProviderItem {
 	}
 	
 	@Override
-	@OnlyIn(Dist.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public BlockModel getItemModel(ResourceLocation resourceLocation) {
 		ResourceLocation sourceId = Registry.ITEM.getKey(source);
 		return ModelsHelper.createItemModel(sourceId);
