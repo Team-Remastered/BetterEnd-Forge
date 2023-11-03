@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.UnbakedModel;
@@ -91,7 +91,7 @@ public abstract class BaseAnvilBlock extends AnvilBlock implements BlockModelPro
 	}
 	
 	@Override
-	public BlockItem getCustomItem(ResourceLocation blockID, FabricItemSettings settings) {
+	public BlockItem getCustomItem(ResourceLocation blockID, Item.Properties settings) {
 		return new BaseAnvilItem(this, settings);
 	}
 	

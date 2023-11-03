@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.BlockPos;
@@ -178,7 +178,7 @@ public class BaseSignBlock extends SignBlock implements BlockModelProvider, Cust
 	}
 	
 	@Override
-	public BlockItem getCustomItem(ResourceLocation blockID, FabricItemSettings settings) {
+	public BlockItem getCustomItem(ResourceLocation blockID, Item.Properties settings) {
 		return new BlockItem(this, settings.stacksTo(16));
 	}
 }

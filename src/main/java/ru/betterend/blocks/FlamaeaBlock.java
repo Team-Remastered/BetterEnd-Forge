@@ -1,7 +1,7 @@
 package ru.betterend.blocks;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -58,7 +58,7 @@ public class FlamaeaBlock extends EndPlantBlock implements CustomItemProvider, A
 	}
 	
 	@Override
-	public BlockItem getCustomItem(ResourceLocation resourceLocation, FabricItemSettings fabricItemSettings) {
-		return new WaterLilyBlockItem(this, fabricItemSettings);
+	public BlockItem getCustomItem(ResourceLocation resourceLocation, Item.Properties Item.Properties) {
+		return new WaterLilyBlockItem(this, Item.Properties);
 	}
 }

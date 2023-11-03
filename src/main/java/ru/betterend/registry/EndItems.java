@@ -1,6 +1,6 @@
 package ru.betterend.registry;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.world.item.Item;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -189,7 +189,7 @@ public class EndItems {
 		return getItemRegistry().registerDrink(BetterEnd.makeID(name), hunger, saturation);
 	}
 	
-	public static FabricItemSettings makeEndItemSettings() {
+	public static Item.Properties makeEndItemSettings() {
 		return getItemRegistry().makeItemSettings();
 	}
 	

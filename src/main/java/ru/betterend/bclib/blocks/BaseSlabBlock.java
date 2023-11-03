@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.BlockModelRotation;
@@ -85,7 +85,7 @@ public class BaseSlabBlock extends SlabBlock implements BlockModelProvider, Cust
 	}
 
 	@Override
-	public BlockItem getCustomItem(ResourceLocation blockID, FabricItemSettings settings) {
+	public BlockItem getCustomItem(ResourceLocation blockID, Item.Properties settings) {
 		if (fireproof) settings = settings.fireproof();
 		return new BlockItem(this, settings);
 	}

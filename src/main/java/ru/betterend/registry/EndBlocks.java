@@ -1,6 +1,6 @@
 package ru.betterend.registry;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.world.item.Item;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -542,7 +542,7 @@ public class EndBlocks {
 		return getBlockRegistry().registerBlockOnly(BetterEnd.makeID(name), block);
 	}
 	
-	public static FabricItemSettings makeBlockItemSettings() {
+	public static Item.Properties makeBlockItemSettings() {
 		return getBlockRegistry().makeItemSettings();
 	}
 	

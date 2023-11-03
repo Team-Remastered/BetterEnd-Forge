@@ -2,7 +2,7 @@ package ru.betterend.bclib.complexmaterials;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.resources.ResourceLocation;
@@ -59,7 +59,7 @@ public abstract class ComplexMaterial {
 		initTags();
 		
 		final BlockBehaviour.Properties blockSettings = getBlockSettings();
-		final FabricItemSettings itemSettings = getItemSettings(itemsRegistry);
+		final Item.Properties itemSettings = getItemSettings(itemsRegistry);
 		initDefault(blockSettings, itemSettings);
 		
 		getBlockEntries().forEach(entry -> {
@@ -84,9 +84,9 @@ public abstract class ComplexMaterial {
 	/**
 	 * Init default content for {@link ComplexMaterial} - blocks and items.
 	 * @param blockSettings {@link BlockBehaviour.Properties} default block settings for this material;
-	 * @param itemSettings {@link FabricItemSettings} default item settings for this material.
+	 * @param itemSettings {@link Item.Properties} default item settings for this material.
 	 */
-	protected abstract void initDefault(BlockBehaviour.Properties blockSettings, FabricItemSettings itemSettings);
+	protected abstract void initDefault(BlockBehaviour.Properties blockSettings, Item.Properties itemSettings);
 	
 	/**
 	 * Init custom tags for this {@link ComplexMaterial}, not required.
@@ -169,9 +169,9 @@ public abstract class ComplexMaterial {
 	
 	/**
 	 * Get default item settings for this material.
-	 * @return {@link FabricItemSettings}
+	 * @return {@link Item.Properties}
 	 */
-	protected FabricItemSettings getItemSettings(ItemRegistry registry) {
+	protected Item.Properties getItemSettings(ItemRegistry registry) {
 		return registry.makeItemSettings();
 	}
 	

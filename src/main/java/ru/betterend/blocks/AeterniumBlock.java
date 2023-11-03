@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -22,7 +22,7 @@ public class AeterniumBlock extends BaseBlock implements CustomItemProvider {
 	}
 	
 	@Override
-	public BlockItem getCustomItem(ResourceLocation blockID, FabricItemSettings settings) {
+	public BlockItem getCustomItem(ResourceLocation blockID, Item.Properties settings) {
 		return new BlockItem(this, settings.fireproof());
 	}
 }

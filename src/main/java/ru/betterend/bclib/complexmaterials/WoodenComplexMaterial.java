@@ -1,6 +1,6 @@
 package ru.betterend.bclib.complexmaterials;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.resources.ResourceLocation;
@@ -74,13 +74,13 @@ public class WoodenComplexMaterial extends ComplexMaterial {
 	}
 
 	@Override
-	protected void initDefault(BlockBehaviour.Properties blockSettings, FabricItemSettings itemSettings) {
+	protected void initDefault(BlockBehaviour.Properties blockSettings, Item.Properties itemSettings) {
 		initBase(blockSettings, itemSettings);
 		initStorage(blockSettings, itemSettings);
 		initDecorations(blockSettings, itemSettings);
 	}
 
-	final protected void initBase(BlockBehaviour.Properties blockSettings, FabricItemSettings itemSettings) {
+	final protected void initBase(BlockBehaviour.Properties blockSettings, Item.Properties itemSettings) {
 		TagLocation<Block> tagBlockLog = TagLocation.of(getBlockTag(TAG_LOGS));
 		TagLocation<Item> tagItemLog = TagLocation.of(getItemTag(TAG_LOGS));
 
@@ -148,7 +148,7 @@ public class WoodenComplexMaterial extends ComplexMaterial {
 			.setItemTags(NamedItemTags.SIGNS));
 	}
 
-	final protected void initStorage(BlockBehaviour.Properties blockSettings, FabricItemSettings itemSettings) {
+	final protected void initStorage(BlockBehaviour.Properties blockSettings, Item.Properties itemSettings) {
 		addBlockEntry(new BlockEntry(BLOCK_CHEST, (complexMaterial, settings) -> new BaseChestBlock(getBlock(BLOCK_PLANKS)))
 			.setBlockTags(NamedCommonBlockTags.CHEST, NamedCommonBlockTags.WOODEN_CHEST)
 			.setItemTags(NamedCommonItemTags.CHEST, NamedCommonItemTags.WOODEN_CHEST));
@@ -158,7 +158,7 @@ public class WoodenComplexMaterial extends ComplexMaterial {
 			.setItemTags(NamedCommonItemTags.BARREL, NamedCommonItemTags.WOODEN_BARREL));
 	}
 
-	final protected void initDecorations(BlockBehaviour.Properties blockSettings, FabricItemSettings itemSettings) {
+	final protected void initDecorations(BlockBehaviour.Properties blockSettings, Item.Properties itemSettings) {
 		addBlockEntry(new BlockEntry(BLOCK_CRAFTING_TABLE, (complexMaterial, settings) -> new BaseCraftingTableBlock(getBlock(BLOCK_PLANKS)))
 			.setBlockTags(NamedCommonBlockTags.WORKBENCHES)
 			.setItemTags(NamedCommonItemTags.WORKBENCHES));

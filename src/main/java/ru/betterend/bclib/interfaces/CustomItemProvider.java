@@ -1,6 +1,6 @@
 package ru.betterend.bclib.interfaces;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.world.item.Item;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 
@@ -10,5 +10,5 @@ public interface CustomItemProvider {
 	 *
 	 * @return {@link BlockItem}
 	 */
-	BlockItem getCustomItem(ResourceLocation blockID, FabricItemSettings settings);
+	BlockItem getCustomItem(ResourceLocation blockID, Item.Properties settings);
 }
