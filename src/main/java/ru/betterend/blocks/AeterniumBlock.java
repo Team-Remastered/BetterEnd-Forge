@@ -1,7 +1,7 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
@@ -21,7 +21,7 @@ public class AeterniumBlock extends BaseBlock {
 								 .sound(SoundType.NETHERITE_BLOCK));
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public int getColor(BlockState state, BlockGetter world, BlockPos pos) {
 		return 0xFF657A7A;
 	}

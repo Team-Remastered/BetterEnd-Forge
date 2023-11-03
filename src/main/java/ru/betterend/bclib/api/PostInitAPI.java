@@ -1,8 +1,8 @@
 package ru.betterend.bclib.api;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Registry;
@@ -77,7 +77,7 @@ public class PostInitAPI {
 		Configs.BIOMES_CONFIG.saveChanges();
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	private static void processBlockClient(Block block) {
 		if (block instanceof RenderLayerProvider) {
 			BCLRenderLayer layer = ((RenderLayerProvider) block).getRenderLayer();

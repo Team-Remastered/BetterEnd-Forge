@@ -1,7 +1,7 @@
 package ru.betterend.bclib.api.dataexchange;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientPacketListener;
@@ -33,7 +33,7 @@ public abstract class BaseDataHandler {
 		return identifier;
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	abstract void receiveFromServer(Minecraft client, ClientPacketListener handler, FriendlyByteBuf buf, PacketSender responseSender);
 	
 	private ServerPlayer lastMessageSender;
@@ -52,7 +52,7 @@ public abstract class BaseDataHandler {
 	
 	abstract void sendToClient(MinecraftServer server, ServerPlayer player);
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	abstract void sendToServer(Minecraft client);
 	
 	protected boolean isBlocking() { return false; }

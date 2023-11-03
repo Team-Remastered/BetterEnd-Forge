@@ -2,8 +2,8 @@ package ru.betterend.bclib.util;
 
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.platform.NativeImage;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.fabricmc.fabric.impl.client.indigo.renderer.helper.ColorHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Registry;
@@ -194,7 +194,7 @@ public class ColorUtil {
 	
 	private static Map<ResourceLocation, Integer> colorPalette = Maps.newHashMap();
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public static int extractColor(Item item) {
 		ResourceLocation id = Registry.ITEM.getKey(item);
 		if (id.equals(Registry.ITEM.getDefaultKey())) return -1;
@@ -229,7 +229,7 @@ public class ColorUtil {
 		return color;
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public static NativeImage loadImage(ResourceLocation image, int w, int h) {
 		Minecraft minecraft = Minecraft.getInstance();
 		ResourceManager resourceManager = minecraft.getResourceManager();

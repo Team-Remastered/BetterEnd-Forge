@@ -1,7 +1,7 @@
 package ru.betterend.bclib.gui.screens;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -12,7 +12,7 @@ import ru.betterend.bclib.gui.gridlayout.GridLayout.VerticalAlignment;
 import ru.betterend.bclib.gui.gridlayout.GridRow;
 import ru.betterend.bclib.gui.gridlayout.GridScreen;
 
-@Environment(EnvType.CLIENT)
+@OnlyIn(Dist.CLIENT)
 abstract class BCLibScreen extends GridScreen {
 	static final ResourceLocation BCLIB_LOGO_LOCATION = new ResourceLocation(BCLib.MOD_ID, "icon.png");
 	

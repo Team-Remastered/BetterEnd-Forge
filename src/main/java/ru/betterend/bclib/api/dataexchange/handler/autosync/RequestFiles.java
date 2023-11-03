@@ -1,7 +1,7 @@
 package ru.betterend.bclib.api.dataexchange.handler.autosync;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -32,7 +32,7 @@ public class RequestFiles extends DataHandler.FromClient {
 		this.files = files;
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	@Override
 	protected boolean prepareDataOnClient() {
 		if (! Configs.CLIENT_CONFIG.isAllowingAutoSync()) {
@@ -42,7 +42,7 @@ public class RequestFiles extends DataHandler.FromClient {
 		return true;
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	@Override
 	protected void serializeDataOnClient(FriendlyByteBuf buf) {
 		newToken();

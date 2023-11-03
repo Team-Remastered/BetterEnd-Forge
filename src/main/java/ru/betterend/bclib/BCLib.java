@@ -1,6 +1,6 @@
 package ru.betterend.bclib;
 
-import net.fabricmc.api.EnvType;
+import net.minecraftforge.api.distmarker.Dist;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resources.ResourceLocation;

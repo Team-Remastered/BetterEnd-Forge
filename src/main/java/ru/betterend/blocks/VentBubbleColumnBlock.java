@@ -1,7 +1,7 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -82,7 +82,7 @@ public class VentBubbleColumnBlock extends Block implements BucketPickup, Liquid
 		return state;
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public void animateTick(BlockState state, Level world, BlockPos pos, Random random) {
 		if (random.nextInt(4) == 0) {
 			double px = pos.getX() + random.nextDouble();
@@ -104,7 +104,7 @@ public class VentBubbleColumnBlock extends Block implements BucketPickup, Liquid
 		}
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	@SuppressWarnings("deprecation")
 	public void entityInside(BlockState state, Level world, BlockPos pos, Entity entity) {
 		BlockState blockState = world.getBlockState(pos.above());

@@ -1,7 +1,7 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.core.BlockPos;
@@ -22,7 +22,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class EndstoneDustBlock extends FallingBlock implements TagProvider {
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	private static final int COLOR = ColorUtil.color(226, 239, 168);
 	
 	public EndstoneDustBlock() {
@@ -39,7 +39,7 @@ public class EndstoneDustBlock extends FallingBlock implements TagProvider {
 		return Collections.singletonList(new ItemStack(this));
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public int getDustColor(BlockState state, BlockGetter world, BlockPos pos) {
 		return COLOR;
 	}

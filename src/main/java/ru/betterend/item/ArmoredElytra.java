@@ -1,7 +1,7 @@
 package ru.betterend.item;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -66,7 +66,7 @@ public class ArmoredElytra extends BaseArmorItem implements MultiModelItem, Fall
 	}
 	
 	@Override
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public ResourceLocation getModelTexture() {
 		return wingTexture;
 	}
@@ -87,7 +87,7 @@ public class ArmoredElytra extends BaseArmorItem implements MultiModelItem, Fall
 	}
 	
 	@Override
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public void registerModelPredicate() {
 		FabricModelPredicateProviderRegistry.register(
 			this,

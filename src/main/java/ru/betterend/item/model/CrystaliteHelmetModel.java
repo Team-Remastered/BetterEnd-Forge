@@ -1,8 +1,8 @@
 package ru.betterend.item.model;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.model.geom.ModelPart;
@@ -19,7 +19,7 @@ import ru.betterend.registry.EndEntitiesRenders;
 
 import java.util.Collections;
 
-@Environment(EnvType.CLIENT)
+@OnlyIn(Dist.CLIENT)
 public class CrystaliteHelmetModel extends HumanoidModel<LivingEntity> {
 	final ModelPart myHat;
 	

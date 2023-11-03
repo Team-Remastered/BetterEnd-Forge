@@ -1,7 +1,7 @@
 package ru.betterend.bclib.gui.screens;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -9,7 +9,7 @@ import ru.betterend.bclib.gui.gridlayout.GridLayout.Alignment;
 import ru.betterend.bclib.gui.gridlayout.GridRow;
 
 
-@Environment(EnvType.CLIENT)
+@OnlyIn(Dist.CLIENT)
 public class ConfirmRestartScreen extends BCLibScreen {
 	private final Component description;
 	private final Listener listener;
@@ -44,7 +44,7 @@ public class ConfirmRestartScreen extends BCLibScreen {
 		return false;
 	}
 
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public interface Listener {
 		void proceed();
 	}

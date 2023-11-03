@@ -1,7 +1,7 @@
 package ru.betterend.bclib.gui.screens;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
@@ -12,7 +12,7 @@ import ru.betterend.bclib.gui.gridlayout.GridLayout.Alignment;
 import ru.betterend.bclib.gui.gridlayout.GridRow;
 import ru.betterend.bclib.util.ModUtil;
 
-@Environment(EnvType.CLIENT)
+@OnlyIn(Dist.CLIENT)
 public class SyncFilesScreen extends BCLibScreen {
 	private final Component description;
 	private final Listener listener;
@@ -106,7 +106,7 @@ public class SyncFilesScreen extends BCLibScreen {
 		return false;
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public interface Listener {
 		void proceed(boolean downloadMods, boolean downloadConfigs, boolean downloadFiles, boolean removeFiles);
 	}

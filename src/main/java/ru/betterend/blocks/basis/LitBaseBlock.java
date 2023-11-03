@@ -1,7 +1,7 @@
 package ru.betterend.blocks.basis;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
@@ -17,7 +17,7 @@ public class LitBaseBlock extends BaseBlock {
 	
 	@Nullable
 	@Override
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public BlockModel getBlockModel(ResourceLocation resourceLocation, BlockState blockState) {
 		return BlockModel.fromString(PATTERN.replace("name", resourceLocation.getPath()));
 	}

@@ -1,7 +1,7 @@
 package ru.betterend.bclib.api.dataexchange;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.minecraft.client.Minecraft;
@@ -13,7 +13,7 @@ import ru.betterend.bclib.api.dataexchange.handler.DataExchange;
 /**
  * This is an internal class that handles a Clienetside players Connection to a Server
  */
-@Environment(EnvType.CLIENT)
+@OnlyIn(Dist.CLIENT)
 public class ConnectorClientside extends Connector {
 	private Minecraft client;
 	ConnectorClientside(DataExchange api) {
