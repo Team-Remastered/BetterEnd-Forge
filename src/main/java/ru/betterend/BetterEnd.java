@@ -31,13 +31,12 @@ import ru.betterend.util.LootTableUtil;
 import ru.betterend.world.generator.GeneratorOptions;
 import ru.betterend.world.generator.TerrainGenerator;
 
-public class BetterEnd implements ModInitializer {
+public class BetterEnd {
 	public static final String MOD_ID = "betterend";
 	public static final Logger LOGGER = new Logger(MOD_ID);
 	public static final boolean RUNS_FALL_FLYING_LIB = FabricLoader.getInstance().getModContainer("fallflyinglib").isPresent();
-
-	@Override
-	public void onInitialize() {
+	
+	public void BetterEnd() {
 		WorldDataAPI.registerModCache(MOD_ID);
 		EndPortals.loadPortals();
 		EndSounds.register();
@@ -75,6 +74,7 @@ public class BetterEnd implements ModInitializer {
 		});
 
 	}
+
 	public static ResourceLocation makeID(String path) {
 		return new ResourceLocation(MOD_ID, path);
 	}
