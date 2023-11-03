@@ -6,19 +6,19 @@ import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.config.EntryConfig;
 import ru.betterend.bclib.config.IdConfig;
 import ru.betterend.bclib.config.PathConfig;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 
 public class Configs {
-	public static final PathConfig ENTITY_CONFIG = new PathConfig(BetterEnd.MOD_ID, "entities");
-	public static final PathConfig BLOCK_CONFIG = new PathConfig(BetterEnd.MOD_ID, "blocks");
-	public static final PathConfig ITEM_CONFIG = new PathConfig(BetterEnd.MOD_ID, "items");
-	public static final IdConfig BIOME_CONFIG = new EntryConfig(BetterEnd.MOD_ID, "biomes");
-	public static final PathConfig GENERATOR_CONFIG = new PathConfig(BetterEnd.MOD_ID, "generator", false);
-	public static final PathConfig RECIPE_CONFIG = new PathConfig(BetterEnd.MOD_ID, "recipes");
-	public static final PathConfig ENCHANTMENT_CONFIG = new PathConfig(BetterEnd.MOD_ID, "enchantments");
+	public static final PathConfig ENTITY_CONFIG = new PathConfig(BetterEndForge.MOD_ID, "entities");
+	public static final PathConfig BLOCK_CONFIG = new PathConfig(BetterEndForge.MOD_ID, "blocks");
+	public static final PathConfig ITEM_CONFIG = new PathConfig(BetterEndForge.MOD_ID, "items");
+	public static final IdConfig BIOME_CONFIG = new EntryConfig(BetterEndForge.MOD_ID, "biomes");
+	public static final PathConfig GENERATOR_CONFIG = new PathConfig(BetterEndForge.MOD_ID, "generator", false);
+	public static final PathConfig RECIPE_CONFIG = new PathConfig(BetterEndForge.MOD_ID, "recipes");
+	public static final PathConfig ENCHANTMENT_CONFIG = new PathConfig(BetterEndForge.MOD_ID, "enchantments");
 	
 	@OnlyIn(Dist.CLIENT)
-	public static final PathConfig CLENT_CONFIG = new PathConfig(BetterEnd.MOD_ID, "client", false);
+	public static final PathConfig CLENT_CONFIG = new PathConfig(BetterEndForge.MOD_ID, "client", false);
 	
 	public static void saveConfigs() {
 		ENTITY_CONFIG.saveChanges();

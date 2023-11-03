@@ -25,7 +25,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import ru.betterend.bclib.api.WorldDataAPI;
 import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.bclib.util.StructureHelper;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.world.generator.GeneratorOptions;
 
 import java.util.Random;
@@ -50,12 +50,12 @@ public class SpikeFeatureMixin {
 		long lz = (long) z;
 		if (lx * lx + lz * lz < 10000) {
 			String pillarID = String.format("%d_%d", x, z);
-			CompoundTag pillar = WorldDataAPI.getCompoundTag(BetterEnd.MOD_ID, "pillars");
+			CompoundTag pillar = WorldDataAPI.getCompoundTag(BetterEndForge.MOD_ID, "pillars");
 			boolean haveValue = pillar.contains(pillarID);
 			minY = haveValue ? pillar.getInt(pillarID) : world.getChunk(x >> 4, z >> 4).getHeight(Types.WORLD_SURFACE, x & 15, z);
 			if (!haveValue) {
 				pillar.putInt(pillarID, minY);
-				WorldDataAPI.saveFile(BetterEnd.MOD_ID);
+				WorldDataAPI.saveFile(BetterEndForge.MOD_ID);
 			}
 		}
 		else {
@@ -67,8 +67,8 @@ public class SpikeFeatureMixin {
 		
 		if (GeneratorOptions.replacePillars() && be_radiusInRange(radius)) {
 			radius--;
-			StructureTemplate base = StructureHelper.readStructure(BetterEnd.makeID("pillars/pillar_base_" + radius));
-			StructureTemplate top = StructureHelper.readStructure(BetterEnd.makeID("pillars/pillar_top_" + radius + (spike
+			StructureTemplate base = StructureHelper.readStructure(BetterEndForge.makeID("pillars/pillar_base_" + radius));
+			StructureTemplate top = StructureHelper.readStructure(BetterEndForge.makeID("pillars/pillar_top_" + radius + (spike
 				.isGuarded() ? "_cage" : "")));
 			Vec3i side = base.getSize();
 			BlockPos pos1 = new BlockPos(x - (side.getX() >> 1), minY - 3, z - (side.getZ() >> 1));

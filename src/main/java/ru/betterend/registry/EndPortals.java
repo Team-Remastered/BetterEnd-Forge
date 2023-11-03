@@ -10,7 +10,7 @@ import net.minecraft.world.level.Level;
 import ru.betterend.bclib.util.ColorUtil;
 import ru.betterend.bclib.util.JsonFactory;
 import ru.betterend.bclib.util.MHelper;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 
 import java.io.File;
 
@@ -106,7 +106,7 @@ public class EndPortals {
 	private static PortalInfo makeDefault() {
 		return new PortalInfo(
 			new ResourceLocation("minecraft:overworld"),
-			BetterEnd.makeID("eternal_crystal"),
+			BetterEndForge.makeID("eternal_crystal"),
 			255,
 			255,
 			255

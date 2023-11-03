@@ -4,7 +4,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MaterialColor;
 import ru.betterend.bclib.complexmaterials.WoodenComplexMaterial;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.config.Configs;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;
@@ -14,7 +14,7 @@ public class EndWoodenComplexMaterial extends WoodenComplexMaterial {
 	private Block log;
 	
 	public EndWoodenComplexMaterial(String name, MaterialColor woodColor, MaterialColor planksColor) {
-		super(BetterEnd.MOD_ID, name, name, woodColor, planksColor);
+		super(BetterEndForge.MOD_ID, name, name, woodColor, planksColor);
 	}
 	
 	public EndWoodenComplexMaterial init() {

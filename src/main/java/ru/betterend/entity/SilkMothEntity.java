@@ -41,7 +41,7 @@ import org.jetbrains.annotations.Nullable;
 import ru.betterend.bclib.entity.DespawnableAnimal;
 import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.bclib.util.MHelper;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.EndBlockProperties;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndEntities;
@@ -99,7 +99,7 @@ public class SilkMothEntity extends DespawnableAnimal implements FlyingAnimal {
 				hiveWorld = level.getServer().getLevel(ResourceKey.create(Registry.DIMENSION_REGISTRY, worldID));
 			}
 			catch (Exception e) {
-				BetterEnd.LOGGER.warning("Silk Moth Hive World {} is missing!", worldID);
+				BetterEndForge.LOGGER.warning("Silk Moth Hive World {} is missing!", worldID);
 				hivePos = null;
 			}
 		}

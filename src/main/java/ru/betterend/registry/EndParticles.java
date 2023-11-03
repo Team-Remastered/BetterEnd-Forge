@@ -6,7 +6,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.particle.FireflyParticle;
 import ru.betterend.particle.InfusionParticle;
 import ru.betterend.particle.InfusionParticleType;
@@ -53,14 +53,14 @@ public class EndParticles {
 	}
 	
 	private static SimpleParticleType register(String name) {
-		return Registry.register(Registry.PARTICLE_TYPE, BetterEnd.makeID(name), FabricParticleTypes.simple());
+		return Registry.register(Registry.PARTICLE_TYPE, BetterEndForge.makeID(name), FabricParticleTypes.simple());
 	}
 	
 	private static SimpleParticleType registerFar(String name) {
-		return Registry.register(Registry.PARTICLE_TYPE, BetterEnd.makeID(name), FabricParticleTypes.simple(true));
+		return Registry.register(Registry.PARTICLE_TYPE, BetterEndForge.makeID(name), FabricParticleTypes.simple(true));
 	}
 	
 	private static <T extends ParticleOptions> ParticleType<T> register(String name, ParticleType<T> type) {
-		return Registry.register(Registry.PARTICLE_TYPE, BetterEnd.makeID(name), type);
+		return Registry.register(Registry.PARTICLE_TYPE, BetterEndForge.makeID(name), type);
 	}
 }

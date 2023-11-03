@@ -28,7 +28,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.material.Material;
 import org.jetbrains.annotations.Nullable;
 import ru.betterend.bclib.blocks.BlockProperties;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.EndPortalBlock;
 import ru.betterend.blocks.RunedFlavolite;
 import ru.betterend.blocks.entities.EternalPedestalEntity;
@@ -203,7 +203,7 @@ public class EternalRitual {
 			active = true;
 		}
 		catch (Exception ex) {
-			BetterEnd.LOGGER.error("Create End portals error.", ex);
+			BetterEndForge.LOGGER.error("Create End portals error.", ex);
 			removePortal(targetWorld, exit);
 			removePortal(world, center);
 			active = false;

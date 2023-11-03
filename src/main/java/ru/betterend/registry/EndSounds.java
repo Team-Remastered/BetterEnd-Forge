@@ -2,7 +2,7 @@ package ru.betterend.registry;
 
 import net.minecraft.core.Registry;
 import net.minecraft.sounds.SoundEvent;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 
 public class EndSounds {
 	// Music
@@ -43,6 +43,6 @@ public class EndSounds {
 	
 	private static SoundEvent register(String type, String id) {
 		id = "betterend." + type + "." + id;
-		return Registry.register(Registry.SOUND_EVENT, id, new SoundEvent(BetterEnd.makeID(id)));
+		return Registry.register(Registry.SOUND_EVENT, id, new SoundEvent(BetterEndForge.makeID(id)));
 	}
 }

@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MaterialColor;
 import ru.betterend.bclib.recipes.GridRecipe;
 import ru.betterend.bclib.util.BlocksHelper;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.config.Configs;
 import ru.betterend.registry.EndBlocks;
 
@@ -33,7 +33,7 @@ public class ColoredMaterial {
 			Block block = constructor.apply(BlockBehaviour.Properties.copy(source).mapColor(MaterialColor.COLOR_BLACK));
 			EndBlocks.registerBlock(blockName, block);
 			if (craftEight) {
-				GridRecipe.make(BetterEnd.MOD_ID, blockName, block)
+				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block)
 						  .checkConfig(Configs.RECIPE_CONFIG)
 						  .setOutputCount(8)
 						  .setShape("###", "#D#", "###")
@@ -42,7 +42,7 @@ public class ColoredMaterial {
 						  .build();
 			}
 			else {
-				GridRecipe.make(BetterEnd.MOD_ID, blockName, block)
+				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block)
 						  .checkConfig(Configs.RECIPE_CONFIG)
 						  .setList("#D")
 						  .addMaterial('#', source)

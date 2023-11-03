@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.layers.EyesLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.entity.CubozoaEntity;
 import ru.betterend.entity.model.CubozoaEntityModel;
 import ru.betterend.registry.EndEntitiesRenders;
@@ -55,10 +55,10 @@ public class RendererEntityCubozoa extends MobRenderer<CubozoaEntity, CubozoaEnt
 	}
 	
 	static {
-		TEXTURE[0] = BetterEnd.makeID("textures/entity/cubozoa/cubozoa.png");
-		TEXTURE[1] = BetterEnd.makeID("textures/entity/cubozoa/cubozoa_sulphur.png");
+		TEXTURE[0] = BetterEndForge.makeID("textures/entity/cubozoa/cubozoa.png");
+		TEXTURE[1] = BetterEndForge.makeID("textures/entity/cubozoa/cubozoa_sulphur.png");
 		
-		GLOW[0] = RenderType.eyes(BetterEnd.makeID("textures/entity/cubozoa/cubozoa_glow.png"));
-		GLOW[1] = RenderType.eyes(BetterEnd.makeID("textures/entity/cubozoa/cubozoa_sulphur_glow.png"));
+		GLOW[0] = RenderType.eyes(BetterEndForge.makeID("textures/entity/cubozoa/cubozoa_glow.png"));
+		GLOW[1] = RenderType.eyes(BetterEndForge.makeID("textures/entity/cubozoa/cubozoa_sulphur_glow.png"));
 	}
 }

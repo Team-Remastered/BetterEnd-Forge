@@ -7,7 +7,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
 import ru.betterend.bclib.mixin.common.PotionBrewingAccessor;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;
 
@@ -20,7 +20,7 @@ public class EndPotions {
 	}
 	
 	public static Potion registerPotion(String name, Potion potion) {
-		return Registry.register(Registry.POTION, BetterEnd.makeID(name), potion);
+		return Registry.register(Registry.POTION, BetterEndForge.makeID(name), potion);
 	}
 	
 	public static void register() {

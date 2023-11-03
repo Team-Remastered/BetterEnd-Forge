@@ -5,7 +5,7 @@ import net.minecraft.core.Registry;
 import ru.betterend.bclib.interfaces.NumericProvider;
 import ru.betterend.bclib.mixin.common.SurfaceRulesContextAccessor;
 import ru.betterend.bclib.util.MHelper;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.noise.OpenSimplexNoise;
 
 /**
@@ -31,6 +31,6 @@ public class SplitNoiseCondition implements NumericProvider {
 	}
 
 	static {
-		Registry.register(NumericProvider.NUMERIC_PROVIDER , BetterEnd.makeID("split_noise"), SplitNoiseCondition.CODEC);
+		Registry.register(NumericProvider.NUMERIC_PROVIDER , BetterEndForge.makeID("split_noise"), SplitNoiseCondition.CODEC);
 	}
 }

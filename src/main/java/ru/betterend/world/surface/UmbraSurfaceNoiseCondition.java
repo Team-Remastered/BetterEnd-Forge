@@ -5,7 +5,7 @@ import net.minecraft.core.Registry;
 import ru.betterend.bclib.interfaces.NumericProvider;
 import ru.betterend.bclib.mixin.common.SurfaceRulesContextAccessor;
 import ru.betterend.bclib.util.MHelper;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.noise.OpenSimplexNoise;
 
 /**
@@ -39,6 +39,6 @@ public class UmbraSurfaceNoiseCondition implements NumericProvider {
 	}
 
 	static {
-		Registry.register(NumericProvider.NUMERIC_PROVIDER , BetterEnd.makeID("umbra_srf"), UmbraSurfaceNoiseCondition.CODEC);
+		Registry.register(NumericProvider.NUMERIC_PROVIDER , BetterEndForge.makeID("umbra_srf"), UmbraSurfaceNoiseCondition.CODEC);
 	}
 }

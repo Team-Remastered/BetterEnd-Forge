@@ -13,7 +13,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.registry.EndBlocks;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ import java.util.List;
 
 public class REIInfusionCategory implements DisplayCategory<REIInfusionDisplay> {
 	
-	private final static ResourceLocation BACKGROUND = BetterEnd.makeID("textures/gui/rei_infusion.png");
+	private final static ResourceLocation BACKGROUND = BetterEndForge.makeID("textures/gui/rei_infusion.png");
 	private final EntryStack ICON;
 	
 	REIInfusionCategory(EntryStack icon) {

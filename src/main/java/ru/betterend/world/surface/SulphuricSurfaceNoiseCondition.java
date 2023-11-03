@@ -5,7 +5,7 @@ import net.minecraft.core.Registry;
 import ru.betterend.bclib.interfaces.NumericProvider;
 import ru.betterend.bclib.mixin.common.SurfaceRulesContextAccessor;
 import ru.betterend.bclib.util.MHelper;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.noise.OpenSimplexNoise;
 
 /**
@@ -34,6 +34,6 @@ public class SulphuricSurfaceNoiseCondition implements NumericProvider {
 	}
 
 	static {
-		Registry.register(NumericProvider.NUMERIC_PROVIDER , BetterEnd.makeID("sulphuric_surf"), SulphuricSurfaceNoiseCondition.CODEC);
+		Registry.register(NumericProvider.NUMERIC_PROVIDER , BetterEndForge.makeID("sulphuric_surf"), SulphuricSurfaceNoiseCondition.CODEC);
 	}
 }

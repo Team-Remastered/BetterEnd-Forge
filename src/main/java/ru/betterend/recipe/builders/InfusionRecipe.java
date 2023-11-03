@@ -20,7 +20,7 @@ import net.minecraft.world.level.Level;
 import ru.betterend.bclib.interfaces.UnknownReceipBookCategory;
 import ru.betterend.bclib.recipes.BCLRecipeManager;
 import ru.betterend.bclib.util.ItemUtil;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.config.Configs;
 import ru.betterend.rituals.InfusionRitual;
 
@@ -28,9 +28,9 @@ import java.util.Arrays;
 
 public class InfusionRecipe implements Recipe<InfusionRitual>, UnknownReceipBookCategory {
 	public final static String GROUP = "infusion";
-	public final static RecipeType<InfusionRecipe> TYPE = BCLRecipeManager.registerType(BetterEnd.MOD_ID, GROUP);
+	public final static RecipeType<InfusionRecipe> TYPE = BCLRecipeManager.registerType(BetterEndForge.MOD_ID, GROUP);
 	public final static Serializer SERIALIZER = BCLRecipeManager.registerSerializer(
-		BetterEnd.MOD_ID,
+		BetterEndForge.MOD_ID,
 		GROUP,
 		new Serializer()
 	);
@@ -117,7 +117,7 @@ public class InfusionRecipe implements Recipe<InfusionRitual>, UnknownReceipBook
 		private static boolean exist;
 		
 		public static Builder create(String id) {
-			return create(BetterEnd.makeID(id));
+			return create(BetterEndForge.makeID(id));
 		}
 		
 		public static Builder create(ResourceLocation id) {
@@ -179,14 +179,14 @@ public class InfusionRecipe implements Recipe<InfusionRitual>, UnknownReceipBook
 		public void build() {
 			if (exist) {
 				if (input == null) {
-					BetterEnd.LOGGER.warning(
+					BetterEndForge.LOGGER.warning(
 						"Input for Infusion recipe can't be 'null', recipe {} will be ignored!",
 						id
 					);
 					return;
 				}
 				if (output == null) {
-					BetterEnd.LOGGER.warning(
+					BetterEndForge.LOGGER.warning(
 						"Output for Infusion recipe can't be 'null', recipe {} will be ignored!",
 						id
 					);
@@ -201,7 +201,7 @@ public class InfusionRecipe implements Recipe<InfusionRitual>, UnknownReceipBook
 					else recipe.catalysts[i] = catalysts[i];
 				}
 				if (empty == catalysts.length) {
-					BetterEnd.LOGGER.warning("At least one catalyst must be non empty, recipe {} will be ignored!", id);
+					BetterEndForge.LOGGER.warning("At least one catalyst must be non empty, recipe {} will be ignored!", id);
 					return;
 				}
 				BCLRecipeManager.addRecipe(TYPE, recipe);
@@ -226,7 +226,7 @@ public class InfusionRecipe implements Recipe<InfusionRitual>, UnknownReceipBook
 					recipe.output.setTag(nbt);
 				}
 				catch (CommandSyntaxException ex) {
-					BetterEnd.LOGGER.warning("Error parse nbt data for output.", ex);
+					BetterEndForge.LOGGER.warning("Error parse nbt data for output.", ex);
 				}
 			}
 			recipe.group = GsonHelper.getAsString(json, "group", GROUP);

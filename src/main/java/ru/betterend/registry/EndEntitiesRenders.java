@@ -6,7 +6,7 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.entity.EntityRendererProvider.Context;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.world.entity.EntityType;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.entity.model.CubozoaEntityModel;
 import ru.betterend.entity.model.DragonflyEntityModel;
 import ru.betterend.entity.model.EndFishEntityModel;
@@ -70,6 +70,6 @@ public class EndEntitiesRenders {
 	}
 	
 	private static ModelLayerLocation registerMain(String id) {
-		return new ModelLayerLocation(BetterEnd.makeID(id), "main");
+		return new ModelLayerLocation(BetterEndForge.makeID(id), "main");
 	}
 }

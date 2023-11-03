@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import ru.betterend.bclib.api.WorldDataAPI;
 import ru.betterend.bclib.util.StructureHelper;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.world.generator.GeneratorOptions;
 
 import java.util.Optional;
@@ -44,7 +44,7 @@ public class EndPodiumFeatureMixin {
 			Random random = featurePlaceContext.random();
 			WorldGenLevel world = featurePlaceContext.level();
 			BlockPos blockPos = be_updatePortalPos(world);
-			StructureTemplate structure = StructureHelper.readStructure(BetterEnd.makeID(active ? "portal/end_portal_active" : "portal/end_portal_inactive"));
+			StructureTemplate structure = StructureHelper.readStructure(BetterEndForge.makeID(active ? "portal/end_portal_active" : "portal/end_portal_inactive"));
 			Vec3i size = structure.getSize();
 			blockPos = blockPos.offset(-(size.getX() >> 1), -3, -(size.getZ() >> 1));
 			structure.placeInWorld(world, blockPos, blockPos, new StructurePlaceSettings(), random, 2);
@@ -68,7 +68,7 @@ public class EndPodiumFeatureMixin {
 	}
 	
 	private BlockPos be_updatePortalPos(WorldGenLevel world) {
-		CompoundTag compound = WorldDataAPI.getRootTag(BetterEnd.MOD_ID).getCompound("portal");
+		CompoundTag compound = WorldDataAPI.getRootTag(BetterEndForge.MOD_ID).getCompound("portal");
 		be_portalPosition = NbtUtils.readBlockPos(compound);
 		
 		if (be_portalPosition.getY() == 0) {
@@ -81,8 +81,8 @@ public class EndPodiumFeatureMixin {
 			}*/
 			int y = world.getHeight(Types.WORLD_SURFACE, 0, 0);
 			be_portalPosition = new BlockPos(0, y, 0);
-			WorldDataAPI.getRootTag(BetterEnd.MOD_ID).put("portal", NbtUtils.writeBlockPos(be_portalPosition));
-			WorldDataAPI.saveFile(BetterEnd.MOD_ID);
+			WorldDataAPI.getRootTag(BetterEndForge.MOD_ID).put("portal", NbtUtils.writeBlockPos(be_portalPosition));
+			WorldDataAPI.saveFile(BetterEndForge.MOD_ID);
 		}
 		
 		return be_portalPosition;

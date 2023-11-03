@@ -1,9 +1,9 @@
 package ru.betterend;
 
-import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraftforge.fml.ModList;
 import ru.betterend.bclib.api.WorldDataAPI;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
 import ru.betterend.bclib.util.Logger;
@@ -31,13 +31,12 @@ import ru.betterend.util.LootTableUtil;
 import ru.betterend.world.generator.GeneratorOptions;
 import ru.betterend.world.generator.TerrainGenerator;
 
-public class BetterEnd implements ModInitializer {
+public class BetterEndForge {
 	public static final String MOD_ID = "betterend";
 	public static final Logger LOGGER = new Logger(MOD_ID);
-	public static final boolean RUNS_FALL_FLYING_LIB = FabricLoader.getInstance().getModContainer("fallflyinglib").isPresent();
+	public static final boolean RUNS_FALL_FLYING_LIB = ModList.get().isLoaded("fallflyinglib");
 
-	@Override
-	public void onInitialize() {
+	public void BetterEnd() {
 		WorldDataAPI.registerModCache(MOD_ID);
 		EndPortals.loadPortals();
 		EndSounds.register();
@@ -75,6 +74,7 @@ public class BetterEnd implements ModInitializer {
 		});
 
 	}
+
 	public static ResourceLocation makeID(String path) {
 		return new ResourceLocation(MOD_ID, path);
 	}

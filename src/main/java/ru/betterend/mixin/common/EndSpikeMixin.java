@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import ru.betterend.bclib.api.WorldDataAPI;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.world.generator.GeneratorOptions;
 
 @Mixin(EndSpike.class)
@@ -24,7 +24,7 @@ public class EndSpikeMixin {
 			int x = getCenterX();
 			int z = getCenterZ();
 			String pillarID = String.format("%d_%d", x, z);
-			CompoundTag pillar = WorldDataAPI.getCompoundTag(BetterEnd.MOD_ID, "pillars");
+			CompoundTag pillar = WorldDataAPI.getCompoundTag(BetterEndForge.MOD_ID, "pillars");
 			int minY = pillar.contains(pillarID) ? pillar.getInt(pillarID) : 65;
 			int maxY = minY + height - 54;
 			info.setReturnValue(maxY);

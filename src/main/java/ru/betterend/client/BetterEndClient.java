@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.util.TranslationHelper;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.client.render.BetterEndSkyRenderer;
 import ru.betterend.events.ItemTooltipCallback;
 import ru.betterend.interfaces.MultiModelItem;
@@ -36,8 +36,8 @@ public class BetterEndClient implements ClientModInitializer {
 		registerTooltips();
 		
 		if (BCLib.isDevEnvironment()) {
-			TranslationHelper.printMissingEnNames(BetterEnd.MOD_ID);
-			TranslationHelper.printMissingNames(BetterEnd.MOD_ID, "ru_ru");
+			TranslationHelper.printMissingEnNames(BetterEndForge.MOD_ID);
+			TranslationHelper.printMissingNames(BetterEndForge.MOD_ID, "ru_ru");
 		}
 		
 		ResourceLocation checkFlowerId = new ResourceLocation("item/chorus_flower");

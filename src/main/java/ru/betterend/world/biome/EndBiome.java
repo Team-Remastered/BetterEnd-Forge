@@ -15,7 +15,7 @@ import ru.betterend.bclib.api.surface.SurfaceRuleBuilder;
 import ru.betterend.bclib.interfaces.SurfaceMaterialProvider;
 import ru.betterend.bclib.world.biomes.BCLBiome;
 import ru.betterend.bclib.world.biomes.BCLBiomeSettings;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndFeatures;
 import ru.betterend.registry.EndSounds;
@@ -78,7 +78,7 @@ public class EndBiome extends BCLBiome implements SurfaceMaterialProvider {
 		public final ResourceLocation ID;
 
 		protected Config(String name) {
-			this.ID = BetterEnd.makeID(name);
+			this.ID = BetterEndForge.makeID(name);
 		}
 
 		protected abstract void addCustomBuildData(BCLBiomeBuilder builder);

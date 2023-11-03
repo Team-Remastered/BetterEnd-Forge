@@ -20,7 +20,6 @@ import net.minecraft.world.entity.animal.FlyingAnimal;
 import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
@@ -34,7 +33,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.interfaces.FallFlyingItem;
 import ru.betterend.interfaces.MobEffectApplier;
 import ru.betterend.item.CrystaliteArmor;
@@ -100,7 +99,7 @@ public abstract class LivingEntityMixin extends Entity {
 			}
 		}
 		catch (Exception ex) {
-			BetterEnd.LOGGER.warning("Blindness resistance attribute haven't been registered.");
+			BetterEndForge.LOGGER.warning("Blindness resistance attribute haven't been registered.");
 		}
 	}
 	
@@ -125,7 +124,7 @@ public abstract class LivingEntityMixin extends Entity {
 	@Inject(method="aiStep", cancellable = true, at=@At(value="INVOKE", target="Lnet/minecraft/world/entity/LivingEntity;updateFallFlying()V"))
 	private void be_updateFallFlying_originFix(CallbackInfo info) {
 		//run be_updateFallFlying instead
-		if (!BetterEnd.RUNS_FALL_FLYING_LIB) return;
+		if (!BetterEndForge.RUNS_FALL_FLYING_LIB) return;
 
 		if (be_updateFallFlyingCommon()) {
 			vanillaAfterUpdateFallFlying();
@@ -136,7 +135,7 @@ public abstract class LivingEntityMixin extends Entity {
 	@Inject(method = "updateFallFlying", at = @At("HEAD"), cancellable = true)
 	private void be_updateFallFlying(CallbackInfo info) {
 		//run be_updateFallFlying_originFix instead?
-		if (BetterEnd.RUNS_FALL_FLYING_LIB) return;
+		if (BetterEndForge.RUNS_FALL_FLYING_LIB) return;
 		if (be_updateFallFlyingCommon()) {
 			info.cancel();
 		}

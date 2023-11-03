@@ -13,13 +13,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 
 @OnlyIn(Dist.CLIENT)
 public class EndStoneSmelterScreen extends AbstractContainerScreen<EndStoneSmelterScreenHandler> implements RecipeUpdateListener {
 	
 	private final static ResourceLocation RECIPE_BUTTON_TEXTURE = new ResourceLocation("textures/gui/recipe_button.png");
-	private final static ResourceLocation BACKGROUND_TEXTURE = BetterEnd.makeID("textures/gui/smelter_gui.png");
+	private final static ResourceLocation BACKGROUND_TEXTURE = BetterEndForge.makeID("textures/gui/smelter_gui.png");
 	
 	public final EndStoneSmelterRecipeBookScreen recipeBook;
 	private boolean narrow;

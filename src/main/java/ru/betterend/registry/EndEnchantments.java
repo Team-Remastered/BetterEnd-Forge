@@ -2,7 +2,7 @@ package ru.betterend.registry;
 
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.enchantment.Enchantment;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.config.Configs;
 import ru.betterend.effects.enchantment.EndVeilEnchantment;
 
@@ -13,7 +13,7 @@ public class EndEnchantments {
 		if (!Configs.ENCHANTMENT_CONFIG.getBooleanRoot(name, true)) {
 			return enchantment;
 		}
-		return Registry.register(Registry.ENCHANTMENT, BetterEnd.makeID(name), enchantment);
+		return Registry.register(Registry.ENCHANTMENT, BetterEndForge.makeID(name), enchantment);
 	}
 	
 	public static void register() {}

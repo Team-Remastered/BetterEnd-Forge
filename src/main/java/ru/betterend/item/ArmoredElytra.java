@@ -13,7 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import ru.betterend.bclib.items.BaseArmorItem;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.interfaces.FallFlyingItem;
 import ru.betterend.interfaces.MultiModelItem;
 import ru.betterend.registry.EndItems;
@@ -35,7 +35,7 @@ public class ArmoredElytra extends BaseArmorItem implements MultiModelItem, Fall
 				.rarity(Rarity.EPIC)
 				.fireResistant() : EndItems.makeEndItemSettings().durability(durability).rarity(Rarity.EPIC)
 		);
-		this.wingTexture = BetterEnd.makeID("textures/entity/" + name + ".png");
+		this.wingTexture = BetterEndForge.makeID("textures/entity/" + name + ".png");
 		this.repairItem = repairItem;
 		this.movementFactor = movementFactor;
 		this.defense = (int) ((double) material.getDefenseForSlot(EquipmentSlot.CHEST) / 1.75);

@@ -12,7 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import ru.betterend.bclib.items.ModelProviderItem;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.registry.EndItems;
 import ru.betterend.util.LangUtil;
 import vazkii.patchouli.api.PatchouliAPI;
@@ -20,7 +20,7 @@ import vazkii.patchouli.api.PatchouliAPI;
 import java.util.List;
 
 public class GuideBookItem extends ModelProviderItem {
-	public final static ResourceLocation BOOK_ID = BetterEnd.makeID("guidebook");
+	public final static ResourceLocation BOOK_ID = BetterEndForge.makeID("guidebook");
 	public static final Item GUIDE_BOOK = EndItems.getItemRegistry().register(BOOK_ID, new GuideBookItem());
 	
 	public static void register() {

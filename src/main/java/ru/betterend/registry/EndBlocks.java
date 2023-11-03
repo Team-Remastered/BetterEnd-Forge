@@ -2,7 +2,6 @@ package ru.betterend.registry;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.MaterialColor;
@@ -17,7 +16,7 @@ import ru.betterend.bclib.blocks.BaseVineBlock;
 import ru.betterend.bclib.blocks.SimpleLeavesBlock;
 import ru.betterend.bclib.blocks.StalactiteBlock;
 import ru.betterend.bclib.registry.BlockRegistry;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.AeterniumAnvil;
 import ru.betterend.blocks.AeterniumBlock;
 import ru.betterend.blocks.AmaranitaCapBlock;
@@ -519,11 +518,11 @@ public class EndBlocks {
 	public static final Block END_PORTAL_BLOCK = registerEndBlockOnly("end_portal_block", new EndPortalBlock());
 	
 	public static List<Block> getModBlocks() {
-		return BlockRegistry.getModBlocks(BetterEnd.MOD_ID);
+		return BlockRegistry.getModBlocks(BetterEndForge.MOD_ID);
 	}
 	
 	public static List<Item> getModBlockItems() {
-		return BlockRegistry.getModBlockItems(BetterEnd.MOD_ID);
+		return BlockRegistry.getModBlockItems(BetterEndForge.MOD_ID);
 	}
 	
 	public static Block registerBlock(ResourceLocation id, Block block) {
@@ -535,11 +534,11 @@ public class EndBlocks {
 	}
 	
 	public static Block registerBlock(String name, Block block) {
-		return registerBlock(BetterEnd.makeID(name), block);
+		return registerBlock(BetterEndForge.makeID(name), block);
 	}
 	
 	public static Block registerEndBlockOnly(String name, Block block) {
-		return getBlockRegistry().registerBlockOnly(BetterEnd.makeID(name), block);
+		return getBlockRegistry().registerBlockOnly(BetterEndForge.makeID(name), block);
 	}
 	
 	public static Item.Properties makeBlockItemSettings() {

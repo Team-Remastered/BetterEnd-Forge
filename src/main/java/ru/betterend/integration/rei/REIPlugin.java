@@ -16,7 +16,7 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Blocks;
 import ru.betterend.bclib.blocks.BaseFurnaceBlock;
 import ru.betterend.bclib.recipes.AnvilRecipe;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.basis.EndAnvilBlock;
 import ru.betterend.recipe.builders.AlloyingRecipe;
 import ru.betterend.recipe.builders.InfusionRecipe;
@@ -27,21 +27,21 @@ import java.util.stream.Collectors;
 
 //https://github.com/shedaniel/RoughlyEnoughItems/blob/6.x-1.17/default-plugin/src/main/java/me/shedaniel/rei/plugin/client/DefaultClientPlugin.java
 public class REIPlugin implements REIClientPlugin {
-	public final static ResourceLocation PLUGIN_ID = BetterEnd.makeID("rei_plugin");
+	public final static ResourceLocation PLUGIN_ID = BetterEndForge.makeID("rei_plugin");
 	public final static CategoryIdentifier<REIAlloyingFuelDisplay> ALLOYING_FUEL = CategoryIdentifier.of(
-		BetterEnd.MOD_ID,
+		BetterEndForge.MOD_ID,
 		"alloying_fuel"
 	);
 	public final static CategoryIdentifier<REIAlloyingDisplay> ALLOYING = CategoryIdentifier.of(
-		BetterEnd.MOD_ID,
+		BetterEndForge.MOD_ID,
 		AlloyingRecipe.GROUP
 	);
 	public final static CategoryIdentifier<REIAnvilDisplay> SMITHING = CategoryIdentifier.of(
-		BetterEnd.MOD_ID,
+		BetterEndForge.MOD_ID,
 		AnvilRecipe.ID.getPath()
 	);
 	public final static CategoryIdentifier<REIInfusionDisplay> INFUSION = CategoryIdentifier.of(
-		BetterEnd.MOD_ID,
+		BetterEndForge.MOD_ID,
 		InfusionRecipe.GROUP
 	);
 	

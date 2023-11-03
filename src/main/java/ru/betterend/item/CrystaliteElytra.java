@@ -10,7 +10,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.interfaces.FallFlyingItem;
 import ru.betterend.interfaces.MultiModelItem;
 import ru.betterend.registry.EndItems;
@@ -24,7 +24,7 @@ public class CrystaliteElytra extends CrystaliteArmor implements MultiModelItem,
 	
 	public CrystaliteElytra(int durability, double movementFactor) {
 		super(EquipmentSlot.CHEST, EndItems.makeEndItemSettings().durability(durability).rarity(Rarity.EPIC));
-		this.wingTexture = BetterEnd.makeID("textures/entity/elytra_crystalite.png");
+		this.wingTexture = BetterEndForge.makeID("textures/entity/elytra_crystalite.png");
 		this.movementFactor = movementFactor;
 		this.defense = (int) ((double) material.getDefenseForSlot(EquipmentSlot.CHEST) / 1.75);
 		this.toughness = material.getToughness() / 1.75F;

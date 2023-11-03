@@ -14,7 +14,7 @@ import ru.betterend.bclib.api.features.BCLCommonFeatures;
 import ru.betterend.bclib.util.WeightedList;
 import ru.betterend.bclib.world.biomes.BCLBiomeSettings;
 import ru.betterend.bclib.world.features.BCLFeature;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.registry.EndSounds;
 import ru.betterend.world.biome.EndBiome;
 import ru.betterend.world.features.terrain.caves.CaveChunkPopulatorFeature;
@@ -30,7 +30,7 @@ public class EndCaveBiome extends EndBiome {
 		@Override
 		protected void addCustomBuildData(BCLBiomeBuilder builder) {
 			BCLFeature feature = BCLCommonFeatures.makeChunkFeature(
-					BetterEnd.makeID(ID.getPath() + "_cave_populator"),
+					BetterEndForge.makeID(ID.getPath() + "_cave_populator"),
 					GenerationStep.Decoration.RAW_GENERATION,
 					new CaveChunkPopulatorFeature(() -> (EndCaveBiome) BiomeAPI.getBiome(ID))
 			);

@@ -11,7 +11,6 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MaterialColor;
 import ru.betterend.bclib.api.tag.NamedBlockTags;
 import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
@@ -36,7 +35,7 @@ import ru.betterend.bclib.recipes.AnvilRecipe;
 import ru.betterend.bclib.recipes.FurnaceRecipe;
 import ru.betterend.bclib.recipes.GridRecipe;
 import ru.betterend.bclib.recipes.SmithingTableRecipe;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.BulbVineLanternBlock;
 import ru.betterend.blocks.BulbVineLanternColoredBlock;
 import ru.betterend.blocks.ChandelierBlock;
@@ -153,7 +152,7 @@ public class MetalMaterial {
 
 		rawOre = hasOre ? EndItems.registerEndItem(name + "_raw", new ModelProviderItem(itemSettings)) : null;
 		ore = hasOre ? EndBlocks.registerBlock(name + "_ore", new BaseOreBlock(()->rawOre, 1, 3, 1)) : null;
-		alloyingOre = hasOre ? TagAPI.makeItemTag(BetterEnd.MOD_ID, name + "_alloying") : null;
+		alloyingOre = hasOre ? TagAPI.makeItemTag(BetterEndForge.MOD_ID, name + "_alloying") : null;
 		if (hasOre) {
 			TagAPI.addItemTag(alloyingOre, ore, rawOre);
 		}
@@ -210,11 +209,11 @@ public class MetalMaterial {
 		);
 
 		if (hasOre) {
-			FurnaceRecipe.make(BetterEnd.MOD_ID, name + "_ingot_furnace_ore", ore, ingot)
+			FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_ingot_furnace_ore", ore, ingot)
 						 .checkConfig(Configs.RECIPE_CONFIG)
 						 .setGroup("end_ingot")
 						 .buildWithBlasting();
-			FurnaceRecipe.make(BetterEnd.MOD_ID, name + "_ingot_furnace_raw", rawOre, ingot)
+			FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_ingot_furnace_raw", rawOre, ingot)
 						 .checkConfig(Configs.RECIPE_CONFIG)
 						 .setGroup("end_ingot")
 						 .buildWithBlasting();
@@ -226,26 +225,26 @@ public class MetalMaterial {
 		}
 
 		// Basic recipes
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_ingot_from_nuggets", ingot)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_ingot_from_nuggets", ingot)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("###", "###", "###")
 				  .addMaterial('#', nugget)
 				  .setGroup("end_metal_ingots_nug")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_nuggets_from_ingot", nugget)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_nuggets_from_ingot", nugget)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(9)
 				  .setList("#")
 				  .addMaterial('#', ingot)
 				  .setGroup("end_metal_nuggets_ing")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_block", block)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_block", block)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("###", "###", "###")
 				  .addMaterial('#', ingot)
 				  .setGroup("end_metal_blocks")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_ingot_from_block", ingot)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_ingot_from_block", ingot)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(9)
 				  .setList("#")
@@ -254,68 +253,68 @@ public class MetalMaterial {
 				  .build();
 
 		// Block recipes
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_tile", tile)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_tile", tile)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("##", "##")
 				  .addMaterial('#', block)
 				  .setGroup("end_metal_tiles")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_bars", bars)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bars", bars)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(16)
 				  .setShape("###", "###")
 				  .addMaterial('#', ingot)
 				  .setGroup("end_metal_bars")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_pressure_plate", pressurePlate)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pressure_plate", pressurePlate)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("##")
 				  .addMaterial('#', ingot)
 				  .setGroup("end_metal_plates")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_door", door)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_door", door)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(3)
 				  .setShape("##", "##", "##")
 				  .addMaterial('#', ingot)
 				  .setGroup("end_metal_doors")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_trapdoor", trapdoor)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_trapdoor", trapdoor)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("##", "##")
 				  .addMaterial('#', ingot)
 				  .setGroup("end_metal_trapdoors")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_stairs", stairs)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_stairs", stairs)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("#  ", "## ", "###")
 				  .addMaterial('#', block, tile)
 				  .setGroup("end_metal_stairs")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_slab", slab)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_slab", slab)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###")
 				  .addMaterial('#', block, tile)
 				  .setGroup("end_metal_slabs")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_chain", chain)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_chain", chain)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("N", "#", "N")
 				  .addMaterial('#', ingot)
 				  .addMaterial('N', nugget)
 				  .setGroup("end_metal_chain")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_anvil", anvilBlock)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_anvil", anvilBlock)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("###", " I ", "III")
 				  .addMaterial('#', block, tile)
 				  .addMaterial('I', ingot)
 				  .setGroup("end_metal_anvil")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_bulb_lantern", bulb_lantern)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bulb_lantern", bulb_lantern)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("C", "I", "#")
 				  .addMaterial('C', chain)
@@ -323,7 +322,7 @@ public class MetalMaterial {
 				  .addMaterial('#', EndItems.GLOWING_BULB)
 				  .build();
 
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_chandelier", chandelier)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_chandelier", chandelier)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("I#I", " # ")
 				  .addMaterial('#', ingot)
@@ -332,39 +331,39 @@ public class MetalMaterial {
 				  .build();
 
 		// Tools & armor into nuggets
-		FurnaceRecipe.make(BetterEnd.MOD_ID, name + "_axe_nugget", axe, nugget)
+		FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_axe_nugget", axe, nugget)
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .setGroup("end_nugget")
 					 .buildWithBlasting();
-		FurnaceRecipe.make(BetterEnd.MOD_ID, name + "_hoe_nugget", hoe, nugget)
+		FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_hoe_nugget", hoe, nugget)
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .setGroup("end_nugget")
 					 .buildWithBlasting();
-		FurnaceRecipe.make(BetterEnd.MOD_ID, name + "_pickaxe_nugget", pickaxe, nugget)
+		FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_pickaxe_nugget", pickaxe, nugget)
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .setGroup("end_nugget")
 					 .buildWithBlasting();
-		FurnaceRecipe.make(BetterEnd.MOD_ID, name + "_sword_nugget", sword, nugget)
+		FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_sword_nugget", sword, nugget)
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .setGroup("end_nugget")
 					 .buildWithBlasting();
-		FurnaceRecipe.make(BetterEnd.MOD_ID, name + "_hammer_nugget", hammer, nugget)
+		FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_hammer_nugget", hammer, nugget)
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .setGroup("end_nugget")
 					 .buildWithBlasting();
-		FurnaceRecipe.make(BetterEnd.MOD_ID, name + "_helmet_nugget", helmet, nugget)
+		FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_helmet_nugget", helmet, nugget)
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .setGroup("end_nugget")
 					 .buildWithBlasting();
-		FurnaceRecipe.make(BetterEnd.MOD_ID, name + "_chestplate_nugget", chestplate, nugget)
+		FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_chestplate_nugget", chestplate, nugget)
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .setGroup("end_nugget")
 					 .buildWithBlasting();
-		FurnaceRecipe.make(BetterEnd.MOD_ID, name + "_leggings_nugget", leggings, nugget)
+		FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_leggings_nugget", leggings, nugget)
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .setGroup("end_nugget")
 					 .buildWithBlasting();
-		FurnaceRecipe.make(BetterEnd.MOD_ID, name + "_boots_nugget", boots, nugget)
+		FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_boots_nugget", boots, nugget)
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .setGroup("end_nugget")
 					 .buildWithBlasting();
@@ -423,43 +422,43 @@ public class MetalMaterial {
 				   .build();
 
 		// Tools from parts
-		SmithingTableRecipe.create(BetterEnd.MOD_ID, name + "_hammer")
+		SmithingTableRecipe.create(BetterEndForge.MOD_ID, name + "_hammer")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(hammer)
 						   .setBase(block)
 						   .setAddition(Items.STICK)
 						   .build();
-		SmithingTableRecipe.create(BetterEnd.MOD_ID, name + "_axe")
+		SmithingTableRecipe.create(BetterEndForge.MOD_ID, name + "_axe")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(axe)
 						   .setBase(axeHead)
 						   .setAddition(Items.STICK)
 						   .build();
-		SmithingTableRecipe.create(BetterEnd.MOD_ID, name + "_pickaxe")
+		SmithingTableRecipe.create(BetterEndForge.MOD_ID, name + "_pickaxe")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(pickaxe)
 						   .setBase(pickaxeHead)
 						   .setAddition(Items.STICK)
 						   .build();
-		SmithingTableRecipe.create(BetterEnd.MOD_ID, name + "_hoe")
+		SmithingTableRecipe.create(BetterEndForge.MOD_ID, name + "_hoe")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(hoe)
 						   .setBase(hoeHead)
 						   .setAddition(Items.STICK)
 						   .build();
-		SmithingTableRecipe.create(BetterEnd.MOD_ID, name + "_sword_handle")
+		SmithingTableRecipe.create(BetterEndForge.MOD_ID, name + "_sword_handle")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(swordHandle)
 						   .setBase(ingot)
 						   .setAddition(Items.STICK)
 						   .build();
-		SmithingTableRecipe.create(BetterEnd.MOD_ID, name + "_sword")
+		SmithingTableRecipe.create(BetterEndForge.MOD_ID, name + "_sword")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(sword)
 						   .setBase(swordBlade)
 						   .setAddition(swordHandle)
 						   .build();
-		SmithingTableRecipe.create(BetterEnd.MOD_ID, name + "_shovel")
+		SmithingTableRecipe.create(BetterEndForge.MOD_ID, name + "_shovel")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(shovel)
 						   .setBase(shovelHead)
@@ -467,25 +466,25 @@ public class MetalMaterial {
 						   .build();
 
 		// Armor crafting
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_helmet", helmet)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_helmet", helmet)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("###", "# #")
 				  .addMaterial('#', forgedPlate)
 				  .setGroup("end_metal_helmets")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_chestplate", chestplate)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_chestplate", chestplate)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("# #", "###", "###")
 				  .addMaterial('#', forgedPlate)
 				  .setGroup("end_metal_chestplates")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_leggings", leggings)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_leggings", leggings)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("###", "# #", "# #")
 				  .addMaterial('#', forgedPlate)
 				  .setGroup("end_metal_leggings")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_boots", boots)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_boots", boots)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("# #", "# #")
 				  .addMaterial('#', forgedPlate)

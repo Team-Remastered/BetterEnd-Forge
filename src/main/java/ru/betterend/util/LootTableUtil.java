@@ -15,19 +15,19 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
 import ru.betterend.bclib.complexmaterials.WoodenComplexMaterial;
 import ru.betterend.bclib.world.biomes.BCLBiome;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.registry.EndBiomes;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;
 
 public class LootTableUtil {
 	private static final ResourceLocation END_CITY_TREASURE_ID = new ResourceLocation("chests/end_city_treasure");
-	private static final ResourceLocation COMMON = BetterEnd.makeID("chests/common");
-	private static final ResourceLocation FOGGY_MUSHROOMLAND = BetterEnd.makeID("chests/foggy_mushroomland");
-	private static final ResourceLocation CHORUS_FOREST = BetterEnd.makeID("chests/chorus_forest");
-	private static final ResourceLocation SHADOW_FOREST = BetterEnd.makeID("chests/shadow_forest");
-	private static final ResourceLocation LANTERN_WOODS = BetterEnd.makeID("chests/lantern_woods");
-	private static final ResourceLocation UMBRELLA_JUNGLE = BetterEnd.makeID("chests/umbrella_jungle");
+	private static final ResourceLocation COMMON = BetterEndForge.makeID("chests/common");
+	private static final ResourceLocation FOGGY_MUSHROOMLAND = BetterEndForge.makeID("chests/foggy_mushroomland");
+	private static final ResourceLocation CHORUS_FOREST = BetterEndForge.makeID("chests/chorus_forest");
+	private static final ResourceLocation SHADOW_FOREST = BetterEndForge.makeID("chests/shadow_forest");
+	private static final ResourceLocation LANTERN_WOODS = BetterEndForge.makeID("chests/lantern_woods");
+	private static final ResourceLocation UMBRELLA_JUNGLE = BetterEndForge.makeID("chests/umbrella_jungle");
 	
 	public static void init() {
 		LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, id, table, setter) -> {
@@ -46,7 +46,7 @@ public class LootTableUtil {
 				builder.withEntry(LootItem.lootTableItem(EndItems.MUSIC_DISC_EO_DRACONA).build());
 				table.withPool(builder);
 			}
-			else if (id.getNamespace().equals(BetterEnd.MOD_ID)) {
+			else if (id.getNamespace().equals(BetterEndForge.MOD_ID)) {
 				addCommonItems(table);
 				if (FOGGY_MUSHROOMLAND.equals(id)) {
 					FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();

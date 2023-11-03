@@ -14,7 +14,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier.Builder;
 import net.minecraft.world.level.levelgen.Heightmap.Types;
 import ru.betterend.bclib.api.spawning.SpawnRuleBuilder;
 import ru.betterend.bclib.util.ColorUtil;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.config.Configs;
 import ru.betterend.entity.CubozoaEntity;
 import ru.betterend.entity.DragonflyEntity;
@@ -113,7 +113,7 @@ public class EndEntities {
 	}
 	
 	protected static <T extends Entity> EntityType<T> register(String name, MobCategory group, float width, float height, EntityFactory<T> entity) {
-		ResourceLocation id = BetterEnd.makeID(name);
+		ResourceLocation id = BetterEndForge.makeID(name);
 		EntityType<T> type = FabricEntityTypeBuilder
 			.<T>create(group, entity)
 			.dimensions(EntityDimensions.fixed(width, height))
@@ -125,7 +125,7 @@ public class EndEntities {
 	}
 	
 	private static <T extends Mob> EntityType<T> register(String name, MobCategory group, float width, float height, EntityFactory<T> entity, Builder attributes, boolean fixedSize, int eggColor, int dotsColor) {
-		ResourceLocation id = BetterEnd.makeID(name);
+		ResourceLocation id = BetterEndForge.makeID(name);
 		EntityType<T> type = FabricEntityTypeBuilder
 			.<T>create(group, entity)
 			.dimensions(fixedSize ? EntityDimensions.fixed(width, height) : EntityDimensions.scalable(width, height))
@@ -133,7 +133,7 @@ public class EndEntities {
 		if (Configs.ENTITY_CONFIG.getBooleanRoot(id.getPath(), true)) {
 			FabricDefaultAttributeRegistry.register(type, attributes);
 			EndItems.registerEndEgg("spawn_egg_" + name, type, eggColor, dotsColor);
-			return Registry.register(Registry.ENTITY_TYPE, BetterEnd.makeID(name), type);
+			return Registry.register(Registry.ENTITY_TYPE, BetterEndForge.makeID(name), type);
 		}
 		return type;
 	}

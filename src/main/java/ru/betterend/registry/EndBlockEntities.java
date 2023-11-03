@@ -5,7 +5,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.EndStoneSmelter;
 import ru.betterend.blocks.basis.PedestalBlock;
 import ru.betterend.blocks.entities.BlockEntityHydrothermalVent;
@@ -37,7 +37,7 @@ public class EndBlockEntities {
 	);
 	
 	public static <T extends BlockEntity> BlockEntityType<T> registerBlockEntity(String id, FabricBlockEntityTypeBuilder<T> builder) {
-		return Registry.register(Registry.BLOCK_ENTITY_TYPE, BetterEnd.makeID(id), builder.build(null));
+		return Registry.register(Registry.BLOCK_ENTITY_TYPE, BetterEndForge.makeID(id), builder.build(null));
 		
 		//return Registry.register(Registry.BLOCK_ENTITY_TYPE, BetterEnd.makeID(id), builder.build(null));
 	}

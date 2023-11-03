@@ -9,7 +9,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.Tiers;
@@ -21,7 +20,7 @@ import ru.betterend.bclib.items.tool.BaseHoeItem;
 import ru.betterend.bclib.items.tool.BaseShovelItem;
 import ru.betterend.bclib.items.tool.BaseSwordItem;
 import ru.betterend.bclib.registry.ItemRegistry;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.config.Configs;
 import ru.betterend.item.ArmoredElytra;
 import ru.betterend.item.CrystaliteBoots;
@@ -148,45 +147,45 @@ public class EndItems {
 	public final static Item UMBRELLA_CLUSTER_JUICE = registerEndDrink("umbrella_cluster_juice", 5, 0.7F);
 	
 	public static List<Item> getModItems() {
-		return REGISTRY.getModItems(BetterEnd.MOD_ID);
+		return REGISTRY.getModItems(BetterEndForge.MOD_ID);
 	}
 	
 	public static Item registerEndDisc(String name, int power, SoundEvent sound) {
-		return getItemRegistry().registerDisc(BetterEnd.makeID(name), power, sound);
+		return getItemRegistry().registerDisc(BetterEndForge.makeID(name), power, sound);
 	}
 	
 	public static Item registerEndItem(String name) {
-		return getItemRegistry().register(BetterEnd.makeID(name));
+		return getItemRegistry().register(BetterEndForge.makeID(name));
 	}
 	
 	public static Item registerEndItem(String name, Item item) {
 		if (item instanceof EndArmorItem) {
-			return getItemRegistry().register(BetterEnd.makeID(name), item, "armour");
+			return getItemRegistry().register(BetterEndForge.makeID(name), item, "armour");
 		}
-		return getItemRegistry().register(BetterEnd.makeID(name), item);
+		return getItemRegistry().register(BetterEndForge.makeID(name), item);
 	}
 	
 	public static TieredItem registerEndTool(String name, TieredItem item) {
 		if (!Configs.ITEM_CONFIG.getBoolean("tools", name, true)) {
 			return item;
 		}
-		return (TieredItem)getItemRegistry().registerTool(BetterEnd.makeID(name), item);
+		return (TieredItem)getItemRegistry().registerTool(BetterEndForge.makeID(name), item);
 	}
 	
 	public static Item registerEndEgg(String name, EntityType<? extends Mob> type, int background, int dots) {
-		return getItemRegistry().registerEgg(BetterEnd.makeID(name), type, background, dots);
+		return getItemRegistry().registerEgg(BetterEndForge.makeID(name), type, background, dots);
 	}
 	
 	public static Item registerEndFood(String name, int hunger, float saturation, MobEffectInstance... effects) {
-		return getItemRegistry().registerFood(BetterEnd.makeID(name), hunger, saturation, effects);
+		return getItemRegistry().registerFood(BetterEndForge.makeID(name), hunger, saturation, effects);
 	}
 	
 	public static Item registerEndFood(String name, FoodProperties foodComponent) {
-		return getItemRegistry().registerFood(BetterEnd.makeID(name), foodComponent);
+		return getItemRegistry().registerFood(BetterEndForge.makeID(name), foodComponent);
 	}
 	
 	public static Item registerEndDrink(String name, int hunger, float saturation) {
-		return getItemRegistry().registerDrink(BetterEnd.makeID(name), hunger, saturation);
+		return getItemRegistry().registerDrink(BetterEndForge.makeID(name), hunger, saturation);
 	}
 	
 	public static Item.Properties makeEndItemSettings() {

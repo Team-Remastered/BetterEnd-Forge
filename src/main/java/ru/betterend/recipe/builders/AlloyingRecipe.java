@@ -22,15 +22,15 @@ import ru.betterend.bclib.interfaces.UnknownReceipBookCategory;
 import ru.betterend.bclib.recipes.BCLRecipeManager;
 import ru.betterend.bclib.util.ItemUtil;
 import ru.betterend.bclib.util.RecipeHelper;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.config.Configs;
 import ru.betterend.registry.EndBlocks;
 
 public class AlloyingRecipe implements Recipe<Container>, UnknownReceipBookCategory {
 	public final static String GROUP = "alloying";
-	public final static RecipeType<AlloyingRecipe> TYPE = BCLRecipeManager.registerType(BetterEnd.MOD_ID, GROUP);
+	public final static RecipeType<AlloyingRecipe> TYPE = BCLRecipeManager.registerType(BetterEndForge.MOD_ID, GROUP);
 	public final static Serializer SERIALIZER = BCLRecipeManager.registerSerializer(
-		BetterEnd.MOD_ID,
+		BetterEndForge.MOD_ID,
 		GROUP,
 		new Serializer()
 	);
@@ -137,7 +137,7 @@ public class AlloyingRecipe implements Recipe<Container>, UnknownReceipBookCateg
 		}
 		
 		public static Builder create(String id) {
-			return create(BetterEnd.makeID(id));
+			return create(BetterEndForge.makeID(id));
 		}
 		
 		private ResourceLocation id;
@@ -214,29 +214,29 @@ public class AlloyingRecipe implements Recipe<Container>, UnknownReceipBookCateg
 		public void build() {
 			if (exist) {
 				if (primaryInput == null) {
-					BetterEnd.LOGGER.warning(
+					BetterEndForge.LOGGER.warning(
 						"Primary input for Alloying recipe can't be 'null', recipe {} will be ignored!",
 						id
 					);
 					return;
 				}
 				if (secondaryInput == null) {
-					BetterEnd.LOGGER.warning(
+					BetterEndForge.LOGGER.warning(
 						"Secondary input for Alloying can't be 'null', recipe {} will be ignored!",
 						id
 					);
 					return;
 				}
 				if (output == null) {
-					BetterEnd.LOGGER.warning("Output for Alloying can't be 'null', recipe {} will be ignored!", id);
+					BetterEndForge.LOGGER.warning("Output for Alloying can't be 'null', recipe {} will be ignored!", id);
 					return;
 				}
 				if (BCLRecipeManager.getRecipe(TYPE, id) != null) {
-					BetterEnd.LOGGER.warning("Can't add Alloying recipe! Id {} already exists!", id);
+					BetterEndForge.LOGGER.warning("Can't add Alloying recipe! Id {} already exists!", id);
 					return;
 				}
 				if (!alright) {
-					BetterEnd.LOGGER.debug("Can't add Alloying recipe {}! Ingeredient or output not exists.", id);
+					BetterEndForge.LOGGER.debug("Can't add Alloying recipe {}! Ingeredient or output not exists.", id);
 					return;
 				}
 				BCLRecipeManager.addRecipe(

@@ -18,16 +18,16 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
 import ru.betterend.bclib.util.BackgroundInfo;
 import ru.betterend.bclib.util.MHelper;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 
 import java.util.Random;
 
 public class BetterEndSkyRenderer implements DimensionRenderingRegistry.SkyRenderer {
-	private static final ResourceLocation NEBULA_1 = BetterEnd.makeID("textures/sky/nebula_2.png");
-	private static final ResourceLocation NEBULA_2 = BetterEnd.makeID("textures/sky/nebula_3.png");
-	private static final ResourceLocation HORIZON = BetterEnd.makeID("textures/sky/nebula_1.png");
-	private static final ResourceLocation STARS = BetterEnd.makeID("textures/sky/stars.png");
-	private static final ResourceLocation FOG = BetterEnd.makeID("textures/sky/fog.png");
+	private static final ResourceLocation NEBULA_1 = BetterEndForge.makeID("textures/sky/nebula_2.png");
+	private static final ResourceLocation NEBULA_2 = BetterEndForge.makeID("textures/sky/nebula_3.png");
+	private static final ResourceLocation HORIZON = BetterEndForge.makeID("textures/sky/nebula_1.png");
+	private static final ResourceLocation STARS = BetterEndForge.makeID("textures/sky/stars.png");
+	private static final ResourceLocation FOG = BetterEndForge.makeID("textures/sky/fog.png");
 	
 	private VertexBuffer nebula1;
 	private VertexBuffer nebula2;

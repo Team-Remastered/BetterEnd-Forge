@@ -4,7 +4,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import ru.betterend.bclib.api.features.BCLCommonFeatures;
 import ru.betterend.bclib.world.features.BCLFeature;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.integration.Integrations;
 import ru.betterend.integration.byg.BYGBlocks;
 import ru.betterend.world.features.SinglePlantFeature;
@@ -60,6 +60,6 @@ public class BYGFeatures {
 	}
 	
 	private static BCLFeature redisterVegetation(String name, Feature<NoneFeatureConfiguration> feature, int density) {
-		return BCLCommonFeatures.makeVegetationFeature(BetterEnd.makeID(name), feature, density);
+		return BCLCommonFeatures.makeVegetationFeature(BetterEndForge.makeID(name), feature, density);
 	}
 }

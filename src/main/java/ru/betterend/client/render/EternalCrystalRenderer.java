@@ -16,7 +16,7 @@ import net.minecraft.core.Vec3i;
 import net.minecraft.util.Mth;
 import ru.betterend.bclib.util.ColorUtil;
 import ru.betterend.bclib.util.MHelper;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.AuroraCrystalBlock;
 
 // TODO make crystals bright
@@ -117,7 +117,7 @@ public class EternalCrystalRenderer {
 	}
 	
 	static {
-		RENDER_LAYER = RenderType.itemEntityTranslucentCull(BetterEnd.makeID("textures/entity/eternal_crystal.png"));
+		RENDER_LAYER = RenderType.itemEntityTranslucentCull(BetterEndForge.makeID("textures/entity/eternal_crystal.png"));
 		SHARDS = new ModelPart[4];
 		
 		ModelPart root = getTexturedModelData().bakeRoot();

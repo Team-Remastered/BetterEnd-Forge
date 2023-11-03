@@ -48,7 +48,7 @@ import ru.betterend.bclib.interfaces.PostInitable;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
 import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.bclib.util.JsonFactory;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.basis.PottableLeavesBlock;
 import ru.betterend.client.models.Patterns;
 import ru.betterend.config.Configs;
@@ -128,7 +128,7 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 		
 		JsonObject obj = JsonFactory.getJsonObject(new File(
 			FabricLoader.getInstance().getConfigDir().toFile(),
-			BetterEnd.MOD_ID + "/blocks.json"
+			BetterEndForge.MOD_ID + "/blocks.json"
 		));
 		if (obj.get("flower_pots") != null) {
 			JsonElement plantsObj = obj.get("flower_pots").getAsJsonObject().get("plants");
@@ -361,7 +361,7 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 				}
 				
 				if (list == null) {
-					BetterEnd.LOGGER.warning("Incorrect json for pot plant " + objSource + ", no matching variants");
+					BetterEndForge.LOGGER.warning("Incorrect json for pot plant " + objSource + ", no matching variants");
 					continue;
 				}
 				
@@ -373,7 +373,7 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 				}
 				
 				if (path == null) {
-					BetterEnd.LOGGER.warning("Incorrect json for pot plant " + objSource + ", no matching variants");
+					BetterEndForge.LOGGER.warning("Incorrect json for pot plant " + objSource + ", no matching variants");
 					continue;
 				}
 				
@@ -403,7 +403,7 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 				continue;
 			}
 			
-			ResourceLocation soilLoc = BetterEnd.makeID("flower_pot_soil_" + i);
+			ResourceLocation soilLoc = BetterEndForge.makeID("flower_pot_soil_" + i);
 			if (!modelCache.containsKey(soilLoc)) {
 				String texture = Registry.BLOCK.getKey(soils[i]).getPath() + "_top";
 				if (texture.contains("rutiscus")) {

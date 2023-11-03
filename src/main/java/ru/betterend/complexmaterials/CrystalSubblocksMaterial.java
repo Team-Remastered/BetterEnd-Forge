@@ -9,7 +9,7 @@ import ru.betterend.bclib.blocks.BaseSlabBlock;
 import ru.betterend.bclib.blocks.BaseStairsBlock;
 import ru.betterend.bclib.blocks.BaseWallBlock;
 import ru.betterend.bclib.recipes.GridRecipe;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.EndPedestal;
 import ru.betterend.blocks.basis.LitBaseBlock;
 import ru.betterend.blocks.basis.LitPillarBlock;
@@ -45,56 +45,56 @@ public class CrystalSubblocksMaterial {
 		brick_wall = EndBlocks.registerBlock(name + "_bricks_wall", new BaseWallBlock(bricks));
 		
 		// Recipes //
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_bricks", bricks)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks", bricks)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("##", "##")
 				  .addMaterial('#', source)
 				  .setGroup("end_bricks")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_polished", polished)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_polished", polished)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("##", "##")
 				  .addMaterial('#', bricks)
 				  .setGroup("end_tile")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_tiles", tiles)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_tiles", tiles)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("##", "##")
 				  .addMaterial('#', polished)
 				  .setGroup("end_small_tile")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_pillar", pillar)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pillar", pillar)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("#", "#")
 				  .addMaterial('#', slab)
 				  .setGroup("end_pillar")
 				  .build();
 		
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_stairs", stairs)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_stairs", stairs)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("#  ", "## ", "###")
 				  .addMaterial('#', source)
 				  .setGroup("end_stone_stairs")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_slab", slab)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_slab", slab)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###")
 				  .addMaterial('#', source)
 				  .setGroup("end_stone_slabs")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_bricks_stairs", brick_stairs)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_stairs", brick_stairs)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("#  ", "## ", "###")
 				  .addMaterial('#', bricks)
 				  .setGroup("end_stone_stairs")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_bricks_slab", brick_slab)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_slab", brick_slab)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###")
@@ -102,14 +102,14 @@ public class CrystalSubblocksMaterial {
 				  .setGroup("end_stone_slabs")
 				  .build();
 		
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_wall", wall)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_wall", wall)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###", "###")
 				  .addMaterial('#', source)
 				  .setGroup("end_wall")
 				  .build();
-		GridRecipe.make(BetterEnd.MOD_ID, name + "_bricks_wall", brick_wall)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_wall", brick_wall)
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###", "###")

@@ -3,7 +3,7 @@ package ru.betterend.registry;
 import net.minecraft.core.Registry;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.item.EndAttribute;
 
 public class EndAttributes {
@@ -12,7 +12,7 @@ public class EndAttributes {
 	public static Attribute registerAttribute(String name, double value, boolean syncable) {
 		return Registry.register(
 			Registry.ATTRIBUTE,
-			BetterEnd.makeID(name),
+			BetterEndForge.makeID(name),
 			new EndAttribute("attribute.name." + name, value).setSyncable(syncable)
 		);
 	}

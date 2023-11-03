@@ -8,7 +8,7 @@ import net.minecraft.world.level.levelgen.GenerationStep.Decoration;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceType;
 import ru.betterend.bclib.api.tag.TagAPI;
 import ru.betterend.bclib.world.structures.BCLStructureFeature;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.world.structures.features.EternalPortalStructure;
 import ru.betterend.world.structures.features.GiantIceStarStructure;
 import ru.betterend.world.structures.features.GiantMossyGlowshroomStructure;
@@ -32,49 +32,49 @@ public class EndStructures {
 	public static final StructurePieceType NBT_PIECE = register("nbt_piece", NBTPiece::new);
 	
 	public static final BCLStructureFeature GIANT_MOSSY_GLOWSHROOM = new BCLStructureFeature(
-		BetterEnd.makeID("giant_mossy_glowshroom"),
+		BetterEndForge.makeID("giant_mossy_glowshroom"),
 		new GiantMossyGlowshroomStructure(),
 		Decoration.SURFACE_STRUCTURES,
 		16,
 		8
 	);
 	public static final BCLStructureFeature MEGALAKE = new BCLStructureFeature(
-		BetterEnd.makeID("megalake"),
+		BetterEndForge.makeID("megalake"),
 		new MegaLakeStructure(),
 		Decoration.RAW_GENERATION,
 		4,
 		1
 	);
 	public static final BCLStructureFeature MEGALAKE_SMALL = new BCLStructureFeature(
-		BetterEnd.makeID("megalake_small"),
+		BetterEndForge.makeID("megalake_small"),
 		new MegaLakeSmallStructure(),
 		Decoration.RAW_GENERATION,
 		4,
 		1
 	);
 	public static final BCLStructureFeature MOUNTAIN = new BCLStructureFeature(
-		BetterEnd.makeID("mountain"),
+		BetterEndForge.makeID("mountain"),
 		new MountainStructure(),
 		Decoration.RAW_GENERATION,
 		3,
 		2
 	);
 	public static final BCLStructureFeature PAINTED_MOUNTAIN = new BCLStructureFeature(
-		BetterEnd.makeID("painted_mountain"),
+		BetterEndForge.makeID("painted_mountain"),
 		new PaintedMountainStructure(),
 		Decoration.RAW_GENERATION,
 		3,
 		2
 	);
 	public static final BCLStructureFeature ETERNAL_PORTAL = new BCLStructureFeature(
-		BetterEnd.makeID("eternal_portal"),
+		BetterEndForge.makeID("eternal_portal"),
 		new EternalPortalStructure(),
 		Decoration.SURFACE_STRUCTURES,
 		16,
 		6
 	);
 	public static final BCLStructureFeature GIANT_ICE_STAR = new BCLStructureFeature(
-		BetterEnd.makeID("giant_ice_star"),
+		BetterEndForge.makeID("giant_ice_star"),
 		new GiantIceStarStructure(),
 		Decoration.SURFACE_STRUCTURES,
 		16,
@@ -84,7 +84,7 @@ public class EndStructures {
 	public static void register() {}
 	
 	private static StructurePieceType register(String id, StructurePieceType pieceType) {
-		return Registry.register(Registry.STRUCTURE_PIECE, BetterEnd.makeID(id), pieceType);
+		return Registry.register(Registry.STRUCTURE_PIECE, BetterEndForge.makeID(id), pieceType);
 	}
 	
 	public static void addBiomeStructures(ResourceLocation biomeID, Holder<Biome> biome) {

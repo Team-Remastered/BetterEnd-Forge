@@ -14,13 +14,13 @@ import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilde
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import ru.betterend.bclib.util.StructureHelper;
 import ru.betterend.bclib.world.structures.BCLStructureFeature;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.world.structures.piece.NBTPiece;
 
 import java.util.Random;
 
 public class EternalPortalStructure extends FeatureBaseStructure {
-	private static final ResourceLocation STRUCTURE_ID = BetterEnd.makeID("portal/eternal_portal");
+	private static final ResourceLocation STRUCTURE_ID = BetterEndForge.makeID("portal/eternal_portal");
 	private static final StructureTemplate STRUCTURE = StructureHelper.readStructure(STRUCTURE_ID);
 
 	public EternalPortalStructure() {

@@ -28,7 +28,7 @@ import ru.betterend.bclib.world.features.BCLFeature;
 import ru.betterend.bclib.world.features.DefaultFeature;
 import ru.betterend.bclib.world.features.ListFeature.StructureInfo;
 import ru.betterend.bclib.world.features.NBTStructureFeature.TerrainMerge;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.complexmaterials.StoneMaterial;
 import ru.betterend.config.Configs;
 import ru.betterend.world.biome.cave.EndCaveBiome;
@@ -207,7 +207,7 @@ public class EndFeatures {
 	public static final BCLFeature CHARNIA_GREEN = redisterVegetation("charnia_green", new CharniaFeature(EndBlocks.CHARNIA_GREEN), 10);
 	public static final BCLFeature MENGER_SPONGE = redisterVegetation("menger_sponge", new MengerSpongeFeature(5), 1);
 	public static final BCLFeature CHARNIA_RED_RARE = redisterVegetation("charnia_red_rare", new CharniaFeature(EndBlocks.CHARNIA_RED),2);
-	public static final BCLFeature BIOME_ISLAND = BCLFeatureBuilder.start(BetterEnd.makeID("overworld_island"), new BiomeIslandFeature()).decoration(Decoration.RAW_GENERATION).build();
+	public static final BCLFeature BIOME_ISLAND = BCLFeatureBuilder.start(BetterEndForge.makeID("overworld_island"), new BiomeIslandFeature()).decoration(Decoration.RAW_GENERATION).build();
 	public static final BCLFeature FLAMAEA = redisterVegetation("flamaea", new SinglePlantFeature(EndBlocks.FLAMAEA, 12, false, 5), 20);
 	
 	// Terrain //
@@ -220,7 +220,7 @@ public class EndFeatures {
 	public static final BCLFeature FLOATING_SPIRE = registerRawGen("floating_spire", new FloatingSpireFeature(), 8);
 	public static final BCLFeature GEYSER = registerRawGen("geyser", new GeyserFeature(), 8);
 	public static final BCLFeature SULPHURIC_LAKE = registerLake("sulphuric_lake", new SulphuricLakeFeature(), 8);
-	public static final BCLFeature SULPHURIC_CAVE = BCLCommonFeatures.makeCountFeature(BetterEnd.makeID("sulphuric_cave"), Decoration.RAW_GENERATION, new SulphuricCaveFeature(), 2);
+	public static final BCLFeature SULPHURIC_CAVE = BCLCommonFeatures.makeCountFeature(BetterEndForge.makeID("sulphuric_cave"), Decoration.RAW_GENERATION, new SulphuricCaveFeature(), 2);
 	public static final BCLFeature ICE_STAR = registerRawGen("ice_star", new IceStarFeature(5, 15, 10, 25), 15);
 	public static final BCLFeature ICE_STAR_SMALL = registerRawGen("ice_star_small", new IceStarFeature(3, 5, 7, 12), 8);
 	public static final BCLFeature SURFACE_VENT = registerChanced("surface_vent", new SurfaceVentFeature(), 4);
@@ -228,7 +228,7 @@ public class EndFeatures {
 	public static final BCLFeature OBSIDIAN_PILLAR_BASEMENT = registerChanced("obsidian_pillar_basement", new ObsidianPillarBasementFeature(), 8);
 	public static final BCLFeature OBSIDIAN_BOULDER = registerChanced("obsidian_boulder", new ObsidianBoulderFeature(), 10);
 	public static final BCLFeature FALLEN_PILLAR = registerChanced("fallen_pillar", new FallenPillarFeature(), 20);
-	public static final BCLFeature TUNEL_CAVE = BCLCommonFeatures.makeChunkFeature(BetterEnd.makeID("tunel_cave"), Decoration.RAW_GENERATION, new TunelCaveFeature());
+	public static final BCLFeature TUNEL_CAVE = BCLCommonFeatures.makeChunkFeature(BetterEndForge.makeID("tunel_cave"), Decoration.RAW_GENERATION, new TunelCaveFeature());
 	public static final BCLFeature UMBRALITH_ARCH = registerChanced("umbralith_arch", new ArchFeature(
 		EndBlocks.UMBRALITH.stone,
 		pos -> UmbraValleyBiome.getSurface(pos.getX(), pos.getZ()).defaultBlockState()
@@ -281,30 +281,30 @@ public class EndFeatures {
 	public static final DefaultFeature CAVE_PUMPKIN = new CavePumpkinFeature();
 	
 	private static BCLFeature redisterVegetation(String name, Feature<NoneFeatureConfiguration> feature, int density) {
-		ResourceLocation id = BetterEnd.makeID(name);
+		ResourceLocation id = BetterEndForge.makeID(name);
 		return BCLFeatureBuilder.start(id, feature).countLayersMax(density).onlyInBiome().build();
 	}
 	
 	private static BCLFeature registerRawGen(String name, Feature<NoneFeatureConfiguration> feature, int chance) {
-		return BCLCommonFeatures.makeChancedFeature(BetterEnd.makeID(name), Decoration.RAW_GENERATION, feature, chance);
+		return BCLCommonFeatures.makeChancedFeature(BetterEndForge.makeID(name), Decoration.RAW_GENERATION, feature, chance);
 	}
 	
 	private static BCLFeature registerLake(String name, Feature<NoneFeatureConfiguration> feature, int chance) {
-		return BCLCommonFeatures.makeChancedFeature(BetterEnd.makeID(name), Decoration.LAKES, feature, chance);
+		return BCLCommonFeatures.makeChancedFeature(BetterEndForge.makeID(name), Decoration.LAKES, feature, chance);
 	}
 	
 	private static BCLFeature registerChanced(String name, Feature<NoneFeatureConfiguration> feature, int chance) {
-		return BCLCommonFeatures.makeChancedFeature(BetterEnd.makeID(name), Decoration.SURFACE_STRUCTURES, feature, chance);
+		return BCLCommonFeatures.makeChancedFeature(BetterEndForge.makeID(name), Decoration.SURFACE_STRUCTURES, feature, chance);
 	}
 	
 	private static BCLFeature registerOre(String name, Block blockOre, int veins, int veinSize) {
-		return BCLCommonFeatures.makeOreFeature(BetterEnd.makeID(name), blockOre, Blocks.END_STONE, veins, veinSize, 0, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(128)), false);
+		return BCLCommonFeatures.makeOreFeature(BetterEndForge.makeID(name), blockOre, Blocks.END_STONE, veins, veinSize, 0, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(128)), false);
 	}
 	
 	private static BCLFeature registerLayer(String name, Block block, float radius, int minY, int maxY, int count) {
 		OreLayerFeature layer = new OreLayerFeature(block.defaultBlockState(), radius, minY, maxY);
 		return BCLFeatureBuilder
-				.start(BetterEnd.makeID(name), layer)
+				.start(BetterEndForge.makeID(name), layer)
 				.decoration( GenerationStep.Decoration.UNDERGROUND_ORES)
 				.modifier(CountPlacement.of(count))
 				.build();
@@ -326,7 +326,7 @@ public class EndFeatures {
 			BiomeAPI.addBiomeFeature(biome, feature);
 		}
 		
-		if (id.getNamespace().equals(BetterEnd.MOD_ID)) {
+		if (id.getNamespace().equals(BetterEndForge.MOD_ID)) {
 			return;
 		}
 		

@@ -7,7 +7,7 @@ import net.minecraft.world.item.Items;
 import ru.betterend.bclib.api.ModIntegrationAPI;
 import ru.betterend.bclib.integration.ModIntegration;
 import ru.betterend.bclib.recipes.GridRecipe;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.config.Configs;
 import ru.betterend.events.PlayerAdvancementsCallback;
 import ru.betterend.integration.byg.BYGIntegration;
@@ -32,7 +32,7 @@ public class Integrations {
 				}
 			});
 			
-			GridRecipe.make(BetterEnd.MOD_ID, "guide_book", GuideBookItem.GUIDE_BOOK)
+			GridRecipe.make(BetterEndForge.MOD_ID, "guide_book", GuideBookItem.GUIDE_BOOK)
 					  .checkConfig(Configs.RECIPE_CONFIG)
 					  .setShape("D", "B", "C")
 					  .addMaterial('D', EndItems.ENDER_DUST)

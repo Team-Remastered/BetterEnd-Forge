@@ -19,7 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import org.anti_ad.mc.ipn.api.IPNIgnore;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.EndStoneSmelter;
 import ru.betterend.blocks.entities.EndStoneSmelterBlockEntity;
 import ru.betterend.client.gui.slot.SmelterFuelSlot;
@@ -30,7 +30,7 @@ import ru.betterend.recipe.builders.AlloyingRecipe;
 public class EndStoneSmelterScreenHandler extends RecipeBookMenu<Container> {
 	
 	public final static MenuType<EndStoneSmelterScreenHandler> HANDLER_TYPE = ScreenHandlerRegistry.registerSimple(
-		BetterEnd.makeID(EndStoneSmelter.ID),
+		BetterEndForge.makeID(EndStoneSmelter.ID),
 		EndStoneSmelterScreenHandler::new
 	);
 	

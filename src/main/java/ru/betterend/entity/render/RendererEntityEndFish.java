@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.layers.EyesLayer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.entity.EndFishEntity;
 import ru.betterend.entity.model.EndFishEntityModel;
 import ru.betterend.registry.EndEntitiesRenders;
@@ -56,8 +56,8 @@ public class RendererEntityEndFish extends MobRenderer<EndFishEntity, EndFishEnt
 	
 	static {
 		for (int i = 0; i < EndFishEntity.VARIANTS; i++) {
-			TEXTURE[i] = BetterEnd.makeID("textures/entity/end_fish/end_fish_" + i + ".png");
-			GLOW[i] = RenderType.eyes(BetterEnd.makeID("textures/entity/end_fish/end_fish_" + i + "_glow.png"));
+			TEXTURE[i] = BetterEndForge.makeID("textures/entity/end_fish/end_fish_" + i + ".png");
+			GLOW[i] = RenderType.eyes(BetterEndForge.makeID("textures/entity/end_fish/end_fish_" + i + "_glow.png"));
 		}
 	}
 }

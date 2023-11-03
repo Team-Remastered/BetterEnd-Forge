@@ -25,7 +25,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.interfaces.BETargetChecker;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.world.generator.GeneratorOptions;
@@ -101,7 +101,7 @@ public abstract class ServerLevelMixin extends Level {
 	private BlockState be_modifyTickState(BlockPos pos, BlockState state) {
 		if (state.is(Blocks.ICE)) {
 			ResourceLocation biome = BiomeAPI.getBiomeID(getBiome(pos));
-			if (biome.getNamespace().equals(BetterEnd.MOD_ID)) {
+			if (biome.getNamespace().equals(BetterEndForge.MOD_ID)) {
 				state = EndBlocks.EMERALD_ICE.defaultBlockState();
 			}
 		}

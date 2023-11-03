@@ -35,7 +35,7 @@ import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.EndStoneSmelter;
 import ru.betterend.client.gui.EndStoneSmelterScreenHandler;
 import ru.betterend.recipe.builders.AlloyingRecipe;
@@ -225,7 +225,7 @@ public class EndStoneSmelterBlockEntity extends BaseContainerBlockEntity impleme
 	
 	@Override
 	protected Component getDefaultName() {
-		return new TranslatableComponent(String.format("block.%s.%s", BetterEnd.MOD_ID, EndStoneSmelter.ID));
+		return new TranslatableComponent(String.format("block.%s.%s", BetterEndForge.MOD_ID, EndStoneSmelter.ID));
 	}
 	
 	@Override

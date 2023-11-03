@@ -5,7 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
-import ru.betterend.BetterEnd;
+import ru.betterend.BetterEndForge;
 import ru.betterend.world.generator.GeneratorOptions;
 
 @Mixin(ModelBakery.class)
@@ -14,7 +14,7 @@ public abstract class ModelLoaderMixin {
 	public ResourceLocation be_switchModel(ResourceLocation id) {
 		if (GeneratorOptions.changeChorusPlant() && be_changeModel(id)) {
 			String path = id.getPath().replace("chorus", "custom_chorus");
-			id = BetterEnd.makeID(path);
+			id = BetterEndForge.makeID(path);
 		}
 		return id;
 	}
