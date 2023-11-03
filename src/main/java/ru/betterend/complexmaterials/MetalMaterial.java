@@ -25,7 +25,7 @@ import ru.betterend.bclib.blocks.BaseOreBlock;
 import ru.betterend.bclib.blocks.BaseSlabBlock;
 import ru.betterend.bclib.blocks.BaseStairsBlock;
 import ru.betterend.bclib.blocks.BaseTrapdoorBlock;
-import ru.betterend.bclib.blocks.BlockHelper;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.bclib.blocks.WoodenPressurePlateBlock;
 import ru.betterend.bclib.items.ModelProviderItem;
 import ru.betterend.bclib.items.tool.BaseAxeItem;
@@ -147,7 +147,7 @@ public class MetalMaterial {
 		BlockBehaviour.Properties lanternProperties = BlockBehaviour.Properties.copy(settings)
 																		 .destroyTime(1)
 																		 .explosionResistance(1)
-																		 .lightLevel(BlockHelper.getLightValue(15))
+																		 .lightLevel(BlocksHelper.getLightValue(15))
 																		 .sound(SoundType.LANTERN);
 		final int level = material.getLevel();
 

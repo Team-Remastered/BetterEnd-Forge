@@ -14,6 +14,7 @@ import ru.betterend.bclib.interfaces.RenderLayerProvider;
 import ru.betterend.bclib.interfaces.TagProvider;
 import ru.betterend.bclib.interfaces.tools.AddMineableHoe;
 import ru.betterend.bclib.interfaces.tools.AddMineableShears;
+import ru.betterend.bclib.util.BlocksHelper;
 
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class SimpleLeavesBlock extends BaseBlockNotFull implements RenderLayerPr
 		this(
 			BlockBehaviour.Properties
 				.of(Material.LEAVES)
-				.lightLevel(BlockHelper.getLightValue(light))
+				.lightLevel(BlocksHelper.getLightValue(light))
 				.color(color)
 				.strength(0.2F)
 				.sound(SoundType.GRASS)

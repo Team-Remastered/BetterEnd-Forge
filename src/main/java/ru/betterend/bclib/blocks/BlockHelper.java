@@ -5,12 +5,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.function.ToIntFunction;
 
-public class BlockHelper {
-
-    public static ToIntFunction<BlockState> getLightValue(int pLightValue) {
-        return (state) -> {
-            return pLightValue;
-        };
-    }
+public class BlocksHelper {
+    
 
 }

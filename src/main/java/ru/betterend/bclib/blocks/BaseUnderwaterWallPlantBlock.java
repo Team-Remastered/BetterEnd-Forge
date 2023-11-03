@@ -12,7 +12,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.Material;
-
+import ru.betterend.bclib.util.BlocksHelper;
 public abstract class BaseUnderwaterWallPlantBlock extends BaseWallPlantBlock implements LiquidBlockContainer {
 	public BaseUnderwaterWallPlantBlock() {
 		this(
@@ -27,12 +27,11 @@ public abstract class BaseUnderwaterWallPlantBlock extends BaseWallPlantBlock im
 		this(
 			BlockBehaviour.Properties
 				.of(Material.WATER_PLANT)
-				.lightLevel(BlockHelper.getLightValue(light))
+				.lightLevel(BlocksHelper.getLightValue(light))
 				.sound(SoundType.WET_GRASS)
 				.noCollission()
 		);
 	}
-	
 	public BaseUnderwaterWallPlantBlock(Properties settings) {
 		super(settings);
 	}

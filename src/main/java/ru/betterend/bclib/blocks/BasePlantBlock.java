@@ -36,6 +36,7 @@ import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.LootProvider;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
 import ru.betterend.bclib.items.tool.BaseShearsItem;
+import ru.betterend.bclib.util.BlocksHelper;
 
 import java.util.List;
 import java.util.Optional;
@@ -65,7 +66,7 @@ public abstract class BasePlantBlock extends BaseBlockNotFull implements RenderL
 		this(
 			BlockBehaviour.Properties
 				.of(replaceable ? Material.REPLACEABLE_PLANT : Material.PLANT)
-				.lightLevel(BlockHelper.getLightValue(light))
+				.lightLevel(BlocksHelper.getLightValue(light))
 				.sound(SoundType.GRASS)
 				.noCollission()
 		);

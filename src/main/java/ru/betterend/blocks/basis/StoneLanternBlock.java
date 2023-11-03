@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
-import ru.betterend.bclib.blocks.BlockHelper;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.bclib.client.models.ModelsHelper;
 import ru.betterend.bclib.interfaces.CustomColorProvider;
 import ru.betterend.client.models.Patterns;
@@ -27,7 +27,7 @@ public class StoneLanternBlock extends EndLanternBlock implements CustomColorPro
 	private static final VoxelShape SHAPE_FLOOR = Block.box(3, 0, 3, 13, 15, 13);
 	
 	public StoneLanternBlock(Block source) {
-		super(BlockBehaviour.Properties.copy(source).lightLevel(BlockHelper.getLightValue(15)));
+		super(BlockBehaviour.Properties.copy(source).lightLevel(BlocksHelper.getLightValue(15)));
 	}
 	
 	@Override

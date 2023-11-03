@@ -7,7 +7,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
+import ru.betterend.bclib.util.BlocksHelper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -19,7 +19,7 @@ public abstract class WallMushroomBlock extends BaseWallPlantBlock {
 		this(
 			BlockBehaviour.Properties
 				.of(Material.PLANT)
-				.lightLevel(BlockHelper.getLightValue(light))
+				.lightLevel(BlocksHelper.getLightValue(light))
 				.destroyTime(0.2F)
 				.sound(SoundType.GRASS)
 				.sound(SoundType.WOOD)

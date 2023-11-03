@@ -18,7 +18,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 import ru.betterend.bclib.blocks.BaseAttachedBlock;
-import ru.betterend.bclib.blocks.BlockHelper;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.bclib.client.models.ModelsHelper;
 import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.BlockModelProvider;
@@ -34,7 +34,7 @@ public class ChandelierBlock extends BaseAttachedBlock implements RenderLayerPro
 	
 	public ChandelierBlock(Block source) {
 		super(BlockBehaviour.Properties.copy(source)
-								 .lightLevel(BlockHelper.getLightValue(15))
+								 .lightLevel(BlocksHelper.getLightValue(15))
 								 .noCollission()
 								 .noOcclusion()
 								 .requiresCorrectToolForDrops());

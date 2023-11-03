@@ -29,6 +29,7 @@ import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.BlockModelProvider;
 import ru.betterend.bclib.interfaces.LootProvider;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
+import ru.betterend.bclib.util.BlocksHelper;
 
 import java.util.Optional;
 import java.util.Random;
@@ -51,7 +52,7 @@ public class FeatureSaplingBlock extends SaplingBlock implements RenderLayerProv
 	public FeatureSaplingBlock(int light, Function<BlockState, Feature<?>> featureSupplier) {
 		this(BlockBehaviour.Properties.of(Material.PLANT)
 		   .noCollission()
-		   .lightLevel(BlockHelper.getLightValue(light))
+		   .lightLevel(BlocksHelper.getLightValue(light))
 		   .instabreak()
 		   .sound(SoundType.GRASS)
 		   .randomTicks(),

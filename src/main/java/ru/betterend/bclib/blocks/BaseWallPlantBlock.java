@@ -48,7 +48,7 @@ public abstract class BaseWallPlantBlock extends BasePlantBlock {
 		this(
 			BlockBehaviour.Properties
 				.of(Material.PLANT)
-				.lightLevel(BlockHelper.getLightValue(light))
+				.lightLevel(BlocksHelper.getLightValue(light))
 				.sound(SoundType.GRASS)
 				.noCollission()
 		);

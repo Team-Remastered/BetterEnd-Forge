@@ -31,6 +31,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
 import ru.betterend.bclib.items.tool.BaseShearsItem;
+import ru.betterend.bclib.util.BlocksHelper;
 
 import java.util.List;
 import java.util.Random;
@@ -51,7 +52,7 @@ public abstract class UnderwaterPlantBlock extends BaseBlockNotFull implements R
 		this(
 			BlockBehaviour.Properties
 				.of(Material.WATER_PLANT)
-				.lightLevel(BlockHelper.getLightValue(light))
+				.lightLevel(BlocksHelper.getLightValue(light))
 				.sound(SoundType.WET_GRASS)
 				.noCollission()
 		);

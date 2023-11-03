@@ -28,6 +28,7 @@ import ru.betterend.bclib.interfaces.tools.AddMineableHoe;
 import ru.betterend.bclib.interfaces.tools.AddMineableShears;
 import ru.betterend.bclib.items.tool.BaseShearsItem;
 import ru.betterend.bclib.util.MHelper;
+import ru.betterend.bclib.util.BlocksHelper;
 
 import java.util.Collections;
 import java.util.List;
@@ -52,7 +53,7 @@ public class BaseLeavesBlock extends LeavesBlock implements BlockModelProvider, 
     }
 
     public BaseLeavesBlock(Block sapling, MaterialColor color, int light, Consumer<BlockBehaviour.Properties> customizeProperties) {
-        super(BaseBlock.acceptAndReturn(customizeProperties, makeLeaves(color).lightLevel(BlockHelper.getLightValue(light))));
+        super(BaseBlock.acceptAndReturn(customizeProperties, makeLeaves(color).lightLevel(BlocksHelper.getLightValue(light))));
         this.sapling = sapling;
     }
 
@@ -62,7 +63,7 @@ public class BaseLeavesBlock extends LeavesBlock implements BlockModelProvider, 
     }
 
     public BaseLeavesBlock(Block sapling, MaterialColor color, int light) {
-        super(makeLeaves(color).lightLevel(BlockHelper.getLightValue(light)));
+        super(makeLeaves(color).lightLevel(BlocksHelper.getLightValue(light)));
         this.sapling = sapling;
     }
 

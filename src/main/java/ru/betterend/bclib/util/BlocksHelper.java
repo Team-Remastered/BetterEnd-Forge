@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.state.properties.Property;
 
 import java.util.Map;
 import java.util.Random;
+import java.util.function.ToIntFunction;
 
 public class BlocksHelper {
 	private static final Map<Block, Integer> COLOR_BY_BLOCK = Maps.newHashMap();
@@ -199,5 +200,11 @@ public class BlocksHelper {
 		catch (Exception e) {
 			return false;
 		}
+	}
+
+	public static ToIntFunction<BlockState> getLightValue(int pLightValue) {
+		return (state) -> {
+			return pLightValue;
+		};
 	}
 }

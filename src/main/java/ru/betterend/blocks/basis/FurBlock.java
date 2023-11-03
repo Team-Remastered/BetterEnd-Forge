@@ -21,7 +21,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import ru.betterend.bclib.api.tag.NamedBlockTags;
 import ru.betterend.bclib.api.tag.TagAPI;
 import ru.betterend.bclib.blocks.BaseAttachedBlock;
-import ru.betterend.bclib.blocks.BlockHelper;
+import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
 import ru.betterend.bclib.interfaces.tools.AddMineableShears;
@@ -38,7 +38,7 @@ public class FurBlock extends BaseAttachedBlock implements RenderLayerProvider, 
 	
 	public FurBlock(ItemLike drop, int light, int dropChance, boolean wet) {
 		super(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT)
-								 .lightLevel(BlockHelper.getLightValue(light))
+								 .lightLevel(BlocksHelper.getLightValue(light))
 								 .sound(wet ? SoundType.WET_GRASS : SoundType.GRASS)
 								 .noCollission());
 		this.drop = drop;
