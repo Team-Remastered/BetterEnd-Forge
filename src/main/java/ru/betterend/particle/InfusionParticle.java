@@ -1,7 +1,7 @@
 package ru.betterend.particle;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleProvider;
@@ -48,7 +48,7 @@ public class InfusionParticle extends TextureSheetParticle {
 		}
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public static class InfusionFactory implements ParticleProvider<InfusionParticleType> {
 		private final SpriteSet spriteProvider;
 		

@@ -2,8 +2,8 @@ package ru.betterend.recipe.builders;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -109,12 +109,12 @@ public class AlloyingRecipe implements Recipe<Container>, UnknownReceipBookCateg
 	}
 	
 	@Override
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public String getGroup() {
 		return this.group;
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public ItemStack getToastSymbol() {
 		return new ItemStack(EndBlocks.END_STONE_SMELTER);
 	}

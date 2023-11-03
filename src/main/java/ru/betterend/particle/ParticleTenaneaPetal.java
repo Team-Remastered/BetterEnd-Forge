@@ -1,7 +1,7 @@
 package ru.betterend.particle;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
@@ -16,7 +16,7 @@ import ru.betterend.bclib.interfaces.CustomColorProvider;
 import ru.betterend.bclib.util.MHelper;
 import ru.betterend.registry.EndBlocks;
 
-@Environment(EnvType.CLIENT)
+@OnlyIn(Dist.CLIENT)
 public class ParticleTenaneaPetal extends TextureSheetParticle {
 	private static BlockColor provider;
 	
@@ -94,7 +94,7 @@ public class ParticleTenaneaPetal extends TextureSheetParticle {
 		return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
 	}
 	
-	@Environment(EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public static class FactoryTenaneaPetal implements ParticleProvider<SimpleParticleType> {
 		
 		private final SpriteSet sprites;
