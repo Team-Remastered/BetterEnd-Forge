@@ -3,7 +3,7 @@ package ru.betterend.bclib.blocks;
 import com.google.common.collect.Maps;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.core.BlockPos;
@@ -37,7 +37,7 @@ public class BasePathBlock extends BaseBlockNotFull implements LootProvider {
 	private Block baseBlock;
 	
 	public BasePathBlock(Block source) {
-		super(FabricBlockSettings.copyOf(source).isValidSpawn((state, world, pos, type) -> false));
+		super(BlockBehaviour.Properties.copy(source).isValidSpawn((state, world, pos, type) -> false));
 		this.baseBlock = Blocks.DIRT;
 		if (source instanceof BaseTerrainBlock) {
 			BaseTerrainBlock terrain = (BaseTerrainBlock) source;

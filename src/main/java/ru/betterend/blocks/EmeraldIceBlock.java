@@ -2,7 +2,7 @@ package ru.betterend.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -31,7 +31,7 @@ import java.util.Random;
 
 public class EmeraldIceBlock extends HalfTransparentBlock implements RenderLayerProvider, BlockModelProvider {
 	public EmeraldIceBlock() {
-		super(FabricBlockSettings.copyOf(Blocks.ICE));
+		super(BlockBehaviour.Properties.copy(Blocks.ICE));
 	}
 	
 	@Override

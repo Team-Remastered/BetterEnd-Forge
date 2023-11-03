@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.core.Registry;
@@ -24,7 +24,7 @@ public class BaseGateBlock extends FenceGateBlock implements BlockModelProvider,
 	private final Block parent;
 	
 	public BaseGateBlock(Block source) {
-		super(FabricBlockSettings.copyOf(source).noOcclusion());
+		super(BlockBehaviour.Properties.copy(source).noOcclusion());
 		this.parent = source;
 	}
 

@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.core.BlockPos;
@@ -40,7 +40,7 @@ import java.util.Optional;
 
 public class BaseFurnaceBlock extends FurnaceBlock implements BlockModelProvider, RenderLayerProvider, LootProvider {
 	public BaseFurnaceBlock(Block source) {
-		this(FabricBlockSettings.copyOf(source).lightLevel(state -> state.getValue(LIT) ? 13 : 0));
+		this(BlockBehaviour.Properties.copy(source).lightLevel(state -> state.getValue(LIT) ? 13 : 0));
 	}
 	
 	public BaseFurnaceBlock(Properties properties) {

@@ -1,6 +1,6 @@
 package ru.betterend.complexmaterials;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
@@ -96,7 +96,7 @@ public class MetalMaterial {
 		return new MetalMaterial(
 				name,
 				true,
-				FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(color),
+				BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(color),
 				EndItems.makeEndItemSettings(),
 				material,
 				armor
@@ -107,7 +107,7 @@ public class MetalMaterial {
 		return new MetalMaterial(
 				name,
 				true,
-				FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)
+				BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
 								   .mapColor(color)
 								   .hardness(hardness)
 								   .resistance(resistance),
@@ -121,7 +121,7 @@ public class MetalMaterial {
 		return new MetalMaterial(
 				name,
 				false,
-				FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(color),
+				BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(color),
 				EndItems.makeEndItemSettings(),
 				material,
 				armor
@@ -132,7 +132,7 @@ public class MetalMaterial {
 		return new MetalMaterial(
 				name,
 				false,
-				FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)
+				BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
 								   .mapColor(color)
 								   .hardness(hardness)
 								   .resistance(resistance),
@@ -142,8 +142,8 @@ public class MetalMaterial {
 		);
 	}
 
-	private MetalMaterial(String name, boolean hasOre, FabricBlockSettings settings, Properties itemSettings, Tier material, ArmorMaterial armor) {
-		BlockBehaviour.Properties lanternProperties = FabricBlockSettings.copyOf(settings)
+	private MetalMaterial(String name, boolean hasOre, BlockBehaviour.Properties settings, Properties itemSettings, Tier material, ArmorMaterial armor) {
+		BlockBehaviour.Properties lanternProperties = BlockBehaviour.Properties.copy(settings)
 																		 .hardness(1)
 																		 .resistance(1)
 																		 .luminance(15)

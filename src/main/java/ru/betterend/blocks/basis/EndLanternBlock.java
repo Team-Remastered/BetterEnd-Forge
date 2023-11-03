@@ -2,7 +2,7 @@ package ru.betterend.blocks.basis;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -34,7 +34,7 @@ public class EndLanternBlock extends BaseBlockNotFull implements SimpleWaterlogg
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	
 	public EndLanternBlock(Block source) {
-		this(FabricBlockSettings.copyOf(source).luminance(15).noOcclusion());
+		this(BlockBehaviour.Properties.copy(source).luminance(15).noOcclusion());
 	}
 	
 	public EndLanternBlock(Properties settings) {

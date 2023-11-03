@@ -2,7 +2,7 @@ package ru.betterend.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.core.BlockPos;
@@ -44,7 +44,7 @@ public class EndPortalBlock extends NetherPortalBlock implements RenderLayerProv
 	public static final IntegerProperty PORTAL = EndBlockProperties.PORTAL;
 	
 	public EndPortalBlock() {
-		super(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL)
+		super(BlockBehaviour.Properties.copy(Blocks.NETHER_PORTAL)
 								 .resistance(Blocks.BEDROCK.getExplosionResistance())
 								 .luminance(15));
 	}

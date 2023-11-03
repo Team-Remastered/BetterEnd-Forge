@@ -2,7 +2,7 @@ package ru.betterend.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -38,7 +38,7 @@ public class LumecornBlock extends BaseBlockNotFull implements RenderLayerProvid
 	private static final VoxelShape SHAPE_TOP = Block.box(6, 0, 6, 10, 8, 10);
 	
 	public LumecornBlock() {
-		super(FabricBlockSettings.of(Material.WOOD)
+		super(BlockBehaviour.Properties.of(Material.WOOD)
 								 .hardness(0.5F)
 								 .luminance(state -> state.getValue(SHAPE).getLight()));
 	}

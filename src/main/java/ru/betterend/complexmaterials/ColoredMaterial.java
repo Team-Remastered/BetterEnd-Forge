@@ -1,7 +1,7 @@
 package ru.betterend.complexmaterials;
 
 import com.google.common.collect.Maps;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
@@ -22,15 +22,15 @@ public class ColoredMaterial {
 	private static final Map<Integer, String> COLORS = Maps.newHashMap();
 	private final Map<Integer, Block> colors = Maps.newHashMap();
 	
-	public ColoredMaterial(Function<FabricBlockSettings, Block> constructor, Block source, boolean craftEight) {
+	public ColoredMaterial(Function<BlockBehaviour.Properties, Block> constructor, Block source, boolean craftEight) {
 		this(constructor, source, COLORS, DYES, craftEight);
 	}
 	
-	public ColoredMaterial(Function<FabricBlockSettings, Block> constructor, Block source, Map<Integer, String> colors, Map<Integer, ItemLike> dyes, boolean craftEight) {
+	public ColoredMaterial(Function<BlockBehaviour.Properties, Block> constructor, Block source, Map<Integer, String> colors, Map<Integer, ItemLike> dyes, boolean craftEight) {
 		String id = Registry.BLOCK.getKey(source).getPath();
 		colors.forEach((color, name) -> {
 			String blockName = id + "_" + name;
-			Block block = constructor.apply(FabricBlockSettings.copyOf(source).mapColor(MaterialColor.COLOR_BLACK));
+			Block block = constructor.apply(BlockBehaviour.Properties.copy(source).mapColor(MaterialColor.COLOR_BLACK));
 			EndBlocks.registerBlock(blockName, block);
 			if (craftEight) {
 				GridRecipe.make(BetterEnd.MOD_ID, blockName, block)

@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
@@ -25,7 +25,7 @@ public class BaseChestBlock extends ChestBlock implements BlockModelProvider, Lo
 	private final Block parent;
 	
 	public BaseChestBlock(Block source) {
-		super(FabricBlockSettings.copyOf(source).noOcclusion(), () -> BaseBlockEntities.CHEST);
+		super(BlockBehaviour.Properties.copy(source).noOcclusion(), () -> BaseBlockEntities.CHEST);
 		this.parent = source;
 	}
 	

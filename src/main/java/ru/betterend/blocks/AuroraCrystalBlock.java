@@ -1,7 +1,7 @@
 package ru.betterend.blocks;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.core.BlockPos;
@@ -38,7 +38,7 @@ public class AuroraCrystalBlock extends AbstractGlassBlock implements RenderLaye
 	private static final int MAX_DROP = 4;
 	
 	public AuroraCrystalBlock() {
-		super(FabricBlockSettings
+		super(BlockBehaviour.Properties
 			.of(Material.GLASS)
 			 .hardness(1F)
 			 .resistance(1F)

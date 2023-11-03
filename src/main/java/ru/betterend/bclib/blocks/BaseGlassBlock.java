@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -25,7 +25,7 @@ public class BaseGlassBlock extends BaseBlockNotFull implements AddMineablePicka
         this(block, 0.3f);
     }
     public BaseGlassBlock(Block block, float resistance) {
-        super(FabricBlockSettings.copyOf(block)
+        super(BlockBehaviour.Properties.copy(block)
                 .resistance(resistance)
                 .nonOpaque()
                 .isSuffocating((arg1, arg2, arg3) -> false)

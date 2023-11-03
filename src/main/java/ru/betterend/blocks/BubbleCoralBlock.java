@@ -2,7 +2,7 @@ package ru.betterend.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.level.BlockGetter;
@@ -24,7 +24,7 @@ public class BubbleCoralBlock extends EndUnderwaterPlantBlock implements AddMine
 	private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 14, 16);
 	
 	public BubbleCoralBlock() {
-		super(FabricBlockSettings.of(Material.WATER_PLANT)
+		super(BlockBehaviour.Properties.of(Material.WATER_PLANT)
 								 .sound(SoundType.CORAL_BLOCK)
 								 .noCollission());
 	}

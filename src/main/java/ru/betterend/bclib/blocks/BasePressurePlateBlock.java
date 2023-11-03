@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.core.Registry;
@@ -24,7 +24,7 @@ public class BasePressurePlateBlock extends PressurePlateBlock implements BlockM
 	private final Block parent;
 	
 	public BasePressurePlateBlock(Sensitivity rule, Block source) {
-		super(rule, FabricBlockSettings.copyOf(source).noCollission().noOcclusion().strength(0.5F));
+		super(rule, BlockBehaviour.Properties.copy(source).noCollission().noOcclusion().strength(0.5F));
 		this.parent = source;
 	}
 	

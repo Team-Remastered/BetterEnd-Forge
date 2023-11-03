@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.util.Mth;
@@ -32,7 +32,7 @@ public class HelixTreeLeavesBlock extends BaseBlock implements CustomColorProvid
 	private static final OpenSimplexNoise NOISE = new OpenSimplexNoise(0);
 	
 	public HelixTreeLeavesBlock() {
-		super(FabricBlockSettings
+		super(BlockBehaviour.Properties
 			.of(Material.LEAVES)
 			.mapColor(MaterialColor.COLOR_ORANGE)
 			.sound(SoundType.WART_BLOCK)

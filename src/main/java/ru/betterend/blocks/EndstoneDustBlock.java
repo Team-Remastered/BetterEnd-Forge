@@ -2,7 +2,7 @@ package ru.betterend.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -26,7 +26,7 @@ public class EndstoneDustBlock extends FallingBlock implements TagProvider, AddM
 	private static final int COLOR = ColorUtil.color(226, 239, 168);
 	
 	public EndstoneDustBlock() {
-		super(FabricBlockSettings
+		super(BlockBehaviour.Properties
 			.copyOf(Blocks.SAND)
 			.mapColor(Blocks.END_STONE.defaultMaterialColor())
 		);

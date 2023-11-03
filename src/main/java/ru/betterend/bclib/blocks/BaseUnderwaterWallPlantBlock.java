@@ -1,6 +1,6 @@
 package ru.betterend.bclib.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
@@ -16,7 +16,7 @@ import net.minecraft.world.level.material.Material;
 public abstract class BaseUnderwaterWallPlantBlock extends BaseWallPlantBlock implements LiquidBlockContainer {
 	public BaseUnderwaterWallPlantBlock() {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.WATER_PLANT)
 				.sound(SoundType.WET_GRASS)
 				.noCollission()
@@ -25,7 +25,7 @@ public abstract class BaseUnderwaterWallPlantBlock extends BaseWallPlantBlock im
 	
 	public BaseUnderwaterWallPlantBlock(int light) {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.WATER_PLANT)
 				.luminance(light)
 				.sound(SoundType.WET_GRASS)

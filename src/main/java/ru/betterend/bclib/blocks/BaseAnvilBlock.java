@@ -5,7 +5,7 @@ import com.google.common.collect.Maps;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.resources.ResourceLocation;
@@ -41,7 +41,7 @@ public abstract class BaseAnvilBlock extends AnvilBlock implements BlockModelPro
 	public IntegerProperty durability;
 	
 	public BaseAnvilBlock(MaterialColor color) {
-		this(FabricBlockSettings.copyOf(Blocks.ANVIL).color(color));
+		this(BlockBehaviour.Properties.copy(Blocks.ANVIL).color(color));
 	}
 	
 	public BaseAnvilBlock(Properties properties) {

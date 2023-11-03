@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -41,7 +41,7 @@ public class SilkMothHiveBlock extends BaseBlock {
 	public static final IntegerProperty FULLNESS = EndBlockProperties.FULLNESS;
 	
 	public SilkMothHiveBlock() {
-		super(FabricBlockSettings.of(Material.WOOD)
+		super(BlockBehaviour.Properties.of(Material.WOOD)
 								 .hardness(0.5F)
 								 .resistance(0.1F)
 								 .sound(SoundType.WOOL)

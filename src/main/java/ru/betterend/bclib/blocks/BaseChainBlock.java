@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.core.Direction;
@@ -25,7 +25,7 @@ import java.util.Optional;
 
 public class BaseChainBlock extends ChainBlock implements BlockModelProvider, RenderLayerProvider, LootProvider {
 	public BaseChainBlock(MaterialColor color) {
-		this(FabricBlockSettings.copyOf(Blocks.CHAIN).color(color));
+		this(BlockBehaviour.Properties.copy(Blocks.CHAIN).color(color));
 	}
 	
 	public BaseChainBlock(Properties properties) {

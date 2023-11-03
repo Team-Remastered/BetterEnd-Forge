@@ -3,7 +3,7 @@ package ru.betterend.bclib.blocks;
 import com.google.common.collect.Lists;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -54,7 +54,7 @@ public abstract class BasePlantBlock extends BaseBlockNotFull implements RenderL
 	
 	public BasePlantBlock(boolean replaceable) {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(replaceable ? Material.REPLACEABLE_PLANT : Material.PLANT)
 				.sound(SoundType.GRASS)
 				.noCollission()
@@ -63,7 +63,7 @@ public abstract class BasePlantBlock extends BaseBlockNotFull implements RenderL
 	
 	public BasePlantBlock(boolean replaceable, int light) {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(replaceable ? Material.REPLACEABLE_PLANT : Material.PLANT)
 				.luminance(light)
 				.sound(SoundType.GRASS)

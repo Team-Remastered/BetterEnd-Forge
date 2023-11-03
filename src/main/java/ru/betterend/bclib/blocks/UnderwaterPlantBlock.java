@@ -1,7 +1,7 @@
 package ru.betterend.bclib.blocks;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -40,7 +40,7 @@ public abstract class UnderwaterPlantBlock extends BaseBlockNotFull implements R
 	
 	public UnderwaterPlantBlock() {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.WATER_PLANT)
 				.sound(SoundType.WET_GRASS)
 				.noCollission()
@@ -49,7 +49,7 @@ public abstract class UnderwaterPlantBlock extends BaseBlockNotFull implements R
 	
 	public UnderwaterPlantBlock(int light) {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.WATER_PLANT)
 				.luminance(light)
 				.sound(SoundType.WET_GRASS)

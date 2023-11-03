@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.core.Registry;
@@ -26,7 +26,7 @@ public class BaseWeightedPlateBlock extends WeightedPressurePlateBlock implement
 	public BaseWeightedPlateBlock(Block source) {
 		super(
 			15,
-			FabricBlockSettings.copyOf(source).noCollission().noOcclusion().requiresCorrectToolForDrops().strength(0.5F)
+			BlockBehaviour.Properties.copy(source).noCollission().noOcclusion().requiresCorrectToolForDrops().strength(0.5F)
 		);
 		this.parent = source;
 	}

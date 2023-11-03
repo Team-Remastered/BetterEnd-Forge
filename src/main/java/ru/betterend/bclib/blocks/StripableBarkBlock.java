@@ -1,6 +1,6 @@
 package ru.betterend.bclib.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -21,7 +21,7 @@ public class StripableBarkBlock extends BaseBarkBlock {
 	private final Block striped;
 	
 	public StripableBarkBlock(MaterialColor color, Block striped) {
-		super(FabricBlockSettings.copyOf(striped).color(color));
+		super(BlockBehaviour.Properties.copy(striped).color(color));
 		this.striped = striped;
 	}
 	

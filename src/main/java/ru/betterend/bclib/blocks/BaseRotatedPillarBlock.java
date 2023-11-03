@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.resources.ResourceLocation;
@@ -24,7 +24,7 @@ public class BaseRotatedPillarBlock extends RotatedPillarBlock implements BlockM
 	}
 	
 	public BaseRotatedPillarBlock(Block block) {
-		this(FabricBlockSettings.copyOf(block));
+		this(BlockBehaviour.Properties.copy(block));
 	}
 	
 	@Override

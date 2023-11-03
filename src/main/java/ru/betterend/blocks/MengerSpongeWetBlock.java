@@ -2,7 +2,7 @@ package ru.betterend.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -31,7 +31,7 @@ import java.util.Random;
 @SuppressWarnings("deprecation")
 public class MengerSpongeWetBlock extends BaseBlockNotFull implements RenderLayerProvider {
 	public MengerSpongeWetBlock() {
-		super(FabricBlockSettings.copyOf(Blocks.WET_SPONGE).noOcclusion());
+		super(BlockBehaviour.Properties.copy(Blocks.WET_SPONGE).noOcclusion());
 	}
 	
 	@Override

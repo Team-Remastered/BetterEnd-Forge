@@ -3,7 +3,7 @@ package ru.betterend.blocks;
 import com.google.common.collect.Maps;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.BlockModelRotation;
 import net.minecraft.client.resources.model.UnbakedModel;
@@ -32,7 +32,7 @@ public class ChandelierBlock extends BaseAttachedBlock implements RenderLayerPro
 	private static final EnumMap<Direction, VoxelShape> BOUNDING_SHAPES = Maps.newEnumMap(Direction.class);
 	
 	public ChandelierBlock(Block source) {
-		super(FabricBlockSettings.copyOf(source)
+		super(BlockBehaviour.Properties.copy(source)
 								 .luminance(15)
 								 .noCollission()
 								 .noOcclusion()

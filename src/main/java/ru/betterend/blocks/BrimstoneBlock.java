@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -28,7 +28,7 @@ public class BrimstoneBlock extends BaseBlock {
 	public static final BooleanProperty ACTIVATED = BlockProperties.ACTIVE;
 	
 	public BrimstoneBlock() {
-		super(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MaterialColor.COLOR_BROWN).randomTicks());
+		super(BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(MaterialColor.COLOR_BROWN).randomTicks());
 		registerDefaultState(stateDefinition.any().setValue(ACTIVATED, false));
 	}
 	

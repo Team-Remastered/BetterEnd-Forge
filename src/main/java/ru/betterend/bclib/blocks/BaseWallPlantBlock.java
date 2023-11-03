@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -37,7 +37,7 @@ public abstract class BaseWallPlantBlock extends BasePlantBlock {
 	
 	public BaseWallPlantBlock() {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.PLANT)
 				.sound(SoundType.GRASS)
 				.noCollission()
@@ -46,7 +46,7 @@ public abstract class BaseWallPlantBlock extends BasePlantBlock {
 	
 	public BaseWallPlantBlock(int light) {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.PLANT)
 				.luminance(light)
 				.sound(SoundType.GRASS)

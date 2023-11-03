@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -22,7 +22,7 @@ import java.util.Random;
 
 public class MossyObsidian extends BaseBlock {
 	public MossyObsidian() {
-		super(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).hardness(3).randomTicks());
+		super(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).hardness(3).randomTicks());
 	}
 	
 	@Override

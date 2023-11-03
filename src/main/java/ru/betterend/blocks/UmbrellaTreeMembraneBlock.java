@@ -3,7 +3,7 @@ package ru.betterend.blocks;
 import com.google.common.collect.Lists;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -33,7 +33,7 @@ public class UmbrellaTreeMembraneBlock extends SlimeBlock implements RenderLayer
 	private static final OpenSimplexNoise NOISE = new OpenSimplexNoise(0);
 	
 	public UmbrellaTreeMembraneBlock() {
-		super(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK));
+		super(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK));
 	}
 	
 	@Override

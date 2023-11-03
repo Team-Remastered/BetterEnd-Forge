@@ -3,7 +3,7 @@ package ru.betterend.blocks;
 import com.google.common.collect.Lists;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -33,7 +33,7 @@ public class HydraluxBlock extends UnderwaterPlantBlock  implements AddMineableS
 	public static final EnumProperty<HydraluxShape> SHAPE = EndBlockProperties.HYDRALUX_SHAPE;
 	
 	public HydraluxBlock() {
-		super(FabricBlockSettings.of(Material.WATER_PLANT)
+		super(BlockBehaviour.Properties.of(Material.WATER_PLANT)
 								 .sound(SoundType.WET_GRASS)
 								 .lightLevel((state) -> state.getValue(SHAPE).hasGlow() ? 15 : 0)
 								 .noCollission());

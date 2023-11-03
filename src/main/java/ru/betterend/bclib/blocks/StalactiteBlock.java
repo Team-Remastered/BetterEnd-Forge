@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.BlockModelRotation;
 import net.minecraft.client.resources.model.UnbakedModel;
@@ -50,7 +50,7 @@ public class StalactiteBlock extends BaseBlockNotFull implements SimpleWaterlogg
 	private static final VoxelShape[] SHAPES;
 	
 	public StalactiteBlock(Block source) {
-		this(FabricBlockSettings.copy(source).noOcclusion());
+		this(BlockBehaviour.Properties.copy(source).noOcclusion());
 	}
 	
 	public StalactiteBlock(Properties properties) {

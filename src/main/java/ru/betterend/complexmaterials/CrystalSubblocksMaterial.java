@@ -1,6 +1,6 @@
 package ru.betterend.complexmaterials;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.Block;
 import ru.betterend.bclib.api.tag.NamedBlockTags;
 import ru.betterend.bclib.api.tag.NamedItemTags;
@@ -31,7 +31,7 @@ public class CrystalSubblocksMaterial {
 	public final Block brick_wall;
 	
 	public CrystalSubblocksMaterial(String name, Block source) {
-		FabricBlockSettings material = FabricBlockSettings.copyOf(source);
+		BlockBehaviour.Properties material = BlockBehaviour.Properties.copy(source);
 		polished = EndBlocks.registerBlock(name + "_polished", new LitBaseBlock(material));
 		tiles = EndBlocks.registerBlock(name + "_tiles", new LitBaseBlock(material));
 		pillar = EndBlocks.registerBlock(name + "_pillar", new LitPillarBlock(material));

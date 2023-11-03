@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -27,7 +27,7 @@ public class UmbrellaTreeClusterBlock extends BaseBlock {
 	public static final BooleanProperty NATURAL = BlockProperties.NATURAL;
 	
 	public UmbrellaTreeClusterBlock() {
-		super(FabricBlockSettings
+		super(BlockBehaviour.Properties
 			.copyOf(Blocks.NETHER_WART_BLOCK)
 			.mapColor(MaterialColor.COLOR_PURPLE)
 			.luminance(15)

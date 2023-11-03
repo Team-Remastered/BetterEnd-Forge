@@ -1,7 +1,7 @@
 package ru.betterend.bclib.blocks;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.player.Player;
@@ -34,7 +34,7 @@ public abstract class UpDownPlantBlock extends BaseBlockNotFull implements Rende
 	private static final VoxelShape SHAPE = Block.box(4, 0, 4, 12, 16, 12);
 	
 	public UpDownPlantBlock() {
-		this(FabricBlockSettings
+		this(BlockBehaviour.Properties
 			.of(Material.PLANT)
 			.sound(SoundType.GRASS)
 			.noCollission()

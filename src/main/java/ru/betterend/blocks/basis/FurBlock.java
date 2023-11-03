@@ -2,7 +2,7 @@ package ru.betterend.blocks.basis;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -36,7 +36,7 @@ public class FurBlock extends BaseAttachedBlock implements RenderLayerProvider, 
 	private final int dropChance;
 	
 	public FurBlock(ItemLike drop, int light, int dropChance, boolean wet) {
-		super(FabricBlockSettings.of(Material.REPLACEABLE_PLANT)
+		super(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT)
 								 .luminance(light)
 								 .sound(wet ? SoundType.WET_GRASS : SoundType.GRASS)
 								 .noCollission());
@@ -46,7 +46,7 @@ public class FurBlock extends BaseAttachedBlock implements RenderLayerProvider, 
 	}
 	
 	public FurBlock(ItemLike drop, int dropChance) {
-		super(FabricBlockSettings.of(Material.REPLACEABLE_PLANT)
+		super(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT)
 								 
 								 .sound(SoundType.GRASS)
 								 .noCollission());

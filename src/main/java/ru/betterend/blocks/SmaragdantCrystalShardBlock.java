@@ -1,7 +1,7 @@
 package ru.betterend.blocks;
 
 import com.google.common.collect.Maps;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -37,7 +37,7 @@ public class SmaragdantCrystalShardBlock extends BaseAttachedBlock implements Ad
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	
 	public SmaragdantCrystalShardBlock() {
-		super(FabricBlockSettings.of(Material.STONE)
+		super(BlockBehaviour.Properties.of(Material.STONE)
 								 .materialColor(MaterialColor.COLOR_GREEN)
 								 .luminance(15)
 								 .sound(SoundType.AMETHYST_CLUSTER)

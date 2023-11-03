@@ -2,7 +2,7 @@ package ru.betterend.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.level.BlockGetter;
@@ -23,7 +23,7 @@ public class PondAnemoneBlock extends EndUnderwaterPlantBlock implements AddMine
 	private static final VoxelShape SHAPE = Block.box(2, 0, 2, 14, 14, 14);
 	
 	public PondAnemoneBlock() {
-		super(FabricBlockSettings.of(Material.WATER_PLANT)
+		super(BlockBehaviour.Properties.of(Material.WATER_PLANT)
 								 
 								 .luminance(13)
 								 .sound(SoundType.CORAL_BLOCK)

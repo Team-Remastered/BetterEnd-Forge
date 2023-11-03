@@ -3,7 +3,7 @@ package ru.betterend.bclib.blocks;
 import com.google.common.collect.Maps;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.core.BlockPos;
@@ -51,7 +51,7 @@ public class BaseTerrainBlock extends BaseBlock {
 	private Block pathBlock;
 	
 	public BaseTerrainBlock(Block baseBlock, MaterialColor color) {
-		super(FabricBlockSettings
+		super(BlockBehaviour.Properties
 			.copyOf(baseBlock)
 			.materialColor(color)
 			.sound(BlockSounds.TERRAIN_SOUND)

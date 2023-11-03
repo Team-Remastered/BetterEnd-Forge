@@ -1,6 +1,6 @@
 package ru.betterend.bclib.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.WorldGenLevel;
@@ -18,7 +18,7 @@ public abstract class UnderwaterPlantWithAgeBlock extends UnderwaterPlantBlock {
 	
 	public UnderwaterPlantWithAgeBlock() {
 		super(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.WATER_PLANT)
 				.sound(SoundType.WET_GRASS)
 				.randomTicks()

@@ -1,6 +1,6 @@
 package ru.betterend.bclib.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -51,7 +51,7 @@ public class BaseBlock extends Block implements BlockModelProvider, LootProvider
 	 * @param settings			The properties as created by the Block
 	 * @return The reconfigured {@code settings}
 	 */
-	static FabricBlockSettings acceptAndReturn(Consumer<FabricBlockSettings> customizeProperties, FabricBlockSettings settings) {
+	static BlockBehaviour.Properties acceptAndReturn(Consumer<BlockBehaviour.Properties> customizeProperties, BlockBehaviour.Properties settings) {
 		customizeProperties.accept(settings);
 		return settings;
 	}

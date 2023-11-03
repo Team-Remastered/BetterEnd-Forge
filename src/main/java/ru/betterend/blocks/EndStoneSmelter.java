@@ -3,7 +3,7 @@ package ru.betterend.blocks;
 import com.google.common.collect.Lists;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -49,7 +49,7 @@ public class EndStoneSmelter extends BaseBlockWithEntity {
 	public static final String ID = "end_stone_smelter";
 	
 	public EndStoneSmelter() {
-		super(FabricBlockSettings.of(Material.STONE, MaterialColor.COLOR_GRAY)
+		super(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
 								 .luminance(state -> state.getValue(LIT) ? 15 : 0)
 								 .hardness(4F)
 								 .resistance(100F)

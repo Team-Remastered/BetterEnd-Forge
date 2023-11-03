@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
@@ -21,7 +21,7 @@ public class MossyGlowshroomCapBlock extends BaseBlock implements TagProvider {
 	public static final BooleanProperty TRANSITION = EndBlockProperties.TRANSITION;
 	
 	public MossyGlowshroomCapBlock() {
-		super(FabricBlockSettings.of(Material.WOOD).sound(SoundType.WOOD));
+		super(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD));
 		this.registerDefaultState(this.stateDefinition.any().setValue(TRANSITION, false));
 	}
 	

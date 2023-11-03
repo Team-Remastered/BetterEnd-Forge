@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -28,7 +28,7 @@ public class CavePumpkinBlock extends BaseBlockNotFull implements RenderLayerPro
 	private static final VoxelShape SHAPE_BIG;
 	
 	public CavePumpkinBlock() {
-		super(FabricBlockSettings.copyOf(Blocks.PUMPKIN).luminance((state) -> state.getValue(SMALL) ? 10 : 15));
+		super(BlockBehaviour.Properties.copy(Blocks.PUMPKIN).luminance((state) -> state.getValue(SMALL) ? 10 : 15));
 		registerDefaultState(defaultBlockState().setValue(SMALL, false));
 	}
 	

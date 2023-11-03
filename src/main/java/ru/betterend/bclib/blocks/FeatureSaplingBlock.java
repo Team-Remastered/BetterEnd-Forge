@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -39,7 +39,7 @@ public class FeatureSaplingBlock extends SaplingBlock implements RenderLayerProv
 	private final Function<BlockState, Feature<?>> feature;
 	
 	public FeatureSaplingBlock(Function<BlockState, Feature<?>> featureSupplier) {
-		this(FabricBlockSettings.of(Material.PLANT)
+		this(BlockBehaviour.Properties.of(Material.PLANT)
 		   .collidable(false)
 		   .instabreak()
 		   .sound(SoundType.GRASS)
@@ -49,7 +49,7 @@ public class FeatureSaplingBlock extends SaplingBlock implements RenderLayerProv
 	}
 	
 	public FeatureSaplingBlock(int light, Function<BlockState, Feature<?>> featureSupplier) {
-		this(FabricBlockSettings.of(Material.PLANT)
+		this(BlockBehaviour.Properties.of(Material.PLANT)
 		   .collidable(false)
 		   .luminance(light)
 		   .instabreak()

@@ -2,7 +2,7 @@ package ru.betterend.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -34,7 +34,7 @@ public class EndLotusLeafBlock extends BaseBlockNotFull implements RenderLayerPr
 	private static final VoxelShape VSHAPE = Block.box(0, 0, 0, 16, 1, 16);
 	
 	public EndLotusLeafBlock() {
-		super(FabricBlockSettings.of(Material.PLANT).noOcclusion().sound(SoundType.WET_GRASS));
+		super(BlockBehaviour.Properties.of(Material.PLANT).noOcclusion().sound(SoundType.WET_GRASS));
 	}
 	
 	@Override

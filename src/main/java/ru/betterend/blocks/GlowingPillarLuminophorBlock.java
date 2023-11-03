@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.LevelAccessor;
@@ -21,7 +21,7 @@ public class GlowingPillarLuminophorBlock extends BaseBlock implements AddMineab
 	public static final BooleanProperty NATURAL = EndBlockProperties.NATURAL;
 	
 	public GlowingPillarLuminophorBlock() {
-		super(FabricBlockSettings.of(Material.LEAVES)
+		super(BlockBehaviour.Properties.of(Material.LEAVES)
 								 .mapColor(MaterialColor.COLOR_ORANGE)
 								 .strength(0.2F)
 								 .luminance(15)

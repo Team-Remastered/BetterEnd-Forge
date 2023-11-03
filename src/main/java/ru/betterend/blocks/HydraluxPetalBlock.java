@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
@@ -14,7 +14,7 @@ import ru.betterend.bclib.interfaces.tools.AddMineableAxe;
 public class HydraluxPetalBlock extends BaseBlock implements AddMineableAxe {
 	public HydraluxPetalBlock() {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.PLANT)
 				.hardness(1)
 				.resistance(1)

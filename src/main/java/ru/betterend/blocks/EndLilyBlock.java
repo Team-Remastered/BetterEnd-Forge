@@ -3,7 +3,7 @@ package ru.betterend.blocks;
 import com.google.common.collect.Lists;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -42,7 +42,7 @@ public class EndLilyBlock extends EndUnderwaterPlantBlock implements AddMineable
 	private static final VoxelShape SHAPE_TOP = Block.box(2, 0, 2, 14, 6, 14);
 	
 	public EndLilyBlock() {
-		super(FabricBlockSettings.of(Material.WATER_PLANT)
+		super(BlockBehaviour.Properties.of(Material.WATER_PLANT)
 								 .sound(SoundType.WET_GRASS)
 								 .lightLevel((state) -> state.getValue(SHAPE) == TripleShape.TOP ? 13 : 0)
 								 .noCollission());

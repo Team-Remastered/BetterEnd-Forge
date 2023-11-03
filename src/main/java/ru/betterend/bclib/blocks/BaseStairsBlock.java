@@ -3,7 +3,7 @@ package ru.betterend.bclib.blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.BlockModelRotation;
 import net.minecraft.client.resources.model.UnbakedModel;
@@ -35,7 +35,7 @@ public class BaseStairsBlock extends StairBlock implements BlockModelProvider, C
 	}
 	
 	public BaseStairsBlock(Block source, boolean fireproof) {
-		super(source.defaultBlockState(), FabricBlockSettings.copyOf(source));
+		super(source.defaultBlockState(), BlockBehaviour.Properties.copy(source));
 		this.parent = source;
 		this.fireproof = fireproof;
 	}

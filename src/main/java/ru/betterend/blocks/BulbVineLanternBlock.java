@@ -3,7 +3,7 @@ package ru.betterend.blocks;
 import com.google.common.collect.Maps;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -32,7 +32,7 @@ public class BulbVineLanternBlock extends EndLanternBlock implements RenderLayer
 	private static final VoxelShape SHAPE_FLOOR = Block.box(4, 0, 4, 12, 12, 12);
 	
 	public BulbVineLanternBlock() {
-		this(FabricBlockSettings.of(Material.METAL)
+		this(BlockBehaviour.Properties.of(Material.METAL)
 								.hardness(1)
 								.resistance(1)
 								.mapColor(MaterialColor.COLOR_LIGHT_GRAY)

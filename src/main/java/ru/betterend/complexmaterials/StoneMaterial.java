@@ -1,6 +1,6 @@
 package ru.betterend.complexmaterials;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.MaterialColor;
@@ -49,7 +49,7 @@ public class StoneMaterial {
 	public final Block flowerPot;
 	
 	public StoneMaterial(String name, MaterialColor color) {
-		FabricBlockSettings material = FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(color);
+		BlockBehaviour.Properties material = BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(color);
 		
 		stone = EndBlocks.registerBlock(name, new BaseBlock(material));
 		polished = EndBlocks.registerBlock(name + "_polished", new BaseBlock(material));

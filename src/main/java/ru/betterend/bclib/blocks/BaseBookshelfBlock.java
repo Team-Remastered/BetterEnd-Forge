@@ -1,8 +1,8 @@
 package ru.betterend.bclib.blocks;
 
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -25,7 +25,7 @@ import java.util.Optional;
 
 public class BaseBookshelfBlock extends BaseBlock implements LootProvider {
 	public BaseBookshelfBlock(Block source) {
-		this(FabricBlockSettings.copyOf(source));
+		this(BlockBehaviour.Properties.copy(source));
 	}
 	
 	public BaseBookshelfBlock(Properties properties) {

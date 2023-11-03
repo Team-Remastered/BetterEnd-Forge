@@ -3,7 +3,7 @@ package ru.betterend.bclib.complexmaterials;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -58,7 +58,7 @@ public abstract class ComplexMaterial {
 	public ComplexMaterial init(BlockRegistry blocksRegistry, ItemRegistry itemsRegistry, PathConfig recipeConfig) {
 		initTags();
 		
-		final FabricBlockSettings blockSettings = getBlockSettings();
+		final BlockBehaviour.Properties blockSettings = getBlockSettings();
 		final FabricItemSettings itemSettings = getItemSettings(itemsRegistry);
 		initDefault(blockSettings, itemSettings);
 		
@@ -83,10 +83,10 @@ public abstract class ComplexMaterial {
 	
 	/**
 	 * Init default content for {@link ComplexMaterial} - blocks and items.
-	 * @param blockSettings {@link FabricBlockSettings} default block settings for this material;
+	 * @param blockSettings {@link BlockBehaviour.Properties} default block settings for this material;
 	 * @param itemSettings {@link FabricItemSettings} default item settings for this material.
 	 */
-	protected abstract void initDefault(FabricBlockSettings blockSettings, FabricItemSettings itemSettings);
+	protected abstract void initDefault(BlockBehaviour.Properties blockSettings, FabricItemSettings itemSettings);
 	
 	/**
 	 * Init custom tags for this {@link ComplexMaterial}, not required.
@@ -163,9 +163,9 @@ public abstract class ComplexMaterial {
 	
 	/**
 	 * Get default block settings for this material.
-	 * @return {@link FabricBlockSettings}
+	 * @return {@link BlockBehaviour.Properties}
 	 */
-	protected abstract FabricBlockSettings getBlockSettings();
+	protected abstract BlockBehaviour.Properties getBlockSettings();
 	
 	/**
 	 * Get default item settings for this material.

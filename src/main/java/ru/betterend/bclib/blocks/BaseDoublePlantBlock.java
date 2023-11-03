@@ -1,7 +1,7 @@
 package ru.betterend.bclib.blocks;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -44,7 +44,7 @@ public abstract class BaseDoublePlantBlock extends BaseBlockNotFull implements R
 	
 	public BaseDoublePlantBlock() {
 		this(
-			FabricBlockSettings.of(Material.PLANT)
+			BlockBehaviour.Properties.of(Material.PLANT)
 				.sound(SoundType.GRASS)
 				.noCollission()
 		);
@@ -52,7 +52,7 @@ public abstract class BaseDoublePlantBlock extends BaseBlockNotFull implements R
 	
 	public BaseDoublePlantBlock(int light) {
 		this(
-			FabricBlockSettings.of(Material.PLANT)
+			BlockBehaviour.Properties.of(Material.PLANT)
 				.sound(SoundType.GRASS)
 				.lightLevel((state) -> state.getValue(TOP) ? light : 0)
 				.noCollission()

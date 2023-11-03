@@ -1,7 +1,7 @@
 package ru.betterend.blocks;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.SoundType;
@@ -12,7 +12,7 @@ import ru.betterend.bclib.interfaces.CustomItemProvider;
 
 public class AeterniumBlock extends BaseBlock implements CustomItemProvider {
 	public AeterniumBlock() {
-		super(FabricBlockSettings
+		super(BlockBehaviour.Properties
 			.of(Material.METAL, MaterialColor.COLOR_GRAY)
 			.hardness(65F)
 			.resistance(1200F)

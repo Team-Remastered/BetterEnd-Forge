@@ -1,7 +1,7 @@
 package ru.betterend.bclib.blocks;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -50,7 +50,7 @@ public class BaseVineBlock extends BaseBlockNotFull implements RenderLayerProvid
 	
 	public BaseVineBlock(int light, boolean bottomOnly) {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.PLANT)
 				.sound(SoundType.GRASS)
 				.lightLevel((state) -> bottomOnly ? state.getValue(SHAPE) == TripleShape.BOTTOM ? light : 0 : light)

@@ -1,7 +1,7 @@
 package ru.betterend.bclib.blocks;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -36,8 +36,8 @@ import java.util.function.Consumer;
 public class BaseLeavesBlock extends LeavesBlock implements BlockModelProvider, RenderLayerProvider, TagProvider, AddMineableShears, AddMineableHoe, LootProvider {
 	protected final Block sapling;
 
-	private static FabricBlockSettings makeLeaves(MaterialColor color) {
-		return FabricBlockSettings
+	private static BlockBehaviour.Properties makeLeaves(MaterialColor color) {
+		return BlockBehaviour.Properties
 			.copyOf(Blocks.OAK_LEAVES)
 			.mapColor(color)
 			//.requiresTool()
@@ -46,12 +46,12 @@ public class BaseLeavesBlock extends LeavesBlock implements BlockModelProvider, 
 			.blockVision((state, world, pos) -> false);
 	}
 
-	public BaseLeavesBlock(Block sapling, MaterialColor color, Consumer<FabricBlockSettings> customizeProperties) {
+	public BaseLeavesBlock(Block sapling, MaterialColor color, Consumer<BlockBehaviour.Properties> customizeProperties) {
 		super(BaseBlock.acceptAndReturn(customizeProperties, makeLeaves(color)));
 		this.sapling = sapling;
 	}
 	
-	public BaseLeavesBlock(Block sapling, MaterialColor color, int light, Consumer<FabricBlockSettings> customizeProperties) {
+	public BaseLeavesBlock(Block sapling, MaterialColor color, int light, Consumer<BlockBehaviour.Properties> customizeProperties) {
 		super(BaseBlock.acceptAndReturn(customizeProperties, makeLeaves(color).luminance(light)));
 		this.sapling = sapling;
 	}

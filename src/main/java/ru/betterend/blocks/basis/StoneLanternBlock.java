@@ -2,7 +2,7 @@ package ru.betterend.blocks.basis;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.block.model.BlockModel;
@@ -26,7 +26,7 @@ public class StoneLanternBlock extends EndLanternBlock implements CustomColorPro
 	private static final VoxelShape SHAPE_FLOOR = Block.box(3, 0, 3, 13, 15, 13);
 	
 	public StoneLanternBlock(Block source) {
-		super(FabricBlockSettings.copyOf(source).luminance(15));
+		super(BlockBehaviour.Properties.copy(source).luminance(15));
 	}
 	
 	@Override

@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -17,7 +17,7 @@ import java.util.List;
 
 public class DenseEmeraldIceBlock extends BaseBlock implements RenderLayerProvider {
 	public DenseEmeraldIceBlock() {
-		super(FabricBlockSettings.copyOf(Blocks.PACKED_ICE));
+		super(BlockBehaviour.Properties.copy(Blocks.PACKED_ICE));
 	}
 	
 	@Override

@@ -2,7 +2,7 @@ package ru.betterend.bclib.blocks;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.BlockModelRotation;
 import net.minecraft.client.resources.model.UnbakedModel;
@@ -26,7 +26,7 @@ import java.util.Optional;
 
 public class BaseTrapdoorBlock extends TrapDoorBlock implements RenderLayerProvider, BlockModelProvider, LootProvider {
 	public BaseTrapdoorBlock(Block source) {
-		this(FabricBlockSettings.copyOf(source).strength(3.0F, 3.0F).noOcclusion());
+		this(BlockBehaviour.Properties.copy(source).strength(3.0F, 3.0F).noOcclusion());
 	}
 	
 	public BaseTrapdoorBlock(Properties properties) {

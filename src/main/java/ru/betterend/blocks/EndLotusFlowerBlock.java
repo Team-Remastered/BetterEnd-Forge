@@ -3,7 +3,7 @@ package ru.betterend.blocks;
 import com.google.common.collect.Lists;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -25,7 +25,7 @@ public class EndLotusFlowerBlock extends EndPlantBlock {
 	private static final VoxelShape SHAPE_COLLISION = Block.box(0, 0, 0, 16, 2, 16);
 	
 	public EndLotusFlowerBlock() {
-		super(FabricBlockSettings.of(Material.PLANT).luminance(15).noOcclusion());
+		super(BlockBehaviour.Properties.of(Material.PLANT).luminance(15).noOcclusion());
 	}
 	
 	@Override

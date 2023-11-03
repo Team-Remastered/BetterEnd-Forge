@@ -2,7 +2,7 @@ package ru.betterend.blocks;
 
 import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -28,7 +28,7 @@ public class FlamaeaBlock extends EndPlantBlock implements CustomItemProvider, A
 	private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 1, 16);
 	
 	public FlamaeaBlock() {
-		super(FabricBlockSettings.of(Material.PLANT)
+		super(BlockBehaviour.Properties.of(Material.PLANT)
 								 .sound(SoundType.WET_GRASS));
 	}
 	

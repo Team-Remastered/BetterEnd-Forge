@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.Block;
@@ -19,7 +19,7 @@ public class UmbrellaTreeClusterEmptyBlock extends BaseBlock {
 	public static final BooleanProperty NATURAL = EndBlockProperties.NATURAL;
 	
 	public UmbrellaTreeClusterEmptyBlock() {
-		super(FabricBlockSettings
+		super(BlockBehaviour.Properties
 			.copyOf(Blocks.NETHER_WART_BLOCK)
 			.mapColor(MaterialColor.COLOR_PURPLE)
 			.randomTicks()

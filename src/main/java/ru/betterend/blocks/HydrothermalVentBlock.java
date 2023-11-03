@@ -2,7 +2,7 @@ package ru.betterend.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -50,7 +50,7 @@ public class HydrothermalVentBlock extends BaseBlockNotFull implements EntityBlo
 	private static final VoxelShape SHAPE = Block.box(1, 1, 1, 15, 16, 15);
 	
 	public HydrothermalVentBlock() {
-		super(FabricBlockSettings.of(Material.STONE)
+		super(BlockBehaviour.Properties.of(Material.STONE)
 								 .sound(SoundType.STONE)
 								 .noCollission()
 								 .requiresCorrectToolForDrops());

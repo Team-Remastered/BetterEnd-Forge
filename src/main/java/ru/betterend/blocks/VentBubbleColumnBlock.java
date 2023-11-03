@@ -2,7 +2,7 @@ package ru.betterend.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -38,7 +38,7 @@ import java.util.Random;
 
 public class VentBubbleColumnBlock extends Block implements BucketPickup, LiquidBlockContainer {
 	public VentBubbleColumnBlock() {
-		super(FabricBlockSettings.of(Material.BUBBLE_COLUMN).noOcclusion().noCollission().noDrops());
+		super(BlockBehaviour.Properties.of(Material.BUBBLE_COLUMN).noOcclusion().noCollission().noDrops());
 	}
 	
 	@Override

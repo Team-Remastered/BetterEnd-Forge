@@ -1,6 +1,6 @@
 package ru.betterend.bclib.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -20,7 +20,7 @@ import java.util.List;
 public class SimpleLeavesBlock extends BaseBlockNotFull implements RenderLayerProvider, TagProvider, AddMineableShears, AddMineableHoe {
 	public SimpleLeavesBlock(MaterialColor color) {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.LEAVES)
 				.strength(0.2F)
 				.color(color)
@@ -34,7 +34,7 @@ public class SimpleLeavesBlock extends BaseBlockNotFull implements RenderLayerPr
 	
 	public SimpleLeavesBlock(MaterialColor color, int light) {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.LEAVES)
 				.luminance(light)
 				.color(color)

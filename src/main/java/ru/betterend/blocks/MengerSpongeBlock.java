@@ -1,7 +1,7 @@
 package ru.betterend.blocks;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.FluidTags;
@@ -31,7 +31,7 @@ public class MengerSpongeBlock extends BaseBlockNotFull implements RenderLayerPr
 	private static final VoxelShape SHAPE;
 	
 	public MengerSpongeBlock() {
-		super(FabricBlockSettings.copyOf(Blocks.SPONGE).noOcclusion());
+		super(BlockBehaviour.Properties.copy(Blocks.SPONGE).noOcclusion());
 	}
 	
 	@Override

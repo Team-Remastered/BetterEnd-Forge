@@ -8,7 +8,7 @@ import com.mojang.math.Transformation;
 import com.mojang.math.Vector3f;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.BlockModel;
@@ -71,7 +71,7 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 	private static Block[] soils;
 	
 	public FlowerPotBlock(Block source) {
-		super(FabricBlockSettings.copyOf(source).luminance(state -> state.getValue(POT_LIGHT) * 5));
+		super(BlockBehaviour.Properties.copy(source).luminance(state -> state.getValue(POT_LIGHT) * 5));
 		this.registerDefaultState(
 			this.defaultBlockState()
 			.setValue(PLANT_ID, 0)

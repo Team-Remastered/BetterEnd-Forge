@@ -2,7 +2,7 @@ package ru.betterend.blocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.block.model.BlockModel;
@@ -17,7 +17,7 @@ import ru.betterend.client.models.Patterns;
 import java.util.Optional;
 
 public class HydraluxPetalColoredBlock extends HydraluxPetalBlock implements CustomColorProvider {
-	public HydraluxPetalColoredBlock(FabricBlockSettings settings) {
+	public HydraluxPetalColoredBlock(BlockBehaviour.Properties settings) {
 		super(settings);
 	}
 	

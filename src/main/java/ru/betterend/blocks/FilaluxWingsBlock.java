@@ -1,7 +1,7 @@
 package ru.betterend.blocks;
 
 import com.google.common.collect.Maps;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -22,7 +22,7 @@ public class FilaluxWingsBlock extends BaseAttachedBlock implements RenderLayerP
 	private static final EnumMap<Direction, VoxelShape> BOUNDING_SHAPES = Maps.newEnumMap(Direction.class);
 	
 	public FilaluxWingsBlock() {
-		super(FabricBlockSettings.of(Material.PLANT)
+		super(BlockBehaviour.Properties.of(Material.PLANT)
 								 .sound(SoundType.WET_GRASS)
 								 .noCollission());
 	}

@@ -1,7 +1,7 @@
 package ru.betterend.blocks;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.block.Block;
@@ -21,7 +21,7 @@ public class RunedFlavolite extends BaseBlock {
 	public static final BooleanProperty ACTIVATED = BlockProperties.ACTIVE;
 	
 	public RunedFlavolite(boolean unbreakable) {
-		super(FabricBlockSettings.copyOf(EndBlocks.FLAVOLITE.polished)
+		super(BlockBehaviour.Properties.copy(EndBlocks.FLAVOLITE.polished)
 								 .strength(
 									 unbreakable ? -1 : 1,
 									 unbreakable ? Blocks.BEDROCK.getExplosionResistance() : Blocks.OBSIDIAN.getExplosionResistance()

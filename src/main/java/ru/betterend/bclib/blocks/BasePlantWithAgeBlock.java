@@ -1,6 +1,6 @@
 package ru.betterend.bclib.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
@@ -19,7 +19,7 @@ public abstract class BasePlantWithAgeBlock extends BasePlantBlock {
 	
 	public BasePlantWithAgeBlock() {
 		this(
-			FabricBlockSettings.of(Material.PLANT)
+			BlockBehaviour.Properties.of(Material.PLANT)
 				.sound(SoundType.GRASS)
 				.randomTicks()
 				.noCollission()

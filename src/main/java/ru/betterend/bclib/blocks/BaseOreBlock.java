@@ -1,6 +1,6 @@
 package ru.betterend.bclib.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
@@ -39,7 +39,7 @@ public class BaseOreBlock extends OreBlock implements BlockModelProvider, LootPr
 	
 	public BaseOreBlock(Supplier<Item> drop, int minCount, int maxCount, int experience, int miningLevel) {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.STONE, MaterialColor.SAND)
 				.requiresTool()
 				.destroyTime(3F)

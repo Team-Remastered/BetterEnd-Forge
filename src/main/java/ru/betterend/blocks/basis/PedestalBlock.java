@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.core.BlockPos;
@@ -68,7 +68,7 @@ public class PedestalBlock extends BaseBlockNotFull implements EntityBlock {
 	protected float height = 1.0F;
 	
 	public PedestalBlock(Block parent) {
-		super(FabricBlockSettings.copyOf(parent).luminance(getLuminance(parent.defaultBlockState())));
+		super(BlockBehaviour.Properties.copy(parent).luminance(getLuminance(parent.defaultBlockState())));
 		this.registerDefaultState(
 			stateDefinition
 				.any()

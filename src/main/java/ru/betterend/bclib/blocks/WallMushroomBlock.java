@@ -1,7 +1,7 @@
 package ru.betterend.bclib.blocks;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -17,7 +17,7 @@ import java.util.List;
 public abstract class WallMushroomBlock extends BaseWallPlantBlock {
 	public WallMushroomBlock(int light) {
 		this(
-			FabricBlockSettings
+			BlockBehaviour.Properties
 				.of(Material.PLANT)
 				.luminance(light)
 				.destroyTime(0.2F)

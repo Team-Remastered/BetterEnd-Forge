@@ -1,6 +1,6 @@
 package ru.betterend.blocks;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -28,7 +28,7 @@ public class LargeAmaranitaBlock extends EndPlantBlock implements AddMineableShe
 	private static final VoxelShape SHAPE_TOP = Shapes.or(Block.box(1, 3, 1, 15, 16, 15), SHAPE_BOTTOM);
 	
 	public LargeAmaranitaBlock() {
-		super(FabricBlockSettings.of(Material.PLANT)
+		super(BlockBehaviour.Properties.of(Material.PLANT)
 								 
 								 .sound(SoundType.GRASS)
 								 .lightLevel((state) -> (state.getValue(SHAPE) == TripleShape.TOP) ? 15 : 0));
