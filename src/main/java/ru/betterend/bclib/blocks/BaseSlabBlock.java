@@ -86,7 +86,7 @@ public class BaseSlabBlock extends SlabBlock implements BlockModelProvider, Cust
 
 	@Override
 	public BlockItem getCustomItem(ResourceLocation blockID, Item.Properties settings) {
-		if (fireproof) settings = settings.fireproof();
+		if (fireproof) settings = settings.fireResistant();
 		return new BlockItem(this, settings);
 	}
 }

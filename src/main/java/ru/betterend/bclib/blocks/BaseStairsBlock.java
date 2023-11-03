@@ -100,7 +100,7 @@ public class BaseStairsBlock extends StairBlock implements BlockModelProvider, C
 
 	@Override
 	public BlockItem getCustomItem(ResourceLocation blockID, Item.Properties settings) {
-		if (fireproof) settings = settings.fireproof();
+		if (fireproof) settings = settings.fireResistant();
 		return new BlockItem(this, settings);
 	}
 }

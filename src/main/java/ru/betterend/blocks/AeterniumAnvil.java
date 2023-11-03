@@ -20,6 +20,6 @@ public class AeterniumAnvil extends EndAnvilBlock {
 	
 	@Override
 	public BlockItem getCustomItem(ResourceLocation blockID, Item.Properties settings) {
-		return new BaseAnvilItem(this, settings.fireproof());
+		return new BaseAnvilItem(this, settings.fireResistant());
 	}
 }

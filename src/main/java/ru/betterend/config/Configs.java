@@ -17,7 +17,7 @@ public class Configs {
 	public static final PathConfig RECIPE_CONFIG = new PathConfig(BetterEnd.MOD_ID, "recipes");
 	public static final PathConfig ENCHANTMENT_CONFIG = new PathConfig(BetterEnd.MOD_ID, "enchantments");
 	
-	@Environment(value = EnvType.CLIENT)
+	@OnlyIn(Dist.CLIENT)
 	public static final PathConfig CLENT_CONFIG = new PathConfig(BetterEnd.MOD_ID, "client", false);
 	
 	public static void saveConfigs() {

@@ -169,6 +169,7 @@ public class WoodenComplexMaterial extends ComplexMaterial {
 		addBlockEntry(new BlockEntry(BLOCK_COMPOSTER, (complexMaterial, settings) -> new BaseComposterBlock(getBlock(BLOCK_PLANKS))));
 	}
 
+	//FIXME: Rework the flammable system
 	@Override
 	protected void initFlammable(FlammableBlockRegistry registry) {
 		getBlocks().forEach(block -> {

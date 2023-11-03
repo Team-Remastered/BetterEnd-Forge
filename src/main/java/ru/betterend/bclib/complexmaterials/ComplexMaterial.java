@@ -79,6 +79,7 @@ public abstract class ComplexMaterial {
 
 		initFlammable(FlammableBlockRegistry.getDefaultInstance());
 		return this;
+
 	}
 	
 	/**
@@ -97,7 +98,8 @@ public abstract class ComplexMaterial {
 	 * Init default recipes for this {@link ComplexMaterial}, not required.
 	 */
 	protected void initDefaultRecipes() {}
-	
+
+	//FIXME: We need to rework how flammable blocks work since FlammableBlockRegistry doesn't exist
 	/**
 	 * Allows to add blocks into Fabric {@link FlammableBlockRegistry} for this {@link ComplexMaterial}, not required.
 	 */

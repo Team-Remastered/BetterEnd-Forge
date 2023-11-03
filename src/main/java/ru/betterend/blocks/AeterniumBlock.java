@@ -23,6 +23,6 @@ public class AeterniumBlock extends BaseBlock implements CustomItemProvider {
 	
 	@Override
 	public BlockItem getCustomItem(ResourceLocation blockID, Item.Properties settings) {
-		return new BlockItem(this, settings.fireproof());
+		return new BlockItem(this, settings.fireResistant());
 	}
 }
