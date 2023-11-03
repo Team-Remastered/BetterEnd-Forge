@@ -51,7 +51,7 @@ public abstract class UnderwaterPlantBlock extends BaseBlockNotFull implements R
 		this(
 			BlockBehaviour.Properties
 				.of(Material.WATER_PLANT)
-				.luminance(light)
+				.lightLevel(BlockHelper.getLightValue(light))
 				.sound(SoundType.WET_GRASS)
 				.noCollission()
 		);

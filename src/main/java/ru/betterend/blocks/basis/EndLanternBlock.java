@@ -23,6 +23,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import ru.betterend.bclib.blocks.BaseBlockNotFull;
+import ru.betterend.bclib.blocks.BlockHelper;
 import ru.betterend.bclib.blocks.BlockProperties;
 import ru.betterend.bclib.client.models.ModelsHelper;
 
@@ -34,7 +35,7 @@ public class EndLanternBlock extends BaseBlockNotFull implements SimpleWaterlogg
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	
 	public EndLanternBlock(Block source) {
-		this(BlockBehaviour.Properties.copy(source).luminance(15).noOcclusion());
+		this(BlockBehaviour.Properties.copy(source).lightLevel(BlockHelper.getLightValue(15)).noOcclusion());
 	}
 	
 	public EndLanternBlock(Properties settings) {

@@ -15,8 +15,8 @@ public class EnderBlock extends BaseBlock {
 	
 	public EnderBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.WARPED_WART_BLOCK)
-								 .hardness(5F)
-								 .resistance(6F)
+								 .destroyTime(5F)
+								 .explosionResistance(6F)
 								 .requiresCorrectToolForDrops()
 								 .sound(SoundType.STONE));
 	}

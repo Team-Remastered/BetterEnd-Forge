@@ -6,6 +6,6 @@ import ru.betterend.blocks.basis.LitPillarBlock;
 
 public class NeonCactusBlock extends LitPillarBlock {
 	public NeonCactusBlock() {
-		super(BlockBehaviour.Properties.copy(Blocks.CACTUS).luminance(15));
+		super(BlockBehaviour.Properties.copy(Blocks.CACTUS).lightLevel(15));
 	}
 }

@@ -16,8 +16,8 @@ public class HydraluxPetalBlock extends BaseBlock implements AddMineableAxe {
 		this(
 			BlockBehaviour.Properties
 				.of(Material.PLANT)
-				.hardness(1)
-				.resistance(1)
+				.destroyTime(1)
+				.explosionResistance(1)
 				.mapColor(MaterialColor.PODZOL)
 				.sound(SoundType.WART_BLOCK)
 		);

@@ -36,7 +36,7 @@ public class SimpleLeavesBlock extends BaseBlockNotFull implements RenderLayerPr
 		this(
 			BlockBehaviour.Properties
 				.of(Material.LEAVES)
-				.luminance(light)
+				.lightLevel(BlockHelper.getLightValue(light))
 				.color(color)
 				.strength(0.2F)
 				.sound(SoundType.GRASS)

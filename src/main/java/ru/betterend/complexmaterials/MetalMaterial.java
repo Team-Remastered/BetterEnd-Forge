@@ -25,6 +25,7 @@ import ru.betterend.bclib.blocks.BaseOreBlock;
 import ru.betterend.bclib.blocks.BaseSlabBlock;
 import ru.betterend.bclib.blocks.BaseStairsBlock;
 import ru.betterend.bclib.blocks.BaseTrapdoorBlock;
+import ru.betterend.bclib.blocks.BlockHelper;
 import ru.betterend.bclib.blocks.WoodenPressurePlateBlock;
 import ru.betterend.bclib.items.ModelProviderItem;
 import ru.betterend.bclib.items.tool.BaseAxeItem;
@@ -109,8 +110,8 @@ public class MetalMaterial {
 				true,
 				BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
 								   .mapColor(color)
-								   .hardness(hardness)
-								   .resistance(resistance),
+								   .destroyTime(hardness)
+								   .explosionResistance(resistance),
 				EndItems.makeEndItemSettings(),
 				material,
 				armor
@@ -134,8 +135,8 @@ public class MetalMaterial {
 				false,
 				BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
 								   .mapColor(color)
-								   .hardness(hardness)
-								   .resistance(resistance),
+								   .destroyTime(hardness)
+								   .explosionResistance(resistance),
 				EndItems.makeEndItemSettings(),
 				material,
 				armor
@@ -144,9 +145,9 @@ public class MetalMaterial {
 
 	private MetalMaterial(String name, boolean hasOre, BlockBehaviour.Properties settings, Properties itemSettings, Tier material, ArmorMaterial armor) {
 		BlockBehaviour.Properties lanternProperties = BlockBehaviour.Properties.copy(settings)
-																		 .hardness(1)
-																		 .resistance(1)
-																		 .luminance(15)
+																		 .destroyTime(1)
+																		 .explosionResistance(1)
+																		 .lightLevel(BlockHelper.getLightValue(15))
 																		 .sound(SoundType.LANTERN);
 		final int level = material.getLevel();
 

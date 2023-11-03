@@ -25,6 +25,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import ru.betterend.bclib.blocks.BaseAttachedBlock;
+import ru.betterend.bclib.blocks.BlockHelper;
 import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
 import ru.betterend.bclib.interfaces.tools.AddMineablePickaxe;
@@ -39,7 +40,7 @@ public class SmaragdantCrystalShardBlock extends BaseAttachedBlock implements Ad
 	public SmaragdantCrystalShardBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE)
 								 .materialColor(MaterialColor.COLOR_GREEN)
-								 .luminance(15)
+								 .lightLevel(BlockHelper.getLightValue(15))
 								 .sound(SoundType.AMETHYST_CLUSTER)
 								 .requiresCorrectToolForDrops()
 								 .noCollission());

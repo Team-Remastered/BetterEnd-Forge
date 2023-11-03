@@ -26,8 +26,8 @@ public class BaseGlassBlock extends BaseBlockNotFull implements AddMineablePicka
     }
     public BaseGlassBlock(Block block, float resistance) {
         super(BlockBehaviour.Properties.copy(block)
-                .resistance(resistance)
-                .nonOpaque()
+                .explosionResistance(resistance)
+                .noOcclusion()
                 .isSuffocating((arg1, arg2, arg3) -> false)
                 .isViewBlocking((arg1, arg2, arg3) -> false));
     }

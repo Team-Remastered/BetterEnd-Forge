@@ -52,7 +52,7 @@ public class RespawnObeliskBlock extends BaseBlock implements CustomColorProvide
 	public static final EnumProperty<TripleShape> SHAPE = BlockProperties.TRIPLE_SHAPE;
 	
 	public RespawnObeliskBlock() {
-		super(BlockBehaviour.Properties.copy(Blocks.END_STONE).luminance((state) -> {
+		super(BlockBehaviour.Properties.copy(Blocks.END_STONE).lightLevel((state) -> {
 			return (state.getValue(SHAPE) == TripleShape.BOTTOM) ? 0 : 15;
 		}));
 	}

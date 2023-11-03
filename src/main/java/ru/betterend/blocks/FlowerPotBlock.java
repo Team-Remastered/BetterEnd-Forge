@@ -71,7 +71,7 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 	private static Block[] soils;
 	
 	public FlowerPotBlock(Block source) {
-		super(BlockBehaviour.Properties.copy(source).luminance(state -> state.getValue(POT_LIGHT) * 5));
+		super(BlockBehaviour.Properties.copy(source).lightLevel(state -> state.getValue(POT_LIGHT) * 5));
 		this.registerDefaultState(
 			this.defaultBlockState()
 			.setValue(PLANT_ID, 0)

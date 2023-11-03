@@ -28,7 +28,7 @@ public class CavePumpkinBlock extends BaseBlockNotFull implements RenderLayerPro
 	private static final VoxelShape SHAPE_BIG;
 	
 	public CavePumpkinBlock() {
-		super(BlockBehaviour.Properties.copy(Blocks.PUMPKIN).luminance((state) -> state.getValue(SMALL) ? 10 : 15));
+		super(BlockBehaviour.Properties.copy(Blocks.PUMPKIN).lightLevel((state) -> state.getValue(SMALL) ? 10 : 15));
 		registerDefaultState(defaultBlockState().setValue(SMALL, false));
 	}
 	

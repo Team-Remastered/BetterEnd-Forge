@@ -66,7 +66,7 @@ public class NeonCactusPlantBlock extends BaseBlockNotFull implements SimpleWate
 	private static final int MAX_LENGTH = 12;
 	
 	public NeonCactusPlantBlock() {
-		super(BlockBehaviour.Properties.copy(Blocks.CACTUS).luminance(15).randomTicks());
+		super(BlockBehaviour.Properties.copy(Blocks.CACTUS).lightLevel(15).randomTicks());
 		registerDefaultState(defaultBlockState().setValue(WATERLOGGED, false)
 												.setValue(FACING, Direction.UP)
 												.setValue(SHAPE, TripleShape.TOP));

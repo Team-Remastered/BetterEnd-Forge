@@ -27,7 +27,7 @@ public abstract class BaseUnderwaterWallPlantBlock extends BaseWallPlantBlock im
 		this(
 			BlockBehaviour.Properties
 				.of(Material.WATER_PLANT)
-				.luminance(light)
+				.lightLevel(BlockHelper.getLightValue(light))
 				.sound(SoundType.WET_GRASS)
 				.noCollission()
 		);

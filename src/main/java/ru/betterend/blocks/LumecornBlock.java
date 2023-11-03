@@ -39,8 +39,8 @@ public class LumecornBlock extends BaseBlockNotFull implements RenderLayerProvid
 	
 	public LumecornBlock() {
 		super(BlockBehaviour.Properties.of(Material.WOOD)
-								 .hardness(0.5F)
-								 .luminance(state -> state.getValue(SHAPE).getLight()));
+								 .destroyTime(0.5F)
+								 .lightLevel(state -> state.getValue(SHAPE).getLight()));
 	}
 	
 	@Override

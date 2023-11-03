@@ -28,6 +28,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.dimension.DimensionType;
+import ru.betterend.bclib.blocks.BlockHelper;
 import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.CustomColorProvider;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
@@ -45,8 +46,8 @@ public class EndPortalBlock extends NetherPortalBlock implements RenderLayerProv
 	
 	public EndPortalBlock() {
 		super(BlockBehaviour.Properties.copy(Blocks.NETHER_PORTAL)
-								 .resistance(Blocks.BEDROCK.getExplosionResistance())
-								 .luminance(15));
+								 .explosionResistance(Blocks.BEDROCK.getExplosionResistance())
+								 .lightLevel(BlockHelper.getLightValue(15)));
 	}
 	
 	@Override

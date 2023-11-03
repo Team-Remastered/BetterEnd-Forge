@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import ru.betterend.bclib.blocks.BaseBlock;
+import ru.betterend.bclib.blocks.BlockHelper;
 import ru.betterend.bclib.interfaces.tools.AddMineableShears;
 import ru.betterend.registry.EndBlocks;
 
@@ -24,7 +25,7 @@ public class GlowingPillarLuminophorBlock extends BaseBlock implements AddMineab
 		super(BlockBehaviour.Properties.of(Material.LEAVES)
 								 .mapColor(MaterialColor.COLOR_ORANGE)
 								 .strength(0.2F)
-								 .luminance(15)
+								 .lightLevel(BlockHelper.getLightValue(15))
 								 .sound(SoundType.GRASS));
 		this.registerDefaultState(this.stateDefinition.any().setValue(NATURAL, false));
 	}

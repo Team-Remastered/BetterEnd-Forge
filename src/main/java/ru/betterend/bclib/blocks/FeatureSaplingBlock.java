@@ -40,7 +40,7 @@ public class FeatureSaplingBlock extends SaplingBlock implements RenderLayerProv
 	
 	public FeatureSaplingBlock(Function<BlockState, Feature<?>> featureSupplier) {
 		this(BlockBehaviour.Properties.of(Material.PLANT)
-		   .collidable(false)
+		   .noCollission()
 		   .instabreak()
 		   .sound(SoundType.GRASS)
 		   .randomTicks(),
@@ -50,8 +50,8 @@ public class FeatureSaplingBlock extends SaplingBlock implements RenderLayerProv
 	
 	public FeatureSaplingBlock(int light, Function<BlockState, Feature<?>> featureSupplier) {
 		this(BlockBehaviour.Properties.of(Material.PLANT)
-		   .collidable(false)
-		   .luminance(light)
+		   .noCollission()
+		   .lightLevel(BlockHelper.getLightValue(light))
 		   .instabreak()
 		   .sound(SoundType.GRASS)
 		   .randomTicks(),

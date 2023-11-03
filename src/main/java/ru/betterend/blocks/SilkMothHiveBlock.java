@@ -42,8 +42,8 @@ public class SilkMothHiveBlock extends BaseBlock {
 	
 	public SilkMothHiveBlock() {
 		super(BlockBehaviour.Properties.of(Material.WOOD)
-								 .hardness(0.5F)
-								 .resistance(0.1F)
+								 .destroyTime(0.5F)
+								 .explosionResistance(0.1F)
 								 .sound(SoundType.WOOL)
 								 .noOcclusion()
 								 .randomTicks());

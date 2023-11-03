@@ -68,7 +68,7 @@ public class PedestalBlock extends BaseBlockNotFull implements EntityBlock {
 	protected float height = 1.0F;
 	
 	public PedestalBlock(Block parent) {
-		super(BlockBehaviour.Properties.copy(parent).luminance(getLuminance(parent.defaultBlockState())));
+		super(BlockBehaviour.Properties.copy(parent).lightLevel(getLuminance(parent.defaultBlockState())));
 		this.registerDefaultState(
 			stateDefinition
 				.any()

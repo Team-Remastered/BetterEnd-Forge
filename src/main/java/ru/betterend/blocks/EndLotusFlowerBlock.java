@@ -25,7 +25,7 @@ public class EndLotusFlowerBlock extends EndPlantBlock {
 	private static final VoxelShape SHAPE_COLLISION = Block.box(0, 0, 0, 16, 2, 16);
 	
 	public EndLotusFlowerBlock() {
-		super(BlockBehaviour.Properties.of(Material.PLANT).luminance(15).noOcclusion());
+		super(BlockBehaviour.Properties.of(Material.PLANT).lightLevel(15).noOcclusion());
 	}
 	
 	@Override

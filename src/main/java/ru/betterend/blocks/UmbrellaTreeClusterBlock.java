@@ -30,7 +30,7 @@ public class UmbrellaTreeClusterBlock extends BaseBlock {
 		super(BlockBehaviour.Properties
 			.copyOf(Blocks.NETHER_WART_BLOCK)
 			.mapColor(MaterialColor.COLOR_PURPLE)
-			.luminance(15)
+			.lightLevel(15)
 		);
 		registerDefaultState(stateDefinition.any().setValue(NATURAL, false));
 	}

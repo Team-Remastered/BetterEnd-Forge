@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import ru.betterend.bclib.blocks.BlockHelper;
 import ru.betterend.bclib.interfaces.tools.AddMineableShears;
 import ru.betterend.blocks.basis.EndUnderwaterPlantBlock;
 
@@ -25,7 +26,7 @@ public class PondAnemoneBlock extends EndUnderwaterPlantBlock implements AddMine
 	public PondAnemoneBlock() {
 		super(BlockBehaviour.Properties.of(Material.WATER_PLANT)
 								 
-								 .luminance(13)
+								 .lightLevel(BlockHelper.getLightValue(13))
 								 .sound(SoundType.CORAL_BLOCK)
 								 .noCollission());
 	}

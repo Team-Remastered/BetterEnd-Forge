@@ -24,7 +24,7 @@ import java.util.Random;
 @SuppressWarnings("deprecation")
 public class MossyDragonBoneBlock extends BaseRotatedPillarBlock {
 	public MossyDragonBoneBlock() {
-		super(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).hardness(0.5F).randomTicks());
+		super(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).destroyTime(0.5F).randomTicks());
 	}
 	
 	@Override

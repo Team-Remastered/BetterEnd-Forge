@@ -19,6 +19,7 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import ru.betterend.bclib.blocks.BlockHelper;
 import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.CustomColorProvider;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
@@ -40,9 +41,9 @@ public class AuroraCrystalBlock extends AbstractGlassBlock implements RenderLaye
 	public AuroraCrystalBlock() {
 		super(BlockBehaviour.Properties
 			.of(Material.GLASS)
-			 .hardness(1F)
-			 .resistance(1F)
-			 .luminance(15)
+			 .destroyTime(1F)
+			 .explosionResistance(1F)
+			 .lightLevel(BlockHelper.getLightValue(15))
 			 .noOcclusion()
 			 .isSuffocating((state, world, pos) -> false)
 			 .sound(SoundType.GLASS));

@@ -22,7 +22,7 @@ import java.util.Random;
 
 public class MossyObsidian extends BaseBlock {
 	public MossyObsidian() {
-		super(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).hardness(3).randomTicks());
+		super(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).destroyTime(3).randomTicks());
 	}
 	
 	@Override

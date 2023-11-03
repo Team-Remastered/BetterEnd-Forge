@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.Material;
 import ru.betterend.bclib.blocks.BaseBlock;
+import ru.betterend.bclib.blocks.BlockHelper;
 import ru.betterend.bclib.blocks.BlockProperties;
 import ru.betterend.bclib.interfaces.tools.AddMineableAxe;
 import ru.betterend.registry.EndBlocks;
@@ -22,7 +23,7 @@ public class BlueVineLanternBlock extends BaseBlock implements AddMineableAxe {
 	
 	public BlueVineLanternBlock() {
 		super(BlockBehaviour.Properties.of(Material.WOOD)
-								 .luminance(15)
+								 .lightLevel(BlockHelper.getLightValue(15))
 								 .sound(SoundType.WART_BLOCK));
 		this.registerDefaultState(this.stateDefinition.any().setValue(NATURAL, false));
 	}

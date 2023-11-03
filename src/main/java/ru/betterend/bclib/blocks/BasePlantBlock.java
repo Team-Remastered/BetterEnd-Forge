@@ -65,7 +65,7 @@ public abstract class BasePlantBlock extends BaseBlockNotFull implements RenderL
 		this(
 			BlockBehaviour.Properties
 				.of(replaceable ? Material.REPLACEABLE_PLANT : Material.PLANT)
-				.luminance(light)
+				.lightLevel(BlockHelper.getLightValue(light))
 				.sound(SoundType.GRASS)
 				.noCollission()
 		);

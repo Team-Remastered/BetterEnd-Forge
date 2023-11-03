@@ -14,8 +14,8 @@ public class AeterniumBlock extends BaseBlock implements CustomItemProvider {
 	public AeterniumBlock() {
 		super(BlockBehaviour.Properties
 			.of(Material.METAL, MaterialColor.COLOR_GRAY)
-			.hardness(65F)
-			.resistance(1200F)
+			.destroyTime(65F)
+			.explosionResistance(1200F)
 			.requiresCorrectToolForDrops()
 			.sound(SoundType.NETHERITE_BLOCK)
 		);

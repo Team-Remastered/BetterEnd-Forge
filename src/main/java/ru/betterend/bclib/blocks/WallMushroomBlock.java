@@ -19,7 +19,7 @@ public abstract class WallMushroomBlock extends BaseWallPlantBlock {
 		this(
 			BlockBehaviour.Properties
 				.of(Material.PLANT)
-				.luminance(light)
+				.lightLevel(BlockHelper.getLightValue(light))
 				.destroyTime(0.2F)
 				.sound(SoundType.GRASS)
 				.sound(SoundType.WOOD)

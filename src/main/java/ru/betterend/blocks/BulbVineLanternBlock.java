@@ -16,6 +16,7 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
+import ru.betterend.bclib.blocks.BlockHelper;
 import ru.betterend.bclib.client.models.ModelsHelper;
 import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.interfaces.BlockModelProvider;
@@ -33,10 +34,10 @@ public class BulbVineLanternBlock extends EndLanternBlock implements RenderLayer
 	
 	public BulbVineLanternBlock() {
 		this(BlockBehaviour.Properties.of(Material.METAL)
-								.hardness(1)
-								.resistance(1)
+								.destroyTime(1)
+								.explosionResistance(1)
 								.mapColor(MaterialColor.COLOR_LIGHT_GRAY)
-								.luminance(15)
+								.lightLevel(BlockHelper.getLightValue(15))
 								.requiresCorrectToolForDrops()
 								.sound(SoundType.LANTERN));
 	}

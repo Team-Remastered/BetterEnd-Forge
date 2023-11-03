@@ -50,9 +50,9 @@ public class EndStoneSmelter extends BaseBlockWithEntity {
 	
 	public EndStoneSmelter() {
 		super(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)
-								 .luminance(state -> state.getValue(LIT) ? 15 : 0)
-								 .hardness(4F)
-								 .resistance(100F)
+								 .lightLevel(state -> state.getValue(LIT) ? 15 : 0)
+								 .destroyTime(4F)
+								 .explosionResistance(100F)
 								 .requiresCorrectToolForDrops()
 								 .sound(SoundType.STONE));
 		registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(LIT, false));

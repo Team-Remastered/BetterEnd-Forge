@@ -26,7 +26,7 @@ public class RunedFlavolite extends BaseBlock {
 									 unbreakable ? -1 : 1,
 									 unbreakable ? Blocks.BEDROCK.getExplosionResistance() : Blocks.OBSIDIAN.getExplosionResistance()
 								 )
-								 .luminance(state -> {
+								 .lightLevel(state -> {
 									 return state.getValue(ACTIVATED) ? 8 : 0;
 								 }));
 		this.registerDefaultState(stateDefinition.any().setValue(ACTIVATED, false));
