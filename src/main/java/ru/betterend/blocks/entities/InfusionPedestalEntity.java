@@ -13,7 +13,7 @@ public class InfusionPedestalEntity extends PedestalBlockEntity {
 	private InfusionRitual linkedRitual;
 	
 	public InfusionPedestalEntity(BlockPos blockPos, BlockState blockState) {
-		super(EndBlockEntities.INFUSION_PEDESTAL, blockPos, blockState);
+		super(EndBlockEntities.INFUSION_PEDESTAL.get(), blockPos, blockState);
 	}
 	
 	@Override

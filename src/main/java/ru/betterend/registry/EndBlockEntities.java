@@ -1,10 +1,12 @@
 package ru.betterend.registry;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.minecraft.core.Registry;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.EndStoneSmelter;
 import ru.betterend.blocks.basis.PedestalBlock;
@@ -15,29 +17,26 @@ import ru.betterend.blocks.entities.InfusionPedestalEntity;
 import ru.betterend.blocks.entities.PedestalBlockEntity;
 
 public class EndBlockEntities {
-	public final static BlockEntityType<EndStoneSmelterBlockEntity> END_STONE_SMELTER = registerBlockEntity(
-		EndStoneSmelter.ID,
-		FabricBlockEntityTypeBuilder.create(EndStoneSmelterBlockEntity::new, EndBlocks.END_STONE_SMELTER)
-	);
-	public final static BlockEntityType<PedestalBlockEntity> PEDESTAL = registerBlockEntity(
-		"pedestal",
-		FabricBlockEntityTypeBuilder.create(PedestalBlockEntity::new, getPedestals())
-	);
-	public final static BlockEntityType<EternalPedestalEntity> ETERNAL_PEDESTAL = registerBlockEntity(
-		"eternal_pedestal",
-		FabricBlockEntityTypeBuilder.create(EternalPedestalEntity::new, EndBlocks.ETERNAL_PEDESTAL)
-	);
-	public final static BlockEntityType<InfusionPedestalEntity> INFUSION_PEDESTAL = registerBlockEntity(
-		"infusion_pedestal",
-		FabricBlockEntityTypeBuilder.create(InfusionPedestalEntity::new, EndBlocks.INFUSION_PEDESTAL)
-	);
-	public final static BlockEntityType<BlockEntityHydrothermalVent> HYDROTHERMAL_VENT = registerBlockEntity(
-		"hydrother_malvent",
-		FabricBlockEntityTypeBuilder.create(BlockEntityHydrothermalVent::new, EndBlocks.HYDROTHERMAL_VENT)
-	);
+
+	public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, BetterEndForge.MOD_ID);
+
+	public static void initRegister(IEventBus modEventBus) {
+		BLOCK_ENTITIES.register(modEventBus);
+	}
+
+	public static final RegistryObject<BlockEntityType<EndStoneSmelterBlockEntity>> END_STONE_SMELTER = registerBlockEntity(
+			EndStoneSmelter.ID, EndStoneSmelterBlockEntity::new, EndBlocks.END_STONE_SMELTER.get());
+	public final static RegistryObject<BlockEntityType<PedestalBlockEntity>> PEDESTAL = registerBlockEntity(
+		"pedestal", PedestalBlockEntity::new, getPedestals()); //No idea if this works
+	public final static RegistryObject<BlockEntityType<EternalPedestalEntity>> ETERNAL_PEDESTAL = registerBlockEntity(
+		"eternal_pedestal", EternalPedestalEntity::new, EndBlocks.ETERNAL_PEDESTAL.get());
+	public final static RegistryObject<BlockEntityType<InfusionPedestalEntity>> INFUSION_PEDESTAL = registerBlockEntity(
+		"infusion_pedestal", InfusionPedestalEntity::new, EndBlocks.INFUSION_PEDESTAL.get());
+	public final static RegistryObject<BlockEntityType<BlockEntityHydrothermalVent>> HYDROTHERMAL_VENT = registerBlockEntity(
+		"hydrother_malvent", BlockEntityHydrothermalVent::new, EndBlocks.HYDROTHERMAL_VENT.get());
 	
-	public static <T extends BlockEntity> BlockEntityType<T> registerBlockEntity(String id, FabricBlockEntityTypeBuilder<T> builder) {
-		return Registry.register(Registry.BLOCK_ENTITY_TYPE, BetterEndForge.makeID(id), builder.build(null));
+	public static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> registerBlockEntity(String id,  BlockEntityType.BlockEntitySupplier<T> pFactory, Block... blocks) {
+		return BLOCK_ENTITIES.register(id, () -> BlockEntityType.Builder.of(pFactory, blocks).build(null));
 		
 		//return Registry.register(Registry.BLOCK_ENTITY_TYPE, BetterEnd.makeID(id), builder.build(null));
 	}

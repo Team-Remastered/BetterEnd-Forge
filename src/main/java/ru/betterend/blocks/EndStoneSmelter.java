@@ -172,7 +172,7 @@ public class EndStoneSmelter extends BaseBlockWithEntity {
 	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState blockState, BlockEntityType<T> blockEntityType) {
 		return level.isClientSide() ? null : createTickerHelper(
 			blockEntityType,
-			EndBlockEntities.END_STONE_SMELTER,
+			EndBlockEntities.END_STONE_SMELTER.get(),
 			EndStoneSmelterBlockEntity::tick
 		);
 	}

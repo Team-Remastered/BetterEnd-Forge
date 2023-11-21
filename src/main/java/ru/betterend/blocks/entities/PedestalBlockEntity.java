@@ -17,7 +17,7 @@ public class PedestalBlockEntity extends BlockEntity implements Container {
 	private ItemStack activeItem = ItemStack.EMPTY;
 	
 	public PedestalBlockEntity(BlockPos blockPos, BlockState blockState) {
-		this(EndBlockEntities.PEDESTAL, blockPos, blockState);
+		this(EndBlockEntities.PEDESTAL.get(), blockPos, blockState);
 	}
 	
 	public PedestalBlockEntity(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState) {

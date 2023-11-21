@@ -1,15 +1,23 @@
 package ru.betterend.registry;
 
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import ru.betterend.BetterEndForge;
 import ru.betterend.client.render.PedestalItemRenderer;
 
+@Mod.EventBusSubscriber(modid = BetterEndForge.MOD_ID, value = Dist.CLIENT)
 @OnlyIn(Dist.CLIENT)
 public class EndBlockEntityRenders {
-	public static void register() {
-		BlockEntityRendererRegistry.register(EndBlockEntities.PEDESTAL, PedestalItemRenderer::new);
-		BlockEntityRendererRegistry.register(EndBlockEntities.ETERNAL_PEDESTAL, PedestalItemRenderer::new);
-		BlockEntityRendererRegistry.register(EndBlockEntities.INFUSION_PEDESTAL, PedestalItemRenderer::new);
+	@SubscribeEvent
+	public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+		event.registerBlockEntityRenderer(EndBlockEntities.PEDESTAL.get(), PedestalItemRenderer::new);
+		event.registerBlockEntityRenderer(EndBlockEntities.ETERNAL_PEDESTAL.get(), PedestalItemRenderer::new);
+		event.registerBlockEntityRenderer(EndBlockEntities.INFUSION_PEDESTAL.get(), PedestalItemRenderer::new);
 	}
+
 }

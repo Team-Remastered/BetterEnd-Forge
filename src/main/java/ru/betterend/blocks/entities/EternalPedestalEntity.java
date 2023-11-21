@@ -11,7 +11,7 @@ public class EternalPedestalEntity extends PedestalBlockEntity {
 	private EternalRitual linkedRitual;
 	
 	public EternalPedestalEntity(BlockPos blockPos, BlockState blockState) {
-		super(EndBlockEntities.ETERNAL_PEDESTAL, blockPos, blockState);
+		super(EndBlockEntities.ETERNAL_PEDESTAL.get(), blockPos, blockState);
 	}
 	
 	public boolean hasRitual() {

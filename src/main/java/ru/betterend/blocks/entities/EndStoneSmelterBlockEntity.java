@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.objects.Object2IntMap.Entry;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
@@ -62,7 +61,7 @@ public class EndStoneSmelterBlockEntity extends BaseContainerBlockEntity impleme
 	private int fuelTime;
 	
 	public EndStoneSmelterBlockEntity(BlockPos blockPos, BlockState blockState) {
-		super(EndBlockEntities.END_STONE_SMELTER, blockPos, blockState);
+		super(EndBlockEntities.END_STONE_SMELTER.get(), blockPos, blockState);
 		this.inventory = NonNullList.withSize(4, ItemStack.EMPTY);
 		this.recipesUsed = new Object2IntOpenHashMap<>();
 		this.propertyDelegate = new ContainerData() {
@@ -466,9 +465,9 @@ public class EndStoneSmelterBlockEntity extends BaseContainerBlockEntity impleme
 	}
 	
 	private static int getFabricFuel(ItemStack stack) {
-		Integer ticks = FuelRegistry.INSTANCE.get(stack.getItem());
+		Integer ticks = 0; // FuelRegistry.INSTANCE.get(stack.getItem());
 		return ticks == null ? 0 : ticks;
-	}
+	} //FIXME: change the fuel system to use forge fuel system
 	
 	static {
 		AbstractFurnaceBlockEntity.getFuel().forEach((item, time) -> {

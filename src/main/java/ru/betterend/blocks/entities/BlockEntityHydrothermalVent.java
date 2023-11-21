@@ -25,7 +25,7 @@ public class BlockEntityHydrothermalVent extends BlockEntity {
 	private final static Vec3 POSITIVE_Y = new Vec3(0.0f, 1.0f, 0.0f);
 	
 	public BlockEntityHydrothermalVent(BlockPos blockPos, BlockState blockState) {
-		super(EndBlockEntities.HYDROTHERMAL_VENT, blockPos, blockState);
+		super(EndBlockEntities.HYDROTHERMAL_VENT.get(), blockPos, blockState);
 	}
 	
 	public static <T extends BlockEntity> void tick(Level level, BlockPos worldPosition, BlockState state, T uncastedEntity) {

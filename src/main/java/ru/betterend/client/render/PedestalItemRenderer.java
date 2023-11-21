@@ -51,7 +51,7 @@ public class PedestalItemRenderer<T extends PedestalBlockEntity> implements Bloc
 			matrices.scale(1.25F, 1.25F, 1.25F);
 		}
 		int age = (int) (minecraft.level.getGameTime() % 314);
-		if (state.is(EndBlocks.ETERNAL_PEDESTAL) && state.getValue(EternalPedestal.ACTIVATED)) {
+		if (state.is(EndBlocks.ETERNAL_PEDESTAL.get()) && state.getValue(EternalPedestal.ACTIVATED)) {
 			float[] colors = EternalCrystalRenderer.colors(age);
 			int y = blockEntity.getBlockPos().getY();
 			
@@ -62,7 +62,7 @@ public class PedestalItemRenderer<T extends PedestalBlockEntity> implements Bloc
 		if (activeItem.getItem() == Items.END_CRYSTAL) {
 			EndCrystalRenderer.render(age, 314, tickDelta, matrices, vertexConsumers, light);
 		}
-		else if (activeItem.getItem() == EndItems.ETERNAL_CRYSTAL) {
+		else if (activeItem.getItem() == EndItems.ETERNAL_CRYSTAL.get()) {
 			EternalCrystalRenderer.render(age, tickDelta, matrices, vertexConsumers, light);
 		}
 		else {
