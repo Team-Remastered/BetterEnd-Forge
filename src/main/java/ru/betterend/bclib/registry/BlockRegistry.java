@@ -98,7 +98,7 @@ public class BlockRegistry extends BaseRegistry<Block> {
 	@Override
 	public void registerItem(ResourceLocation id, Item item) {
 		if (item != null && item != Items.AIR) {
-			Registry.register(Registry.ITEM, id, item);
+			ItemRegistry.ITEMS.register(id.getPath(), () -> item);
 			getModBlockItems(id.getNamespace()).add(item);
 		}
 	}
