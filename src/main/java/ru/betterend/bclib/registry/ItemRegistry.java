@@ -57,7 +57,7 @@ public class ItemRegistry extends BaseRegistry<Item> {
 		return item;
 	}
 	
-	public Item initRegister(ResourceLocation itemId) {
+	public Item register(ResourceLocation itemId) {
 		return register(itemId, new ModelProviderItem(makeItemSettings()));
 	}
 	
@@ -154,13 +154,11 @@ public class ItemRegistry extends BaseRegistry<Item> {
 	@Override
 	public void registerItem(ResourceLocation id, Item item) {
 		if (item != null && item != Items.AIR) {
-			Registry.register(Registry.ITEM, id, item);
-			ITEMS.register(id.getPath(), () -> new Item(new Item.Properties().tab(creativeTab))); //Register the item in the Forge Registry
 			getModItems(id.getNamespace()).add(item); //Adds the item to a list but idk why
 		}
 	}
 	
-	public Item initRegister(ResourceLocation itemId, Item item, String category) {
+	public Item register(ResourceLocation itemId, Item item, String category) {
 		if (config.getBoolean(category, itemId.getPath(), true)) {
 			registerItem(itemId, item);
 		}
