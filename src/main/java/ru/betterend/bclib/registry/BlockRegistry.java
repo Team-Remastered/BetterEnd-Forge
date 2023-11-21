@@ -1,6 +1,5 @@
 package ru.betterend.bclib.registry;
 
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
@@ -8,6 +7,10 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import ru.betterend.BetterEndForge;
 import ru.betterend.bclib.api.tag.NamedBlockTags;
 import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
 import ru.betterend.bclib.api.tag.NamedCommonItemTags;
@@ -24,7 +27,13 @@ public class BlockRegistry extends BaseRegistry<Block> {
 	public BlockRegistry(CreativeModeTab creativeTab, PathConfig config) {
 		super(creativeTab, config);
 	}
-	
+
+	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BetterEndForge.MOD_ID);
+
+	public static void initRegister(IEventBus modEventBus) {
+		BLOCKS.register(modEventBus);
+	}
+
 	@Override
 	public Block register(ResourceLocation id, Block block) {
 		if (!config.getBooleanRoot(id.getNamespace(), true)) {
@@ -39,9 +48,9 @@ public class BlockRegistry extends BaseRegistry<Block> {
 			item = new BlockItem(block, makeItemSettings());
 		}
 		registerBlockItem(id, item);
-		if (block.defaultBlockState().getMaterial().isFlammable() && FlammableBlockRegistry.getDefaultInstance().get(block).getBurnChance() == 0) {
-			FlammableBlockRegistry.getDefaultInstance().add(block, 5, 5);
-		}
+//		if (block.defaultBlockState().getMaterial().isFlammable() && FlammableBlockRegistry.getDefaultInstance().get(block).getBurnChance() == 0) {
+//			FlammableBlockRegistry.getDefaultInstance().add(block, 5, 5);
+//		} //FIXME: FlammableBlockRegistry needs to be fixed
 
 		block = Registry.register(Registry.BLOCK, id, block);
 		getModBlocks(id.getNamespace()).add(block);
@@ -66,6 +75,9 @@ public class BlockRegistry extends BaseRegistry<Block> {
 			}
 		}
 
+		Block finalBlock = block;
+		BLOCKS.register(id.getPath(), () -> finalBlock);
+
 		return block;
 	}
 	
@@ -74,6 +86,7 @@ public class BlockRegistry extends BaseRegistry<Block> {
 			return block;
 		}
 		getModBlocks(id.getNamespace()).add(block);
+        BLOCKS.register(id.getPath(), () -> block);
 		return Registry.register(Registry.BLOCK, id, block);
 	}
 	

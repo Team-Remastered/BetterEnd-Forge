@@ -3,9 +3,13 @@ package ru.betterend;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import ru.betterend.bclib.api.WorldDataAPI;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
+import ru.betterend.bclib.registry.BlockRegistry;
+import ru.betterend.bclib.registry.ItemRegistry;
 import ru.betterend.bclib.util.Logger;
 import ru.betterend.api.BetterEndPlugin;
 import ru.betterend.config.Configs;
@@ -37,7 +41,11 @@ public class BetterEndForge {
 	public static final boolean RUNS_FALL_FLYING_LIB = ModList.get().isLoaded("fallflyinglib");
 
 	public void BetterEnd() {
+		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		WorldDataAPI.registerModCache(MOD_ID);
+		ItemRegistry.initRegister(modEventBus);
+		BlockRegistry.initRegister(modEventBus);
+		EndBlockEntities.initRegister(modEventBus);
 		EndPortals.loadPortals();
 		EndSounds.register();
 		EndBlockEntities.register();

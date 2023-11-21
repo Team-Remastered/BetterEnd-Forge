@@ -155,12 +155,12 @@ public class EndItems {
 	}
 	
 	public static Item registerEndItem(String name) {
-		return getItemRegistry().register(BetterEndForge.makeID(name));
+		return getItemRegistry().initRegister(BetterEndForge.makeID(name));
 	}
 	
 	public static Item registerEndItem(String name, Item item) {
 		if (item instanceof EndArmorItem) {
-			return getItemRegistry().register(BetterEndForge.makeID(name), item, "armour");
+			return getItemRegistry().initRegister(BetterEndForge.makeID(name), item, "armour");
 		}
 		return getItemRegistry().register(BetterEndForge.makeID(name), item);
 	}

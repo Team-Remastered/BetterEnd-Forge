@@ -20,6 +20,10 @@ import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import ru.betterend.BetterEndForge;
 import ru.betterend.bclib.api.tag.NamedCommonItemTags;
 import ru.betterend.bclib.api.tag.NamedToolTags;
 import ru.betterend.bclib.api.tag.TagAPI;
@@ -37,7 +41,12 @@ public class ItemRegistry extends BaseRegistry<Item> {
 	public ItemRegistry(CreativeModeTab creativeTab, PathConfig config) {
 		super(creativeTab, config);
 	}
-	
+
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BetterEndForge.MOD_ID);
+
+	public static void initRegister(IEventBus modEventBus) {
+		ITEMS.register(modEventBus);
+	}
 	public Item registerDisc(ResourceLocation itemId, int power, SoundEvent sound) {
 		BaseDiscItem item = new BaseDiscItem(power, sound, makeItemSettings().stacksTo(1));
 		
@@ -48,7 +57,7 @@ public class ItemRegistry extends BaseRegistry<Item> {
 		return item;
 	}
 	
-	public Item register(ResourceLocation itemId) {
+	public Item initRegister(ResourceLocation itemId) {
 		return register(itemId, new ModelProviderItem(makeItemSettings()));
 	}
 	
@@ -146,11 +155,12 @@ public class ItemRegistry extends BaseRegistry<Item> {
 	public void registerItem(ResourceLocation id, Item item) {
 		if (item != null && item != Items.AIR) {
 			Registry.register(Registry.ITEM, id, item);
-			getModItems(id.getNamespace()).add(item);
+			ITEMS.register(id.getPath(), () -> new Item(new Item.Properties().tab(creativeTab))); //Register the item in the Forge Registry
+			getModItems(id.getNamespace()).add(item); //Adds the item to a list but idk why
 		}
 	}
 	
-	public Item register(ResourceLocation itemId, Item item, String category) {
+	public Item initRegister(ResourceLocation itemId, Item item, String category) {
 		if (config.getBoolean(category, itemId.getPath(), true)) {
 			registerItem(itemId, item);
 		}
