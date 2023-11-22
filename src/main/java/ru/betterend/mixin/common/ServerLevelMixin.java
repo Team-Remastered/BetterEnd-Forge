@@ -102,7 +102,7 @@ public abstract class ServerLevelMixin extends Level {
 		if (state.is(Blocks.ICE)) {
 			ResourceLocation biome = BiomeAPI.getBiomeID(getBiome(pos));
 			if (biome.getNamespace().equals(BetterEndForge.MOD_ID)) {
-				state = EndBlocks.EMERALD_ICE.defaultBlockState();
+				state = EndBlocks.EMERALD_ICE.get().defaultBlockState();
 			}
 		}
 		return state;

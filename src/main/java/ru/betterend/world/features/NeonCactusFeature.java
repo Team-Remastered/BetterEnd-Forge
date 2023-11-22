@@ -18,11 +18,11 @@ public class NeonCactusFeature extends DefaultFeature {
 		final BlockPos pos = featureConfig.origin();
 		final WorldGenLevel world = featureConfig.level();
 		BlockState ground = world.getBlockState(pos.below());
-		if (!ground.is(EndBlocks.ENDSTONE_DUST) && !ground.is(EndBlocks.END_MOSS)) {
+		if (!ground.is(EndBlocks.ENDSTONE_DUST.get()) && !ground.is(EndBlocks.END_MOSS.get())) {
 			return false;
 		}
 		
-		NeonCactusPlantBlock cactus = ((NeonCactusPlantBlock) EndBlocks.NEON_CACTUS);
+		NeonCactusPlantBlock cactus = ((NeonCactusPlantBlock) EndBlocks.NEON_CACTUS.get());
 		cactus.growPlant(world, pos, random);
 		
 		return true;

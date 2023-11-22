@@ -42,7 +42,7 @@ public abstract class ChorusFlowerBlockMixin extends Block {
 	
 	@Inject(method = "canSurvive", at = @At("HEAD"), cancellable = true)
 	private void be_canSurvive(BlockState state, LevelReader world, BlockPos pos, CallbackInfoReturnable<Boolean> info) {
-		if (world.getBlockState(pos.below()).is(EndBlocks.CHORUS_NYLIUM)) {
+		if (world.getBlockState(pos.below()).is(EndBlocks.CHORUS_NYLIUM.get())) {
 			info.setReturnValue(true);
 			info.cancel();
 		}

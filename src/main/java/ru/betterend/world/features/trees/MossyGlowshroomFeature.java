@@ -52,11 +52,11 @@ public class MossyGlowshroomFeature extends DefaultFeature {
 		final BlockPos blockPos = featureConfig.origin();
 		final WorldGenLevel world = featureConfig.level();
 		BlockState down = world.getBlockState(blockPos.below());
-		if (!down.is(EndBlocks.END_MYCELIUM) && !down.is(EndBlocks.END_MOSS)) return false;
+		if (!down.is(EndBlocks.END_MYCELIUM.get()) && !down.is(EndBlocks.END_MOSS.get())) return false;
 		
-		CONE1.setBlock(EndBlocks.MOSSY_GLOWSHROOM_CAP);
-		CONE2.setBlock(EndBlocks.MOSSY_GLOWSHROOM_CAP);
-		CONE_GLOW.setBlock(EndBlocks.MOSSY_GLOWSHROOM_HYMENOPHORE);
+		CONE1.setBlock(EndBlocks.MOSSY_GLOWSHROOM_CAP.get());
+		CONE2.setBlock(EndBlocks.MOSSY_GLOWSHROOM_CAP.get());
+		CONE_GLOW.setBlock(EndBlocks.MOSSY_GLOWSHROOM_HYMENOPHORE.get());
 		ROOTS.setBlock(EndBlocks.MOSSY_GLOWSHROOM.getBark());
 		
 		float height = MHelper.randRange(10F, 25F, random);
@@ -81,8 +81,8 @@ public class MossyGlowshroomFeature extends DefaultFeature {
 		
 		new SDFScale().setScale(scale).setSource(FUNCTION).setReplaceFunction(REPLACE).addPostProcess((info) -> {
 			if (EndBlocks.MOSSY_GLOWSHROOM.isTreeLog(info.getState())) {
-				if (random.nextBoolean() && info.getStateUp().getBlock() == EndBlocks.MOSSY_GLOWSHROOM_CAP) {
-					info.setState(EndBlocks.MOSSY_GLOWSHROOM_CAP.defaultBlockState()
+				if (random.nextBoolean() && info.getStateUp().getBlock() == EndBlocks.MOSSY_GLOWSHROOM_CAP.get()) {
+					info.setState(EndBlocks.MOSSY_GLOWSHROOM_CAP.get().defaultBlockState()
 																.setValue(MossyGlowshroomCapBlock.TRANSITION, true));
 					return info.getState();
 				}
@@ -92,30 +92,30 @@ public class MossyGlowshroomFeature extends DefaultFeature {
 					return info.getState();
 				}
 			}
-			else if (info.getState().getBlock() == EndBlocks.MOSSY_GLOWSHROOM_CAP) {
+			else if (info.getState().getBlock() == EndBlocks.MOSSY_GLOWSHROOM_CAP.get()) {
 				if (EndBlocks.MOSSY_GLOWSHROOM.isTreeLog(info.getStateDown().getBlock())) {
-					info.setState(EndBlocks.MOSSY_GLOWSHROOM_CAP.defaultBlockState()
+					info.setState(EndBlocks.MOSSY_GLOWSHROOM_CAP.get().defaultBlockState()
 																.setValue(MossyGlowshroomCapBlock.TRANSITION, true));
 					return info.getState();
 				}
 				
-				info.setState(EndBlocks.MOSSY_GLOWSHROOM_CAP.defaultBlockState());
+				info.setState(EndBlocks.MOSSY_GLOWSHROOM_CAP.get().defaultBlockState());
 				return info.getState();
 			}
-			else if (info.getState().getBlock() == EndBlocks.MOSSY_GLOWSHROOM_HYMENOPHORE) {
+			else if (info.getState().getBlock() == EndBlocks.MOSSY_GLOWSHROOM_HYMENOPHORE.get()) {
 				for (Direction dir : BlocksHelper.HORIZONTAL) {
 					if (info.getState(dir) == AIR) {
 						info.setBlockPos(
 							info.getPos().relative(dir),
-							EndBlocks.MOSSY_GLOWSHROOM_FUR.defaultBlockState().setValue(FurBlock.FACING, dir)
+							EndBlocks.MOSSY_GLOWSHROOM_FUR.get().defaultBlockState().setValue(FurBlock.FACING, dir)
 						);
 					}
 				}
 				
-				if (info.getStateDown().getBlock() != EndBlocks.MOSSY_GLOWSHROOM_HYMENOPHORE) {
+				if (info.getStateDown().getBlock() != EndBlocks.MOSSY_GLOWSHROOM_HYMENOPHORE.get()) {
 					info.setBlockPos(
 						info.getPos().below(),
-						EndBlocks.MOSSY_GLOWSHROOM_FUR.defaultBlockState().setValue(FurBlock.FACING, Direction.DOWN)
+						EndBlocks.MOSSY_GLOWSHROOM_FUR.get().defaultBlockState().setValue(FurBlock.FACING, Direction.DOWN)
 					);
 				}
 			}

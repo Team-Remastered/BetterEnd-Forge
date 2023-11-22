@@ -23,10 +23,10 @@ public class BulbVineBlock extends BaseVineBlock {
 	@Override
 	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
 		if (state.getValue(SHAPE) == TripleShape.BOTTOM) {
-			return Lists.newArrayList(new ItemStack(EndItems.GLOWING_BULB));
+			return Lists.newArrayList(new ItemStack(EndItems.GLOWING_BULB.get()));
 		}
 		else if (MHelper.RANDOM.nextInt(8) == 0) {
-			return Lists.newArrayList(new ItemStack(EndBlocks.BULB_VINE_SEED));
+			return Lists.newArrayList(new ItemStack(EndBlocks.BULB_VINE_SEED.get()));
 		}
 		else {
 			return Lists.newArrayList();

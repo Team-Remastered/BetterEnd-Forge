@@ -116,7 +116,7 @@ public class AlloyingRecipe implements Recipe<Container>, UnknownReceipBookCateg
 	
 	@OnlyIn(Dist.CLIENT)
 	public ItemStack getToastSymbol() {
-		return new ItemStack(EndBlocks.END_STONE_SMELTER);
+		return new ItemStack(EndBlocks.END_STONE_SMELTER.get());
 	}
 	
 	public static class Builder {

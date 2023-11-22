@@ -166,7 +166,7 @@ public class CrystalMountainPiece extends MountainPiece {
 							int h = coefX * x + coefZ * z + height;
 							for (int y = minY; y < h; y++) {
 								mut.setY(y);
-								chunk.setBlockState(mut, EndBlocks.AURORA_CRYSTAL.defaultBlockState(), false);
+								chunk.setBlockState(mut, EndBlocks.AURORA_CRYSTAL.get().defaultBlockState(), false);
 							}
 						}
 					}

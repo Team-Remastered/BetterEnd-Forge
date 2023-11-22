@@ -116,8 +116,8 @@ public class HydrothermalVentBlock extends BaseBlockNotFull implements EntityBlo
 	public void tick(BlockState state, ServerLevel world, BlockPos pos, Random random) {
 		BlockPos up = pos.above();
 		if (world.getBlockState(up).is(Blocks.WATER)) {
-			BlocksHelper.setWithoutUpdate(world, up, EndBlocks.VENT_BUBBLE_COLUMN);
-			world.scheduleTick(up, EndBlocks.VENT_BUBBLE_COLUMN, 5);
+			BlocksHelper.setWithoutUpdate(world, up, EndBlocks.VENT_BUBBLE_COLUMN.get());
+			world.scheduleTick(up, EndBlocks.VENT_BUBBLE_COLUMN.get(), 5);
 		}
 	}
 	

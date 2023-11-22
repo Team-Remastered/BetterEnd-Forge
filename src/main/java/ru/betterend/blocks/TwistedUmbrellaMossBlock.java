@@ -21,7 +21,7 @@ public class TwistedUmbrellaMossBlock extends EndPlantBlock {
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.is(EndBlocks.END_MOSS) || state.is(EndBlocks.END_MYCELIUM) || state.is(EndBlocks.JUNGLE_MOSS);
+		return state.is(EndBlocks.END_MOSS.get()) || state.is(EndBlocks.END_MYCELIUM.get()) || state.is(EndBlocks.JUNGLE_MOSS.get());
 	}
 	
 	@OnlyIn(Dist.CLIENT)
@@ -42,7 +42,7 @@ public class TwistedUmbrellaMossBlock extends EndPlantBlock {
 	@Override
 	public void performBonemeal(ServerLevel world, Random random, BlockPos pos, BlockState state) {
 		int rot = world.random.nextInt(4);
-		BlockState bs = EndBlocks.TWISTED_UMBRELLA_MOSS_TALL.defaultBlockState()
+		BlockState bs = EndBlocks.TWISTED_UMBRELLA_MOSS_TALL.get().defaultBlockState()
 															.setValue(BaseDoublePlantBlock.ROTATION, rot);
 		BlocksHelper.setWithoutUpdate(world, pos, bs);
 		BlocksHelper.setWithoutUpdate(world, pos.above(), bs.setValue(BaseDoublePlantBlock.TOP, true));

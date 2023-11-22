@@ -93,7 +93,7 @@ public class GeyserFeature extends DefaultFeature {
 			SDF brimstone = new SDFCappedCone().setHeight(radius)
 											   .setRadius1(0)
 											   .setRadius2(radius)
-											   .setBlock(EndBlocks.BRIMSTONE);
+											   .setBlock(EndBlocks.BRIMSTONE.get());
 			brimstone = new SDFTranslate().setTranslate(0, 2F, 0).setSource(brimstone);
 			bowl = new SDFSubtraction().setSourceA(bowl).setSourceB(brimstone);
 			bowl = new SDFUnion().setSourceA(brimstone).setSourceB(bowl);
@@ -152,8 +152,8 @@ public class GeyserFeature extends DefaultFeature {
 		sdf.setReplaceFunction(REPLACE2);
 		sdf.fillRecursive(world, pos);
 		
-		obj1.setBlock(EndBlocks.BRIMSTONE);
-		obj2.setBlock(EndBlocks.BRIMSTONE);
+		obj1.setBlock(EndBlocks.BRIMSTONE.get());
+		obj2.setBlock(EndBlocks.BRIMSTONE.get());
 		new SDFDisplacement().setFunction((vec) -> {
 			return -2F;
 		}).setSource(sdf).setReplaceFunction(REPLACE1).fillRecursiveIgnore(world, pos, IGNORE);
@@ -195,7 +195,7 @@ public class GeyserFeature extends DefaultFeature {
 					mut.setY(mut.getY() - 1);
 					state = world.getBlockState(mut);
 				}
-				if (state.is(CommonBlockTags.GEN_END_STONES) && !world.getBlockState(mut.above()).is(EndBlocks.HYDROTHERMAL_VENT)) {
+				if (state.is(CommonBlockTags.GEN_END_STONES) && !world.getBlockState(mut.above()).is(EndBlocks.HYDROTHERMAL_VENT.get())) {
 					for (int j = 0; j <= dist; j++) {
 						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.SULPHURIC_ROCK.stone);
 						MHelper.shuffle(HORIZONTAL, random);
@@ -205,20 +205,20 @@ public class GeyserFeature extends DefaultFeature {
 								BlocksHelper.setWithoutUpdate(
 									world,
 									p,
-									EndBlocks.TUBE_WORM.defaultBlockState()
+									EndBlocks.TUBE_WORM.get().defaultBlockState()
 													   .setValue(HorizontalDirectionalBlock.FACING, dir)
 								);
 							}
 						}
 						mut.setY(mut.getY() + 1);
 					}
-					state = EndBlocks.HYDROTHERMAL_VENT.defaultBlockState()
+					state = EndBlocks.HYDROTHERMAL_VENT.get().defaultBlockState()
 													   .setValue(HydrothermalVentBlock.ACTIVATED, distRaw < 2);
 					BlocksHelper.setWithoutUpdate(world, mut, state);
 					mut.setY(mut.getY() + 1);
 					state = world.getBlockState(mut);
 					while (state.is(Blocks.WATER)) {
-						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.VENT_BUBBLE_COLUMN.defaultBlockState());
+						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.VENT_BUBBLE_COLUMN.get().defaultBlockState());
 						mut.setY(mut.getY() + 1);
 						state = world.getBlockState(mut);
 					}
@@ -245,13 +245,13 @@ public class GeyserFeature extends DefaultFeature {
 						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.SULPHURIC_ROCK.stone);
 						mut.setY(mut.getY() + 1);
 					}
-					state = EndBlocks.HYDROTHERMAL_VENT.defaultBlockState()
+					state = EndBlocks.HYDROTHERMAL_VENT.get().defaultBlockState()
 													   .setValue(HydrothermalVentBlock.ACTIVATED, distRaw < 2);
 					BlocksHelper.setWithoutUpdate(world, mut, state);
 					mut.setY(mut.getY() + 1);
 					state = world.getBlockState(mut);
 					while (state.is(Blocks.WATER)) {
-						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.VENT_BUBBLE_COLUMN.defaultBlockState());
+						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.VENT_BUBBLE_COLUMN.get().defaultBlockState());
 						mut.setY(mut.getY() + 1);
 						state = world.getBlockState(mut);
 					}
@@ -276,7 +276,7 @@ public class GeyserFeature extends DefaultFeature {
 		};
 		
 		REPLACE2 = (state) -> {
-			if (state.is(CommonBlockTags.GEN_END_STONES) || state.is(EndBlocks.HYDROTHERMAL_VENT) || state.is(EndBlocks.SULPHUR_CRYSTAL)) {
+			if (state.is(CommonBlockTags.GEN_END_STONES) || state.is(EndBlocks.HYDROTHERMAL_VENT.get()) || state.is(EndBlocks.SULPHUR_CRYSTAL.get())) {
 				return true;
 			}
 			if (state.getMaterial().equals(Material.PLANT)) {
@@ -287,7 +287,7 @@ public class GeyserFeature extends DefaultFeature {
 		
 		IGNORE = (state) -> {
 			return state.is(Blocks.WATER) || state.is(Blocks.CAVE_AIR) || state.is(EndBlocks.SULPHURIC_ROCK.stone) || state
-				.is(EndBlocks.BRIMSTONE);
+				.is(EndBlocks.BRIMSTONE.get());
 		};
 	}
 }

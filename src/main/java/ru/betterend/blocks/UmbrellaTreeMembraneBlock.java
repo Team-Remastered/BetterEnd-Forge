@@ -61,7 +61,7 @@ public class UmbrellaTreeMembraneBlock extends SlimeBlock implements RenderLayer
 			return Lists.newArrayList(new ItemStack(this));
 		}
 		else {
-			return MHelper.RANDOM.nextInt(4) == 0 ? Lists.newArrayList(new ItemStack(EndBlocks.UMBRELLA_TREE_SAPLING)) : Collections
+			return MHelper.RANDOM.nextInt(4) == 0 ? Lists.newArrayList(new ItemStack(EndBlocks.UMBRELLA_TREE_SAPLING.get())) : Collections
 				.emptyList();
 		}
 	}

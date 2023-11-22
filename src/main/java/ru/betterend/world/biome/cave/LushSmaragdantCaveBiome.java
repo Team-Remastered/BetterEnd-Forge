@@ -44,7 +44,7 @@ public class LushSmaragdantCaveBiome extends EndCaveBiome.Config {
 			   .fogDensity(2.0F)
 			   .plantsColor(0, 131, 145)
 			   .waterAndFogColor(31, 167, 212)
-			   .particles(EndParticles.SMARAGDANT, 0.001F);
+			   .particles(EndParticles.SMARAGDANT.get(), 0.001F);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class LushSmaragdantCaveBiome extends EndCaveBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.CAVE_MOSS.defaultBlockState();
+				return EndBlocks.CAVE_MOSS.get().defaultBlockState();
 			}
 		};
 	}

@@ -25,8 +25,8 @@ public class ShadowForestBiome extends EndBiome.Config {
 			.plantsColor(45, 45, 45)
 			.waterAndFogColor(42, 45, 80)
 			.particles(ParticleTypes.MYCELIUM, 0.01F)
-			.loop(EndSounds.AMBIENT_CHORUS_FOREST)
-			.music(EndSounds.MUSIC_DARK)
+			.loop(EndSounds.AMBIENT_CHORUS_FOREST.get())
+			.music(EndSounds.MUSIC_DARK.get())
 			.feature(EndFeatures.VIOLECITE_LAYER)
 			.feature(EndFeatures.END_LAKE_RARE)
 			.feature(EndFeatures.DRAGON_TREE)
@@ -42,7 +42,7 @@ public class ShadowForestBiome extends EndBiome.Config {
 			.feature(EndFeatures.CHARNIA_PURPLE)
 			.feature(EndFeatures.CHARNIA_RED_RARE)
 			.structure(BiomeTags.HAS_END_CITY)
-			.spawn(EndEntities.SHADOW_WALKER, 80, 2, 4)
+			.spawn(EndEntities.SHADOW_WALKER.get(), 80, 2, 4)
 			.spawn(EntityType.ENDERMAN, 40, 1, 4)
 			.spawn(EntityType.PHANTOM, 1, 1, 2);
 	}
@@ -52,7 +52,7 @@ public class ShadowForestBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.SHADOW_GRASS.defaultBlockState();
+				return EndBlocks.SHADOW_GRASS.get().defaultBlockState();
 			}
 		};
 	}

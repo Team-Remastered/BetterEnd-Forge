@@ -40,7 +40,7 @@ public class AmberLandBiome extends EndBiome.Config {
 			.feature(EndFeatures.CHARNIA_RED)
 			.structure(BiomeTags.HAS_END_CITY)
 			.spawn(EntityType.ENDERMAN, 50, 1, 4)
-			.spawn(EndEntities.END_SLIME, 30, 1, 2);
+			.spawn(EndEntities.END_SLIME.get(), 30, 1, 2);
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class AmberLandBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.AMBER_MOSS.defaultBlockState();
+				return EndBlocks.AMBER_MOSS.get().defaultBlockState();
 			}
 		};
 	}

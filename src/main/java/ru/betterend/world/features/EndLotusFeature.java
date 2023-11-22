@@ -14,7 +14,7 @@ public class EndLotusFeature extends UnderwaterPlantScatter {
 	
 	@Override
 	public void generate(WorldGenLevel world, Random random, BlockPos blockPos) {
-		EndLotusSeedBlock seed = (EndLotusSeedBlock) EndBlocks.END_LOTUS_SEED;
+		EndLotusSeedBlock seed = (EndLotusSeedBlock) EndBlocks.END_LOTUS_SEED.get();
 		seed.grow(world, random, blockPos);
 	}
 	

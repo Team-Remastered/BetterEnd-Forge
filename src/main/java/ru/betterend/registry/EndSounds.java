@@ -2,47 +2,64 @@ package ru.betterend.registry;
 
 import net.minecraft.core.Registry;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import ru.betterend.BetterEndForge;
 
 public class EndSounds {
+
+	public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, BetterEndForge.MOD_ID);
+
+	public static void register(IEventBus eventBus) {
+		SOUND_EVENTS.register(eventBus);
+	}
+
 	// Music
-	public static final SoundEvent MUSIC_FOREST = register("music", "forest");
-	public static final SoundEvent MUSIC_WATER = register("music", "water");
-	public static final SoundEvent MUSIC_DARK = register("music", "dark");
-	public static final SoundEvent MUSIC_OPENSPACE = register("music", "openspace");
-	public static final SoundEvent MUSIC_CAVES = register("music", "caves");
+	public static final RegistryObject<SoundEvent> MUSIC_FOREST = register("music", "forest");
+	public static final RegistryObject<SoundEvent> MUSIC_WATER = register("music", "water");
+	public static final RegistryObject<SoundEvent> MUSIC_DARK = register("music", "dark");
+	public static final RegistryObject<SoundEvent> MUSIC_OPENSPACE = register("music", "openspace");
+	public static final RegistryObject<SoundEvent> MUSIC_CAVES = register("music", "caves");
 	
 	// Ambient
-	public static final SoundEvent AMBIENT_FOGGY_MUSHROOMLAND = register("ambient", "foggy_mushroomland");
-	public static final SoundEvent AMBIENT_CHORUS_FOREST = register("ambient", "chorus_forest");
-	public static final SoundEvent AMBIENT_MEGALAKE = register("ambient", "megalake");
-	public static final SoundEvent AMBIENT_DUST_WASTELANDS = register("ambient", "dust_wastelands");
-	public static final SoundEvent AMBIENT_MEGALAKE_GROVE = register("ambient", "megalake_grove");
-	public static final SoundEvent AMBIENT_BLOSSOMING_SPIRES = register("ambient", "blossoming_spires");
-	public static final SoundEvent AMBIENT_SULPHUR_SPRINGS = register("ambient", "sulphur_springs");
-	public static final SoundEvent AMBIENT_UMBRELLA_JUNGLE = register("ambient", "umbrella_jungle");
-	public static final SoundEvent AMBIENT_GLOWING_GRASSLANDS = register("ambient", "glowing_grasslands");
-	public static final SoundEvent AMBIENT_CAVES = register("ambient", "caves");
-	public static final SoundEvent AMBIENT_AMBER_LAND = register("ambient", "amber_land");
-	public static final SoundEvent UMBRA_VALLEY = register("ambient", "umbra_valley");
+	public static final RegistryObject<SoundEvent> AMBIENT_FOGGY_MUSHROOMLAND = register("ambient", "foggy_mushroomland");
+	public static final RegistryObject<SoundEvent> AMBIENT_CHORUS_FOREST = register("ambient", "chorus_forest");
+	public static final RegistryObject<SoundEvent> AMBIENT_MEGALAKE = register("ambient", "megalake");
+	public static final RegistryObject<SoundEvent> AMBIENT_DUST_WASTELANDS = register("ambient", "dust_wastelands");
+	public static final RegistryObject<SoundEvent> AMBIENT_MEGALAKE_GROVE = register("ambient", "megalake_grove");
+	public static final RegistryObject<SoundEvent> AMBIENT_BLOSSOMING_SPIRES = register("ambient", "blossoming_spires");
+	public static final RegistryObject<SoundEvent> AMBIENT_SULPHUR_SPRINGS = register("ambient", "sulphur_springs");
+	public static final RegistryObject<SoundEvent> AMBIENT_UMBRELLA_JUNGLE = register("ambient", "umbrella_jungle");
+	public static final RegistryObject<SoundEvent> AMBIENT_GLOWING_GRASSLANDS = register("ambient", "glowing_grasslands");
+	public static final RegistryObject<SoundEvent> AMBIENT_CAVES = register("ambient", "caves");
+	public static final RegistryObject<SoundEvent> AMBIENT_AMBER_LAND = register("ambient", "amber_land");
+	public static final RegistryObject<SoundEvent> UMBRA_VALLEY = register("ambient", "umbra_valley");
 	
 	// Entity
-	public static final SoundEvent ENTITY_DRAGONFLY = register("entity", "dragonfly");
-	public static final SoundEvent ENTITY_SHADOW_WALKER = register("entity", "shadow_walker");
-	public static final SoundEvent ENTITY_SHADOW_WALKER_DAMAGE = register("entity", "shadow_walker_damage");
-	public static final SoundEvent ENTITY_SHADOW_WALKER_DEATH = register("entity", "shadow_walker_death");
+	public static final RegistryObject<SoundEvent> ENTITY_DRAGONFLY = register("entity", "dragonfly");
+	public static final RegistryObject<SoundEvent> ENTITY_SHADOW_WALKER = register("entity", "shadow_walker");
+	public static final RegistryObject<SoundEvent> ENTITY_SHADOW_WALKER_DAMAGE = register("entity", "shadow_walker_damage");
+	public static final RegistryObject<SoundEvent> ENTITY_SHADOW_WALKER_DEATH = register("entity", "shadow_walker_death");
 	
 	// Records
-	public static final SoundEvent RECORD_STRANGE_AND_ALIEN = register("record", "strange_and_alien");
-	public static final SoundEvent RECORD_GRASPING_AT_STARS = register("record", "grasping_at_stars");
-	public static final SoundEvent RECORD_ENDSEEKER = register("record", "endseeker");
-	public static final SoundEvent RECORD_EO_DRACONA = register("record", "eo_dracona");
+	public static final RegistryObject<SoundEvent> RECORD_STRANGE_AND_ALIEN = register("record", "strange_and_alien");
+	public static final RegistryObject<SoundEvent> RECORD_GRASPING_AT_STARS = register("record", "grasping_at_stars");
+	public static final RegistryObject<SoundEvent> RECORD_ENDSEEKER = register("record", "endseeker");
+	public static final RegistryObject<SoundEvent> RECORD_EO_DRACONA = register("record", "eo_dracona");
 	
 	public static void register() {
 	}
 	
-	private static SoundEvent register(String type, String id) {
+//	private static SoundEvent register(String type, String id) {
+//		id = "betterend." + type + "." + id;
+//		return Registry.register(Registry.SOUND_EVENT, id, new SoundEvent(BetterEndForge.makeID(id)));
+//	}
+
+	private static RegistryObject<SoundEvent> register(String type, String id) {
 		id = "betterend." + type + "." + id;
-		return Registry.register(Registry.SOUND_EVENT, id, new SoundEvent(BetterEndForge.makeID(id)));
+		String finalId = id;
+		return SOUND_EVENTS.register(id, () -> new SoundEvent((BetterEndForge.makeID(finalId))));
 	}
 }

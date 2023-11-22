@@ -82,11 +82,11 @@ public class BlockFixer {
 						}
 					}
 				}
-				else if (state.is(EndBlocks.SMARAGDANT_CRYSTAL)) {
+				else if (state.is(EndBlocks.SMARAGDANT_CRYSTAL.get())) {
 					POS.setY(POS.getY() - 1);
 					if (level.isEmptyBlock(POS)) {
 						POS.setY(POS.getY() + 1);
-						while (state.is(EndBlocks.SMARAGDANT_CRYSTAL)) {
+						while (state.is(EndBlocks.SMARAGDANT_CRYSTAL.get())) {
 							setWithoutUpdate(level, POS, AIR);
 							POS.setY(POS.getY() + 1);
 							state = level.getBlockState(POS);
@@ -111,8 +111,8 @@ public class BlockFixer {
 						}
 					}
 				}
-				else if (state.is(EndBlocks.CAVE_PUMPKIN)) {
-					if (!level.getBlockState(POS.above()).is(EndBlocks.CAVE_PUMPKIN_SEED)) {
+				else if (state.is(EndBlocks.CAVE_PUMPKIN.get())) {
+					if (!level.getBlockState(POS.above()).is(EndBlocks.CAVE_PUMPKIN_SEED.get())) {
 						setWithoutUpdate(level, POS, AIR);
 					}
 				}
@@ -192,8 +192,8 @@ public class BlockFixer {
 					else {
 						// Blue Vine
 						if (state.getBlock() instanceof BlueVineBlock) {
-							while (state.is(EndBlocks.BLUE_VINE) || state.is(EndBlocks.BLUE_VINE_LANTERN) || state.is(
-								EndBlocks.BLUE_VINE_FUR)) {
+							while (state.is(EndBlocks.BLUE_VINE.get()) || state.is(EndBlocks.BLUE_VINE_LANTERN.get()) || state.is(
+								EndBlocks.BLUE_VINE_FUR.get())) {
 								setWithoutUpdate(level, POS, AIR);
 								POS.setY(POS.getY() + 1);
 								state = level.getBlockState(POS);

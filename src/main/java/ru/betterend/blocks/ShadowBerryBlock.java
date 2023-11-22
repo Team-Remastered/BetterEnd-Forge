@@ -14,7 +14,7 @@ public class ShadowBerryBlock extends PottableCropBlock {
 	private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 8, 15);
 	
 	public ShadowBerryBlock() {
-		super(EndItems.SHADOW_BERRY_RAW, EndBlocks.SHADOW_GRASS);
+		super(EndItems.SHADOW_BERRY_RAW.get(), EndBlocks.SHADOW_GRASS.get());
 	}
 	
 	@Override

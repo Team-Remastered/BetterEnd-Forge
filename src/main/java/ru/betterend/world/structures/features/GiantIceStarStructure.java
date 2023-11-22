@@ -40,7 +40,7 @@ public class GiantIceStarStructure extends SDFStructureFeature {
 		SDF spike = new SDFCappedCone().setRadius1(3 + (size - 5) * 0.2F)
 									   .setRadius2(0)
 									   .setHeight(size)
-									   .setBlock(EndBlocks.DENSE_SNOW);
+									   .setBlock(EndBlocks.DENSE_SNOW.get());
 		spike = new SDFTranslate().setTranslate(0, size - 0.5F, 0).setSource(spike);
 		for (Vector3f point : points) {
 			SDF rotated = spike;
@@ -62,9 +62,9 @@ public class GiantIceStarStructure extends SDFStructureFeature {
 		final float randScale = size * 0.3F;
 		
 		final BlockPos center = pos;
-		final BlockState ice = EndBlocks.EMERALD_ICE.defaultBlockState();
-		final BlockState dense = EndBlocks.DENSE_EMERALD_ICE.defaultBlockState();
-		final BlockState ancient = EndBlocks.ANCIENT_EMERALD_ICE.defaultBlockState();
+		final BlockState ice = EndBlocks.EMERALD_ICE.get().defaultBlockState();
+		final BlockState dense = EndBlocks.DENSE_EMERALD_ICE.get().defaultBlockState();
+		final BlockState ancient = EndBlocks.ANCIENT_EMERALD_ICE.get().defaultBlockState();
 		final SDF sdfCopy = sdf;
 		
 		return sdf.addPostProcess((info) -> {

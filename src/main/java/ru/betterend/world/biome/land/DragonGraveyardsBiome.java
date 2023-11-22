@@ -21,9 +21,9 @@ public class DragonGraveyardsBiome extends EndBiome.Config {
 			.genChance(0.1f)
 			.fogColor(244, 46, 79)
 			.fogDensity(1.3F)
-			.particles(EndParticles.FIREFLY, 0.0007F)
-			.music(EndSounds.MUSIC_OPENSPACE)
-			.loop(EndSounds.AMBIENT_GLOWING_GRASSLANDS)
+			.particles(EndParticles.FIREFLY.get(), 0.0007F)
+			.music(EndSounds.MUSIC_OPENSPACE.get())
+			.loop(EndSounds.AMBIENT_GLOWING_GRASSLANDS.get())
 			.waterAndFogColor(203, 59, 167)
 			.plantsColor(244, 46, 79)
 			.feature(EndFeatures.OBSIDIAN_PILLAR_BASEMENT)
@@ -43,7 +43,7 @@ public class DragonGraveyardsBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.SANGNUM.defaultBlockState();
+				return EndBlocks.SANGNUM.get().defaultBlockState();
 			}
 		};
 	}

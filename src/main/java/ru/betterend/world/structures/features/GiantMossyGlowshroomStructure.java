@@ -82,9 +82,9 @@ public class GiantMossyGlowshroomStructure extends SDFStructureFeature {
 		SDFBinary function = new SDFSmoothUnion().setRadius(4)
 												 .setSourceB(new SDFUnion().setSourceA(HEAD_POS).setSourceB(rotRoots));
 		
-		cone1.setBlock(EndBlocks.MOSSY_GLOWSHROOM_CAP);
-		cone2.setBlock(EndBlocks.MOSSY_GLOWSHROOM_CAP);
-		priGlowCone.setBlock(EndBlocks.MOSSY_GLOWSHROOM_HYMENOPHORE);
+		cone1.setBlock(EndBlocks.MOSSY_GLOWSHROOM_CAP.get());
+		cone2.setBlock(EndBlocks.MOSSY_GLOWSHROOM_CAP.get());
+		priGlowCone.setBlock(EndBlocks.MOSSY_GLOWSHROOM_HYMENOPHORE.get());
 		primRoots.setBlock(EndBlocks.MOSSY_GLOWSHROOM.getBark());
 		
 		float height = MHelper.randRange(10F, 25F, random);
@@ -106,8 +106,8 @@ public class GiantMossyGlowshroomStructure extends SDFStructureFeature {
 							 .addPostProcess((info) -> {
 								 if (EndBlocks.MOSSY_GLOWSHROOM.isTreeLog(info.getState())) {
 									 if (random.nextBoolean() && info.getStateUp()
-																	 .getBlock() == EndBlocks.MOSSY_GLOWSHROOM_CAP) {
-										 info.setState(EndBlocks.MOSSY_GLOWSHROOM_CAP.defaultBlockState()
+																	 .getBlock() == EndBlocks.MOSSY_GLOWSHROOM_CAP.get()) {
+										 info.setState(EndBlocks.MOSSY_GLOWSHROOM_CAP.get().defaultBlockState()
 																					 .setValue(
 																						 MossyGlowshroomCapBlock.TRANSITION,
 																						 true
@@ -120,9 +120,9 @@ public class GiantMossyGlowshroomStructure extends SDFStructureFeature {
 										 return info.getState();
 									 }
 								 }
-								 else if (info.getState().getBlock() == EndBlocks.MOSSY_GLOWSHROOM_CAP) {
+								 else if (info.getState().getBlock() == EndBlocks.MOSSY_GLOWSHROOM_CAP.get()) {
 									 if (EndBlocks.MOSSY_GLOWSHROOM.isTreeLog(info.getStateDown().getBlock())) {
-										 info.setState(EndBlocks.MOSSY_GLOWSHROOM_CAP.defaultBlockState()
+										 info.setState(EndBlocks.MOSSY_GLOWSHROOM_CAP.get().defaultBlockState()
 																					 .setValue(
 																						 MossyGlowshroomCapBlock.TRANSITION,
 																						 true
@@ -130,24 +130,24 @@ public class GiantMossyGlowshroomStructure extends SDFStructureFeature {
 										 return info.getState();
 									 }
 				
-									 info.setState(EndBlocks.MOSSY_GLOWSHROOM_CAP.defaultBlockState());
+									 info.setState(EndBlocks.MOSSY_GLOWSHROOM_CAP.get().defaultBlockState());
 									 return info.getState();
 								 }
-								 else if (info.getState().getBlock() == EndBlocks.MOSSY_GLOWSHROOM_HYMENOPHORE) {
+								 else if (info.getState().getBlock() == EndBlocks.MOSSY_GLOWSHROOM_HYMENOPHORE.get()) {
 									 for (Direction dir : BlocksHelper.HORIZONTAL) {
 										 if (info.getState(dir) == AIR) {
 											 info.setBlockPos(
 												 info.getPos().relative(dir),
-												 EndBlocks.MOSSY_GLOWSHROOM_FUR.defaultBlockState()
+												 EndBlocks.MOSSY_GLOWSHROOM_FUR.get().defaultBlockState()
 																			   .setValue(FurBlock.FACING, dir)
 											 );
 										 }
 									 }
 				
-									 if (info.getStateDown().getBlock() != EndBlocks.MOSSY_GLOWSHROOM_HYMENOPHORE) {
+									 if (info.getStateDown().getBlock() != EndBlocks.MOSSY_GLOWSHROOM_HYMENOPHORE.get()) {
 										 info.setBlockPos(
 											 info.getPos().below(),
-											 EndBlocks.MOSSY_GLOWSHROOM_FUR.defaultBlockState()
+											 EndBlocks.MOSSY_GLOWSHROOM_FUR.get().defaultBlockState()
 																		   .setValue(FurBlock.FACING, Direction.DOWN)
 										 );
 									 }

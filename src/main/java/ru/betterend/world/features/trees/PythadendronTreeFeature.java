@@ -38,7 +38,7 @@ public class PythadendronTreeFeature extends DefaultFeature {
 		final Random random = featureConfig.random();
 		final BlockPos pos = featureConfig.origin();
 		final WorldGenLevel world = featureConfig.level();
-		if (world.getBlockState(pos.below()).getBlock() != EndBlocks.CHORUS_NYLIUM) {
+		if (world.getBlockState(pos.below()).getBlock() != EndBlocks.CHORUS_NYLIUM.get()) {
 			return false;
 		}
 		BlocksHelper.setWithoutUpdate(world, pos, AIR);
@@ -136,7 +136,7 @@ public class PythadendronTreeFeature extends DefaultFeature {
 		float radius = MHelper.randRange(4.5F, 6.5F, random);
 		
 		SDF sphere = new SDFSphere().setRadius(radius)
-									.setBlock(EndBlocks.PYTHADENDRON_LEAVES.defaultBlockState()
+									.setBlock(EndBlocks.PYTHADENDRON_LEAVES.get().defaultBlockState()
 																		   .setValue(LeavesBlock.DISTANCE, 6));
 		sphere = new SDFScale3D().setScale(1, 0.6F, 1).setSource(sphere);
 		sphere = new SDFDisplacement().setFunction((vec) -> {
@@ -190,7 +190,7 @@ public class PythadendronTreeFeature extends DefaultFeature {
 			/*if (state.is(CommonBlockTags.END_STONES)) {
 				return true;
 			}*/
-			if (state.getBlock() == EndBlocks.PYTHADENDRON_LEAVES) {
+			if (state.getBlock() == EndBlocks.PYTHADENDRON_LEAVES.get()) {
 				return true;
 			}
 			if (state.getMaterial().equals(Material.PLANT)) {

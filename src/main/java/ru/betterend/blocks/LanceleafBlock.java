@@ -42,7 +42,7 @@ public class LanceleafBlock extends EndPlantBlock {
 			return world.getBlockState(pos.below()).is(this);
 		}
 		else if (shape == PentaShape.BOTTOM) {
-			return world.getBlockState(pos.below()).is(EndBlocks.AMBER_MOSS) && world.getBlockState(pos.above())
+			return world.getBlockState(pos.below()).is(EndBlocks.AMBER_MOSS.get()) && world.getBlockState(pos.above())
 																					 .is(this);
 		}
 		else {
@@ -63,9 +63,9 @@ public class LanceleafBlock extends EndPlantBlock {
 	@Override
 	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
 		if (state.getValue(SHAPE) == PentaShape.BOTTOM) {
-			return Collections.singletonList(new ItemStack(EndBlocks.LANCELEAF_SEED));
+			return Collections.singletonList(new ItemStack(EndBlocks.LANCELEAF_SEED.get()));
 		}
 		return MHelper.RANDOM.nextBoolean() ? Collections.emptyList() : Collections.singletonList(new ItemStack(
-			EndBlocks.LANCELEAF_SEED));
+			EndBlocks.LANCELEAF_SEED.get()));
 	}
 }

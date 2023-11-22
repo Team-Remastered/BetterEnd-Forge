@@ -175,7 +175,7 @@ public class SilkMothEntity extends DespawnableAnimal implements FlyingAnimal {
 			}
 		}
 		int count = minCount < maxCount ? MHelper.randRange(minCount, maxCount, random) : maxCount;
-		ItemEntity drop = new ItemEntity(level, getX(), getY(), getZ(), new ItemStack(EndItems.SILK_FIBER, count));
+		ItemEntity drop = new ItemEntity(level, getX(), getY(), getZ(), new ItemStack(EndItems.SILK_FIBER.get(), count));
 		this.level.addFreshEntity(drop);
 	}
 	
@@ -259,15 +259,15 @@ public class SilkMothEntity extends DespawnableAnimal implements FlyingAnimal {
 		public boolean canContinueToUse() {
 			return SilkMothEntity.this.navigation.isInProgress() && level.getBlockState(entrance)
 																		 .isAir() && (level.getBlockState(hivePos)
-																						   .is(EndBlocks.SILK_MOTH_NEST) || level
+																						   .is(EndBlocks.SILK_MOTH_NEST.get()) || level
 				.getBlockState(hivePos)
-				.is(EndBlocks.SILK_MOTH_HIVE));
+				.is(EndBlocks.SILK_MOTH_HIVE.get()));
 		}
 		
 		@Override
 		public void start() {
 			BlockState state = SilkMothEntity.this.level.getBlockState(SilkMothEntity.this.hivePos);
-			if (!state.is(EndBlocks.SILK_MOTH_NEST) && !state.is(EndBlocks.SILK_MOTH_HIVE)) {
+			if (!state.is(EndBlocks.SILK_MOTH_NEST.get()) && !state.is(EndBlocks.SILK_MOTH_HIVE.get())) {
 				SilkMothEntity.this.hivePos = null;
 				return;
 			}
@@ -290,9 +290,9 @@ public class SilkMothEntity extends DespawnableAnimal implements FlyingAnimal {
 			double dz = Math.abs(SilkMothEntity.this.entrance.getZ() - SilkMothEntity.this.getZ());
 			if (dx + dy + dz < 1) {
 				BlockState state = SilkMothEntity.this.level.getBlockState(hivePos);
-				if (state.is(EndBlocks.SILK_MOTH_NEST) || state.is(EndBlocks.SILK_MOTH_HIVE)) {
+				if (state.is(EndBlocks.SILK_MOTH_NEST.get()) || state.is(EndBlocks.SILK_MOTH_HIVE.get())) {
 					int fullness = state.getValue(EndBlockProperties.FULLNESS);
-					boolean isHive = state.is(EndBlocks.SILK_MOTH_HIVE);
+					boolean isHive = state.is(EndBlocks.SILK_MOTH_HIVE.get());
 					if (fullness < 3 && (isHive || SilkMothEntity.this.random.nextBoolean())) {
 						fullness += isHive ? MHelper.randRange(1, 2, random) : 1;
 						if (fullness > 3) {

@@ -14,7 +14,7 @@ public class HydraluxFeature extends UnderwaterPlantScatter {
 	
 	@Override
 	public void generate(WorldGenLevel world, Random random, BlockPos blockPos) {
-		HydraluxSaplingBlock seed = (HydraluxSaplingBlock) EndBlocks.HYDRALUX_SAPLING;
+		HydraluxSaplingBlock seed = (HydraluxSaplingBlock) EndBlocks.HYDRALUX_SAPLING.get();
 		seed.grow(world, random, blockPos);
 	}
 	

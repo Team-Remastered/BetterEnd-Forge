@@ -39,7 +39,7 @@ public class AncientEmeraldIceBlock extends BaseBlock {
 			int z = MHelper.randRange(-2, 2, random);
 			BlockPos p = pos.offset(x, y, z);
 			if (world.getBlockState(p).is(Blocks.WATER)) {
-				world.setBlockAndUpdate(p, EndBlocks.EMERALD_ICE.defaultBlockState());
+				world.setBlockAndUpdate(p, EndBlocks.EMERALD_ICE.get().defaultBlockState());
 				makeParticles(world, p, random);
 			}
 		}
@@ -47,18 +47,18 @@ public class AncientEmeraldIceBlock extends BaseBlock {
 		pos = pos.relative(dir);
 		state = world.getBlockState(pos);
 		if (state.is(Blocks.WATER)) {
-			world.setBlockAndUpdate(pos, EndBlocks.EMERALD_ICE.defaultBlockState());
+			world.setBlockAndUpdate(pos, EndBlocks.EMERALD_ICE.get().defaultBlockState());
 			makeParticles(world, pos, random);
 		}
-		else if (state.is(EndBlocks.EMERALD_ICE)) {
-			world.setBlockAndUpdate(pos, EndBlocks.DENSE_EMERALD_ICE.defaultBlockState());
+		else if (state.is(EndBlocks.EMERALD_ICE.get())) {
+			world.setBlockAndUpdate(pos, EndBlocks.DENSE_EMERALD_ICE.get().defaultBlockState());
 			makeParticles(world, pos, random);
 		}
 	}
 	
 	private void makeParticles(ServerLevel world, BlockPos pos, Random random) {
 		world.sendParticles(
-			EndParticles.SNOWFLAKE,
+			EndParticles.SNOWFLAKE.get(),
 			pos.getX() + 0.5,
 			pos.getY() + 0.5,
 			pos.getZ() + 0.5,

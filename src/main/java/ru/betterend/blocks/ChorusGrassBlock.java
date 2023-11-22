@@ -11,6 +11,6 @@ public class ChorusGrassBlock extends EndPlantBlock {
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.getBlock() == EndBlocks.CHORUS_NYLIUM;
+		return state.getBlock() == EndBlocks.CHORUS_NYLIUM.get();
 	}
 }

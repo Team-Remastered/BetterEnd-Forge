@@ -95,8 +95,8 @@ public class EndLilyBlock extends EndUnderwaterPlantBlock implements AddMineable
 	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
 		if (state.getValue(SHAPE) == TripleShape.TOP) {
 			return Lists.newArrayList(
-				new ItemStack(EndItems.END_LILY_LEAF, MHelper.randRange(1, 2, MHelper.RANDOM)),
-				new ItemStack(EndBlocks.END_LILY_SEED, MHelper.randRange(1, 2, MHelper.RANDOM))
+				new ItemStack(EndItems.END_LILY_LEAF.get(), MHelper.randRange(1, 2, MHelper.RANDOM)),
+				new ItemStack(EndBlocks.END_LILY_SEED.get(), MHelper.randRange(1, 2, MHelper.RANDOM))
 			);
 		}
 		return Collections.emptyList();
@@ -105,7 +105,7 @@ public class EndLilyBlock extends EndUnderwaterPlantBlock implements AddMineable
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
-		return new ItemStack(EndBlocks.END_LILY_SEED);
+		return new ItemStack(EndBlocks.END_LILY_SEED.get());
 	}
 	
 	@Override

@@ -29,7 +29,7 @@ public class BlockEntityHydrothermalVent extends BlockEntity {
 	}
 	
 	public static <T extends BlockEntity> void tick(Level level, BlockPos worldPosition, BlockState state, T uncastedEntity) {
-		if (level != null && uncastedEntity instanceof BlockEntityHydrothermalVent && state.is(EndBlocks.HYDROTHERMAL_VENT)) {
+		if (level != null && uncastedEntity instanceof BlockEntityHydrothermalVent && state.is(EndBlocks.HYDROTHERMAL_VENT.get())) {
 			BlockEntityHydrothermalVent blockEntity = (BlockEntityHydrothermalVent) uncastedEntity;
 			if (level.isClientSide()) {
 				clientTick(level, worldPosition, state, blockEntity);
@@ -46,7 +46,7 @@ public class BlockEntityHydrothermalVent extends BlockEntity {
 			double x = worldPosition.getX() + level.random.nextDouble();
 			double y = worldPosition.getY() + 0.9 + level.random.nextDouble() * 0.3;
 			double z = worldPosition.getZ() + level.random.nextDouble();
-			level.addParticle(EndParticles.GEYSER_PARTICLE, x, y, z, 0, 0, 0);
+			level.addParticle(EndParticles.GEYSER_PARTICLE.get(), x, y, z, 0, 0, 0);
 		}
 	}
 	

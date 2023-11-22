@@ -27,8 +27,8 @@ public class SmaragdantCrystalFeature extends DefaultFeature {
 		
 		MutableBlockPos mut = new MutableBlockPos();
 		int count = MHelper.randRange(15, 30, random);
-		BlockState crystal = EndBlocks.SMARAGDANT_CRYSTAL.defaultBlockState();
-		BlockState shard = EndBlocks.SMARAGDANT_CRYSTAL_SHARD.defaultBlockState();
+		BlockState crystal = EndBlocks.SMARAGDANT_CRYSTAL.get().defaultBlockState();
+		BlockState shard = EndBlocks.SMARAGDANT_CRYSTAL_SHARD.get().defaultBlockState();
 		for (int i = 0; i < count; i++) {
 			mut.set(pos)
 			   .move(MHelper.floor(random.nextGaussian() * 2 + 0.5), 5, MHelper.floor(random.nextGaussian() * 2 + 0.5));

@@ -25,19 +25,19 @@ public class FurnaceRecipes {
 		FurnaceRecipe.make(BetterEndForge.MOD_ID, "end_fish", EndItems.END_FISH_RAW, EndItems.END_FISH_COOKED)
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .buildFoodlike();
-		FurnaceRecipe.make(BetterEndForge.MOD_ID, "slime_ball", EndBlocks.JELLYSHROOM_CAP_PURPLE, Items.SLIME_BALL)
+		FurnaceRecipe.make(BetterEndForge.MOD_ID, "slime_ball", EndBlocks.JELLYSHROOM_CAP_PURPLE.get(), Items.SLIME_BALL)
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .build();
-		FurnaceRecipe.make(BetterEndForge.MOD_ID, "menger_sponge", EndBlocks.MENGER_SPONGE_WET, EndBlocks.MENGER_SPONGE)
+		FurnaceRecipe.make(BetterEndForge.MOD_ID, "menger_sponge", EndBlocks.MENGER_SPONGE_WET.get(), EndBlocks.MENGER_SPONGE.get())
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .build();
 		FurnaceRecipe.make(
 			BetterEndForge.MOD_ID,
 			"chorus_mushroom",
-			EndItems.CHORUS_MUSHROOM_RAW,
-			EndItems.CHORUS_MUSHROOM_COOKED
+			EndItems.CHORUS_MUSHROOM_RAW.get(),
+			EndItems.CHORUS_MUSHROOM_COOKED.get()
 		).checkConfig(Configs.RECIPE_CONFIG).buildFoodlike();
-		FurnaceRecipe.make(BetterEndForge.MOD_ID, "bolux_mushroom", EndBlocks.BOLUX_MUSHROOM, EndItems.BOLUX_MUSHROOM_COOKED)
+		FurnaceRecipe.make(BetterEndForge.MOD_ID, "bolux_mushroom", EndBlocks.BOLUX_MUSHROOM.get(), EndItems.BOLUX_MUSHROOM_COOKED.get())
 					 .checkConfig(Configs.RECIPE_CONFIG)
 					 .buildFoodlike();
 	}

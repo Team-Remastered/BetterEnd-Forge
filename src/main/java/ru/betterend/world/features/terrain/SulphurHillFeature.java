@@ -48,7 +48,7 @@ public class SulphurHillFeature extends DefaultFeature {
 		int max = radius + 4;
 		MutableBlockPos mut = new MutableBlockPos();
 		BlockState rock = EndBlocks.SULPHURIC_ROCK.stone.defaultBlockState();
-		BlockState brimstone = EndBlocks.BRIMSTONE.defaultBlockState().setValue(BlockProperties.ACTIVE, true);
+		BlockState brimstone = EndBlocks.BRIMSTONE.get().defaultBlockState().setValue(BlockProperties.ACTIVE, true);
 		for (int x = min; x < max; x++) {
 			int x2 = x * x;
 			int px = pos.getX() + x;
@@ -63,7 +63,7 @@ public class SulphurHillFeature extends DefaultFeature {
 				int d = x2 + z2;
 				mut.setY(pos.getY());
 				BlockState state = world.getBlockState(mut);
-				if (state.getMaterial().isReplaceable() || state.is(EndBlocks.HYDROTHERMAL_VENT)) {
+				if (state.getMaterial().isReplaceable() || state.is(EndBlocks.HYDROTHERMAL_VENT.get())) {
 					if (d < r2 * r2) {
 						BlocksHelper.setWithoutUpdate(world, mut, Blocks.WATER);
 						mut.move(Direction.DOWN);

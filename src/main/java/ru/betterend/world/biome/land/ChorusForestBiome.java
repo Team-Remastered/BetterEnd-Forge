@@ -27,8 +27,8 @@ public class ChorusForestBiome extends EndBiome.Config {
 			.plantsColor(122, 45, 122)
 			.waterAndFogColor(73, 30, 73)
 			.particles(ParticleTypes.PORTAL, 0.01F)
-			.loop(EndSounds.AMBIENT_CHORUS_FOREST)
-			.music(EndSounds.MUSIC_DARK)
+			.loop(EndSounds.AMBIENT_CHORUS_FOREST.get())
+			.music(EndSounds.MUSIC_DARK.get())
 			.feature(EndFeatures.VIOLECITE_LAYER)
 			.feature(EndFeatures.END_LAKE_RARE)
 			.feature(EndFeatures.PYTHADENDRON_TREE)
@@ -42,7 +42,7 @@ public class ChorusForestBiome extends EndBiome.Config {
 			.feature(EndFeatures.CHARNIA_PURPLE)
 			.feature(EndFeatures.CHARNIA_RED_RARE)
 			.structure(BiomeTags.HAS_END_CITY)
-			.spawn(EndEntities.END_SLIME, 5, 1, 2)
+			.spawn(EndEntities.END_SLIME.get(), 5, 1, 2)
 			.spawn(EntityType.ENDERMAN, 50, 1, 4);
 	}
 
@@ -51,7 +51,7 @@ public class ChorusForestBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.CHORUS_NYLIUM.defaultBlockState();
+				return EndBlocks.CHORUS_NYLIUM.get().defaultBlockState();
 			}
 		};
 	}

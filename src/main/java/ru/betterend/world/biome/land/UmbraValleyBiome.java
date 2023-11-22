@@ -18,10 +18,10 @@ import java.util.List;
 
 public class UmbraValleyBiome extends EndBiome.Config {
 	private static final Block[] SURFACE_BLOCKS = new Block[] {
-		EndBlocks.PALLIDIUM_FULL,
-		EndBlocks.PALLIDIUM_HEAVY,
-		EndBlocks.PALLIDIUM_THIN,
-		EndBlocks.PALLIDIUM_TINY,
+		EndBlocks.PALLIDIUM_FULL.get(),
+		EndBlocks.PALLIDIUM_HEAVY.get(),
+		EndBlocks.PALLIDIUM_THIN.get(),
+		EndBlocks.PALLIDIUM_TINY.get(),
 		EndBlocks.UMBRALITH.stone
 	};
 	
@@ -35,9 +35,9 @@ public class UmbraValleyBiome extends EndBiome.Config {
 			.fogColor(100, 100, 100)
 			.plantsColor(172, 189, 190)
 			.waterAndFogColor(69, 104, 134)
-			.particles(EndParticles.AMBER_SPHERE, 0.0001F)
-			.loop(EndSounds.UMBRA_VALLEY)
-			.music(EndSounds.MUSIC_DARK)
+			.particles(EndParticles.AMBER_SPHERE.get(), 0.0001F)
+			.loop(EndSounds.UMBRA_VALLEY.get())
+			.music(EndSounds.MUSIC_DARK.get())
 			.feature(EndFeatures.UMBRALITH_ARCH)
 			.feature(EndFeatures.THIN_UMBRALITH_ARCH)
 			.feature(EndFeatures.INFLEXIA)
@@ -59,7 +59,7 @@ public class UmbraValleyBiome extends EndBiome.Config {
 
 			@Override
 			public BlockState getAltTopMaterial() {
-				return EndBlocks.PALLIDIUM_FULL.defaultBlockState();
+				return EndBlocks.PALLIDIUM_FULL.get().defaultBlockState();
 			}
 
 			@Override

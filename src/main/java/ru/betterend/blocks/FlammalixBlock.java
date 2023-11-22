@@ -23,10 +23,10 @@ public class FlammalixBlock extends EndPlantBlock {
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.is(EndBlocks.PALLIDIUM_FULL) ||
-			state.is(EndBlocks.PALLIDIUM_HEAVY) ||
-			state.is(EndBlocks.PALLIDIUM_THIN) ||
-			state.is(EndBlocks.PALLIDIUM_TINY);
+		return state.is(EndBlocks.PALLIDIUM_FULL.get()) ||
+			state.is(EndBlocks.PALLIDIUM_HEAVY.get()) ||
+			state.is(EndBlocks.PALLIDIUM_THIN.get()) ||
+			state.is(EndBlocks.PALLIDIUM_TINY.get());
 	}
 	
 	@Override

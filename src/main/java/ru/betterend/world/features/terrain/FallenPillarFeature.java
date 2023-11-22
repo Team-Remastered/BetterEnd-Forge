@@ -50,7 +50,7 @@ public class FallenPillarFeature extends DefaultFeature {
 		float angle = (float) random.nextGaussian() * 0.05F + (float) Math.PI;
 		pillar = new SDFRotation().setRotation(vec, angle).setSource(pillar);
 		
-		BlockState mossy = EndBlocks.MOSSY_OBSIDIAN.defaultBlockState();
+		BlockState mossy = EndBlocks.MOSSY_OBSIDIAN.get().defaultBlockState();
 		pillar.addPostProcess((info) -> {
 			if (info.getStateUp().isAir() && random.nextFloat() > 0.1F) {
 				return mossy;

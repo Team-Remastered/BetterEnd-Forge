@@ -27,13 +27,13 @@ public class CavePumpkinFeature extends DefaultFeature {
 		BlocksHelper.setWithoutUpdate(
 			world,
 			pos,
-			EndBlocks.CAVE_PUMPKIN_SEED.defaultBlockState().setValue(EndBlockProperties.AGE, age)
+			EndBlocks.CAVE_PUMPKIN_SEED.get().defaultBlockState().setValue(EndBlockProperties.AGE, age)
 		);
 		if (age > 1) {
 			BlocksHelper.setWithoutUpdate(
 				world,
 				pos.below(),
-				EndBlocks.CAVE_PUMPKIN.defaultBlockState().setValue(EndBlockProperties.SMALL, age < 3)
+				EndBlocks.CAVE_PUMPKIN.get().defaultBlockState().setValue(EndBlockProperties.SMALL, age < 3)
 			);
 		}
 		

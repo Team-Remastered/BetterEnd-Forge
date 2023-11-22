@@ -28,7 +28,7 @@ public class HydraluxSaplingBlock extends UnderwaterPlantWithAgeBlock {
 		}
 		
 		mut.setY(pos.getY());
-		BlockState state = EndBlocks.HYDRALUX.defaultBlockState();
+		BlockState state = EndBlocks.HYDRALUX.get().defaultBlockState();
 		BlocksHelper.setWithoutUpdate(
 			world,
 			pos,

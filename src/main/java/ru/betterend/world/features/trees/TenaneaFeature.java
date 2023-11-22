@@ -68,7 +68,7 @@ public class TenaneaFeature extends DefaultFeature {
 	
 	private void leavesBall(WorldGenLevel world, BlockPos pos, float radius, Random random, OpenSimplexNoise noise) {
 		SDF sphere = new SDFSphere().setRadius(radius)
-									.setBlock(EndBlocks.TENANEA_LEAVES.defaultBlockState()
+									.setBlock(EndBlocks.TENANEA_LEAVES.get().defaultBlockState()
 																	  .setValue(LeavesBlock.DISTANCE, 6));
 		SDF sub = new SDFScale().setScale(5).setSource(sphere);
 		sub = new SDFTranslate().setTranslate(0, -radius * 5, 0).setSource(sub);
@@ -91,13 +91,13 @@ public class TenaneaFeature extends DefaultFeature {
 			}
 		}
 		
-		BlockState top = EndBlocks.TENANEA_FLOWERS.defaultBlockState()
+		BlockState top = EndBlocks.TENANEA_FLOWERS.get().defaultBlockState()
 												  .setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.TOP);
-		BlockState middle = EndBlocks.TENANEA_FLOWERS.defaultBlockState()
+		BlockState middle = EndBlocks.TENANEA_FLOWERS.get().defaultBlockState()
 													 .setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.MIDDLE);
-		BlockState bottom = EndBlocks.TENANEA_FLOWERS.defaultBlockState()
+		BlockState bottom = EndBlocks.TENANEA_FLOWERS.get().defaultBlockState()
 													 .setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.BOTTOM);
-		BlockState outer = EndBlocks.TENANEA_OUTER_LEAVES.defaultBlockState();
+		BlockState outer = EndBlocks.TENANEA_OUTER_LEAVES.get().defaultBlockState();
 		
 		List<BlockPos> support = Lists.newArrayList();
 		sphere.addPostProcess((info) -> {
@@ -153,10 +153,10 @@ public class TenaneaFeature extends DefaultFeature {
 		
 		support.forEach((bpos) -> {
 			BlockState state = world.getBlockState(bpos);
-			if (state.isAir() || state.is(EndBlocks.TENANEA_OUTER_LEAVES)) {
+			if (state.isAir() || state.is(EndBlocks.TENANEA_OUTER_LEAVES.get())) {
 				int count = MHelper.randRange(3, 8, random);
 				mut.set(bpos);
-				if (world.getBlockState(mut.above()).is(EndBlocks.TENANEA_LEAVES)) {
+				if (world.getBlockState(mut.above()).is(EndBlocks.TENANEA_LEAVES.get())) {
 					BlocksHelper.setWithoutUpdate(world, mut, top);
 					for (int i = 1; i < count; i++) {
 						mut.setY(mut.getY() - 1);
@@ -178,7 +178,7 @@ public class TenaneaFeature extends DefaultFeature {
 			/*if (state.is(CommonBlockTags.END_STONES)) {
 				return true;
 			}*/
-			if (state.getBlock() == EndBlocks.TENANEA_LEAVES) {
+			if (state.getBlock() == EndBlocks.TENANEA_LEAVES.get()) {
 				return true;
 			}
 			if (state.getMaterial().equals(Material.PLANT)) {

@@ -34,18 +34,18 @@ public class Lumecorn extends DefaultFeature {
 			}
 		}
 		mut.set(pos);
-		BlockState topMiddle = EndBlocks.LUMECORN.defaultBlockState()
+		BlockState topMiddle = EndBlocks.LUMECORN.get().defaultBlockState()
 												 .setValue(LumecornBlock.SHAPE, LumecornShape.LIGHT_TOP_MIDDLE);
-		BlockState middle = EndBlocks.LUMECORN.defaultBlockState()
+		BlockState middle = EndBlocks.LUMECORN.get().defaultBlockState()
 											  .setValue(LumecornBlock.SHAPE, LumecornShape.LIGHT_MIDDLE);
-		BlockState bottom = EndBlocks.LUMECORN.defaultBlockState()
+		BlockState bottom = EndBlocks.LUMECORN.get().defaultBlockState()
 											  .setValue(LumecornBlock.SHAPE, LumecornShape.LIGHT_BOTTOM);
-		BlockState top = EndBlocks.LUMECORN.defaultBlockState().setValue(LumecornBlock.SHAPE, LumecornShape.LIGHT_TOP);
+		BlockState top = EndBlocks.LUMECORN.get().defaultBlockState().setValue(LumecornBlock.SHAPE, LumecornShape.LIGHT_TOP);
 		if (height == 4) {
 			BlocksHelper.setWithoutUpdate(
 				world,
 				mut,
-				EndBlocks.LUMECORN.defaultBlockState().setValue(LumecornBlock.SHAPE, LumecornShape.BOTTOM_SMALL)
+				EndBlocks.LUMECORN.get().defaultBlockState().setValue(LumecornBlock.SHAPE, LumecornShape.BOTTOM_SMALL)
 			);
 			BlocksHelper.setWithoutUpdate(world, mut.move(Direction.UP), bottom);
 			BlocksHelper.setWithoutUpdate(world, mut.move(Direction.UP), topMiddle);
@@ -56,19 +56,19 @@ public class Lumecorn extends DefaultFeature {
 			BlocksHelper.setWithoutUpdate(
 				world,
 				mut,
-				EndBlocks.LUMECORN.defaultBlockState().setValue(LumecornBlock.SHAPE, LumecornShape.BOTTOM_SMALL)
+				EndBlocks.LUMECORN.get().defaultBlockState().setValue(LumecornBlock.SHAPE, LumecornShape.BOTTOM_SMALL)
 			);
 		}
 		else {
 			BlocksHelper.setWithoutUpdate(
 				world,
 				mut,
-				EndBlocks.LUMECORN.defaultBlockState().setValue(LumecornBlock.SHAPE, LumecornShape.BOTTOM_BIG)
+				EndBlocks.LUMECORN.get().defaultBlockState().setValue(LumecornBlock.SHAPE, LumecornShape.BOTTOM_BIG)
 			);
 			BlocksHelper.setWithoutUpdate(
 				world,
 				mut.move(Direction.UP),
-				EndBlocks.LUMECORN.defaultBlockState().setValue(LumecornBlock.SHAPE, LumecornShape.MIDDLE)
+				EndBlocks.LUMECORN.get().defaultBlockState().setValue(LumecornBlock.SHAPE, LumecornShape.MIDDLE)
 			);
 			height--;
 		}

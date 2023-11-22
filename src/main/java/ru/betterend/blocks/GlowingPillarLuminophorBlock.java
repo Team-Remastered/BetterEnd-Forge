@@ -23,7 +23,7 @@ public class GlowingPillarLuminophorBlock extends BaseBlock implements AddMineab
 	
 	public GlowingPillarLuminophorBlock() {
 		super(BlockBehaviour.Properties.of(Material.LEAVES)
-								 .mapColor(MaterialColor.COLOR_ORANGE)
+								 .color(MaterialColor.COLOR_ORANGE)
 								 .strength(0.2F)
 								 .lightLevel(BlocksHelper.getLightValue(15))
 								 .sound(SoundType.GRASS));
@@ -33,7 +33,7 @@ public class GlowingPillarLuminophorBlock extends BaseBlock implements AddMineab
 	@Override
 	@SuppressWarnings("deprecation")
 	public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
-		return !state.getValue(NATURAL) || world.getBlockState(pos.below()).is(EndBlocks.GLOWING_PILLAR_ROOTS);
+		return !state.getValue(NATURAL) || world.getBlockState(pos.below()).is(EndBlocks.GLOWING_PILLAR_ROOTS.get());
 	}
 	
 	@Override

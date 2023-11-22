@@ -15,11 +15,11 @@ public class LucerniaSaplingBlock extends PottableFeatureSapling {
 
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
-		return world.getBlockState(pos.below()).is(EndBlocks.RUTISCUS);
+		return world.getBlockState(pos.below()).is(EndBlocks.RUTISCUS.get());
 	}
 	
 	@Override
 	public boolean canPlantOn(Block block) {
-		return block == EndBlocks.RUTISCUS;
+		return block == EndBlocks.RUTISCUS.get();
 	}
 }

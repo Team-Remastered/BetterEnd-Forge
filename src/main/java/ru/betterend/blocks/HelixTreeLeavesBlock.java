@@ -77,6 +77,6 @@ public class HelixTreeLeavesBlock extends BaseBlock implements CustomColorProvid
 	
 	@Override
 	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
-		return BaseLeavesBlock.getLeaveDrops(this, EndBlocks.HELIX_TREE_SAPLING, builder, 16, 32);
+		return BaseLeavesBlock.getLeaveDrops(this, EndBlocks.HELIX_TREE_SAPLING.get(), builder, 16, 32);
 	}
 }

@@ -20,7 +20,7 @@ public class CrystalMountainsBiome extends EndBiome.Config {
 		builder
 			.structure(EndStructures.MOUNTAIN)
 			.plantsColor(255, 133, 211)
-			.music(EndSounds.MUSIC_OPENSPACE)
+			.music(EndSounds.MUSIC_OPENSPACE.get())
 			.feature(EndFeatures.CRYSTAL_GRASS)
 			.spawn(EntityType.ENDERMAN, 50, 1, 2);
 	}
@@ -30,7 +30,7 @@ public class CrystalMountainsBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.CRYSTAL_MOSS.defaultBlockState();
+				return EndBlocks.CRYSTAL_MOSS.get().defaultBlockState();
 			}
 		};
 	}

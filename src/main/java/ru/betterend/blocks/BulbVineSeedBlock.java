@@ -29,19 +29,19 @@ public class BulbVineSeedBlock extends EndPlantWithAgeBlock {
 			BlocksHelper.setWithoutUpdate(
 				world,
 				pos,
-				EndBlocks.BULB_VINE.defaultBlockState().setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.TOP)
+				EndBlocks.BULB_VINE.get().defaultBlockState().setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.TOP)
 			);
 			for (int i = 1; i < h; i++) {
 				BlocksHelper.setWithoutUpdate(
 					world,
 					pos.below(i),
-					EndBlocks.BULB_VINE.defaultBlockState().setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.MIDDLE)
+					EndBlocks.BULB_VINE.get().defaultBlockState().setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.MIDDLE)
 				);
 			}
 			BlocksHelper.setWithoutUpdate(
 				world,
 				pos.below(h),
-				EndBlocks.BULB_VINE.defaultBlockState().setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.BOTTOM)
+				EndBlocks.BULB_VINE.get().defaultBlockState().setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.BOTTOM)
 			);
 		}
 	}

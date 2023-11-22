@@ -26,7 +26,7 @@ public class ChorusPlantFeatureMixin {
 		final Random random = featureConfig.random();
 		final BlockPos blockPos = featureConfig.origin();
 		final WorldGenLevel structureWorldAccess = featureConfig.level();
-		if (structureWorldAccess.isEmptyBlock(blockPos) && structureWorldAccess.getBlockState(blockPos.below()).is(EndBlocks.CHORUS_NYLIUM)) {
+		if (structureWorldAccess.isEmptyBlock(blockPos) && structureWorldAccess.getBlockState(blockPos.below()).is(EndBlocks.CHORUS_NYLIUM.get())) {
 			ChorusFlowerBlock.generatePlant(structureWorldAccess, blockPos, random, MHelper.randRange(8, 16, random));
 			BlockState bottom = structureWorldAccess.getBlockState(blockPos);
 			if (bottom.is(Blocks.CHORUS_PLANT)) {

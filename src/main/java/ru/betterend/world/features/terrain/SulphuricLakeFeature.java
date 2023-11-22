@@ -190,17 +190,17 @@ public class SulphuricLakeFeature extends DefaultFeature {
 	private BlockState getBrimstone(WorldGenLevel world, BlockPos pos) {
 		for (Direction dir : BlocksHelper.DIRECTIONS) {
 			if (world.getBlockState(pos.relative(dir)).is(Blocks.WATER)) {
-				return EndBlocks.BRIMSTONE.defaultBlockState().setValue(EndBlockProperties.ACTIVE, true);
+				return EndBlocks.BRIMSTONE.get().defaultBlockState().setValue(EndBlockProperties.ACTIVE, true);
 			}
 		}
-		return EndBlocks.BRIMSTONE.defaultBlockState();
+		return EndBlocks.BRIMSTONE.get().defaultBlockState();
 	}
 	
 	private void makeShards(WorldGenLevel world, BlockPos pos, Random random) {
 		for (Direction dir : BlocksHelper.DIRECTIONS) {
 			BlockPos side;
 			if (random.nextInt(16) == 0 && world.getBlockState((side = pos.relative(dir))).is(Blocks.WATER)) {
-				BlockState state = EndBlocks.SULPHUR_CRYSTAL.defaultBlockState()
+				BlockState state = EndBlocks.SULPHUR_CRYSTAL.get().defaultBlockState()
 															.setValue(SulphurCrystalBlock.WATERLOGGED, true)
 															.setValue(SulphurCrystalBlock.FACING, dir)
 															.setValue(SulphurCrystalBlock.AGE, random.nextInt(3));

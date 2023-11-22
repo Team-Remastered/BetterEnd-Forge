@@ -31,7 +31,7 @@ public class EternalPedestal extends PedestalBlock {
 	public static final BooleanProperty ACTIVATED = EndBlockProperties.ACTIVE;
 	
 	public EternalPedestal() {
-		super(EndBlocks.FLAVOLITE_RUNED_ETERNAL);
+		super(EndBlocks.FLAVOLITE_RUNED_ETERNAL.get());
 		this.registerDefaultState(defaultBlockState().setValue(ACTIVATED, false));
 	}
 	

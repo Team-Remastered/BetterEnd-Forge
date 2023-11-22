@@ -73,7 +73,7 @@ public class LucerniaFeature extends DefaultFeature {
 	
 	private void leavesBall(WorldGenLevel world, BlockPos pos, float radius, Random random, OpenSimplexNoise noise, boolean natural) {
 		SDF sphere = new SDFSphere().setRadius(radius)
-									.setBlock(EndBlocks.LUCERNIA_LEAVES.defaultBlockState()
+									.setBlock(EndBlocks.LUCERNIA_LEAVES.get().defaultBlockState()
 																	   .setValue(LeavesBlock.DISTANCE, 6));
 		SDF sub = new SDFScale().setScale(5).setSource(sphere);
 		sub = new SDFTranslate().setTranslate(0, -radius * 5, 0).setSource(sub);
@@ -96,12 +96,12 @@ public class LucerniaFeature extends DefaultFeature {
 			}
 		}
 		
-		BlockState top = EndBlocks.FILALUX.defaultBlockState().setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.TOP);
-		BlockState middle = EndBlocks.FILALUX.defaultBlockState()
+		BlockState top = EndBlocks.FILALUX.get().defaultBlockState().setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.TOP);
+		BlockState middle = EndBlocks.FILALUX.get().defaultBlockState()
 											 .setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.MIDDLE);
-		BlockState bottom = EndBlocks.FILALUX.defaultBlockState()
+		BlockState bottom = EndBlocks.FILALUX.get().defaultBlockState()
 											 .setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.BOTTOM);
-		BlockState outer = EndBlocks.LUCERNIA_OUTER_LEAVES.defaultBlockState();
+		BlockState outer = EndBlocks.LUCERNIA_OUTER_LEAVES.get().defaultBlockState();
 		
 		List<BlockPos> support = Lists.newArrayList();
 		sphere.addPostProcess((info) -> {
@@ -157,10 +157,10 @@ public class LucerniaFeature extends DefaultFeature {
 		
 		support.forEach((bpos) -> {
 			BlockState state = world.getBlockState(bpos);
-			if (state.isAir() || state.is(EndBlocks.LUCERNIA_OUTER_LEAVES)) {
+			if (state.isAir() || state.is(EndBlocks.LUCERNIA_OUTER_LEAVES.get())) {
 				int count = MHelper.randRange(3, 8, random);
 				mut.set(bpos);
-				if (world.getBlockState(mut.above()).is(EndBlocks.LUCERNIA_LEAVES)) {
+				if (world.getBlockState(mut.above()).is(EndBlocks.LUCERNIA_LEAVES.get())) {
 					BlocksHelper.setWithoutUpdate(world, mut, top);
 					for (int i = 1; i < count; i++) {
 						mut.setY(mut.getY() - 1);
@@ -198,7 +198,7 @@ public class LucerniaFeature extends DefaultFeature {
 			/*if (state.is(CommonBlockTags.END_STONES)) {
 				return true;
 			}*/
-			if (state.getBlock() == EndBlocks.LUCERNIA_LEAVES) {
+			if (state.getBlock() == EndBlocks.LUCERNIA_LEAVES.get()) {
 				return true;
 			}
 			if (state.getMaterial().equals(Material.PLANT)) {

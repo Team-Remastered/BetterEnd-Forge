@@ -35,7 +35,7 @@ public class LargeAmaranitaFeature extends DefaultFeature {
 		}
 		mut.set(pos);
 		
-		BlockState state = EndBlocks.LARGE_AMARANITA_MUSHROOM.defaultBlockState();
+		BlockState state = EndBlocks.LARGE_AMARANITA_MUSHROOM.get().defaultBlockState();
 		BlocksHelper.setWithUpdate(world, mut, state.setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.BOTTOM));
 		if (height > 2) {
 			BlocksHelper.setWithUpdate(

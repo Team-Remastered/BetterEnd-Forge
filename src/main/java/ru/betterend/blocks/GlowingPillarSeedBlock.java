@@ -39,7 +39,7 @@ public class GlowingPillarSeedBlock extends EndPlantWithAgeBlock implements AddM
 		}
 		
 		MutableBlockPos mut = new MutableBlockPos().set(pos);
-		BlockState roots = EndBlocks.GLOWING_PILLAR_ROOTS.defaultBlockState();
+		BlockState roots = EndBlocks.GLOWING_PILLAR_ROOTS.get().defaultBlockState();
 		if (height < 2) {
 			BlocksHelper.setWithUpdate(world, mut, roots.setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.MIDDLE));
 		}
@@ -52,7 +52,7 @@ public class GlowingPillarSeedBlock extends EndPlantWithAgeBlock implements AddM
 		BlocksHelper.setWithUpdate(
 			world,
 			mut,
-			EndBlocks.GLOWING_PILLAR_LUMINOPHOR.defaultBlockState().setValue(BlueVineLanternBlock.NATURAL, true)
+			EndBlocks.GLOWING_PILLAR_LUMINOPHOR.get().defaultBlockState().setValue(BlueVineLanternBlock.NATURAL, true)
 		);
 		for (Direction dir : BlocksHelper.DIRECTIONS) {
 			pos = mut.relative(dir);
@@ -60,7 +60,7 @@ public class GlowingPillarSeedBlock extends EndPlantWithAgeBlock implements AddM
 				BlocksHelper.setWithUpdate(
 					world,
 					pos,
-					EndBlocks.GLOWING_PILLAR_LEAVES.defaultBlockState().setValue(BlockStateProperties.FACING, dir)
+					EndBlocks.GLOWING_PILLAR_LEAVES.get().defaultBlockState().setValue(BlockStateProperties.FACING, dir)
 				);
 			}
 		}
@@ -69,14 +69,14 @@ public class GlowingPillarSeedBlock extends EndPlantWithAgeBlock implements AddM
 			BlocksHelper.setWithUpdate(
 				world,
 				mut,
-				EndBlocks.GLOWING_PILLAR_LEAVES.defaultBlockState().setValue(BlockStateProperties.FACING, Direction.UP)
+				EndBlocks.GLOWING_PILLAR_LEAVES.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.UP)
 			);
 		}
 	}
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.is(EndBlocks.AMBER_MOSS);
+		return state.is(EndBlocks.AMBER_MOSS.get());
 	}
 	
 	@Override

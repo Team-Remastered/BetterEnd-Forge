@@ -37,7 +37,7 @@ public class MengerSpongeWetBlock extends BaseBlockNotFull implements RenderLaye
 	@Override
 	public void onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean notify) {
 		if (world.dimensionType().ultraWarm()) {
-			world.setBlock(pos, EndBlocks.MENGER_SPONGE.defaultBlockState(), 3);
+			world.setBlock(pos, EndBlocks.MENGER_SPONGE.get().defaultBlockState(), 3);
 			world.levelEvent(2009, pos, 0);
 			world.playSound(
 				null,
@@ -123,6 +123,6 @@ public class MengerSpongeWetBlock extends BaseBlockNotFull implements RenderLaye
 	
 	@Override
 	public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
-		return EndBlocks.MENGER_SPONGE.getShape(blockState, blockGetter, blockPos, collisionContext);
+		return EndBlocks.MENGER_SPONGE.get().getShape(blockState, blockGetter, blockPos, collisionContext);
 	}
 }

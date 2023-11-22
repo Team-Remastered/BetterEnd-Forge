@@ -32,18 +32,18 @@ public class CavePumpkinVineBlock extends EndPlantWithAgeBlock {
 		int age = state.getValue(AGE);
 		BlockState down = world.getBlockState(pos.below());
 		if (down.getMaterial()
-				.isReplaceable() || (down.is(EndBlocks.CAVE_PUMPKIN) && down.getValue(BlockProperties.SMALL))) {
+				.isReplaceable() || (down.is(EndBlocks.CAVE_PUMPKIN.get()) && down.getValue(BlockProperties.SMALL))) {
 			if (age < 3) {
 				world.setBlockAndUpdate(pos, state.setValue(AGE, age + 1));
 			}
 			if (age == 2) {
 				world.setBlockAndUpdate(
 					pos.below(),
-					EndBlocks.CAVE_PUMPKIN.defaultBlockState().setValue(BlockProperties.SMALL, true)
+					EndBlocks.CAVE_PUMPKIN.get().defaultBlockState().setValue(BlockProperties.SMALL, true)
 				);
 			}
 			else if (age == 3) {
-				world.setBlockAndUpdate(pos.below(), EndBlocks.CAVE_PUMPKIN.defaultBlockState());
+				world.setBlockAndUpdate(pos.below(), EndBlocks.CAVE_PUMPKIN.get().defaultBlockState());
 			}
 		}
 	}
@@ -57,7 +57,7 @@ public class CavePumpkinVineBlock extends EndPlantWithAgeBlock {
 		state = super.updateShape(state, facing, neighborState, world, pos, neighborPos);
 		if (state.is(this) && state.getValue(BlockProperties.AGE) > 1) {
 			BlockState down = world.getBlockState(pos.below());
-			if (!down.is(EndBlocks.CAVE_PUMPKIN)) {
+			if (!down.is(EndBlocks.CAVE_PUMPKIN.get())) {
 				state = state.setValue(BlockProperties.AGE, 1);
 			}
 		}

@@ -110,7 +110,7 @@ public class HelixTreeFeature extends DefaultFeature {
 		Vector3f start = new Vector3f();
 		Vector3f end = new Vector3f();
 		lastPoint = spline.get(0);
-		BlockState leaf = EndBlocks.HELIX_TREE_LEAVES.defaultBlockState();
+		BlockState leaf = EndBlocks.HELIX_TREE_LEAVES.get().defaultBlockState();
 		for (int i = 1; i < spline.size(); i++) {
 			Vector3f point = spline.get(i);
 			int minY = MHelper.floor(lastPoint.y());

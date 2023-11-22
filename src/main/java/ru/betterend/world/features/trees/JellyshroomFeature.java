@@ -40,7 +40,7 @@ public class JellyshroomFeature extends DefaultFeature {
 		if (!world.getBlockState(pos.below()).is(BlockTags.NYLIUM)) return false;
 		
 		BlockState bark = EndBlocks.JELLYSHROOM.getBark().defaultBlockState();
-		BlockState membrane = EndBlocks.JELLYSHROOM_CAP_PURPLE.defaultBlockState();
+		BlockState membrane = EndBlocks.JELLYSHROOM_CAP_PURPLE.get().defaultBlockState();
 		
 		int height = MHelper.randRange(5, 8, random);
 		float radius = height * MHelper.randRange(0.15F, 0.25F, random);
@@ -65,7 +65,7 @@ public class JellyshroomFeature extends DefaultFeature {
 					return EndBlocks.JELLYSHROOM.getLog().defaultBlockState();
 				}
 			}
-			else if (info.getState().is(EndBlocks.JELLYSHROOM_CAP_PURPLE)) {
+			else if (info.getState().is(EndBlocks.JELLYSHROOM_CAP_PURPLE.get())) {
 				float dx = info.getPos().getX() - pos.getX() - last.x();
 				float dz = info.getPos().getZ() - pos.getZ() - last.z();
 				float distance = MHelper.length(dx, dz) / membraneRadius * 7F;

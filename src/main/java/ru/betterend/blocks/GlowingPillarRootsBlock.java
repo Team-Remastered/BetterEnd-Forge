@@ -24,12 +24,12 @@ public class GlowingPillarRootsBlock extends UpDownPlantBlock {
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.is(EndBlocks.AMBER_MOSS);
+		return state.is(EndBlocks.AMBER_MOSS.get());
 	}
 	
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
-		return new ItemStack(EndBlocks.GLOWING_PILLAR_SEED);
+		return new ItemStack(EndBlocks.GLOWING_PILLAR_SEED.get());
 	}
 }

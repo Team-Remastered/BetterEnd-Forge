@@ -39,7 +39,7 @@ public class UmbrellaTreeClusterEmptyBlock extends BaseBlock {
 			BlocksHelper.setWithUpdate(
 				world,
 				pos,
-				EndBlocks.UMBRELLA_TREE_CLUSTER.defaultBlockState().setValue(UmbrellaTreeClusterBlock.NATURAL, true)
+				EndBlocks.UMBRELLA_TREE_CLUSTER.get().defaultBlockState().setValue(UmbrellaTreeClusterBlock.NATURAL, true)
 			);
 		}
 	}

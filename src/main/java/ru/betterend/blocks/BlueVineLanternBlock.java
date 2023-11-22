@@ -31,7 +31,7 @@ public class BlueVineLanternBlock extends BaseBlock implements AddMineableAxe {
 	@Override
 	@SuppressWarnings("deprecation")
 	public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
-		return !state.getValue(NATURAL) || world.getBlockState(pos.below()).getBlock() == EndBlocks.BLUE_VINE;
+		return !state.getValue(NATURAL) || world.getBlockState(pos.below()).getBlock() == EndBlocks.BLUE_VINE.get();
 	}
 	
 	@Override

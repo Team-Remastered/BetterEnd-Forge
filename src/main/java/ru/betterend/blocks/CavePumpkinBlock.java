@@ -50,7 +50,7 @@ public class CavePumpkinBlock extends BaseBlockNotFull implements RenderLayerPro
 	
 	@Override
 	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
-		return state.getValue(SMALL) ? Collections.singletonList(new ItemStack(EndBlocks.CAVE_PUMPKIN_SEED)) : Collections
+		return state.getValue(SMALL) ? Collections.singletonList(new ItemStack(EndBlocks.CAVE_PUMPKIN_SEED.get())) : Collections
 			.singletonList(new ItemStack(this));
 	}
 	

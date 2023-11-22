@@ -30,7 +30,7 @@ public class PallidiumBlock extends EndTerrainBlock {
 	}
 	
 	public boolean canBePotted() {
-		return this == EndBlocks.PALLIDIUM_FULL;
+		return this == EndBlocks.PALLIDIUM_FULL.get();
 	}
 	
 	@Override

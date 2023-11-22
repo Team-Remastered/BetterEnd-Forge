@@ -1,6 +1,5 @@
 package ru.betterend;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,6 +25,7 @@ import ru.betterend.registry.EndBlockEntities;
 import ru.betterend.registry.EndEnchantments;
 import ru.betterend.registry.EndEntities;
 import ru.betterend.registry.EndFeatures;
+import ru.betterend.registry.EndParticles;
 import ru.betterend.registry.EndPortals;
 import ru.betterend.registry.EndSounds;
 import ru.betterend.registry.EndStructures;
@@ -42,6 +42,7 @@ public class BetterEndForge {
 
 	public void BetterEnd() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
 		WorldDataAPI.registerModCache(MOD_ID);
 		ItemRegistry.initRegister(modEventBus);
 		BlockRegistry.initRegister(modEventBus);
@@ -50,7 +51,10 @@ public class BetterEndForge {
 		EndSounds.register();
 		EndBlockEntities.register();
 		EndFeatures.register();
-		EndEntities.register();
+		EndEntities.register(); //probably wrong
+		EndEntities.register(modEventBus);
+		EndParticles.register(modEventBus);
+		EndSounds.register(modEventBus);
 		EndBiomes.register();
 		EndTags.register();
 		EndEnchantments.register();

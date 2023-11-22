@@ -120,7 +120,7 @@ public class DragonTreeFeature extends DefaultFeature {
 	
 	private void leavesBall(WorldGenLevel world, BlockPos pos, float radius, Random random, OpenSimplexNoise noise) {
 		SDF sphere = new SDFSphere().setRadius(radius)
-									.setBlock(EndBlocks.DRAGON_TREE_LEAVES.defaultBlockState()
+									.setBlock(EndBlocks.DRAGON_TREE_LEAVES.get().defaultBlockState()
 																		  .setValue(LeavesBlock.DISTANCE, 6));
 		SDF sub = new SDFScale().setScale(5).setSource(sphere);
 		sub = new SDFTranslate().setTranslate(0, -radius * 5, 0).setSource(sub);
@@ -180,7 +180,7 @@ public class DragonTreeFeature extends DefaultFeature {
 				boolean place = true;
 				for (Direction d : Direction.values()) {
 					BlockState state = world.getBlockState(p.relative(d));
-					if (!EndBlocks.DRAGON_TREE.isTreeLog(state) && !state.is(EndBlocks.DRAGON_TREE_LEAVES)) {
+					if (!EndBlocks.DRAGON_TREE.isTreeLog(state) && !state.is(EndBlocks.DRAGON_TREE_LEAVES.get())) {
 						place = false;
 						break;
 					}
@@ -199,7 +199,7 @@ public class DragonTreeFeature extends DefaultFeature {
 			/*if (state.is(CommonBlockTags.END_STONES)) {
 				return true;
 			}*/
-			if (state.getBlock() == EndBlocks.DRAGON_TREE_LEAVES) {
+			if (state.getBlock() == EndBlocks.DRAGON_TREE_LEAVES.get()) {
 				return true;
 			}
 			if (state.getMaterial().equals(Material.PLANT)) {

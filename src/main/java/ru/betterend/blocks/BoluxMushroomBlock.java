@@ -26,7 +26,7 @@ public class BoluxMushroomBlock extends EndPlantBlock {
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.is(EndBlocks.RUTISCUS);
+		return state.is(EndBlocks.RUTISCUS.get());
 	}
 	
 	@Override

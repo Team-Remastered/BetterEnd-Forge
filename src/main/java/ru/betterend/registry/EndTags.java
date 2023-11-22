@@ -46,8 +46,8 @@ public class EndTags {
 	
 	public static void register() {
 		addEndGround(EndBlocks.THALLASIUM.ore);
-		addEndGround(EndBlocks.ENDSTONE_DUST);
-		addEndGround(EndBlocks.AMBER_ORE);
+		addEndGround(EndBlocks.ENDSTONE_DUST.get());
+		addEndGround(EndBlocks.AMBER_ORE.get());
 		
 		EndBlocks.getModBlocks().forEach(block -> {
 			Properties properties = ((AbstractBlockAccessor) block).getSettings();
@@ -88,11 +88,11 @@ public class EndTags {
 				ComposterAPI.allowCompost(0.1F, item);
 			}
 		});
-		addEndGround(EndBlocks.CAVE_MOSS);
-		TagAPI.addBlockTag(NamedBlockTags.NYLIUM, EndBlocks.CAVE_MOSS);
-		BonemealAPI.addSpreadableBlock(EndBlocks.CAVE_MOSS, Blocks.END_STONE);
-		BonemealAPI.addSpreadableBlock(EndBlocks.MOSSY_OBSIDIAN, Blocks.OBSIDIAN);
-		BonemealAPI.addSpreadableBlock(EndBlocks.MOSSY_DRAGON_BONE, EndBlocks.DRAGON_BONE_BLOCK);
+		addEndGround(EndBlocks.CAVE_MOSS.get());
+		TagAPI.addBlockTag(NamedBlockTags.NYLIUM, EndBlocks.CAVE_MOSS.get());
+		BonemealAPI.addSpreadableBlock(EndBlocks.CAVE_MOSS.get(), Blocks.END_STONE);
+		BonemealAPI.addSpreadableBlock(EndBlocks.MOSSY_OBSIDIAN.get(), Blocks.OBSIDIAN);
+		BonemealAPI.addSpreadableBlock(EndBlocks.MOSSY_DRAGON_BONE.get(), EndBlocks.DRAGON_BONE_BLOCK.get());
 		
 		List<Item> ITEM_HAMMERS = Lists.newArrayList();
 		EndItems.getModItems().forEach(item -> {
@@ -110,19 +110,19 @@ public class EndTags {
 
 		TagAPI.addBlockTag(
 			NamedCommonBlockTags.GEN_END_STONES,
-			EndBlocks.ENDER_ORE,
-			EndBlocks.BRIMSTONE
+			EndBlocks.ENDER_ORE.get(),
+			EndBlocks.BRIMSTONE.get()
 		);
-		TagAPI.addBlockTag(NamedCommonBlockTags.END_STONES, EndBlocks.BRIMSTONE);
-		TagAPI.addBlockTag(NamedBlockTags.ANVIL, EndBlocks.AETERNIUM_ANVIL);
-		TagAPI.addBlockTag(NamedBlockTags.BEACON_BASE_BLOCKS, EndBlocks.AETERNIUM_BLOCK);
-		TagAPI.addItemTag(NamedItemTags.BEACON_PAYMENT_ITEMS, EndItems.AETERNIUM_INGOT);
+		TagAPI.addBlockTag(NamedCommonBlockTags.END_STONES, EndBlocks.BRIMSTONE.get());
+		TagAPI.addBlockTag(NamedBlockTags.ANVIL, EndBlocks.AETERNIUM_ANVIL.get());
+		TagAPI.addBlockTag(NamedBlockTags.BEACON_BASE_BLOCKS, EndBlocks.AETERNIUM_BLOCK.get());
+		TagAPI.addItemTag(NamedItemTags.BEACON_PAYMENT_ITEMS, EndItems.AETERNIUM_INGOT.get());
 		TagAPI.addBlockTag(
 			NamedCommonBlockTags.DRAGON_IMMUNE,
-			EndBlocks.ENDER_ORE,
-			EndBlocks.ETERNAL_PEDESTAL,
-			EndBlocks.FLAVOLITE_RUNED_ETERNAL,
-			EndBlocks.FLAVOLITE_RUNED
+			EndBlocks.ENDER_ORE.get(),
+			EndBlocks.ETERNAL_PEDESTAL.get(),
+			EndBlocks.FLAVOLITE_RUNED_ETERNAL.get(),
+			EndBlocks.FLAVOLITE_RUNED.get()
 		);
 		TagAPI.addItemTag(NamedCommonItemTags.IRON_INGOTS, EndBlocks.THALLASIUM.ingot);
 		

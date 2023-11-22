@@ -19,12 +19,12 @@ public class MengerSpongeFeature extends UnderwaterPlantScatter {
 	
 	@Override
 	public void generate(WorldGenLevel world, Random random, BlockPos blockPos) {
-		BlocksHelper.setWithoutUpdate(world, blockPos, EndBlocks.MENGER_SPONGE_WET);
+		BlocksHelper.setWithoutUpdate(world, blockPos, EndBlocks.MENGER_SPONGE_WET.get());
 		if (random.nextBoolean()) {
 			for (Direction dir : BlocksHelper.DIRECTIONS) {
 				BlockPos pos = blockPos.relative(dir);
 				if (REPLACE.apply(world.getBlockState(pos))) {
-					BlocksHelper.setWithoutUpdate(world, pos, EndBlocks.MENGER_SPONGE_WET);
+					BlocksHelper.setWithoutUpdate(world, pos, EndBlocks.MENGER_SPONGE_WET.get());
 				}
 			}
 		}
@@ -32,7 +32,7 @@ public class MengerSpongeFeature extends UnderwaterPlantScatter {
 	
 	static {
 		REPLACE = (state) -> {
-			if (state.is(EndBlocks.END_LOTUS_STEM)) {
+			if (state.is(EndBlocks.END_LOTUS_STEM.get())) {
 				return false;
 			}
 			return !state.getFluidState().isEmpty() || state.getMaterial().isReplaceable();

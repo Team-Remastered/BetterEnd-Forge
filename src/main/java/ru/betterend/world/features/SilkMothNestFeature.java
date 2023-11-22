@@ -23,7 +23,7 @@ public class SilkMothNestFeature extends DefaultFeature {
 		BlockState state = world.getBlockState(pos.above());
 		if (state.is(BlockTags.LEAVES) || state.is(BlockTags.LOGS)) {
 			state = world.getBlockState(pos);
-			if ((state.isAir() || state.is(EndBlocks.TENANEA_OUTER_LEAVES)) && world.isEmptyBlock(pos.below())) {
+			if ((state.isAir() || state.is(EndBlocks.TENANEA_OUTER_LEAVES.get())) && world.isEmptyBlock(pos.below())) {
 				for (Direction dir : BlocksHelper.HORIZONTAL) {
 					return !world.getBlockState(pos.below().relative(dir)).getMaterial().blocksMotion();
 				}
@@ -48,7 +48,7 @@ public class SilkMothNestFeature extends DefaultFeature {
 				BlocksHelper.setWithoutUpdate(
 					world,
 					POS,
-					EndBlocks.SILK_MOTH_NEST.defaultBlockState()
+					EndBlocks.SILK_MOTH_NEST.get().defaultBlockState()
 											.setValue(BlockStateProperties.HORIZONTAL_FACING, dir)
 											.setValue(BlockProperties.ACTIVE, false)
 				);
@@ -56,7 +56,7 @@ public class SilkMothNestFeature extends DefaultFeature {
 				BlocksHelper.setWithoutUpdate(
 					world,
 					POS,
-					EndBlocks.SILK_MOTH_NEST.defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, dir)
+					EndBlocks.SILK_MOTH_NEST.get().defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, dir)
 				);
 				return true;
 			}

@@ -23,9 +23,9 @@ public class UmbrellaJungleBiome extends EndBiome.Config {
 			.waterAndFogColor(119, 198, 253)
 			.foliageColor(27, 183, 194)
 			.fogDensity(2.3F)
-			.particles(EndParticles.JUNGLE_SPORE, 0.001F)
-			.music(EndSounds.MUSIC_FOREST)
-			.loop(EndSounds.AMBIENT_UMBRELLA_JUNGLE)
+			.particles(EndParticles.JUNGLE_SPORE.get(), 0.001F)
+			.music(EndSounds.MUSIC_FOREST.get())
+			.loop(EndSounds.AMBIENT_UMBRELLA_JUNGLE.get())
 			.feature(EndFeatures.END_LAKE)
 			.feature(EndFeatures.UMBRELLA_TREE)
 			.feature(EndFeatures.JELLYSHROOM)
@@ -52,7 +52,7 @@ public class UmbrellaJungleBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.JUNGLE_MOSS.defaultBlockState();
+				return EndBlocks.JUNGLE_MOSS.get().defaultBlockState();
 			}
 		};
 	}

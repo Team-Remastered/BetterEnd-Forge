@@ -48,9 +48,9 @@ public class UmbrellaTreeFeature extends DefaultFeature {
 		if (!world.getBlockState(pos.below()).is(BlockTags.NYLIUM)) return false;
 		
 		BlockState wood = EndBlocks.UMBRELLA_TREE.getBark().defaultBlockState();
-		BlockState membrane = EndBlocks.UMBRELLA_TREE_MEMBRANE.defaultBlockState().setValue(UmbrellaTreeMembraneBlock.COLOR, 1);
-		BlockState center = EndBlocks.UMBRELLA_TREE_MEMBRANE.defaultBlockState().setValue(UmbrellaTreeMembraneBlock.COLOR, 0);
-		BlockState fruit = EndBlocks.UMBRELLA_TREE_CLUSTER.defaultBlockState().setValue(UmbrellaTreeClusterBlock.NATURAL, true);
+		BlockState membrane = EndBlocks.UMBRELLA_TREE_MEMBRANE.get().defaultBlockState().setValue(UmbrellaTreeMembraneBlock.COLOR, 1);
+		BlockState center = EndBlocks.UMBRELLA_TREE_MEMBRANE.get().defaultBlockState().setValue(UmbrellaTreeMembraneBlock.COLOR, 0);
+		BlockState fruit = EndBlocks.UMBRELLA_TREE_CLUSTER.get().defaultBlockState().setValue(UmbrellaTreeClusterBlock.NATURAL, true);
 		
 		float size = MHelper.randRange(10, 20, random);
 		int count = (int) (size * 0.15F);
@@ -191,7 +191,7 @@ public class UmbrellaTreeFeature extends DefaultFeature {
 			mut.move(Direction.DOWN);
 			if (world.isEmptyBlock(mut)) {
 				BlockState state = world.getBlockState(mut.above());
-				if (state.is(EndBlocks.UMBRELLA_TREE_MEMBRANE) && state.getValue(UmbrellaTreeMembraneBlock.COLOR) < 2) {
+				if (state.is(EndBlocks.UMBRELLA_TREE_MEMBRANE.get()) && state.getValue(UmbrellaTreeMembraneBlock.COLOR) < 2) {
 					BlocksHelper.setWithoutUpdate(world, mut, fruit);
 				}
 				break;
@@ -218,7 +218,7 @@ public class UmbrellaTreeFeature extends DefaultFeature {
 		SplineHelper.offset(ROOT, new Vector3f(0, -0.45F, 0));
 		
 		REPLACE = (state) -> {
-			if (/*state.is(CommonBlockTags.END_STONES) || */state.getMaterial().equals(Material.PLANT) || state.is(EndBlocks.UMBRELLA_TREE_MEMBRANE)) {
+			if (/*state.is(CommonBlockTags.END_STONES) || */state.getMaterial().equals(Material.PLANT) || state.is(EndBlocks.UMBRELLA_TREE_MEMBRANE.get())) {
 				return true;
 			}
 			return state.getMaterial().isReplaceable();

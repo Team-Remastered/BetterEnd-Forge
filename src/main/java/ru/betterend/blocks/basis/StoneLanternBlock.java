@@ -32,12 +32,12 @@ public class StoneLanternBlock extends EndLanternBlock implements CustomColorPro
 	
 	@Override
 	public BlockColor getProvider() {
-		return ((CustomColorProvider) EndBlocks.AURORA_CRYSTAL).getProvider();
+		return ((CustomColorProvider) EndBlocks.AURORA_CRYSTAL.get()).getProvider();
 	}
 	
 	@Override
 	public ItemColor getItemProvider() {
-		return ((CustomColorProvider) EndBlocks.AURORA_CRYSTAL).getItemProvider();
+		return ((CustomColorProvider) EndBlocks.AURORA_CRYSTAL.get()).getItemProvider();
 	}
 	
 	@Override

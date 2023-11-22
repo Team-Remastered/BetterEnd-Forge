@@ -26,8 +26,8 @@ public class BlossomingSpiresBiome extends EndBiome.Config {
 			.fogColor(241, 146, 229)
 			.fogDensity(1.7F)
 			.plantsColor(122, 45, 122)
-			.music(EndSounds.MUSIC_FOREST)
-			.loop(EndSounds.AMBIENT_BLOSSOMING_SPIRES)
+			.music(EndSounds.MUSIC_FOREST.get())
+			.loop(EndSounds.AMBIENT_BLOSSOMING_SPIRES.get())
 			.feature(EndFeatures.SPIRE)
 			.feature(EndFeatures.FLOATING_SPIRE)
 			.feature(EndFeatures.TENANEA)
@@ -40,7 +40,7 @@ public class BlossomingSpiresBiome extends EndBiome.Config {
 			.feature(EndFeatures.TWISTED_MOSS_WOOD)
 			.feature(EndFeatures.SILK_MOTH_NEST)
 			.spawn(EntityType.ENDERMAN, 50, 1, 4)
-			.spawn(EndEntities.SILK_MOTH, 5, 1, 2);
+			.spawn(EndEntities.SILK_MOTH.get(), 5, 1, 2);
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class BlossomingSpiresBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.PINK_MOSS.defaultBlockState();
+				return EndBlocks.PINK_MOSS.get().defaultBlockState();
 			}
 		};
 	}

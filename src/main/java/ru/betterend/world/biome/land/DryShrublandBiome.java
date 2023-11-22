@@ -22,7 +22,7 @@ public class DryShrublandBiome extends EndBiome.Config {
 			.fogDensity(1.2F)
 			.waterAndFogColor(113, 88, 53)
 			.plantsColor(237, 122, 66)
-			.music(EndSounds.MUSIC_OPENSPACE)
+			.music(EndSounds.MUSIC_OPENSPACE.get())
 			.feature(EndFeatures.LUCERNIA_BUSH_RARE)
 			.feature(EndFeatures.ORANGO)
 			.feature(EndFeatures.AERIDIUM)
@@ -37,7 +37,7 @@ public class DryShrublandBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.RUTISCUS.defaultBlockState();
+				return EndBlocks.RUTISCUS.get().defaultBlockState();
 			}
 		};
 	}

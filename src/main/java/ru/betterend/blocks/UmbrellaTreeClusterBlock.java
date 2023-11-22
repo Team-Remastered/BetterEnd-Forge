@@ -28,9 +28,9 @@ public class UmbrellaTreeClusterBlock extends BaseBlock {
 	
 	public UmbrellaTreeClusterBlock() {
 		super(BlockBehaviour.Properties
-			.copyOf(Blocks.NETHER_WART_BLOCK)
-			.mapColor(MaterialColor.COLOR_PURPLE)
-			.lightLevel(15)
+				.copy(Blocks.NETHER_WART_BLOCK)
+				.color(MaterialColor.COLOR_PURPLE)
+			.lightLevel(BlocksHelper.getLightValue(15))
 		);
 		registerDefaultState(stateDefinition.any().setValue(NATURAL, false));
 	}
@@ -48,7 +48,7 @@ public class UmbrellaTreeClusterBlock extends BaseBlock {
 			if (!player.isCreative()) {
 				stack.shrink(1);
 			}
-			stack = new ItemStack(EndItems.UMBRELLA_CLUSTER_JUICE);
+			stack = new ItemStack(EndItems.UMBRELLA_CLUSTER_JUICE.get());
 			player.addItem(stack);
 			world.playLocalSound(
 				pos.getX() + 0.5,
@@ -63,7 +63,7 @@ public class UmbrellaTreeClusterBlock extends BaseBlock {
 			BlocksHelper.setWithUpdate(
 				world,
 				pos,
-				EndBlocks.UMBRELLA_TREE_CLUSTER_EMPTY.defaultBlockState().setValue(NATURAL, state.getValue(NATURAL))
+				EndBlocks.UMBRELLA_TREE_CLUSTER_EMPTY.get().defaultBlockState().setValue(NATURAL, state.getValue(NATURAL))
 			);
 			return InteractionResult.SUCCESS;
 		}

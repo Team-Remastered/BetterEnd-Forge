@@ -148,7 +148,7 @@ public class RespawnObeliskBlock extends BaseBlock implements CustomColorProvide
 	
 	@Override
 	public BlockColor getProvider() {
-		return ((CustomColorProvider) EndBlocks.AURORA_CRYSTAL).getProvider();
+		return ((CustomColorProvider) EndBlocks.AURORA_CRYSTAL.get()).getProvider();
 	}
 	
 	@Override

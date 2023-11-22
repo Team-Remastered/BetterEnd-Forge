@@ -34,7 +34,7 @@ public class REIAlloyingCategory implements DisplayCategory<REIAlloyingDisplay> 
 	
 	@Override
 	public @NotNull Component getTitle() {
-		return new TranslatableComponent(EndBlocks.END_STONE_SMELTER.getDescriptionId());
+		return new TranslatableComponent(EndBlocks.END_STONE_SMELTER.get().getDescriptionId());
 	}
 	
 	@Override

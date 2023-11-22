@@ -31,7 +31,7 @@ public class SurfaceVentFeature extends DefaultFeature {
 		
 		MutableBlockPos mut = new MutableBlockPos();
 		int count = MHelper.randRange(15, 30, random);
-		BlockState vent = EndBlocks.HYDROTHERMAL_VENT.defaultBlockState()
+		BlockState vent = EndBlocks.HYDROTHERMAL_VENT.get().defaultBlockState()
 													 .setValue(HydrothermalVentBlock.WATERLOGGED, false);
 		for (int i = 0; i < count; i++) {
 			mut.set(pos)
@@ -46,7 +46,7 @@ public class SurfaceVentFeature extends DefaultFeature {
 					mut.setY(mut.getY() - 1);
 					state = world.getBlockState(mut);
 				}
-				if (state.is(CommonBlockTags.GEN_END_STONES) && !world.getBlockState(mut.above()).is(EndBlocks.HYDROTHERMAL_VENT)) {
+				if (state.is(CommonBlockTags.GEN_END_STONES) && !world.getBlockState(mut.above()).is(EndBlocks.HYDROTHERMAL_VENT.get())) {
 					for (int j = 0; j <= dist; j++) {
 						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.SULPHURIC_ROCK.stone);
 						mut.setY(mut.getY() + 1);

@@ -89,9 +89,9 @@ public class EternalRitual {
 	);
 	
 	private final static Block BASE = EndBlocks.FLAVOLITE.tiles;
-	private final static Block PEDESTAL = EndBlocks.ETERNAL_PEDESTAL;
-	private final static Block FRAME = EndBlocks.FLAVOLITE_RUNED_ETERNAL;
-	private final static Block PORTAL = EndBlocks.END_PORTAL_BLOCK;
+	private final static Block PEDESTAL = EndBlocks.ETERNAL_PEDESTAL.get();
+	private final static Block FRAME = EndBlocks.FLAVOLITE_RUNED_ETERNAL.get();
+	private final static Block PORTAL = EndBlocks.END_PORTAL_BLOCK.get();
 	private final static BooleanProperty ACTIVE = BlockProperties.ACTIVE;
 	
 	public final static int SEARCH_RADIUS = calculateSearchSteps(48);

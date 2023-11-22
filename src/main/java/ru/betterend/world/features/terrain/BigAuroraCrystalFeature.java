@@ -36,7 +36,7 @@ public class BigAuroraCrystalFeature extends DefaultFeature {
 		int height = MHelper.randRange(5, 25, random);
 		SDF prism = new SDFHexPrism().setHeight(height)
 									 .setRadius(MHelper.randRange(1.7F, 3F, random))
-									 .setBlock(EndBlocks.AURORA_CRYSTAL);
+									 .setBlock(EndBlocks.AURORA_CRYSTAL.get());
 		Vector3f vec = MHelper.randomHorizontal(random);
 		prism = new SDFRotation().setRotation(vec, random.nextFloat()).setSource(prism);
 		prism.setReplaceFunction((bState) -> {
@@ -46,7 +46,7 @@ public class BigAuroraCrystalFeature extends DefaultFeature {
 				.equals(Material.LEAVES);
 		});
 		prism.fillRecursive(world, pos);
-		BlocksHelper.setWithoutUpdate(world, pos, EndBlocks.AURORA_CRYSTAL);
+		BlocksHelper.setWithoutUpdate(world, pos, EndBlocks.AURORA_CRYSTAL.get());
 		
 		return true;
 	}

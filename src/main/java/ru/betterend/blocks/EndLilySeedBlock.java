@@ -19,21 +19,21 @@ public class EndLilySeedBlock extends UnderwaterPlantWithAgeBlock {
 			BlocksHelper.setWithoutUpdate(
 				world,
 				pos,
-				EndBlocks.END_LILY.defaultBlockState().setValue(EndLilyBlock.SHAPE, TripleShape.BOTTOM)
+				EndBlocks.END_LILY.get().defaultBlockState().setValue(EndLilyBlock.SHAPE, TripleShape.BOTTOM)
 			);
 			BlockPos up = pos.above();
 			while (world.getFluidState(up).isSource()) {
 				BlocksHelper.setWithoutUpdate(
 					world,
 					up,
-					EndBlocks.END_LILY.defaultBlockState().setValue(EndLilyBlock.SHAPE, TripleShape.MIDDLE)
+					EndBlocks.END_LILY.get().defaultBlockState().setValue(EndLilyBlock.SHAPE, TripleShape.MIDDLE)
 				);
 				up = up.above();
 			}
 			BlocksHelper.setWithoutUpdate(
 				world,
 				up,
-				EndBlocks.END_LILY.defaultBlockState().setValue(EndLilyBlock.SHAPE, TripleShape.TOP)
+				EndBlocks.END_LILY.get().defaultBlockState().setValue(EndLilyBlock.SHAPE, TripleShape.TOP)
 			);
 		}
 	}

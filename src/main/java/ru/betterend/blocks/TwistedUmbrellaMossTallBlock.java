@@ -22,13 +22,13 @@ public class TwistedUmbrellaMossTallBlock extends BaseDoublePlantBlock {
 			pos.getX() + 0.5,
 			pos.getY() + 0.5,
 			pos.getZ() + 0.5,
-			new ItemStack(EndBlocks.TWISTED_UMBRELLA_MOSS)
+			new ItemStack(EndBlocks.TWISTED_UMBRELLA_MOSS.get())
 		);
 		world.addFreshEntity(item);
 	}
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.is(EndBlocks.END_MOSS) || state.is(EndBlocks.END_MYCELIUM) || state.is(EndBlocks.JUNGLE_MOSS);
+		return state.is(EndBlocks.END_MOSS.get()) || state.is(EndBlocks.END_MYCELIUM.get()) || state.is(EndBlocks.JUNGLE_MOSS.get());
 	}
 }

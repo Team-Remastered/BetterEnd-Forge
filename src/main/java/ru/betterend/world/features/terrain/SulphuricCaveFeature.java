@@ -145,7 +145,7 @@ public class SulphuricCaveFeature extends DefaultFeature {
 						state = world.getBlockState(mut);
 					}
 					if (state.is(CommonBlockTags.GEN_END_STONES) && !world.getBlockState(mut.above())
-															  .is(EndBlocks.HYDROTHERMAL_VENT)) {
+															  .is(EndBlocks.HYDROTHERMAL_VENT.get())) {
 						for (int j = 0; j <= dist; j++) {
 							BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.SULPHURIC_ROCK.stone);
 							MHelper.shuffle(HORIZONTAL, random);
@@ -155,19 +155,19 @@ public class SulphuricCaveFeature extends DefaultFeature {
 									BlocksHelper.setWithoutUpdate(
 										world,
 										p,
-										EndBlocks.TUBE_WORM.defaultBlockState()
+										EndBlocks.TUBE_WORM.get().defaultBlockState()
 														   .setValue(HorizontalDirectionalBlock.FACING, dir)
 									);
 								}
 							}
 							mut.setY(mut.getY() + 1);
 						}
-						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.HYDROTHERMAL_VENT);
+						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.HYDROTHERMAL_VENT.get());
 						mut.setY(mut.getY() + 1);
 						state = world.getBlockState(mut);
 						while (state.is(Blocks.WATER)) {
-							BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.VENT_BUBBLE_COLUMN.defaultBlockState());
-							world.scheduleTick(mut.immutable(), EndBlocks.VENT_BUBBLE_COLUMN, MHelper.randRange(8, 32, random));
+							BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.VENT_BUBBLE_COLUMN.get().defaultBlockState());
+							world.scheduleTick(mut.immutable(), EndBlocks.VENT_BUBBLE_COLUMN.get(), MHelper.randRange(8, 32, random));
 							mut.setY(mut.getY() + 1);
 							state = world.getBlockState(mut);
 						}
@@ -182,8 +182,8 @@ public class SulphuricCaveFeature extends DefaultFeature {
 	}
 	
 	private boolean isReplaceable(BlockState state) {
-		return state.is(CommonBlockTags.GEN_END_STONES) || state.is(EndBlocks.HYDROTHERMAL_VENT) || state.is(EndBlocks.VENT_BUBBLE_COLUMN) || state
-			.is(EndBlocks.SULPHUR_CRYSTAL) || state.getMaterial().isReplaceable() || state.getMaterial()
+		return state.is(CommonBlockTags.GEN_END_STONES) || state.is(EndBlocks.HYDROTHERMAL_VENT.get()) || state.is(EndBlocks.VENT_BUBBLE_COLUMN.get()) || state
+			.is(EndBlocks.SULPHUR_CRYSTAL.get()) || state.getMaterial().isReplaceable() || state.getMaterial()
 																						  .equals(Material.PLANT) || state
 			.getMaterial()
 			.equals(Material.WATER_PLANT) || state.getMaterial().equals(Material.LEAVES);
@@ -200,17 +200,17 @@ public class SulphuricCaveFeature extends DefaultFeature {
 	private BlockState getBrimstone(WorldGenLevel world, BlockPos pos) {
 		for (Direction dir : BlocksHelper.DIRECTIONS) {
 			if (world.getBlockState(pos.relative(dir)).is(Blocks.WATER)) {
-				return EndBlocks.BRIMSTONE.defaultBlockState().setValue(EndBlockProperties.ACTIVE, true);
+				return EndBlocks.BRIMSTONE.get().defaultBlockState().setValue(EndBlockProperties.ACTIVE, true);
 			}
 		}
-		return EndBlocks.BRIMSTONE.defaultBlockState();
+		return EndBlocks.BRIMSTONE.get().defaultBlockState();
 	}
 	
 	private void makeShards(WorldGenLevel world, BlockPos pos, Random random) {
 		for (Direction dir : BlocksHelper.DIRECTIONS) {
 			BlockPos side;
 			if (random.nextInt(16) == 0 && world.getBlockState((side = pos.relative(dir))).is(Blocks.WATER)) {
-				BlockState state = EndBlocks.SULPHUR_CRYSTAL.defaultBlockState()
+				BlockState state = EndBlocks.SULPHUR_CRYSTAL.get().defaultBlockState()
 															.setValue(SulphurCrystalBlock.WATERLOGGED, true)
 															.setValue(SulphurCrystalBlock.FACING, dir)
 															.setValue(SulphurCrystalBlock.AGE, random.nextInt(3));

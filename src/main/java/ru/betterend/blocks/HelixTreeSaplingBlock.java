@@ -15,11 +15,11 @@ public class HelixTreeSaplingBlock extends PottableFeatureSapling {
 
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
-		return world.getBlockState(pos.below()).is(EndBlocks.AMBER_MOSS);
+		return world.getBlockState(pos.below()).is(EndBlocks.AMBER_MOSS.get());
 	}
 	
 	@Override
 	public boolean canPlantOn(Block block) {
-		return block == EndBlocks.AMBER_MOSS;
+		return block == EndBlocks.AMBER_MOSS.get();
 	}
 }

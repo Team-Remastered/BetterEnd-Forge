@@ -37,14 +37,14 @@ public class MengerSpongeBlock extends BaseBlockNotFull implements RenderLayerPr
 	@Override
 	public void onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean notify) {
 		if (absorbWater(world, pos)) {
-			world.setBlockAndUpdate(pos, EndBlocks.MENGER_SPONGE_WET.defaultBlockState());
+			world.setBlockAndUpdate(pos, EndBlocks.MENGER_SPONGE_WET.get().defaultBlockState());
 		}
 	}
 	
 	@Override
 	public BlockState updateShape(BlockState state, Direction facing, BlockState neighborState, LevelAccessor world, BlockPos pos, BlockPos neighborPos) {
 		if (absorbWater(world, pos)) {
-			return EndBlocks.MENGER_SPONGE_WET.defaultBlockState();
+			return EndBlocks.MENGER_SPONGE_WET.get().defaultBlockState();
 		}
 		return state;
 	}

@@ -23,8 +23,8 @@ public class LanternWoodsBiome extends EndBiome.Config {
 			.fogDensity(1.1F)
 			.waterAndFogColor(171, 234, 226)
 			.plantsColor(254, 85, 57)
-			.music(EndSounds.MUSIC_FOREST)
-			.particles(EndParticles.GLOWING_SPHERE, 0.001F)
+			.music(EndSounds.MUSIC_FOREST.get())
+			.particles(EndParticles.GLOWING_SPHERE.get(), 0.001F)
 			.feature(EndFeatures.END_LAKE_NORMAL)
 			.feature(EndFeatures.FLAMAEA)
 			.feature(EndFeatures.LUCERNIA)
@@ -48,7 +48,7 @@ public class LanternWoodsBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.RUTISCUS.defaultBlockState();
+				return EndBlocks.RUTISCUS.get().defaultBlockState();
 			}
 		};
 	}

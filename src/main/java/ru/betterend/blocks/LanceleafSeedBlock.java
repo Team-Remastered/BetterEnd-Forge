@@ -25,7 +25,7 @@ public class LanceleafSeedBlock extends EndPlantWithAgeBlock {
 		}
 		int rotation = random.nextInt(4);
 		MutableBlockPos mut = new MutableBlockPos().set(pos);
-		BlockState plant = EndBlocks.LANCELEAF.defaultBlockState().setValue(BlockProperties.ROTATION, rotation);
+		BlockState plant = EndBlocks.LANCELEAF.get().defaultBlockState().setValue(BlockProperties.ROTATION, rotation);
 		BlocksHelper.setWithoutUpdate(world, mut, plant.setValue(BlockProperties.PENTA_SHAPE, PentaShape.BOTTOM));
 		BlocksHelper.setWithoutUpdate(
 			world,
@@ -53,7 +53,7 @@ public class LanceleafSeedBlock extends EndPlantWithAgeBlock {
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.is(EndBlocks.AMBER_MOSS);
+		return state.is(EndBlocks.AMBER_MOSS.get());
 	}
 	
 	@Override

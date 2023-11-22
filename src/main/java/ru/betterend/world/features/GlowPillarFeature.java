@@ -14,12 +14,12 @@ public class GlowPillarFeature extends ScatterFeature {
 	
 	@Override
 	public boolean canGenerate(WorldGenLevel world, Random random, BlockPos center, BlockPos blockPos, float radius) {
-		return EndBlocks.GLOWING_PILLAR_SEED.canSurvive(AIR, world, blockPos);
+		return EndBlocks.GLOWING_PILLAR_SEED.get().canSurvive(AIR, world, blockPos);
 	}
 	
 	@Override
 	public void generate(WorldGenLevel world, Random random, BlockPos blockPos) {
-		EndPlantWithAgeBlock seed = ((EndPlantWithAgeBlock) EndBlocks.GLOWING_PILLAR_SEED);
+		EndPlantWithAgeBlock seed = ((EndPlantWithAgeBlock) EndBlocks.GLOWING_PILLAR_SEED.get());
 		seed.growAdult(world, random, blockPos);
 	}
 	

@@ -61,7 +61,7 @@ public class ObsidianBoulderFeature extends DefaultFeature {
 			return (float) (noise.eval(vec.x() * 0.2, vec.y() * 0.2, vec.z() * 0.2) * 1.5F);
 		}).setSource(sphere);
 		
-		BlockState mossy = EndBlocks.MOSSY_OBSIDIAN.defaultBlockState();
+		BlockState mossy = EndBlocks.MOSSY_OBSIDIAN.get().defaultBlockState();
 		sphere.addPostProcess((info) -> {
 			if (info.getStateUp().isAir() && random.nextFloat() > 0.1F) {
 				return mossy;

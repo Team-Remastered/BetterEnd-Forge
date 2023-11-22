@@ -37,7 +37,7 @@ public class EndLotusLeafFeature extends ScatterFeature {
 	
 	private void generateLeaf(WorldGenLevel world, BlockPos pos) {
 		MutableBlockPos p = new MutableBlockPos();
-		BlockState leaf = EndBlocks.END_LOTUS_LEAF.defaultBlockState();
+		BlockState leaf = EndBlocks.END_LOTUS_LEAF.get().defaultBlockState();
 		BlocksHelper.setWithoutUpdate(world, pos, leaf.setValue(EndLotusLeafBlock.SHAPE, TripleShape.BOTTOM));
 		for (Direction move : BlocksHelper.HORIZONTAL) {
 			BlocksHelper.setWithoutUpdate(

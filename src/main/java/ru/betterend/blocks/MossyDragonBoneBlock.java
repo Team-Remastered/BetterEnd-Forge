@@ -33,7 +33,7 @@ public class MossyDragonBoneBlock extends BaseRotatedPillarBlock {
 		if (tool != null && EnchantmentHelper.getItemEnchantmentLevel(Enchantments.SILK_TOUCH, tool) > 0) {
 			return Collections.singletonList(new ItemStack(this));
 		}
-		return Collections.singletonList(new ItemStack(EndBlocks.DRAGON_BONE_BLOCK));
+		return Collections.singletonList(new ItemStack(EndBlocks.DRAGON_BONE_BLOCK.get()));
 	}
 	
 	@Override

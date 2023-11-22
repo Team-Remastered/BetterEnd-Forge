@@ -87,11 +87,11 @@ public class LumecornBlock extends BaseBlockNotFull implements RenderLayerProvid
 		LumecornShape shape = state.getValue(SHAPE);
 		if (shape == LumecornShape.BOTTOM_BIG || shape == LumecornShape.BOTTOM_SMALL || shape == LumecornShape.MIDDLE) {
 			return Collections.singletonList(new ItemStack(
-				EndBlocks.LUMECORN_SEED,
+				EndBlocks.LUMECORN_SEED.get(),
 				MHelper.randRange(1, 2, MHelper.RANDOM)
 			));
 		}
-		return MHelper.RANDOM.nextBoolean() ? Collections.singletonList(new ItemStack(EndItems.LUMECORN_ROD)) : Collections
+		return MHelper.RANDOM.nextBoolean() ? Collections.singletonList(new ItemStack(EndItems.LUMECORN_ROD.get())) : Collections
 			.emptyList();
 	}
 	
@@ -100,8 +100,8 @@ public class LumecornBlock extends BaseBlockNotFull implements RenderLayerProvid
 	public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
 		LumecornShape shape = state.getValue(SHAPE);
 		if (shape == LumecornShape.BOTTOM_BIG || shape == LumecornShape.BOTTOM_SMALL || shape == LumecornShape.MIDDLE) {
-			return new ItemStack(EndBlocks.LUMECORN_SEED);
+			return new ItemStack(EndBlocks.LUMECORN_SEED.get());
 		}
-		return new ItemStack(EndItems.LUMECORN_ROD);
+		return new ItemStack(EndItems.LUMECORN_ROD.get());
 	}
 }

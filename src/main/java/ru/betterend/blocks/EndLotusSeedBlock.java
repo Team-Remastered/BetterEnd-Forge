@@ -18,12 +18,12 @@ public class EndLotusSeedBlock extends UnderwaterPlantWithAgeBlock {
 	@Override
 	public void grow(WorldGenLevel world, Random random, BlockPos pos) {
 		if (canGrow(world, pos)) {
-			BlockState startLeaf = EndBlocks.END_LOTUS_STEM.defaultBlockState().setValue(EndLotusStemBlock.LEAF, true);
-			BlockState roots = EndBlocks.END_LOTUS_STEM.defaultBlockState()
+			BlockState startLeaf = EndBlocks.END_LOTUS_STEM.get().defaultBlockState().setValue(EndLotusStemBlock.LEAF, true);
+			BlockState roots = EndBlocks.END_LOTUS_STEM.get().defaultBlockState()
 													   .setValue(EndLotusStemBlock.SHAPE, TripleShape.BOTTOM)
 													   .setValue(EndLotusStemBlock.WATERLOGGED, true);
-			BlockState stem = EndBlocks.END_LOTUS_STEM.defaultBlockState();
-			BlockState flower = EndBlocks.END_LOTUS_FLOWER.defaultBlockState();
+			BlockState stem = EndBlocks.END_LOTUS_STEM.get().defaultBlockState();
+			BlockState flower = EndBlocks.END_LOTUS_FLOWER.get().defaultBlockState();
 			
 			BlocksHelper.setWithoutUpdate(world, pos, roots);
 			MutableBlockPos bpos = new MutableBlockPos().set(pos);
@@ -70,14 +70,14 @@ public class EndLotusSeedBlock extends UnderwaterPlantWithAgeBlock {
 			BlocksHelper.setWithoutUpdate(world, bpos, flower);
 			bpos.setY(bpos.getY() - 1);
 			stem = world.getBlockState(bpos);
-			if (!stem.is(EndBlocks.END_LOTUS_STEM)) {
-				stem = EndBlocks.END_LOTUS_STEM.defaultBlockState();
+			if (!stem.is(EndBlocks.END_LOTUS_STEM.get())) {
+				stem = EndBlocks.END_LOTUS_STEM.get().defaultBlockState();
 				if (!world.getBlockState(bpos.north()).getFluidState().isEmpty()) {
 					stem = stem.setValue(EndLotusStemBlock.WATERLOGGED, true);
 				}
 			}
 			
-			if (world.getBlockState(bpos.relative(dir)).is(EndBlocks.END_LOTUS_LEAF)) {
+			if (world.getBlockState(bpos.relative(dir)).is(EndBlocks.END_LOTUS_LEAF.get())) {
 				stem = stem.setValue(EndLotusStemBlock.LEAF, true).setValue(EndLotusStemBlock.FACING, dir);
 			}
 			
@@ -96,7 +96,7 @@ public class EndLotusSeedBlock extends UnderwaterPlantWithAgeBlock {
 	
 	private void generateLeaf(WorldGenLevel world, BlockPos pos) {
 		MutableBlockPos p = new MutableBlockPos();
-		BlockState leaf = EndBlocks.END_LOTUS_LEAF.defaultBlockState();
+		BlockState leaf = EndBlocks.END_LOTUS_LEAF.get().defaultBlockState();
 		BlocksHelper.setWithoutUpdate(world, pos, leaf.setValue(EndLotusLeafBlock.SHAPE, TripleShape.BOTTOM));
 		for (Direction move : BlocksHelper.HORIZONTAL) {
 			BlocksHelper.setWithoutUpdate(

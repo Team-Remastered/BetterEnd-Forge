@@ -25,21 +25,21 @@ public class BlueVineSeedBlock extends EndPlantWithAgeBlock {
 		BlocksHelper.setWithoutUpdate(
 			world,
 			pos,
-			EndBlocks.BLUE_VINE.defaultBlockState()
+			EndBlocks.BLUE_VINE.get().defaultBlockState()
 							   .setValue(BlockProperties.TRIPLE_SHAPE, BlockProperties.TripleShape.BOTTOM)
 		);
 		for (int i = 1; i < height; i++) {
 			BlocksHelper.setWithoutUpdate(
 				world,
 				pos.above(i),
-				EndBlocks.BLUE_VINE.defaultBlockState()
+				EndBlocks.BLUE_VINE.get().defaultBlockState()
 								   .setValue(BlockProperties.TRIPLE_SHAPE, BlockProperties.TripleShape.MIDDLE)
 			);
 		}
 		BlocksHelper.setWithoutUpdate(
 			world,
 			pos.above(height),
-			EndBlocks.BLUE_VINE.defaultBlockState()
+			EndBlocks.BLUE_VINE.get().defaultBlockState()
 							   .setValue(BlockProperties.TRIPLE_SHAPE, BlockProperties.TripleShape.TOP)
 		);
 		placeLantern(world, pos.above(height + 1));
@@ -49,7 +49,7 @@ public class BlueVineSeedBlock extends EndPlantWithAgeBlock {
 		BlocksHelper.setWithoutUpdate(
 			world,
 			pos,
-			EndBlocks.BLUE_VINE_LANTERN.defaultBlockState().setValue(BlueVineLanternBlock.NATURAL, true)
+			EndBlocks.BLUE_VINE_LANTERN.get().defaultBlockState().setValue(BlueVineLanternBlock.NATURAL, true)
 		);
 		for (Direction dir : BlocksHelper.HORIZONTAL) {
 			BlockPos p = pos.relative(dir);
@@ -57,7 +57,7 @@ public class BlueVineSeedBlock extends EndPlantWithAgeBlock {
 				BlocksHelper.setWithoutUpdate(
 					world,
 					p,
-					EndBlocks.BLUE_VINE_FUR.defaultBlockState().setValue(FurBlock.FACING, dir)
+					EndBlocks.BLUE_VINE_FUR.get().defaultBlockState().setValue(FurBlock.FACING, dir)
 				);
 			}
 		}
@@ -65,14 +65,14 @@ public class BlueVineSeedBlock extends EndPlantWithAgeBlock {
 			BlocksHelper.setWithoutUpdate(
 				world,
 				pos.above(),
-				EndBlocks.BLUE_VINE_FUR.defaultBlockState().setValue(FurBlock.FACING, Direction.UP)
+				EndBlocks.BLUE_VINE_FUR.get().defaultBlockState().setValue(FurBlock.FACING, Direction.UP)
 			);
 		}
 	}
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.is(EndBlocks.END_MOSS) || state.is(EndBlocks.END_MYCELIUM);
+		return state.is(EndBlocks.END_MOSS.get()) || state.is(EndBlocks.END_MYCELIUM.get());
 	}
 	
 	@Override

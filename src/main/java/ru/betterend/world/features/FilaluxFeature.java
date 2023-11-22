@@ -20,9 +20,9 @@ public class FilaluxFeature extends SkyScatterFeature {
 	
 	@Override
 	public void generate(WorldGenLevel world, Random random, BlockPos blockPos) {
-		BlockState vine = EndBlocks.FILALUX.defaultBlockState();
-		BlockState wings = EndBlocks.FILALUX_WINGS.defaultBlockState();
-		BlocksHelper.setWithoutUpdate(world, blockPos, EndBlocks.FILALUX_LANTERN);
+		BlockState vine = EndBlocks.FILALUX.get().defaultBlockState();
+		BlockState wings = EndBlocks.FILALUX_WINGS.get().defaultBlockState();
+		BlocksHelper.setWithoutUpdate(world, blockPos, EndBlocks.FILALUX_LANTERN.get());
 		BlocksHelper.setWithoutUpdate(
 			world,
 			blockPos.above(),

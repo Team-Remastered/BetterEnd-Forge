@@ -8,6 +8,7 @@ import net.minecraft.world.level.levelgen.Heightmap.Types;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -30,6 +31,9 @@ public class EndEntities {
 
 	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, BetterEndForge.MOD_ID);
 
+	public static void register(IEventBus eventBus) {
+		ENTITIES.register(eventBus);
+	}
 
 	public static final RegistryObject<EntityType<DragonflyEntity>> DRAGONFLY = register(
 		"dragonfly",

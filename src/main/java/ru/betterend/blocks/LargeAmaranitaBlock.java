@@ -41,7 +41,7 @@ public class LargeAmaranitaBlock extends EndPlantBlock implements AddMineableShe
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.is(EndBlocks.SANGNUM) || state.is(EndBlocks.MOSSY_OBSIDIAN) || state.is(EndBlocks.MOSSY_DRAGON_BONE);
+		return state.is(EndBlocks.SANGNUM.get()) || state.is(EndBlocks.MOSSY_OBSIDIAN.get()) || state.is(EndBlocks.MOSSY_DRAGON_BONE.get());
 	}
 	
 	@Override

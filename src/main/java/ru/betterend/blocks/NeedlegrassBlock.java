@@ -47,7 +47,7 @@ public class NeedlegrassBlock extends EndPlantBlock {
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.is(EndBlocks.SHADOW_GRASS);
+		return state.is(EndBlocks.SHADOW_GRASS.get());
 	}
 	
 	@Override

@@ -63,8 +63,8 @@ public class REIPlugin implements REIClientPlugin {
 	
 	@Override
 	public void registerCategories(CategoryRegistry registry) {
-		EntryStack<ItemStack> endStoneSmelter = EntryStacks.of(EndBlocks.END_STONE_SMELTER);
-		EntryStack<ItemStack> infusionRitual = EntryStacks.of(EndBlocks.INFUSION_PEDESTAL);
+		EntryStack<ItemStack> endStoneSmelter = EntryStacks.of(EndBlocks.END_STONE_SMELTER.get());
+		EntryStack<ItemStack> infusionRitual = EntryStacks.of(EndBlocks.INFUSION_PEDESTAL.get());
 		List<EntryStack<?>> anvils = Lists.newArrayList(EntryIngredients.ofItems(EndBlocks.getModBlocks()
 																						  .stream()
 																						  .filter(EndAnvilBlock.class::isInstance)

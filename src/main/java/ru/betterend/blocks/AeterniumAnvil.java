@@ -10,7 +10,7 @@ import ru.betterend.registry.EndBlocks;
 
 public class AeterniumAnvil extends EndAnvilBlock {
 	public AeterniumAnvil() {
-		super(EndBlocks.AETERNIUM_BLOCK.defaultMaterialColor(), EndToolMaterial.AETERNIUM.getLevel());
+		super(EndBlocks.AETERNIUM_BLOCK.get().defaultMaterialColor(), EndToolMaterial.AETERNIUM.getLevel());
 	}
 	
 	@Override

@@ -115,7 +115,7 @@ public class LacugroveFeature extends DefaultFeature {
 	
 	private void leavesBall(WorldGenLevel world, BlockPos pos, float radius, Random random, OpenSimplexNoise noise) {
 		SDF sphere = new SDFSphere().setRadius(radius)
-									.setBlock(EndBlocks.LACUGROVE_LEAVES.defaultBlockState()
+									.setBlock(EndBlocks.LACUGROVE_LEAVES.get().defaultBlockState()
 																		.setValue(LeavesBlock.DISTANCE, 6));
 		sphere = new SDFDisplacement().setFunction((vec) -> {
 			return (float) noise.eval(vec.x() * 0.2, vec.y() * 0.2, vec.z() * 0.2) * 3;
@@ -173,7 +173,7 @@ public class LacugroveFeature extends DefaultFeature {
 				boolean place = true;
 				for (Direction d : Direction.values()) {
 					BlockState state = world.getBlockState(p.relative(d));
-					if (!EndBlocks.LACUGROVE.isTreeLog(state) && !state.is(EndBlocks.LACUGROVE_LEAVES)) {
+					if (!EndBlocks.LACUGROVE.isTreeLog(state) && !state.is(EndBlocks.LACUGROVE_LEAVES.get())) {
 						place = false;
 						break;
 					}
@@ -195,7 +195,7 @@ public class LacugroveFeature extends DefaultFeature {
 			if (EndBlocks.LACUGROVE.isTreeLog(state)) {
 				return true;
 			}
-			if (state.getBlock() == EndBlocks.LACUGROVE_LEAVES) {
+			if (state.getBlock() == EndBlocks.LACUGROVE_LEAVES.get()) {
 				return true;
 			}
 			if (state.getMaterial().equals(Material.PLANT)) {

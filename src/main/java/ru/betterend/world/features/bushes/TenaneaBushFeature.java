@@ -46,7 +46,7 @@ public class TenaneaBushFeature extends DefaultFeature {
 		
 		float radius = MHelper.randRange(1.8F, 3.5F, random);
 		OpenSimplexNoise noise = new OpenSimplexNoise(random.nextInt());
-		BlockState leaves = EndBlocks.TENANEA_LEAVES.defaultBlockState();
+		BlockState leaves = EndBlocks.TENANEA_LEAVES.get().defaultBlockState();
 		SDF sphere = new SDFSphere().setRadius(radius).setBlock(leaves);
 		sphere = new SDFScale3D().setScale(1, 0.75F, 1).setSource(sphere);
 		sphere = new SDFDisplacement().setFunction((vec) -> (float) noise.eval(
@@ -73,7 +73,7 @@ public class TenaneaBushFeature extends DefaultFeature {
 						if (info.getState(d).isAir()) {
 							info.setBlockPos(
 								info.getPos().relative(d),
-								EndBlocks.TENANEA_OUTER_LEAVES.defaultBlockState().setValue(FurBlock.FACING, d)
+								EndBlocks.TENANEA_OUTER_LEAVES.get().defaultBlockState().setValue(FurBlock.FACING, d)
 							);
 						}
 					}
@@ -97,18 +97,18 @@ public class TenaneaBushFeature extends DefaultFeature {
 		}
 		
 		MutableBlockPos mut = new MutableBlockPos();
-		BlockState top = EndBlocks.TENANEA_FLOWERS.defaultBlockState()
+		BlockState top = EndBlocks.TENANEA_FLOWERS.get().defaultBlockState()
 												  .setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.TOP);
-		BlockState middle = EndBlocks.TENANEA_FLOWERS.defaultBlockState()
+		BlockState middle = EndBlocks.TENANEA_FLOWERS.get().defaultBlockState()
 													 .setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.MIDDLE);
-		BlockState bottom = EndBlocks.TENANEA_FLOWERS.defaultBlockState()
+		BlockState bottom = EndBlocks.TENANEA_FLOWERS.get().defaultBlockState()
 													 .setValue(BlockProperties.TRIPLE_SHAPE, TripleShape.BOTTOM);
 		support.forEach((bpos) -> {
 			BlockState state = world.getBlockState(bpos);
-			if (state.isAir() || state.is(EndBlocks.TENANEA_OUTER_LEAVES)) {
+			if (state.isAir() || state.is(EndBlocks.TENANEA_OUTER_LEAVES.get())) {
 				int count = MHelper.randRange(3, 8, random);
 				mut.set(bpos);
-				if (world.getBlockState(mut.above()).is(EndBlocks.TENANEA_LEAVES)) {
+				if (world.getBlockState(mut.above()).is(EndBlocks.TENANEA_LEAVES.get())) {
 					BlocksHelper.setWithoutUpdate(world, mut, top);
 					for (int i = 1; i < count; i++) {
 						mut.setY(mut.getY() - 1);

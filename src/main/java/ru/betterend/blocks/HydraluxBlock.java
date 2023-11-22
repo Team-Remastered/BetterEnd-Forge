@@ -77,18 +77,18 @@ public class HydraluxBlock extends UnderwaterPlantBlock  implements AddMineableS
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
-		return new ItemStack(EndBlocks.HYDRALUX_SAPLING);
+		return new ItemStack(EndBlocks.HYDRALUX_SAPLING.get());
 	}
 	
 	@Override
 	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
 		HydraluxShape shape = state.getValue(SHAPE);
 		if (shape == HydraluxShape.FLOWER_BIG_BOTTOM || shape == HydraluxShape.FLOWER_SMALL_BOTTOM) {
-			return Lists.newArrayList(new ItemStack(EndItems.HYDRALUX_PETAL, MHelper.randRange(1, 4, MHelper.RANDOM)));
+			return Lists.newArrayList(new ItemStack(EndItems.HYDRALUX_PETAL.get(), MHelper.randRange(1, 4, MHelper.RANDOM)));
 		}
 		else if (shape == HydraluxShape.ROOTS) {
 			return Lists.newArrayList(new ItemStack(
-				EndBlocks.HYDRALUX_SAPLING,
+				EndBlocks.HYDRALUX_SAPLING.get(),
 				MHelper.randRange(1, 2, MHelper.RANDOM)
 			));
 		}

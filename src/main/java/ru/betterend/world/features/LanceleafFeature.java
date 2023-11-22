@@ -14,12 +14,12 @@ public class LanceleafFeature extends ScatterFeature {
 	
 	@Override
 	public boolean canGenerate(WorldGenLevel world, Random random, BlockPos center, BlockPos blockPos, float radius) {
-		return EndBlocks.LANCELEAF_SEED.canSurvive(AIR, world, blockPos);
+		return EndBlocks.LANCELEAF_SEED.get().canSurvive(AIR, world, blockPos);
 	}
 	
 	@Override
 	public void generate(WorldGenLevel world, Random random, BlockPos blockPos) {
-		EndPlantWithAgeBlock seed = ((EndPlantWithAgeBlock) EndBlocks.LANCELEAF_SEED);
+		EndPlantWithAgeBlock seed = ((EndPlantWithAgeBlock) EndBlocks.LANCELEAF_SEED.get());
 		seed.growAdult(world, random, blockPos);
 	}
 	
