@@ -17,7 +17,7 @@ import ru.betterend.registry.EndParticles;
 
 public class InfusionParticleType extends ParticleType<InfusionParticleType> implements ParticleOptions {
 	public static final Codec<InfusionParticleType> CODEC = ItemStack.CODEC.xmap(itemStack -> new InfusionParticleType(
-		EndParticles.INFUSION,
+		EndParticles.INFUSION.get(),
 		itemStack
 	), infusionParticleType -> infusionParticleType.itemStack);
 	
@@ -48,7 +48,7 @@ public class InfusionParticleType extends ParticleType<InfusionParticleType> imp
 	}
 	
 	public InfusionParticleType(ItemStack stack) {
-		this(EndParticles.INFUSION, stack);
+		this(EndParticles.INFUSION.get(), stack);
 	}
 	
 	@OnlyIn(Dist.CLIENT)

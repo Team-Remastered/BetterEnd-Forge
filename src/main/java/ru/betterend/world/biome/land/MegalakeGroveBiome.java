@@ -25,9 +25,9 @@ public class MegalakeGroveBiome extends EndBiome.Config {
 			.fogColor(178, 209, 248)
 			.waterAndFogColor(96, 163, 255)
 			.fogDensity(2.0F)
-			.particles(EndParticles.GLOWING_SPHERE, 0.001F)
-			.music(EndSounds.MUSIC_WATER)
-			.loop(EndSounds.AMBIENT_MEGALAKE_GROVE)
+			.particles(EndParticles.GLOWING_SPHERE.get(), 0.001F)
+			.music(EndSounds.MUSIC_WATER.get())
+			.loop(EndSounds.AMBIENT_MEGALAKE_GROVE.get())
 			.terrainHeight(0F)
 			.feature(EndFeatures.LACUGROVE)
 			.feature(EndFeatures.END_LOTUS)
@@ -41,10 +41,10 @@ public class MegalakeGroveBiome extends EndBiome.Config {
 			.feature(EndFeatures.CHARNIA_LIGHT_BLUE)
 			.feature(EndFeatures.CHARNIA_RED_RARE)
 			.feature(EndFeatures.MENGER_SPONGE)
-			.spawn(EndEntities.DRAGONFLY, 20, 1, 3)
-			.spawn(EndEntities.END_FISH, 20, 3, 8)
-			.spawn(EndEntities.CUBOZOA, 50, 3, 8)
-			.spawn(EndEntities.END_SLIME, 5, 1, 2)
+			.spawn(EndEntities.DRAGONFLY.get(), 20, 1, 3)
+			.spawn(EndEntities.END_FISH.get(), 20, 3, 8)
+			.spawn(EndEntities.CUBOZOA.get(), 50, 3, 8)
+			.spawn(EndEntities.END_SLIME.get(), 5, 1, 2)
 			.spawn(EntityType.ENDERMAN, 10, 1, 2);
 	}
 
@@ -53,7 +53,7 @@ public class MegalakeGroveBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.END_MOSS.defaultBlockState();
+				return EndBlocks.END_MOSS.get().defaultBlockState();
 			}
 		};
 	}

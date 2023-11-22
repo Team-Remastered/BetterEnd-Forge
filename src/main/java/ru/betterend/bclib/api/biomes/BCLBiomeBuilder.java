@@ -1,7 +1,6 @@
 package ru.betterend.bclib.api.biomes;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.particles.ParticleOptions;

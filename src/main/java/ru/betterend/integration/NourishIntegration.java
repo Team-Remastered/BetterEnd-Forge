@@ -18,34 +18,34 @@ public class NourishIntegration extends ModIntegration {
 		TagLocation<Item> protein = TagLocation.of(getItemTag("protein"));
 		TagLocation<Item> sweets = TagLocation.of(getItemTag("sweets"));
 		
-		TagAPI.addItemTag(fats, EndItems.END_FISH_RAW, EndItems.END_FISH_COOKED);
+		TagAPI.addItemTag(fats, EndItems.END_FISH_RAW.get(), EndItems.END_FISH_COOKED.get());
 		TagAPI.addItemTag(
 			fruit,
-			EndItems.SHADOW_BERRY_RAW,
-			EndItems.SHADOW_BERRY_COOKED,
-			EndItems.BLOSSOM_BERRY,
-			EndItems.SHADOW_BERRY_JELLY,
-			EndItems.SWEET_BERRY_JELLY,
-			EndItems.BLOSSOM_BERRY_JELLY,
-			EndItems.AMBER_ROOT_RAW,
-			EndItems.CHORUS_MUSHROOM_RAW,
-			EndItems.CHORUS_MUSHROOM_COOKED,
-			EndItems.BOLUX_MUSHROOM_COOKED
+			EndItems.SHADOW_BERRY_RAW.get(),
+			EndItems.SHADOW_BERRY_COOKED.get(),
+			EndItems.BLOSSOM_BERRY.get(),
+			EndItems.SHADOW_BERRY_JELLY.get(),
+			EndItems.SWEET_BERRY_JELLY.get(),
+			EndItems.BLOSSOM_BERRY_JELLY.get(),
+			EndItems.AMBER_ROOT_RAW.get(),
+			EndItems.CHORUS_MUSHROOM_RAW.get(),
+			EndItems.CHORUS_MUSHROOM_COOKED.get(),
+			EndItems.BOLUX_MUSHROOM_COOKED.get()
 		);
 		TagAPI.addItemTag(
 			protein,
-			EndItems.END_FISH_RAW,
-			EndItems.END_FISH_COOKED,
-			EndItems.CHORUS_MUSHROOM_COOKED,
-			EndItems.BOLUX_MUSHROOM_COOKED,
-			EndItems.CAVE_PUMPKIN_PIE
+			EndItems.END_FISH_RAW.get(),
+			EndItems.END_FISH_COOKED.get(),
+			EndItems.CHORUS_MUSHROOM_COOKED.get(),
+			EndItems.BOLUX_MUSHROOM_COOKED.get(),
+			EndItems.CAVE_PUMPKIN_PIE.get()
 		);
 		TagAPI.addItemTag(
 			sweets,
-			EndItems.SHADOW_BERRY_JELLY,
-			EndItems.SWEET_BERRY_JELLY,
-			EndItems.BLOSSOM_BERRY_JELLY,
-			EndItems.CAVE_PUMPKIN_PIE
+			EndItems.SHADOW_BERRY_JELLY.get(),
+			EndItems.SWEET_BERRY_JELLY.get(),
+			EndItems.BLOSSOM_BERRY_JELLY.get(),
+			EndItems.CAVE_PUMPKIN_PIE.get()
 		);
 	}
 }

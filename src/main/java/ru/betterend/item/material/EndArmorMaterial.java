@@ -13,13 +13,13 @@ import java.util.function.Supplier;
 
 public enum EndArmorMaterial implements ArmorMaterial {
 	THALLASIUM("thallasium", 17, new int[] {1, 4, 5, 2}, 12, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> {
-		return Ingredient.of(EndBlocks.THALLASIUM.ingot);
+		return Ingredient.of(EndBlocks.THALLASIUM.ingot.get());
 	}), TERMINITE("terminite", 26, new int[] {3, 6, 7, 3}, 14, SoundEvents.ARMOR_EQUIP_IRON, 1.0F, 0.05F, () -> {
-		return Ingredient.of(EndBlocks.TERMINITE.ingot);
+		return Ingredient.of(EndBlocks.TERMINITE.ingot.get());
 	}), AETERNIUM("aeternium", 40, new int[] {4, 7, 9, 4}, 18, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.5F, 0.2F, () -> {
-		return Ingredient.of(EndItems.AETERNIUM_INGOT);
+		return Ingredient.of(EndItems.AETERNIUM_INGOT.get());
 	}), CRYSTALITE("crystalite", 30, new int[] {3, 6, 8, 3}, 24, SoundEvents.ARMOR_EQUIP_DIAMOND, 1.2F, 0.1F, () -> {
-		return Ingredient.of(EndBlocks.TERMINITE.ingot);
+		return Ingredient.of(EndBlocks.TERMINITE.ingot.get());
 	});
 	
 	private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};

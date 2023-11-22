@@ -2,8 +2,6 @@ package ru.betterend.bclib.api.dataexchange.handler;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.minecraft.resources.ResourceLocation;
 import ru.betterend.bclib.api.dataexchange.BaseDataHandler;
 import ru.betterend.bclib.api.dataexchange.ConnectorClientside;

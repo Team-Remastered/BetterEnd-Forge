@@ -96,7 +96,7 @@ public class EndFishEntity extends AbstractSchoolingFish {
 	
 	@Override
 	public ItemStack getBucketItemStack() {
-		ItemStack bucket = EndItems.BUCKET_END_FISH.getDefaultInstance();
+		ItemStack bucket = EndItems.BUCKET_END_FISH.get().getDefaultInstance();
 		CompoundTag tag = bucket.getOrCreateTag();
 		tag.putByte("variant", entityData.get(VARIANT));
 		tag.putByte("scale", entityData.get(SCALE));
@@ -156,12 +156,12 @@ public class EndFishEntity extends AbstractSchoolingFish {
 	
 	@Override
 	protected void dropFromLootTable(DamageSource source, boolean causedByPlayer) {
-		Item item = source.isFire() ? EndItems.END_FISH_COOKED : EndItems.END_FISH_RAW;
+		Item item = source.isFire() ? EndItems.END_FISH_COOKED.get() : EndItems.END_FISH_RAW.get();
 		if (causedByPlayer && source instanceof EntityDamageSource) {
 			EntityDamageSource damageSource = (EntityDamageSource) source;
 			ItemStack handItem = ((Player) damageSource.getEntity()).getItemInHand(InteractionHand.MAIN_HAND);
 			if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT, handItem) > 0) {
-				item = EndItems.END_FISH_COOKED;
+				item = EndItems.END_FISH_COOKED.get();
 			}
 		}
 		ItemEntity drop = new ItemEntity(level, getX(), getY(), getZ(), new ItemStack(item));

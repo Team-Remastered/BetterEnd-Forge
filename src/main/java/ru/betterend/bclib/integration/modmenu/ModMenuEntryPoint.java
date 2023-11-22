@@ -1,7 +1,5 @@
 package ru.betterend.bclib.integration.modmenu;
 
-import com.terraformersmc.modmenu.api.ConfigScreenFactory;
-import com.terraformersmc.modmenu.api.ModMenuApi;
 import ru.betterend.bclib.gui.modmenu.MainScreen;
 
 import java.util.HashMap;

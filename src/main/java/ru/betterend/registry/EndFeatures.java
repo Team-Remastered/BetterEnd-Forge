@@ -230,13 +230,13 @@ public class EndFeatures {
 	public static final BCLFeature FALLEN_PILLAR = registerChanced("fallen_pillar", new FallenPillarFeature(), 20);
 	public static final BCLFeature TUNEL_CAVE = BCLCommonFeatures.makeChunkFeature(BetterEndForge.makeID("tunel_cave"), Decoration.RAW_GENERATION, new TunelCaveFeature());
 	public static final BCLFeature UMBRALITH_ARCH = registerChanced("umbralith_arch", new ArchFeature(
-		EndBlocks.UMBRALITH.stone,
+		EndBlocks.UMBRALITH.stone.get(),
 		pos -> UmbraValleyBiome.getSurface(pos.getX(), pos.getZ()).defaultBlockState()
 	), 10);
-	public static final BCLFeature THIN_UMBRALITH_ARCH = registerChanced("thin_umbralith_arch", new ThinArchFeature(EndBlocks.UMBRALITH.stone), 15);
+	public static final BCLFeature THIN_UMBRALITH_ARCH = registerChanced("thin_umbralith_arch", new ThinArchFeature(EndBlocks.UMBRALITH.stone.get()), 15);
 	
 	// Ores //
-	public static final BCLFeature THALLASIUM_ORE = registerOre("thallasium_ore", EndBlocks.THALLASIUM.ore, 24, 8);
+	public static final BCLFeature THALLASIUM_ORE = registerOre("thallasium_ore", EndBlocks.THALLASIUM.ore.get(), 24, 8);
 	public static final BCLFeature ENDER_ORE = registerOre("ender_ore", EndBlocks.ENDER_ORE.get(), 12, 4);
 	public static final BCLFeature AMBER_ORE = registerOre("amber_ore", EndBlocks.AMBER_ORE.get(), 60, 6);
 	public static final BCLFeature DRAGON_BONE_BLOCK_ORE = registerOre("dragon_bone_ore", EndBlocks.DRAGON_BONE_BLOCK.get(), 24, 8);
@@ -311,7 +311,7 @@ public class EndFeatures {
 	}
 	
 	private static BCLFeature registerLayer(String name, StoneMaterial material, float radius, int minY, int maxY, int count) {
-		return registerLayer(name, material.stone, radius, minY, maxY, count);
+		return registerLayer(name, material.stone.get(), radius, minY, maxY, count);
 	}
 	
 	public static void addBiomeFeatures(ResourceLocation id, Holder<Biome> biome) {

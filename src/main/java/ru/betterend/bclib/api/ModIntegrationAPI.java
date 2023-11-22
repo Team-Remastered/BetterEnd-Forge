@@ -1,7 +1,6 @@
 package ru.betterend.bclib.api;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.loader.api.FabricLoader;
 import ru.betterend.bclib.integration.ModIntegration;
 
 import java.util.List;

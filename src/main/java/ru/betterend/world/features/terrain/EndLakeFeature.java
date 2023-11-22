@@ -134,13 +134,13 @@ public class EndLakeFeature extends DefaultFeature {
 										BlocksHelper.setWithoutUpdate(
 											world,
 											pos,
-											random.nextBoolean() ? state : EndBlocks.ENDSTONE_DUST.defaultBlockState()
+											random.nextBoolean() ? state : EndBlocks.ENDSTONE_DUST.get().defaultBlockState()
 										);
 									else
 										BlocksHelper.setWithoutUpdate(
 											world,
 											pos,
-											EndBlocks.ENDSTONE_DUST.defaultBlockState()
+											EndBlocks.ENDSTONE_DUST.get().defaultBlockState()
 										);
 								}
 							}
@@ -183,7 +183,7 @@ public class EndLakeFeature extends DefaultFeature {
 							}
 							pos = POS.below();
 							if (world.getBlockState(pos).is(CommonBlockTags.GEN_END_STONES)) {
-								BlocksHelper.setWithoutUpdate(world, pos, EndBlocks.ENDSTONE_DUST.defaultBlockState());
+								BlocksHelper.setWithoutUpdate(world, pos, EndBlocks.ENDSTONE_DUST.get().defaultBlockState());
 							}
 							pos = POS.above();
 							while (canReplace(state = world.getBlockState(pos)) && !state.isAir() && state.getFluidState()
@@ -203,12 +203,12 @@ public class EndLakeFeature extends DefaultFeature {
 								BlocksHelper.setWithoutUpdate(
 									world,
 									POS,
-									random.nextBoolean() ? state : EndBlocks.ENDSTONE_DUST.defaultBlockState()
+									random.nextBoolean() ? state : EndBlocks.ENDSTONE_DUST.get().defaultBlockState()
 								);
 								BlocksHelper.setWithoutUpdate(world, POS.below(), END_STONE);
 							}
 							else {
-								BlocksHelper.setWithoutUpdate(world, POS, EndBlocks.ENDSTONE_DUST.defaultBlockState());
+								BlocksHelper.setWithoutUpdate(world, POS, EndBlocks.ENDSTONE_DUST.get().defaultBlockState());
 								BlocksHelper.setWithoutUpdate(world, POS.below(), END_STONE);
 							}
 						}
@@ -228,7 +228,7 @@ public class EndLakeFeature extends DefaultFeature {
 	
 	private boolean canReplace(BlockState state) {
 		return state.getMaterial()
-					.isReplaceable() || state.is(CommonBlockTags.GEN_END_STONES) || state.is(EndBlocks.ENDSTONE_DUST) || state.getMaterial()
+					.isReplaceable() || state.is(CommonBlockTags.GEN_END_STONES) || state.is(EndBlocks.ENDSTONE_DUST.get()) || state.getMaterial()
 																												  .equals(
 																													  Material.PLANT) || state
 			.getMaterial()

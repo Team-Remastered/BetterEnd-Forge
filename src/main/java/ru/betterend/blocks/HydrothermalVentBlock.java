@@ -80,7 +80,7 @@ public class HydrothermalVentBlock extends BaseBlockNotFull implements EntityBlo
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
 		state = world.getBlockState(pos.below());
-		return state.is(EndBlocks.SULPHURIC_ROCK.stone);
+		return state.is(EndBlocks.SULPHURIC_ROCK.stone.get());
 	}
 	
 	@Override

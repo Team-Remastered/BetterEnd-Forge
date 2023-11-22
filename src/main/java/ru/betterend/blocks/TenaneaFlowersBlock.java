@@ -68,7 +68,7 @@ public class TenaneaFlowersBlock extends BaseVineBlock implements CustomColorPro
 			double x = (double) pos.getX() + random.nextGaussian() + 0.5;
 			double z = (double) pos.getZ() + random.nextGaussian() + 0.5;
 			double y = (double) pos.getY() + random.nextDouble();
-			world.addParticle(EndParticles.TENANEA_PETAL, x, y, z, 0, 0, 0);
+			world.addParticle(EndParticles.TENANEA_PETAL.get(), x, y, z, 0, 0, 0);
 		}
 	}
 	

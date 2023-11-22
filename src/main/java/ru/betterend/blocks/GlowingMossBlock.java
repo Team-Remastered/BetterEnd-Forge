@@ -15,7 +15,7 @@ public class GlowingMossBlock extends EndPlantBlock {
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.getBlock() == EndBlocks.END_MOSS || state.getBlock() == EndBlocks.END_MYCELIUM;
+		return state.getBlock() == EndBlocks.END_MOSS.get() || state.getBlock() == EndBlocks.END_MYCELIUM.get();
 	}
 	
 	@OnlyIn(Dist.CLIENT)

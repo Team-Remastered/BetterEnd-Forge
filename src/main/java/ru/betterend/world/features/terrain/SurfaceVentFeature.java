@@ -48,7 +48,7 @@ public class SurfaceVentFeature extends DefaultFeature {
 				}
 				if (state.is(CommonBlockTags.GEN_END_STONES) && !world.getBlockState(mut.above()).is(EndBlocks.HYDROTHERMAL_VENT.get())) {
 					for (int j = 0; j <= dist; j++) {
-						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.SULPHURIC_ROCK.stone);
+						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.SULPHURIC_ROCK.stone.get());
 						mut.setY(mut.getY() + 1);
 					}
 					BlocksHelper.setWithoutUpdate(world, mut, vent);

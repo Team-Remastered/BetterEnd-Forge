@@ -1,8 +1,6 @@
 package ru.betterend.registry;
 
 import com.google.common.collect.Lists;
-import net.fabricmc.fabric.mixin.object.builder.AbstractBlockAccessor;
-import net.fabricmc.fabric.mixin.object.builder.AbstractBlockSettingsAccessor;
 import net.minecraft.core.Registry;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;

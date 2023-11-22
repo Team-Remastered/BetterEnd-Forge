@@ -4,6 +4,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.registries.RegistryObject;
 import ru.betterend.bclib.api.tag.NamedBlockTags;
 import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
 import ru.betterend.bclib.api.tag.NamedCommonItemTags;
@@ -28,173 +29,173 @@ import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;
 
 public class StoneMaterial {
-	public final Block stone;
+	public final RegistryObject<Block> stone;
 	
-	public final Block polished;
-	public final Block tiles;
-	public final Block pillar;
-	public final Block stairs;
-	public final Block slab;
-	public final Block wall;
-	public final Block button;
-	public final Block pressurePlate;
-	public final Block pedestal;
-	public final Block lantern;
+	public final RegistryObject<Block> polished;
+	public final RegistryObject<Block> tiles;
+	public final RegistryObject<Block> pillar;
+	public final RegistryObject<Block> stairs;
+	public final RegistryObject<Block> slab;
+	public final RegistryObject<Block> wall;
+	public final RegistryObject<Block> button;
+	public final RegistryObject<Block> pressurePlate;
+	public final RegistryObject<Block> pedestal;
+	public final RegistryObject<Block> lantern;
 	
-	public final Block bricks;
-	public final Block brickStairs;
-	public final Block brickSlab;
-	public final Block brickWall;
-	public final Block furnace;
-	public final Block flowerPot;
+	public final RegistryObject<Block> bricks;
+	public final RegistryObject<Block> brickStairs;
+	public final RegistryObject<Block> brickSlab;
+	public final RegistryObject<Block> brickWall;
+	public final RegistryObject<Block> furnace;
+	public final RegistryObject<Block> flowerPot;
 	
 	public StoneMaterial(String name, MaterialColor color) {
-		BlockBehaviour.Properties material = BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(color);
+		BlockBehaviour.Properties material = BlockBehaviour.Properties.copy(Blocks.END_STONE).color(color);
 		
 		stone = EndBlocks.registerBlock(name, new BaseBlock(material));
 		polished = EndBlocks.registerBlock(name + "_polished", new BaseBlock(material));
 		tiles = EndBlocks.registerBlock(name + "_tiles", new BaseBlock(material));
 		pillar = EndBlocks.registerBlock(name + "_pillar", new BaseRotatedPillarBlock(material));
-		stairs = EndBlocks.registerBlock(name + "_stairs", new BaseStairsBlock(stone));
-		slab = EndBlocks.registerBlock(name + "_slab", new BaseSlabBlock(stone));
-		wall = EndBlocks.registerBlock(name + "_wall", new BaseWallBlock(stone));
-		button = EndBlocks.registerBlock(name + "_button", new BaseStoneButtonBlock(stone));
-		pressurePlate = EndBlocks.registerBlock(name + "_plate", new StonePressurePlateBlock(stone));
-		pedestal = EndBlocks.registerBlock(name + "_pedestal", new EndPedestal(stone));
-		lantern = EndBlocks.registerBlock(name + "_lantern", new StoneLanternBlock(stone));
+		stairs = EndBlocks.registerBlock(name + "_stairs", new BaseStairsBlock(stone.get()));
+		slab = EndBlocks.registerBlock(name + "_slab", new BaseSlabBlock(stone.get()));
+		wall = EndBlocks.registerBlock(name + "_wall", new BaseWallBlock(stone.get()));
+		button = EndBlocks.registerBlock(name + "_button", new BaseStoneButtonBlock(stone.get()));
+		pressurePlate = EndBlocks.registerBlock(name + "_plate", new StonePressurePlateBlock(stone.get()));
+		pedestal = EndBlocks.registerBlock(name + "_pedestal", new EndPedestal(stone.get()));
+		lantern = EndBlocks.registerBlock(name + "_lantern", new StoneLanternBlock(stone.get()));
 		
 		bricks = EndBlocks.registerBlock(name + "_bricks", new BaseBlock(material));
-		brickStairs = EndBlocks.registerBlock(name + "_bricks_stairs", new BaseStairsBlock(bricks));
-		brickSlab = EndBlocks.registerBlock(name + "_bricks_slab", new BaseSlabBlock(bricks));
-		brickWall = EndBlocks.registerBlock(name + "_bricks_wall", new BaseWallBlock(bricks));
-		furnace = EndBlocks.registerBlock(name + "_furnace", new BaseFurnaceBlock(bricks));
-		flowerPot = EndBlocks.registerBlock(name + "_flower_pot", new FlowerPotBlock(bricks));
+		brickStairs = EndBlocks.registerBlock(name + "_bricks_stairs", new BaseStairsBlock(bricks.get()));
+		brickSlab = EndBlocks.registerBlock(name + "_bricks_slab", new BaseSlabBlock(bricks.get()));
+		brickWall = EndBlocks.registerBlock(name + "_bricks_wall", new BaseWallBlock(bricks.get()));
+		furnace = EndBlocks.registerBlock(name + "_furnace", new BaseFurnaceBlock(bricks.get()));
+		flowerPot = EndBlocks.registerBlock(name + "_flower_pot", new FlowerPotBlock(bricks.get()));
 		
 		// Recipes //
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks", bricks)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks", bricks.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("##", "##")
-				  .addMaterial('#', stone)
+				  .addMaterial('#', stone.get())
 				  .setGroup("end_bricks")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_polished", polished)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_polished", polished.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("##", "##")
-				  .addMaterial('#', bricks)
+				  .addMaterial('#', bricks.get())
 				  .setGroup("end_tile")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_tiles", tiles)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_tiles", tiles.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("##", "##")
-				  .addMaterial('#', polished)
+				  .addMaterial('#', polished.get())
 				  .setGroup("end_small_tile")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pillar", pillar)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pillar", pillar.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("#", "#")
-				  .addMaterial('#', slab)
+				  .addMaterial('#', slab.get())
 				  .setGroup("end_pillar")
 				  .build();
 		
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_stairs", stairs)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_stairs", stairs.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("#  ", "## ", "###")
-				  .addMaterial('#', stone)
+				  .addMaterial('#', stone.get())
 				  .setGroup("end_stone_stairs")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_slab", slab)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_slab", slab.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###")
-				  .addMaterial('#', stone)
+				  .addMaterial('#', stone.get())
 				  .setGroup("end_stone_slabs")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_stairs", brickStairs)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_stairs", brickStairs.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("#  ", "## ", "###")
-				  .addMaterial('#', bricks)
+				  .addMaterial('#', bricks.get())
 				  .setGroup("end_stone_stairs")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_slab", brickSlab)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_slab", brickSlab.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###")
-				  .addMaterial('#', bricks)
+				  .addMaterial('#', bricks.get())
 				  .setGroup("end_stone_slabs")
 				  .build();
 		
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_wall", wall)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_wall", wall.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###", "###")
-				  .addMaterial('#', stone)
+				  .addMaterial('#', stone.get())
 				  .setGroup("end_wall")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_wall", brickWall)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_wall", brickWall.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###", "###")
-				  .addMaterial('#', bricks)
+				  .addMaterial('#', bricks.get())
 				  .setGroup("end_wall")
 				  .build();
 		
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_button", button)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_button", button.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setList("#")
-				  .addMaterial('#', stone)
+				  .addMaterial('#', stone.get())
 				  .setGroup("end_stone_buttons")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pressure_plate", pressurePlate)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pressure_plate", pressurePlate.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("##")
-				  .addMaterial('#', stone)
+				  .addMaterial('#', stone.get())
 				  .setGroup("end_stone_plates")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_lantern", lantern)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_lantern", lantern.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("S", "#", "S")
-				  .addMaterial('#', EndItems.CRYSTAL_SHARDS)
-				  .addMaterial('S', slab, brickSlab)
+				  .addMaterial('#', EndItems.CRYSTAL_SHARDS.get())
+				  .addMaterial('S', slab.get(), brickSlab.get())
 				  .setGroup("end_stone_lanterns")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_furnace", furnace)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_furnace", furnace.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("###", "# #", "###")
-				  .addMaterial('#', stone)
+				  .addMaterial('#', stone.get())
 				  .setGroup("end_stone_ITEM_FURNACES")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_flower_pot", flowerPot)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_flower_pot", flowerPot.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(3)
 				  .setShape("# #", " # ")
-				  .addMaterial('#', bricks)
+				  .addMaterial('#', bricks.get())
 				  .setGroup("end_pots")
 				  .build();
 		
-		CraftingRecipes.registerPedestal(name + "_pedestal", pedestal, slab, pillar);
+		CraftingRecipes.registerPedestal(name + "_pedestal", pedestal.get(), slab.get(), pillar.get());
 		
 		// Item Tags //
-		TagAPI.addItemTag(NamedItemTags.SLABS, slab, brickSlab);
-		TagAPI.addItemTag(NamedItemTags.STONE_BRICKS, bricks);
-		TagAPI.addItemTag(NamedItemTags.STONE_CRAFTING_MATERIALS, stone);
-		TagAPI.addItemTag(NamedItemTags.STONE_TOOL_MATERIALS, stone);
-		TagAPI.addItemTag(NamedCommonItemTags.FURNACES, furnace);
+		TagAPI.addItemTag(NamedItemTags.SLABS, slab.get(), brickSlab.get());
+		TagAPI.addItemTag(NamedItemTags.STONE_BRICKS, bricks.get());
+		TagAPI.addItemTag(NamedItemTags.STONE_CRAFTING_MATERIALS, stone.get());
+		TagAPI.addItemTag(NamedItemTags.STONE_TOOL_MATERIALS, stone.get());
+		TagAPI.addItemTag(NamedCommonItemTags.FURNACES, furnace.get());
 		
 		// Block Tags //
-		TagAPI.addBlockTag(NamedBlockTags.STONE_BRICKS, bricks);
-		TagAPI.addBlockTag(NamedBlockTags.WALLS, wall, brickWall);
-		TagAPI.addBlockTag(NamedBlockTags.SLABS, slab, brickSlab);
-		TagAPI.addBlockTags(pressurePlate, NamedBlockTags.PRESSURE_PLATES, NamedBlockTags.STONE_PRESSURE_PLATES);
-		TagAPI.addBlockTag(NamedCommonBlockTags.END_STONES, stone);
+		TagAPI.addBlockTag(NamedBlockTags.STONE_BRICKS, bricks.get());
+		TagAPI.addBlockTag(NamedBlockTags.WALLS, wall.get(), brickWall.get());
+		TagAPI.addBlockTag(NamedBlockTags.SLABS, slab.get(), brickSlab.get());
+		TagAPI.addBlockTags(pressurePlate.get(), NamedBlockTags.PRESSURE_PLATES, NamedBlockTags.STONE_PRESSURE_PLATES);
+		TagAPI.addBlockTag(NamedCommonBlockTags.END_STONES, stone.get());
 		
-		TagAPI.addBlockTag(NamedCommonBlockTags.DRAGON_IMMUNE, stone, stairs, slab, wall);
+		TagAPI.addBlockTag(NamedCommonBlockTags.DRAGON_IMMUNE, stone.get(), stairs.get(), slab.get(), wall.get());
 
-		TagAPI.addBlockTag(NamedCommonBlockTags.GEN_END_STONES, stone);
-		TagAPI.addBlockTag(NamedCommonBlockTags.END_STONES, stone);
+		TagAPI.addBlockTag(NamedCommonBlockTags.GEN_END_STONES, stone.get());
+		TagAPI.addBlockTag(NamedCommonBlockTags.END_STONES, stone.get());
 	}
 }

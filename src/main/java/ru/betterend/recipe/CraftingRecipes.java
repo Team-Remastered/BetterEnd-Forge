@@ -33,7 +33,7 @@ public class CraftingRecipes {
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("T#T", "V V", "T#T")
 				  .addMaterial('#', Blocks.END_STONE_BRICKS)
-				  .addMaterial('T', EndBlocks.THALLASIUM.ingot)
+				  .addMaterial('T', EndBlocks.THALLASIUM.ingot.get())
 				  .addMaterial('V', CommonItemTags.FURNACES)
 				  .build();
 		
@@ -347,7 +347,7 @@ public class CraftingRecipes {
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("#P", "P#")
-				  .addMaterial('#', EndBlocks.VIOLECITE.stone, EndBlocks.VIOLECITE.bricks, EndBlocks.VIOLECITE.tiles)
+				  .addMaterial('#', EndBlocks.VIOLECITE.stone.get(), EndBlocks.VIOLECITE.bricks.get(), EndBlocks.VIOLECITE.tiles.get())
 				  .addMaterial('P', Blocks.PURPUR_BLOCK)
 				  .build();
 		

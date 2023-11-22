@@ -93,7 +93,7 @@ public class CubozoaEntity extends AbstractSchoolingFish {
 	
 	@Override
 	public ItemStack getBucketItemStack() {
-		ItemStack bucket = EndItems.BUCKET_CUBOZOA.getDefaultInstance();
+		ItemStack bucket = EndItems.BUCKET_CUBOZOA.get().getDefaultInstance();
 		CompoundTag tag = bucket.getOrCreateTag();
 		tag.putByte("Variant", entityData.get(VARIANT));
 		tag.putByte("Scale", entityData.get(SCALE));
@@ -128,7 +128,7 @@ public class CubozoaEntity extends AbstractSchoolingFish {
 	protected void dropFromLootTable(DamageSource source, boolean causedByPlayer) {
 		int count = random.nextInt(3);
 		if (count > 0) {
-			ItemEntity drop = new ItemEntity(level, getX(), getY(), getZ(), new ItemStack(EndItems.GELATINE, count));
+			ItemEntity drop = new ItemEntity(level, getX(), getY(), getZ(), new ItemStack(EndItems.GELATINE.get(), count));
 			this.level.addFreshEntity(drop);
 		}
 	}

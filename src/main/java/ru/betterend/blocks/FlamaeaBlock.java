@@ -58,7 +58,7 @@ public class FlamaeaBlock extends EndPlantBlock implements CustomItemProvider, A
 	}
 	
 	@Override
-	public BlockItem getCustomItem(ResourceLocation resourceLocation, Item.Properties Item.Properties) {
-		return new WaterLilyBlockItem(this, Item.Properties);
+	public BlockItem getCustomItem(ResourceLocation resourceLocation, Item.Properties properties) {
+		return new WaterLilyBlockItem(this, properties);
 	}
 }

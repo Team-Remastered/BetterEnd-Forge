@@ -14,7 +14,7 @@ import ru.betterend.registry.EndItems;
 public class InfusionRecipes {
 	public static void register() {
 		InfusionRecipe.Builder.create("runed_flavolite")
-							  .setInput(EndBlocks.FLAVOLITE.polished)
+							  .setInput(EndBlocks.FLAVOLITE.polished.get())
 							  .setOutput(EndBlocks.FLAVOLITE_RUNED.get())
 							  .addCatalyst(0, EndItems.CRYSTAL_SHARDS.get())
 							  .addCatalyst(2, EndItems.CRYSTAL_SHARDS.get())
@@ -38,7 +38,7 @@ public class InfusionRecipes {
 							  .build();
 		
 		InfusionRecipe.Builder.create("crystalite_helmet")
-							  .setInput(EndBlocks.TERMINITE.helmet)
+							  .setInput(EndBlocks.TERMINITE.helmet.get())
 							  .setOutput(EndItems.CRYSTALITE_HELMET.get())
 							  .addCatalyst(0, EndItems.AMBER_GEM.get())
 							  .addCatalyst(2, EndItems.CRYSTAL_SHARDS.get())
@@ -46,7 +46,7 @@ public class InfusionRecipes {
 							  .setTime(150)
 							  .build();
 		InfusionRecipe.Builder.create("crystalite_chestplate")
-							  .setInput(EndBlocks.TERMINITE.chestplate)
+							  .setInput(EndBlocks.TERMINITE.chestplate.get())
 							  .setOutput(EndItems.CRYSTALITE_CHESTPLATE.get())
 							  .addCatalyst(0, EndItems.AMBER_GEM.get())
 							  .addCatalyst(1, EndItems.CRYSTAL_SHARDS.get())
@@ -56,7 +56,7 @@ public class InfusionRecipes {
 							  .setTime(300)
 							  .build();
 		InfusionRecipe.Builder.create("crystalite_leggings")
-							  .setInput(EndBlocks.TERMINITE.leggings)
+							  .setInput(EndBlocks.TERMINITE.leggings.get())
 							  .setOutput(EndItems.CRYSTALITE_LEGGINGS.get())
 							  .addCatalyst(0, EndItems.AMBER_GEM.get())
 							  .addCatalyst(2, EndItems.CRYSTAL_SHARDS.get())
@@ -65,7 +65,7 @@ public class InfusionRecipes {
 							  .setTime(225)
 							  .build();
 		InfusionRecipe.Builder.create("crystalite_boots")
-							  .setInput(EndBlocks.TERMINITE.boots)
+							  .setInput(EndBlocks.TERMINITE.boots.get())
 							  .setOutput(EndItems.CRYSTALITE_BOOTS.get())
 							  .addCatalyst(0, EndItems.AMBER_GEM.get())
 							  .addCatalyst(2, EndItems.CRYSTAL_SHARDS.get())

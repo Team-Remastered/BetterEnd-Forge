@@ -24,7 +24,7 @@ public class EndPotions {
 	}
 	
 	public static void register() {
-		PotionBrewingAccessor.callAddMix(Potions.AWKWARD, EndItems.ENDER_DUST, END_VEIL);
+		PotionBrewingAccessor.callAddMix(Potions.AWKWARD, EndItems.ENDER_DUST.get(), END_VEIL);
 		PotionBrewingAccessor.callAddMix(END_VEIL, Items.REDSTONE, LONG_END_VEIL);
 		PotionBrewingAccessor.callAddMix(Potions.AWKWARD, EndBlocks.MURKWEED.get().asItem(), Potions.NIGHT_VISION);
 	}

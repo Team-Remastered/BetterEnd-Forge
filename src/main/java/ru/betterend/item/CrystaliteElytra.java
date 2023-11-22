@@ -2,7 +2,6 @@ package ru.betterend.item;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -48,7 +47,7 @@ public class CrystaliteElytra extends CrystaliteArmor implements MultiModelItem,
 	
 	@Override
 	public boolean isValidRepairItem(ItemStack itemStack, ItemStack itemStack2) {
-		return super.isValidRepairItem(itemStack, itemStack2) || itemStack2.getItem() == EndItems.ENCHANTED_MEMBRANE;
+		return super.isValidRepairItem(itemStack, itemStack2) || itemStack2.getItem() == EndItems.ENCHANTED_MEMBRANE.get();
 	}
 	
 	@Override

@@ -7,6 +7,6 @@ import ru.betterend.bclib.blocks.BaseBlock;
 
 public class AmberBlock extends BaseBlock {
 	public AmberBlock() {
-		super(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).mapColor(MaterialColor.COLOR_YELLOW));
+		super(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK).color(MaterialColor.COLOR_YELLOW));
 	}
 }

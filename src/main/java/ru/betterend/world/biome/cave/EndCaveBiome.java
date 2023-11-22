@@ -37,8 +37,8 @@ public class EndCaveBiome extends EndBiome {
 
 			builder.category(BiomeCategory.NONE)
 				   .feature(feature)
-				   .music(EndSounds.MUSIC_CAVES)
-				   .loop(EndSounds.AMBIENT_CAVES);
+				   .music(EndSounds.MUSIC_CAVES.get())
+				   .loop(EndSounds.AMBIENT_CAVES.get());
 		}
 
 		@Override

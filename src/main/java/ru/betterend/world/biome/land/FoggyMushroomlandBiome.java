@@ -26,9 +26,9 @@ public class FoggyMushroomlandBiome extends EndBiome.Config {
 			.fogColor(41, 122, 173)
 			.fogDensity(3)
 			.waterAndFogColor(119, 227, 250)
-			.particles(EndParticles.GLOWING_SPHERE, 0.001F)
-			.loop(EndSounds.AMBIENT_FOGGY_MUSHROOMLAND)
-			.music(EndSounds.MUSIC_FOREST)
+			.particles(EndParticles.GLOWING_SPHERE.get(), 0.001F)
+			.loop(EndSounds.AMBIENT_FOGGY_MUSHROOMLAND.get())
+			.music(EndSounds.MUSIC_FOREST.get())
 			.feature(EndFeatures.END_LAKE)
 			.feature(EndFeatures.MOSSY_GLOWSHROOM)
 			.feature(EndFeatures.BLUE_VINE)
@@ -44,10 +44,10 @@ public class FoggyMushroomlandBiome extends EndBiome.Config {
 			.feature(EndFeatures.CHARNIA_LIGHT_BLUE)
 			.feature(EndFeatures.CHARNIA_RED_RARE)
 			.structure(BiomeTags.HAS_END_CITY)
-			.spawn(EndEntities.DRAGONFLY, 80, 2, 5)
-			.spawn(EndEntities.END_FISH, 20, 2, 5)
-			.spawn(EndEntities.CUBOZOA, 10, 3, 8)
-			.spawn(EndEntities.END_SLIME, 10, 1, 2)
+			.spawn(EndEntities.DRAGONFLY.get(), 80, 2, 5)
+			.spawn(EndEntities.END_FISH.get(), 20, 2, 5)
+			.spawn(EndEntities.CUBOZOA.get(), 10, 3, 8)
+			.spawn(EndEntities.END_SLIME.get(), 10, 1, 2)
 			.spawn(EntityType.ENDERMAN, 10, 1, 2);
 	}
 
@@ -56,12 +56,12 @@ public class FoggyMushroomlandBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.END_MOSS.defaultBlockState();
+				return EndBlocks.END_MOSS.get().defaultBlockState();
 			}
 
 			@Override
 			public BlockState getAltTopMaterial() {
-				return EndBlocks.END_MYCELIUM.defaultBlockState();
+				return EndBlocks.END_MYCELIUM.get().defaultBlockState();
 			}
 		};
 

@@ -21,7 +21,7 @@ public class RunedFlavolite extends BaseBlock {
 	public static final BooleanProperty ACTIVATED = BlockProperties.ACTIVE;
 	
 	public RunedFlavolite(boolean unbreakable) {
-		super(BlockBehaviour.Properties.copy(EndBlocks.FLAVOLITE.polished)
+		super(BlockBehaviour.Properties.copy(EndBlocks.FLAVOLITE.polished.get())
 								 .strength(
 									 unbreakable ? -1 : 1,
 									 unbreakable ? Blocks.BEDROCK.getExplosionResistance() : Blocks.OBSIDIAN.getExplosionResistance()

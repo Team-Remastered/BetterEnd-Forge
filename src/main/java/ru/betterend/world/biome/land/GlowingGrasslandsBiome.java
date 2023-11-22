@@ -21,9 +21,9 @@ public class GlowingGrasslandsBiome extends EndBiome.Config {
 		builder
 			.fogColor(99, 228, 247)
 			.fogDensity(1.3F)
-			.particles(EndParticles.FIREFLY, 0.001F)
-			.music(EndSounds.MUSIC_OPENSPACE)
-			.loop(EndSounds.AMBIENT_GLOWING_GRASSLANDS)
+			.particles(EndParticles.FIREFLY.get(), 0.001F)
+			.music(EndSounds.MUSIC_OPENSPACE.get())
+			.loop(EndSounds.AMBIENT_GLOWING_GRASSLANDS.get())
 			.waterAndFogColor(92, 250, 230)
 			.plantsColor(73, 210, 209)
 			.feature(EndFeatures.END_LAKE_RARE)
@@ -48,7 +48,7 @@ public class GlowingGrasslandsBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.END_MOSS.defaultBlockState();
+				return EndBlocks.END_MOSS.get().defaultBlockState();
 			}
 		};
 	}

@@ -57,8 +57,8 @@ public class PaintedMountainStructure extends FeatureBaseStructure {
 	static {
 		VARIANTS = new BlockState[] {
 			Blocks.END_STONE.defaultBlockState(),
-			EndBlocks.FLAVOLITE.stone.defaultBlockState(),
-			EndBlocks.VIOLECITE.stone.defaultBlockState(),
+			EndBlocks.FLAVOLITE.stone.get().defaultBlockState(),
+			EndBlocks.VIOLECITE.stone.get().defaultBlockState(),
 		};
 	}
 }

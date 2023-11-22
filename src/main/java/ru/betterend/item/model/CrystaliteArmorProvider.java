@@ -67,11 +67,11 @@ public class CrystaliteArmorProvider implements ArmorRenderingRegistry.ModelProv
 	
 	public Iterable<Item> getRenderedItems() {
 		return Lists.newArrayList(
-			EndItems.CRYSTALITE_HELMET,
-			EndItems.CRYSTALITE_CHESTPLATE,
-			EndItems.CRYSTALITE_ELYTRA,
-			EndItems.CRYSTALITE_LEGGINGS,
-			EndItems.CRYSTALITE_BOOTS
+			EndItems.CRYSTALITE_HELMET.get(),
+			EndItems.CRYSTALITE_CHESTPLATE.get(),
+			EndItems.CRYSTALITE_ELYTRA.get(),
+			EndItems.CRYSTALITE_LEGGINGS.get(),
+			EndItems.CRYSTALITE_BOOTS.get()
 		);
 	}
 	

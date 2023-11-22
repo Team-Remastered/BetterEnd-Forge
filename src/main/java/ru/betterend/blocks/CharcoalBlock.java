@@ -1,7 +1,6 @@
 package ru.betterend.blocks;
 
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.world.level.block.Blocks;
 import ru.betterend.bclib.blocks.BaseBlock;
 

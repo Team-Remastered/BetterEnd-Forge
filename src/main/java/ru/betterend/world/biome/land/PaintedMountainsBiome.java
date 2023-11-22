@@ -22,8 +22,8 @@ public class PaintedMountainsBiome extends EndBiome.Config {
 			.fogColor(226, 239, 168)
 			.fogDensity(2)
 			.waterAndFogColor(192, 180, 131)
-			.music(EndSounds.MUSIC_OPENSPACE)
-			.loop(EndSounds.AMBIENT_DUST_WASTELANDS)
+			.music(EndSounds.MUSIC_OPENSPACE.get())
+			.loop(EndSounds.AMBIENT_DUST_WASTELANDS.get())
 			.particles(ParticleTypes.WHITE_ASH, 0.01F)
 			.spawn(EntityType.ENDERMAN, 50, 1, 2);
 	}
@@ -33,7 +33,7 @@ public class PaintedMountainsBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.ENDSTONE_DUST.defaultBlockState();
+				return EndBlocks.ENDSTONE_DUST.get().defaultBlockState();
 			}
 		};
 	}

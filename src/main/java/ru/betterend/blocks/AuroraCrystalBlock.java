@@ -108,14 +108,14 @@ public class AuroraCrystalBlock extends AbstractGlassBlock implements RenderLaye
 				int min = Mth.clamp(MIN_DROP + enchant, MIN_DROP, MAX_DROP);
 				int max = MAX_DROP + (enchant / Enchantments.BLOCK_FORTUNE.getMaxLevel());
 				if (min == max) {
-					return Lists.newArrayList(new ItemStack(EndItems.CRYSTAL_SHARDS, max));
+					return Lists.newArrayList(new ItemStack(EndItems.CRYSTAL_SHARDS.get(), max));
 				}
 				count = MHelper.randRange(min, max, MHelper.RANDOM);
 			}
 			else {
 				count = MHelper.randRange(MIN_DROP, MAX_DROP, MHelper.RANDOM);
 			}
-			return Lists.newArrayList(new ItemStack(EndItems.CRYSTAL_SHARDS, count));
+			return Lists.newArrayList(new ItemStack(EndItems.CRYSTAL_SHARDS.get(), count));
 		}
 		return Lists.newArrayList();
 	}

@@ -2,6 +2,7 @@ package ru.betterend.complexmaterials;
 
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.RegistryObject;
 import ru.betterend.bclib.api.tag.NamedBlockTags;
 import ru.betterend.bclib.api.tag.NamedItemTags;
 import ru.betterend.bclib.api.tag.TagAPI;
@@ -18,17 +19,17 @@ import ru.betterend.recipe.CraftingRecipes;
 import ru.betterend.registry.EndBlocks;
 
 public class CrystalSubblocksMaterial {
-	public final Block polished;
-	public final Block tiles;
-	public final Block pillar;
-	public final Block stairs;
-	public final Block slab;
-	public final Block wall;
-	public final Block pedestal;
-	public final Block bricks;
-	public final Block brick_stairs;
-	public final Block brick_slab;
-	public final Block brick_wall;
+	public final RegistryObject<Block> polished;
+	public final RegistryObject<Block> tiles;
+	public final RegistryObject<Block> pillar;
+	public final RegistryObject<Block> stairs;
+	public final RegistryObject<Block> slab;
+	public final RegistryObject<Block> wall;
+	public final RegistryObject<Block> pedestal;
+	public final RegistryObject<Block> bricks;
+	public final RegistryObject<Block> brick_stairs;
+	public final RegistryObject<Block> brick_slab;
+	public final RegistryObject<Block> brick_wall;
 	
 	public CrystalSubblocksMaterial(String name, Block source) {
 		BlockBehaviour.Properties material = BlockBehaviour.Properties.copy(source);
@@ -40,94 +41,94 @@ public class CrystalSubblocksMaterial {
 		wall = EndBlocks.registerBlock(name + "_wall", new BaseWallBlock(source));
 		pedestal = EndBlocks.registerBlock(name + "_pedestal", new EndPedestal(source));
 		bricks = EndBlocks.registerBlock(name + "_bricks", new LitBaseBlock(material));
-		brick_stairs = EndBlocks.registerBlock(name + "_bricks_stairs", new BaseStairsBlock(bricks));
-		brick_slab = EndBlocks.registerBlock(name + "_bricks_slab", new BaseSlabBlock(bricks));
-		brick_wall = EndBlocks.registerBlock(name + "_bricks_wall", new BaseWallBlock(bricks));
+		brick_stairs = EndBlocks.registerBlock(name + "_bricks_stairs", new BaseStairsBlock(bricks.get()));
+		brick_slab = EndBlocks.registerBlock(name + "_bricks_slab", new BaseSlabBlock(bricks.get()));
+		brick_wall = EndBlocks.registerBlock(name + "_bricks_wall", new BaseWallBlock(bricks.get()));
 		
 		// Recipes //
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks", bricks)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks", bricks.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("##", "##")
 				  .addMaterial('#', source)
 				  .setGroup("end_bricks")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_polished", polished)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_polished", polished.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("##", "##")
-				  .addMaterial('#', bricks)
+				  .addMaterial('#', bricks.get())
 				  .setGroup("end_tile")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_tiles", tiles)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_tiles", tiles.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("##", "##")
-				  .addMaterial('#', polished)
+				  .addMaterial('#', polished.get())
 				  .setGroup("end_small_tile")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pillar", pillar)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pillar", pillar.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setShape("#", "#")
-				  .addMaterial('#', slab)
+				  .addMaterial('#', slab.get())
 				  .setGroup("end_pillar")
 				  .build();
 		
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_stairs", stairs)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_stairs", stairs.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("#  ", "## ", "###")
 				  .addMaterial('#', source)
 				  .setGroup("end_stone_stairs")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_slab", slab)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_slab", slab.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###")
 				  .addMaterial('#', source)
 				  .setGroup("end_stone_slabs")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_stairs", brick_stairs)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_stairs", brick_stairs.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(4)
 				  .setShape("#  ", "## ", "###")
-				  .addMaterial('#', bricks)
+				  .addMaterial('#', bricks.get())
 				  .setGroup("end_stone_stairs")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_slab", brick_slab)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_slab", brick_slab.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###")
-				  .addMaterial('#', bricks)
+				  .addMaterial('#', bricks.get())
 				  .setGroup("end_stone_slabs")
 				  .build();
 		
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_wall", wall)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_wall", wall.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###", "###")
 				  .addMaterial('#', source)
 				  .setGroup("end_wall")
 				  .build();
-		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_wall", brick_wall)
+		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_wall", brick_wall.get())
 				  .checkConfig(Configs.RECIPE_CONFIG)
 				  .setOutputCount(6)
 				  .setShape("###", "###")
-				  .addMaterial('#', bricks)
+				  .addMaterial('#', bricks.get())
 				  .setGroup("end_wall")
 				  .build();
 		
-		CraftingRecipes.registerPedestal(name + "_pedestal", pedestal, slab, pillar);
+		CraftingRecipes.registerPedestal(name + "_pedestal", pedestal.get(), slab.get(), pillar.get());
 		
 		// Item Tags //
-		TagAPI.addItemTag(NamedItemTags.SLABS, slab, brick_slab);
-		TagAPI.addItemTag(NamedItemTags.STONE_BRICKS, bricks);
+		TagAPI.addItemTag(NamedItemTags.SLABS, slab.get(), brick_slab.get());
+		TagAPI.addItemTag(NamedItemTags.STONE_BRICKS, bricks.get());
 		TagAPI.addItemTag(NamedItemTags.STONE_CRAFTING_MATERIALS, source);
 		TagAPI.addItemTag(NamedItemTags.STONE_TOOL_MATERIALS, source);
 		
 		// Block Tags //
-		TagAPI.addBlockTag(NamedBlockTags.STONE_BRICKS, bricks);
-		TagAPI.addBlockTag(NamedBlockTags.WALLS, wall, brick_wall);
-		TagAPI.addBlockTag(NamedBlockTags.SLABS, slab, brick_slab);
+		TagAPI.addBlockTag(NamedBlockTags.STONE_BRICKS, bricks.get());
+		TagAPI.addBlockTag(NamedBlockTags.WALLS, wall.get(), brick_wall.get());
+		TagAPI.addBlockTag(NamedBlockTags.SLABS, slab.get(), brick_slab.get());
 	}
 }

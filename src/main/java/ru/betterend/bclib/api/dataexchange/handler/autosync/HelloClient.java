@@ -2,8 +2,6 @@ package ru.betterend.bclib.api.dataexchange.handler.autosync;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.networking.v1.PacketSender;
-import net.fabricmc.loader.api.metadata.ModEnvironment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.CommonComponents;

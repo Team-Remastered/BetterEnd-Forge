@@ -1,7 +1,5 @@
 package ru.betterend.bclib.util;
 
-import net.fabricmc.loader.api.FabricLoader;
-
 import java.io.File;
 import java.nio.file.Path;
 import java.util.function.Consumer;

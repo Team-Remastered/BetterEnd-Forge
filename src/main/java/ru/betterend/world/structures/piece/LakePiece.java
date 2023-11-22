@@ -136,7 +136,7 @@ public class LakePiece extends BasePiece {
 								state = random.nextBoolean() ? ENDSTONE : EndBiome.findTopMaterial(world, worldPos);
 							}
 							else {
-								state = state.getFluidState().isEmpty() ? ENDSTONE : EndBlocks.ENDSTONE_DUST.defaultBlockState();
+								state = state.getFluidState().isEmpty() ? ENDSTONE : EndBlocks.ENDSTONE_DUST.get().defaultBlockState();
 							}
 							chunk.setBlockState(mut, state, false);
 						}
@@ -167,7 +167,7 @@ public class LakePiece extends BasePiece {
 								bState = random.nextBoolean() ? ENDSTONE : EndBiome.findTopMaterial(world, mut.offset(sx, 0, sz));
 							}
 							else {
-								bState = bState.getFluidState().isEmpty() ? ENDSTONE : EndBlocks.ENDSTONE_DUST.defaultBlockState();
+								bState = bState.getFluidState().isEmpty() ? ENDSTONE : EndBlocks.ENDSTONE_DUST.get().defaultBlockState();
 							}
 							
 							mut.setY(y);
@@ -185,7 +185,7 @@ public class LakePiece extends BasePiece {
 										bState = random.nextBoolean() ? ENDSTONE : EndBiome.findTopMaterial(world, mut.offset(sx, 0, sz));
 									}
 									else {
-										bState = bState.getFluidState().isEmpty() ? ENDSTONE : EndBlocks.ENDSTONE_DUST.defaultBlockState();
+										bState = bState.getFluidState().isEmpty() ? ENDSTONE : EndBlocks.ENDSTONE_DUST.get().defaultBlockState();
 									}
 									mut.setY(y);
 									makeEndstonePillar(chunk, mut, bState);

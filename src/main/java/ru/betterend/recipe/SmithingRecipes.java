@@ -13,7 +13,7 @@ public class SmithingRecipes {
 		SmithingTableRecipe.create(BetterEndForge.MOD_ID, "aeternium_sword_handle")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(EndItems.AETERNIUM_SWORD_HANDLE.get())
-						   .setBase(EndBlocks.TERMINITE.ingot)
+						   .setBase(EndBlocks.TERMINITE.ingot.get())
 						   .setAddition(EndItems.LEATHER_WRAPPED_STICK.get())
 						   .build();
 		
@@ -64,38 +64,38 @@ public class SmithingRecipes {
 		SmithingTableRecipe.create(BetterEndForge.MOD_ID, "aeternium_helmet")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(EndItems.AETERNIUM_HELMET.get())
-						   .setBase(EndBlocks.TERMINITE.helmet)
+						   .setBase(EndBlocks.TERMINITE.helmet.get())
 						   .setAddition(EndItems.AETERNIUM_FORGED_PLATE.get())
 						   .build();
 		SmithingTableRecipe.create(BetterEndForge.MOD_ID, "aeternium_chestplate")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(EndItems.AETERNIUM_CHESTPLATE.get())
-						   .setBase(EndBlocks.TERMINITE.chestplate)
+						   .setBase(EndBlocks.TERMINITE.chestplate.get())
 						   .setAddition(EndItems.AETERNIUM_FORGED_PLATE.get())
 						   .build();
 		SmithingTableRecipe.create(BetterEndForge.MOD_ID, "aeternium_leggings")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(EndItems.AETERNIUM_LEGGINGS.get())
-						   .setBase(EndBlocks.TERMINITE.leggings)
+						   .setBase(EndBlocks.TERMINITE.leggings.get())
 						   .setAddition(EndItems.AETERNIUM_FORGED_PLATE.get())
 						   .build();
 		SmithingTableRecipe.create(BetterEndForge.MOD_ID, "aeternium_boots")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(EndItems.AETERNIUM_BOOTS.get())
-						   .setBase(EndBlocks.TERMINITE.boots)
+						   .setBase(EndBlocks.TERMINITE.boots.get())
 						   .setAddition(EndItems.AETERNIUM_FORGED_PLATE.get())
 						   .build();
 		
 		SmithingTableRecipe.create(BetterEndForge.MOD_ID, "thallasium_anvil_updrade")
 						   .checkConfig(Configs.RECIPE_CONFIG)
-						   .setResult(EndBlocks.TERMINITE.anvilBlock.asItem())
-						   .setBase(EndBlocks.THALLASIUM.anvilBlock.asItem())
-						   .setAddition(EndBlocks.TERMINITE.block)
+						   .setResult(EndBlocks.TERMINITE.anvilBlock.get().asItem())
+						   .setBase(EndBlocks.THALLASIUM.anvilBlock.get().asItem())
+						   .setAddition(EndBlocks.TERMINITE.block.get())
 						   .build();
 		SmithingTableRecipe.create(BetterEndForge.MOD_ID, "terminite_anvil_updrade")
 						   .checkConfig(Configs.RECIPE_CONFIG)
 						   .setResult(EndBlocks.AETERNIUM_ANVIL.get().asItem())
-						   .setBase(EndBlocks.TERMINITE.anvilBlock.asItem())
+						   .setBase(EndBlocks.TERMINITE.anvilBlock.get().asItem())
 						   .setAddition(EndItems.AETERNIUM_INGOT.get())
 						   .build();
 		

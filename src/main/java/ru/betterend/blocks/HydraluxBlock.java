@@ -52,7 +52,7 @@ public class HydraluxBlock extends UnderwaterPlantBlock  implements AddMineableS
 			return down.is(this);
 		}
 		else if (shape == HydraluxShape.ROOTS) {
-			return down.is(EndBlocks.SULPHURIC_ROCK.stone) && world.getBlockState(pos.above()).is(this);
+			return down.is(EndBlocks.SULPHURIC_ROCK.stone.get()) && world.getBlockState(pos.above()).is(this);
 		}
 		else {
 			return down.is(this) && world.getBlockState(pos.above()).is(this);

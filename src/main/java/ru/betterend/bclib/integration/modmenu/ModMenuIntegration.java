@@ -1,8 +1,6 @@
 package ru.betterend.bclib.integration.modmenu;
 
 import com.google.common.collect.ImmutableMap;
-import com.terraformersmc.modmenu.api.ConfigScreenFactory;
-import com.terraformersmc.modmenu.api.ModMenuApi;
 import net.minecraft.client.gui.screens.Screen;
 
 import java.lang.reflect.InvocationHandler;

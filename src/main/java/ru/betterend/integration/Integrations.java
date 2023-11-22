@@ -1,6 +1,5 @@
 package ru.betterend.integration;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -35,9 +34,9 @@ public class Integrations {
 			GridRecipe.make(BetterEndForge.MOD_ID, "guide_book", GuideBookItem.GUIDE_BOOK)
 					  .checkConfig(Configs.RECIPE_CONFIG)
 					  .setShape("D", "B", "C")
-					  .addMaterial('D', EndItems.ENDER_DUST)
+					  .addMaterial('D', EndItems.ENDER_DUST.get())
 					  .addMaterial('B', Items.BOOK)
-					  .addMaterial('C', EndItems.CRYSTAL_SHARDS)
+					  .addMaterial('C', EndItems.CRYSTAL_SHARDS.get())
 					  .build();
 		}
 		hasHydrogen = FabricLoader.getInstance().isModLoaded("hydrogen");

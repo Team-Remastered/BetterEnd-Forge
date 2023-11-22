@@ -7,8 +7,6 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.impl.biome.NetherBiomeData;
-import net.fabricmc.fabric.impl.biome.TheEndBiomeData;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -237,7 +235,6 @@ public class BiomeAPI {
 		ResourceKey<Biome> key = BiomeAPI.getBiomeKey(biome.getBiome());
 		TheEndBiomeData.addEndBiomeReplacement(Biomes.END_HIGHLANDS, key, weight);
 		TheEndBiomeData.addEndBiomeReplacement(Biomes.END_MIDLANDS, key, weight);
-		TheEndBiomeDataMixin
 		return biome;
 	}
 	

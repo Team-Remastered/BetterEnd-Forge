@@ -35,7 +35,7 @@ public class PallidiumBlock extends EndTerrainBlock {
 	
 	@Override
 	public Block getBaseBlock() {
-		return EndBlocks.UMBRALITH.stone;
+		return EndBlocks.UMBRALITH.stone.get();
 	}
 	
 	@Override

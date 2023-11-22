@@ -67,6 +67,6 @@ public class HydraluxSaplingBlock extends UnderwaterPlantWithAgeBlock {
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.is(EndBlocks.SULPHURIC_ROCK.stone);
+		return state.is(EndBlocks.SULPHURIC_ROCK.stone.get());
 	}
 }

@@ -132,13 +132,13 @@ public class DesertLakeFeature extends DefaultFeature {
 										BlocksHelper.setWithoutUpdate(
 											world,
 											pos,
-											random.nextBoolean() ? state : EndBlocks.ENDSTONE_DUST.defaultBlockState()
+											random.nextBoolean() ? state : EndBlocks.ENDSTONE_DUST.get().defaultBlockState()
 										);
 									else
 										BlocksHelper.setWithoutUpdate(
 											world,
 											pos,
-											EndBlocks.ENDSTONE_DUST.defaultBlockState()
+											EndBlocks.ENDSTONE_DUST.get().defaultBlockState()
 										);
 								}
 							}
@@ -181,7 +181,7 @@ public class DesertLakeFeature extends DefaultFeature {
 							}
 							pos = POS.below();
 							if (world.getBlockState(pos).is(CommonBlockTags.GEN_END_STONES)) {
-								BlocksHelper.setWithoutUpdate(world, pos, EndBlocks.ENDSTONE_DUST.defaultBlockState());
+								BlocksHelper.setWithoutUpdate(world, pos, EndBlocks.ENDSTONE_DUST.get().defaultBlockState());
 							}
 							pos = POS.above();
 							while (canReplace(state = world.getBlockState(pos)) && !state.isAir() && state.getFluidState()
@@ -194,7 +194,7 @@ public class DesertLakeFeature extends DefaultFeature {
 						else if (y2 + x2 + z2 <= rb) {
 							state = world.getBlockState(POS);
 							if (state.is(CommonBlockTags.GEN_END_STONES) && world.isEmptyBlock(POS.above())) {
-								BlocksHelper.setWithoutUpdate(world, POS, EndBlocks.END_MOSS);
+								BlocksHelper.setWithoutUpdate(world, POS, EndBlocks.END_MOSS.get());
 							}
 							else if (y < waterLevel) {
 								if (world.isEmptyBlock(POS.above())) {
@@ -202,7 +202,7 @@ public class DesertLakeFeature extends DefaultFeature {
 									BlocksHelper.setWithoutUpdate(
 										world,
 										POS,
-										random.nextBoolean() ? state : EndBlocks.ENDSTONE_DUST.defaultBlockState()
+										random.nextBoolean() ? state : EndBlocks.ENDSTONE_DUST.get().defaultBlockState()
 									);
 									BlocksHelper.setWithoutUpdate(world, POS.below(), END_STONE);
 								}
@@ -210,7 +210,7 @@ public class DesertLakeFeature extends DefaultFeature {
 									BlocksHelper.setWithoutUpdate(
 										world,
 										POS,
-										EndBlocks.ENDSTONE_DUST.defaultBlockState()
+										EndBlocks.ENDSTONE_DUST.get().defaultBlockState()
 									);
 									BlocksHelper.setWithoutUpdate(world, POS.below(), END_STONE);
 								}
@@ -232,7 +232,7 @@ public class DesertLakeFeature extends DefaultFeature {
 	
 	private boolean canReplace(BlockState state) {
 		return state.getMaterial()
-					.isReplaceable() || state.is(CommonBlockTags.GEN_END_STONES) || state.is(EndBlocks.ENDSTONE_DUST) || state.getMaterial()
+					.isReplaceable() || state.is(CommonBlockTags.GEN_END_STONES) || state.is(EndBlocks.ENDSTONE_DUST.get()) || state.getMaterial()
 																												  .equals(
 																													  Material.PLANT) || state
 			.getMaterial()

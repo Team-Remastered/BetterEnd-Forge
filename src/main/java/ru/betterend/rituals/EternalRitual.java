@@ -88,7 +88,7 @@ public class EternalRitual {
 		new Point(0, 2)
 	);
 	
-	private final static Block BASE = EndBlocks.FLAVOLITE.tiles;
+	private final static Block BASE = EndBlocks.FLAVOLITE.tiles.get();
 	private final static Block PEDESTAL = EndBlocks.ETERNAL_PEDESTAL.get();
 	private final static Block FRAME = EndBlocks.FLAVOLITE_RUNED_ETERNAL.get();
 	private final static Block PORTAL = EndBlocks.END_PORTAL_BLOCK.get();

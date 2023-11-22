@@ -1,7 +1,5 @@
 package ru.betterend.bclib.items.tool;
 
-
-import net.fabricmc.fabric.api.mininglevel.v1.FabricMineableTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;

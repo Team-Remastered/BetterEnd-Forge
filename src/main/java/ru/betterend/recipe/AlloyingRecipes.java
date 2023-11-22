@@ -31,20 +31,20 @@ public class AlloyingRecipes {
 							  .setSmeltTime(1000)
 							  .build();
 		AlloyingRecipe.Builder.create("terminite_ingot")
-							  .setInput(Items.IRON_INGOT, EndItems.ENDER_DUST)
-							  .setOutput(EndBlocks.TERMINITE.ingot, 1)
+							  .setInput(Items.IRON_INGOT, EndItems.ENDER_DUST.get())
+							  .setOutput(EndBlocks.TERMINITE.ingot.get(), 1)
 							  .setExpiriense(2.5F)
 							  .setSmeltTime(450)
 							  .build();
 		AlloyingRecipe.Builder.create("aeternium_ingot")
-							  .setInput(EndBlocks.TERMINITE.ingot, Items.NETHERITE_INGOT)
-							  .setOutput(EndItems.AETERNIUM_INGOT, 1)
+							  .setInput(EndBlocks.TERMINITE.ingot.get(), Items.NETHERITE_INGOT)
+							  .setOutput(EndItems.AETERNIUM_INGOT.get(), 1)
 							  .setExpiriense(4.5F)
 							  .setSmeltTime(850)
 							  .build();
 		AlloyingRecipe.Builder.create("terminite_ingot_thallasium")
-							  .setInput(EndBlocks.THALLASIUM.ingot, EndItems.ENDER_DUST)
-							  .setOutput(EndBlocks.TERMINITE.ingot, 1)
+							  .setInput(EndBlocks.THALLASIUM.ingot.get(), EndItems.ENDER_DUST.get())
+							  .setOutput(EndBlocks.TERMINITE.ingot.get(), 1)
 							  .setExpiriense(2.5F)
 							  .setSmeltTime(450)
 							  .build();

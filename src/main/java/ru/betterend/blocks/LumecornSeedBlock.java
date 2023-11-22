@@ -29,7 +29,7 @@ public class LumecornSeedBlock extends EndPlantWithAgeBlock {
 
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		return state.is(EndBlocks.END_MOSS);
+		return state.is(EndBlocks.END_MOSS.get());
 	}
 
 	@Override

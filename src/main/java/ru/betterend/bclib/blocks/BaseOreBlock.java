@@ -41,7 +41,7 @@ public class BaseOreBlock extends OreBlock implements BlockModelProvider, LootPr
 		this(
 			BlockBehaviour.Properties
 				.of(Material.STONE, MaterialColor.SAND)
-				.requiresTool()
+				.requiresCorrectToolForDrops()
 				.destroyTime(3F)
 				.explosionResistance(9F)
 				.sound(SoundType.STONE),

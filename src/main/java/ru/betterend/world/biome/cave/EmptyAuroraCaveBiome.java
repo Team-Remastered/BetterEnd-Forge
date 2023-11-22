@@ -40,7 +40,7 @@ public class EmptyAuroraCaveBiome extends EndCaveBiome.Config {
 			   .fogDensity(2.0F)
 			   .plantsColor(108, 25, 46)
 			   .waterAndFogColor(186, 77, 237)
-			   .particles(EndParticles.GLOWING_SPHERE, 0.001F);
+			   .particles(EndParticles.GLOWING_SPHERE.get(), 0.001F);
 	}
 
 	@Override

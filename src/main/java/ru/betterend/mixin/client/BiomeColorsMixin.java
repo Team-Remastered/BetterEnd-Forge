@@ -1,6 +1,5 @@
 package ru.betterend.mixin.client;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
@@ -35,7 +34,7 @@ public class BiomeColorsMixin {
 			for (int i = 0; i < OFFSETS.length; i++) {
 				mut.setX(pos.getX() + OFFSETS[i].x);
 				mut.setZ(pos.getZ() + OFFSETS[i].y);
-				if ((view.getBlockState(mut).is(EndBlocks.BRIMSTONE))) {
+				if ((view.getBlockState(mut).is(EndBlocks.BRIMSTONE.get()))) {
 					info.setReturnValue(i < 4 ? POISON_COLOR : STREAM_COLOR);
 					return;
 				}

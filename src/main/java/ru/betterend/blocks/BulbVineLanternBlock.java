@@ -36,7 +36,7 @@ public class BulbVineLanternBlock extends EndLanternBlock implements RenderLayer
 		this(BlockBehaviour.Properties.of(Material.METAL)
 								.destroyTime(1)
 								.explosionResistance(1)
-								.mapColor(MaterialColor.COLOR_LIGHT_GRAY)
+								.color(MaterialColor.COLOR_LIGHT_GRAY)
 								.lightLevel(BlocksHelper.getLightValue(15))
 								.requiresCorrectToolForDrops()
 								.sound(SoundType.LANTERN));

@@ -159,7 +159,7 @@ public class SilkMothEntity extends DespawnableAnimal implements FlyingAnimal {
 	
 	@Override
 	public AgeableMob getBreedOffspring(ServerLevel world, AgeableMob entity) {
-		return EndEntities.SILK_MOTH.create(world);
+		return EndEntities.SILK_MOTH.get().create(world);
 	}
 	
 	@Override

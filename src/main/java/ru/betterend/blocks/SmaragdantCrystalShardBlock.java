@@ -39,7 +39,7 @@ public class SmaragdantCrystalShardBlock extends BaseAttachedBlock implements Ad
 	
 	public SmaragdantCrystalShardBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE)
-								 .materialColor(MaterialColor.COLOR_GREEN)
+								 .color(MaterialColor.COLOR_GREEN) //materialColor
 								 .lightLevel(BlocksHelper.getLightValue(15))
 								 .sound(SoundType.AMETHYST_CLUSTER)
 								 .requiresCorrectToolForDrops()

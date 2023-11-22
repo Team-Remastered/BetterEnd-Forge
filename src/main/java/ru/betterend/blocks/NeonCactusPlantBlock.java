@@ -86,10 +86,10 @@ public class NeonCactusPlantBlock extends BaseBlockNotFull implements SimpleWate
 		BlockState state = this.defaultBlockState()
 							   .setValue(WATERLOGGED, world.getFluidState(pos).getType() == Fluids.WATER)
 							   .setValue(FACING, ctx.getClickedFace());
-		if (down.is(Blocks.END_STONE) || down.is(EndBlocks.ENDSTONE_DUST)) {
+		if (down.is(Blocks.END_STONE) || down.is(EndBlocks.ENDSTONE_DUST.get())) {
 			state = state.setValue(CACTUS_BOTTOM, CactusBottom.SAND);
 		}
-		else if (down.is(EndBlocks.END_MOSS)) {
+		else if (down.is(EndBlocks.END_MOSS.get())) {
 			state = state.setValue(CACTUS_BOTTOM, CactusBottom.MOSS);
 		}
 		else {
@@ -121,10 +121,10 @@ public class NeonCactusPlantBlock extends BaseBlockNotFull implements SimpleWate
 		}
 		Direction dir = state.getValue(FACING);
 		BlockState downState = world.getBlockState(pos.relative(dir.getOpposite()));
-		if (downState.is(Blocks.END_STONE) || downState.is(EndBlocks.ENDSTONE_DUST)) {
+		if (downState.is(Blocks.END_STONE) || downState.is(EndBlocks.ENDSTONE_DUST.get())) {
 			state = state.setValue(CACTUS_BOTTOM, CactusBottom.SAND);
 		}
-		else if (downState.is(EndBlocks.END_MOSS)) {
+		else if (downState.is(EndBlocks.END_MOSS.get())) {
 			state = state.setValue(CACTUS_BOTTOM, CactusBottom.MOSS);
 		}
 		else {
@@ -221,10 +221,10 @@ public class NeonCactusPlantBlock extends BaseBlockNotFull implements SimpleWate
 	public void growPlant(WorldGenLevel world, BlockPos pos, Random random, int iterations) {
 		BlockState state = defaultBlockState();
 		BlockState downState = world.getBlockState(pos.below());
-		if (downState.is(Blocks.END_STONE) || downState.is(EndBlocks.ENDSTONE_DUST)) {
+		if (downState.is(Blocks.END_STONE) || downState.is(EndBlocks.ENDSTONE_DUST.get())) {
 			state = state.setValue(CACTUS_BOTTOM, CactusBottom.SAND);
 		}
-		else if (downState.is(EndBlocks.END_MOSS)) {
+		else if (downState.is(EndBlocks.END_MOSS.get())) {
 			state = state.setValue(CACTUS_BOTTOM, CactusBottom.MOSS);
 		}
 		else {

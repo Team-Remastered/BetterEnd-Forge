@@ -48,7 +48,7 @@ public class SulphurCrystalBlock extends BaseAttachedBlock implements AddMineabl
 	
 	public SulphurCrystalBlock() {
 		super(BlockBehaviour.Properties.of(Material.STONE)
-								 .materialColor(MaterialColor.COLOR_YELLOW)
+								 .color(MaterialColor.COLOR_YELLOW) //materialColor
 								 .sound(SoundType.GLASS)
 								 .requiresCorrectToolForDrops()
 								 .noCollission());
@@ -68,7 +68,7 @@ public class SulphurCrystalBlock extends BaseAttachedBlock implements AddMineabl
 	@Override
 	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
 		return state.getValue(AGE) < 2 ? Collections.emptyList() : Lists.newArrayList(new ItemStack(
-			EndItems.CRYSTALLINE_SULPHUR,
+			EndItems.CRYSTALLINE_SULPHUR.get(),
 			MHelper.randRange(1, 3, MHelper.RANDOM)
 		));
 	}
@@ -109,7 +109,7 @@ public class SulphurCrystalBlock extends BaseAttachedBlock implements AddMineabl
 	public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
 		Direction direction = state.getValue(FACING);
 		BlockPos blockPos = pos.relative(direction.getOpposite());
-		return world.getBlockState(blockPos).is(EndBlocks.BRIMSTONE);
+		return world.getBlockState(blockPos).is(EndBlocks.BRIMSTONE.get());
 	}
 	
 	static {

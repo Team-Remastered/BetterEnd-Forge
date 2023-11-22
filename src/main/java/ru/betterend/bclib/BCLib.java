@@ -1,8 +1,5 @@
 package ru.betterend.bclib;
 
-import net.minecraftforge.api.distmarker.Dist;
-import net.fabricmc.api.ModInitializer;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resources.ResourceLocation;
 import ru.betterend.bclib.api.WorldDataAPI;
 import ru.betterend.bclib.api.dataexchange.DataExchangeAPI;
@@ -24,12 +21,13 @@ import ru.betterend.bclib.world.generator.GeneratorOptions;
 
 import java.util.List;
 
-public class BCLib implements ModInitializer {
+public class BCLib {
 	public static final String MOD_ID = "bclib";
 	public static final Logger LOGGER = new Logger(MOD_ID);
-	
-	@Override
-	public void onInitialize() {
+
+	//FIXME: Move everything inside the main class
+
+	public void BCLib() {
 		BaseRegistry.register();
 		GeneratorOptions.init();
 		BaseBlockEntities.register();

@@ -121,21 +121,21 @@ public class LootTableUtil {
 		
 		builder = FabricLootPoolBuilder.builder();
 		builder.setRolls(UniformGenerator.between(4, 8));
-		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.ingot).build());
-		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.rawOre).build());
+		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.ingot.get()).build());
+		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.rawOre.get()).build());
 		builder.withEntry(LootItem.lootTableItem(Items.ENDER_PEARL).build());
 		table.withPool(builder);
 		
 		builder = FabricLootPoolBuilder.builder();
 		builder.setRolls(UniformGenerator.between(2, 4));
-		builder.withEntry(LootItem.lootTableItem(EndBlocks.TERMINITE.ingot).build());
+		builder.withEntry(LootItem.lootTableItem(EndBlocks.TERMINITE.ingot.get()).build());
 		builder.withEntry(LootItem.lootTableItem(EndItems.ENDER_SHARD.get()).build());
 		builder.withEntry(LootItem.lootTableItem(EndBlocks.AURORA_CRYSTAL.get()).build());
-		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.axe).build());
-		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.pickaxe).build());
-		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.hoe).build());
-		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.sword).build());
-		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.shovel).build());
+		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.axe.get()).build());
+		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.pickaxe.get()).build());
+		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.hoe.get()).build());
+		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.sword.get()).build());
+		builder.withEntry(LootItem.lootTableItem(EndBlocks.THALLASIUM.shovel.get()).build());
 		builder.withEntry(LootItem.lootTableItem(Items.ENDER_EYE).build());
 		builder.withEntry(LootItem.lootTableItem(Blocks.OBSIDIAN).build());
 		table.withPool(builder);

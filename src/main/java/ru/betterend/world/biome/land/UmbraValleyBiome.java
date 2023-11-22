@@ -22,7 +22,7 @@ public class UmbraValleyBiome extends EndBiome.Config {
 		EndBlocks.PALLIDIUM_HEAVY.get(),
 		EndBlocks.PALLIDIUM_THIN.get(),
 		EndBlocks.PALLIDIUM_TINY.get(),
-		EndBlocks.UMBRALITH.stone
+		EndBlocks.UMBRALITH.stone.get()
 	};
 	
 	public UmbraValleyBiome() {
@@ -49,12 +49,12 @@ public class UmbraValleyBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.UMBRALITH.stone.defaultBlockState();
+				return EndBlocks.UMBRALITH.stone.get().defaultBlockState();
 			}
 			
 			@Override
 			public BlockState getUnderMaterial() {
-				return EndBlocks.UMBRALITH.stone.defaultBlockState();
+				return EndBlocks.UMBRALITH.stone.get().defaultBlockState();
 			}
 
 			@Override

@@ -80,22 +80,22 @@ public class EndItems {
 	public final static RegistryObject<Item> MUSIC_DISC_STRANGE_AND_ALIEN = registerEndDisc(
 		"music_disc_strange_and_alien",
 		0,
-		EndSounds.RECORD_STRANGE_AND_ALIEN
+		EndSounds.RECORD_STRANGE_AND_ALIEN.get()
 	);
 	public final static RegistryObject<Item> MUSIC_DISC_GRASPING_AT_STARS = registerEndDisc(
 		"music_disc_grasping_at_stars",
 		0,
-		EndSounds.RECORD_GRASPING_AT_STARS
+		EndSounds.RECORD_GRASPING_AT_STARS.get()
 	);
 	public final static RegistryObject<Item> MUSIC_DISC_ENDSEEKER = registerEndDisc(
 		"music_disc_endseeker",
 		0,
-		EndSounds.RECORD_ENDSEEKER
+		EndSounds.RECORD_ENDSEEKER.get()
 	);
 	public final static RegistryObject<Item> MUSIC_DISC_EO_DRACONA = registerEndDisc(
 		"music_disc_eo_dracona",
 		0,
-		EndSounds.RECORD_EO_DRACONA
+		EndSounds.RECORD_EO_DRACONA.get()
 	);
 	
 	// Armor //

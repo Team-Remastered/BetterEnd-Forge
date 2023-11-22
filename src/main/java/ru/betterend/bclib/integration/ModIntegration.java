@@ -1,6 +1,5 @@
 package ru.betterend.bclib.integration;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;

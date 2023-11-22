@@ -1,6 +1,5 @@
 package ru.betterend.bclib.mixin.common;
 
-import net.fabricmc.fabric.impl.biome.NetherBiomeData;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Climate;

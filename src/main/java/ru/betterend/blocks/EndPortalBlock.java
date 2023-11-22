@@ -85,7 +85,7 @@ public class EndPortalBlock extends NetherPortalBlock implements RenderLayerProv
 			z = pos.getZ() + 0.5D + 0.25D * k;
 		}
 		
-		world.addParticle(EndParticles.PORTAL_SPHERE, x, y, z, 0, 0, 0);
+		world.addParticle(EndParticles.PORTAL_SPHERE.get(), x, y, z, 0, 0, 0);
 	}
 	
 	@Override

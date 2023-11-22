@@ -106,12 +106,12 @@ public class BonemealPlants {
 		terrain.add(Blocks.END_STONE);
 		terrain.add(EndBlocks.ENDSTONE_DUST.get());
 		terrain.add(EndBlocks.CAVE_MOSS.get());
-		terrain.add(EndBlocks.SULPHURIC_ROCK.stone);
-		terrain.add(EndBlocks.VIOLECITE.stone);
-		terrain.add(EndBlocks.FLAVOLITE.stone);
-		terrain.add(EndBlocks.AZURE_JADESTONE.stone);
-		terrain.add(EndBlocks.VIRID_JADESTONE.stone);
-		terrain.add(EndBlocks.SANDY_JADESTONE.stone);
+		terrain.add(EndBlocks.SULPHURIC_ROCK.stone.get());
+		terrain.add(EndBlocks.VIOLECITE.stone.get());
+		terrain.add(EndBlocks.FLAVOLITE.stone.get());
+		terrain.add(EndBlocks.AZURE_JADESTONE.stone.get());
+		terrain.add(EndBlocks.VIRID_JADESTONE.stone.get());
+		terrain.add(EndBlocks.SANDY_JADESTONE.stone.get());
 		terrain.add(EndBlocks.BRIMSTONE.get());
 		Block[] terrainBlocks = terrain.toArray(new Block[terrain.size()]);
 		for (Block charnia : charnias) {

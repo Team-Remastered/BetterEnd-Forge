@@ -66,14 +66,14 @@ public class EndBiome extends BCLBiome implements SurfaceMaterialProvider {
 		protected static final SurfaceRules.RuleSource END_MOSS = SurfaceRules.state(EndBlocks.END_MOSS.get().defaultBlockState());
 		protected static final SurfaceRules.RuleSource ENDSTONE_DUST = SurfaceRules.state(EndBlocks.ENDSTONE_DUST.get().defaultBlockState());
 		protected static final SurfaceRules.RuleSource END_MYCELIUM = SurfaceRules.state(EndBlocks.END_MYCELIUM.get().defaultBlockState());
-		protected static final SurfaceRules.RuleSource FLAVOLITE =SurfaceRules.state(EndBlocks.FLAVOLITE.stone.defaultBlockState());
-		protected static final SurfaceRules.RuleSource SULPHURIC_ROCK =SurfaceRules.state(EndBlocks.SULPHURIC_ROCK.stone.defaultBlockState());
+		protected static final SurfaceRules.RuleSource FLAVOLITE =SurfaceRules.state(EndBlocks.FLAVOLITE.stone.get().defaultBlockState());
+		protected static final SurfaceRules.RuleSource SULPHURIC_ROCK =SurfaceRules.state(EndBlocks.SULPHURIC_ROCK.stone.get().defaultBlockState());
 		protected static final SurfaceRules.RuleSource BRIMSTONE =SurfaceRules.state(EndBlocks.BRIMSTONE.get().defaultBlockState());
 		protected static final SurfaceRules.RuleSource PALLIDIUM_FULL =SurfaceRules.state(EndBlocks.PALLIDIUM_FULL.get().defaultBlockState());
 		protected static final SurfaceRules.RuleSource PALLIDIUM_HEAVY =SurfaceRules.state(EndBlocks.PALLIDIUM_HEAVY.get().defaultBlockState());
 		protected static final SurfaceRules.RuleSource PALLIDIUM_THIN =SurfaceRules.state(EndBlocks.PALLIDIUM_THIN.get().defaultBlockState());
 		protected static final SurfaceRules.RuleSource PALLIDIUM_TINY =SurfaceRules.state(EndBlocks.PALLIDIUM_TINY.get().defaultBlockState());
-		protected static final SurfaceRules.RuleSource UMBRALITH =SurfaceRules.state(EndBlocks.UMBRALITH.stone.defaultBlockState());
+		protected static final SurfaceRules.RuleSource UMBRALITH =SurfaceRules.state(EndBlocks.UMBRALITH.stone.get().defaultBlockState());
 
 		public final ResourceLocation ID;
 

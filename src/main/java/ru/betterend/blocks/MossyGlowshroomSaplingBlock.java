@@ -15,12 +15,12 @@ public class MossyGlowshroomSaplingBlock extends PottableFeatureSapling {
 
 	@Override
 	public boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
-		return world.getBlockState(pos.below()).is(EndBlocks.END_MOSS) || world.getBlockState(pos.below())
-																			   .is(EndBlocks.END_MYCELIUM);
+		return world.getBlockState(pos.below()).is(EndBlocks.END_MOSS.get()) || world.getBlockState(pos.below())
+																			   .is(EndBlocks.END_MYCELIUM.get());
 	}
 	
 	@Override
 	public boolean canPlantOn(Block block) {
-		return block == EndBlocks.END_MOSS || block == EndBlocks.END_MYCELIUM;
+		return block == EndBlocks.END_MOSS.get() || block == EndBlocks.END_MYCELIUM.get();
 	}
 }

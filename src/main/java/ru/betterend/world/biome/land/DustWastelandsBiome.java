@@ -27,8 +27,8 @@ public class DustWastelandsBiome extends EndBiome.Config {
 			.waterAndFogColor(192, 180, 131)
 			.terrainHeight(1.5F)
 			.particles(ParticleTypes.WHITE_ASH, 0.01F)
-			.loop(EndSounds.AMBIENT_DUST_WASTELANDS)
-			.music(EndSounds.MUSIC_OPENSPACE)
+			.loop(EndSounds.AMBIENT_DUST_WASTELANDS.get())
+			.music(EndSounds.MUSIC_OPENSPACE.get())
 			.structure(BiomeTags.HAS_END_CITY)
 			.spawn(EntityType.ENDERMAN, 50, 1, 2);
 	}
@@ -38,7 +38,7 @@ public class DustWastelandsBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.ENDSTONE_DUST.defaultBlockState();
+				return EndBlocks.ENDSTONE_DUST.get().defaultBlockState();
 			}
 			
 			@Override
@@ -47,7 +47,7 @@ public class DustWastelandsBiome extends EndBiome.Config {
 					.surface()
 					.ceil(Blocks.END_STONE.defaultBlockState())
 					.rule(4, SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(5, false, CaveSurface.FLOOR),
-						SurfaceRules.state(EndBlocks.ENDSTONE_DUST.defaultBlockState())
+						SurfaceRules.state(EndBlocks.ENDSTONE_DUST.get().defaultBlockState())
 					));
 			}
 		};

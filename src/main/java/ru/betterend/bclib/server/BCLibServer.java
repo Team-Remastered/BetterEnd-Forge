@@ -1,6 +1,5 @@
 package ru.betterend.bclib.server;
 
-import net.fabricmc.api.DedicatedServerModInitializer;
 import ru.betterend.bclib.api.ModIntegrationAPI;
 import ru.betterend.bclib.api.PostInitAPI;
 import ru.betterend.bclib.api.dataexchange.DataExchangeAPI;

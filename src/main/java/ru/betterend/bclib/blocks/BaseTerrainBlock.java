@@ -52,8 +52,8 @@ public class BaseTerrainBlock extends BaseBlock {
 	
 	public BaseTerrainBlock(Block baseBlock, MaterialColor color) {
 		super(BlockBehaviour.Properties
-			.copyOf(baseBlock)
-			.materialColor(color)
+			.copy(baseBlock)
+			.color(color) //Uses materialColor directly for some reason on fabric
 			.sound(BlockSounds.TERRAIN_SOUND)
 			.randomTicks()
 		);

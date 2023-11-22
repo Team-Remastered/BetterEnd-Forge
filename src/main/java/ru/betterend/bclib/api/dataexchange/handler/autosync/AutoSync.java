@@ -1,6 +1,5 @@
 package ru.betterend.bclib.api.dataexchange.handler.autosync;
 
-import net.fabricmc.loader.api.FabricLoader;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.dataexchange.DataExchangeAPI;
 import ru.betterend.bclib.api.dataexchange.SyncFileHash;

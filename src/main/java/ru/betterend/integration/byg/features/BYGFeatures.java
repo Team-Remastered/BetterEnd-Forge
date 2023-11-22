@@ -25,27 +25,27 @@ public class BYGFeatures {
 	);
 	public static final BCLFeature IVIS_VINE = registerVegetation(
 		"ivis_vine",
-		new VineFeature(BYGBlocks.IVIS_VINE, 24),
+		new VineFeature(BYGBlocks.IVIS_VINE.get(), 24),
 		5
 	);
 	public static final BCLFeature IVIS_MOSS = registerVegetation(
 		"ivis_moss",
-		new WallPlantFeature(BYGBlocks.IVIS_MOSS, 6),
+		new WallPlantFeature(BYGBlocks.IVIS_MOSS.get(), 6),
 		1
 	);
 	public static final BCLFeature IVIS_MOSS_WOOD = registerVegetation(
 		"ivis_moss_wood",
-		new WallPlantOnLogFeature(BYGBlocks.IVIS_MOSS, 6),
+		new WallPlantOnLogFeature(BYGBlocks.IVIS_MOSS.get(), 6),
 		15
 	);
 	public static final BCLFeature NIGHTSHADE_MOSS = registerVegetation(
 		"nightshade_moss",
-		new WallPlantFeature(BYGBlocks.NIGHTSHADE_MOSS, 5),
+		new WallPlantFeature(BYGBlocks.NIGHTSHADE_MOSS.get(), 5),
 		2
 	);
 	public static final BCLFeature NIGHTSHADE_MOSS_WOOD = registerVegetation(
 		"nightshade_moss_wood",
-		new WallPlantOnLogFeature(BYGBlocks.NIGHTSHADE_MOSS, 5),
+		new WallPlantOnLogFeature(BYGBlocks.NIGHTSHADE_MOSS.get(), 5),
 		8
 	);
 	

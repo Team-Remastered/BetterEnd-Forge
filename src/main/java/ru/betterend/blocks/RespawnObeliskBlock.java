@@ -162,7 +162,7 @@ public class RespawnObeliskBlock extends BaseBlock implements CustomColorProvide
 	@SuppressWarnings("deprecation")
 	public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
 		ItemStack itemStack = player.getItemInHand(hand);
-		boolean canActivate = itemStack.getItem() == EndItems.AMBER_GEM && itemStack.getCount() > 5;
+		boolean canActivate = itemStack.getItem() == EndItems.AMBER_GEM.get() && itemStack.getCount() > 5;
 		if (hand != InteractionHand.MAIN_HAND || !canActivate) {
 			if (!world.isClientSide && !(itemStack.getItem() instanceof BlockItem) && !player.isCreative()) {
 				ServerPlayer serverPlayerEntity = (ServerPlayer) player;
@@ -180,7 +180,7 @@ public class RespawnObeliskBlock extends BaseBlock implements CustomColorProvide
 			double px = pos.getX() + 0.5;
 			double py = pos.getY() + 0.5;
 			double pz = pos.getZ() + 0.5;
-			InfusionParticleType particle = new InfusionParticleType(new ItemStack(EndItems.AMBER_GEM));
+			InfusionParticleType particle = new InfusionParticleType(new ItemStack(EndItems.AMBER_GEM.get()));
 			if (world instanceof ServerLevel) {
 				double py1 = py;
 				double py2 = py - 0.2;

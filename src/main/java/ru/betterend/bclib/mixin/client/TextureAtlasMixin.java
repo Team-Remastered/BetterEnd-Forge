@@ -1,8 +1,6 @@
 package ru.betterend.bclib.mixin.client;
 
 import com.mojang.blaze3d.platform.NativeImage;
-import net.fabricmc.fabric.impl.client.texture.FabricSprite;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.resources.ResourceLocation;

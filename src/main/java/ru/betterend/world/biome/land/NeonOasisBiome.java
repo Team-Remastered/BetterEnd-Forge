@@ -33,8 +33,8 @@ public class NeonOasisBiome extends EndBiome.Config {
 			.fogDensity(2)
 			.waterAndFogColor(106, 238, 215)
 			.particles(ParticleTypes.WHITE_ASH, 0.01F)
-			.loop(EndSounds.AMBIENT_DUST_WASTELANDS)
-			.music(EndSounds.MUSIC_OPENSPACE)
+			.loop(EndSounds.AMBIENT_DUST_WASTELANDS.get())
+			.music(EndSounds.MUSIC_OPENSPACE.get())
 			.feature(EndFeatures.DESERT_LAKE)
 			.feature(EndFeatures.NEON_CACTUS)
 			.feature(EndFeatures.UMBRELLA_MOSS)
@@ -51,12 +51,12 @@ public class NeonOasisBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.ENDSTONE_DUST.defaultBlockState();
+				return EndBlocks.ENDSTONE_DUST.get().defaultBlockState();
 			}
 
 			@Override
 			public BlockState getAltTopMaterial() {
-				return EndBlocks.END_MOSS.defaultBlockState();
+				return EndBlocks.END_MOSS.get().defaultBlockState();
 			}
 			
 			@Override
@@ -64,8 +64,8 @@ public class NeonOasisBiome extends EndBiome.Config {
 				RuleSource surfaceBlockRule = new SwitchRuleSource(
 					new SplitNoiseCondition(),
 					List.of(
-						SurfaceRules.state(EndBlocks.ENDSTONE_DUST.defaultBlockState()),
-						SurfaceRules.state(EndBlocks.END_MOSS.defaultBlockState())
+						SurfaceRules.state(EndBlocks.ENDSTONE_DUST.get().defaultBlockState()),
+						SurfaceRules.state(EndBlocks.END_MOSS.get().defaultBlockState())
 					)
 				);
 				return super
@@ -73,7 +73,7 @@ public class NeonOasisBiome extends EndBiome.Config {
 					.ceil(Blocks.END_STONE.defaultBlockState())
 					.rule(1, SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, surfaceBlockRule))
 					.rule(4, SurfaceRules.ifTrue(SurfaceRules.stoneDepthCheck(5, false, CaveSurface.FLOOR),
-						SurfaceRules.state(EndBlocks.ENDSTONE_DUST.defaultBlockState())
+						SurfaceRules.state(EndBlocks.ENDSTONE_DUST.get().defaultBlockState())
 					));
 			}
 		};

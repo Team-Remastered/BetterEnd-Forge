@@ -76,7 +76,7 @@ public class GeyserFeature extends DefaultFeature {
 		SDF sdf = new SDFCappedCone().setHeight(halfHeight)
 									 .setRadius1(radius1)
 									 .setRadius2(radius2)
-									 .setBlock(EndBlocks.SULPHURIC_ROCK.stone);
+									 .setBlock(EndBlocks.SULPHURIC_ROCK.stone.get());
 		sdf = new SDFTranslate().setTranslate(0, halfHeight - 3, 0).setSource(sdf);
 		
 		int count = halfHeight;
@@ -88,7 +88,7 @@ public class GeyserFeature extends DefaultFeature {
 			SDF bowl = new SDFCappedCone().setHeight(radius)
 										  .setRadius1(0)
 										  .setRadius2(radius)
-										  .setBlock(EndBlocks.SULPHURIC_ROCK.stone);
+										  .setBlock(EndBlocks.SULPHURIC_ROCK.stone.get());
 			
 			SDF brimstone = new SDFCappedCone().setHeight(radius)
 											   .setRadius1(0)
@@ -158,8 +158,8 @@ public class GeyserFeature extends DefaultFeature {
 			return -2F;
 		}).setSource(sdf).setReplaceFunction(REPLACE1).fillRecursiveIgnore(world, pos, IGNORE);
 		
-		obj1.setBlock(EndBlocks.SULPHURIC_ROCK.stone);
-		obj2.setBlock(EndBlocks.SULPHURIC_ROCK.stone);
+		obj1.setBlock(EndBlocks.SULPHURIC_ROCK.stone.get());
+		obj2.setBlock(EndBlocks.SULPHURIC_ROCK.stone.get());
 		new SDFDisplacement().setFunction((vec) -> {
 			return -4F;
 		}).setSource(cave).setReplaceFunction(REPLACE1).fillRecursiveIgnore(world, pos, IGNORE);
@@ -197,7 +197,7 @@ public class GeyserFeature extends DefaultFeature {
 				}
 				if (state.is(CommonBlockTags.GEN_END_STONES) && !world.getBlockState(mut.above()).is(EndBlocks.HYDROTHERMAL_VENT.get())) {
 					for (int j = 0; j <= dist; j++) {
-						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.SULPHURIC_ROCK.stone);
+						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.SULPHURIC_ROCK.stone.get());
 						MHelper.shuffle(HORIZONTAL, random);
 						for (Direction dir : HORIZONTAL) {
 							BlockPos p = mut.relative(dir);
@@ -242,7 +242,7 @@ public class GeyserFeature extends DefaultFeature {
 				}
 				if (state.is(CommonBlockTags.GEN_END_STONES)) {
 					for (int j = 0; j <= dist; j++) {
-						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.SULPHURIC_ROCK.stone);
+						BlocksHelper.setWithoutUpdate(world, mut, EndBlocks.SULPHURIC_ROCK.stone.get());
 						mut.setY(mut.getY() + 1);
 					}
 					state = EndBlocks.HYDROTHERMAL_VENT.get().defaultBlockState()
@@ -286,7 +286,7 @@ public class GeyserFeature extends DefaultFeature {
 		};
 		
 		IGNORE = (state) -> {
-			return state.is(Blocks.WATER) || state.is(Blocks.CAVE_AIR) || state.is(EndBlocks.SULPHURIC_ROCK.stone) || state
+			return state.is(Blocks.WATER) || state.is(Blocks.CAVE_AIR) || state.is(EndBlocks.SULPHURIC_ROCK.stone.get()) || state
 				.is(EndBlocks.BRIMSTONE.get());
 		};
 	}

@@ -30,7 +30,7 @@ public class ColoredMaterial {
 		String id = Registry.BLOCK.getKey(source).getPath();
 		colors.forEach((color, name) -> {
 			String blockName = id + "_" + name;
-			Block block = constructor.apply(BlockBehaviour.Properties.copy(source).mapColor(MaterialColor.COLOR_BLACK));
+			Block block = constructor.apply(BlockBehaviour.Properties.copy(source).color(MaterialColor.COLOR_BLACK));
 			EndBlocks.registerBlock(blockName, block);
 			if (craftEight) {
 				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block)

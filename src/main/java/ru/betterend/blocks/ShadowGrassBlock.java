@@ -27,7 +27,7 @@ public class ShadowGrassBlock extends EndTerrainBlock implements TagProvider {
 		super.animateTick(state, world, pos, random);
 		if (random.nextInt(32) == 0) {
 			world.addParticle(
-				EndParticles.BLACK_SPORE,
+				EndParticles.BLACK_SPORE.get(),
 				(double) pos.getX() + random.nextDouble(),
 				(double) pos.getY() + 1.1D,
 				(double) pos.getZ() + random.nextDouble(),

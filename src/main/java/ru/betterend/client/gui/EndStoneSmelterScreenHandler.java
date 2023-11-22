@@ -2,7 +2,6 @@ package ru.betterend.client.gui;
 
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -18,7 +17,6 @@ import net.minecraft.world.inventory.StackedContentsCompatible;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
-import org.anti_ad.mc.ipn.api.IPNIgnore;
 import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.EndStoneSmelter;
 import ru.betterend.blocks.entities.EndStoneSmelterBlockEntity;

@@ -9,7 +9,6 @@ import com.mojang.math.Vector3f;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -38,6 +37,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.fml.loading.FMLPaths;
 import ru.betterend.bclib.blocks.BaseBlockNotFull;
 import ru.betterend.bclib.client.models.BasePatterns;
 import ru.betterend.bclib.client.models.ModelsHelper;
@@ -127,7 +127,7 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 		Map<String, Integer> reservedSoilIDs = Maps.newHashMap();
 		
 		JsonObject obj = JsonFactory.getJsonObject(new File(
-			FabricLoader.getInstance().getConfigDir().toFile(),
+			FMLPaths.CONFIGDIR.get().toFile(),
 			BetterEndForge.MOD_ID + "/blocks.json"
 		));
 		if (obj.get("flower_pots") != null) {

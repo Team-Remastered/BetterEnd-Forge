@@ -39,12 +39,12 @@ public class BaseLeavesBlock extends LeavesBlock implements BlockModelProvider, 
 
     private static BlockBehaviour.Properties makeLeaves(MaterialColor color) {
         return BlockBehaviour.Properties
-            .copy(Blocks.OAK_LEAVES
-            //.requiresTool()
-			.mapColor(color) //FIXME: No idea hot to convert this to Forge
-            .allowsSpawning((state, world, pos, type) -> false)
-            .suffocates((state, world, pos) -> false)
-            .blockVision((state, world, pos) -> false);
+            .copy(Blocks.OAK_LEAVES)
+            .requiresCorrectToolForDrops()
+			.color(color)
+            .isValidSpawn((state, world, pos, type) -> false)
+            .isSuffocating((state, world, pos) -> false)
+            .isViewBlocking((state, world, pos) -> false); //FIXME: the properties might be wrong
     }
 
     public BaseLeavesBlock(Block sapling, MaterialColor color, Consumer<BlockBehaviour.Properties> customizeProperties) {

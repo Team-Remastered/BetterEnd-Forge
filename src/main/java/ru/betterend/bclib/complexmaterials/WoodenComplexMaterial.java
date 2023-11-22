@@ -2,7 +2,6 @@ package ru.betterend.bclib.complexmaterials;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -59,7 +58,7 @@ public class WoodenComplexMaterial extends ComplexMaterial {
 	@Override
 	protected BlockBehaviour.Properties getBlockSettings() {
 		return BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)
-								  .materialColor(planksColor);
+								  .color(planksColor); //materialColor
 	}
 
 	@Override

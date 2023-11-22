@@ -81,13 +81,13 @@ public class SilkMothHiveBlock extends BaseBlock {
 		if (!world.getBlockState(spawn).isAir()) {
 			return;
 		}
-		int count = world.getEntities(EndEntities.SILK_MOTH, new AABB(pos).inflate(16), (entity) -> {
+		int count = world.getEntities(EndEntities.SILK_MOTH.get(), new AABB(pos).inflate(16), (entity) -> {
 			return true;
 		}).size();
 		if (count > 6) {
 			return;
 		}
-		SilkMothEntity moth = new SilkMothEntity(EndEntities.SILK_MOTH, world);
+		SilkMothEntity moth = new SilkMothEntity(EndEntities.SILK_MOTH.get(), world);
 		moth.moveTo(spawn.getX() + 0.5, spawn.getY() + 0.5, spawn.getZ() + 0.5, dir.toYRot(), 0);
 		moth.setDeltaMovement(new Vec3(dir.getStepX() * 0.4, 0, dir.getStepZ() * 0.4));
 		moth.setHive(world, pos);
@@ -106,11 +106,11 @@ public class SilkMothHiveBlock extends BaseBlock {
 				double px = pos.getX() + dir.getStepX() + 0.5;
 				double py = pos.getY() + dir.getStepY() + 0.5;
 				double pz = pos.getZ() + dir.getStepZ() + 0.5;
-				ItemStack drop = new ItemStack(EndItems.SILK_FIBER, MHelper.randRange(8, 16, world.getRandom()));
+				ItemStack drop = new ItemStack(EndItems.SILK_FIBER.get(), MHelper.randRange(8, 16, world.getRandom()));
 				ItemEntity entity = new ItemEntity(world, px, py, pz, drop);
 				world.addFreshEntity(entity);
 				if (world.getRandom().nextInt(4) == 0) {
-					drop = new ItemStack(EndItems.SILK_MOTH_MATRIX);
+					drop = new ItemStack(EndItems.SILK_MOTH_MATRIX.get());
 					entity = new ItemEntity(world, px, py, pz, drop);
 					world.addFreshEntity(entity);
 				}
