@@ -58,6 +58,7 @@ import ru.betterend.bclib.interfaces.SurfaceProvider;
 import ru.betterend.bclib.interfaces.SurfaceRuleProvider;
 import ru.betterend.bclib.mixin.common.BiomeGenerationSettingsAccessor;
 import ru.betterend.bclib.mixin.common.MobSpawnSettingsAccessor;
+import ru.betterend.bclib.mixin.common.TheEndBiomeDataMixin;
 import ru.betterend.bclib.util.CollectionsUtil;
 import ru.betterend.bclib.util.MHelper;
 import ru.betterend.bclib.world.biomes.BCLBiome;
@@ -236,6 +237,7 @@ public class BiomeAPI {
 		ResourceKey<Biome> key = BiomeAPI.getBiomeKey(biome.getBiome());
 		TheEndBiomeData.addEndBiomeReplacement(Biomes.END_HIGHLANDS, key, weight);
 		TheEndBiomeData.addEndBiomeReplacement(Biomes.END_MIDLANDS, key, weight);
+		TheEndBiomeDataMixin
 		return biome;
 	}
 	

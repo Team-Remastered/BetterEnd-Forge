@@ -19,14 +19,14 @@ public class CreativeTabs {
 		 TAB_BLOCKS = new CreativeModeTab(BetterEndForge.MOD_ID) {
 			@Override
 			public @NotNull ItemStack makeIcon() {
-				return new ItemStack(EndBlocks.END_MYCELIUM);
+				return new ItemStack(EndBlocks.END_MYCELIUM.get());
 			}
 		};
 
 		 TAB_ITEMS = new CreativeModeTab(BetterEndForge.MOD_ID) {
 			@Override
 			public @NotNull ItemStack makeIcon() {
-				return new ItemStack(EndItems.ETERNAL_CRYSTAL);
+				return new ItemStack(EndItems.ETERNAL_CRYSTAL.get());
 			}
 		};
 	}

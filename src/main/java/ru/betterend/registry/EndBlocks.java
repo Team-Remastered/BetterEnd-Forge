@@ -546,7 +546,7 @@ public class EndBlocks {
 		return BLOCKS.register(name, () -> block);
 	}
 	/** We register the block items directly inside the BlockRegistry class, we might want to move it here tho **/
-	
+
 	public static Item.Properties makeBlockItemSettings() {
 		return getBlockRegistry().makeItemSettings();
 	}
