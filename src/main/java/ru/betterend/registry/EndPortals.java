@@ -2,11 +2,11 @@ package ru.betterend.registry;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.fml.loading.FMLPaths;
 import ru.betterend.bclib.util.ColorUtil;
 import ru.betterend.bclib.util.JsonFactory;
 import ru.betterend.bclib.util.MHelper;
@@ -21,7 +21,7 @@ public class EndPortals {
 	private static PortalInfo[] portals;
 	
 	public static void loadPortals() {
-		File file = new File(FabricLoader.getInstance().getConfigDir().toString(), "betterend/portals.json");
+		File file = new File(FMLPaths.CONFIGDIR.toString(), "betterend/portals.json");
 		JsonObject json;
 		if (!file.exists()) {
 			file.getParentFile().mkdirs();
