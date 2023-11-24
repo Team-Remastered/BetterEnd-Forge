@@ -1,5 +1,6 @@
 package ru.betterend.item;
 
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.resources.ResourceLocation;
@@ -86,7 +87,7 @@ public class ArmoredElytra extends BaseArmorItem implements MultiModelItem, Fall
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void registerModelPredicate() {
-		FabricModelPredicateProviderRegistry.register(
+		ItemProperties.register(
 			this,
 			new ResourceLocation("broken"),
 			(itemStack, clientLevel, livingEntity, id) -> ElytraItem.isFlyEnabled(itemStack) ? 0.0F : 1.0F

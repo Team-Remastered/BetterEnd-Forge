@@ -23,13 +23,9 @@ import ru.betterend.registry.EndParticles;
 import ru.betterend.registry.EndScreens;
 import ru.betterend.world.generator.GeneratorOptions;
 
-public class BetterEndClient implements ClientModInitializer {
+public class BetterEndClient {
 	@Override
 	public void onInitializeClient() {
-		EndBlockEntityRenders.register();
-		EndScreens.register();
-		EndParticles.register();
-		EndEntitiesRenders.register();
 		EndModelProviders.register();
 		MultiModelItem.register();
 		ClientOptions.init();

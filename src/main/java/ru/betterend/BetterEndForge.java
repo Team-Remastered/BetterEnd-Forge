@@ -1,9 +1,11 @@
 package ru.betterend;
 
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import ru.betterend.bclib.api.WorldDataAPI;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
@@ -84,6 +86,10 @@ public class BetterEndForge {
 				EndFeatures.addBiomeFeatures(biomeID, biome);
 			}
 		});
+
+	}
+
+	private void onClientSetup(FMLClientSetupEvent event) {
 
 	}
 

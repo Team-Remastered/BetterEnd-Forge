@@ -17,6 +17,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.ForgeRegistryEntry;
 import ru.betterend.bclib.interfaces.UnknownReceipBookCategory;
 import ru.betterend.bclib.recipes.BCLRecipeManager;
 import ru.betterend.bclib.util.ItemUtil;
@@ -209,7 +210,7 @@ public class InfusionRecipe implements Recipe<InfusionRitual>, UnknownReceipBook
 		}
 	}
 	
-	public static class Serializer implements RecipeSerializer<InfusionRecipe> {
+	public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<InfusionRecipe> {
 		@Override
 		public InfusionRecipe fromJson(ResourceLocation id, JsonObject json) {
 			InfusionRecipe recipe = new InfusionRecipe(id);

@@ -1,6 +1,9 @@
 package ru.betterend.bclib;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.ForgeMod;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import ru.betterend.bclib.api.WorldDataAPI;
 import ru.betterend.bclib.api.dataexchange.DataExchangeAPI;
 import ru.betterend.bclib.api.dataexchange.handler.autosync.Chunker;
@@ -50,13 +53,13 @@ public class BCLib {
 		BCLibPatch.register();
 		Configs.save();
 	}
-	
+
 	public static boolean isDevEnvironment() {
-		return FabricLoader.getInstance().isDevelopmentEnvironment();
+		return !FMLEnvironment.production;
 	}
-	
+
 	public static boolean isClient() {
-		return FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT;
+		return FMLEnvironment.dist == Dist.CLIENT;
 	}
 	
 	public static ResourceLocation makeID(String path) {

@@ -12,6 +12,7 @@ import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import org.jline.utils.Colors;
 import ru.betterend.bclib.BCLib;
 
 import java.io.IOException;
@@ -178,7 +179,23 @@ public class ColorUtil {
 	}
 	
 	public static int applyTint(int color, int tint) {
-		return colorBrigtness(ColorHelper.multiplyColor(color, tint), 1.5F);
+		return colorBrigtness(multiplyColor(color, tint), 1.5F);
+	}
+
+	/** Copied from Fabric ColorHelper Class **/
+	public static int multiplyColor(int color1, int color2) {
+		if (color1 == -1) {
+			return color2;
+		} else if (color2 == -1) {
+			return color1;
+		}
+
+		final int alpha = ((color1 >> 24) & 0xFF) * ((color2 >> 24) & 0xFF) / 0xFF;
+		final int red = ((color1 >> 16) & 0xFF) * ((color2 >> 16) & 0xFF) / 0xFF;
+		final int green = ((color1 >> 8) & 0xFF) * ((color2 >> 8) & 0xFF) / 0xFF;
+		final int blue = (color1 & 0xFF) * (color2 & 0xFF) / 0xFF;
+
+		return (alpha << 24) | (red << 16) | (green << 8) | blue;
 	}
 	
 	public static int colorDistance(int color1, int color2) {

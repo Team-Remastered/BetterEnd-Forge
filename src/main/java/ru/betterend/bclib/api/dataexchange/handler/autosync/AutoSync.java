@@ -1,5 +1,6 @@
 package ru.betterend.bclib.api.dataexchange.handler.autosync;
 
+import net.minecraftforge.fml.loading.FMLPaths;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.dataexchange.DataExchangeAPI;
 import ru.betterend.bclib.api.dataexchange.SyncFileHash;
@@ -16,8 +17,7 @@ import java.util.function.BiConsumer;
 
 public class AutoSync {
 	public static final String SYNC_CATEGORY = "auto_sync";
-	public final static SyncFolderDescriptor SYNC_FOLDER = new SyncFolderDescriptor("BCLIB-SYNC", FabricLoader.getInstance()
-																											  .getGameDir()
+	public final static SyncFolderDescriptor SYNC_FOLDER = new SyncFolderDescriptor("BCLIB-SYNC", FMLPaths.CONFIGDIR.get()
 																											  .resolve("bclib-sync")
 																											  .normalize()
 																											  .toAbsolutePath(), true);

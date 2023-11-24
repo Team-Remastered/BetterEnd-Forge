@@ -18,6 +18,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.ForgeRegistryEntry;
 import ru.betterend.bclib.interfaces.UnknownReceipBookCategory;
 import ru.betterend.bclib.recipes.BCLRecipeManager;
 import ru.betterend.bclib.util.ItemUtil;
@@ -247,7 +248,7 @@ public class AlloyingRecipe implements Recipe<Container>, UnknownReceipBookCateg
 		}
 	}
 	
-	public static class Serializer implements RecipeSerializer<AlloyingRecipe> {
+	public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<AlloyingRecipe> {
 		@Override
 		public AlloyingRecipe fromJson(ResourceLocation id, JsonObject json) {
 			JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");

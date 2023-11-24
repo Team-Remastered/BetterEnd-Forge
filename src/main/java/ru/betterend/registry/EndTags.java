@@ -43,7 +43,7 @@ public class EndTags {
 	public static final TagKey<Item> ALLOYING_COPPER = TagAPI.makeItemTag(BetterEndForge.MOD_ID, "alloying_copper");
 	
 	public static void register() {
-		addEndGround(EndBlocks.THALLASIUM.ore);
+		addEndGround(EndBlocks.THALLASIUM.ore.get());
 		addEndGround(EndBlocks.ENDSTONE_DUST.get());
 		addEndGround(EndBlocks.AMBER_ORE.get());
 		
@@ -122,7 +122,7 @@ public class EndTags {
 			EndBlocks.FLAVOLITE_RUNED_ETERNAL.get(),
 			EndBlocks.FLAVOLITE_RUNED.get()
 		);
-		TagAPI.addItemTag(NamedCommonItemTags.IRON_INGOTS, EndBlocks.THALLASIUM.ingot);
+		TagAPI.addItemTag(NamedCommonItemTags.IRON_INGOTS, EndBlocks.THALLASIUM.ingot.get());
 		
 		TagAPI.addItemTag(ALLOYING_IRON, Items.IRON_ORE, Items.DEEPSLATE_IRON_ORE, Items.RAW_IRON);
 		TagAPI.addItemTag(ALLOYING_GOLD, Items.GOLD_ORE, Items.DEEPSLATE_GOLD_ORE, Items.RAW_GOLD);

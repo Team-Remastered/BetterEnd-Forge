@@ -24,6 +24,9 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.ForgeRegistryEntry;
+import org.jetbrains.annotations.Nullable;
+import ru.betterend.BetterEndForge;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.tag.CommonItemTags;
 import ru.betterend.bclib.config.PathConfig;
@@ -286,7 +289,7 @@ public class AnvilRecipe implements Recipe<Container>, UnknownReceipBookCategory
 		}
 	}
 
-	public static class Serializer implements RecipeSerializer<AnvilRecipe> {
+	public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<AnvilRecipe> {
 		@Override
 		public AnvilRecipe fromJson(ResourceLocation id, JsonObject json) {
 			Ingredient input = Ingredient.fromJson(json.get("input"));

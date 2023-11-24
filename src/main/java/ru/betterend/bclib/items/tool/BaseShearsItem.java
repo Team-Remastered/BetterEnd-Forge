@@ -1,5 +1,6 @@
 package ru.betterend.bclib.items.tool;
 
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -14,7 +15,7 @@ public class BaseShearsItem extends ShearsItem {
 
 	public static boolean isShear(ItemStack tool){
 		return tool.is(Items.SHEARS) | tool.is(CommonItemTags.SHEARS) || TagAPI.isToolWithMineableTag(tool, FabricMineableTags.SHEARS_MINEABLE);
-	}
+	}	//FIXME: create a shear tag because I don't think Forge has built-in one
 
 	public static boolean isShear(ItemStack itemStack, Item item){
 		if (item == Items.SHEARS){

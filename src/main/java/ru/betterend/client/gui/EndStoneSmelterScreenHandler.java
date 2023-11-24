@@ -23,15 +23,11 @@ import ru.betterend.blocks.entities.EndStoneSmelterBlockEntity;
 import ru.betterend.client.gui.slot.SmelterFuelSlot;
 import ru.betterend.client.gui.slot.SmelterOutputSlot;
 import ru.betterend.recipe.builders.AlloyingRecipe;
+import ru.betterend.registry.EndScreens;
 
-@IPNIgnore
+// @IPNIgnore No idea what this is
 public class EndStoneSmelterScreenHandler extends RecipeBookMenu<Container> {
-	
-	public final static MenuType<EndStoneSmelterScreenHandler> HANDLER_TYPE = ScreenHandlerRegistry.registerSimple(
-		BetterEndForge.makeID(EndStoneSmelter.ID),
-		EndStoneSmelterScreenHandler::new
-	);
-	
+
 	private final Container inventory;
 	private final ContainerData propertyDelegate;
 	protected final Level world;
@@ -41,11 +37,11 @@ public class EndStoneSmelterScreenHandler extends RecipeBookMenu<Container> {
 	}
 	
 	public EndStoneSmelterScreenHandler(int syncId, Inventory playerInventory, Container inventory, ContainerData propertyDelegate) {
-		super(HANDLER_TYPE, syncId);
+		super(EndScreens.END_STONE_SMELTER_MENU_TYPE.get(), syncId);
 		this.inventory = inventory;
 		this.propertyDelegate = propertyDelegate;
 		this.world = playerInventory.player.level;
-		
+
 		addDataSlots(propertyDelegate);
 		addSlot(new Slot(inventory, 0, 45, 17));
 		addSlot(new Slot(inventory, 1, 67, 17));
@@ -64,7 +60,7 @@ public class EndStoneSmelterScreenHandler extends RecipeBookMenu<Container> {
 	
 	@Override
 	public MenuType<?> getType() {
-		return HANDLER_TYPE;
+		return EndScreens.END_STONE_SMELTER_MENU_TYPE.get();
 	}
 	
 	@Override

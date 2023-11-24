@@ -3,6 +3,9 @@ package ru.betterend.integration;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.loading.FMLLoader;
+import org.apache.logging.log4j.core.util.Loader;
 import ru.betterend.bclib.api.ModIntegrationAPI;
 import ru.betterend.bclib.integration.ModIntegration;
 import ru.betterend.bclib.recipes.GridRecipe;
@@ -39,11 +42,11 @@ public class Integrations {
 					  .addMaterial('C', EndItems.CRYSTAL_SHARDS.get())
 					  .build();
 		}
-		hasHydrogen = FabricLoader.getInstance().isModLoaded("hydrogen");
+		hasHydrogen = ModList.get().isLoaded("hydrogen");
 	}
 	
 	public static boolean hasGuideBook() {
-		return FabricLoader.getInstance().isModLoaded("patchouli");
+		return ModList.get().isLoaded("patchouli");
 	}
 	
 	public static boolean hasHydrogen() {

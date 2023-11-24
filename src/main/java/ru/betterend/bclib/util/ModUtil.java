@@ -4,10 +4,10 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.stream.JsonReader;
-import net.fabricmc.loader.api.*;
-import net.fabricmc.loader.api.metadata.*;
 import org.apache.logging.log4j.LogManager;
 import ru.betterend.bclib.BCLib;
+import ru.betterend.interfaces.ModMetadata;
+import ru.betterend.util.ModEnvironment;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -104,6 +104,7 @@ public class ModUtil {
 
                 @Override
                 public ModEnvironment getEnvironment() {
+
                     JsonElement env = data.get("environment");
                     if (env == null) {
                         BCLib.LOGGER.warning("No environment specified in " + sourceFile);

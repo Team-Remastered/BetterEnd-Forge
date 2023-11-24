@@ -2,13 +2,14 @@ package ru.betterend.bclib.config;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraftforge.fml.loading.FMLPaths;
 import ru.betterend.bclib.util.JsonFactory;
 
 import java.io.File;
 import java.nio.file.Path;
 
 public class ConfigWriter {
-	private final static Path GAME_CONFIG_DIR = FabricLoader.getInstance().getConfigDir();
+	private final static Path GAME_CONFIG_DIR = FMLPaths.CONFIGDIR.get();
 	
 	private final File configFile;
 	private JsonObject configObject;

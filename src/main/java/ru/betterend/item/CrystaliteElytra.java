@@ -1,5 +1,6 @@
 package ru.betterend.item;
 
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.resources.ResourceLocation;
@@ -73,7 +74,7 @@ public class CrystaliteElytra extends CrystaliteArmor implements MultiModelItem,
 	
 	@Override
 	public void registerModelPredicate() {
-		FabricModelPredicateProviderRegistry.register(
+		ItemProperties.register(
 			this,
 			new ResourceLocation("broken"),
 			(itemStack, clientLevel, livingEntity, i) -> ElytraItem.isFlyEnabled(itemStack) ? 0.0F : 1.0F
