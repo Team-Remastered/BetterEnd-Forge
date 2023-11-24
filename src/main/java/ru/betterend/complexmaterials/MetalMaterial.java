@@ -41,7 +41,6 @@ import ru.betterend.blocks.BulbVineLanternBlock;
 import ru.betterend.blocks.BulbVineLanternColoredBlock;
 import ru.betterend.blocks.ChandelierBlock;
 import ru.betterend.blocks.basis.EndAnvilBlock;
-import ru.betterend.config.Configs;
 import ru.betterend.item.EndArmorItem;
 import ru.betterend.item.tool.EndHammerItem;
 import ru.betterend.item.tool.EndPickaxe;

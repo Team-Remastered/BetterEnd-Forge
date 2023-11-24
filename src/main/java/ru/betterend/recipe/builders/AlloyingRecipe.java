@@ -24,7 +24,6 @@ import ru.betterend.bclib.recipes.BCLRecipeManager;
 import ru.betterend.bclib.util.ItemUtil;
 import ru.betterend.bclib.util.RecipeHelper;
 import ru.betterend.BetterEndForge;
-import ru.betterend.config.Configs;
 import ru.betterend.registry.EndBlocks;
 
 public class AlloyingRecipe implements Recipe<Container>, UnknownReceipBookCategory {

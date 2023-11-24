@@ -3,7 +3,6 @@ package ru.betterend.recipe;
 import net.minecraft.world.item.Items;
 import ru.betterend.bclib.recipes.SmithingTableRecipe;
 import ru.betterend.BetterEndForge;
-import ru.betterend.config.Configs;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;
 

@@ -5,7 +5,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MaterialColor;
 import ru.betterend.bclib.complexmaterials.WoodenComplexMaterial;
 import ru.betterend.BetterEndForge;
-import ru.betterend.config.Configs;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;
 

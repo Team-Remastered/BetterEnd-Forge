@@ -138,7 +138,6 @@ import ru.betterend.complexmaterials.CrystalSubblocksMaterial;
 import ru.betterend.complexmaterials.EndWoodenComplexMaterial;
 import ru.betterend.complexmaterials.MetalMaterial;
 import ru.betterend.complexmaterials.StoneMaterial;
-import ru.betterend.config.Configs;
 import ru.betterend.item.material.EndArmorMaterial;
 import ru.betterend.item.material.EndToolMaterial;
 import ru.betterend.tab.CreativeTabs;

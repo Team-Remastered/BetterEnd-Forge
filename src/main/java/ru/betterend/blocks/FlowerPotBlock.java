@@ -51,7 +51,6 @@ import ru.betterend.bclib.util.JsonFactory;
 import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.basis.PottableLeavesBlock;
 import ru.betterend.client.models.Patterns;
-import ru.betterend.config.Configs;
 import ru.betterend.interfaces.PottablePlant;
 import ru.betterend.interfaces.PottableTerrain;
 import ru.betterend.registry.EndBlocks;

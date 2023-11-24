@@ -14,7 +14,6 @@ import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.EndPedestal;
 import ru.betterend.blocks.basis.LitBaseBlock;
 import ru.betterend.blocks.basis.LitPillarBlock;
-import ru.betterend.config.Configs;
 import ru.betterend.recipe.CraftingRecipes;
 import ru.betterend.registry.EndBlocks;
 

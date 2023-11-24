@@ -12,9 +12,8 @@ import ru.betterend.bclib.api.biomes.BiomeAPI;
 import ru.betterend.bclib.registry.BlockRegistry;
 import ru.betterend.bclib.registry.ItemRegistry;
 import ru.betterend.bclib.util.Logger;
-import ru.betterend.api.BetterEndPlugin;
 import ru.betterend.client.BetterEndClient;
-import ru.betterend.config.Configs;
+import ru.betterend.config.EndConfig;
 import ru.betterend.effects.EndPotions;
 import ru.betterend.integration.Integrations;
 import ru.betterend.recipe.AlloyingRecipes;
@@ -41,9 +40,10 @@ import ru.betterend.world.generator.TerrainGenerator;
 public class BetterEndForge {
 	public static final String MOD_ID = "betterend";
 	public static final Logger LOGGER = new Logger(MOD_ID);
+	public static final String CONFIG_FILE = String.format("%s.toml", MOD_ID);
 	public static final boolean RUNS_FALL_FLYING_LIB = ModList.get().isLoaded("fallflyinglib");
 
-	public void BetterEnd() {
+	public void BetterEndForge() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		BCLib.loadBCLib();
 		WorldDataAPI.registerModCache(MOD_ID);
@@ -74,7 +74,7 @@ public class BetterEndForge {
 		LootTableUtil.init();
 		// FabricLoader.getInstance().getEntrypoints("betterend", BetterEndPlugin.class).forEach(BetterEndPlugin::register);
 		Integrations.init();
-		Configs.saveConfigs();
+		EndConfig.load();
 
 		if (GeneratorOptions.useNewGenerator()) {
 			ru.betterend.bclib.world.generator.GeneratorOptions.setFarEndBiomes(GeneratorOptions.getIslandDistBlock());

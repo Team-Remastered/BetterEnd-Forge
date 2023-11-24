@@ -9,7 +9,6 @@ import ru.betterend.bclib.api.biomes.BiomeAPI;
 import ru.betterend.bclib.world.biomes.BCLBiome;
 import ru.betterend.bclib.world.generator.BiomePicker;
 import ru.betterend.bclib.world.generator.map.hex.HexBiomeMap;
-import ru.betterend.config.Configs;
 import ru.betterend.world.biome.EndBiome;
 import ru.betterend.world.biome.air.BiomeIceStarfield;
 import ru.betterend.world.biome.cave.EmptyAuroraCaveBiome;

@@ -22,7 +22,6 @@ import ru.betterend.bclib.interfaces.UnknownReceipBookCategory;
 import ru.betterend.bclib.recipes.BCLRecipeManager;
 import ru.betterend.bclib.util.ItemUtil;
 import ru.betterend.BetterEndForge;
-import ru.betterend.config.Configs;
 import ru.betterend.rituals.InfusionRitual;
 
 import java.util.Arrays;

@@ -23,7 +23,6 @@ import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.EndPedestal;
 import ru.betterend.blocks.FlowerPotBlock;
 import ru.betterend.blocks.basis.StoneLanternBlock;
-import ru.betterend.config.Configs;
 import ru.betterend.recipe.CraftingRecipes;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;

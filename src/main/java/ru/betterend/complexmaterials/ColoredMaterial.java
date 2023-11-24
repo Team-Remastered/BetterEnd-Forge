@@ -11,7 +11,6 @@ import net.minecraft.world.level.material.MaterialColor;
 import ru.betterend.bclib.recipes.GridRecipe;
 import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.BetterEndForge;
-import ru.betterend.config.Configs;
 import ru.betterend.registry.EndBlocks;
 
 import java.util.Map;

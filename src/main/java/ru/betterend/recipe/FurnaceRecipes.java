@@ -4,7 +4,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import ru.betterend.bclib.recipes.FurnaceRecipe;
 import ru.betterend.BetterEndForge;
-import ru.betterend.config.Configs;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;
 

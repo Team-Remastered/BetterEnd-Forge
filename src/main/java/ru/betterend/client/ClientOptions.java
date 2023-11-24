@@ -1,7 +1,5 @@
 package ru.betterend.client;
 
-import ru.betterend.config.Configs;
-
 public class ClientOptions {
 	private static boolean customSky;
 	private static boolean useFogDensity;

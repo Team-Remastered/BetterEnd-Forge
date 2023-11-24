@@ -10,7 +10,6 @@ import net.minecraft.world.level.block.Blocks;
 import ru.betterend.bclib.api.tag.CommonItemTags;
 import ru.betterend.bclib.recipes.GridRecipe;
 import ru.betterend.BetterEndForge;
-import ru.betterend.config.Configs;
 import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;
 

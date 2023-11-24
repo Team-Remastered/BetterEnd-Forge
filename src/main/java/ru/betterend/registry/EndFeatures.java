@@ -30,7 +30,6 @@ import ru.betterend.bclib.world.features.ListFeature.StructureInfo;
 import ru.betterend.bclib.world.features.NBTStructureFeature.TerrainMerge;
 import ru.betterend.BetterEndForge;
 import ru.betterend.complexmaterials.StoneMaterial;
-import ru.betterend.config.Configs;
 import ru.betterend.world.biome.cave.EndCaveBiome;
 import ru.betterend.world.biome.land.UmbraValleyBiome;
 import ru.betterend.world.features.BiomeIslandFeature;
