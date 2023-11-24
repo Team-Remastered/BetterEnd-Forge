@@ -12,7 +12,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.material.FogType;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
-import ru.betterend.bclib.config.Configs;
 import ru.betterend.bclib.util.BackgroundInfo;
 import ru.betterend.bclib.util.MHelper;
 import ru.betterend.bclib.world.biomes.BCLBiome;

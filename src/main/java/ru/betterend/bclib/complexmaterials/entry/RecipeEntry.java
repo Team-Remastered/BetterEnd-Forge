@@ -2,8 +2,6 @@ package ru.betterend.bclib.complexmaterials.entry;
 
 import net.minecraft.resources.ResourceLocation;
 import ru.betterend.bclib.complexmaterials.ComplexMaterial;
-import ru.betterend.bclib.config.PathConfig;
-import ru.betterend.bclib.interfaces.TriConsumer;
 
 public class RecipeEntry extends ComplexMaterialEntry {
 	final TriConsumer<ComplexMaterial, PathConfig, ResourceLocation> initFunction;

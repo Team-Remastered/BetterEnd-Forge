@@ -4,7 +4,6 @@ import net.minecraft.nbt.CompoundTag;
 import ru.betterend.bclib.api.datafixer.DataFixerAPI;
 import ru.betterend.bclib.api.datafixer.ForcedLevelPatch;
 import ru.betterend.bclib.api.datafixer.MigrationProfile;
-import ru.betterend.bclib.config.Configs;
 import ru.betterend.bclib.world.generator.GeneratorOptions;
 
 public final class BCLibPatch {

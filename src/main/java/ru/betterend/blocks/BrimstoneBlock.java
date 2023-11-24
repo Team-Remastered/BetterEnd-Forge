@@ -28,7 +28,7 @@ public class BrimstoneBlock extends BaseBlock {
 	public static final BooleanProperty ACTIVATED = BlockProperties.ACTIVE;
 	
 	public BrimstoneBlock() {
-		super(BlockBehaviour.Properties.copy(Blocks.END_STONE).mapColor(MaterialColor.COLOR_BROWN).randomTicks());
+		super(BlockBehaviour.Properties.copy(Blocks.END_STONE).color(MaterialColor.COLOR_BROWN).randomTicks());
 		registerDefaultState(stateDefinition.any().setValue(ACTIVATED, false));
 	}
 	

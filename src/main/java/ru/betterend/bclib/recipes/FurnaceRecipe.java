@@ -9,7 +9,6 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.item.crafting.SmokingRecipe;
 import net.minecraft.world.level.ItemLike;
-import ru.betterend.bclib.config.PathConfig;
 
 public class FurnaceRecipe {
 	private static final FurnaceRecipe INSTANCE = new FurnaceRecipe();

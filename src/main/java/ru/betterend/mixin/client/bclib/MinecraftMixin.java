@@ -19,9 +19,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import ru.betterend.bclib.api.LifeCycleAPI;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
-import ru.betterend.bclib.api.dataexchange.DataExchangeAPI;
 import ru.betterend.bclib.api.datafixer.DataFixerAPI;
-import ru.betterend.bclib.config.Configs;
 import ru.betterend.bclib.interfaces.CustomColorProvider;
 
 import java.util.function.Function;
@@ -54,7 +52,6 @@ public abstract class MinecraftMixin {
 	
 	@Inject(method = "loadLevel", cancellable = true, at = @At("HEAD"))
 	private void bclib_callFixerOnLoad(String levelID, CallbackInfo ci) {
-		DataExchangeAPI.prepareServerside();
 		BiomeAPI.prepareNewLevel();
 		
 		if (DataFixerAPI.fixData(this.levelSource, levelID, true, (appliedFixes) -> {
@@ -76,7 +73,6 @@ public abstract class MinecraftMixin {
 	
 	@Inject(method = "createLevel", at = @At("HEAD"))
 	private void bclib_initPatchData(String levelID, LevelSettings levelSettings, RegistryAccess registryAccess, WorldGenSettings worldGenSettings, CallbackInfo ci) {
-		DataExchangeAPI.prepareServerside();
 		BiomeAPI.prepareNewLevel();
 		
 		DataFixerAPI.initializeWorldData(this.levelSource, levelID, true);

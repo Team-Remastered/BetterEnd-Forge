@@ -20,7 +20,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import ru.betterend.bclib.api.dataexchange.DataExchangeAPI;
 import ru.betterend.bclib.recipes.BCLRecipeManager;
 
 import java.net.Proxy;
@@ -40,11 +39,6 @@ public class MinecraftServerMixin {
 	@Final
 	@Shadow
 	protected WorldData worldData;
-
-	@Inject(method = "<init>*", at = @At("TAIL"))
-	private void bclib_onServerInit(Thread thread, LevelStorageAccess levelStorageAccess, PackRepository packRepository, WorldStem worldStem, Proxy proxy, DataFixer dataFixer, MinecraftSessionService minecraftSessionService, GameProfileRepository gameProfileRepository, GameProfileCache gameProfileCache, ChunkProgressListenerFactory chunkProgressListenerFactory, CallbackInfo ci) {
-		DataExchangeAPI.prepareServerside();
-	}
 
 	@Inject(method = "reloadResources", at = @At(value = "RETURN"), cancellable = true)
 	private void bclib_reloadResources(Collection<String> collection, CallbackInfoReturnable<CompletableFuture<Void>> info) {

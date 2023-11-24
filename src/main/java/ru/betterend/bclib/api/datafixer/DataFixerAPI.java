@@ -22,7 +22,6 @@ import net.minecraft.world.level.storage.LevelStorageSource.LevelStorageAccess;
 import org.jetbrains.annotations.NotNull;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.WorldDataAPI;
-import ru.betterend.bclib.config.Configs;
 import ru.betterend.bclib.gui.screens.AtomicProgressListener;
 import ru.betterend.bclib.gui.screens.ConfirmFixScreen;
 import ru.betterend.bclib.gui.screens.LevelFixErrorScreen;

@@ -13,8 +13,6 @@ import net.minecraft.world.level.biome.Climate;
 import org.apache.commons.lang3.function.TriFunction;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
-import ru.betterend.bclib.config.ConfigKeeper.StringArrayEntry;
-import ru.betterend.bclib.config.Configs;
 import ru.betterend.bclib.interfaces.BiomeMap;
 import ru.betterend.mixin.common.bclib.BiomeAccessor;
 import ru.betterend.bclib.world.biomes.BCLBiome;

@@ -17,8 +17,6 @@ import net.minecraft.world.level.levelgen.WorldgenRandom;
 import net.minecraft.world.level.levelgen.synth.SimplexNoise;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
-import ru.betterend.bclib.config.ConfigKeeper.StringArrayEntry;
-import ru.betterend.bclib.config.Configs;
 import ru.betterend.bclib.interfaces.BiomeMap;
 import ru.betterend.mixin.common.bclib.BiomeAccessor;
 import ru.betterend.bclib.noise.OpenSimplexNoise;

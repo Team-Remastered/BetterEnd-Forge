@@ -20,7 +20,6 @@ import ru.betterend.bclib.api.tag.TagAPI;
 import ru.betterend.bclib.blocks.BaseLeavesBlock;
 import ru.betterend.bclib.blocks.BaseOreBlock;
 import ru.betterend.bclib.blocks.FeatureSaplingBlock;
-import ru.betterend.bclib.config.PathConfig;
 import ru.betterend.bclib.interfaces.CustomItemProvider;
 
 public class BlockRegistry extends BaseRegistry<Block> {

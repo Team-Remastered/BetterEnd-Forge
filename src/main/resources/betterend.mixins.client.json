@@ -26,8 +26,7 @@
 		"bclib.ModelBakeryMixin",
 		"bclib.WorldPresetMixin",
 		"bclib.MinecraftMixin",
-		"bclib.BlockMixin",
-		"bclib.GameMixin"
+		"bclib.BlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

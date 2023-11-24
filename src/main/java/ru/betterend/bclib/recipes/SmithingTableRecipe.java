@@ -9,7 +9,6 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.UpgradeRecipe;
 import net.minecraft.world.level.ItemLike;
 import ru.betterend.bclib.BCLib;
-import ru.betterend.bclib.config.PathConfig;
 
 public class SmithingTableRecipe {
 	

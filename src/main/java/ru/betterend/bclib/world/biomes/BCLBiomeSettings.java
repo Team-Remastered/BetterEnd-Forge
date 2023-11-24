@@ -1,7 +1,6 @@
 package ru.betterend.bclib.world.biomes;
 
 import net.minecraft.world.level.biome.Biome;
-import ru.betterend.bclib.config.Configs;
 
 public class BCLBiomeSettings {
 	float terrainHeight;
