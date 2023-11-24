@@ -564,21 +564,6 @@ public class BCLBiomeBuilder {
 	}
 	
 	/**
-	 * Adds new world carver into the biome.
-	 * @param carver {@link ConfiguredWorldCarver} to add.
-	 * @return same {@link BCLBiomeBuilder} instance.
-	 */
-	public  BCLBiomeBuilder carver(GenerationStep.Carving step, Holder<? extends ConfiguredWorldCarver<?>> carver) {
-		final ResourceLocation immutableID = biomeID;
-		var oKey = carver.unwrapKey();
-		if (oKey.isPresent()) {
-			BiomeModifications.addCarver(ctx -> ctx.getBiomeKey().location().equals(immutableID), step, (ResourceKey<ConfiguredWorldCarver<?>>) oKey.get());
-		}
-		//carvers.add(new Pair<>(step, carver));
-		return this;
-	}
-	
-	/**
 	 * Adds new world surface rule for the given block
 	 * @param surfaceBlock {@link Block} to use.
 	 * @return same {@link BCLBiomeBuilder} instance.

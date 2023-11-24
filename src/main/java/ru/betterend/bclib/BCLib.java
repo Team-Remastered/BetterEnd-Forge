@@ -28,9 +28,7 @@ public class BCLib {
 	public static final String MOD_ID = "bclib";
 	public static final Logger LOGGER = new Logger(MOD_ID);
 
-	//FIXME: Move everything inside the main class
-
-	public void BCLib() {
+	public static void loadBCLib() {
 		BaseRegistry.register();
 		GeneratorOptions.init();
 		BaseBlockEntities.register();

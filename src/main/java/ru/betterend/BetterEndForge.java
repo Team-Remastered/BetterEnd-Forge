@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.WorldDataAPI;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
 import ru.betterend.bclib.registry.BlockRegistry;
@@ -44,7 +45,7 @@ public class BetterEndForge {
 
 	public void BetterEnd() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+		BCLib.loadBCLib();
 		WorldDataAPI.registerModCache(MOD_ID);
 		ItemRegistry.initRegister(modEventBus);
 		BlockRegistry.initRegister(modEventBus);

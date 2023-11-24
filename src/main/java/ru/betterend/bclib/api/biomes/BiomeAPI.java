@@ -187,32 +187,6 @@ public class BiomeAPI {
 	 * @param biome {@link BCLBiome}
 	 * @return {@link BCLBiome}
 	 */
-	public static BCLBiome registerNetherBiome(BCLBiome biome) {
-		registerBiome(biome);
-		NETHER_BIOME_PICKER.addBiome(biome);
-		Random random = new Random(biome.getID().hashCode());
-		
-		//temperature, humidity, continentalness, erosion, depth, weirdness, offset
-		Climate.ParameterPoint parameters = Climate.parameters(
-			MHelper.randRange(-1.5F, 1.5F, random),
-			MHelper.randRange(-1.5F, 1.5F, random),
-			MHelper.randRange(-1.5F, 1.5F, random), //new in 1.18
-			MHelper.randRange(-1.5F, 1.5F, random), //new in 1.18
-			MHelper.randRange(-1.5F, 1.5F, random),
-			MHelper.randRange(-1.5F, 1.5F, random),
-			random.nextFloat()
-		);
-		ResourceKey<Biome> key = BiomeAPI.getBiomeKeyOrThrow(biome.getBiomeHolder());
-		NetherBiomeData.addNetherBiome(key, parameters);
-		return biome;
-	}
-	
-	/**
-	 * Register {@link BCLBiome} instance and its {@link Biome} if necessary.
-	 * After that biome will be added to BCLib Nether Biome Generator and into Fabric Biome API.
-	 * @param biome {@link BCLBiome}
-	 * @return {@link BCLBiome}
-	 */
 	public static BCLBiome registerNetherBiome(Biome biome) {
 		BCLBiome bclBiome = new BCLBiome(biome, null);
 		
