@@ -1,6 +1,5 @@
 package ru.betterend;
 
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -13,6 +12,7 @@ import ru.betterend.bclib.registry.BlockRegistry;
 import ru.betterend.bclib.registry.ItemRegistry;
 import ru.betterend.bclib.util.Logger;
 import ru.betterend.api.BetterEndPlugin;
+import ru.betterend.client.BetterEndClient;
 import ru.betterend.config.Configs;
 import ru.betterend.effects.EndPotions;
 import ru.betterend.integration.Integrations;
@@ -71,7 +71,7 @@ public class BetterEndForge {
 		BonemealPlants.init();
 		GeneratorOptions.init();
 		LootTableUtil.init();
-		FabricLoader.getInstance().getEntrypoints("betterend", BetterEndPlugin.class).forEach(BetterEndPlugin::register);
+		// FabricLoader.getInstance().getEntrypoints("betterend", BetterEndPlugin.class).forEach(BetterEndPlugin::register);
 		Integrations.init();
 		Configs.saveConfigs();
 
@@ -90,7 +90,7 @@ public class BetterEndForge {
 	}
 
 	private void onClientSetup(FMLClientSetupEvent event) {
-
+		BetterEndClient.initializeClient();
 	}
 
 	public static ResourceLocation makeID(String path) {

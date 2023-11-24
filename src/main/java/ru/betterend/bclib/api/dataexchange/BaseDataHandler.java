@@ -10,6 +10,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import org.jetbrains.annotations.NotNull;
+import ru.betterend.bclib.interfaces.PacketSender;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;

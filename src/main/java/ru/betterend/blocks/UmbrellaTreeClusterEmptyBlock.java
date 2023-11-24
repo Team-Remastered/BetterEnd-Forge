@@ -20,8 +20,8 @@ public class UmbrellaTreeClusterEmptyBlock extends BaseBlock {
 	
 	public UmbrellaTreeClusterEmptyBlock() {
 		super(BlockBehaviour.Properties
-			.copyOf(Blocks.NETHER_WART_BLOCK)
-			.mapColor(MaterialColor.COLOR_PURPLE)
+			.copy(Blocks.NETHER_WART_BLOCK)
+			.color(MaterialColor.COLOR_PURPLE)
 			.randomTicks()
 		);
 		registerDefaultState(stateDefinition.any().setValue(NATURAL, false));

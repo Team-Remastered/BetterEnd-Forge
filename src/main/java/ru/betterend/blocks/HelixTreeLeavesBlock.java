@@ -34,7 +34,7 @@ public class HelixTreeLeavesBlock extends BaseBlock implements CustomColorProvid
 	public HelixTreeLeavesBlock() {
 		super(BlockBehaviour.Properties
 			.of(Material.LEAVES)
-			.mapColor(MaterialColor.COLOR_ORANGE)
+			.color(MaterialColor.COLOR_ORANGE)
 			.sound(SoundType.WART_BLOCK)
 			.sound(SoundType.GRASS)
 			.strength(0.2F)

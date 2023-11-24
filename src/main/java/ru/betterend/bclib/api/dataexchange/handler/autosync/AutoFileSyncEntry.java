@@ -34,13 +34,13 @@ class AutoFileSyncEntry extends AutoSyncID {
 			return res;
 		}
 		
-		static ForDirectFileRequest finishDeserializeContent(String syncID, FriendlyByteBuf buf) {
+		static AutoFileSyncEntry.ForDirectFileRequest finishDeserializeContent(String syncID, FriendlyByteBuf buf) {
 			final String relFile = DataHandler.readString(buf);
 			SyncFolderDescriptor desc = AutoSync.getSyncFolderDescriptor(syncID);
 			if (desc != null) {
 				//ensures that the file is not above the base-folder
 				if (desc.acceptChildElements(desc.mapAbsolute(relFile))) {
-					return new ForDirectFileRequest(syncID, new File(relFile), desc.localFolder.resolve(relFile)
+					return new AutoFileSyncEntry.ForDirectFileRequest(syncID, new File(relFile), desc.localFolder.resolve(relFile)
 																												 .normalize()
 																												 .toFile());
 				}
@@ -82,9 +82,9 @@ class AutoFileSyncEntry extends AutoSyncID {
 			return res;
 		}
 		
-		static ForModFileRequest finishDeserializeContent(String modID, FriendlyByteBuf buf) {
+		static AutoFileSyncEntry.ForModFileRequest finishDeserializeContent(String modID, FriendlyByteBuf buf) {
 			final String version = ModUtil.convertModVersion(buf.readInt());
-			return new ForModFileRequest(modID, false, version);
+			return new AutoFileSyncEntry.ForModFileRequest(modID, false, version);
 		}
 		
 		@Override
