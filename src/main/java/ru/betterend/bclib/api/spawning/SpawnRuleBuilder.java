@@ -14,6 +14,7 @@ import net.minecraft.world.level.levelgen.Heightmap.Types;
 import net.minecraft.world.phys.AABB;
 import ru.betterend.bclib.entity.BCLEntityWrapper;
 import ru.betterend.bclib.interfaces.SpawnRule;
+import ru.betterend.mixin.common.SpawnRestrictionAccessor;
 
 import java.util.Arrays;
 import java.util.Collections;

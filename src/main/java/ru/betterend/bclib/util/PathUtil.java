@@ -1,18 +1,15 @@
 package ru.betterend.bclib.util;
 
+import net.minecraftforge.fml.loading.FMLPaths;
+
 import java.io.File;
 import java.nio.file.Path;
 import java.util.function.Consumer;
 
 public class PathUtil {
-	public final static Path GAME_FOLDER = FabricLoader.getInstance()
-													   .getGameDir()
-													   .normalize();
+	public final static Path GAME_FOLDER = FMLPaths.CONFIGDIR.get().normalize();
 	
-	public final static Path MOD_FOLDER = FabricLoader.getInstance()
-													  .getGameDir()
-													  .resolve("mods")
-													  .normalize();
+	public final static Path MOD_FOLDER = FMLPaths.CONFIGDIR.get().resolve("mods").normalize();
 	
 	public final static Path MOD_BAK_FOLDER = MOD_FOLDER.resolve("_bclib_deactivated")
 														.normalize();

@@ -33,14 +33,14 @@ public class SulphurSpringsBiome extends EndBiome.Config {
 	@Override
 	protected void addCustomBuildData(BCLBiomeBuilder builder) {
 		builder
-			.music(EndSounds.MUSIC_OPENSPACE)
-			.loop(EndSounds.AMBIENT_SULPHUR_SPRINGS)
+			.music(EndSounds.MUSIC_OPENSPACE.get())
+			.loop(EndSounds.AMBIENT_SULPHUR_SPRINGS.get())
 			.waterColor(25, 90, 157)
 			.waterFogColor(30, 65, 61)
 			.fogColor(207, 194, 62)
 			.fogDensity(1.5F)
 			.terrainHeight(0F)
-			.particles(EndParticles.SULPHUR_PARTICLE, 0.001F)
+			.particles(EndParticles.SULPHUR_PARTICLE.get(), 0.001F)
 			.feature(EndFeatures.GEYSER)
 			.feature(EndFeatures.SURFACE_VENT)
 			.feature(EndFeatures.SULPHURIC_LAKE)
@@ -49,8 +49,8 @@ public class SulphurSpringsBiome extends EndBiome.Config {
 			.feature(EndFeatures.CHARNIA_GREEN)
 			.feature(EndFeatures.CHARNIA_ORANGE)
 			.feature(EndFeatures.CHARNIA_RED_RARE)
-			.spawn(EndEntities.END_FISH, 50, 3, 8)
-			.spawn(EndEntities.CUBOZOA, 50, 3, 8)
+			.spawn(EndEntities.END_FISH.get(), 50, 3, 8)
+			.spawn(EndEntities.CUBOZOA.get(), 50, 3, 8)
 			.spawn(EntityType.ENDERMAN, 50, 1, 4);
 	}
 
@@ -59,7 +59,7 @@ public class SulphurSpringsBiome extends EndBiome.Config {
 		return new EndBiome.DefaultSurfaceMaterialProvider() {
 			@Override
 			public BlockState getTopMaterial() {
-				return EndBlocks.FLAVOLITE.stone.defaultBlockState();
+				return EndBlocks.FLAVOLITE.stone.get().defaultBlockState();
 			}
 
 			@Override

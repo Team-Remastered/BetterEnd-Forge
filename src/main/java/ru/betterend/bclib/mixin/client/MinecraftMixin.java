@@ -1,7 +1,6 @@
 package ru.betterend.bclib.mixin.client;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.Minecraft.ExperimentalDialogType;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.main.GameConfig;
@@ -47,7 +46,7 @@ public abstract class MinecraftMixin {
 		});
 	}
 
-	@Shadow protected abstract void doLoadLevel(String string, Function<LevelStorageAccess, WorldStem.DataPackConfigSupplier> function, Function<LevelStorageAccess, WorldStem.WorldDataSupplier> function2, boolean bl, ExperimentalDialogType experimentalDialogType);
+	@Shadow protected abstract void doLoadLevel(String string, Function<LevelStorageAccess, WorldStem.DataPackConfigSupplier> function, Function<LevelStorageAccess, WorldStem.WorldDataSupplier> function2, boolean bl, Minecraft.ExperimentalDialogType experimentalDialogType);
 
 	@Shadow
 	@Final
@@ -60,7 +59,7 @@ public abstract class MinecraftMixin {
 		
 		if (DataFixerAPI.fixData(this.levelSource, levelID, true, (appliedFixes) -> {
 			LifeCycleAPI._runBeforeLevelLoad();
-			this.doLoadLevel(levelID, WorldStem.DataPackConfigSupplier::loadFromWorld, WorldStem.WorldDataSupplier::loadFromWorld, false, appliedFixes ? ExperimentalDialogType.NONE : ExperimentalDialogType.BACKUP);
+			this.doLoadLevel(levelID, WorldStem.DataPackConfigSupplier::loadFromWorld, WorldStem.WorldDataSupplier::loadFromWorld, false, appliedFixes ? Minecraft.ExperimentalDialogType.NONE : Minecraft.ExperimentalDialogType.BACKUP);
 		})) {
 			//cancle call when fix-screen is presented
 			ci.cancel();
@@ -68,7 +67,7 @@ public abstract class MinecraftMixin {
 		else {
 			LifeCycleAPI._runBeforeLevelLoad();
 			if (Configs.CLIENT_CONFIG.suppressExperimentalDialog()) {
-				this.doLoadLevel(levelID, WorldStem.DataPackConfigSupplier::loadFromWorld, WorldStem.WorldDataSupplier::loadFromWorld, false, ExperimentalDialogType.NONE);
+				this.doLoadLevel(levelID, WorldStem.DataPackConfigSupplier::loadFromWorld, WorldStem.WorldDataSupplier::loadFromWorld, false, Minecraft.ExperimentalDialogType.NONE);
 				//cancle call as we manually start the level load here
 				ci.cancel();
 			}

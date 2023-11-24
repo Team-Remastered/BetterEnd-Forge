@@ -27,7 +27,8 @@
 		"MonsterMixin",
 		"EntityMixin",
 		"PlayerMixin",
-		"SlimeMixin"
+		"SlimeMixin",
+		"SpawnRestrictionAccessor"
 	],
 	"injectors": {
 		"defaultRequire": 1
