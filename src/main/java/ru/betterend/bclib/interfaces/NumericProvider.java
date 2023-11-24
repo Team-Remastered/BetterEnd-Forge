@@ -6,7 +6,7 @@ import net.minecraft.core.MappedRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import ru.betterend.bclib.BCLib;
-import ru.betterend.bclib.mixin.common.SurfaceRulesContextAccessor;
+import ru.betterend.mixin.common.bclib.SurfaceRulesContextAccessor;
 
 import java.util.function.Function;
 

@@ -2,7 +2,7 @@ package ru.betterend.bclib.api;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import ru.betterend.bclib.mixin.common.ShovelItemAccessor;
+import ru.betterend.mixin.common.bclib.ShovelItemAccessor;
 
 import java.util.Map;
 

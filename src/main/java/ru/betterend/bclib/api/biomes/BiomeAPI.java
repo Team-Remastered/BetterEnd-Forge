@@ -27,7 +27,6 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSource;
 import net.minecraft.world.level.biome.Biomes;
-import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.biome.MobSpawnSettings.SpawnerData;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -54,16 +53,16 @@ import ru.betterend.bclib.interfaces.NoiseGeneratorSettingsProvider;
 import ru.betterend.bclib.interfaces.SurfaceMaterialProvider;
 import ru.betterend.bclib.interfaces.SurfaceProvider;
 import ru.betterend.bclib.interfaces.SurfaceRuleProvider;
-import ru.betterend.bclib.mixin.common.BiomeGenerationSettingsAccessor;
-import ru.betterend.bclib.mixin.common.MobSpawnSettingsAccessor;
-import ru.betterend.bclib.mixin.common.TheEndBiomeDataMixin;
+import ru.betterend.mixin.common.bclib.BiomeGenerationSettingsAccessor;
+import ru.betterend.mixin.common.bclib.MobSpawnSettingsAccessor;
 import ru.betterend.bclib.util.CollectionsUtil;
-import ru.betterend.bclib.util.MHelper;
 import ru.betterend.bclib.world.biomes.BCLBiome;
 import ru.betterend.bclib.world.biomes.FabricBiomesData;
 import ru.betterend.bclib.world.biomes.VanillaBiomeSettings;
 import ru.betterend.bclib.world.features.BCLFeature;
 import ru.betterend.bclib.world.generator.BiomePicker;
+import ru.betterend.mixin.client.bclib.MinecraftMixin;
+import ru.betterend.mixin.common.bclib.NoiseGeneratorSettingsMixin;
 
 import java.util.HashSet;
 import java.util.List;
@@ -71,7 +70,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Random;
 import java.util.Set;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
@@ -148,7 +146,7 @@ public class BiomeAPI {
 	 * For internal use only.
 	 *
 	 * This method gets called before a world is loaded/created to flush cashes we build. The Method is
-	 * called from  {@link ru.betterend.bclib.mixin.client.MinecraftMixin}
+	 * called from  {@link MinecraftMixin}
 	 */
 	public static void prepareNewLevel(){
 		MODIFIED_SURFACE_PROVIDERS.forEach(p->p.bclib_clearBiomeSources());
@@ -596,7 +594,7 @@ public class BiomeAPI {
 	 * If we have Surface rules for any of the Biomes from the given set of {@link BiomeSource}, they
 	 * will be added to the result
 	 *
-	 * Note: This Method is used in the {@link ru.betterend.bclib.mixin.common.NoiseGeneratorSettingsMixin} which in turn
+	 * Note: This Method is used in the {@link NoiseGeneratorSettingsMixin} which in turn
 	 * is called from {@link #applyModifications(ServerLevel)}.
 	 * @param sources The Set of {@link BiomeSource} we want to consider
 	 * @return A list of {@link RuleSource}-Objects that are needed to create those Biomes

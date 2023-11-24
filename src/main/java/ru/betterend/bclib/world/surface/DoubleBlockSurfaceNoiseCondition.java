@@ -5,7 +5,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.surface.rules.SurfaceNoiseCondition;
-import ru.betterend.bclib.mixin.common.SurfaceRulesContextAccessor;
+import ru.betterend.mixin.common.bclib.SurfaceRulesContextAccessor;
 import ru.betterend.bclib.noise.OpenSimplexNoise;
 import ru.betterend.bclib.util.MHelper;
 

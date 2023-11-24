@@ -3,7 +3,7 @@ package ru.betterend.bclib.api.surface.rules;
 import net.minecraft.world.level.levelgen.SurfaceRules.Condition;
 import net.minecraft.world.level.levelgen.SurfaceRules.Context;
 import net.minecraft.world.level.levelgen.SurfaceRules.LazyXZCondition;
-import ru.betterend.bclib.mixin.common.SurfaceRulesContextAccessor;
+import ru.betterend.mixin.common.bclib.SurfaceRulesContextAccessor;
 
 public abstract class SurfaceNoiseCondition implements NoiseCondition{
 	@Override

@@ -5,7 +5,7 @@ import net.minecraft.world.level.levelgen.SurfaceRules.Condition;
 import net.minecraft.world.level.levelgen.SurfaceRules.ConditionSource;
 import net.minecraft.world.level.levelgen.SurfaceRules.Context;
 import net.minecraft.world.level.levelgen.SurfaceRules.LazyCondition;
-import ru.betterend.bclib.mixin.common.SurfaceRulesContextAccessor;
+import ru.betterend.mixin.common.bclib.SurfaceRulesContextAccessor;
 
 public abstract class VolumeNoiseCondition implements NoiseCondition{
 	public abstract Codec<? extends ConditionSource> codec();

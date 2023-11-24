@@ -15,7 +15,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
-import ru.betterend.bclib.mixin.common.DiggerItemAccessor;
+import ru.betterend.mixin.common.bclib.DiggerItemAccessor;
 
 import java.util.Map;
 import java.util.Set;

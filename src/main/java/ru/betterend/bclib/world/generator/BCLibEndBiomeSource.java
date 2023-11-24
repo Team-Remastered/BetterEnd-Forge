@@ -20,7 +20,7 @@ import ru.betterend.bclib.api.biomes.BiomeAPI;
 import ru.betterend.bclib.config.ConfigKeeper.StringArrayEntry;
 import ru.betterend.bclib.config.Configs;
 import ru.betterend.bclib.interfaces.BiomeMap;
-import ru.betterend.bclib.mixin.common.BiomeAccessor;
+import ru.betterend.mixin.common.bclib.BiomeAccessor;
 import ru.betterend.bclib.noise.OpenSimplexNoise;
 import ru.betterend.bclib.world.biomes.BCLBiome;
 import ru.betterend.bclib.world.generator.map.hex.HexBiomeMap;

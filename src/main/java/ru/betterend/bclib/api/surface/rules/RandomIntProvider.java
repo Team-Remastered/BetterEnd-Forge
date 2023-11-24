@@ -4,7 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.core.Registry;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.interfaces.NumericProvider;
-import ru.betterend.bclib.mixin.common.SurfaceRulesContextAccessor;
+import ru.betterend.mixin.common.bclib.SurfaceRulesContextAccessor;
 import ru.betterend.bclib.util.MHelper;
 
 public record RandomIntProvider(int range) implements NumericProvider {

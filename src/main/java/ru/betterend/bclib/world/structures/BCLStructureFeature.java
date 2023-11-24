@@ -20,8 +20,8 @@ import net.minecraft.world.level.levelgen.structure.pieces.PieceGeneratorSupplie
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadType;
 import ru.betterend.bclib.api.tag.TagAPI;
-import ru.betterend.bclib.mixin.common.StructureFeatureAccessor;
-import ru.betterend.bclib.mixin.common.StructureFeaturesAccessor;
+import ru.betterend.mixin.common.bclib.StructureFeatureAccessor;
+import ru.betterend.mixin.common.bclib.StructureFeaturesAccessor;
 
 import java.util.List;
 import java.util.Random;

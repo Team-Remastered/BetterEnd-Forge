@@ -3,7 +3,7 @@ package ru.betterend.world.surface;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.Registry;
 import ru.betterend.bclib.interfaces.NumericProvider;
-import ru.betterend.bclib.mixin.common.SurfaceRulesContextAccessor;
+import ru.betterend.mixin.common.bclib.SurfaceRulesContextAccessor;
 import ru.betterend.bclib.util.MHelper;
 import ru.betterend.BetterEndForge;
 import ru.betterend.noise.OpenSimplexNoise;

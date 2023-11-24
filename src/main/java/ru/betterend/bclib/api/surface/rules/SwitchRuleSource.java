@@ -9,7 +9,7 @@ import net.minecraft.world.level.levelgen.SurfaceRules.RuleSource;
 import net.minecraft.world.level.levelgen.SurfaceRules.SurfaceRule;
 import org.jetbrains.annotations.Nullable;
 import ru.betterend.bclib.interfaces.NumericProvider;
-import ru.betterend.bclib.mixin.common.SurfaceRulesContextAccessor;
+import ru.betterend.mixin.common.bclib.SurfaceRulesContextAccessor;
 
 import java.util.List;
 

@@ -15,7 +15,19 @@
 		"ModelLoaderMixin",
 		"EndEffectsMixin",
 		"CapeLayerMixin",
-		"ItemStackMixin"
+		"ItemStackMixin",
+		"**BCLIB**",
+		"bclib.ClientRecipeBookMixin",
+		"bclib.SignEditScreenMixin",
+		"bclib.ModelManagerMixin",
+		"bclib.TextureAtlasMixin",
+		"bclib.AnvilScreenMixin",
+		"bclib.FogRendererMixin",
+		"bclib.ModelBakeryMixin",
+		"bclib.WorldPresetMixin",
+		"bclib.MinecraftMixin",
+		"bclib.BlockMixin",
+		"bclib.GameMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

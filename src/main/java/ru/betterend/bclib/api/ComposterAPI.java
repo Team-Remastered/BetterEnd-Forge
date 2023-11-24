@@ -3,7 +3,7 @@ package ru.betterend.bclib.api;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import ru.betterend.bclib.mixin.common.ComposterBlockAccessor;
+import ru.betterend.mixin.common.bclib.ComposterBlockAccessor;
 
 public class ComposterAPI {
 	public static Block allowCompost(float chance, Block block){
