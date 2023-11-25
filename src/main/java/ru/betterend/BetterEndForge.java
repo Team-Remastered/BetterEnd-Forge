@@ -2,10 +2,12 @@ package ru.betterend;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.WorldDataAPI;
@@ -23,6 +25,7 @@ import ru.betterend.recipe.CraftingRecipes;
 import ru.betterend.recipe.FurnaceRecipes;
 import ru.betterend.recipe.InfusionRecipes;
 import ru.betterend.recipe.SmithingRecipes;
+import ru.betterend.registry.EndAttributes;
 import ru.betterend.registry.EndBiomes;
 import ru.betterend.registry.EndBlockEntities;
 import ru.betterend.registry.EndEnchantments;
@@ -47,22 +50,22 @@ public class BetterEndForge {
 
 	public void BetterEndForge() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-		BCLib.loadBCLib();
-		WorldDataAPI.registerModCache(MOD_ID);
-		ItemRegistry.initRegister(modEventBus);
+
 		BlockRegistry.initRegister(modEventBus);
 		EndBlockEntities.initRegister(modEventBus);
+		ItemRegistry.initRegister(modEventBus);
+		EndAttributes.initregister(modEventBus);
+		EndSounds.initRegister(modEventBus);
+		EndParticles.initRegister(modEventBus);
+		EndEntities.initRegister(modEventBus);
+		EndEnchantments.initRegister(modEventBus);
+
+		BCLib.loadBCLib();
+		WorldDataAPI.registerModCache(MOD_ID);
 		EndPortals.loadPortals();
-		EndSounds.register();
-		EndBlockEntities.register();
-		EndFeatures.register();
 		EndEntities.register(); //probably wrong
-		EndEntities.register(modEventBus);
-		EndParticles.register(modEventBus);
-		EndSounds.register(modEventBus);
 		EndBiomes.register();
 		EndTags.register();
-		EndEnchantments.register();
 		EndPotions.register();
 		CraftingRecipes.register();
 		FurnaceRecipes.register();
@@ -70,7 +73,6 @@ public class BetterEndForge {
 		AnvilRecipes.register();
 		SmithingRecipes.register();
 		InfusionRecipes.register();
-		EndStructures.register();
 		BonemealPlants.init();
 		GeneratorOptions.init();
 		LootTableUtil.init();
@@ -90,11 +92,20 @@ public class BetterEndForge {
 			}
 		});
 
+		// Register ourselves for server and other game events we are interested in
+		MinecraftForge.EVENT_BUS.register(this);
+
 	}
 
 	private void onClientSetup(FMLClientSetupEvent event) {
 		BetterEndClient.initializeClient();
 	}
+
+	private void onServerSetup(FMLCommonSetupEvent event) {
+
+	}
+
+
 
 	public static ResourceLocation makeID(String path) {
 		return new ResourceLocation(MOD_ID, path);
