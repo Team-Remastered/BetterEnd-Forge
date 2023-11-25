@@ -71,10 +71,10 @@ public abstract class LivingEntityMixin extends Entity {
 	
 	private Entity lastAttacker;
 	
-	@Inject(method = "createLivingAttributes", at = @At("RETURN"), cancellable = true)
-	private static void be_addLivingAttributes(CallbackInfoReturnable<AttributeSupplier.Builder> info) {
-		EndAttributes.addLivingEntityAttributes(info.getReturnValue());
-	}
+//	@Inject(method = "createLivingAttributes", at = @At("RETURN"), cancellable = true)
+//	private static void be_addLivingAttributes(CallbackInfoReturnable<AttributeSupplier.Builder> info) {
+//		EndAttributes.addLivingEntityAttributes(info.getReturnValue());
+//	}
 	
 	@Inject(method = "tickEffects", at = @At("HEAD"))
 	protected void be_applyEffects(CallbackInfo info) {
@@ -94,7 +94,7 @@ public abstract class LivingEntityMixin extends Entity {
 	@Inject(method = "canBeAffected", at = @At("HEAD"), cancellable = true)
 	public void be_canBeAffected(MobEffectInstance mobEffectInstance, CallbackInfoReturnable<Boolean> info) {
 		try {
-			if (mobEffectInstance.getEffect() == MobEffects.BLINDNESS && getAttributes().getValue(EndAttributes.BLINDNESS_RESISTANCE) > 0.0) {
+			if (mobEffectInstance.getEffect() == MobEffects.BLINDNESS && getAttributes().getValue(EndAttributes.BLINDNESS_RESISTANCE.get()) > 0.0) {
 				info.setReturnValue(false);
 			}
 		}
