@@ -29,7 +29,6 @@ import ru.betterend.item.model.CrystaliteLeggingsModel;
 import java.util.function.Function;
 
 @Mod.EventBusSubscriber(modid = BetterEndForge.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-
 public class EndEntitiesRenders {
 	public static final ModelLayerLocation DRAGONFLY_MODEL = registerMain("dragonfly");
 	public static final ModelLayerLocation END_SLIME_SHELL_MODEL = registerMain("endslime_shell");
@@ -74,7 +73,7 @@ public class EndEntitiesRenders {
 
 	}
 	
-	private static ModelLayerLocation registerMain(String id) {
+	public static ModelLayerLocation registerMain(String id) {
 		return new ModelLayerLocation(BetterEndForge.makeID(id), "main");
 	}
 }

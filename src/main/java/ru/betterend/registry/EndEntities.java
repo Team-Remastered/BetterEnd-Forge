@@ -143,18 +143,18 @@ public class EndEntities {
 //		return type;
 //	}
 
-	private static <T extends Mob> RegistryObject<EntityType<T>> register(String id, Supplier<? extends EntityType<T>> sup){
+	public static <T extends Mob> RegistryObject<EntityType<T>> register(String id, Supplier<? extends EntityType<T>> sup){
 		return ENTITIES.register(id, sup);
 	}
 
-	private static <T extends Mob> RegistryObject<EntityType<T>> register(String name, MobCategory group, float width, float height, EntityFactory<T> entity, boolean fixedSize, int eggColor, int dotsColor) {
+	public static <T extends Mob> RegistryObject<EntityType<T>> register(String name, MobCategory group, float width, float height, EntityFactory<T> entity, boolean fixedSize, int eggColor, int dotsColor) {
 		var reg = register(name, () -> EntityType.Builder.of(entity, group).sized(width, height).build(BetterEndForge.makeID(name).toString()));
 		EndItems.ITEMS.register("spawn_egg_" + name, () -> new ForgeSpawnEggItem(reg, eggColor, dotsColor, EndItems.makeEndItemSettings()));
 		return reg;
 	}
 
 	@SubscribeEvent
-	private static void entityAttributeEvent(EntityAttributeCreationEvent event) {
+	public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
 		event.put(DRAGONFLY.get(), DragonflyEntity.createMobAttributes().build());
 		event.put(END_SLIME.get(), EndSlimeEntity.createMobAttributes().build());
 		event.put(END_FISH.get(), EndFishEntity.createMobAttributes().build());
