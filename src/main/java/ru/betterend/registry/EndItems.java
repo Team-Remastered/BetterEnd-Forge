@@ -78,22 +78,22 @@ public class EndItems {
 	public final static RegistryObject<Item> MUSIC_DISC_STRANGE_AND_ALIEN = registerEndDisc(
 		"music_disc_strange_and_alien",
 		0,
-		EndSounds.RECORD_STRANGE_AND_ALIEN.get()
+		EndSounds.RECORD_STRANGE_AND_ALIEN
 	);
 	public final static RegistryObject<Item> MUSIC_DISC_GRASPING_AT_STARS = registerEndDisc(
 		"music_disc_grasping_at_stars",
 		0,
-		EndSounds.RECORD_GRASPING_AT_STARS.get()
+		EndSounds.RECORD_GRASPING_AT_STARS
 	);
 	public final static RegistryObject<Item> MUSIC_DISC_ENDSEEKER = registerEndDisc(
 		"music_disc_endseeker",
 		0,
-		EndSounds.RECORD_ENDSEEKER.get()
+		EndSounds.RECORD_ENDSEEKER
 	);
 	public final static RegistryObject<Item> MUSIC_DISC_EO_DRACONA = registerEndDisc(
 		"music_disc_eo_dracona",
 		0,
-		EndSounds.RECORD_EO_DRACONA.get()
+		EndSounds.RECORD_EO_DRACONA
 	);
 	
 	// Armor //
@@ -155,8 +155,8 @@ public class EndItems {
 		return REGISTRY.getModItems(BetterEndForge.MOD_ID);
 	}
 
-	public static RegistryObject<Item> registerEndDisc(String name, int power, SoundEvent sound) {
-		getItemRegistry().registerDisc(BetterEndForge.makeID(name), power, sound);
+	public static RegistryObject<Item> registerEndDisc(String name, int power, java.util.function.Supplier<SoundEvent> sound) {
+	//	getItemRegistry().registerDisc(BetterEndForge.makeID(name), power, sound);
 		return ITEMS.register(name, () -> new RecordItem(power, sound, makeEndItemSettings()));
 	}
 
