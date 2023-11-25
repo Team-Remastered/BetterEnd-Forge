@@ -8,7 +8,7 @@ import ru.betterend.bclib.interfaces.ItemModelProvider;
 import ru.betterend.registry.EndItems;
 
 public class EndBucketItem extends MobBucketItem implements ItemModelProvider {
-	public EndBucketItem(EntityType<?> type) {
-		super(type, Fluids.WATER, SoundEvents.BUCKET_EMPTY, EndItems.makeEndItemSettings().stacksTo(1));
+	public EndBucketItem(java.util.function.Supplier<? extends EntityType<?>> type) {
+		super(type, ()-> Fluids.WATER, ()-> SoundEvents.BUCKET_EMPTY, EndItems.makeEndItemSettings().stacksTo(1));
 	}
 }
