@@ -82,7 +82,7 @@ public abstract class ServerPlayerMixin extends Player implements TeleportingEnt
 		}
 	}
 	
-	@Inject(method = "changeDimension", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "changeDimension", at = @At("HEAD"), cancellable = true, remap = false)
 	public void be_changeDimension(ServerLevel destination, CallbackInfoReturnable<Entity> info) {
 		if (be_canTeleport() && level instanceof ServerLevel) {
 			isChangingDimension = true;

@@ -74,7 +74,10 @@
 		"bclib.ItemStackMixin",
 		"bclib.TagLoaderMixin",
 		"bclib.BiomeAccessor",
-		"bclib.MainMixin"
+		"bclib.MainMixin",
+		"** FABRIC **",
+		"fabric.AbstractBlockSettingsAccessor",
+		"fabric.AbstractBlockAccessor"
 	],
 	"injectors": {
 		"defaultRequire": 1

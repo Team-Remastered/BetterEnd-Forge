@@ -4,6 +4,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import ru.betterend.bclib.BCLib;
@@ -37,8 +38,9 @@ import ru.betterend.util.LootTableUtil;
 import ru.betterend.world.generator.GeneratorOptions;
 import ru.betterend.world.generator.TerrainGenerator;
 
+@Mod(BetterEndForge.MOD_ID)
 public class BetterEndForge {
-	public static final String MOD_ID = "betterend";
+	public static final String MOD_ID = "betterendforge";
 	public static final Logger LOGGER = new Logger(MOD_ID);
 	public static final String CONFIG_FILE = String.format("%s.toml", MOD_ID);
 	public static final boolean RUNS_FALL_FLYING_LIB = ModList.get().isLoaded("fallflyinglib");

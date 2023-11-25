@@ -26,7 +26,6 @@ import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.basis.EndTerrainBlock;
 import ru.betterend.blocks.basis.PedestalBlock;
 import ru.betterend.item.tool.EndHammerItem;
-import ru.betterend.mixin.common.fabric.AbstractBlockAccessor;
 import ru.betterend.mixin.common.fabric.AbstractBlockSettingsAccessor;
 import ru.betterend.world.biome.EndBiome;
 
@@ -50,8 +49,8 @@ public class EndTags {
 		addEndGround(EndBlocks.AMBER_ORE.get());
 		
 		EndBlocks.getModBlocks().forEach(block -> {
-			Properties properties = ((AbstractBlockAccessor) block).getSettings();
-			Material material = ((AbstractBlockSettingsAccessor) properties).getMaterial();
+		//	Properties properties = ((AbstractBlockAccessor) block).getSettings();
+			Material material = ((AbstractBlockSettingsAccessor) block).getMaterial();
 			final Item item = block.asItem();
 			
 			if (material.equals(Material.STONE) || material.equals(Material.METAL) || material.equals(Material.HEAVY_METAL)) {

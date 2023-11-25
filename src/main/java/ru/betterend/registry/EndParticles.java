@@ -1,5 +1,6 @@
 package ru.betterend.registry;
 
+import com.mojang.serialization.Codec;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.core.particles.ParticleOptions;
@@ -26,7 +27,7 @@ import ru.betterend.particle.ParticleTenaneaPetal;
 import ru.betterend.particle.PaticlePortalSphere;
 import ru.betterend.particle.SmaragdantParticle;
 
-@Mod.EventBusSubscriber(modid = BetterEndForge.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+
 public class EndParticles {
 	public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, BetterEndForge.MOD_ID);
 
@@ -47,21 +48,7 @@ public class EndParticles {
 	public static final RegistryObject<SimpleParticleType> FIREFLY = register("firefly");
 	public static final RegistryObject<SimpleParticleType> SMARAGDANT = register("smaragdant_particle");
 
-	@SubscribeEvent
-	public static void registerParticuleFactory(ParticleFactoryRegisterEvent event) {
-		particleEngine(GLOWING_SPHERE.get(), ParticleGlowingSphere.FactoryGlowingSphere::new);
-		particleEngine(PORTAL_SPHERE.get(), PaticlePortalSphere.FactoryPortalSphere::new);
-		particleEngine(INFUSION.get(), InfusionParticle.InfusionFactory::new);
-		particleEngine(SULPHUR_PARTICLE.get(), ParticleSulphur.FactorySulphur::new);
-		particleEngine(GEYSER_PARTICLE.get(), ParticleGeyser.FactoryGeyser::new);
-		particleEngine(SNOWFLAKE.get(), ParticleSnowflake.FactorySnowflake::new);
-		particleEngine(AMBER_SPHERE.get(), ParticleGlowingSphere.FactoryGlowingSphere::new);
-		particleEngine(BLACK_SPORE.get(), ParticleBlackSpore.FactoryBlackSpore::new);
-		particleEngine(TENANEA_PETAL.get(), ParticleTenaneaPetal.FactoryTenaneaPetal::new);
-		particleEngine(JUNGLE_SPORE.get(), ParticleJungleSpore.FactoryJungleSpore::new);
-		particleEngine(FIREFLY.get(), FireflyParticle.FireflyParticleFactory::new);
-		particleEngine(SMARAGDANT.get(), SmaragdantParticle.SmaragdantParticleFactory::new);
-	}
+
 
 	private static RegistryObject<SimpleParticleType> register(String name) {
 		return PARTICLE_TYPES.register(name, () -> new SimpleParticleType(false));
@@ -76,11 +63,28 @@ public class EndParticles {
 		return PARTICLE_TYPES.register(name, () -> type);
 	}
 
-	private static <T extends ParticleOptions> void particleEngine(ParticleType<T> particleType, ParticleEngine.SpriteParticleRegistration<T> particleRegistration) {
-		Minecraft.getInstance().particleEngine.register(particleType, particleRegistration);
+	/**
+	 * Creates a new particle type with a custom factory for packet/data serialization.
+	 *
+	 * @param factory	 A factory for serializing packet data and string command parameters into a particle effect.
+	 */
+	public static <T extends ParticleOptions> ParticleType<T> complex(ParticleOptions.Deserializer<T> factory) {
+		return complex(false, factory);
 	}
 
-	public static <T extends ParticleOptions> ParticleType<T> complex(ParticleOptions.Deserializer<T> factory) {
-		return complex(factory);
+	/**
+	 * Creates a new particle type with a custom factory for packet/data serialization.
+	 *
+	 * @param alwaysSpawn True to always spawn the particle regardless of distance.
+	 * @param factory	 A factory for serializing packet data and string command parameters into a particle effect.
+	 */
+	public static <T extends ParticleOptions> ParticleType<T> complex(boolean alwaysSpawn, ParticleOptions.Deserializer<T> factory) {
+		return new ParticleType<T>(alwaysSpawn, factory) {
+			@Override
+			public Codec<T> codec() {
+				//TODO fix me
+				return null;
+			}
+		};
 	}
 }
