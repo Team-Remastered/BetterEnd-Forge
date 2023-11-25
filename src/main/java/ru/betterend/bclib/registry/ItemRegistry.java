@@ -2,7 +2,6 @@ package ru.betterend.bclib.registry;
 
 import net.minecraft.core.BlockSource;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Registry;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.core.dispenser.ShearsDispenseItemBehavior;
 import net.minecraft.resources.ResourceLocation;
@@ -27,7 +26,6 @@ import ru.betterend.BetterEndForge;
 import ru.betterend.bclib.api.tag.NamedCommonItemTags;
 import ru.betterend.bclib.api.tag.NamedToolTags;
 import ru.betterend.bclib.api.tag.TagAPI;
-import ru.betterend.bclib.config.PathConfig;
 import ru.betterend.bclib.items.BaseDiscItem;
 import ru.betterend.bclib.items.BaseDrinkItem;
 import ru.betterend.bclib.items.BaseSpawnEggItem;
@@ -38,8 +36,8 @@ import ru.betterend.bclib.items.tool.BasePickaxeItem;
 import ru.betterend.bclib.items.tool.BaseShearsItem;
 
 public class ItemRegistry extends BaseRegistry<Item> {
-	public ItemRegistry(CreativeModeTab creativeTab, PathConfig config) {
-		super(creativeTab, config);
+	public ItemRegistry(CreativeModeTab creativeTab) {
+		super(creativeTab);
 	}
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BetterEndForge.MOD_ID);
@@ -49,10 +47,7 @@ public class ItemRegistry extends BaseRegistry<Item> {
 	}
 	public Item registerDisc(ResourceLocation itemId, int power, SoundEvent sound) {
 		BaseDiscItem item = new BaseDiscItem(power, sound, makeItemSettings().stacksTo(1));
-		
-		if (!config.getBoolean("musicDiscs", itemId.getPath(), true)) {
-			return item;
-		}
+
 		register(itemId, item);
 		return item;
 	}
@@ -63,9 +58,6 @@ public class ItemRegistry extends BaseRegistry<Item> {
 	
 	@Override
 	public Item register(ResourceLocation itemId, Item item) {
-		if (!config.getBoolean("items", itemId.getPath(), true)) {
-			return item;
-		}
 		
 		registerItem(itemId, item);
 		
@@ -73,9 +65,6 @@ public class ItemRegistry extends BaseRegistry<Item> {
 	}
 	
 	public Item registerTool(ResourceLocation itemId, Item item) {
-		if (!config.getBoolean("tools", itemId.getPath(), true)) {
-			return item;
-		}
 		
 		registerItem(itemId, item);
 		
@@ -104,10 +93,6 @@ public class ItemRegistry extends BaseRegistry<Item> {
 	
 	public Item registerEgg(ResourceLocation itemId, EntityType<? extends Mob> type, int background, int dots) {
 		SpawnEggItem item = new BaseSpawnEggItem(type, background, dots, makeItemSettings());
-		
-		if (!config.getBoolean("spawnEggs", itemId.getPath(), true)) {
-			return item;
-		}
 		
 		DefaultDispenseItemBehavior behavior = new DefaultDispenseItemBehavior() {
 			public ItemStack execute(BlockSource pointer, ItemStack stack) {
@@ -159,9 +144,7 @@ public class ItemRegistry extends BaseRegistry<Item> {
 	}
 	
 	public Item register(ResourceLocation itemId, Item item, String category) {
-		if (config.getBoolean(category, itemId.getPath(), true)) {
 			registerItem(itemId, item);
-		}
 		return item;
 	}
 }

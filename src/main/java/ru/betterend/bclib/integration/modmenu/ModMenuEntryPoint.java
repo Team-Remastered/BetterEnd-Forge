@@ -1,10 +1,10 @@
-package ru.betterend.bclib.integration.modmenu;
-
-import ru.betterend.bclib.gui.modmenu.MainScreen;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Function;
+//package ru.betterend.bclib.integration.modmenu;
+//
+//import ru.betterend.bclib.gui.modmenu.MainScreen;
+//
+//import java.util.HashMap;
+//import java.util.Map;
+//import java.util.function.Function;
 
 
 /**

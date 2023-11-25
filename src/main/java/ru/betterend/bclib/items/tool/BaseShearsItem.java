@@ -14,8 +14,8 @@ public class BaseShearsItem extends ShearsItem {
 	}
 
 	public static boolean isShear(ItemStack tool){
-		return tool.is(Items.SHEARS) | tool.is(CommonItemTags.SHEARS) || TagAPI.isToolWithMineableTag(tool, FabricMineableTags.SHEARS_MINEABLE);
-	}	//FIXME: create a shear tag because I don't think Forge has built-in one
+		return tool.is(Items.SHEARS) | tool.is(CommonItemTags.SHEARS);
+	}	//FIXME: Add a way to check if an item is an instance of a shear cause now only vanilla shears work
 
 	public static boolean isShear(ItemStack itemStack, Item item){
 		if (item == Items.SHEARS){

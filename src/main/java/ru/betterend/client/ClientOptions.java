@@ -7,11 +7,11 @@ public class ClientOptions {
 	private static boolean sulfurWaterColor;
 	
 	public static void init() {
-		customSky = Configs.CLENT_CONFIG.getBooleanRoot("customSky", true);
-		useFogDensity = Configs.CLENT_CONFIG.getBooleanRoot("useFogDensity", true);
-		blendBiomeMusic = Configs.CLENT_CONFIG.getBooleanRoot("blendBiomeMusic", true);
-		sulfurWaterColor = Configs.CLENT_CONFIG.getBooleanRoot("sulfurWaterColor", true);
-		Configs.CLENT_CONFIG.saveChanges();
+		customSky = true;
+		useFogDensity = true;
+		blendBiomeMusic = true;
+		sulfurWaterColor = true;
+		//FIXME: I just put the default values here, needs to be replaced with config options
 	}
 	
 	public static boolean isCustomSky() {

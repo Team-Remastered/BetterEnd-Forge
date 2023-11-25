@@ -131,7 +131,7 @@ public class AlloyingRecipe implements Recipe<Container>, UnknownReceipBookCateg
 			INSTANCE.output = null;
 			INSTANCE.experience = 0.0F;
 			INSTANCE.smeltTime = 350;
-			exist = Configs.RECIPE_CONFIG.getBoolean("alloying", id.getPath(), true);
+			exist = true;
 			
 			return INSTANCE;
 		}

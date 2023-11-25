@@ -33,7 +33,6 @@ public class ColoredMaterial {
 			EndBlocks.registerBlock(blockName, block);
 			if (craftEight) {
 				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block)
-						  .checkConfig(Configs.RECIPE_CONFIG)
 						  .setOutputCount(8)
 						  .setShape("###", "#D#", "###")
 						  .addMaterial('#', source)
@@ -42,7 +41,6 @@ public class ColoredMaterial {
 			}
 			else {
 				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block)
-						  .checkConfig(Configs.RECIPE_CONFIG)
 						  .setList("#D")
 						  .addMaterial('#', source)
 						  .addMaterial('D', dyes.get(color))

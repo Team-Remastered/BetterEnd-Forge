@@ -43,7 +43,7 @@ public class BiomeColorsMixin {
 	}
 	
 	static {
-		HAS_SODIUM = FabricLoader.getInstance().isModLoaded("sodium");
+		HAS_SODIUM = false; // FabricLoader.getInstance().isModLoaded("sodium");
 		
 		int index = 0;
 		OFFSETS = new Point[20];

@@ -331,7 +331,7 @@ public class EndFeatures {
 		
 		boolean hasCaves = bclbiome.getCustomData("has_caves", true) && !(bclbiome instanceof EndCaveBiome);
 		if (hasCaves && !BiomeAPI.END_VOID_BIOME_PICKER.containsImmutable(id)) {
-			if (Configs.BIOME_CONFIG.getBoolean(id, "hasCaves", true)) {
+			if (true) { //FIXME: CONFIG
 				BiomeAPI.addBiomeFeature(biome, ROUND_CAVE);
 				BiomeAPI.addBiomeFeature(biome, TUNEL_CAVE);
 			}

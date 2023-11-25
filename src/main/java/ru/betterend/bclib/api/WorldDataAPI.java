@@ -7,7 +7,6 @@ import net.minecraft.nbt.NbtIo;
 import net.minecraft.world.level.storage.LevelStorageSource.LevelStorageAccess;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.datafixer.DataFixerAPI;
-import ru.betterend.bclib.util.ModUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,41 +27,42 @@ public class WorldDataAPI {
 	private static final List<String> MODS = Lists.newArrayList();
 	private static File dataDir;
 	
-	public static void load(File dataDir) {
-		WorldDataAPI.dataDir = dataDir;
-		MODS.stream()
-			.parallel()
-			.forEach(modID -> {
-				File file = new File(dataDir, modID + ".nbt");
-				CompoundTag root = new CompoundTag();
-				if (file.exists()) {
-					try {
-						root = NbtIo.readCompressed(file);
-					}
-					catch (IOException e) {
-						BCLib.LOGGER.error("World data loading failed", e);
-					}
-					TAGS.put(modID, root);
-				}
-				else {
-					Optional<ModContainer> optional = FabricLoader.getInstance()
-																  .getModContainer(modID);
-					if (optional.isPresent()) {
-						ModContainer modContainer = optional.get();
-						if (BCLib.isDevEnvironment()) {
-							root.putString("version", "255.255.9999");
-						}
-						else {
-							root.putString("version", modContainer.getMetadata()
-																  .getVersion()
-																  .toString());
-						}
-						TAGS.put(modID, root);
-						saveFile(modID);
-					}
-				}
-			});
-	}
+//	public static void load(File dataDir) {
+//		WorldDataAPI.dataDir = dataDir;
+//		MODS.stream()
+//			.parallel()
+//			.forEach(modID -> {
+//				File file = new File(dataDir, modID + ".nbt");
+//				CompoundTag root = new CompoundTag();
+//				if (file.exists()) {
+//					try {
+//						root = NbtIo.readCompressed(file);
+//					}
+//					catch (IOException e) {
+//						BCLib.LOGGER.error("World data loading failed", e);
+//					}
+//					TAGS.put(modID, root);
+//				}
+//				else {
+//					Optional<ModContainer> optional = FabricLoader.getInstance()
+//																  .getModContainer(modID);
+//					if (optional.isPresent()) {
+//						ModContainer modContainer = optional.get();
+//						if (BCLib.isDevEnvironment()) {
+//							root.putString("version", "255.255.9999");
+//						}
+//						else {
+//							root.putString("version", modContainer.getMetadata()
+//																  .getVersion()
+//																  .toString());
+//						}
+//						TAGS.put(modID, root);
+//						saveFile(modID);
+//					}
+//				}
+//			});
+//	}
+	//FIXME: idk if this is worth fixing, the only place it is used is in DatafixerAPI#initializeWorldData
 	
 	/**
 	 * Register mod cache, world cache is located in world data folder.
@@ -135,13 +135,5 @@ public class WorldDataAPI {
 	public static String getModVersion(String modID) {
 		return getRootTag(modID).getString("version");
 	}
-	
-	/**
-	 * Get stored mod version as integer (only for mods with registered cache).
-	 *
-	 * @return {@code int} mod version.
-	 */
-	public static int getIntModVersion(String modID) {
-		return ModUtil.convertModVersion(getModVersion(modID));
-	}
+
 }

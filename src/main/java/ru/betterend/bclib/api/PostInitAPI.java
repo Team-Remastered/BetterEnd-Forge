@@ -19,7 +19,6 @@ import ru.betterend.bclib.blocks.BaseSignBlock;
 import ru.betterend.bclib.client.render.BCLRenderLayer;
 import ru.betterend.bclib.client.render.BaseChestBlockEntityRenderer;
 import ru.betterend.bclib.client.render.BaseSignBlockEntityRenderer;
-import ru.betterend.bclib.config.Configs;
 import ru.betterend.bclib.interfaces.PostInitable;
 import ru.betterend.bclib.interfaces.RenderLayerProvider;
 import ru.betterend.bclib.interfaces.TagProvider;
@@ -57,7 +56,7 @@ public class PostInitAPI {
 		Registry.BLOCK.forEach(block -> {
 			processBlockCommon(block);
 			if (isClient) {
-				processBlockClient(block);
+			//	processBlockClient(block); //FIXME: No idea what this does
 			}
 		});
 		
@@ -73,24 +72,23 @@ public class PostInitAPI {
 		blockTags = null;
 		itemTags = null;
 		BiomeAPI.loadFabricAPIBiomes();
-		Configs.BIOMES_CONFIG.saveChanges();
 	}
 	
-	@OnlyIn(Dist.CLIENT)
-	private static void processBlockClient(Block block) {
-		if (block instanceof RenderLayerProvider) {
-			BCLRenderLayer layer = ((RenderLayerProvider) block).getRenderLayer();
-			if (layer == BCLRenderLayer.CUTOUT) BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutout());
-			else if (layer == BCLRenderLayer.TRANSLUCENT) BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.translucent());
-		}
-		if (block instanceof BaseChestBlock) {
-			BaseChestBlockEntityRenderer.registerRenderLayer(block);
-		}
-		else if (block instanceof BaseSignBlock) {
-			BaseSignBlockEntityRenderer.registerRenderLayer(block);
-		}
-	}
-	
+//	@OnlyIn(Dist.CLIENT)
+//	private static void processBlockClient(Block block) {
+//		if (block instanceof RenderLayerProvider) {
+//			BCLRenderLayer layer = ((RenderLayerProvider) block).getRenderLayer();
+//			if (layer == BCLRenderLayer.CUTOUT) BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutout());
+//			else if (layer == BCLRenderLayer.TRANSLUCENT) BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.translucent());
+//		}
+//		if (block instanceof BaseChestBlock) {
+//			BaseChestBlockEntityRenderer.registerRenderLayer(block);
+//		}
+//		else if (block instanceof BaseSignBlock) {
+//			BaseSignBlockEntityRenderer.registerRenderLayer(block);
+//		}
+//	} //FIXME: No idea what this does 2
+
 	private static void processItemCommon(Item item) {
 		if (item instanceof TagProvider provider){
 			try {

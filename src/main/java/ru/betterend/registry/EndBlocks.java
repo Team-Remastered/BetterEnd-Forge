@@ -145,7 +145,7 @@ import ru.betterend.tab.CreativeTabs;
 import java.util.List;
 
 public class EndBlocks {
-	private static final BlockRegistry REGISTRY = new BlockRegistry(CreativeTabs.TAB_BLOCKS, Configs.BLOCK_CONFIG);
+	private static final BlockRegistry REGISTRY = new BlockRegistry(CreativeTabs.TAB_BLOCKS);
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BetterEndForge.MOD_ID);
 
 	// Terrain //
@@ -529,7 +529,7 @@ public class EndBlocks {
 	}
 
 	public static RegistryObject<Block> registerBlock(ResourceLocation id, Block block) {
-		if (Configs.BLOCK_CONFIG.getBooleanRoot(id.getPath(), true)) {
+		if (true) { //FIXME: CONFIG might remove completely
 			getBlockRegistry().register(id, block);
 		}
 		return BLOCKS.register(id.getPath(), () -> block);

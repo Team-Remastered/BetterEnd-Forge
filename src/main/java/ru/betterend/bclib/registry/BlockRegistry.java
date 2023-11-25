@@ -23,8 +23,8 @@ import ru.betterend.bclib.blocks.FeatureSaplingBlock;
 import ru.betterend.bclib.interfaces.CustomItemProvider;
 
 public class BlockRegistry extends BaseRegistry<Block> {
-	public BlockRegistry(CreativeModeTab creativeTab, PathConfig config) {
-		super(creativeTab, config);
+	public BlockRegistry(CreativeModeTab creativeTab) {
+		super(creativeTab);
 	}
 
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BetterEndForge.MOD_ID);
@@ -35,9 +35,6 @@ public class BlockRegistry extends BaseRegistry<Block> {
 
 	@Override
 	public Block register(ResourceLocation id, Block block) {
-		if (!config.getBooleanRoot(id.getNamespace(), true)) {
-			return block;
-		}
 		
 		BlockItem item = null;
 		if (block instanceof CustomItemProvider) {
@@ -81,9 +78,6 @@ public class BlockRegistry extends BaseRegistry<Block> {
 	}
 	
 	public Block registerBlockOnly(ResourceLocation id, Block block) {
-		if (!config.getBooleanRoot(id.getNamespace(), true)) {
-			return block;
-		}
 		getModBlocks(id.getNamespace()).add(block);
         BLOCKS.register(id.getPath(), () -> block);
 		return Registry.register(Registry.BLOCK, id, block);

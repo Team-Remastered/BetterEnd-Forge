@@ -26,6 +26,8 @@ import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.basis.EndTerrainBlock;
 import ru.betterend.blocks.basis.PedestalBlock;
 import ru.betterend.item.tool.EndHammerItem;
+import ru.betterend.mixin.common.fabric.AbstractBlockAccessor;
+import ru.betterend.mixin.common.fabric.AbstractBlockSettingsAccessor;
 import ru.betterend.world.biome.EndBiome;
 
 import java.util.List;

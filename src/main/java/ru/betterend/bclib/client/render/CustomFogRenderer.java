@@ -25,7 +25,7 @@ public class CustomFogRenderer {
 	private static float fogEnd = 192;
 	
 	public static boolean applyFogDensity(Camera camera, float viewDistance, boolean thickFog) {
-		if (!Configs.CLIENT_CONFIG.renderCustomFog()) {
+		if (false) { //FIXME: CONFIG
 			return false;
 		}
 		
@@ -85,9 +85,7 @@ public class CustomFogRenderer {
 		if (!thickFog) {
 			return false;
 		}
-		if (level.dimension() == Level.NETHER) {
-			return Configs.CLIENT_CONFIG.netherThickFog();
-		}
+
 		return true;
 	}
 	

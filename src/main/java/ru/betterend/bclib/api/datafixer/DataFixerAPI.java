@@ -168,7 +168,7 @@ public class DataFixerAPI {
 	 *
 	 */
 	public static void initializeWorldData(File levelBaseDir, boolean newWorld){
-		WorldDataAPI.load(new File(levelBaseDir, "data"));
+	//	WorldDataAPI.load(new File(levelBaseDir, "data")); //Literally useless
 		
 		if (newWorld){
 			getMigrationProfile().markApplied();
@@ -286,7 +286,7 @@ public class DataFixerAPI {
 	}
 	
 	private static MigrationProfile loadProfileIfNeeded(File levelBaseDir){
-		if (!Configs.MAIN_CONFIG.applyPatches()) {
+		if (false) { //FIXME: CONFIG
 			LOGGER.info("World Patches are disabled");
 			return null;
 		}
@@ -304,7 +304,7 @@ public class DataFixerAPI {
 	
 	@NotNull
 	private static MigrationProfile getMigrationProfile() {
-		final CompoundTag patchConfig = WorldDataAPI.getCompoundTag(BCLib.MOD_ID, Configs.MAIN_PATCH_CATEGORY);
+		final CompoundTag patchConfig = WorldDataAPI.getCompoundTag(BCLib.MOD_ID, "patches"); //FIXME: CONFIG
 		MigrationProfile profile = Patch.createMigrationData(patchConfig);
 		return profile;
 	}
@@ -529,7 +529,7 @@ public class DataFixerAPI {
 	static CompoundTag patchConfTag = null;
 	static CompoundTag getPatchData(){
 		if (patchConfTag==null) {
-			patchConfTag = WorldDataAPI.getCompoundTag(BCLib.MOD_ID, Configs.MAIN_PATCH_CATEGORY);
+			patchConfTag = WorldDataAPI.getCompoundTag(BCLib.MOD_ID, "patches"); ////FIXME: CONFIG
 		}
 		return patchConfTag;
 	}

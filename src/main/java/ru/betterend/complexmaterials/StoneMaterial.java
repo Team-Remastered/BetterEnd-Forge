@@ -72,56 +72,56 @@ public class StoneMaterial {
 		
 		// Recipes //
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks", bricks.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(4)
 				  .setShape("##", "##")
 				  .addMaterial('#', stone.get())
 				  .setGroup("end_bricks")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_polished", polished.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(4)
 				  .setShape("##", "##")
 				  .addMaterial('#', bricks.get())
 				  .setGroup("end_tile")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_tiles", tiles.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(4)
 				  .setShape("##", "##")
 				  .addMaterial('#', polished.get())
 				  .setGroup("end_small_tile")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pillar", pillar.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setShape("#", "#")
 				  .addMaterial('#', slab.get())
 				  .setGroup("end_pillar")
 				  .build();
 		
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_stairs", stairs.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(4)
 				  .setShape("#  ", "## ", "###")
 				  .addMaterial('#', stone.get())
 				  .setGroup("end_stone_stairs")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_slab", slab.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(6)
 				  .setShape("###")
 				  .addMaterial('#', stone.get())
 				  .setGroup("end_stone_slabs")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_stairs", brickStairs.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(4)
 				  .setShape("#  ", "## ", "###")
 				  .addMaterial('#', bricks.get())
 				  .setGroup("end_stone_stairs")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_slab", brickSlab.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(6)
 				  .setShape("###")
 				  .addMaterial('#', bricks.get())
@@ -129,14 +129,14 @@ public class StoneMaterial {
 				  .build();
 		
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_wall", wall.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(6)
 				  .setShape("###", "###")
 				  .addMaterial('#', stone.get())
 				  .setGroup("end_wall")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_wall", brickWall.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(6)
 				  .setShape("###", "###")
 				  .addMaterial('#', bricks.get())
@@ -144,32 +144,32 @@ public class StoneMaterial {
 				  .build();
 		
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_button", button.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setList("#")
 				  .addMaterial('#', stone.get())
 				  .setGroup("end_stone_buttons")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pressure_plate", pressurePlate.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setShape("##")
 				  .addMaterial('#', stone.get())
 				  .setGroup("end_stone_plates")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_lantern", lantern.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setShape("S", "#", "S")
 				  .addMaterial('#', EndItems.CRYSTAL_SHARDS.get())
 				  .addMaterial('S', slab.get(), brickSlab.get())
 				  .setGroup("end_stone_lanterns")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_furnace", furnace.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setShape("###", "# #", "###")
 				  .addMaterial('#', stone.get())
 				  .setGroup("end_stone_ITEM_FURNACES")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_flower_pot", flowerPot.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(3)
 				  .setShape("# #", " # ")
 				  .addMaterial('#', bricks.get())

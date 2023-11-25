@@ -8,6 +8,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.tag.NamedBlockTags;
 import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
@@ -168,56 +169,43 @@ public class WoodenComplexMaterial extends ComplexMaterial {
 		addBlockEntry(new BlockEntry(BLOCK_COMPOSTER, (complexMaterial, settings) -> new BaseComposterBlock(getBlock(BLOCK_PLANKS))));
 	}
 
-	//FIXME: Rework the flammable system
-	@Override
-	protected void initFlammable(FlammableBlockRegistry registry) {
-		getBlocks().forEach(block -> {
-			registry.add(block, 5, 20);
-		});
-
-		registry.add(getBlock(BLOCK_LOG), 5, 5);
-		registry.add(getBlock(BLOCK_BARK), 5, 5);
-		registry.add(getBlock(BLOCK_STRIPPED_LOG), 5, 5);
-		registry.add(getBlock(BLOCK_STRIPPED_BARK), 5, 5);
-	}
+	//FIXME: Some blocks need to be able to catch on fire, this was previously handled with a Fabric event called FlammableBlockRegistry
 
 	@Override
 	public void initDefaultRecipes() {
 		Block planks = getBlock(BLOCK_PLANKS);
-		addRecipeEntry(new RecipeEntry("planks", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("planks", (material, id) -> {
 			Block log_stripped = getBlock(BLOCK_STRIPPED_LOG);
 			Block bark_stripped = getBlock(BLOCK_STRIPPED_BARK);
 			Block log = getBlock(BLOCK_LOG);
 			Block bark = getBlock(BLOCK_BARK);
 			GridRecipe.make(id, planks)
-					  .checkConfig(config)
 					  .setOutputCount(4)
 					  .setList("#")
 					  .addMaterial('#', log, bark, log_stripped, bark_stripped)
 					  .setGroup(receipGroupPrefix + "_planks")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("stairs", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("stairs", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_STAIRS))
-					  .checkConfig(config)
 					  .setOutputCount(4)
 					  .setShape("#  ", "## ", "###")
 					  .addMaterial('#', planks)
 					  .setGroup(receipGroupPrefix + "_planks_stairs")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("slab", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("slab", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_SLAB))
-					  .checkConfig(config)
+
 					  .setOutputCount(6)
 					  .setShape("###")
 					  .addMaterial('#', planks)
 					  .setGroup(receipGroupPrefix + "_planks_slabs")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("fence", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("fence", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_FENCE))
-					  .checkConfig(config)
+
 					  .setOutputCount(3)
 					  .setShape("#I#", "#I#")
 					  .addMaterial('#', planks)
@@ -225,60 +213,60 @@ public class WoodenComplexMaterial extends ComplexMaterial {
 					  .setGroup(receipGroupPrefix + "_planks_fences")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("gate", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("gate", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_GATE))
-					  .checkConfig(config)
+
 					  .setShape("I#I", "I#I")
 					  .addMaterial('#', planks)
 					  .addMaterial('I', Items.STICK)
 					  .setGroup(receipGroupPrefix + "_planks_gates")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("button", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("button", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_BUTTON))
-					  .checkConfig(config)
+
 					  .setList("#")
 					  .addMaterial('#', planks)
 					  .setGroup(receipGroupPrefix + "_planks_buttons")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("pressure_plate", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("pressure_plate", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_PRESSURE_PLATE))
-					  .checkConfig(config)
+
 					  .setShape("##")
 					  .addMaterial('#', planks)
 					  .setGroup(receipGroupPrefix + "_planks_plates")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("trapdoor", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("trapdoor", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_TRAPDOOR))
-					  .checkConfig(config)
+
 					  .setOutputCount(2)
 					  .setShape("###", "###")
 					  .addMaterial('#', planks)
 					  .setGroup(receipGroupPrefix + "_trapdoors")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("door", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("door", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_DOOR))
-					  .checkConfig(config)
+
 					  .setOutputCount(3)
 					  .setShape("##", "##", "##")
 					  .addMaterial('#', planks)
 					  .setGroup(receipGroupPrefix + "_doors")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("crafting_table", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("crafting_table", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_CRAFTING_TABLE))
-					  .checkConfig(config)
+
 					  .setShape("##", "##")
 					  .addMaterial('#', planks)
 					  .setGroup(receipGroupPrefix + "_tables")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("ladder", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("ladder", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_LADDER))
-					  .checkConfig(config)
+
 					  .setOutputCount(3)
 					  .setShape("I I", "I#I", "I I")
 					  .addMaterial('#', planks)
@@ -286,9 +274,9 @@ public class WoodenComplexMaterial extends ComplexMaterial {
 					  .setGroup(receipGroupPrefix + "_ladders")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("sign", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("sign", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_SIGN))
-					  .checkConfig(config)
+
 					  .setOutputCount(3)
 					  .setShape("###", "###", " I ")
 					  .addMaterial('#', planks)
@@ -296,67 +284,67 @@ public class WoodenComplexMaterial extends ComplexMaterial {
 					  .setGroup(receipGroupPrefix + "_signs")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("chest", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("chest", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_CHEST))
-					  .checkConfig(config)
+
 					  .setShape("###", "# #", "###")
 					  .addMaterial('#', planks)
 					  .setGroup(receipGroupPrefix + "_chests")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("barrel", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("barrel", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_BARREL))
-					  .checkConfig(config)
+
 					  .setShape("#S#", "# #", "#S#")
 					  .addMaterial('#', planks)
 					  .addMaterial('S', getBlock(BLOCK_SLAB))
 					  .setGroup(receipGroupPrefix + "_barrels")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("bookshelf", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("bookshelf", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_BOOKSHELF))
-					  .checkConfig(config)
+
 					  .setShape("###", "PPP", "###")
 					  .addMaterial('#', planks)
 					  .addMaterial('P', Items.BOOK)
 					  .setGroup(receipGroupPrefix + "_bookshelves")
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("bark", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("bark", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_BARK))
-					  .checkConfig(config)
+
 					  .setShape("##", "##")
 					  .addMaterial('#', getBlock(BLOCK_LOG))
 					  .setOutputCount(3)
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("log", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("log", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_LOG))
-					  .checkConfig(config)
+
 					  .setShape("##", "##")
 					  .addMaterial('#', getBlock(BLOCK_BARK))
 					  .setOutputCount(3)
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("stripped_bark", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("stripped_bark", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_STRIPPED_BARK))
-					  .checkConfig(config)
+
 					  .setShape("##", "##")
 					  .addMaterial('#', getBlock(BLOCK_STRIPPED_LOG))
 					  .setOutputCount(3)
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("stripped_log", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("stripped_log", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_STRIPPED_LOG))
-					  .checkConfig(config)
+
 					  .setShape("##", "##")
 					  .addMaterial('#', getBlock(BLOCK_STRIPPED_BARK))
 					  .setOutputCount(3)
 					  .build();
 		}));
-		addRecipeEntry(new RecipeEntry("composter", (material, config, id) -> {
+		addRecipeEntry(new RecipeEntry("composter", (material, id) -> {
 			GridRecipe.make(id, getBlock(BLOCK_COMPOSTER))
-					  .checkConfig(config)
+
 					  .setShape("# #", "# #", "###")
 					  .addMaterial('#', getBlock(BLOCK_SLAB))
 					  .build();

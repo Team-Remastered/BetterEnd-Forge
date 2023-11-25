@@ -1,14 +1,11 @@
 package ru.betterend.integration;
 
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.fml.ModList;
 import ru.betterend.bclib.api.ModIntegrationAPI;
 import ru.betterend.bclib.integration.ModIntegration;
 import ru.betterend.bclib.recipes.GridRecipe;
 import ru.betterend.BetterEndForge;
-import ru.betterend.events.PlayerAdvancementsCallback;
 import ru.betterend.integration.byg.BYGIntegration;
 import ru.betterend.item.GuideBookItem;
 import ru.betterend.registry.EndItems;
@@ -24,15 +21,15 @@ public class Integrations {
 		if (hasGuideBook()) {
 			GuideBookItem.register();
 			
-			PlayerAdvancementsCallback.PLAYER_ADVANCEMENT_COMPLETE.register((player, advancement, criterionName) -> {
-				ResourceLocation advId = new ResourceLocation("minecraft:end/enter_end_gateway");
-				if (advId.equals(advancement.getId())) {
-					player.addItem(new ItemStack(GuideBookItem.GUIDE_BOOK));
-				}
-			});
+//			PlayerAdvancementsCallback.PLAYER_ADVANCEMENT_COMPLETE.register((player, advancement, criterionName) -> {
+//				ResourceLocation advId = new ResourceLocation("minecraft:end/enter_end_gateway");
+//				if (advId.equals(advancement.getId())) {
+//					player.addItem(new ItemStack(GuideBookItem.GUIDE_BOOK));
+//				}
+//			}); //FIXME: Needs to convert this to Forge
 			
 			GridRecipe.make(BetterEndForge.MOD_ID, "guide_book", GuideBookItem.GUIDE_BOOK)
-					  .checkConfig(Configs.RECIPE_CONFIG)
+
 					  .setShape("D", "B", "C")
 					  .addMaterial('D', EndItems.ENDER_DUST.get())
 					  .addMaterial('B', Items.BOOK)

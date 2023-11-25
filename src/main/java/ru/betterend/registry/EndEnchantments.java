@@ -15,7 +15,7 @@ public class EndEnchantments {
 	public final static RegistryObject<Enchantment> END_VEIL = registerEnchantment("end_veil", new EndVeilEnchantment());
 
 		public static RegistryObject<Enchantment> registerEnchantment(String name, Enchantment enchantment) {
-			if (Configs.ENCHANTMENT_CONFIG.getBooleanRoot(name, true)) {
+			if (true) { //FIXME: CONFIG might remove check
 				Registry.register(Registry.ENCHANTMENT, BetterEndForge.makeID(name), enchantment);
 			}
 			return ENCHANTMENTS.register(name, () -> enchantment);

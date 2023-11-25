@@ -44,7 +44,7 @@ import ru.betterend.tab.CreativeTabs;
 import java.util.List;
 
 public class EndItems {
-	private static final ItemRegistry REGISTRY = new ItemRegistry(CreativeTabs.TAB_ITEMS, Configs.ITEM_CONFIG);
+	private static final ItemRegistry REGISTRY = new ItemRegistry(CreativeTabs.TAB_ITEMS);
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BetterEndForge.MOD_ID);
 
 
@@ -173,9 +173,8 @@ public class EndItems {
 	}
 
 	public static <T extends TieredItem> RegistryObject<T> registerEndTool(String name, T item) {
-		if (Configs.ITEM_CONFIG.getBoolean("tools", name, true)) {
 		getItemRegistry().registerTool(BetterEndForge.makeID(name), item);
-		}
+
 		return ITEMS.register(name, () -> item);
 	}
 	

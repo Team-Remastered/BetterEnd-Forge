@@ -37,11 +37,6 @@ public class SmithingTableRecipe {
 	
 	private SmithingTableRecipe() {}
 	
-	public SmithingTableRecipe checkConfig(PathConfig config) {
-		exist &= config.getBoolean("smithing", id.getPath(), true);
-		return this;
-	}
-	
 	public SmithingTableRecipe setResult(ItemLike item) {
 		return this.setResult(item, 1);
 	}

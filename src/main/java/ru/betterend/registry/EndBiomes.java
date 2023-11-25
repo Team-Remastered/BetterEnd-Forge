@@ -38,7 +38,7 @@ import ru.betterend.world.biome.land.UmbraValleyBiome;
 import ru.betterend.world.biome.land.UmbrellaJungleBiome;
 import ru.betterend.world.generator.BiomeType;
 import ru.betterend.world.generator.GeneratorOptions;
-
+//FIXME: CONFIG
 public class EndBiomes {
 	public static final BiomePicker CAVE_BIOMES = new BiomePicker();
 	private static HexBiomeMap caveBiomeMap;
@@ -98,7 +98,7 @@ public class EndBiomes {
 	public static EndBiome registerSubBiome(EndBiome.Config biomeConfig, EndBiome parent) {
 		final EndBiome biome = EndBiome.create(biomeConfig);
 
-		if (Configs.BIOME_CONFIG.getBoolean(biome.getID(), "enabled", true)) {
+		if (true) {
 			BiomeAPI.registerSubBiome(parent, biome);
 		}
 		return biome;
@@ -113,7 +113,7 @@ public class EndBiomes {
 	 */
 	public static EndBiome registerBiome(EndBiome.Config biomeConfig, BiomeType type) {
 		final EndBiome biome = EndBiome.create(biomeConfig);
-		if (Configs.BIOME_CONFIG.getBoolean(biome.getID(), "enabled", true)) {
+		if (true) {
 			if (type == BiomeType.LAND) {
 				BiomeAPI.registerEndLandBiome(biome);
 			}
@@ -132,7 +132,7 @@ public class EndBiomes {
 	 */
 	public static EndBiome registerSubBiomeIntegration(EndBiome.Config biomeConfig) {
 		EndBiome biome = EndBiome.create(biomeConfig);
-		if (Configs.BIOME_CONFIG.getBoolean(biome.getID(), "enabled", true)) {
+		if (true) {
 			BiomeAPI.registerBiome(biome);
 		}
 		return biome;
@@ -145,7 +145,7 @@ public class EndBiomes {
 	 * @param parent - {@link ResourceLocation} parent id
 	 */
 	public static void addSubBiomeIntegration(EndBiome biome, ResourceLocation parent) {
-		if (Configs.BIOME_CONFIG.getBoolean(biome.getID(), "enabled", true)) {
+		if (true) {
 			BCLBiome parentBiome = BiomeAPI.getBiome(parent);
 			if (parentBiome != null && !parentBiome.containsSubBiome(biome)) {
 				parentBiome.addSubBiome(biome);
@@ -155,7 +155,7 @@ public class EndBiomes {
 	
 	public static EndCaveBiome registerCaveBiome(EndCaveBiome.Config biomeConfig) {
 		final EndCaveBiome biome = EndCaveBiome.create(biomeConfig);
-		if (Configs.BIOME_CONFIG.getBoolean(biome.getID(), "enabled", true)) {
+		if (true) {
 			BiomeAPI.registerBiome(biome);
 			CAVE_BIOMES.addBiome(biome);
 		}

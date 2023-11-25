@@ -1,7 +1,6 @@
 package ru.betterend.bclib.world.generator;
 
 import net.minecraft.util.Mth;
-import ru.betterend.bclib.config.Configs;
 
 import java.awt.*;
 import java.util.function.Function;
@@ -23,26 +22,16 @@ public class GeneratorOptions {
 	private static boolean fixNetherBiomeSource = true;
 	
 	public static void init() {
-		biomeSizeNether = Configs.GENERATOR_CONFIG.getInt("nether.biomeMap", "biomeSize", 256);
-		biomeVSizeNether = Configs.GENERATOR_CONFIG.getInt("nether.biomeMap", "biomeVerticalSize(onlyInTallNether)", 86);
-		biomeSizeEndLand = Configs.GENERATOR_CONFIG.getInt("end.biomeMap", "biomeSizeLand", 256);
-		biomeSizeEndVoid = Configs.GENERATOR_CONFIG.getInt("end.biomeMap", "biomeSizeVoid", 256);
-		customNetherBiomeSource = Configs.GENERATOR_CONFIG.getBoolean("options", "customNetherBiomeSource", true);
-		customEndBiomeSource = Configs.GENERATOR_CONFIG.getBoolean("options", "customEndBiomeSource", true);
-		addNetherBiomesByCategory = Configs.GENERATOR_CONFIG.getBoolean("options", "addNetherBiomesByCategory", false);
-		addEndBiomesByCategory = Configs.GENERATOR_CONFIG.getBoolean("options", "addEndBiomesByCategory", false);
-		useOldBiomeGenerator = Configs.GENERATOR_CONFIG.useOldGenerator();
-		verticalBiomes = Configs.GENERATOR_CONFIG.getBoolean("options", "verticalBiomesInTallNether", true);
-		fixEndBiomeSource = Configs.GENERATOR_CONFIG.getBoolean("options.biomeSource", "fixEndBiomeSource", true);
-		fixNetherBiomeSource = Configs.GENERATOR_CONFIG.getBoolean("options.biomeSource", "fixNetherBiomeSource", true);
-	}
-	
-	public static int getBiomeSizeNether() {
-		return Mth.clamp(biomeSizeNether, 1, 8192);
-	}
-	
-	public static int getVerticalBiomeSizeNether() {
-		return Mth.clamp(biomeVSizeNether, 1, 8192);
+
+		biomeSizeEndLand = 256;
+		biomeSizeEndVoid = 256;
+		customNetherBiomeSource = true;
+		customEndBiomeSource = true;
+		addEndBiomesByCategory = false;
+		useOldBiomeGenerator = false;
+		verticalBiomes = true;
+		fixEndBiomeSource = true;
+		//FIXME: I just put the default values here, needs to be replaced with config options
 	}
 	
 	public static int getBiomeSizeEndLand() {

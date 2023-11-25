@@ -25,6 +25,7 @@ import ru.betterend.bclib.world.generator.map.hex.HexBiomeMap;
 import ru.betterend.bclib.world.generator.map.square.SquareBiomeMap;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
@@ -46,7 +47,7 @@ public class BCLibEndBiomeSource extends BCLBiomeSource {
 		BiomeAPI.END_LAND_BIOME_PICKER.clearMutables();
 		BiomeAPI.END_VOID_BIOME_PICKER.clearMutables();
 		
-		List<String> includeVoid = Configs.BIOMES_CONFIG.getEntry("force_include", "end_void_biomes", StringArrayEntry.class).getValue();
+		List<String> includeVoid = new ArrayList<>(); //FIXME: I set empty list since I don't want to deal with this config rn
 		this.possibleBiomes().forEach(biome -> {
 			ResourceLocation key = biome.unwrapKey().orElseThrow().location();
 			String group = key.getNamespace() + "." + key.getPath();
@@ -105,8 +106,8 @@ public class BCLibEndBiomeSource extends BCLBiomeSource {
 	}
 	
 	private static List<Holder<Biome>> getBiomes(Registry<Biome> biomeRegistry) {
-		List<String> includeLand = Configs.BIOMES_CONFIG.getEntry("force_include", "end_land_biomes", StringArrayEntry.class).getValue();
-		List<String> includeVoid = Configs.BIOMES_CONFIG.getEntry("force_include", "end_void_biomes", StringArrayEntry.class).getValue();
+		List<String> includeLand = new ArrayList<>(); //FIXME: Empty list
+		List<String> includeVoid = new ArrayList<>(); //FIXME: Empty list
 		
 		return biomeRegistry.stream()
 				.filter(biome -> biomeRegistry.getResourceKey(biome).isPresent())

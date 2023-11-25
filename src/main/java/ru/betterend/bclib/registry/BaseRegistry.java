@@ -15,13 +15,11 @@ public abstract class BaseRegistry<T> {
 	private static final Map<String, List<Item>> MOD_BLOCK_ITEMS = Maps.newHashMap();
 	private static final Map<String, List<Block>> MOD_BLOCKS = Maps.newHashMap();
 	private static final Map<String, List<Item>> MOD_ITEMS = Maps.newHashMap();
-	
+
 	protected final CreativeModeTab creativeTab;
-	protected final PathConfig config;
-	
-	protected BaseRegistry(CreativeModeTab creativeTab, PathConfig config) {
+
+	protected BaseRegistry(CreativeModeTab creativeTab) {
 		this.creativeTab = creativeTab;
-		this.config = config;
 		REGISTRIES.add(this);
 	}
 	

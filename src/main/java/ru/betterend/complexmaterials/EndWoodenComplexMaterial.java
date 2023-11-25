@@ -17,7 +17,7 @@ public class EndWoodenComplexMaterial extends WoodenComplexMaterial {
 	}
 	
 	public EndWoodenComplexMaterial init() {
-		return (EndWoodenComplexMaterial) super.init(EndBlocks.getBlockRegistry(), EndItems.getItemRegistry(), Configs.RECIPE_CONFIG);
+		return (EndWoodenComplexMaterial) super.init(EndBlocks.getBlockRegistry(), EndItems.getItemRegistry());
 	}
 	
 	public boolean isTreeLog(Block block) {

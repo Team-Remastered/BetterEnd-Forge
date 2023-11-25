@@ -125,7 +125,7 @@ public class InfusionRecipe implements Recipe<InfusionRitual>, UnknownReceipBook
 			INSTANCE.input = null;
 			INSTANCE.output = null;
 			INSTANCE.time = 1;
-			exist = Configs.RECIPE_CONFIG.getBoolean("infusion", id.getPath(), true);
+			exist = true; //FIXME: Config
 			
 			Arrays.fill(INSTANCE.catalysts, Ingredient.EMPTY);
 			

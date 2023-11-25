@@ -163,21 +163,22 @@ public class BCLBiomeSettings {
 	 */
 	public void applyWithDefaults(BCLBiome biome){
 		final String group = biome.configGroup();
-		biome.genChance = Configs.BIOMES_CONFIG.getFloat(group, "generation_chance", this.genChance);
+		biome.genChance =this.genChance;
 		
 		if (edge!=null){
-			biome.edgeSize = Configs.BIOMES_CONFIG.getInt(group, "edge_size", this.edgeSize);
+			biome.edgeSize = this.edgeSize;
 			if (edgeSize>0) {
 				biome.setEdge(edge);
 			}
 		}
 		
 		if (!(this instanceof VanillaBiomeSettings)){
-			biome.fogDensity = Configs.BIOMES_CONFIG.getFloat(group, "fog_density", this.fogDensity);
-			biome.vertical = Configs.BIOMES_CONFIG.getBoolean(group, "vertical", this.vertical);
-			biome.terrainHeight = Configs.BIOMES_CONFIG.getFloat(group, "terrain_height", this.terrainHeight);
+			biome.fogDensity = this.fogDensity;
+			biome.vertical = this.vertical;
+			biome.terrainHeight = this.terrainHeight;
 		}
-		
-		Configs.BIOMES_CONFIG.saveChanges();
+
+		//FIXME: CONFIG
+
 	}
 }

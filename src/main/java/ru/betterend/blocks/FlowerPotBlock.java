@@ -154,7 +154,6 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 				processBlock(soils, block, "flower_pots.soils", reservedSoilIDs);
 			}
 		});
-		Configs.BLOCK_CONFIG.saveChanges();
 		
 		FlowerPotBlock.plants = new Block[maxNotNull(plants) + 1];
 		System.arraycopy(plants, 0, FlowerPotBlock.plants, 0, FlowerPotBlock.plants.length);
@@ -190,7 +189,6 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 				if (!idMap.values().contains(i)) {
 					target[i] = block;
 					idMap.put(location.getPath(), i);
-					Configs.BLOCK_CONFIG.getInt(path, location.getPath(), i);
 					break;
 				}
 			}

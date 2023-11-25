@@ -46,56 +46,56 @@ public class CrystalSubblocksMaterial {
 		
 		// Recipes //
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks", bricks.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(4)
 				  .setShape("##", "##")
 				  .addMaterial('#', source)
 				  .setGroup("end_bricks")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_polished", polished.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(4)
 				  .setShape("##", "##")
 				  .addMaterial('#', bricks.get())
 				  .setGroup("end_tile")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_tiles", tiles.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(4)
 				  .setShape("##", "##")
 				  .addMaterial('#', polished.get())
 				  .setGroup("end_small_tile")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pillar", pillar.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setShape("#", "#")
 				  .addMaterial('#', slab.get())
 				  .setGroup("end_pillar")
 				  .build();
 		
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_stairs", stairs.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(4)
 				  .setShape("#  ", "## ", "###")
 				  .addMaterial('#', source)
 				  .setGroup("end_stone_stairs")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_slab", slab.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(6)
 				  .setShape("###")
 				  .addMaterial('#', source)
 				  .setGroup("end_stone_slabs")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_stairs", brick_stairs.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(4)
 				  .setShape("#  ", "## ", "###")
 				  .addMaterial('#', bricks.get())
 				  .setGroup("end_stone_stairs")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_slab", brick_slab.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(6)
 				  .setShape("###")
 				  .addMaterial('#', bricks.get())
@@ -103,14 +103,14 @@ public class CrystalSubblocksMaterial {
 				  .build();
 		
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_wall", wall.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(6)
 				  .setShape("###", "###")
 				  .addMaterial('#', source)
 				  .setGroup("end_wall")
 				  .build();
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks_wall", brick_wall.get())
-				  .checkConfig(Configs.RECIPE_CONFIG)
+
 				  .setOutputCount(6)
 				  .setShape("###", "###")
 				  .addMaterial('#', bricks.get())

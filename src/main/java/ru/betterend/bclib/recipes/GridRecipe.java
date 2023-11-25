@@ -52,11 +52,6 @@ public class GridRecipe {
 		return INSTANCE;
 	}
 	
-	public GridRecipe checkConfig(PathConfig config) {
-		exist &= config.getBoolean("grid", id.getPath(), true);
-		return this;
-	}
-	
 	public GridRecipe setGroup(String group) {
 		this.group = group;
 		return this;

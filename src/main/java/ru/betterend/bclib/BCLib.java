@@ -11,7 +11,6 @@ import ru.betterend.bclib.registry.BaseBlockEntities;
 import ru.betterend.bclib.registry.BaseRegistry;
 import ru.betterend.bclib.util.Logger;
 import ru.betterend.bclib.world.generator.BCLibEndBiomeSource;
-import ru.betterend.bclib.world.generator.BCLibNetherBiomeSource;
 import ru.betterend.bclib.world.generator.GeneratorOptions;
 
 public class BCLib {
@@ -23,7 +22,6 @@ public class BCLib {
 		GeneratorOptions.init();
 		BaseBlockEntities.register();
 		BCLibEndBiomeSource.register();
-		BCLibNetherBiomeSource.register();
 		TagAPI.init();
 		CraftingRecipes.init();
 		WorldDataAPI.registerModCache(MOD_ID);

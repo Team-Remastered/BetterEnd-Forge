@@ -112,7 +112,7 @@ public class LootTableUtil {
 		return COMMON;
 	}
 
-	private static void addCommonItems(FabricLootSupplierBuilder table) {
+//	private static void addCommonItems(FabricLootSupplierBuilder table) {
 //		FabricLootPoolBuilder builder = FabricLootPoolBuilder.builder();
 //		builder.setRolls(UniformGenerator.between(0, 2));
 //		builder.withEntry(LootItem.lootTableItem(EndItems.MUSIC_DISC_STRANGE_AND_ALIEN.get()).build());
@@ -150,5 +150,5 @@ public class LootTableUtil {
 //		builder.withEntry(LootItem.lootTableItem(Items.END_CRYSTAL).build());
 //		builder.withEntry(LootItem.lootTableItem(Items.GHAST_TEAR).build());
 //		table.withPool(builder);
-	}
+//	}
 }

@@ -256,11 +256,6 @@ public class AnvilRecipe implements Recipe<Container>, UnknownReceipBookCategory
 			return this;
 		}
 
-		public Builder checkConfig(PathConfig config) {
-			exist &= config.getBoolean("anvil", id.getPath(), true);
-			return this;
-		}
-
 		public void build() {
 			if (!exist) {
 				return;

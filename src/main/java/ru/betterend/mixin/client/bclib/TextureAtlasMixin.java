@@ -99,4 +99,10 @@ public class TextureAtlasMixin {
 			}
 		}
 	}
+
+	public class FabricSprite extends TextureAtlasSprite {
+		public FabricSprite(TextureAtlas spriteAtlasTexture, TextureAtlasSprite.Info info, int mipmap, int u, int v, int x, int y, NativeImage nativeImage) {
+			super(spriteAtlasTexture, info, mipmap, u, v, x, y, nativeImage);
+		}
+	}
 }

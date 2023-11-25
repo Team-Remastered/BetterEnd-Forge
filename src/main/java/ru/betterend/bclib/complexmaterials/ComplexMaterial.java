@@ -12,7 +12,6 @@ import ru.betterend.bclib.api.tag.TagAPI;
 import ru.betterend.bclib.complexmaterials.entry.BlockEntry;
 import ru.betterend.bclib.complexmaterials.entry.ItemEntry;
 import ru.betterend.bclib.complexmaterials.entry.RecipeEntry;
-import ru.betterend.bclib.config.PathConfig;
 import ru.betterend.bclib.registry.BlockRegistry;
 import ru.betterend.bclib.registry.ItemRegistry;
 
@@ -50,10 +49,9 @@ public abstract class ComplexMaterial {
 	 * Initialize and registers all content inside material, return material itself.
 	 * @param blocksRegistry {@link BlockRegistry} instance to add blocks in;
 	 * @param itemsRegistry {@link ItemRegistry} instance to add items in;
-	 * @param recipeConfig {@link PathConfig} for recipes check.
 	 * @return {@link ComplexMaterial}.
 	 */
-	public ComplexMaterial init(BlockRegistry blocksRegistry, ItemRegistry itemsRegistry, PathConfig recipeConfig) {
+	public ComplexMaterial init(BlockRegistry blocksRegistry, ItemRegistry itemsRegistry) {
 		initTags();
 		
 		final BlockBehaviour.Properties blockSettings = getBlockSettings();
@@ -71,11 +69,7 @@ public abstract class ComplexMaterial {
 		});
 
 		initDefaultRecipes();
-		getRecipeEntries().forEach(entry -> {
-			entry.init(this, recipeConfig);
-		});
 
-		initFlammable(FlammableBlockRegistry.getDefaultInstance());
 		return this;
 
 	}
@@ -96,12 +90,6 @@ public abstract class ComplexMaterial {
 	 * Init default recipes for this {@link ComplexMaterial}, not required.
 	 */
 	protected void initDefaultRecipes() {}
-
-	//FIXME: We need to rework how flammable blocks work since FlammableBlockRegistry doesn't exist
-	/**
-	 * Allows to add blocks into Fabric {@link FlammableBlockRegistry} for this {@link ComplexMaterial}, not required.
-	 */
-	protected void initFlammable(FlammableBlockRegistry registry) {}
 	
 	/**
 	 * Adds custom block tag for this {@link ComplexMaterial}, tag can be created with {@link TagAPI} or you can use one of already created tags.

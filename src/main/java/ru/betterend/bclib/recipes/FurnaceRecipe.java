@@ -36,11 +36,6 @@ public class FurnaceRecipe {
 		return INSTANCE;
 	}
 	
-	public FurnaceRecipe checkConfig(PathConfig config) {
-		exist &= config.getBoolean("furnace", id.getPath(), true);
-		return this;
-	}
-	
 	public FurnaceRecipe setGroup(String group) {
 		this.group = group;
 		return this;

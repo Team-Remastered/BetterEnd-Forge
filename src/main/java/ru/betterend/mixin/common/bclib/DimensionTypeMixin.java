@@ -14,7 +14,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import ru.betterend.bclib.world.generator.BCLibEndBiomeSource;
-import ru.betterend.bclib.world.generator.BCLibNetherBiomeSource;
 
 import java.util.OptionalInt;
 
@@ -27,21 +26,6 @@ public class DimensionTypeMixin {
 	)
 	private static void bclib_updateDimensions(RegistryAccess registryAccess, long seed, boolean bl, CallbackInfoReturnable<Registry> info, WritableRegistry writableRegistry, Registry registry, Registry biomeRegistry, Registry structureRegistry, Registry noiseSettingsRegistry, Registry noiseParamRegistry) {
 		int id = writableRegistry.getId(writableRegistry.get(LevelStem.NETHER));
-		writableRegistry.registerOrOverride(
-				OptionalInt.of(id),
-				LevelStem.NETHER, 
-				new LevelStem(
-						registry.getOrCreateHolder(DimensionType.NETHER_LOCATION),
-						new NoiseBasedChunkGenerator(
-								structureRegistry,
-								noiseParamRegistry,
-								new BCLibNetherBiomeSource(biomeRegistry, seed),
-								seed,
-								noiseSettingsRegistry.getOrCreateHolder(NoiseGeneratorSettings.NETHER))
-				),
-				Lifecycle.stable()
-		);
-
 
 		id = writableRegistry.getId(writableRegistry.get(LevelStem.END));
 		writableRegistry.registerOrOverride(
