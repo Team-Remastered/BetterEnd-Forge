@@ -31,7 +31,7 @@ public class EndEntities {
 
 	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, BetterEndForge.MOD_ID);
 
-	public static void register(IEventBus eventBus) {
+	public static void initRegister(IEventBus eventBus) {
 		ENTITIES.register(eventBus);
 	}
 

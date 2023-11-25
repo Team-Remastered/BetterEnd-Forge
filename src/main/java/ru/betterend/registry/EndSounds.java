@@ -1,6 +1,5 @@
 package ru.betterend.registry;
 
-import net.minecraft.core.Registry;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -12,7 +11,7 @@ public class EndSounds {
 
 	public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, BetterEndForge.MOD_ID);
 
-	public static void register(IEventBus eventBus) {
+	public static void initRegister(IEventBus eventBus) {
 		SOUND_EVENTS.register(eventBus);
 	}
 
@@ -48,9 +47,7 @@ public class EndSounds {
 	public static final RegistryObject<SoundEvent> RECORD_GRASPING_AT_STARS = register("record", "grasping_at_stars");
 	public static final RegistryObject<SoundEvent> RECORD_ENDSEEKER = register("record", "endseeker");
 	public static final RegistryObject<SoundEvent> RECORD_EO_DRACONA = register("record", "eo_dracona");
-	
-	public static void register() {
-	}
+
 	
 //	private static SoundEvent register(String type, String id) {
 //		id = "betterend." + type + "." + id;

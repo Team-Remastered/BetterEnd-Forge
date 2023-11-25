@@ -1,37 +1,21 @@
 package ru.betterend.registry;
 
 import com.mojang.serialization.Codec;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import ru.betterend.BetterEndForge;
-import ru.betterend.particle.FireflyParticle;
-import ru.betterend.particle.InfusionParticle;
 import ru.betterend.particle.InfusionParticleType;
-import ru.betterend.particle.ParticleBlackSpore;
-import ru.betterend.particle.ParticleGeyser;
-import ru.betterend.particle.ParticleGlowingSphere;
-import ru.betterend.particle.ParticleJungleSpore;
-import ru.betterend.particle.ParticleSnowflake;
-import ru.betterend.particle.ParticleSulphur;
-import ru.betterend.particle.ParticleTenaneaPetal;
-import ru.betterend.particle.PaticlePortalSphere;
-import ru.betterend.particle.SmaragdantParticle;
 
 
 public class EndParticles {
 	public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, BetterEndForge.MOD_ID);
 
-	public static void register(IEventBus eventBus) {
+	public static void initRegister(IEventBus eventBus) {
 		PARTICLE_TYPES.register(eventBus);
 	}
 

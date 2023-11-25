@@ -81,8 +81,6 @@ public class EndStructures {
 		8
 	);
 	
-	public static void register() {}
-	
 	private static StructurePieceType register(String id, StructurePieceType pieceType) {
 		return Registry.register(Registry.STRUCTURE_PIECE, BetterEndForge.makeID(id), pieceType);
 	}

@@ -63,7 +63,7 @@ public class EndItems {
 	public final static RegistryObject<Item> HYDRALUX_PETAL = registerEndItem("hydralux_petal");
 	public final static RegistryObject<Item> GELATINE = registerEndItem("gelatine");
 	public static final RegistryObject<Item> ETERNAL_CRYSTAL = registerEndItem("eternal_crystal", new EternalCrystalItem());
-	public final static RegistryObject<Item> ENCHANTED_PETAL = registerEndItem("enchanted_petal", new EnchantedItem(HYDRALUX_PETAL.get()));
+	public final static RegistryObject<Item> ENCHANTED_PETAL = registerEndItem("enchanted_petal", new EnchantedItem(HYDRALUX_PETAL));
 	public final static RegistryObject<Item> LEATHER_STRIPE = registerEndItem("leather_stripe");
 	public final static RegistryObject<Item> LEATHER_WRAPPED_STICK = registerEndItem("leather_wrapped_stick");
 	public final static RegistryObject<Item> SILK_FIBER = registerEndItem("silk_fiber");
@@ -71,7 +71,7 @@ public class EndItems {
 	public final static RegistryObject<Item> SILK_MOTH_MATRIX = registerEndItem("silk_moth_matrix");
 	public final static RegistryObject<Item> ENCHANTED_MEMBRANE = registerEndItem(
 		"enchanted_membrane",
-		new EnchantedItem(Items.PHANTOM_MEMBRANE)
+		new EnchantedItem( ()-> Items.PHANTOM_MEMBRANE)
 	);
 	
 	// Music Discs
@@ -136,8 +136,8 @@ public class EndItems {
 	public final static RegistryObject<Item> SHADOW_BERRY_COOKED = registerEndFood("shadow_berry_cooked", 6, 0.7F);
 	public final static RegistryObject<Item> END_FISH_RAW = registerEndFood("end_fish_raw", Foods.SALMON);
 	public final static RegistryObject<Item> END_FISH_COOKED = registerEndFood("end_fish_cooked", Foods.COOKED_SALMON);
-	public final static RegistryObject<Item> BUCKET_END_FISH = registerEndItem("bucket_end_fish", new EndBucketItem(EndEntities.END_FISH.get()));
-	public final static RegistryObject<Item> BUCKET_CUBOZOA = registerEndItem("bucket_cubozoa", new EndBucketItem(EndEntities.CUBOZOA.get()));
+	public final static RegistryObject<Item> BUCKET_END_FISH = registerEndItem("bucket_end_fish", new EndBucketItem(EndEntities.END_FISH));
+	public final static RegistryObject<Item> BUCKET_CUBOZOA = registerEndItem("bucket_cubozoa", new EndBucketItem(EndEntities.CUBOZOA));
 	public final static RegistryObject<Item> SWEET_BERRY_JELLY = registerEndFood("sweet_berry_jelly", 8, 0.7F);
 	public final static RegistryObject<Item> SHADOW_BERRY_JELLY = registerEndFood("shadow_berry_jelly", 6, 0.8F, new MobEffectInstance(MobEffects.NIGHT_VISION, 400));
 	public final static RegistryObject<Item> BLOSSOM_BERRY_JELLY = registerEndFood("blossom_berry_jelly", 8, 0.7F);

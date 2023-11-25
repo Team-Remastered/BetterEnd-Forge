@@ -393,6 +393,5 @@ public class EndFeatures {
 		
 		return builder;
 	}
-	
-	public static void register() {}
+
 }

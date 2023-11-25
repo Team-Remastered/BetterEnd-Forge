@@ -2,6 +2,7 @@ package ru.betterend.registry;
 
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -12,6 +13,10 @@ public class EndEnchantments {
 
 	public static final DeferredRegister<Enchantment> ENCHANTMENTS = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, BetterEndForge.MOD_ID);
 
+	public static void initRegister(IEventBus eventBus) {
+		ENCHANTMENTS.register(eventBus);
+	}
+
 	public final static RegistryObject<Enchantment> END_VEIL = registerEnchantment("end_veil", new EndVeilEnchantment());
 
 		public static RegistryObject<Enchantment> registerEnchantment(String name, Enchantment enchantment) {
@@ -20,6 +25,5 @@ public class EndEnchantments {
 			}
 			return ENCHANTMENTS.register(name, () -> enchantment);
 		}
-	
-	public static void register() {}
+
 }
