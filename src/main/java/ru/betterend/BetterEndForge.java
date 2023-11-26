@@ -48,7 +48,7 @@ public class BetterEndForge {
 	public static final String CONFIG_FILE = String.format("%s.toml", MOD_ID);
 	public static final boolean RUNS_FALL_FLYING_LIB = ModList.get().isLoaded("fallflyinglib");
 
-	public void BetterEndForge() {
+	public BetterEndForge() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		BlockRegistry.initRegister(modEventBus);
