@@ -13,6 +13,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.Tiers;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -47,6 +48,9 @@ public class EndItems {
 	private static final ItemRegistry REGISTRY = new ItemRegistry(CreativeTabs.TAB_ITEMS);
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BetterEndForge.MOD_ID);
 
+	public static void initRegister(IEventBus eventBus) {
+		ITEMS.register(eventBus);
+	}
 
 	// Materials //
 	public final static RegistryObject<Item> ENDER_DUST = registerEndItem("ender_dust");
@@ -63,16 +67,14 @@ public class EndItems {
 	public final static RegistryObject<Item> HYDRALUX_PETAL = registerEndItem("hydralux_petal");
 	public final static RegistryObject<Item> GELATINE = registerEndItem("gelatine");
 	public static final RegistryObject<Item> ETERNAL_CRYSTAL = registerEndItem("eternal_crystal", new EternalCrystalItem());
-	public final static RegistryObject<Item> ENCHANTED_PETAL = registerEndItem("enchanted_petal", new EnchantedItem(HYDRALUX_PETAL));
+	public final static RegistryObject<Item> ENCHANTED_PETAL = registerEndItem("enchanted_petal", new EnchantedItem(HYDRALUX_PETAL.get()));
 	public final static RegistryObject<Item> LEATHER_STRIPE = registerEndItem("leather_stripe");
 	public final static RegistryObject<Item> LEATHER_WRAPPED_STICK = registerEndItem("leather_wrapped_stick");
 	public final static RegistryObject<Item> SILK_FIBER = registerEndItem("silk_fiber");
 	public final static RegistryObject<Item> LUMECORN_ROD = registerEndItem("lumecorn_rod");
 	public final static RegistryObject<Item> SILK_MOTH_MATRIX = registerEndItem("silk_moth_matrix");
 	public final static RegistryObject<Item> ENCHANTED_MEMBRANE = registerEndItem(
-		"enchanted_membrane",
-		new EnchantedItem( ()-> Items.PHANTOM_MEMBRANE)
-	);
+		"enchanted_membrane", new EnchantedItem(Items.PHANTOM_MEMBRANE));
 	
 	// Music Discs
 	public final static RegistryObject<Item> MUSIC_DISC_STRANGE_AND_ALIEN = registerEndDisc(

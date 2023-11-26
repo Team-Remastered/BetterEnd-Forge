@@ -12,8 +12,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.WorldDataAPI;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
-import ru.betterend.bclib.registry.BlockRegistry;
-import ru.betterend.bclib.registry.ItemRegistry;
 import ru.betterend.bclib.util.Logger;
 import ru.betterend.client.BetterEndClient;
 import ru.betterend.config.EndConfig;
@@ -28,9 +26,11 @@ import ru.betterend.recipe.SmithingRecipes;
 import ru.betterend.registry.EndAttributes;
 import ru.betterend.registry.EndBiomes;
 import ru.betterend.registry.EndBlockEntities;
+import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndEnchantments;
 import ru.betterend.registry.EndEntities;
 import ru.betterend.registry.EndFeatures;
+import ru.betterend.registry.EndItems;
 import ru.betterend.registry.EndParticles;
 import ru.betterend.registry.EndPortals;
 import ru.betterend.registry.EndSounds;
@@ -51,9 +51,9 @@ public class BetterEndForge {
 	public BetterEndForge() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-		BlockRegistry.initRegister(modEventBus);
+		EndBlocks.initRegister(modEventBus);
+		EndItems.initRegister(modEventBus);
 		EndBlockEntities.initRegister(modEventBus);
-		ItemRegistry.initRegister(modEventBus);
 		EndAttributes.initregister(modEventBus);
 		EndSounds.initRegister(modEventBus);
 		EndParticles.initRegister(modEventBus);

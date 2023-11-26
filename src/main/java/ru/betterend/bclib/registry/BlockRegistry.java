@@ -21,16 +21,12 @@ import ru.betterend.bclib.blocks.BaseLeavesBlock;
 import ru.betterend.bclib.blocks.BaseOreBlock;
 import ru.betterend.bclib.blocks.FeatureSaplingBlock;
 import ru.betterend.bclib.interfaces.CustomItemProvider;
+import ru.betterend.registry.EndBlocks;
+import ru.betterend.registry.EndItems;
 
 public class BlockRegistry extends BaseRegistry<Block> {
 	public BlockRegistry(CreativeModeTab creativeTab) {
 		super(creativeTab);
-	}
-
-	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BetterEndForge.MOD_ID);
-
-	public static void initRegister(IEventBus modEventBus) {
-		BLOCKS.register(modEventBus);
 	}
 
 	@Override
@@ -72,14 +68,14 @@ public class BlockRegistry extends BaseRegistry<Block> {
 		}
 
 		Block finalBlock = block;
-		BLOCKS.register(id.getPath(), () -> finalBlock);
+		EndBlocks.BLOCKS.register(id.getPath(), () -> finalBlock);
 
 		return block;
 	}
 	
 	public Block registerBlockOnly(ResourceLocation id, Block block) {
 		getModBlocks(id.getNamespace()).add(block);
-        BLOCKS.register(id.getPath(), () -> block);
+        EndBlocks.BLOCKS.register(id.getPath(), () -> block);
 		return Registry.register(Registry.BLOCK, id, block);
 	}
 	
@@ -91,7 +87,7 @@ public class BlockRegistry extends BaseRegistry<Block> {
 	@Override
 	public void registerItem(ResourceLocation id, Item item) {
 		if (item != null && item != Items.AIR) {
-			ItemRegistry.ITEMS.register(id.getPath(), () -> item);
+			EndItems.ITEMS.register(id.getPath(), () -> item);
 			getModBlockItems(id.getNamespace()).add(item);
 		}
 	}

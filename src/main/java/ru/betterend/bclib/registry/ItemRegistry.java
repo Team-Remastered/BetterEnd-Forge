@@ -39,12 +39,6 @@ public class ItemRegistry extends BaseRegistry<Item> {
 	public ItemRegistry(CreativeModeTab creativeTab) {
 		super(creativeTab);
 	}
-
-	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BetterEndForge.MOD_ID);
-
-	public static void initRegister(IEventBus modEventBus) {
-		ITEMS.register(modEventBus);
-	}
 	public Item registerDisc(ResourceLocation itemId, int power, SoundEvent sound) {
 		BaseDiscItem item = new BaseDiscItem(power, sound, makeItemSettings().stacksTo(1));
 

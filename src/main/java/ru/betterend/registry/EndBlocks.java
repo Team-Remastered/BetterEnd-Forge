@@ -5,6 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -147,6 +148,10 @@ import java.util.List;
 public class EndBlocks {
 	private static final BlockRegistry REGISTRY = new BlockRegistry(CreativeTabs.TAB_BLOCKS);
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BetterEndForge.MOD_ID);
+
+	public static void initRegister(IEventBus eventBus) {
+		BLOCKS.register(eventBus);
+	}
 
 	// Terrain //
 	public static final RegistryObject<Block> ENDSTONE_DUST = registerBlock("endstone_dust", new EndstoneDustBlock());
