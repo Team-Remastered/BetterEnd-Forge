@@ -398,7 +398,7 @@ public class EndBlocks {
 	public static final RegistryObject<Block> HYDRALUX_SAPLING = registerBlock("hydralux_sapling",  () -> new HydraluxSaplingBlock());
 	public static final RegistryObject<Block> HYDRALUX = registerEndBlockOnly("hydralux",  () -> new HydraluxBlock());
 	public static final RegistryObject<Block> HYDRALUX_PETAL_BLOCK = registerBlock("hydralux_petal_block",  () -> new HydraluxPetalBlock());
-	public static final ColoredMaterial HYDRALUX_PETAL_BLOCK_COLORED = new ColoredMaterial(HydraluxPetalColoredBlock::new, HYDRALUX_PETAL_BLOCK.get(), true);
+	public static final ColoredMaterial HYDRALUX_PETAL_BLOCK_COLORED = new ColoredMaterial(HYDRALUX_PETAL_BLOCK, "hydralux_petal_block", true);
 	
 	public static final RegistryObject<Block> POND_ANEMONE = registerBlock("pond_anemone",  () -> new PondAnemoneBlock());
 	
@@ -481,10 +481,7 @@ public class EndBlocks {
 	public static final RegistryObject<Block> BLACKSTONE_LANTERN = registerBlock("blackstone_lantern", () -> new StoneLanternBlock(Blocks.BLACKSTONE));
 	
 	public static final RegistryObject<Block> IRON_BULB_LANTERN = registerBlock("iron_bulb_lantern",  () -> new BulbVineLanternBlock());
-	public static final ColoredMaterial IRON_BULB_LANTERN_COLORED = new ColoredMaterial(
-		BulbVineLanternColoredBlock::new,
-		IRON_BULB_LANTERN.get(),
-		false
+	public static final ColoredMaterial IRON_BULB_LANTERN_COLORED = new ColoredMaterial(IRON_BULB_LANTERN, "iron_bulb_lantern",false
 	);
 	
 	public static final RegistryObject<Block> IRON_CHANDELIER = EndBlocks.registerBlock("iron_chandelier", () -> new ChandelierBlock(Blocks.GOLD_BLOCK));

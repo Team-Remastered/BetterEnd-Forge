@@ -23,34 +23,34 @@ public class ColoredMaterial {
 	private static final Map<Integer, String> COLORS = Maps.newHashMap();
 	private final Map<Integer, Block> colors = Maps.newHashMap();
 	
-	public ColoredMaterial(Function<BlockBehaviour.Properties, Block> constructor, Block source, boolean craftEight) {
-		this(constructor, source, COLORS, DYES, craftEight);
+	public ColoredMaterial(final Supplier<? extends Block> source, String sourceId, boolean craftEight) {
+		this(source, sourceId, COLORS, DYES, craftEight);
 	}
 	
-	public ColoredMaterial(Function<BlockBehaviour.Properties, Block> constructor, Block source, Map<Integer, String> colors, Map<Integer, ItemLike> dyes, boolean craftEight) {
-		String id = Registry.BLOCK.getKey(source).getPath();
+	public ColoredMaterial( final Supplier<? extends Block> source, String sourceId, Map<Integer, String> colors, Map<Integer, ItemLike> dyes, boolean craftEight) {
+		String id = sourceId;
 		colors.forEach((color, name) -> {
 			String blockName = id + "_" + name;
-			final Supplier<? extends Block> block = () -> constructor.apply(BlockBehaviour.Properties.copy(source).color(MaterialColor.COLOR_BLACK));
+			final Supplier<? extends Block> block = source; //TODO: Find a way to add to the source block properties
 			EndBlocks.registerBlock(blockName, block);
-			if (craftEight) {
-				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block.get())
-						  .setOutputCount(8)
-						  .setShape("###", "#D#", "###")
-						  .addMaterial('#', source)
-						  .addMaterial('D', dyes.get(color))
-						  .build();
-			}
-			else {
-				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block.get())
-						  .setList("#D")
-						  .addMaterial('#', source)
-						  .addMaterial('D', dyes.get(color))
-						  .build();
-			}
-			this.colors.put(color, block.get());
-			BlocksHelper.addBlockColor(block.get(), color);
-		});
+//			if (craftEight) {
+//				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block.get())
+//						  .setOutputCount(8)
+//						  .setShape("###", "#D#", "###")
+//						  .addMaterial('#', source)
+//						  .addMaterial('D', dyes.get(color))
+//						  .build();
+//			}
+//			else {
+//				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block.get())
+//						  .setList("#D")
+//						  .addMaterial('#', source)
+//						  .addMaterial('D', dyes.get(color))
+//						  .build();
+//			}
+//			this.colors.put(color, block.get());
+//			BlocksHelper.addBlockColor(block.get(), color);
+		}); //TODO: Fix the crafting recipes
 	}
 	
 	public Block getByColor(DyeColor color) {

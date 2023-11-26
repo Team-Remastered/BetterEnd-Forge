@@ -169,7 +169,7 @@ public class MetalMaterial {
 
 		chandelier = EndBlocks.registerBlock(name + "_chandelier",  () -> new ChandelierBlock(block.get()));
 		bulb_lantern = EndBlocks.registerBlock(name + "_bulb_lantern",  () -> new BulbVineLanternBlock(lanternProperties));
-		bulb_lantern_colored = new ColoredMaterial(BulbVineLanternColoredBlock::new, bulb_lantern.get(), false);
+		bulb_lantern_colored = new ColoredMaterial(bulb_lantern, name + "_bulb_lantern", false);
 
 		nugget = EndItems.registerEndItem(name + "_nugget", new ModelProviderItem(itemSettings));
 		ingot = EndItems.registerEndItem(name + "_ingot", new ModelProviderItem(itemSettings));
