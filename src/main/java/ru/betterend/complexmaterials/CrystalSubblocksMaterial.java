@@ -32,17 +32,17 @@ public class CrystalSubblocksMaterial {
 	
 	public CrystalSubblocksMaterial(String name, Block source) {
 		BlockBehaviour.Properties material = BlockBehaviour.Properties.copy(source);
-		polished = EndBlocks.registerBlock(name + "_polished", new LitBaseBlock(material));
-		tiles = EndBlocks.registerBlock(name + "_tiles", new LitBaseBlock(material));
-		pillar = EndBlocks.registerBlock(name + "_pillar", new LitPillarBlock(material));
-		stairs = EndBlocks.registerBlock(name + "_stairs", new BaseStairsBlock(source));
-		slab = EndBlocks.registerBlock(name + "_slab", new BaseSlabBlock(source));
-		wall = EndBlocks.registerBlock(name + "_wall", new BaseWallBlock(source));
-		pedestal = EndBlocks.registerBlock(name + "_pedestal", new EndPedestal(source));
-		bricks = EndBlocks.registerBlock(name + "_bricks", new LitBaseBlock(material));
-		brick_stairs = EndBlocks.registerBlock(name + "_bricks_stairs", new BaseStairsBlock(bricks.get()));
-		brick_slab = EndBlocks.registerBlock(name + "_bricks_slab", new BaseSlabBlock(bricks.get()));
-		brick_wall = EndBlocks.registerBlock(name + "_bricks_wall", new BaseWallBlock(bricks.get()));
+		polished = EndBlocks.registerBlock(name + "_polished", () -> new LitBaseBlock(material));
+		tiles = EndBlocks.registerBlock(name + "_tiles", () -> new LitBaseBlock(material));
+		pillar = EndBlocks.registerBlock(name + "_pillar", () -> new LitPillarBlock(material));
+		stairs = EndBlocks.registerBlock(name + "_stairs", () -> new BaseStairsBlock(source));
+		slab = EndBlocks.registerBlock(name + "_slab", () -> new BaseSlabBlock(source));
+		wall = EndBlocks.registerBlock(name + "_wall", () -> new BaseWallBlock(source));
+		pedestal = EndBlocks.registerBlock(name + "_pedestal", () -> new EndPedestal(source));
+		bricks = EndBlocks.registerBlock(name + "_bricks", () -> new LitBaseBlock(material));
+		brick_stairs = EndBlocks.registerBlock(name + "_bricks_stairs", () -> new BaseStairsBlock(bricks.get()));
+		brick_slab = EndBlocks.registerBlock(name + "_bricks_slab", () -> new BaseSlabBlock(bricks.get()));
+		brick_wall = EndBlocks.registerBlock(name + "_bricks_wall", () -> new BaseWallBlock(bricks.get()));
 		
 		// Recipes //
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks", bricks.get())

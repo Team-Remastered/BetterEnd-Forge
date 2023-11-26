@@ -8,6 +8,7 @@ import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.registries.RegistryObject;
 import ru.betterend.bclib.recipes.GridRecipe;
 import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.BetterEndForge;
@@ -15,6 +16,7 @@ import ru.betterend.registry.EndBlocks;
 
 import java.util.Map;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class ColoredMaterial {
 	private static final Map<Integer, ItemLike> DYES = Maps.newHashMap();
@@ -29,10 +31,10 @@ public class ColoredMaterial {
 		String id = Registry.BLOCK.getKey(source).getPath();
 		colors.forEach((color, name) -> {
 			String blockName = id + "_" + name;
-			Block block = constructor.apply(BlockBehaviour.Properties.copy(source).color(MaterialColor.COLOR_BLACK));
+			final Supplier<? extends Block> block = () -> constructor.apply(BlockBehaviour.Properties.copy(source).color(MaterialColor.COLOR_BLACK));
 			EndBlocks.registerBlock(blockName, block);
 			if (craftEight) {
-				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block)
+				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block.get())
 						  .setOutputCount(8)
 						  .setShape("###", "#D#", "###")
 						  .addMaterial('#', source)
@@ -40,14 +42,14 @@ public class ColoredMaterial {
 						  .build();
 			}
 			else {
-				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block)
+				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block.get())
 						  .setList("#D")
 						  .addMaterial('#', source)
 						  .addMaterial('D', dyes.get(color))
 						  .build();
 			}
-			this.colors.put(color, block);
-			BlocksHelper.addBlockColor(block, color);
+			this.colors.put(color, block.get());
+			BlocksHelper.addBlockColor(block.get(), color);
 		});
 	}
 	

@@ -151,24 +151,24 @@ public class MetalMaterial {
 		final int level = material.getLevel();
 
 		rawOre = hasOre ? EndItems.registerEndItem(name + "_raw", new ModelProviderItem(itemSettings)) : null;
-		ore = hasOre ? EndBlocks.registerBlock(name + "_ore", new BaseOreBlock(()->rawOre.get(), 1, 3, 1)) : null;
+		ore = hasOre ? EndBlocks.registerBlock(name + "_ore",  () -> new BaseOreBlock(()->rawOre.get(), 1, 3, 1)) : null;
 		alloyingOre = hasOre ? TagAPI.makeItemTag(BetterEndForge.MOD_ID, name + "_alloying") : null;
 		if (hasOre) {
 			TagAPI.addItemTag(alloyingOre, ore.get(), rawOre.get());
 		}
 
-		block = EndBlocks.registerBlock(name + "_block", new BaseBlock(settings));
-		tile = EndBlocks.registerBlock(name + "_tile", new BaseBlock(settings));
-		stairs = EndBlocks.registerBlock(name + "_stairs", new BaseStairsBlock(tile.get()));
-		slab = EndBlocks.registerBlock(name + "_slab", new BaseSlabBlock(tile.get()));
-		door = EndBlocks.registerBlock(name + "_door", new BaseDoorBlock(block.get()));
-		trapdoor = EndBlocks.registerBlock(name + "_trapdoor", new BaseTrapdoorBlock(block.get()));
-		bars = EndBlocks.registerBlock(name + "_bars", new BaseMetalBarsBlock(block.get()));
-		chain = EndBlocks.registerBlock(name + "_chain", new BaseChainBlock(block.get().defaultMaterialColor()));
-		pressurePlate = EndBlocks.registerBlock(name + "_plate", new WoodenPressurePlateBlock(block.get()));
+		block = EndBlocks.registerBlock(name + "_block",  () -> new BaseBlock(settings));
+		tile = EndBlocks.registerBlock(name + "_tile",  () -> new BaseBlock(settings));
+		stairs = EndBlocks.registerBlock(name + "_stairs",  () -> new BaseStairsBlock(tile.get()));
+		slab = EndBlocks.registerBlock(name + "_slab",  () -> new BaseSlabBlock(tile.get()));
+		door = EndBlocks.registerBlock(name + "_door",  () -> new BaseDoorBlock(block.get()));
+		trapdoor = EndBlocks.registerBlock(name + "_trapdoor",  () -> new BaseTrapdoorBlock(block.get()));
+		bars = EndBlocks.registerBlock(name + "_bars",  () -> new BaseMetalBarsBlock(block.get()));
+		chain = EndBlocks.registerBlock(name + "_chain",  () -> new BaseChainBlock(block.get().defaultMaterialColor()));
+		pressurePlate = EndBlocks.registerBlock(name + "_plate",  () -> new WoodenPressurePlateBlock(block.get()));
 
-		chandelier = EndBlocks.registerBlock(name + "_chandelier", new ChandelierBlock(block.get()));
-		bulb_lantern = EndBlocks.registerBlock(name + "_bulb_lantern", new BulbVineLanternBlock(lanternProperties));
+		chandelier = EndBlocks.registerBlock(name + "_chandelier",  () -> new ChandelierBlock(block.get()));
+		bulb_lantern = EndBlocks.registerBlock(name + "_bulb_lantern",  () -> new BulbVineLanternBlock(lanternProperties));
 		bulb_lantern_colored = new ColoredMaterial(BulbVineLanternColoredBlock::new, bulb_lantern.get(), false);
 
 		nugget = EndItems.registerEndItem(name + "_nugget", new ModelProviderItem(itemSettings));
@@ -205,7 +205,7 @@ public class MetalMaterial {
 
 		anvilBlock = EndBlocks.registerBlock(
 				name + "_anvil",
-				new EndAnvilBlock(this, block.get().defaultMaterialColor(), level)
+				 () -> new EndAnvilBlock(this, block.get().defaultMaterialColor(), level)
 		);
 
 		if (hasOre) {

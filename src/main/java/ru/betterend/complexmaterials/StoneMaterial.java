@@ -51,24 +51,24 @@ public class StoneMaterial {
 	public StoneMaterial(String name, MaterialColor color) {
 		BlockBehaviour.Properties material = BlockBehaviour.Properties.copy(Blocks.END_STONE).color(color);
 		
-		stone = EndBlocks.registerBlock(name, new BaseBlock(material));
-		polished = EndBlocks.registerBlock(name + "_polished", new BaseBlock(material));
-		tiles = EndBlocks.registerBlock(name + "_tiles", new BaseBlock(material));
-		pillar = EndBlocks.registerBlock(name + "_pillar", new BaseRotatedPillarBlock(material));
-		stairs = EndBlocks.registerBlock(name + "_stairs", new BaseStairsBlock(stone.get()));
-		slab = EndBlocks.registerBlock(name + "_slab", new BaseSlabBlock(stone.get()));
-		wall = EndBlocks.registerBlock(name + "_wall", new BaseWallBlock(stone.get()));
-		button = EndBlocks.registerBlock(name + "_button", new BaseStoneButtonBlock(stone.get()));
-		pressurePlate = EndBlocks.registerBlock(name + "_plate", new StonePressurePlateBlock(stone.get()));
-		pedestal = EndBlocks.registerBlock(name + "_pedestal", new EndPedestal(stone.get()));
-		lantern = EndBlocks.registerBlock(name + "_lantern", new StoneLanternBlock(stone.get()));
+		stone = EndBlocks.registerBlock(name,  () -> new BaseBlock(material));
+		polished = EndBlocks.registerBlock(name + "_polished",  () -> new BaseBlock(material));
+		tiles = EndBlocks.registerBlock(name + "_tiles",  () -> new BaseBlock(material));
+		pillar = EndBlocks.registerBlock(name + "_pillar",  () -> new BaseRotatedPillarBlock(material));
+		stairs = EndBlocks.registerBlock(name + "_stairs",  () -> new BaseStairsBlock(stone.get()));
+		slab = EndBlocks.registerBlock(name + "_slab",  () -> new BaseSlabBlock(stone.get()));
+		wall = EndBlocks.registerBlock(name + "_wall",  () -> new BaseWallBlock(stone.get()));
+		button = EndBlocks.registerBlock(name + "_button",  () -> new BaseStoneButtonBlock(stone.get()));
+		pressurePlate = EndBlocks.registerBlock(name + "_plate",  () -> new StonePressurePlateBlock(stone.get()));
+		pedestal = EndBlocks.registerBlock(name + "_pedestal",  () -> new EndPedestal(stone.get()));
+		lantern = EndBlocks.registerBlock(name + "_lantern",  () -> new StoneLanternBlock(stone.get()));
 		
-		bricks = EndBlocks.registerBlock(name + "_bricks", new BaseBlock(material));
-		brickStairs = EndBlocks.registerBlock(name + "_bricks_stairs", new BaseStairsBlock(bricks.get()));
-		brickSlab = EndBlocks.registerBlock(name + "_bricks_slab", new BaseSlabBlock(bricks.get()));
-		brickWall = EndBlocks.registerBlock(name + "_bricks_wall", new BaseWallBlock(bricks.get()));
-		furnace = EndBlocks.registerBlock(name + "_furnace", new BaseFurnaceBlock(bricks.get()));
-		flowerPot = EndBlocks.registerBlock(name + "_flower_pot", new FlowerPotBlock(bricks.get()));
+		bricks = EndBlocks.registerBlock(name + "_bricks",  () -> new BaseBlock(material));
+		brickStairs = EndBlocks.registerBlock(name + "_bricks_stairs",  () -> new BaseStairsBlock(bricks.get()));
+		brickSlab = EndBlocks.registerBlock(name + "_bricks_slab",  () -> new BaseSlabBlock(bricks.get()));
+		brickWall = EndBlocks.registerBlock(name + "_bricks_wall",  () -> new BaseWallBlock(bricks.get()));
+		furnace = EndBlocks.registerBlock(name + "_furnace",  () -> new BaseFurnaceBlock(bricks.get()));
+		flowerPot = EndBlocks.registerBlock(name + "_flower_pot",  () -> new FlowerPotBlock(bricks.get()));
 		
 		// Recipes //
 		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks", bricks.get())
