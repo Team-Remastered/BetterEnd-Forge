@@ -461,13 +461,9 @@ public class EndBlocks {
 	public static final RegistryObject<Block> ENDER_BLOCK = registerBlock("ender_block",  () -> new EnderBlock());
 	public static final RegistryObject<Block> AURORA_CRYSTAL = registerBlock("aurora_crystal",  () -> new AuroraCrystalBlock());
 	public static final RegistryObject<Block> AMBER_BLOCK = registerBlock("amber_block",  () -> new AmberBlock());
-	public static final RegistryObject<Block> SMARAGDANT_CRYSTAL_SHARD = registerBlock("smaragdant_crystal_shard", () -> new SmaragdantCrystalShardBlock()
-	);
+	public static final RegistryObject<Block> SMARAGDANT_CRYSTAL_SHARD = registerBlock("smaragdant_crystal_shard", () -> new SmaragdantCrystalShardBlock());
 	public static final RegistryObject<Block> SMARAGDANT_CRYSTAL = registerBlock("smaragdant_crystal",  () -> new SmaragdantCrystalBlock());
-	public static final CrystalSubblocksMaterial SMARAGDANT_SUBBLOCKS = new CrystalSubblocksMaterial(
-		"smaragdant_crystal",
-		SMARAGDANT_CRYSTAL.get()
-	);
+	public static final CrystalSubblocksMaterial SMARAGDANT_SUBBLOCKS = new CrystalSubblocksMaterial("smaragdant_crystal", SMARAGDANT_CRYSTAL);
 	
 	public static final RegistryObject<Block> RESPAWN_OBELISK = registerBlock("respawn_obelisk",  () -> new RespawnObeliskBlock());
 	
