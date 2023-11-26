@@ -16,6 +16,8 @@ import ru.betterend.blocks.entities.EternalPedestalEntity;
 import ru.betterend.blocks.entities.InfusionPedestalEntity;
 import ru.betterend.blocks.entities.PedestalBlockEntity;
 
+import java.util.function.Supplier;
+
 public class EndBlockEntities {
 
 	public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, BetterEndForge.MOD_ID);
@@ -24,23 +26,25 @@ public class EndBlockEntities {
 		BLOCK_ENTITIES.register(modEventBus);
 	}
 
-	public static final RegistryObject<BlockEntityType<EndStoneSmelterBlockEntity>> END_STONE_SMELTER = registerBlockEntity(
-			EndStoneSmelter.ID, EndStoneSmelterBlockEntity::new, EndBlocks.END_STONE_SMELTER.get());
-	public final static RegistryObject<BlockEntityType<PedestalBlockEntity>> PEDESTAL = registerBlockEntity(
-		"pedestal", PedestalBlockEntity::new, getPedestals()); //No idea if this works
-	public final static RegistryObject<BlockEntityType<EternalPedestalEntity>> ETERNAL_PEDESTAL = registerBlockEntity(
-		"eternal_pedestal", EternalPedestalEntity::new, EndBlocks.ETERNAL_PEDESTAL.get());
-	public final static RegistryObject<BlockEntityType<InfusionPedestalEntity>> INFUSION_PEDESTAL = registerBlockEntity(
-		"infusion_pedestal", InfusionPedestalEntity::new, EndBlocks.INFUSION_PEDESTAL.get());
-	public final static RegistryObject<BlockEntityType<BlockEntityHydrothermalVent>> HYDROTHERMAL_VENT = registerBlockEntity(
-		"hydrother_malvent", BlockEntityHydrothermalVent::new, EndBlocks.HYDROTHERMAL_VENT.get());
-	
-	public static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> registerBlockEntity(String id,  BlockEntityType.BlockEntitySupplier<T> pFactory, Block... blocks) {
-		return BLOCK_ENTITIES.register(id, () -> BlockEntityType.Builder.of(pFactory, blocks).build(null));
-		
-		//return Registry.register(Registry.BLOCK_ENTITY_TYPE, BetterEnd.makeID(id), builder.build(null));
-	}
-	
+	public static final RegistryObject<BlockEntityType<EndStoneSmelterBlockEntity>> END_STONE_SMELTER =
+			BLOCK_ENTITIES.register(EndStoneSmelter.ID, () -> BlockEntityType.Builder.of(EndStoneSmelterBlockEntity::new, EndBlocks.END_STONE_SMELTER.get()).build(null));
+
+	public final static RegistryObject<BlockEntityType<PedestalBlockEntity>> PEDESTAL =
+			BLOCK_ENTITIES.register("pedestal", () -> BlockEntityType.Builder.of(PedestalBlockEntity::new, getPedestals()).build(null));
+
+
+	public final static RegistryObject<BlockEntityType<EternalPedestalEntity>> ETERNAL_PEDESTAL =
+			BLOCK_ENTITIES.register("eternal_pedestal", () -> BlockEntityType.Builder.of(EternalPedestalEntity::new, EndBlocks.ETERNAL_PEDESTAL.get()).build(null));
+
+
+	public final static RegistryObject<BlockEntityType<InfusionPedestalEntity>> INFUSION_PEDESTAL =
+			BLOCK_ENTITIES.register("infusion_pedestal", () -> BlockEntityType.Builder.of(InfusionPedestalEntity::new, EndBlocks.INFUSION_PEDESTAL.get()).build(null));
+
+
+	public final static RegistryObject<BlockEntityType<BlockEntityHydrothermalVent>> HYDROTHERMAL_VENT =
+			BLOCK_ENTITIES.register("hydrother_malvent", () -> BlockEntityType.Builder.of(BlockEntityHydrothermalVent::new, EndBlocks.HYDROTHERMAL_VENT.get()).build(null));
+
+
 	static Block[] getPedestals() {
 		return EndBlocks.getModBlocks()
 						.stream()
