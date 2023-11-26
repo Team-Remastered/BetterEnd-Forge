@@ -9,6 +9,8 @@ import net.minecraftforge.registries.RegistryObject;
 import ru.betterend.BetterEndForge;
 import ru.betterend.effects.enchantment.EndVeilEnchantment;
 
+import java.util.function.Supplier;
+
 public class EndEnchantments {
 
 	public static final DeferredRegister<Enchantment> ENCHANTMENTS = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, BetterEndForge.MOD_ID);
@@ -17,13 +19,11 @@ public class EndEnchantments {
 		ENCHANTMENTS.register(eventBus);
 	}
 
-	public final static RegistryObject<Enchantment> END_VEIL = registerEnchantment("end_veil", new EndVeilEnchantment());
+	public final static RegistryObject<Enchantment> END_VEIL = registerEnchantment("end_veil", EndVeilEnchantment::new);
 
-		public static RegistryObject<Enchantment> registerEnchantment(String name, Enchantment enchantment) {
-			if (true) { //FIXME: CONFIG might remove check
-				Registry.register(Registry.ENCHANTMENT, BetterEndForge.makeID(name), enchantment);
-			}
-			return ENCHANTMENTS.register(name, () -> enchantment);
+		public static RegistryObject<Enchantment> registerEnchantment(String name, final Supplier<? extends Enchantment> enchantment) {
+
+			return ENCHANTMENTS.register(name, enchantment);
 		}
 
 }
