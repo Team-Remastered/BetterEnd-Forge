@@ -371,13 +371,13 @@ public class CraftingRecipes {
 				  .addMaterial('#', EndBlocks.FILALUX.get())
 				  .build();
 		
-		GridRecipe.make(BetterEndForge.MOD_ID, "silk_moth_hive", EndBlocks.SILK_MOTH_HIVE.get())
-
-				  .setShape("#L#", "LML", "#L#")
-				  .addMaterial('#', EndBlocks.TENANEA.getBlock("planks"))
-				  .addMaterial('L', EndBlocks.TENANEA_LEAVES.get())
-				  .addMaterial('M', EndItems.SILK_MOTH_MATRIX.get())
-				  .build();
+//		GridRecipe.make(BetterEndForge.MOD_ID, "silk_moth_hive", EndBlocks.SILK_MOTH_HIVE.get())
+//
+//				  .setShape("#L#", "LML", "#L#")
+//				  .addMaterial('#', EndBlocks.TENANEA.getBlock("planks"))
+//				  .addMaterial('L', EndBlocks.TENANEA_LEAVES.get())
+//				  .addMaterial('M', EndItems.SILK_MOTH_MATRIX.get())
+//				  .build(); //FIXME: Change TENANEA.getBlock("planks") when we will create the planks inside WoodMaterial
 		
 		GridRecipe.make(BetterEndForge.MOD_ID, "cave_pumpkin_pie", EndItems.CAVE_PUMPKIN_PIE.get())
 

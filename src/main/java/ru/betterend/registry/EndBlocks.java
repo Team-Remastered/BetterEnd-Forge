@@ -136,9 +136,9 @@ import ru.betterend.blocks.basis.PottableLeavesBlock;
 import ru.betterend.blocks.basis.StoneLanternBlock;
 import ru.betterend.complexmaterials.ColoredMaterial;
 import ru.betterend.complexmaterials.CrystalSubblocksMaterial;
-import ru.betterend.complexmaterials.EndWoodenComplexMaterial;
 import ru.betterend.complexmaterials.MetalMaterial;
 import ru.betterend.complexmaterials.StoneMaterial;
+import ru.betterend.complexmaterials.WoodMaterial;
 import ru.betterend.item.material.EndArmorMaterial;
 import ru.betterend.item.material.EndToolMaterial;
 import ru.betterend.tab.CreativeTabs;
@@ -229,89 +229,89 @@ public class EndBlocks {
 	public static final RegistryObject<Block> MOSSY_GLOWSHROOM_CAP = registerBlock("mossy_glowshroom_cap",  () -> new MossyGlowshroomCapBlock());
 	public static final RegistryObject<Block> MOSSY_GLOWSHROOM_HYMENOPHORE = registerBlock("mossy_glowshroom_hymenophore",  () -> new GlowingHymenophoreBlock());
 	public static final RegistryObject<Block> MOSSY_GLOWSHROOM_FUR = registerBlock("mossy_glowshroom_fur",  () -> new FurBlock(MOSSY_GLOWSHROOM_SAPLING.get(), 15, 16, true));
-	public static final EndWoodenComplexMaterial MOSSY_GLOWSHROOM = new EndWoodenComplexMaterial(
+	public static final WoodMaterial MOSSY_GLOWSHROOM = new WoodMaterial(
 		"mossy_glowshroom",
 		MaterialColor.COLOR_GRAY,
 		MaterialColor.WOOD
-	).init();
+	);
 	
 	public static final RegistryObject<Block> PYTHADENDRON_SAPLING = registerBlock("pythadendron_sapling",  () -> new PythadendronSaplingBlock());
 	public static final RegistryObject<Block> PYTHADENDRON_LEAVES = registerBlock("pythadendron_leaves",  () -> new PottableLeavesBlock(PYTHADENDRON_SAPLING.get(), MaterialColor.COLOR_MAGENTA));
-	public static final EndWoodenComplexMaterial PYTHADENDRON = new EndWoodenComplexMaterial(
+	public static final WoodMaterial PYTHADENDRON = new WoodMaterial(
 		"pythadendron",
 		MaterialColor.COLOR_MAGENTA,
 		MaterialColor.COLOR_PURPLE
-	).init();
+	);
 	
 	public static final RegistryObject<Block> END_LOTUS_SEED = registerBlock("end_lotus_seed",  () -> new EndLotusSeedBlock());
 	public static final RegistryObject<Block> END_LOTUS_STEM = registerBlock("end_lotus_stem",  () -> new EndLotusStemBlock());
 	public static final RegistryObject<Block> END_LOTUS_LEAF = registerEndBlockOnly("end_lotus_leaf",  () -> new EndLotusLeafBlock());
 	public static final RegistryObject<Block> END_LOTUS_FLOWER = registerEndBlockOnly("end_lotus_flower",  () -> new EndLotusFlowerBlock());
-	public static final EndWoodenComplexMaterial END_LOTUS = new EndWoodenComplexMaterial(
+	public static final WoodMaterial END_LOTUS = new WoodMaterial(
 		"end_lotus",
 		MaterialColor.COLOR_LIGHT_BLUE,
 		MaterialColor.COLOR_CYAN
-	).init();
+	);
 	
 	public static final RegistryObject<Block> LACUGROVE_SAPLING = registerBlock("lacugrove_sapling",  () -> new LacugroveSaplingBlock());
 	public static final RegistryObject<Block> LACUGROVE_LEAVES = registerBlock("lacugrove_leaves",  () -> new PottableLeavesBlock(LACUGROVE_SAPLING.get(), MaterialColor.COLOR_CYAN));
-	public static final EndWoodenComplexMaterial LACUGROVE = new EndWoodenComplexMaterial(
+	public static final WoodMaterial LACUGROVE = new WoodMaterial(
 		"lacugrove",
 		MaterialColor.COLOR_BROWN,
 		MaterialColor.COLOR_YELLOW
-	).init();
+	);
 	
 	public static final RegistryObject<Block> DRAGON_TREE_SAPLING = registerBlock("dragon_tree_sapling",  () -> new DragonTreeSaplingBlock());
 	public static final RegistryObject<Block> DRAGON_TREE_LEAVES = registerBlock("dragon_tree_leaves",  () -> new PottableLeavesBlock(DRAGON_TREE_SAPLING.get(), MaterialColor.COLOR_MAGENTA));
-	public static final EndWoodenComplexMaterial DRAGON_TREE = new EndWoodenComplexMaterial(
+	public static final WoodMaterial DRAGON_TREE = new WoodMaterial(
 		"dragon_tree",
 		MaterialColor.COLOR_BLACK,
 		MaterialColor.COLOR_MAGENTA
-	).init();
+	);
 	
 	public static final RegistryObject<Block> TENANEA_SAPLING = registerBlock("tenanea_sapling",  () -> new TenaneaSaplingBlock());
 	public static final RegistryObject<Block> TENANEA_LEAVES = registerBlock("tenanea_leaves",  () -> new PottableLeavesBlock(TENANEA_SAPLING.get(), MaterialColor.COLOR_PINK));
 	public static final RegistryObject<Block> TENANEA_FLOWERS = registerBlock("tenanea_flowers",  () -> new TenaneaFlowersBlock());
 	public static final RegistryObject<Block> TENANEA_OUTER_LEAVES = registerBlock("tenanea_outer_leaves",  () -> new FurBlock(TENANEA_SAPLING.get(), 32));
-	public static final EndWoodenComplexMaterial TENANEA = new EndWoodenComplexMaterial(
+	public static final WoodMaterial TENANEA = new WoodMaterial(
 		"tenanea",
 		MaterialColor.COLOR_BROWN,
 		MaterialColor.COLOR_PINK
-	).init();
+	);
 	
 	public static final RegistryObject<Block> HELIX_TREE_SAPLING = registerBlock("helix_tree_sapling",  () -> new HelixTreeSaplingBlock());
 	public static final RegistryObject<Block> HELIX_TREE_LEAVES = registerBlock("helix_tree_leaves",  () -> new HelixTreeLeavesBlock());
-	public static final EndWoodenComplexMaterial HELIX_TREE = new EndWoodenComplexMaterial(
+	public static final WoodMaterial HELIX_TREE = new WoodMaterial(
 		"helix_tree",
 		MaterialColor.COLOR_GRAY,
 		MaterialColor.COLOR_ORANGE
-	).init();
+	);
 	
 	public static final RegistryObject<Block> UMBRELLA_TREE_SAPLING = registerBlock("umbrella_tree_sapling",  () -> new UmbrellaTreeSaplingBlock());
 	public static final RegistryObject<Block> UMBRELLA_TREE_MEMBRANE = registerBlock("umbrella_tree_membrane",  () -> new UmbrellaTreeMembraneBlock());
 	public static final RegistryObject<Block> UMBRELLA_TREE_CLUSTER = registerBlock("umbrella_tree_cluster",  () -> new UmbrellaTreeClusterBlock());
 	public static final RegistryObject<Block> UMBRELLA_TREE_CLUSTER_EMPTY = registerBlock("umbrella_tree_cluster_empty",  () -> new UmbrellaTreeClusterEmptyBlock());
-	public static final EndWoodenComplexMaterial UMBRELLA_TREE = new EndWoodenComplexMaterial(
+	public static final WoodMaterial UMBRELLA_TREE = new WoodMaterial(
 		"umbrella_tree",
 		MaterialColor.COLOR_BLUE,
 		MaterialColor.COLOR_GREEN
-	).init();
+	);
 	
 	public static final RegistryObject<Block> JELLYSHROOM_CAP_PURPLE = registerBlock("jellyshroom_cap_purple",  () -> new JellyshroomCapBlock(217, 142, 255, 164, 0, 255));
-	public static final EndWoodenComplexMaterial JELLYSHROOM = new EndWoodenComplexMaterial(
+	public static final WoodMaterial JELLYSHROOM = new WoodMaterial(
 		"jellyshroom",
 		MaterialColor.COLOR_PURPLE,
 		MaterialColor.COLOR_LIGHT_BLUE
-	).init();
+	);
 	
 	public static final RegistryObject<Block> LUCERNIA_SAPLING = registerBlock("lucernia_sapling",  () -> new LucerniaSaplingBlock());
 	public static final RegistryObject<Block> LUCERNIA_LEAVES = registerBlock("lucernia_leaves",  () -> new PottableLeavesBlock(LUCERNIA_SAPLING.get(), MaterialColor.COLOR_ORANGE));
 	public static final RegistryObject<Block> LUCERNIA_OUTER_LEAVES = registerBlock("lucernia_outer_leaves",  () -> new FurBlock(LUCERNIA_SAPLING.get(), 32));
-	public static final EndWoodenComplexMaterial LUCERNIA = new EndWoodenComplexMaterial(
+	public static final WoodMaterial LUCERNIA = new WoodMaterial(
 		"lucernia",
 		MaterialColor.COLOR_ORANGE,
 		MaterialColor.COLOR_ORANGE
-	).init();
+	);
 	
 	// Small Plants //
 	public static final RegistryObject<Block> UMBRELLA_MOSS = registerBlock("umbrella_moss",  () -> new UmbrellaMossBlock());
