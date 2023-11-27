@@ -1,8 +1,8 @@
 {
 	"parent": "block/block",
 	"textures": {
-		"side": "betterend:block/violecite_post_side",
-		"top": "betterend:block/violecite_post_top",
+		"side": "betterendforge:block/violecite_post_side",
+		"top": "betterendforge:block/violecite_post_top",
 		"particle": "#side"
 	},
 	"elements": [ 	 

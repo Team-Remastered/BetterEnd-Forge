@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all", 
     "textures": {
-        "all": "betterend:block/inactive_brimstone"
+        "all": "betterendforge:block/inactive_brimstone"
     }
 }

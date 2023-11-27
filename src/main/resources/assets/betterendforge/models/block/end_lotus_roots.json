@@ -2,9 +2,9 @@
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"particle": "betterend:block/end_lotus_stem",
-		"texture": "betterend:block/end_lotus_stem",
-		"roots": "betterend:block/end_lotus_roots"
+		"particle": "betterendforge:block/end_lotus_stem",
+		"texture": "betterendforge:block/end_lotus_stem",
+		"roots": "betterendforge:block/end_lotus_roots"
 	},
 	"elements": [ 	 
 		{

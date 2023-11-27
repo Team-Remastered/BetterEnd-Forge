@@ -1,7 +1,7 @@
 {
 	"required": true,
 	"minVersion": "0.8",
-	"package": "ru.betterend.mixin.common",
+	"package": "ru.betterendforge.mixin.common",
 	"compatibilityLevel": "JAVA_16",
 	"mixins": [
 		"ChorusPlantFeatureMixin",

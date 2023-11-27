@@ -1,11 +1,11 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/large_amaranita_cap_side",
-		"side": "betterend:block/large_amaranita_cap_side",
-		"top": "betterend:block/large_amaranita_cap_top",
-		"bottom": "betterend:block/large_amaranita_cap_bottom",
-		"stem": "betterend:block/amaranita_stem_top"
+		"particle": "betterendforge:block/large_amaranita_cap_side",
+		"side": "betterendforge:block/large_amaranita_cap_side",
+		"top": "betterendforge:block/large_amaranita_cap_top",
+		"bottom": "betterendforge:block/large_amaranita_cap_bottom",
+		"stem": "betterendforge:block/amaranita_stem_top"
 	},
 	"elements": [ 	 
 		{

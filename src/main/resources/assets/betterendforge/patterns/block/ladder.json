@@ -1,6 +1,6 @@
 {
-	"parent": "betterend:block/ladder",
+	"parent": "betterendforge:block/ladder",
 	"textures": {
-		"texture": "betterend:block/%texture%"
+		"texture": "betterendforge:block/%texture%"
 	}
 }

@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/lanceleaf_stem",
-		"texture": "betterend:block/lanceleaf_stem"
+		"particle": "betterendforge:block/lanceleaf_stem",
+		"texture": "betterendforge:block/lanceleaf_stem"
 	},
 	"elements": [ 	 
 		{

@@ -2,11 +2,11 @@
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"particle": "betterend:block/%block%_side",
-		"texture": "betterend:block/%block%_side",
-		"top": "betterend:block/%block%_top",
-		"crystal": "betterend:block/aurora_crystal",
-		"bottom": "betterend:block/%block%_bottom"
+		"particle": "betterendforge:block/%block%_side",
+		"texture": "betterendforge:block/%block%_side",
+		"top": "betterendforge:block/%block%_top",
+		"crystal": "betterendforge:block/aurora_crystal",
+		"bottom": "betterendforge:block/%block%_bottom"
 	},
 	"elements": [ 	 
 		{

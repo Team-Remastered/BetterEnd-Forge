@@ -1,12 +1,12 @@
 {
 	"parent": "block/cube",
 	"textures": {
-		"down": "betterend:block/mossy_glowshroom_stripped_log_top",
-		"east": "betterend:block/mossy_glowshroom_stripped_log_side",
-		"north": "betterend:block/mossy_glowshroom_stripped_log_side",
-		"particle": "betterend:block/mossy_glowshroom_stripped_log_side",
-		"south": "betterend:block/mossy_glowshroom_stripped_log_side",
-		"up": "betterend:block/mossy_glowshroom_stripped_log_top",
-		"west": "betterend:block/mossy_glowshroom_stripped_log_side"
+		"down": "betterendforge:block/mossy_glowshroom_stripped_log_top",
+		"east": "betterendforge:block/mossy_glowshroom_stripped_log_side",
+		"north": "betterendforge:block/mossy_glowshroom_stripped_log_side",
+		"particle": "betterendforge:block/mossy_glowshroom_stripped_log_side",
+		"south": "betterendforge:block/mossy_glowshroom_stripped_log_side",
+		"up": "betterendforge:block/mossy_glowshroom_stripped_log_top",
+		"west": "betterendforge:block/mossy_glowshroom_stripped_log_side"
 	}
 }

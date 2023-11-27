@@ -1,6 +1,6 @@
 {
-    "parent": "betterend:block/cross_inverted",
+    "parent": "betterendforge:block/cross_inverted",
     "textures": {
-        "cross": "betterend:block/vaiolush_fern"
+        "cross": "betterendforge:block/vaiolush_fern"
     }
 }

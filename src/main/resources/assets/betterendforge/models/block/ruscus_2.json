@@ -1,7 +1,7 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"texture": "betterend:block/ruscus",
+		"texture": "betterendforge:block/ruscus",
 		"particle": "#texture"
 	},
 	"elements": [ 	 

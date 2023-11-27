@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/pond_anemone",
-		"texture": "betterend:block/pond_anemone"
+		"particle": "betterendforge:block/pond_anemone",
+		"texture": "betterendforge:block/pond_anemone"
 	},
 	"elements": [ 	 
 		{

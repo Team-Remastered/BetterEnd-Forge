@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "betterend:item/chorus_mushroom_seed"
+		"layer0": "betterendforge:item/chorus_mushroom_seed"
 	}
 }

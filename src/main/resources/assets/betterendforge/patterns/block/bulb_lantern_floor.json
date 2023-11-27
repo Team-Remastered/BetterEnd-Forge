@@ -2,8 +2,8 @@
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"overlay": "betterend:block/%glow%",
-		"metal": "betterend:block/%metal%",
+		"overlay": "betterendforge:block/%glow%",
+		"metal": "betterendforge:block/%metal%",
 		"particle": "#overlay"
 	},
 	"elements": [ 	 

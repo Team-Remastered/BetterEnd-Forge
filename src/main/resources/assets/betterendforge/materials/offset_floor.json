@@ -1,7 +1,7 @@
 {
 	"layers": [
 		{
-			"vertexSource": "betterend:shaders/material/offset_floor.vert",
+			"vertexSource": "betterendforge:shaders/material/offset_floor.vert",
 			"fragmentSource": "canvas:shaders/material/default.frag",
 			"disableAo": true,
 			"disableDiffuse": true

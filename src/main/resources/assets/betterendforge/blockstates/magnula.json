@@ -1,7 +1,7 @@
 {
 	"variants": {
-		"shape=top": { "model": "betterend:block/magnula_middle" },
-		"shape=middle": { "model": "betterend:block/magnula_middle" },
-		"shape=bottom": { "model": "betterend:block/magnula_bottom" }
+		"shape=top": { "model": "betterendforge:block/magnula_middle" },
+		"shape=middle": { "model": "betterendforge:block/magnula_middle" },
+		"shape=bottom": { "model": "betterendforge:block/magnula_bottom" }
 	}
 }

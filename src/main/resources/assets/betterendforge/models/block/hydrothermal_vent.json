@@ -2,10 +2,10 @@
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"particle": "betterend:block/sulphuric_rock",
-		"texture": "betterend:block/sulphuric_rock",
-		"rock_top": "betterend:block/sulphuric_rock_top",
-		"geyser_top": "betterend:block/geyser_top"
+		"particle": "betterendforge:block/sulphuric_rock",
+		"texture": "betterendforge:block/sulphuric_rock",
+		"rock_top": "betterendforge:block/sulphuric_rock_top",
+		"geyser_top": "betterendforge:block/geyser_top"
 	},
 	"elements": [ 	 
 		{

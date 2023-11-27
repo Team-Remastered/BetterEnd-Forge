@@ -1,7 +1,7 @@
 {
 	"variants": {
 		"": [
-			{ "model": "betterend:block/aurora_crystal" }
+			{ "model": "betterendforge:block/aurora_crystal" }
 		]
 	}
 }

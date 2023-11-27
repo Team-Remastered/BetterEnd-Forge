@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/crystal_grass_4",
-		"texture": "betterend:block/crystal_grass_4"
+		"particle": "betterendforge:block/crystal_grass_4",
+		"texture": "betterendforge:block/crystal_grass_4"
 	},
 	"elements": [ 	 
 		{

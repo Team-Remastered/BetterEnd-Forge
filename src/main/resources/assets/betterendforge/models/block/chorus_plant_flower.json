@@ -2,10 +2,10 @@
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"particle": "betterend:block/chorus_plant_flower_side",
-		"side": "betterend:block/chorus_plant_flower_side",
-		"top": "betterend:block/chorus_plant_flower_top",
-		"bottom": "betterend:block/chorus_plant_flower_bottom"
+		"particle": "betterendforge:block/chorus_plant_flower_side",
+		"side": "betterendforge:block/chorus_plant_flower_side",
+		"top": "betterendforge:block/chorus_plant_flower_top",
+		"bottom": "betterendforge:block/chorus_plant_flower_bottom"
 	},
 	"elements": [ 	 
 		{

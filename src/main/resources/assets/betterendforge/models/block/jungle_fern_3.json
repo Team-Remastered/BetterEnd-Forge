@@ -1,10 +1,10 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/jungle_fern_leaf",
-		"texture": "betterend:block/jungle_fern_leaf",
-		"spore": "betterend:block/jungle_fern_spore",
-		"texture1": "betterend:block/jungle_fern_middle"
+		"particle": "betterendforge:block/jungle_fern_leaf",
+		"texture": "betterendforge:block/jungle_fern_leaf",
+		"spore": "betterendforge:block/jungle_fern_spore",
+		"texture1": "betterendforge:block/jungle_fern_middle"
 	},
 	"elements": [ 	 
 		{

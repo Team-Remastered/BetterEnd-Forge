@@ -1,12 +1,12 @@
 {
 	"parent": "block/block",
 	"textures": {
-		"particle": "betterend:block/%anvil%_front",
-		"front": "betterend:block/%anvil%_front",
-		"back": "betterend:block/%anvil%_back",
-		"top": "betterend:block/%top%",
-		"panel": "betterend:block/%anvil%_panel",
-		"bottom": "betterend:block/%anvil%_bottom"
+		"particle": "betterendforge:block/%anvil%_front",
+		"front": "betterendforge:block/%anvil%_front",
+		"back": "betterendforge:block/%anvil%_back",
+		"top": "betterendforge:block/%top%",
+		"panel": "betterendforge:block/%anvil%_panel",
+		"bottom": "betterendforge:block/%anvil%_bottom"
 	},
 	"elements": [ 	 
 		{

@@ -1,10 +1,10 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/tube_worm_3",
-		"worm3": "betterend:block/tube_worm_3",
-		"worm2": "betterend:block/tube_worm_2",
-		"worm1": "betterend:block/tube_worm_1"
+		"particle": "betterendforge:block/tube_worm_3",
+		"worm3": "betterendforge:block/tube_worm_3",
+		"worm2": "betterendforge:block/tube_worm_2",
+		"worm1": "betterendforge:block/tube_worm_1"
 	},
 	"elements": [ 	 
 		{

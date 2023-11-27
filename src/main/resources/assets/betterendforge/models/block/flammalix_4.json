@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"0": "betterend:block/flammalix",
-		"particle": "betterend:block/flammalix"
+		"0": "betterendforge:block/flammalix",
+		"particle": "betterendforge:block/flammalix"
 	},
 	"elements": [
 		{

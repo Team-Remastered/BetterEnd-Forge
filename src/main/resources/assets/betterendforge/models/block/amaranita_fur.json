@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/amaranita_fur",
-		"texture": "betterend:block/amaranita_fur"
+		"particle": "betterendforge:block/amaranita_fur",
+		"texture": "betterendforge:block/amaranita_fur"
 	},
 	"elements": [ 	 
 		{

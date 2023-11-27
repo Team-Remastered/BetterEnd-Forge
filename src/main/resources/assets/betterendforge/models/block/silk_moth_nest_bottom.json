@@ -2,10 +2,10 @@
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"particle": "betterend:block/silk_moth_nest_side",
-		"texture": "betterend:block/silk_moth_nest_side",
-		"top": "betterend:block/silk_moth_nest_top",
-		"front": "betterend:block/silk_moth_nest_front"
+		"particle": "betterendforge:block/silk_moth_nest_side",
+		"texture": "betterendforge:block/silk_moth_nest_side",
+		"top": "betterendforge:block/silk_moth_nest_top",
+		"front": "betterendforge:block/silk_moth_nest_front"
 	},
 	"elements": [ 	 
 		{

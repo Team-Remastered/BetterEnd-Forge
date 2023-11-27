@@ -1,6 +1,6 @@
 {
-	"parent": "betterend:block/tint_cube",
+	"parent": "betterendforge:block/tint_cube",
 	"textures": {
-		"texture": "betterend:block/helix_tree_leaves"
+		"texture": "betterendforge:block/helix_tree_leaves"
 	}
 }

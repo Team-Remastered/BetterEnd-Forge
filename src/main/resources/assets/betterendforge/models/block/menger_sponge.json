@@ -2,8 +2,8 @@
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"particle": "betterend:block/menger_sponge",
-		"texture": "betterend:block/menger_sponge"
+		"particle": "betterendforge:block/menger_sponge",
+		"texture": "betterendforge:block/menger_sponge"
 	},
 	"elements": [ 	 
 		{

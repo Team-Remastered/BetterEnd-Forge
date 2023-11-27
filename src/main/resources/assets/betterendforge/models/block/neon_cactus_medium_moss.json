@@ -1,10 +1,10 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/neon_cactus_medium_side",
-		"overlay": "betterend:block/neon_cactus_medium_side_moss_overlay",
-		"side": "betterend:block/neon_cactus_medium_side_moss",
-		"top": "betterend:block/neon_cactus_medium_top"
+		"particle": "betterendforge:block/neon_cactus_medium_side",
+		"overlay": "betterendforge:block/neon_cactus_medium_side_moss_overlay",
+		"side": "betterendforge:block/neon_cactus_medium_side_moss",
+		"top": "betterendforge:block/neon_cactus_medium_top"
 	},
 	"elements": [ 	 
 		{

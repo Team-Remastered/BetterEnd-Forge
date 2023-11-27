@@ -1,5 +1,5 @@
 {
 	"variants": {
-		"": { "model": "betterend:block/amaranita_lantern" }
+		"": { "model": "betterendforge:block/amaranita_lantern" }
 	}
 }

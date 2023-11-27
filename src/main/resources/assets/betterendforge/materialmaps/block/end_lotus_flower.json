@@ -2,20 +2,20 @@
 	"defaultMap": {
 		"spriteMap": [
 			{
-				"sprite": "betterend:block/end_lotus_petal",
-				"material": "betterend:waving_floor_glow_inc"
+				"sprite": "betterendforge:block/end_lotus_petal",
+				"material": "betterendforge:waving_floor_glow_inc"
 			},
 			{
-				"sprite": "betterend:block/end_lotus_petal_2",
-				"material": "betterend:waving_floor_glow_inc"
+				"sprite": "betterendforge:block/end_lotus_petal_2",
+				"material": "betterendforge:waving_floor_glow_inc"
 			},
 			{
-				"sprite": "betterend:block/end_lotus_center",
-				"material": "betterend:glow_inc"
+				"sprite": "betterendforge:block/end_lotus_center",
+				"material": "betterendforge:glow_inc"
 			},
 			{
-				"sprite": "betterend:block/end_lotus_center_2",
-				"material": "betterend:glow_inc"
+				"sprite": "betterendforge:block/end_lotus_center_2",
+				"material": "betterendforge:glow_inc"
 			}
 		]
 	}

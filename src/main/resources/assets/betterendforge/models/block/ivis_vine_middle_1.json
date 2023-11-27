@@ -1,6 +1,6 @@
 {
-	"parent": "betterend:block/cross_no_distortion",
+	"parent": "betterendforge:block/cross_no_distortion",
 	"textures": {
-		"texture": "betterend:block/ivis_vine"
+		"texture": "betterendforge:block/ivis_vine"
 	}
 }

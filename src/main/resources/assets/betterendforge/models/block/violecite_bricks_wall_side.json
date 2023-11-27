@@ -1,7 +1,7 @@
 {
     "textures": {
-        "wall": "betterend:block/violecite_bricks",
-        "top": "betterend:block/violecite_bricks_wall_top",
+        "wall": "betterendforge:block/violecite_bricks",
+        "top": "betterendforge:block/violecite_bricks_wall_top",
 		"particle": "#wall"
     },
     "elements": [

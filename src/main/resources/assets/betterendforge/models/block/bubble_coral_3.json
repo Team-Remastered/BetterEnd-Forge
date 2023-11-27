@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/bubble_coral",
-		"texture": "betterend:block/bubble_coral"
+		"particle": "betterendforge:block/bubble_coral",
+		"texture": "betterendforge:block/bubble_coral"
 	},
 	"elements": [ 	 
 		{

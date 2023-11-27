@@ -2,12 +2,12 @@
 	"defaultMap": {
 		"spriteMap": [
 			{
-				"sprite": "betterend:block/filalux_bottom",
-				"material": "betterend:waving_glow_inc"
+				"sprite": "betterendforge:block/filalux_bottom",
+				"material": "betterendforge:waving_glow_inc"
 			},
 			{
-				"sprite": "betterend:block/filalux_middle",
-				"material": "betterend:waving"
+				"sprite": "betterendforge:block/filalux_middle",
+				"material": "betterendforge:waving"
 			}
 		]
 	}

@@ -1,9 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/end_lily_leaf",
-		"leaf": "betterend:block/end_lily_leaf",
-		"flower": "betterend:block/end_lily_flower"
+		"particle": "betterendforge:block/end_lily_leaf",
+		"leaf": "betterendforge:block/end_lily_leaf",
+		"flower": "betterendforge:block/end_lily_flower"
 	},
 	"elements": [ 	 
 		{

@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "betterend:block/needlegrass_01"
+		"layer0": "betterendforge:block/needlegrass_01"
 	}
 }

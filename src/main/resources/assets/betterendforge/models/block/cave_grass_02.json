@@ -1,6 +1,6 @@
 {
     "parent": "block/cross",
     "textures": {
-        "cross": "betterend:block/cave_grass_2"
+        "cross": "betterendforge:block/cave_grass_2"
     }
 }

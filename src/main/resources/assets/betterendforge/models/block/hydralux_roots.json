@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/hydralux_vine_bottom",
-		"texture": "betterend:block/hydralux_vine_bottom"
+		"particle": "betterendforge:block/hydralux_vine_bottom",
+		"texture": "betterendforge:block/hydralux_vine_bottom"
 	},
 	"elements": [ 	 
 		{

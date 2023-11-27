@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/amaranita_stem_roots",
-		"stem": "betterend:block/amaranita_stem_roots"
+		"particle": "betterendforge:block/amaranita_stem_roots",
+		"stem": "betterendforge:block/amaranita_stem_roots"
 	},
 	"elements": [ 	 
 		{

@@ -1,7 +1,7 @@
 {
 	"variants": {
 		"": {
-			"model": "betterend:block/%name%_bricks"
+			"model": "betterendforge:block/%name%_bricks"
 		}
 	}
 }

@@ -1,10 +1,10 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/umbrella_moss_up",
-		"texture": "betterend:block/umbrella_moss_up",
-		"spore": "betterend:block/umbrella_moss_sporophyte",
-		"small": "betterend:block/umbrella_moss_small"
+		"particle": "betterendforge:block/umbrella_moss_up",
+		"texture": "betterendforge:block/umbrella_moss_up",
+		"spore": "betterendforge:block/umbrella_moss_sporophyte",
+		"small": "betterendforge:block/umbrella_moss_small"
 	},
 	"elements": [ 	 
 		{

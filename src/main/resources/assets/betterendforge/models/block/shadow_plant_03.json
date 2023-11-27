@@ -1,6 +1,6 @@
 {
-    "parent": "betterend:block/crop_block",
+    "parent": "betterendforge:block/crop_block",
     "textures": {
-        "texture": "betterend:block/shadow_plant"
+        "texture": "betterendforge:block/shadow_plant"
     }
 }

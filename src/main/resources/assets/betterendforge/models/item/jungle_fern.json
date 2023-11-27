@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "betterend:item/jungle_fern"
+		"layer0": "betterendforge:item/jungle_fern"
 	}
 }

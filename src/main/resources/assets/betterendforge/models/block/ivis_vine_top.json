@@ -1,9 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/ivis_vine",
-		"texture": "betterend:block/ivis_vine",
-		"roots": "betterend:block/ivis_vine_roots"
+		"particle": "betterendforge:block/ivis_vine",
+		"texture": "betterendforge:block/ivis_vine",
+		"roots": "betterendforge:block/ivis_vine_roots"
 	},
 	"elements": [ 	 
 		{

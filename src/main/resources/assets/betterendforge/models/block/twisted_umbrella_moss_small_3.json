@@ -1,11 +1,11 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/twisted_umbrella_moss_up",
-		"texture": "betterend:block/twisted_umbrella_moss_up",
-		"spore": "betterend:block/twisted_umbrella_moss_sporophyte",
-		"small": "betterend:block/twisted_umbrella_moss_small",
-		"end": "betterend:block/twisted_umbrella_moss_end"
+		"particle": "betterendforge:block/twisted_umbrella_moss_up",
+		"texture": "betterendforge:block/twisted_umbrella_moss_up",
+		"spore": "betterendforge:block/twisted_umbrella_moss_sporophyte",
+		"small": "betterendforge:block/twisted_umbrella_moss_small",
+		"end": "betterendforge:block/twisted_umbrella_moss_end"
 	},
 	"elements": [ 	 
 		{

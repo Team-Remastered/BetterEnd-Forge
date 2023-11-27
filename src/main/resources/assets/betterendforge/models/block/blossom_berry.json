@@ -1,10 +1,10 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/blossom_berry_flower",
-		"stem": "betterend:block/blossom_berry_stem",
-		"flower": "betterend:block/blossom_berry_flower",
-		"texture": "betterend:block/blossom_berry_fruit"
+		"particle": "betterendforge:block/blossom_berry_flower",
+		"stem": "betterendforge:block/blossom_berry_stem",
+		"flower": "betterendforge:block/blossom_berry_flower",
+		"texture": "betterendforge:block/blossom_berry_fruit"
 	},
 	"elements": [ 	 
 		{

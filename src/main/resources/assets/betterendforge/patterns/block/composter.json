@@ -1,11 +1,11 @@
 {
 	"parent": "block/block",
 	"textures": {
-		"particle": "betterend:block/%texture%_side",
-		"top": "betterend:block/%texture%_top",
-		"bottom": "betterend:block/%texture%_bottom",
-		"side": "betterend:block/%texture%_side",
-		"inside": "betterend:block/%texture%_bottom"
+		"particle": "betterendforge:block/%texture%_side",
+		"top": "betterendforge:block/%texture%_top",
+		"bottom": "betterendforge:block/%texture%_bottom",
+		"side": "betterendforge:block/%texture%_side",
+		"inside": "betterendforge:block/%texture%_bottom"
 	},
 	"elements": [
 		{

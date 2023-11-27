@@ -1,5 +1,6 @@
 package ru.betterend.registry;
 
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -10,6 +11,7 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.ForgeRegistry;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 import ru.betterend.bclib.blocks.BaseFurnaceBlock;
@@ -44,10 +46,12 @@ import ru.betterend.item.material.EndToolMaterial;
 import ru.betterend.tab.CreativeTabs;
 
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class EndBlocks {
 	private static final BlockRegistry REGISTRY = new BlockRegistry(CreativeTabs.TAB_BLOCKS);
+	public static final Item.Properties BASE_ITEM_PROPERTIES = new Item.Properties().tab(CreativeTabs.TAB_BLOCKS);
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BetterEndForge.MOD_ID);
 
 	public static void initRegister(IEventBus eventBus) {
@@ -357,6 +361,7 @@ public class EndBlocks {
 		EndArmorMaterial.TERMINITE
 	);
 	public static final RegistryObject<Block> AETERNIUM_BLOCK = registerBlock("aeternium_block",  () -> new AeterniumBlock());
+
 	public static final RegistryObject<Block> CHARCOAL_BLOCK = registerBlock("charcoal_block",  () -> new CharcoalBlock());
 	
 	public static final RegistryObject<Block> ENDER_BLOCK = registerBlock("ender_block",  () -> new EnderBlock());
@@ -390,7 +395,7 @@ public class EndBlocks {
 	public static final RegistryObject<Block> ETERNAL_PEDESTAL = registerBlock("eternal_pedestal",  () -> new EternalPedestal());
 	public static final RegistryObject<Block> INFUSION_PEDESTAL = registerBlock("infusion_pedestal",  () -> new InfusionPedestal());
 	public static final RegistryObject<Block> AETERNIUM_ANVIL = registerBlock("aeternium_anvil",  () -> new AeterniumAnvil());
-	
+
 	// Technical
 	public static final RegistryObject<Block> END_PORTAL_BLOCK = registerEndBlockOnly("end_portal_block",  () -> new EndPortalBlock());
 	
@@ -404,13 +409,7 @@ public class EndBlocks {
 
 	/** We pass the supplier directly instead of the block to avoid freezing the registry **/
 
-	public static <I extends Block> RegistryObject<I> registerBlock(ResourceLocation id, final Supplier<? extends I> block) {
-
-		return BLOCKS.register(id.getPath(), block);
-	}
-	
 	public static <I extends Block> RegistryObject<I> registerBlock(String name, final Supplier<? extends I> block) {
-
 		return BLOCKS.register(name, block);
 	}
 
@@ -419,18 +418,14 @@ public class EndBlocks {
 	}
 
 	public static RegistryObject<Block> registerFixLaterBlock(String name) {
-
 		return BLOCKS.register(name, () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)) );
 	}
 
 	/** We register the block items directly inside the BlockRegistry class, we might want to move it here tho **/
 
-	public static Item.Properties makeBlockItemSettings() {
-		return getBlockRegistry().makeItemSettings();
+	public static  RegistryObject<Item> registerBlockItem(String name, final Supplier<? extends Block> blockItem) {
+
+		return EndItems.ITEMS.register(name, () -> new BlockItem(blockItem.get(), BASE_ITEM_PROPERTIES));
 	}
-	
-	@NotNull
-	public static BlockRegistry getBlockRegistry() {
-		return REGISTRY;
-	}
+
 }

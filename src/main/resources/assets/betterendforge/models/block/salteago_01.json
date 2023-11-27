@@ -1,6 +1,6 @@
 {
     "parent": "block/cross",
     "textures": {
-        "cross": "betterend:block/salteago"
+        "cross": "betterendforge:block/salteago"
     }
 }

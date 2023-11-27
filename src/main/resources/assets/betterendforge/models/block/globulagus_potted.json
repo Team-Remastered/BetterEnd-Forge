@@ -1,6 +1,6 @@
 {
     "parent": "block/cross",
     "textures": {
-        "cross": "betterend:block/globulagus_potted"
+        "cross": "betterendforge:block/globulagus_potted"
     }
 }

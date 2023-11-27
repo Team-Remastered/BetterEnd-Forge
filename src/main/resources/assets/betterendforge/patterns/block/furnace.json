@@ -1,9 +1,9 @@
 {
 	"parent": "minecraft:block/orientable_with_bottom",
 	"textures": {
-		"top": "betterend:block/%top%",
-		"front": "betterend:block/%front%",
-		"side": "betterend:block/%side%",
-		"bottom": "betterend:block/%top%"
+		"top": "betterendforge:block/%top%",
+		"front": "betterendforge:block/%front%",
+		"side": "betterendforge:block/%side%",
+		"bottom": "betterendforge:block/%top%"
 	}
 }

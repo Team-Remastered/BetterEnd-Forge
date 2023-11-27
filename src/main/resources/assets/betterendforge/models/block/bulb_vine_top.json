@@ -1,9 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/bulb_vine_middle",
-		"texture": "betterend:block/bulb_vine_middle",
-		"roots": "betterend:block/bulb_vine_roots"
+		"particle": "betterendforge:block/bulb_vine_middle",
+		"texture": "betterendforge:block/bulb_vine_middle",
+		"roots": "betterendforge:block/bulb_vine_roots"
 	},
 	"elements": [ 	 
 		{

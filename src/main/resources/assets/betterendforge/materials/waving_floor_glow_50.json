@@ -1,8 +1,8 @@
 {
 	"layers": [
 		{
-			"vertexSource": "betterend:shaders/material/wave_floor.vert",
-			"fragmentSource": "betterend:shaders/material/glow_50.frag",
+			"vertexSource": "betterendforge:shaders/material/wave_floor.vert",
+			"fragmentSource": "betterendforge:shaders/material/glow_50.frag",
 			"disableAo": true,
 			"disableDiffuse": true
 		}

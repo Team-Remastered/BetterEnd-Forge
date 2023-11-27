@@ -1,7 +1,7 @@
 {
 	"variants": {
 		"": {
-			"model": "betterend:block/glowing_pillar_luminophor"
+			"model": "betterendforge:block/glowing_pillar_luminophor"
 		}
 	}
 }

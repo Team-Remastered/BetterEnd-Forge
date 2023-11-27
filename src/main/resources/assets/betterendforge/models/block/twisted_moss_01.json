@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"texture": "betterend:block/twisted_moss",
-		"texture2": "betterend:block/twisted_moss_2",
+		"texture": "betterendforge:block/twisted_moss",
+		"texture2": "betterendforge:block/twisted_moss_2",
 		"particle": "#texture"
 	},
 	"elements": [ 	 

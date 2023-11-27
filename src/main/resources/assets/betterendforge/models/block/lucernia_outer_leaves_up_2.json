@@ -1,9 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/lucernia_outer_leaves_2",
-		"texture": "betterend:block/lucernia_outer_leaves_2",
-		"spore": "betterend:block/lucernia_outer_leaves_2"
+		"particle": "betterendforge:block/lucernia_outer_leaves_2",
+		"texture": "betterendforge:block/lucernia_outer_leaves_2",
+		"spore": "betterendforge:block/lucernia_outer_leaves_2"
 	},
 	"elements": [ 	 
 		{

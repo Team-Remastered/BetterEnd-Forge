@@ -1,9 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/glowing_pillar_leaves",
-		"texture": "betterend:block/glowing_pillar_leaves",
-		"spore": "betterend:block/glowing_pillar_leaves"
+		"particle": "betterendforge:block/glowing_pillar_leaves",
+		"texture": "betterendforge:block/glowing_pillar_leaves",
+		"spore": "betterendforge:block/glowing_pillar_leaves"
 	},
 	"elements": [ 	 
 		{

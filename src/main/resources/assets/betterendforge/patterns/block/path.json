@@ -1,7 +1,7 @@
-{   "parent": "betterend:block/path",
+{   "parent": "betterendforge:block/path",
     "textures": {
-        "top": "betterend:block/%top%",
-        "side": "betterend:block/%side%",
+        "top": "betterendforge:block/%top%",
+        "side": "betterendforge:block/%side%",
         "bottom": "block/end_stone"
     }
 }

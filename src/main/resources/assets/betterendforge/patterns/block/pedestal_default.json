@@ -1,5 +1,5 @@
 {
-	"parent": "betterend:block/pedestal_default",
+	"parent": "betterendforge:block/pedestal_default",
 	"textures": {
 		"top": "%mod%:block/%top%",
 		"base": "%mod%:block/%base%",
