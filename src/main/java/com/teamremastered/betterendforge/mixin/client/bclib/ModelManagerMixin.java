@@ -14,6 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class ModelManagerMixin {
 	@Inject(method = "prepare", at = @At("HEAD"))
 	private void bclib_loadCustomModels(ResourceManager resourceManager, ProfilerFiller profilerFiller, CallbackInfoReturnable<ModelBakery> info) {
-		BCLibClient.modelBakery.loadCustomModels(resourceManager);
+	//	BCLibClient.modelBakery.loadCustomModels(resourceManager);
+		//FIXME: modelBakery returns a NPE
 	}
 }

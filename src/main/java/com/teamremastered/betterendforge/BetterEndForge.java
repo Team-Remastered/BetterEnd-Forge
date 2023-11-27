@@ -2,6 +2,7 @@ package com.teamremastered.betterendforge;
 
 import com.teamremastered.betterendforge.bclib.BCLib;
 import com.teamremastered.betterendforge.bclib.api.WorldDataAPI;
+import com.teamremastered.betterendforge.bclib.client.BCLibClient;
 import com.teamremastered.betterendforge.bclib.util.Logger;
 import com.teamremastered.betterendforge.client.BetterEndClient;
 import com.teamremastered.betterendforge.config.EndConfig;
@@ -79,8 +80,8 @@ public class BetterEndForge {
 //			}
 //		});
 
-		modEventBus.addListener(this::onServerSetup);
 		modEventBus.addListener(this::onClientSetup);
+		modEventBus.addListener(this::onServerSetup);
 
 		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);
@@ -89,6 +90,7 @@ public class BetterEndForge {
 
 	private void onClientSetup(FMLClientSetupEvent event) {
 		BetterEndClient.initializeClient();
+		BCLibClient.onInitializeClient();
 	}
 
 	private void onServerSetup(FMLCommonSetupEvent event) {

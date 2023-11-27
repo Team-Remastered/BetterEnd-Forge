@@ -1,6 +1,7 @@
 package com.teamremastered.betterendforge.bclib;
 
 import com.teamremastered.betterendforge.bclib.api.tag.TagAPI;
+import com.teamremastered.betterendforge.bclib.world.generator.BCLibEndBiomeSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.loading.FMLEnvironment;
@@ -18,7 +19,7 @@ public class BCLib {
 		BaseRegistry.register();
 		GeneratorOptions.init();
 	//	BaseBlockEntities.register();
-	//	BCLibEndBiomeSource.register();
+		BCLibEndBiomeSource.register();
 		TagAPI.init();
 		CraftingRecipes.init();
 		WorldDataAPI.registerModCache(MOD_ID);

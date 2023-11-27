@@ -44,7 +44,8 @@ public abstract class MinecraftMixin {
 		});
 	}
 
-	@Shadow protected abstract void doLoadLevel(String string, Function<LevelStorageAccess, WorldStem.DataPackConfigSupplier> function, Function<LevelStorageAccess, WorldStem.WorldDataSupplier> function2, boolean bl, Minecraft.ExperimentalDialogType experimentalDialogType);
+	@Shadow
+	protected abstract void doLoadLevel(String string, Function<LevelStorageSource.LevelStorageAccess, WorldStem.DataPackConfigSupplier> function, Function<LevelStorageSource.LevelStorageAccess, WorldStem.WorldDataSupplier> function2, boolean bl, Minecraft.ExperimentalDialogType experimentalDialogType, boolean creating);
 
 	@Shadow
 	@Final
@@ -56,7 +57,7 @@ public abstract class MinecraftMixin {
 		
 		if (DataFixerAPI.fixData(this.levelSource, levelID, true, (appliedFixes) -> {
 			LifeCycleAPI._runBeforeLevelLoad();
-			this.doLoadLevel(levelID, WorldStem.DataPackConfigSupplier::loadFromWorld, WorldStem.WorldDataSupplier::loadFromWorld, false, appliedFixes ? Minecraft.ExperimentalDialogType.NONE : Minecraft.ExperimentalDialogType.BACKUP);
+			this.doLoadLevel(levelID, WorldStem.DataPackConfigSupplier::loadFromWorld, WorldStem.WorldDataSupplier::loadFromWorld, false, appliedFixes ? Minecraft.ExperimentalDialogType.NONE : Minecraft.ExperimentalDialogType.BACKUP, false); //FIXME: Added creating boolean but no idea what it does
 		})) {
 			//cancel call when fix-screen is presented
 			ci.cancel();
@@ -64,7 +65,7 @@ public abstract class MinecraftMixin {
 		else {
 			LifeCycleAPI._runBeforeLevelLoad();
 			if (false) { //FIXME: CONFIG
-				this.doLoadLevel(levelID, WorldStem.DataPackConfigSupplier::loadFromWorld, WorldStem.WorldDataSupplier::loadFromWorld, false, Minecraft.ExperimentalDialogType.NONE);
+				this.doLoadLevel(levelID, WorldStem.DataPackConfigSupplier::loadFromWorld, WorldStem.WorldDataSupplier::loadFromWorld, false, Minecraft.ExperimentalDialogType.NONE, false); //FIXME: Added creating boolean but no idea what it does
 				//cancel call as we manually start the level load here
 				ci.cancel();
 			}

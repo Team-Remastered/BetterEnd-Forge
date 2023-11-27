@@ -7,11 +7,15 @@ import com.teamremastered.betterendforge.bclib.api.datafixer.DataFixerAPI;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtIo;
 import net.minecraft.world.level.storage.LevelStorageSource.LevelStorageAccess;
+import net.minecraftforge.fml.ModContainer;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.loading.FMLLoader;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 /**
@@ -26,42 +30,40 @@ public class WorldDataAPI {
 	private static final List<String> MODS = Lists.newArrayList();
 	private static File dataDir;
 	
-//	public static void load(File dataDir) {
-//		WorldDataAPI.dataDir = dataDir;
-//		MODS.stream()
-//			.parallel()
-//			.forEach(modID -> {
-//				File file = new File(dataDir, modID + ".nbt");
-//				CompoundTag root = new CompoundTag();
-//				if (file.exists()) {
-//					try {
-//						root = NbtIo.readCompressed(file);
-//					}
-//					catch (IOException e) {
-//						BCLib.LOGGER.error("World data loading failed", e);
-//					}
-//					TAGS.put(modID, root);
-//				}
-//				else {
-//					Optional<ModContainer> optional = FabricLoader.getInstance()
-//																  .getModContainer(modID);
-//					if (optional.isPresent()) {
-//						ModContainer modContainer = optional.get();
-//						if (BCLib.isDevEnvironment()) {
-//							root.putString("version", "255.255.9999");
-//						}
-//						else {
-//							root.putString("version", modContainer.getMetadata()
-//																  .getVersion()
-//																  .toString());
-//						}
-//						TAGS.put(modID, root);
-//						saveFile(modID);
-//					}
-//				}
-//			});
-//	}
-	//FIXME: idk if this is worth fixing, the only place it is used is in DatafixerAPI#initializeWorldData
+	public static void load(File dataDir) {
+		WorldDataAPI.dataDir = dataDir;
+		MODS.stream()
+			.parallel()
+			.forEach(modID -> {
+				File file = new File(dataDir, modID + ".nbt");
+				CompoundTag root = new CompoundTag();
+				if (file.exists()) {
+					try {
+						root = NbtIo.readCompressed(file);
+					}
+					catch (IOException e) {
+						BCLib.LOGGER.error("World data loading failed", e);
+					}
+					TAGS.put(modID, root);
+				}
+				else {
+					Optional<? extends ModContainer> optional = ModList.get().getModContainerById(modID);
+					if (optional.isPresent()) {
+						ModContainer modContainer = optional.get();
+						if (BCLib.isDevEnvironment()) {
+							root.putString("version", "255.255.9999");
+						}
+						else {
+							root.putString("version", modContainer.getModInfo()
+																  .getVersion()
+																  .toString());
+						}
+						TAGS.put(modID, root);
+						saveFile(modID);
+					}
+				}
+			});
+	}
 	
 	/**
 	 * Register mod cache, world cache is located in world data folder.

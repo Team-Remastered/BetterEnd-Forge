@@ -167,7 +167,7 @@ public class DataFixerAPI {
 	 *
 	 */
 	public static void initializeWorldData(File levelBaseDir, boolean newWorld){
-	//	WorldDataAPI.load(new File(levelBaseDir, "data")); //Literally useless
+		WorldDataAPI.load(new File(levelBaseDir, "data")); //Literally useless
 		
 		if (newWorld){
 			getMigrationProfile().markApplied();
