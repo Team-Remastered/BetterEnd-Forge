@@ -1,7 +1,9 @@
 package ru.betterend.bclib.recipes;
 
 import net.minecraft.core.NonNullList;
+import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -21,6 +23,8 @@ public class RecipeSupplier {
     Output recipeOutput;
 
     private String[] recipeShape;
+
+    boolean isShaped;
 
     public RecipeSupplier(String modId, String recipeName) {
         this.recipeId = new ResourceLocation(modId, recipeName);
@@ -43,6 +47,13 @@ public class RecipeSupplier {
 
     public RecipeSupplier setShape(String... lines) {
         this.recipeShape = lines;
+        this.isShaped = true;
+        return this;
+    }
+
+    public RecipeSupplier setShapeless(String... lines) {
+        this.recipeShape = lines;
+        this.isShaped = false;
         return this;
     }
 
@@ -67,26 +78,45 @@ public class RecipeSupplier {
             for (int i = 0; i < this.getWidth(); i++) {
                 char c = line.charAt(i);
                 Ingredient material = Ingredient.of(this.recipeInputs.inputMap.get(c).get());
-                materials.set(pos++, material == null ? Ingredient.EMPTY : material);
+                materials.set(pos++, material);
             }
         }
         return materials;
     }
 
-    public ShapedRecipeBuilder build() {
-        ShapedRecipeBuilder recipeBuilder = ShapedRecipeBuilder
-                .shaped(this.recipeOutput.getItem(), this.recipeOutput.getCount())
-                .group(recipeGroup);
+    public RecipeBuilder build() {
+        if (this.isShaped) {
+            ShapedRecipeBuilder shapedRecipeBuilder = ShapedRecipeBuilder
+                    .shaped(this.recipeOutput.getItem(), this.recipeOutput.getCount())
+                    .group(recipeGroup);
 
-        for (String line : this.recipeShape) {
-            recipeBuilder.pattern(line);
+            for (String line : this.recipeShape) {
+                shapedRecipeBuilder.pattern(line);
+            }
+
+            for (HashMap.Entry<Character, Supplier<ItemLike>> entry : this.recipeInputs.getMap().entrySet()) {
+                shapedRecipeBuilder.define(entry.getKey(), Ingredient.of(entry.getValue().get()));
+            }
+            return shapedRecipeBuilder;
+        } else {
+            ShapelessRecipeBuilder shapelessRecipeBuilder =  ShapelessRecipeBuilder
+                    .shapeless(this.recipeOutput.getItem(), this.recipeOutput.getCount())
+                    .group(recipeGroup);
+
+            for (HashMap.Entry<Character, Supplier<ItemLike>> entry : this.recipeInputs.getMap().entrySet()) {
+                int itemCount = 0;
+                for (String line : this.recipeShape) {
+                    for (int i =0; i< line.length(); i++) {
+                        if (line.charAt(i) == entry.getKey()) {
+                            itemCount ++;
+                        }
+                    }
+                }
+                shapelessRecipeBuilder.requires(entry.getValue().get(), itemCount);
+            }
+
+            return shapelessRecipeBuilder;
         }
-
-        for (HashMap.Entry<Character, Supplier<ItemLike>> entry : this.recipeInputs.getMap().entrySet()) {
-            recipeBuilder.define(entry.getKey(), Ingredient.of(entry.getValue().get()));
-        }
-
-        return recipeBuilder;
     }
 
     public static class Output {

@@ -2,6 +2,7 @@ package ru.betterend.bclib.recipes;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Item;
@@ -26,7 +27,7 @@ public class BCLRecipeProvider extends RecipeProvider {
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
         for (RecipeSupplier recipeSupplier : suppliers) {
-            ShapedRecipeBuilder recipeBuilder = recipeSupplier.build();
+            RecipeBuilder recipeBuilder = recipeSupplier.build();
             for (Supplier<ItemLike> itemLikeSupplier : recipeSupplier.recipeInputs.getMap().values()) {
                 Item item = itemLikeSupplier.get().asItem();
                 recipeBuilder.unlockedBy(getHasName(item), has(item));

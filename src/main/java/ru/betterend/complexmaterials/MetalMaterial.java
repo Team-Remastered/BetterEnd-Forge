@@ -220,11 +220,7 @@ public class MetalMaterial {
 //		}
 
         // Basic recipes
-//        GridRecipe.make(BetterEndForge.MOD_ID, name + "_ingot_from_nuggets", ingot.get())
-//                .setShape("###", "###", "###")
-//                .addMaterial('#', nugget.get())
-//                .setGroup("end_metal_ingots_nug")
-//                .build();
+
 
         BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_ingot_from_nuggets")
                         .setOutput(ingot::get)
@@ -233,13 +229,13 @@ public class MetalMaterial {
                         .setGroup("end_metal_ingots_nug")
         );
 
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_nuggets_from_ingot", nugget.get())
-//
-//				  .setOutputCount(9)
-//				  .setList("#")
-//				  .addMaterial('#', ingot.get())
-//				  .setGroup("end_metal_nuggets_ing")
-//				  .build();
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_nuggets_from_ingot")
+                .setOutput(nugget::get, 9)
+                .setShapeless("#")
+                .addInput('#', ingot::get)
+                .setGroup("end_metal_nuggets_ing")
+        );
+
 //		GridRecipe.make(BetterEndForge.MOD_ID, name + "_block", block.get())
 //
 //				  .setShape("###", "###", "###")

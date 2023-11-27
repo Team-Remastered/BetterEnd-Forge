@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "end_metal_nuggets_ing",
+  "ingredients": [
+    {
+      "item": "betterendforge:terminite_ingot"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:terminite_nugget",
+    "count": 9
+  }
+}
