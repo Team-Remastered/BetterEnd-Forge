@@ -31,7 +31,7 @@ public class ColoredMaterial {
 		String id = sourceId;
 		colors.forEach((color, name) -> {
 			String blockName = id + "_" + name;
-			final Supplier<? extends Block> block = source; //TODO: Find a way to add to the source block properties
+			final Supplier<? extends Block> block = () -> new Block(BlockBehaviour.Properties.copy(source.get()).color(MaterialColor.COLOR_BLACK));
 			EndBlocks.registerBlock(blockName, block);
 //			if (craftEight) {
 //				GridRecipe.make(BetterEndForge.MOD_ID, blockName, block.get())
