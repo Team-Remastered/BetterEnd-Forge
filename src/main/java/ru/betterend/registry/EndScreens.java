@@ -26,8 +26,8 @@ public class EndScreens {
 	public static final RegistryObject<MenuType<EndStoneSmelterScreenHandler>> END_STONE_SMELTER_MENU_TYPE = CONTAINERS.register("end_stone_smelter_menu_type",
 			() -> IForgeMenuType.create((windowId, inv, data) -> new EndStoneSmelterScreenHandler(windowId, inv)));
 
-	@SubscribeEvent
-	public static void registerScreens(FMLClientSetupEvent event) {
-		MenuScreens.register(END_STONE_SMELTER_MENU_TYPE.get(), EndStoneSmelterScreen::new);
-	}
+//	@SubscribeEvent
+//	public static void registerScreens(FMLClientSetupEvent event) {
+//		MenuScreens.register(END_STONE_SMELTER_MENU_TYPE.get(), EndStoneSmelterScreen::new);
+//	}
 }

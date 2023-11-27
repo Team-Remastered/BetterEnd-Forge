@@ -10,7 +10,7 @@ import ru.betterend.registry.EndModelProviders;
 public class BetterEndClient {
 
 	public static void initializeClient() {
-		EndModelProviders.register();
+//		EndModelProviders.register();
 		MultiModelItem.register();
 		ClientOptions.init();
 		

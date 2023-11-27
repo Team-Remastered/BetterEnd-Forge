@@ -4,6 +4,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -21,110 +23,8 @@ import ru.betterend.bclib.blocks.SimpleLeavesBlock;
 import ru.betterend.bclib.blocks.StalactiteBlock;
 import ru.betterend.bclib.registry.BlockRegistry;
 import ru.betterend.BetterEndForge;
-import ru.betterend.blocks.AeterniumAnvil;
-import ru.betterend.blocks.AeterniumBlock;
-import ru.betterend.blocks.AmaranitaCapBlock;
-import ru.betterend.blocks.AmaranitaHymenophoreBlock;
-import ru.betterend.blocks.AmaranitaStemBlock;
-import ru.betterend.blocks.AmberBlock;
-import ru.betterend.blocks.AncientEmeraldIceBlock;
-import ru.betterend.blocks.AuroraCrystalBlock;
-import ru.betterend.blocks.BlueVineBlock;
-import ru.betterend.blocks.BlueVineLanternBlock;
-import ru.betterend.blocks.BlueVineSeedBlock;
-import ru.betterend.blocks.BoluxMushroomBlock;
-import ru.betterend.blocks.BrimstoneBlock;
-import ru.betterend.blocks.BubbleCoralBlock;
-import ru.betterend.blocks.BulbVineBlock;
-import ru.betterend.blocks.BulbVineLanternBlock;
-import ru.betterend.blocks.BulbVineLanternColoredBlock;
-import ru.betterend.blocks.BulbVineSeedBlock;
-import ru.betterend.blocks.CavePumpkinBlock;
-import ru.betterend.blocks.CavePumpkinVineBlock;
-import ru.betterend.blocks.ChandelierBlock;
-import ru.betterend.blocks.CharcoalBlock;
-import ru.betterend.blocks.CharniaBlock;
-import ru.betterend.blocks.ChorusGrassBlock;
-import ru.betterend.blocks.DenseEmeraldIceBlock;
-import ru.betterend.blocks.DenseSnowBlock;
-import ru.betterend.blocks.DragonTreeSaplingBlock;
-import ru.betterend.blocks.EmeraldIceBlock;
-import ru.betterend.blocks.EndLilyBlock;
-import ru.betterend.blocks.EndLilySeedBlock;
-import ru.betterend.blocks.EndLotusFlowerBlock;
-import ru.betterend.blocks.EndLotusLeafBlock;
-import ru.betterend.blocks.EndLotusSeedBlock;
-import ru.betterend.blocks.EndLotusStemBlock;
-import ru.betterend.blocks.EndPortalBlock;
-import ru.betterend.blocks.EndStoneSmelter;
-import ru.betterend.blocks.EnderBlock;
-import ru.betterend.blocks.EndstoneDustBlock;
-import ru.betterend.blocks.EternalPedestal;
-import ru.betterend.blocks.FilaluxBlock;
-import ru.betterend.blocks.FilaluxLanternBlock;
-import ru.betterend.blocks.FilaluxWingsBlock;
-import ru.betterend.blocks.FlamaeaBlock;
-import ru.betterend.blocks.FlammalixBlock;
-import ru.betterend.blocks.FlowerPotBlock;
-import ru.betterend.blocks.GlowingHymenophoreBlock;
-import ru.betterend.blocks.GlowingMossBlock;
-import ru.betterend.blocks.GlowingPillarLuminophorBlock;
-import ru.betterend.blocks.GlowingPillarRootsBlock;
-import ru.betterend.blocks.GlowingPillarSeedBlock;
-import ru.betterend.blocks.HelixTreeLeavesBlock;
-import ru.betterend.blocks.HelixTreeSaplingBlock;
-import ru.betterend.blocks.HydraluxBlock;
-import ru.betterend.blocks.HydraluxPetalBlock;
-import ru.betterend.blocks.HydraluxPetalColoredBlock;
-import ru.betterend.blocks.HydraluxSaplingBlock;
-import ru.betterend.blocks.HydrothermalVentBlock;
-import ru.betterend.blocks.InfusionPedestal;
-import ru.betterend.blocks.JellyshroomCapBlock;
-import ru.betterend.blocks.LacugroveSaplingBlock;
-import ru.betterend.blocks.LanceleafBlock;
-import ru.betterend.blocks.LanceleafSeedBlock;
-import ru.betterend.blocks.LargeAmaranitaBlock;
-import ru.betterend.blocks.LucerniaSaplingBlock;
-import ru.betterend.blocks.LumecornBlock;
-import ru.betterend.blocks.LumecornSeedBlock;
-import ru.betterend.blocks.MengerSpongeBlock;
-import ru.betterend.blocks.MengerSpongeWetBlock;
-import ru.betterend.blocks.MissingTileBlock;
-import ru.betterend.blocks.MossyDragonBoneBlock;
-import ru.betterend.blocks.MossyGlowshroomCapBlock;
-import ru.betterend.blocks.MossyGlowshroomSaplingBlock;
-import ru.betterend.blocks.MossyObsidian;
-import ru.betterend.blocks.MurkweedBlock;
-import ru.betterend.blocks.NeedlegrassBlock;
-import ru.betterend.blocks.NeonCactusBlock;
-import ru.betterend.blocks.NeonCactusPlantBlock;
-import ru.betterend.blocks.PallidiumBlock;
-import ru.betterend.blocks.PedestalVanilla;
-import ru.betterend.blocks.PondAnemoneBlock;
-import ru.betterend.blocks.PythadendronSaplingBlock;
-import ru.betterend.blocks.RespawnObeliskBlock;
-import ru.betterend.blocks.RunedFlavolite;
-import ru.betterend.blocks.ShadowBerryBlock;
-import ru.betterend.blocks.ShadowGrassBlock;
-import ru.betterend.blocks.SilkMothHiveBlock;
-import ru.betterend.blocks.SilkMothNestBlock;
-import ru.betterend.blocks.SmallAmaranitaBlock;
-import ru.betterend.blocks.SmallJellyshroomBlock;
-import ru.betterend.blocks.SmaragdantCrystalBlock;
-import ru.betterend.blocks.SmaragdantCrystalShardBlock;
-import ru.betterend.blocks.SulphurCrystalBlock;
-import ru.betterend.blocks.TenaneaFlowersBlock;
-import ru.betterend.blocks.TenaneaSaplingBlock;
-import ru.betterend.blocks.TerrainPlantBlock;
-import ru.betterend.blocks.TwistedUmbrellaMossBlock;
-import ru.betterend.blocks.TwistedUmbrellaMossTallBlock;
-import ru.betterend.blocks.UmbrellaMossBlock;
-import ru.betterend.blocks.UmbrellaMossTallBlock;
-import ru.betterend.blocks.UmbrellaTreeClusterBlock;
-import ru.betterend.blocks.UmbrellaTreeClusterEmptyBlock;
-import ru.betterend.blocks.UmbrellaTreeMembraneBlock;
-import ru.betterend.blocks.UmbrellaTreeSaplingBlock;
-import ru.betterend.blocks.VentBubbleColumnBlock;
+import ru.betterend.blocks.*;
+
 import ru.betterend.blocks.basis.EndTerrainBlock;
 import ru.betterend.blocks.basis.EndTripleTerrain;
 import ru.betterend.blocks.basis.EndUnderwaterWallPlantBlock;
@@ -202,7 +102,7 @@ public class EndBlocks {
 	public static final RegistryObject<Block> BRIMSTONE = registerBlock("brimstone",  () -> new BrimstoneBlock());
 	public static final RegistryObject<Block> SULPHUR_CRYSTAL = registerBlock("sulphur_crystal",  () -> new SulphurCrystalBlock());
 	public static final RegistryObject<Block> MISSING_TILE = registerBlock("missing_tile",  () -> new MissingTileBlock());
-	public static final RegistryObject<Block> ENDSTONE_FLOWER_POT = registerBlock("endstone_flower_pot",  () -> new FlowerPotBlock(Blocks.END_STONE));
+	public static final RegistryObject<Block> ENDSTONE_FLOWER_POT = registerBlock("endstone_flower_pot",  () -> new EndFlowerPotBlock(Blocks.END_STONE));
 	
 	public static final RegistryObject<Block> FLAVOLITE_RUNED = registerBlock("flavolite_runed",  () -> new RunedFlavolite(false));
 	public static final RegistryObject<Block> FLAVOLITE_RUNED_ETERNAL = registerBlock("flavolite_runed_eternal",  () -> new RunedFlavolite(true));
@@ -373,10 +273,11 @@ public class EndBlocks {
 	public static final RegistryObject<Block> NEON_CACTUS_BLOCK_SLAB = registerBlock("neon_cactus_slab",  () -> new BaseSlabBlock(NEON_CACTUS_BLOCK.get()));
 	
 	// Crops
-	public static final RegistryObject<Block> SHADOW_BERRY = registerBlock("shadow_berry",  () -> new ShadowBerryBlock());
-	public static final RegistryObject<Block> BLOSSOM_BERRY = registerBlock("blossom_berry_seed",  () -> new PottableCropBlock(EndItems.BLOSSOM_BERRY.get(), PINK_MOSS.get()));
-	public static final RegistryObject<Block> AMBER_ROOT = registerBlock("amber_root_seed",  () -> new PottableCropBlock(EndItems.AMBER_ROOT_RAW.get(), AMBER_MOSS.get()));
-	public static final RegistryObject<Block> CHORUS_MUSHROOM = registerBlock("chorus_mushroom_seed",  () -> new PottableCropBlock(EndItems.CHORUS_MUSHROOM_RAW.get(), CHORUS_NYLIUM.get()));
+	public static final RegistryObject<Block> SHADOW_BERRY = registerFixLaterBlock("shadow_berry");
+	public static final RegistryObject<Block> BLOSSOM_BERRY = registerFixLaterBlock("blossom_berry_seed");
+	public static final RegistryObject<Block> AMBER_ROOT = registerFixLaterBlock("amber_root_seed");
+	public static final RegistryObject<Block> CHORUS_MUSHROOM = registerFixLaterBlock("chorus_mushroom_seed");
+
 	//public static final RegistryObject<Block> PEARLBERRY = registerBlock("pearlberry_seed",  () -> new PottableCropBlock(EndItems.BLOSSOM_BERRY, END_MOSS, END_MYCELIUM));
 	public static final RegistryObject<Block> CAVE_PUMPKIN_SEED = registerBlock("cave_pumpkin_seed",  () -> new CavePumpkinVineBlock());
 	public static final RegistryObject<Block> CAVE_PUMPKIN = registerBlock("cave_pumpkin",  () -> new CavePumpkinBlock());
@@ -516,6 +417,12 @@ public class EndBlocks {
 	public static <I extends Block> RegistryObject<I> registerEndBlockOnly(String name, final Supplier<? extends I> block) {
 		return BLOCKS.register(name, block);
 	}
+
+	public static RegistryObject<Block> registerFixLaterBlock(String name) {
+
+		return BLOCKS.register(name, () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)) );
+	}
+
 	/** We register the block items directly inside the BlockRegistry class, we might want to move it here tho **/
 
 	public static Item.Properties makeBlockItemSettings() {

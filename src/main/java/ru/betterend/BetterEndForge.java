@@ -34,11 +34,8 @@ import ru.betterend.registry.EndParticles;
 import ru.betterend.registry.EndPortals;
 import ru.betterend.registry.EndSounds;
 import ru.betterend.registry.EndStatusEffects;
-import ru.betterend.registry.EndStructures;
-import ru.betterend.util.BonemealPlants;
 import ru.betterend.util.LootTableUtil;
 import ru.betterend.world.generator.GeneratorOptions;
-import ru.betterend.world.generator.TerrainGenerator;
 
 @Mod(BetterEndForge.MOD_ID)
 public class BetterEndForge {
@@ -52,7 +49,7 @@ public class BetterEndForge {
 
 		EndBlocks.initRegister(modEventBus);
 		EndItems.initRegister(modEventBus);
-		EndBlockEntities.initRegister(modEventBus);
+//		EndBlockEntities.initRegister(modEventBus);
 		EndAttributes.initregister(modEventBus);
 		EndSounds.initRegister(modEventBus);
 		EndParticles.initRegister(modEventBus);
