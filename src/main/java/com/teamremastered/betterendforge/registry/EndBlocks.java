@@ -398,26 +398,32 @@ public class EndBlocks {
 	public static List<Block> getModBlocks() {
 		return BlockRegistry.getModBlocks(BetterEndForge.MOD_ID);
 	}
-	
-	public static List<Item> getModBlockItems() {
-		return BlockRegistry.getModBlockItems(BetterEndForge.MOD_ID);
-	}
-
-	/** We pass the supplier directly instead of the block to avoid freezing the registry **/
 
 	public static <I extends Block> RegistryObject<I> registerBlock(String name, final Supplier<? extends I> block) {
-		return BLOCKS.register(name, block);
+
+		RegistryObject<I> registeredBlock = BLOCKS.register(name, block);
+		registerBlockItem(name, registeredBlock);
+
+		return registeredBlock;
 	}
 
 	public static <I extends Block> RegistryObject<I> registerEndBlockOnly(String name, final Supplier<? extends I> block) {
-		return BLOCKS.register(name, block);
+
+		RegistryObject<I> registeredBlock = BLOCKS.register(name, block);
+		registerBlockItem(name, registeredBlock);
+
+		return registeredBlock;
 	}
 
 	public static RegistryObject<Block> registerFixLaterBlock(String name) {
-		return BLOCKS.register(name, () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)) );
+
+		RegistryObject<Block> registeredBlock = BLOCKS.register(name, () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+		registerBlockItem(name, registeredBlock);
+
+		return registeredBlock;
 	}
 
-	/** We register the block items directly inside the BlockRegistry class, we might want to move it here tho **/
+	/** How we register the block items, it is recommended to register the items inside another Item registry then the one in EndItems **/
 
 	public static  RegistryObject<Item> registerBlockItem(String name, final Supplier<? extends Block> blockItem) {
 
