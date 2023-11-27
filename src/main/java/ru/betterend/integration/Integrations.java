@@ -1,14 +1,10 @@
 package ru.betterend.integration;
 
-import net.minecraft.world.item.Items;
 import net.minecraftforge.fml.ModList;
 import ru.betterend.bclib.api.ModIntegrationAPI;
 import ru.betterend.bclib.integration.ModIntegration;
-import ru.betterend.bclib.recipes.GridRecipe;
-import ru.betterend.BetterEndForge;
 import ru.betterend.integration.byg.BYGIntegration;
 import ru.betterend.item.GuideBookItem;
-import ru.betterend.registry.EndItems;
 
 public class Integrations {
 	public static final ModIntegration BYG = ModIntegrationAPI.register(new BYGIntegration());
@@ -28,13 +24,13 @@ public class Integrations {
 //				}
 //			}); //FIXME: Needs to convert this to Forge
 			
-			GridRecipe.make(BetterEndForge.MOD_ID, "guide_book", GuideBookItem.GUIDE_BOOK)
-
-					  .setShape("D", "B", "C")
-					  .addMaterial('D', EndItems.ENDER_DUST.get())
-					  .addMaterial('B', Items.BOOK)
-					  .addMaterial('C', EndItems.CRYSTAL_SHARDS.get())
-					  .build();
+//			GridRecipe.make(BetterEndForge.MOD_ID, "guide_book", GuideBookItem.GUIDE_BOOK.get())
+//
+//					  .setShape("D", "B", "C")
+//					  .addMaterial('D', EndItems.ENDER_DUST.get())
+//					  .addMaterial('B', Items.BOOK)
+//					  .addMaterial('C', EndItems.CRYSTAL_SHARDS.get())
+//					  .build();
 		}
 		hasHydrogen = ModList.get().isLoaded("hydrogen");
 	}

@@ -11,6 +11,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.RegistryObject;
 import ru.betterend.bclib.items.ModelProviderItem;
 import ru.betterend.BetterEndForge;
 import ru.betterend.registry.EndItems;
@@ -21,7 +22,7 @@ import java.util.List;
 
 public class GuideBookItem extends ModelProviderItem {
 	public final static ResourceLocation BOOK_ID = BetterEndForge.makeID("guidebook");
-	public static final Item GUIDE_BOOK = EndItems.getItemRegistry().register(BOOK_ID, new GuideBookItem());
+	public static final RegistryObject<Item> GUIDE_BOOK = EndItems.registerEndItem("guidebook", GuideBookItem::new);
 	
 	public static void register() {
 	}
