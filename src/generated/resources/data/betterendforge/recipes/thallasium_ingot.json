@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "end_metal_ingots_nug",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "betterendforge:thallasium_nugget"
+    }
+  },
+  "result": {
+    "item": "betterendforge:thallasium_ingot"
+  }
+}

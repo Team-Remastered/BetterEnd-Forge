@@ -9,9 +9,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import ru.betterend.bclib.BCLib;
 import ru.betterend.bclib.api.WorldDataAPI;
 import ru.betterend.bclib.api.biomes.BiomeAPI;
+import ru.betterend.bclib.recipes.BCLRecipeProvider;
 import ru.betterend.bclib.util.Logger;
 import ru.betterend.client.BetterEndClient;
 import ru.betterend.config.EndConfig;
@@ -36,6 +38,8 @@ import ru.betterend.registry.EndSounds;
 import ru.betterend.registry.EndStatusEffects;
 import ru.betterend.util.LootTableUtil;
 import ru.betterend.world.generator.GeneratorOptions;
+
+import java.io.IOException;
 
 @Mod(BetterEndForge.MOD_ID)
 public class BetterEndForge {
@@ -91,10 +95,21 @@ public class BetterEndForge {
 
 		modEventBus.addListener(this::onServerSetup);
 		modEventBus.addListener(this::onClientSetup);
+		modEventBus.addListener(this::generateData);
 
 		// Register ourselves for server and other game events we are interested in
 		MinecraftForge.EVENT_BUS.register(this);
 
+	}
+
+	private void generateData(GatherDataEvent event) {
+		event.getGenerator().addProvider(new BCLRecipeProvider(event.getGenerator()));
+		try {
+			event.getGenerator().run();
+		} catch (IOException ex) {
+			System.out.println("IO Error on generateData()");
+			ex.printStackTrace(System.out);
+		}
 	}
 
 	private void onClientSetup(FMLClientSetupEvent event) {

@@ -1,5 +1,6 @@
 package ru.betterend.complexmaterials;
 
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -25,6 +26,7 @@ import ru.betterend.bclib.blocks.BaseOreBlock;
 import ru.betterend.bclib.blocks.BaseSlabBlock;
 import ru.betterend.bclib.blocks.BaseStairsBlock;
 import ru.betterend.bclib.blocks.BaseTrapdoorBlock;
+import ru.betterend.bclib.recipes.*;
 import ru.betterend.bclib.util.BlocksHelper;
 import ru.betterend.bclib.blocks.WoodenPressurePlateBlock;
 import ru.betterend.bclib.items.ModelProviderItem;
@@ -32,10 +34,6 @@ import ru.betterend.bclib.items.tool.BaseAxeItem;
 import ru.betterend.bclib.items.tool.BaseHoeItem;
 import ru.betterend.bclib.items.tool.BaseShovelItem;
 import ru.betterend.bclib.items.tool.BaseSwordItem;
-import ru.betterend.bclib.recipes.AnvilRecipe;
-import ru.betterend.bclib.recipes.FurnaceRecipe;
-import ru.betterend.bclib.recipes.GridRecipe;
-import ru.betterend.bclib.recipes.SmithingTableRecipe;
 import ru.betterend.BetterEndForge;
 import ru.betterend.blocks.BulbVineLanternBlock;
 import ru.betterend.blocks.BulbVineLanternColoredBlock;
@@ -49,161 +47,161 @@ import ru.betterend.registry.EndBlocks;
 import ru.betterend.registry.EndItems;
 
 public class MetalMaterial {
-	public final RegistryObject<Block> ore;
-	public final RegistryObject<Block> block;
-	public final RegistryObject<Block> tile;
-	public final RegistryObject<Block> bars;
-	public final RegistryObject<Block> pressurePlate;
-	public final RegistryObject<Block> door;
-	public final RegistryObject<Block> trapdoor;
-	public final RegistryObject<Block> chain;
-	public final RegistryObject<Block> stairs;
-	public final RegistryObject<Block> slab;
+    public final RegistryObject<Block> ore;
+    public final RegistryObject<Block> block;
+    public final RegistryObject<Block> tile;
+    public final RegistryObject<Block> bars;
+    public final RegistryObject<Block> pressurePlate;
+    public final RegistryObject<Block> door;
+    public final RegistryObject<Block> trapdoor;
+    public final RegistryObject<Block> chain;
+    public final RegistryObject<Block> stairs;
+    public final RegistryObject<Block> slab;
 
-	public final RegistryObject<Block> chandelier;
-	public final RegistryObject<Block> bulb_lantern;
-	public final ColoredMaterial bulb_lantern_colored;
+    public final RegistryObject<Block> chandelier;
+    public final RegistryObject<Block> bulb_lantern;
+    public final ColoredMaterial bulb_lantern_colored;
 
-	public final RegistryObject<Block> anvilBlock;
+    public final RegistryObject<Block> anvilBlock;
 
-	public final RegistryObject<Item> rawOre;
-	public final RegistryObject<Item> nugget;
-	public final RegistryObject<Item> ingot;
+    public final RegistryObject<Item> rawOre;
+    public final RegistryObject<Item> nugget;
+    public final RegistryObject<Item> ingot;
 
-	public final RegistryObject<Item> shovelHead;
-	public final RegistryObject<Item> pickaxeHead;
-	public final RegistryObject<Item> axeHead;
-	public final RegistryObject<Item> hoeHead;
-	public final RegistryObject<Item> swordBlade;
-	public final RegistryObject<Item> swordHandle;
+    public final RegistryObject<Item> shovelHead;
+    public final RegistryObject<Item> pickaxeHead;
+    public final RegistryObject<Item> axeHead;
+    public final RegistryObject<Item> hoeHead;
+    public final RegistryObject<Item> swordBlade;
+    public final RegistryObject<Item> swordHandle;
 
-	public final RegistryObject<BaseShovelItem> shovel;
-	public final RegistryObject<BaseSwordItem> sword;
-	public final RegistryObject<EndPickaxe> pickaxe;
-	public final RegistryObject<BaseAxeItem> axe;
-	public final RegistryObject<BaseHoeItem> hoe;
-	public final RegistryObject<EndHammerItem> hammer;
+    public final RegistryObject<BaseShovelItem> shovel;
+    public final RegistryObject<BaseSwordItem> sword;
+    public final RegistryObject<EndPickaxe> pickaxe;
+    public final RegistryObject<BaseAxeItem> axe;
+    public final RegistryObject<BaseHoeItem> hoe;
+    public final RegistryObject<EndHammerItem> hammer;
 
-	public final RegistryObject<Item> forgedPlate;
-	public final RegistryObject<Item> helmet;
-	public final RegistryObject<Item> chestplate;
-	public final RegistryObject<Item> leggings;
-	public final RegistryObject<Item> boots;
+    public final RegistryObject<Item> forgedPlate;
+    public final RegistryObject<Item> helmet;
+    public final RegistryObject<Item> chestplate;
+    public final RegistryObject<Item> leggings;
+    public final RegistryObject<Item> boots;
 
-	public final TagKey<Item> alloyingOre;
+    public final TagKey<Item> alloyingOre;
 
-	public static MetalMaterial makeNormal(String name, MaterialColor color, Tier material, ArmorMaterial armor) {
-		return new MetalMaterial(
-				name,
-				true,
-				BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).color(color),
-				EndItems.makeEndItemSettings(),
-				material,
-				armor
-		);
-	}
+    public static MetalMaterial makeNormal(String name, MaterialColor color, Tier material, ArmorMaterial armor) {
+        return new MetalMaterial(
+                name,
+                true,
+                BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).color(color),
+                EndItems.makeEndItemSettings(),
+                material,
+                armor
+        );
+    }
 
-	public static MetalMaterial makeNormal(String name, MaterialColor color, float hardness, float resistance, Tier material, ArmorMaterial armor) {
-		return new MetalMaterial(
-				name,
-				true,
-				BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
-								   .color(color)
-								   .destroyTime(hardness)
-								   .explosionResistance(resistance),
-				EndItems.makeEndItemSettings(),
-				material,
-				armor
-		);
-	}
+    public static MetalMaterial makeNormal(String name, MaterialColor color, float hardness, float resistance, Tier material, ArmorMaterial armor) {
+        return new MetalMaterial(
+                name,
+                true,
+                BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+                        .color(color)
+                        .destroyTime(hardness)
+                        .explosionResistance(resistance),
+                EndItems.makeEndItemSettings(),
+                material,
+                armor
+        );
+    }
 
-	public static MetalMaterial makeOreless(String name, MaterialColor color, Tier material, ArmorMaterial armor) {
-		return new MetalMaterial(
-				name,
-				false,
-				BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).color(color),
-				EndItems.makeEndItemSettings(),
-				material,
-				armor
-		);
-	}
+    public static MetalMaterial makeOreless(String name, MaterialColor color, Tier material, ArmorMaterial armor) {
+        return new MetalMaterial(
+                name,
+                false,
+                BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).color(color),
+                EndItems.makeEndItemSettings(),
+                material,
+                armor
+        );
+    }
 
-	public static MetalMaterial makeOreless(String name, MaterialColor color, float hardness, float resistance, Tier material, ArmorMaterial armor) {
-		return new MetalMaterial(
-				name,
-				false,
-				BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
-								   .color(color)
-								   .destroyTime(hardness)
-								   .explosionResistance(resistance),
-				EndItems.makeEndItemSettings(),
-				material,
-				armor
-		);
-	}
+    public static MetalMaterial makeOreless(String name, MaterialColor color, float hardness, float resistance, Tier material, ArmorMaterial armor) {
+        return new MetalMaterial(
+                name,
+                false,
+                BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+                        .color(color)
+                        .destroyTime(hardness)
+                        .explosionResistance(resistance),
+                EndItems.makeEndItemSettings(),
+                material,
+                armor
+        );
+    }
 
-	private MetalMaterial(String name, boolean hasOre, BlockBehaviour.Properties settings, Properties itemSettings, Tier material, ArmorMaterial armor) {
-		BlockBehaviour.Properties lanternProperties = settings
-				.destroyTime(1)
-				.explosionResistance(1)
-				.lightLevel(BlocksHelper.getLightValue(15))
-				.sound(SoundType.LANTERN);
-		final int level = material.getLevel();
+    private MetalMaterial(String name, boolean hasOre, BlockBehaviour.Properties settings, Properties itemSettings, Tier material, ArmorMaterial armor) {
+        BlockBehaviour.Properties lanternProperties = settings
+                .destroyTime(1)
+                .explosionResistance(1)
+                .lightLevel(BlocksHelper.getLightValue(15))
+                .sound(SoundType.LANTERN);
+        final int level = material.getLevel();
 
-		rawOre = hasOre ? EndItems.registerEndItem(name + "_raw", () -> new ModelProviderItem(itemSettings)) : null;
-		ore = hasOre ? EndBlocks.registerBlock(name + "_ore",  () -> new BaseOreBlock(()->rawOre.get(), 1, 3, 1)) : null;
-		alloyingOre = hasOre ? TagAPI.makeItemTag(BetterEndForge.MOD_ID, name + "_alloying") : null;
+        rawOre = hasOre ? EndItems.registerEndItem(name + "_raw", () -> new ModelProviderItem(itemSettings)) : null;
+        ore = hasOre ? EndBlocks.registerBlock(name + "_ore", () -> new BaseOreBlock(() -> rawOre.get(), 1, 3, 1)) : null;
+        alloyingOre = hasOre ? TagAPI.makeItemTag(BetterEndForge.MOD_ID, name + "_alloying") : null;
 
-		block = EndBlocks.registerBlock(name + "_block",  () -> new BaseBlock(settings));
-		tile = EndBlocks.registerBlock(name + "_tile",  () -> new BaseBlock(settings));
-		stairs = EndBlocks.registerBlock(name + "_stairs",  () -> new BaseStairsBlock(tile.get()));
-		slab = EndBlocks.registerBlock(name + "_slab",  () -> new BaseSlabBlock(tile.get()));
-		door = EndBlocks.registerBlock(name + "_door",  () -> new BaseDoorBlock(block.get()));
-		trapdoor = EndBlocks.registerBlock(name + "_trapdoor",  () -> new BaseTrapdoorBlock(block.get()));
-		bars = EndBlocks.registerBlock(name + "_bars",  () -> new BaseMetalBarsBlock(block.get()));
-		chain = EndBlocks.registerBlock(name + "_chain",  () -> new BaseChainBlock(block.get().defaultMaterialColor()));
-		pressurePlate = EndBlocks.registerBlock(name + "_plate",  () -> new WoodenPressurePlateBlock(block.get()));
+        block = EndBlocks.registerBlock(name + "_block", () -> new BaseBlock(settings));
+        tile = EndBlocks.registerBlock(name + "_tile", () -> new BaseBlock(settings));
+        stairs = EndBlocks.registerBlock(name + "_stairs", () -> new BaseStairsBlock(tile.get()));
+        slab = EndBlocks.registerBlock(name + "_slab", () -> new BaseSlabBlock(tile.get()));
+        door = EndBlocks.registerBlock(name + "_door", () -> new BaseDoorBlock(block.get()));
+        trapdoor = EndBlocks.registerBlock(name + "_trapdoor", () -> new BaseTrapdoorBlock(block.get()));
+        bars = EndBlocks.registerBlock(name + "_bars", () -> new BaseMetalBarsBlock(block.get()));
+        chain = EndBlocks.registerBlock(name + "_chain", () -> new BaseChainBlock(block.get().defaultMaterialColor()));
+        pressurePlate = EndBlocks.registerBlock(name + "_plate", () -> new WoodenPressurePlateBlock(block.get()));
 
-		chandelier = EndBlocks.registerBlock(name + "_chandelier",  () -> new ChandelierBlock(block.get()));
-		bulb_lantern = EndBlocks.registerBlock(name + "_bulb_lantern",  () -> new BulbVineLanternBlock(lanternProperties));
-		bulb_lantern_colored = new ColoredMaterial(bulb_lantern, name + "_bulb_lantern", false);
+        chandelier = EndBlocks.registerBlock(name + "_chandelier", () -> new ChandelierBlock(block.get()));
+        bulb_lantern = EndBlocks.registerBlock(name + "_bulb_lantern", () -> new BulbVineLanternBlock(lanternProperties));
+        bulb_lantern_colored = new ColoredMaterial(bulb_lantern, name + "_bulb_lantern", false);
 
-		nugget = EndItems.registerEndItem(name + "_nugget", () -> new ModelProviderItem(itemSettings));
-		ingot = EndItems.registerEndItem(name + "_ingot", () -> new ModelProviderItem(itemSettings));
+        nugget = EndItems.registerEndItem(name + "_nugget", () -> new ModelProviderItem(itemSettings));
+        ingot = EndItems.registerEndItem(name + "_ingot", () -> new ModelProviderItem(itemSettings));
 
-		shovelHead = EndItems.registerEndItem(name + "_shovel_head");
-		pickaxeHead = EndItems.registerEndItem(name + "_pickaxe_head");
-		axeHead = EndItems.registerEndItem(name + "_axe_head");
-		hoeHead = EndItems.registerEndItem(name + "_hoe_head");
-		swordBlade = EndItems.registerEndItem(name + "_sword_blade");
-		swordHandle = EndItems.registerEndItem(name + "_sword_handle");
+        shovelHead = EndItems.registerEndItem(name + "_shovel_head");
+        pickaxeHead = EndItems.registerEndItem(name + "_pickaxe_head");
+        axeHead = EndItems.registerEndItem(name + "_axe_head");
+        hoeHead = EndItems.registerEndItem(name + "_hoe_head");
+        swordBlade = EndItems.registerEndItem(name + "_sword_blade");
+        swordHandle = EndItems.registerEndItem(name + "_sword_handle");
 
-		shovel = EndItems.registerEndTool(name + "_shovel", () -> new BaseShovelItem(material, 1.5F, -3.0F, itemSettings));
-		sword = EndItems.registerEndTool(name + "_sword", () -> new BaseSwordItem(material, 3, -2.4F, itemSettings));
-		pickaxe = EndItems.registerEndTool(name + "_pickaxe", () -> new EndPickaxe(material, 1, -2.8F, itemSettings));
-		axe = EndItems.registerEndTool(name + "_axe", () -> new BaseAxeItem(material, 6.0F, -3.0F, itemSettings));
-		hoe = EndItems.registerEndTool(name + "_hoe", () -> new BaseHoeItem(material, -3, 0.0F, itemSettings));
-		hammer = EndItems.registerEndTool(
-				name + "_hammer",
-				() -> new EndHammerItem(material, 5.0F, -3.2F, 0.3D, itemSettings)
-		);
+        shovel = EndItems.registerEndTool(name + "_shovel", () -> new BaseShovelItem(material, 1.5F, -3.0F, itemSettings));
+        sword = EndItems.registerEndTool(name + "_sword", () -> new BaseSwordItem(material, 3, -2.4F, itemSettings));
+        pickaxe = EndItems.registerEndTool(name + "_pickaxe", () -> new EndPickaxe(material, 1, -2.8F, itemSettings));
+        axe = EndItems.registerEndTool(name + "_axe", () -> new BaseAxeItem(material, 6.0F, -3.0F, itemSettings));
+        hoe = EndItems.registerEndTool(name + "_hoe", () -> new BaseHoeItem(material, -3, 0.0F, itemSettings));
+        hammer = EndItems.registerEndTool(
+                name + "_hammer",
+                () -> new EndHammerItem(material, 5.0F, -3.2F, 0.3D, itemSettings)
+        );
 
-		forgedPlate = EndItems.registerEndItem(name + "_forged_plate");
-		helmet = EndItems.registerEndItem(name + "_helmet", () -> new EndArmorItem(armor, EquipmentSlot.HEAD, itemSettings));
-		chestplate = EndItems.registerEndItem(
-				name + "_chestplate",
-				() -> new EndArmorItem(armor, EquipmentSlot.CHEST, itemSettings)
-		);
-		leggings = EndItems.registerEndItem(
-				name + "_leggings",
-				() -> new EndArmorItem(armor, EquipmentSlot.LEGS, itemSettings)
-		);
-		boots = EndItems.registerEndItem(name + "_boots", () ->  new EndArmorItem(armor, EquipmentSlot.FEET, itemSettings));
+        forgedPlate = EndItems.registerEndItem(name + "_forged_plate");
+        helmet = EndItems.registerEndItem(name + "_helmet", () -> new EndArmorItem(armor, EquipmentSlot.HEAD, itemSettings));
+        chestplate = EndItems.registerEndItem(
+                name + "_chestplate",
+                () -> new EndArmorItem(armor, EquipmentSlot.CHEST, itemSettings)
+        );
+        leggings = EndItems.registerEndItem(
+                name + "_leggings",
+                () -> new EndArmorItem(armor, EquipmentSlot.LEGS, itemSettings)
+        );
+        boots = EndItems.registerEndItem(name + "_boots", () -> new EndArmorItem(armor, EquipmentSlot.FEET, itemSettings));
 
-		anvilBlock = EndBlocks.registerBlock(
-				name + "_anvil",
-				 () -> new EndAnvilBlock(this, block.get().defaultMaterialColor(), level)
-		);
+        anvilBlock = EndBlocks.registerBlock(
+                name + "_anvil",
+                () -> new EndAnvilBlock(this, block.get().defaultMaterialColor(), level)
+        );
 
 //		if (hasOre) {
 //			FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_ingot_furnace_ore", ore.get(), ingot.get())
@@ -219,15 +217,22 @@ public class MetalMaterial {
 //								  .setOutput(ingot.get(), 3)
 //								  .setExpiriense(2.1F)
 //								  .build();
-//		} //FIXME: Fix recipes somehow
+//		}
 
-		// Basic recipes
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_ingot_from_nuggets", ingot.get())
-//
-//				  .setShape("###", "###", "###")
-//				  .addMaterial('#', nugget.get())
-//				  .setGroup("end_metal_ingots_nug")
-//				  .build();
+        // Basic recipes
+//        GridRecipe.make(BetterEndForge.MOD_ID, name + "_ingot_from_nuggets", ingot.get())
+//                .setShape("###", "###", "###")
+//                .addMaterial('#', nugget.get())
+//                .setGroup("end_metal_ingots_nug")
+//                .build();
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_ingot_from_nuggets")
+                        .setOutput(ingot::get)
+                        .setShape("###", "###", "###")
+                        .addInput('#', nugget::get)
+                        .setGroup("end_metal_ingots_nug")
+        );
+
 //		GridRecipe.make(BetterEndForge.MOD_ID, name + "_nuggets_from_ingot", nugget.get())
 //
 //				  .setOutputCount(9)
@@ -492,5 +497,5 @@ public class MetalMaterial {
 //		TagAPI.addBlockTag(NamedBlockTags.BEACON_BASE_BLOCKS, block.get());
 //		TagAPI.addItemTag(NamedItemTags.BEACON_PAYMENT_ITEMS, ingot.get());
 //		TagAPI.addBlockTag(NamedCommonBlockTags.DRAGON_IMMUNE, ore.get(), bars.get());
-	} //FIXME: Fix the recipes, they return NPE
+    } //FIXME: Fix the recipes, they return NPE
 }
