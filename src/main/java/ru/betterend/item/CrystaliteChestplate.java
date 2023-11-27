@@ -12,7 +12,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
-import ru.betterend.effects.EndStatusEffects;
+import ru.betterend.registry.EndStatusEffects;
 import ru.betterend.interfaces.MobEffectApplier;
 import ru.betterend.registry.EndItems;
 

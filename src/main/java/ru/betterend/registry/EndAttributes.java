@@ -20,8 +20,5 @@ public class EndAttributes {
 	}
 
 	public static final RegistryObject<Attribute> BLINDNESS_RESISTANCE = ATTRIBUTES.register("attribute.name.generic.blindness_resistance", () -> new EndAttribute("generic.blindness_resistance", 0.0));
-	
-//	public static AttributeSupplier.Builder addLivingEntityAttributes(AttributeSupplier.Builder builder) {
-//		return builder.add(EndAttributes.BLINDNESS_RESISTANCE.get());
-//	}
+
 }

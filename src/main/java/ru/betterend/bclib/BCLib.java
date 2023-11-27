@@ -20,12 +20,12 @@ public class BCLib {
 	public static void loadBCLib() {
 		BaseRegistry.register();
 		GeneratorOptions.init();
-		BaseBlockEntities.register();
-		BCLibEndBiomeSource.register();
+	//	BaseBlockEntities.register();
+	//	BCLibEndBiomeSource.register();
 		TagAPI.init();
 		CraftingRecipes.init();
 		WorldDataAPI.registerModCache(MOD_ID);
-		AnvilRecipe.register();
+//		AnvilRecipe.register();
 		
 		BCLibPatch.register();
 	}

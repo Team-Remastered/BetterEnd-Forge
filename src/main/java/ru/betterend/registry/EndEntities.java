@@ -4,6 +4,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityType.EntityFactory;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.levelgen.Heightmap.Types;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -96,25 +98,20 @@ public class EndEntities {
 		ColorUtil.color(242, 220, 236)
 	);
 	
-	public static void register() {
+	public static void registerSpawnPlacement() {
+		//TODO: review the spawn placement to match the one form BetterEnd Fabric
+
 		// Air //
-		SpawnRuleBuilder.start(DRAGONFLY.get()).aboveGround(2).maxNearby(8).buildNoRestrictions(Types.MOTION_BLOCKING);
-		SpawnRuleBuilder.start(SILK_MOTH.get()).aboveGround(2).maxNearby(4).buildNoRestrictions(Types.MOTION_BLOCKING);
+		SpawnPlacements.register(DRAGONFLY.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Types.MOTION_BLOCKING, DragonflyEntity::checkAnimalSpawnRules);
+		SpawnPlacements.register(SILK_MOTH.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Types.MOTION_BLOCKING, SilkMothEntity::checkAnimalSpawnRules);
 		
 		// Land //
-		SpawnRuleBuilder
-			.start(END_SLIME.get())
-			.notPeaceful()
-			.maxNearby(4, 64)
-			.onlyOnValidBlocks()
-			.customRule(EndSlimeEntity::canSpawn)
-			.buildNoRestrictions(Types.MOTION_BLOCKING);
+		SpawnPlacements.register(END_SLIME.get(), SpawnPlacements.Type.ON_GROUND, Types.MOTION_BLOCKING, EndSlimeEntity::checkMobSpawnRules);
+		SpawnPlacements.register(SHADOW_WALKER.get(), SpawnPlacements.Type.ON_GROUND, Types.MOTION_BLOCKING, ShadowWalkerEntity::checkMonsterSpawnRules);
 
-		SpawnRuleBuilder.start(SHADOW_WALKER.get()).vanillaHostile().onlyOnValidBlocks().maxNearby(8, 64).buildNoRestrictions(Types.MOTION_BLOCKING);
-		
 		// Water //
-		SpawnRuleBuilder.start(END_FISH.get()).maxNearby(8, 64).buildInWater(Types.MOTION_BLOCKING);
-		SpawnRuleBuilder.start(CUBOZOA.get()).maxNearby(8, 64).buildInWater(Types.MOTION_BLOCKING);
+		SpawnPlacements.register(END_FISH.get(), SpawnPlacements.Type.IN_WATER, Types.MOTION_BLOCKING, EndFishEntity::checkSurfaceWaterAnimalSpawnRules);
+		SpawnPlacements.register(CUBOZOA.get(), SpawnPlacements.Type.IN_WATER, Types.MOTION_BLOCKING, CubozoaEntity::checkSurfaceWaterAnimalSpawnRules);
 	}
 	
 //	protected static <T extends Entity> EntityType<T> register(String name, MobCategory group, float width, float height, EntityFactory<T> entity) {

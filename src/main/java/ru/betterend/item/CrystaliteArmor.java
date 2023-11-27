@@ -8,7 +8,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import ru.betterend.bclib.items.BaseArmorItem;
-import ru.betterend.effects.EndStatusEffects;
+import ru.betterend.registry.EndStatusEffects;
 import ru.betterend.item.material.EndArmorMaterial;
 
 public class CrystaliteArmor extends BaseArmorItem {
