@@ -5,11 +5,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.RegistryObject;
-import ru.betterend.bclib.api.tag.NamedBlockTags;
-import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
-import ru.betterend.bclib.api.tag.NamedCommonItemTags;
-import ru.betterend.bclib.api.tag.NamedItemTags;
-import ru.betterend.bclib.api.tag.TagAPI;
 import ru.betterend.bclib.blocks.BaseBlock;
 import ru.betterend.bclib.blocks.BaseFurnaceBlock;
 import ru.betterend.bclib.blocks.BaseRotatedPillarBlock;
@@ -18,14 +13,10 @@ import ru.betterend.bclib.blocks.BaseStairsBlock;
 import ru.betterend.bclib.blocks.BaseStoneButtonBlock;
 import ru.betterend.bclib.blocks.BaseWallBlock;
 import ru.betterend.bclib.blocks.StonePressurePlateBlock;
-import ru.betterend.bclib.recipes.GridRecipe;
-import ru.betterend.BetterEndForge;
+import ru.betterend.blocks.EndFlowerPotBlock;
 import ru.betterend.blocks.EndPedestal;
-import ru.betterend.blocks.FlowerPotBlock;
 import ru.betterend.blocks.basis.StoneLanternBlock;
-import ru.betterend.recipe.CraftingRecipes;
 import ru.betterend.registry.EndBlocks;
-import ru.betterend.registry.EndItems;
 
 public class StoneMaterial {
 	public final RegistryObject<Block> stone;
@@ -68,7 +59,7 @@ public class StoneMaterial {
 		brickSlab = EndBlocks.registerBlock(name + "_bricks_slab",  () -> new BaseSlabBlock(bricks.get()));
 		brickWall = EndBlocks.registerBlock(name + "_bricks_wall",  () -> new BaseWallBlock(bricks.get()));
 		furnace = EndBlocks.registerBlock(name + "_furnace",  () -> new BaseFurnaceBlock(bricks.get()));
-		flowerPot = EndBlocks.registerBlock(name + "_flower_pot",  () -> new FlowerPotBlock(bricks.get()));
+		flowerPot = EndBlocks.registerBlock(name + "_flower_pot",  () -> new EndFlowerPotBlock(bricks.get()));
 		
 		// Recipes //
 //		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks", bricks.get())

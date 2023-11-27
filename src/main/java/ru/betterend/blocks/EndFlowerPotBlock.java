@@ -60,7 +60,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvider, PostInitable {
+public class EndFlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvider, PostInitable {
 	private static final IntegerProperty PLANT_ID = EndBlockProperties.PLANT_ID;
 	private static final IntegerProperty SOIL_ID = EndBlockProperties.SOIL_ID;
 	private static final IntegerProperty POT_LIGHT = EndBlockProperties.POT_LIGHT;
@@ -69,7 +69,7 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 	private static Block[] plants;
 	private static Block[] soils;
 	
-	public FlowerPotBlock(Block source) {
+	public EndFlowerPotBlock(Block source) {
 		super(BlockBehaviour.Properties.copy(source).lightLevel(state -> state.getValue(POT_LIGHT) * 5));
 		this.registerDefaultState(
 			this.defaultBlockState()
@@ -115,7 +115,7 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 	
 	@Override
 	public void postInit() {
-		if (FlowerPotBlock.plants != null) {
+		if (EndFlowerPotBlock.plants != null) {
 			return;
 		}
 		
@@ -155,16 +155,16 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 			}
 		});
 		
-		FlowerPotBlock.plants = new Block[maxNotNull(plants) + 1];
-		System.arraycopy(plants, 0, FlowerPotBlock.plants, 0, FlowerPotBlock.plants.length);
+		EndFlowerPotBlock.plants = new Block[maxNotNull(plants) + 1];
+		System.arraycopy(plants, 0, EndFlowerPotBlock.plants, 0, EndFlowerPotBlock.plants.length);
 		
-		FlowerPotBlock.soils = new Block[maxNotNull(soils) + 1];
-		System.arraycopy(soils, 0, FlowerPotBlock.soils, 0, FlowerPotBlock.soils.length);
+		EndFlowerPotBlock.soils = new Block[maxNotNull(soils) + 1];
+		System.arraycopy(soils, 0, EndFlowerPotBlock.soils, 0, EndFlowerPotBlock.soils.length);
 		
-		if (PLANT_ID.getValue(Integer.toString(FlowerPotBlock.plants.length)).isEmpty()) {
+		if (PLANT_ID.getValue(Integer.toString(EndFlowerPotBlock.plants.length)).isEmpty()) {
 			throw new RuntimeException("There are too much plant ID values!");
 		}
-		if (SOIL_ID.getValue(Integer.toString(FlowerPotBlock.soils.length)).isEmpty()) {
+		if (SOIL_ID.getValue(Integer.toString(EndFlowerPotBlock.soils.length)).isEmpty()) {
 			throw new RuntimeException("There are too much soil ID values!");
 		}
 	}
@@ -423,7 +423,8 @@ public class FlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvi
 	@SuppressWarnings("deprecation")
 	public VoxelShape getShape(BlockState state, BlockGetter view, BlockPos pos, CollisionContext ePos) {
 		int id = state.getValue(PLANT_ID);
-		return id > 0 && id <= plants.length ? SHAPE_FULL : SHAPE_EMPTY;
+//		return id > 0 && id <= plants.length ? SHAPE_FULL : SHAPE_EMPTY; //FIXME: Fix the NPE
+		return SHAPE_EMPTY;
 	}
 	
 	@Override
