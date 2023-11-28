@@ -1,12 +1,12 @@
 {
     "parent": "block/cube", 
     "textures": {
-        "down": "betterend:block/pythadendron_stripped_log_top", 
-        "east": "betterend:block/pythadendron_stripped_log_side", 
-        "north": "betterend:block/pythadendron_stripped_log_side", 
-        "particle": "betterend:block/pythadendron_stripped_log_side", 
-        "south": "betterend:block/pythadendron_stripped_log_side", 
-        "up": "betterend:block/pythadendron_stripped_log_top", 
-        "west": "betterend:block/pythadendron_stripped_log_side"
+        "down": "betterendforge:block/pythadendron_stripped_log_top",
+        "east": "betterendforge:block/pythadendron_stripped_log_side",
+        "north": "betterendforge:block/pythadendron_stripped_log_side",
+        "particle": "betterendforge:block/pythadendron_stripped_log_side",
+        "south": "betterendforge:block/pythadendron_stripped_log_side",
+        "up": "betterendforge:block/pythadendron_stripped_log_top",
+        "west": "betterendforge:block/pythadendron_stripped_log_side"
     }
 }

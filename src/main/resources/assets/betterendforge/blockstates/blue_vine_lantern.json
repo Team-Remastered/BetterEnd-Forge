@@ -1,7 +1,7 @@
 {
 	"variants": {
 		"": {
-			"model": "betterend:block/blue_vine_lantern"
+			"model": "betterendforge:block/blue_vine_lantern"
 		}
 	}
 }

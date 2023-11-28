@@ -2,8 +2,8 @@
 	"defaultMap": {
 		"spriteMap": [
 			{
-				"sprite": "betterend:block/sulphuric_rock_furnace_glow",
-				"material": "betterend:glow_all"
+				"sprite": "betterendforge:block/sulphuric_rock_furnace_glow",
+				"material": "betterendforge:glow_all"
 			}
 		]
 	}

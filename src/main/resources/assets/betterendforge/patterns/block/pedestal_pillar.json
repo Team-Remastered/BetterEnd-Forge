@@ -1,5 +1,5 @@
 {
-	"parent": "betterend:block/pedestal_pillar",
+	"parent": "betterendforge:block/pedestal_pillar",
 	"textures": {
 		"pillar": "%mod%:block/%pillar%"
 	}

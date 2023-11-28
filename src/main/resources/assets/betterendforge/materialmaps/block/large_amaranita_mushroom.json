@@ -2,8 +2,8 @@
 	"defaultMap": {
 		"spriteMap": [
 			{
-				"sprite": "betterend:block/large_amaranita_cap_bottom",
-				"material": "betterend:glow_green_2"
+				"sprite": "betterendforge:block/large_amaranita_cap_bottom",
+				"material": "betterendforge:glow_green_2"
 			}
 		]
 	}

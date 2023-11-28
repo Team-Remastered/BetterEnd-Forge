@@ -1,12 +1,12 @@
 {
 	"parent": "block/cube",
 	"textures": {
-		"down": "betterend:block/dragon_tree_log_top",
-		"east": "betterend:block/dragon_tree_log_side",
-		"north": "betterend:block/dragon_tree_log_side",
-		"particle": "betterend:block/dragon_tree_log_side",
-		"south": "betterend:block/dragon_tree_log_side",
-		"up": "betterend:block/dragon_tree_log_top",
-		"west": "betterend:block/dragon_tree_log_side"
+		"down": "betterendforge:block/dragon_tree_log_top",
+		"east": "betterendforge:block/dragon_tree_log_side",
+		"north": "betterendforge:block/dragon_tree_log_side",
+		"particle": "betterendforge:block/dragon_tree_log_side",
+		"south": "betterendforge:block/dragon_tree_log_side",
+		"up": "betterendforge:block/dragon_tree_log_top",
+		"west": "betterendforge:block/dragon_tree_log_side"
 	}
 }

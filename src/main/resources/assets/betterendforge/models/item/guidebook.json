@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/generated",
 	"textures": {
-		"layer0": "betterend:item/guidebook"
+		"layer0": "betterendforge:item/guidebook"
 	}
 }

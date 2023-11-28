@@ -1,9 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/creeping_moss_leaves",
-		"texture": "betterend:block/creeping_moss_leaves",
-		"spore": "betterend:block/creeping_moss_spores"
+		"particle": "betterendforge:block/creeping_moss_leaves",
+		"texture": "betterendforge:block/creeping_moss_leaves",
+		"spore": "betterendforge:block/creeping_moss_spores"
 	},
 	"elements": [ 	 
 		{

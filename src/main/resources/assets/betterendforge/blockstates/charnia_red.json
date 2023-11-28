@@ -1,10 +1,10 @@
 {
 	"variants": {
 		"": [
-			{ "model": "betterend:block/charnia_red" },
-			{ "model": "betterend:block/charnia_red", "y": 90 },
-			{ "model": "betterend:block/charnia_red", "y": 180 },
-			{ "model": "betterend:block/charnia_red", "y": 270 }
+			{ "model": "betterendforge:block/charnia_red" },
+			{ "model": "betterendforge:block/charnia_red", "y": 90 },
+			{ "model": "betterendforge:block/charnia_red", "y": 180 },
+			{ "model": "betterendforge:block/charnia_red", "y": 270 }
 		]
 	}
 }

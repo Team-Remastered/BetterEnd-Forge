@@ -1,10 +1,10 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/filalux_wings_large",
-		"texture": "betterend:block/filalux_wings_large",
-		"top": "betterend:block/filalux_wings_top",
-		"side": "betterend:block/filalux_wings_top_side"
+		"particle": "betterendforge:block/filalux_wings_large",
+		"texture": "betterendforge:block/filalux_wings_large",
+		"top": "betterendforge:block/filalux_wings_top",
+		"side": "betterendforge:block/filalux_wings_top_side"
 	},
 	"elements": [ 	 
 		{

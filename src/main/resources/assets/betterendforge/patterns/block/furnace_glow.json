@@ -1,10 +1,10 @@
 {
 	"parent": "block/block",
 	"textures": {
-		"top": "betterend:block/%top%",
-		"front": "betterend:block/%front%",
-		"side": "betterend:block/%side%",
-		"glow": "betterend:block/%glow%"
+		"top": "betterendforge:block/%top%",
+		"front": "betterendforge:block/%front%",
+		"side": "betterendforge:block/%side%",
+		"glow": "betterendforge:block/%glow%"
 	},
 	"display": {
 		"firstperson_righthand": {

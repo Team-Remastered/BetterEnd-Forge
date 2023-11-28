@@ -1,10 +1,10 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/hydralux_flower_bottom",
-		"texture": "betterend:block/hydralux_flower_bottom",
-		"petal_bottom": "betterend:block/hydralux_flower_bud_petal_bottom",
-		"petal_side": "betterend:block/hydralux_flower_bud_petal_side"
+		"particle": "betterendforge:block/hydralux_flower_bottom",
+		"texture": "betterendforge:block/hydralux_flower_bottom",
+		"petal_bottom": "betterendforge:block/hydralux_flower_bud_petal_bottom",
+		"petal_side": "betterendforge:block/hydralux_flower_bud_petal_side"
 	},
 	"elements": [ 	 
 		{

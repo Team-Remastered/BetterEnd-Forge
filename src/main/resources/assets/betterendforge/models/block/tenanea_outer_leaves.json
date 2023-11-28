@@ -1,9 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/tenanea_outer_leaves",
-		"texture": "betterend:block/tenanea_outer_leaves",
-		"spore": "betterend:block/tenanea_outer_leaves"
+		"particle": "betterendforge:block/tenanea_outer_leaves",
+		"texture": "betterendforge:block/tenanea_outer_leaves",
+		"spore": "betterendforge:block/tenanea_outer_leaves"
 	},
 	"elements": [ 	 
 		{

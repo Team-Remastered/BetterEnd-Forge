@@ -1,8 +1,8 @@
 {
     "parent": "minecraft:block/slab", 
     "textures": {
-        "bottom": "betterend:block/%parent%", 
-        "side": "betterend:block/%parent%",
-        "top": "betterend:block/%parent%"
+        "bottom": "betterendforge:block/%parent%",
+        "side": "betterendforge:block/%parent%",
+        "top": "betterendforge:block/%parent%"
     }
 }

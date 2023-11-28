@@ -1,12 +1,12 @@
 {
 	"parent": "block/cube",
 	"textures": {
-		"down": "betterend:block/smaragdant_crystal_top",
-		"east": "betterend:block/smaragdant_crystal_side",
-		"north": "betterend:block/smaragdant_crystal_side",
-		"particle": "betterend:block/smaragdant_crystal_side",
-		"south": "betterend:block/smaragdant_crystal_side",
-		"up": "betterend:block/smaragdant_crystal_top",
-		"west": "betterend:block/smaragdant_crystal_side"
+		"down": "betterendforge:block/smaragdant_crystal_top",
+		"east": "betterendforge:block/smaragdant_crystal_side",
+		"north": "betterendforge:block/smaragdant_crystal_side",
+		"particle": "betterendforge:block/smaragdant_crystal_side",
+		"south": "betterendforge:block/smaragdant_crystal_side",
+		"up": "betterendforge:block/smaragdant_crystal_top",
+		"west": "betterendforge:block/smaragdant_crystal_side"
 	}
 }

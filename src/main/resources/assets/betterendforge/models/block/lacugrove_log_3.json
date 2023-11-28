@@ -1,12 +1,12 @@
 {
 	"parent": "block/cube",
 	"textures": {
-		"down": "betterend:block/lacugrove_log_top",
-		"east": "betterend:block/lacugrove_log_side_3",
-		"north": "betterend:block/lacugrove_log_side_3",
-		"particle": "betterend:block/lacugrove_log_side_3",
-		"south": "betterend:block/lacugrove_log_side_3",
-		"up": "betterend:block/lacugrove_log_top",
-		"west": "betterend:block/lacugrove_log_side_3"
+		"down": "betterendforge:block/lacugrove_log_top",
+		"east": "betterendforge:block/lacugrove_log_side_3",
+		"north": "betterendforge:block/lacugrove_log_side_3",
+		"particle": "betterendforge:block/lacugrove_log_side_3",
+		"south": "betterendforge:block/lacugrove_log_side_3",
+		"up": "betterendforge:block/lacugrove_log_top",
+		"west": "betterendforge:block/lacugrove_log_side_3"
 	}
 }

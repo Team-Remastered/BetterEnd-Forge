@@ -1,9 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/amber_block",
-		"texture": "betterend:block/amber_block",
-		"side": "betterend:block/respawn_obelisk_bottom_side"
+		"particle": "betterendforge:block/amber_block",
+		"texture": "betterendforge:block/amber_block",
+		"side": "betterendforge:block/respawn_obelisk_bottom_side"
 	},
 	"elements": [ 	 
 		{

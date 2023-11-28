@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "betterend:item/end_stone_stalactite"
+		"layer0": "betterendforge:item/end_stone_stalactite"
 	}
 }

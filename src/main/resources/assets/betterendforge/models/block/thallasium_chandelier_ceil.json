@@ -1,9 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/thallasium_chandelier_ceil",
-		"texture": "betterend:block/thallasium_chandelier_ceil",
-		"rod": "betterend:block/thallasium_chandelier"
+		"particle": "betterendforge:block/thallasium_chandelier_ceil",
+		"texture": "betterendforge:block/thallasium_chandelier_ceil",
+		"rod": "betterendforge:block/thallasium_chandelier"
 	},
 	"elements": [ 	 
 		{

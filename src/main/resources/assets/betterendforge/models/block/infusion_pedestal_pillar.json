@@ -1,6 +1,6 @@
 {
-	"parent": "betterend:block/pedestal_pillar",
+	"parent": "betterendforge:block/pedestal_pillar",
 	"textures": {
-		"pillar": "betterend:block/infusion_pedestal_pillar"
+		"pillar": "betterendforge:block/infusion_pedestal_pillar"
 	}
 }

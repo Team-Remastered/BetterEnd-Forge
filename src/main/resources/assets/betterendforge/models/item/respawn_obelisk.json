@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "betterend:item/respawn_obelisk"
+		"layer0": "betterendforge:item/respawn_obelisk"
 	}
 }

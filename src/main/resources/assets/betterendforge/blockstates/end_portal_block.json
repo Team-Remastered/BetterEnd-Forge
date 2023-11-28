@@ -1,6 +1,6 @@
 {
 	"variants": {
-		"axis=x": { "model": "betterend:block/end_portal" },
-		"axis=z": { "model": "betterend:block/end_portal", "y": 90 }
+		"axis=x": { "model": "betterendforge:block/end_portal" },
+		"axis=z": { "model": "betterendforge:block/end_portal", "y": 90 }
 	}
 }

@@ -1,10 +1,10 @@
 {
 	"variants": {
 		"": [
-			{ "model": "betterend:block/orango_01" },
-			{ "model": "betterend:block/orango_02" },
-			{ "model": "betterend:block/orango_03" },
-			{ "model": "betterend:block/orango_04" }
+			{ "model": "betterendforge:block/orango_01" },
+			{ "model": "betterendforge:block/orango_02" },
+			{ "model": "betterendforge:block/orango_03" },
+			{ "model": "betterendforge:block/orango_04" }
 		]
 	}
 }

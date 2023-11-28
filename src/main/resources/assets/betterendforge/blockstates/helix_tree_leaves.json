@@ -1,5 +1,5 @@
 {
 	"variants": {
-		"": { "model": "betterend:block/helix_tree_leaves" }
+		"": { "model": "betterendforge:block/helix_tree_leaves" }
 	}
 }

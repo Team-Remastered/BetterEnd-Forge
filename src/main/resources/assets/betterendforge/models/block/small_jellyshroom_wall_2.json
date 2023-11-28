@@ -1,11 +1,11 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/jellyshroom_wall_stem_1",
-		"branch_1": "betterend:block/jellyshroom_wall_stem_1",
-		"branch_2": "betterend:block/jellyshroom_wall_stem_2",
-		"branch_3": "betterend:block/jellyshroom_wall_stem_3",
-		"cap": "betterend:block/jellyshroom_cap_small"
+		"particle": "betterendforge:block/jellyshroom_wall_stem_1",
+		"branch_1": "betterendforge:block/jellyshroom_wall_stem_1",
+		"branch_2": "betterendforge:block/jellyshroom_wall_stem_2",
+		"branch_3": "betterendforge:block/jellyshroom_wall_stem_3",
+		"cap": "betterendforge:block/jellyshroom_cap_small"
 	},
 	"elements": [ 	 
 		{

@@ -1,10 +1,10 @@
 {
 	"variants": {
 		"": [
-			{ "model": "betterend:block/amber_grass_01" },
-			{ "model": "betterend:block/amber_grass_02" },
-			{ "model": "betterend:block/amber_grass_03" },
-			{ "model": "betterend:block/amber_grass_04" }
+			{ "model": "betterendforge:block/amber_grass_01" },
+			{ "model": "betterendforge:block/amber_grass_02" },
+			{ "model": "betterendforge:block/amber_grass_03" },
+			{ "model": "betterendforge:block/amber_grass_04" }
 		]
 	}
 }

@@ -2,12 +2,12 @@
 	"defaultMap": {
 		"spriteMap": [
 			{
-				"sprite": "betterend:block/ivis_vine",
-				"material": "betterend:waving"
+				"sprite": "betterendforge:block/ivis_vine",
+				"material": "betterendforge:waving"
 			},
 			{
-				"sprite": "betterend:block/ivis_vine_bottom",
-				"material": "betterend:waving"
+				"sprite": "betterendforge:block/ivis_vine_bottom",
+				"material": "betterendforge:waving"
 			}
 		]
 	}

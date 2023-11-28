@@ -1,9 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/neon_cactus_small_side",
-		"side": "betterend:block/neon_cactus_small_side_moss",
-		"top": "betterend:block/neon_cactus_small_top"
+		"particle": "betterendforge:block/neon_cactus_small_side",
+		"side": "betterendforge:block/neon_cactus_small_side_moss",
+		"top": "betterendforge:block/neon_cactus_small_top"
 	},
 	"elements": [ 	 
 		{

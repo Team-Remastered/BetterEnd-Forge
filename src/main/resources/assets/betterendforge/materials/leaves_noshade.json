@@ -1,7 +1,7 @@
 {
 	"layers": [
 		{
-			"vertexSource": "betterend:shaders/material/wave.vert",
+			"vertexSource": "betterendforge:shaders/material/wave.vert",
 			"fragmentSource": "canvas:shaders/material/default.frag",
 			"disableAo": true,
 			"disableDiffuse": true

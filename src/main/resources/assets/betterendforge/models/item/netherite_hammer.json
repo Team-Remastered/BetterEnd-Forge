@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:item/handheld",
 	"textures": {
-		"layer0": "betterend:item/netherite_hammer"
+		"layer0": "betterendforge:item/netherite_hammer"
 	}
 }

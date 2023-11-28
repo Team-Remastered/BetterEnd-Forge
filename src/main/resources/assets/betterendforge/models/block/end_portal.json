@@ -1,7 +1,7 @@
 {
 	"textures": {
-		"particle": "betterend:block/end_portal",
-		"portal": "betterend:block/end_portal"
+		"particle": "betterendforge:block/end_portal",
+		"portal": "betterendforge:block/end_portal"
 	},
 	"elements": [
 		{

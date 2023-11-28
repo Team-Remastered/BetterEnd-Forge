@@ -1,6 +1,6 @@
 {
 	"parent": "block/fence_inventory",
 	"textures": {
-		"texture": "betterend:block/%parent%"
+		"texture": "betterendforge:block/%parent%"
 	}
 }

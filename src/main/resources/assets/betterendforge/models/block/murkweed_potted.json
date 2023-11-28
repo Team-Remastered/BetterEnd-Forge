@@ -2,8 +2,8 @@
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"particle": "betterend:block/murkweed",
-		"texture": "betterend:block/murkweed"
+		"particle": "betterendforge:block/murkweed",
+		"texture": "betterendforge:block/murkweed"
 	},
 	"elements": [ 	 
 		{

@@ -1,9 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/%texture%_ceil",
-		"texture": "betterend:block/%texture%_ceil",
-		"rod": "betterend:block/%texture%_floor"
+		"particle": "betterendforge:block/%texture%_ceil",
+		"texture": "betterendforge:block/%texture%_ceil",
+		"rod": "betterendforge:block/%texture%_floor"
 	},
 	"elements": [ 	 
 		{

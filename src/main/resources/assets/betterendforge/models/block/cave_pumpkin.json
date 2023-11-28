@@ -2,11 +2,11 @@
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"parent": "block/block",
 	"textures": {
-		"particle": "betterend:block/cave_pumpkin_lantern_side",
-		"lantern_side": "betterend:block/cave_pumpkin_lantern_side",
-		"lantern_bottom": "betterend:block/cave_pumpkin_lantern_bottom",
-		"top": "betterend:block/cave_pumpkin_top",
-		"side": "betterend:block/cave_pumpkin_side"
+		"particle": "betterendforge:block/cave_pumpkin_lantern_side",
+		"lantern_side": "betterendforge:block/cave_pumpkin_lantern_side",
+		"lantern_bottom": "betterendforge:block/cave_pumpkin_lantern_bottom",
+		"top": "betterendforge:block/cave_pumpkin_top",
+		"side": "betterendforge:block/cave_pumpkin_side"
 	},
 	"elements": [ 	 
 		{

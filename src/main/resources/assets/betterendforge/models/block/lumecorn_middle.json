@@ -1,11 +1,11 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/lumecorn_stem",
-		"texture": "betterend:block/lumecorn_stem",
-		"leaf_2": "betterend:block/lumecorn_leaf_2",
-		"leaf_1": "betterend:block/lumecorn_leaf_1",
-		"big_petal": "betterend:block/lumecorn_big_petal"
+		"particle": "betterendforge:block/lumecorn_stem",
+		"texture": "betterendforge:block/lumecorn_stem",
+		"leaf_2": "betterendforge:block/lumecorn_leaf_2",
+		"leaf_1": "betterendforge:block/lumecorn_leaf_1",
+		"big_petal": "betterendforge:block/lumecorn_big_petal"
 	},
 	"elements": [ 	 
 		{

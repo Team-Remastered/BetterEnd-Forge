@@ -1,8 +1,8 @@
 {
 	"variants": {
 		"": [
-			{ "model": "betterend:block/lutebus_01" },
-			{ "model": "betterend:block/lutebus_02" }
+			{ "model": "betterendforge:block/lutebus_01" },
+			{ "model": "betterendforge:block/lutebus_02" }
 		]
 	}
 }

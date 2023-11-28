@@ -2,24 +2,24 @@
 	"defaultMap": {
 		"spriteMap": [
 			{
-				"sprite": "betterend:block/lanceleaf_stem",
-				"material": "betterend:waving_floor"
+				"sprite": "betterendforge:block/lanceleaf_stem",
+				"material": "betterendforge:waving_floor"
 			},
 			{
-				"sprite": "betterend:block/lanceleaf_leaf_bottom",
-				"material": "betterend:waving"
+				"sprite": "betterendforge:block/lanceleaf_leaf_bottom",
+				"material": "betterendforge:waving"
 			},
 			{
-				"sprite": "betterend:block/lanceleaf_leaf_middle",
-				"material": "betterend:waving"
+				"sprite": "betterendforge:block/lanceleaf_leaf_middle",
+				"material": "betterendforge:waving"
 			},
 			{
-				"sprite": "betterend:block/lanceleaf_leaf_pre_top",
-				"material": "betterend:waving"
+				"sprite": "betterendforge:block/lanceleaf_leaf_pre_top",
+				"material": "betterendforge:waving"
 			},
 			{
-				"sprite": "betterend:block/lanceleaf_leaf_top",
-				"material": "betterend:waving"
+				"sprite": "betterendforge:block/lanceleaf_leaf_top",
+				"material": "betterendforge:waving"
 			}
 		]
 	}

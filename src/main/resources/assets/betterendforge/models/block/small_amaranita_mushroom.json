@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/small_amaranita_mushroom",
-		"texture": "betterend:block/small_amaranita_mushroom"
+		"particle": "betterendforge:block/small_amaranita_mushroom",
+		"texture": "betterendforge:block/small_amaranita_mushroom"
 	},
 	"elements": [ 	 
 		{

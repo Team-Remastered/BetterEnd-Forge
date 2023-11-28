@@ -1,7 +1,7 @@
 {
     "textures": {
-        "wall": "betterend:block/smaragdant_crystal_side",
-        "top": "betterend:block/smaragdant_crystal_top",
+        "wall": "betterendforge:block/smaragdant_crystal_side",
+        "top": "betterendforge:block/smaragdant_crystal_top",
 		"particle": "#wall"
     },
     "elements": [

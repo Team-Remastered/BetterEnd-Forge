@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/purple_polypore",
-		"texture": "betterend:block/purple_polypore"
+		"particle": "betterendforge:block/purple_polypore",
+		"texture": "betterendforge:block/purple_polypore"
 	},
 	"elements": [ 	 
 		{

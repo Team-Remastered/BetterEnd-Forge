@@ -1,6 +1,6 @@
 {
 	"parent": "block/cube_all",
 	"textures": {
-		"all": "betterend:block/ender_ore"
+		"all": "betterendforge:block/ender_ore"
 	}
 }

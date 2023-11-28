@@ -2,8 +2,8 @@
 	"defaultMap": {
 		"spriteMap": [
 			{
-				"sprite": "betterend:block/azure_jadestone_furnace_glow",
-				"material": "betterend:glow_all"
+				"sprite": "betterendforge:block/azure_jadestone_furnace_glow",
+				"material": "betterendforge:glow_all"
 			}
 		]
 	}

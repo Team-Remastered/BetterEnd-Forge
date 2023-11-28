@@ -1,10 +1,10 @@
 {
 	"parent": "block/cube",
 	"textures": {
-		"particle": "betterend:block/flavolite_polished",
-		"rune_1": "betterend:block/flavolite_runed_4",
-		"rune_2": "betterend:block/flavolite_runed_5",
-		"rune_3": "betterend:block/flavolite_runed_6"
+		"particle": "betterendforge:block/flavolite_polished",
+		"rune_1": "betterendforge:block/flavolite_runed_4",
+		"rune_2": "betterendforge:block/flavolite_runed_5",
+		"rune_3": "betterendforge:block/flavolite_runed_6"
 	},
 	"elements": [
 		{

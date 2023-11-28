@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/hydralux_flower_bud",
-		"texture": "betterend:block/hydralux_flower_bud"
+		"particle": "betterendforge:block/hydralux_flower_bud",
+		"texture": "betterendforge:block/hydralux_flower_bud"
 	},
 	"elements": [ 	 
 		{

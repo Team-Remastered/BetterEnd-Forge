@@ -1,12 +1,12 @@
 {
 	"parent": "block/cube",
 	"textures": {
-		"down": "betterend:block/mossy_glowshroom_log_top",
-		"east": "betterend:block/mossy_glowshroom_log_side_5",
-		"north": "betterend:block/mossy_glowshroom_log_side_5",
-		"particle": "betterend:block/mossy_glowshroom_log_side_5",
-		"south": "betterend:block/mossy_glowshroom_log_side_5",
-		"up": "betterend:block/mossy_glowshroom_log_top",
-		"west": "betterend:block/mossy_glowshroom_log_side_5"
+		"down": "betterendforge:block/mossy_glowshroom_log_top",
+		"east": "betterendforge:block/mossy_glowshroom_log_side_5",
+		"north": "betterendforge:block/mossy_glowshroom_log_side_5",
+		"particle": "betterendforge:block/mossy_glowshroom_log_side_5",
+		"south": "betterendforge:block/mossy_glowshroom_log_side_5",
+		"up": "betterendforge:block/mossy_glowshroom_log_top",
+		"west": "betterendforge:block/mossy_glowshroom_log_side_5"
 	}
 }

@@ -1,8 +1,8 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/bolux_mushroom",
-		"texture": "betterend:block/bolux_mushroom"
+		"particle": "betterendforge:block/bolux_mushroom",
+		"texture": "betterendforge:block/bolux_mushroom"
 	},
 	"elements": [ 	 
 		{

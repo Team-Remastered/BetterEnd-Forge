@@ -1,9 +1,9 @@
 {
 	"parent": "minecraft:block/block",
 	"textures": {
-		"top": "betterend:block/infusion_pedestal_top",
-		"base": "betterend:block/infusion_pedestal_base",
-		"pillar": "betterend:block/infusion_pedestal_pillar",
+		"top": "betterendforge:block/infusion_pedestal_top",
+		"base": "betterendforge:block/infusion_pedestal_base",
+		"pillar": "betterendforge:block/infusion_pedestal_pillar",
 		"particle": "#base"
 	},
 	"elements": [

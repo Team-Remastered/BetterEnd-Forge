@@ -2,20 +2,20 @@
 	"defaultMap": {
 		"spriteMap": [
 			{
-				"sprite": "betterend:block/twisted_umbrella_moss_sporophyte",
-				"material": "betterend:wave_glow_all"
+				"sprite": "betterendforge:block/twisted_umbrella_moss_sporophyte",
+				"material": "betterendforge:wave_glow_all"
 			},
 			{
-				"sprite": "betterend:block/twisted_umbrella_moss_up",
-				"material": "betterend:waving"
+				"sprite": "betterendforge:block/twisted_umbrella_moss_up",
+				"material": "betterendforge:waving"
 			},
 			{
-				"sprite": "betterend:block/twisted_umbrella_moss_end",
-				"material": "betterend:waving"
+				"sprite": "betterendforge:block/twisted_umbrella_moss_end",
+				"material": "betterendforge:waving"
 			},
 			{
-				"sprite": "betterend:block/twisted_umbrella_moss_bottom",
-				"material": "betterend:waving_floor"
+				"sprite": "betterendforge:block/twisted_umbrella_moss_bottom",
+				"material": "betterendforge:waving_floor"
 			}
 		]
 	}

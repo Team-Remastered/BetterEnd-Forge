@@ -1,15 +1,15 @@
 {
 	"variants": {
 		"type=bottom": {
-			"model": "betterend:block/neon_cactus_slab"
+			"model": "betterendforge:block/neon_cactus_slab"
 		},
 		"type=top": {
-			"model": "betterend:block/neon_cactus_slab",
+			"model": "betterendforge:block/neon_cactus_slab",
 			"x": 180,
 			"uvlock": true
 		},
 		"type=double": {
-			"model": "betterend:block/neon_cactus_block"
+			"model": "betterendforge:block/neon_cactus_block"
 		}
 	}
 }

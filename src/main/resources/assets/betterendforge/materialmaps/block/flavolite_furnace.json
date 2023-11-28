@@ -2,8 +2,8 @@
 	"defaultMap": {
 		"spriteMap": [
 			{
-				"sprite": "betterend:block/flavolite_furnace_glow",
-				"material": "betterend:glow_all"
+				"sprite": "betterendforge:block/flavolite_furnace_glow",
+				"material": "betterendforge:glow_all"
 			}
 		]
 	}

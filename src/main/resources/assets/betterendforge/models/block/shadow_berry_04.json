@@ -1,9 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
 	"textures": {
-		"particle": "betterend:block/shadow_berry",
-		"texture": "betterend:block/shadow_berry",
-		"texture1": "betterend:block/shadow_berry_leaves"
+		"particle": "betterendforge:block/shadow_berry",
+		"texture": "betterendforge:block/shadow_berry",
+		"texture1": "betterendforge:block/shadow_berry_leaves"
 	},
 	"elements": [ 	 
 		{
