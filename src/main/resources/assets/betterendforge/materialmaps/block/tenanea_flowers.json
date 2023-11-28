@@ -1,0 +1,22 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/tenanea_flowers",
+				"material": "betterendforge:wave_glow_all"
+			},
+			{
+				"sprite": "betterendforge:block/tenanea_flowers_bottom",
+				"material": "betterendforge:wave_glow_all"
+			},
+			{
+				"sprite": "betterendforge:block/tenanea_flowers_stem",
+				"material": "betterendforge:waving"
+			},
+			{
+				"sprite": "betterendforge:block/tenanea_flowers_stem_bottom",
+				"material": "betterendforge:waving"
+			}
+		]
+	}
+}

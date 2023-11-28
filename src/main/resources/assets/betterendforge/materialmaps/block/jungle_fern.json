@@ -1,0 +1,42 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/jungle_fern_leaf",
+				"material": "betterendforge:waving_wall"
+			},
+			{
+				"sprite": "betterendforge:block/jungle_fern_leaf_2",
+				"material": "betterendforge:waving_wall"
+			},
+			{
+				"sprite": "betterendforge:block/jungle_fern_leaf_3",
+				"material": "betterendforge:waving_wall"
+			},
+			{
+				"sprite": "betterendforge:block/jungle_fern_middle",
+				"material": "betterendforge:waving_wall"
+			},
+			{
+				"sprite": "betterendforge:block/jungle_fern_middle_2",
+				"material": "betterendforge:waving_wall"
+			},
+			{
+				"sprite": "betterendforge:block/jungle_fern_middle_3",
+				"material": "betterendforge:waving_wall"
+			},
+			{
+				"sprite": "betterendforge:block/jungle_fern_spore",
+				"material": "betterendforge:waving_small"
+			},
+			{
+				"sprite": "betterendforge:block/jungle_fern_spore_2",
+				"material": "betterendforge:waving_small"
+			},
+			{
+				"sprite": "betterendforge:block/jungle_fern_spore_3",
+				"material": "betterendforge:waving_small"
+			}
+		]
+	}
+}

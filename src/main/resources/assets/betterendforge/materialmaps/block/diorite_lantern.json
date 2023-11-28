@@ -1,0 +1,10 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/aurora_crystal",
+				"material": "betterendforge:glow_all"
+			}
+		]
+	}
+}

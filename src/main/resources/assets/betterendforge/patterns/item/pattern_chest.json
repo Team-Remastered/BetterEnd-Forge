@@ -1,0 +1,6 @@
+{
+	"parent": "betterendforge:block/chest_item",
+	"textures": {
+		"texture": "betterendforge:entity/chest/%texture%"
+	}
+}

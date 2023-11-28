@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "betterendforge:block/%parent%_planks",
+		"side": "betterendforge:block/%parent%_bookshelf"
+	}
+}

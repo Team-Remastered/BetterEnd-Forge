@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:thallasium_chandelier"
+    ]
+  },
+  "criteria": {
+    "has_thallasium_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:thallasium_ingot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_lumecorn_rod": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:lumecorn_rod"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:thallasium_chandelier"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_thallasium_ingot",
+      "has_lumecorn_rod",
+      "has_the_recipe"
+    ]
+  ]
+}

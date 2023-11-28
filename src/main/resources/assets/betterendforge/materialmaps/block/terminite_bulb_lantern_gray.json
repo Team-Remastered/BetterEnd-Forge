@@ -1,0 +1,10 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/bulb_vine_lantern_overlay",
+				"material": "betterendforge:glow_all"
+			}
+		]
+	}
+}

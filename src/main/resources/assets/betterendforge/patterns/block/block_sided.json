@@ -1,0 +1,12 @@
+{
+	"parent": "minecraft:block/cube",
+	"textures": {
+		"particle": "betterendforge:block/%particle%",
+		"down": "betterendforge:block/%down%",
+		"up": "betterendforge:block/%up%",
+		"north": "betterendforge:block/%north%",
+		"south": "betterendforge:block/%south%",
+		"west": "betterendforge:block/%west%",
+		"east": "betterendforge:block/%east%"
+	}
+}

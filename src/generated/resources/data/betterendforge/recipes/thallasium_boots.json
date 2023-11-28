@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "end_metal_boots",
+  "pattern": [
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "betterendforge:thallasium_forged_plate"
+    }
+  },
+  "result": {
+    "item": "betterendforge:thallasium_boots"
+  }
+}

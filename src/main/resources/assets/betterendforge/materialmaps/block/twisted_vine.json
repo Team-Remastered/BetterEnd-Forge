@@ -1,0 +1,14 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/twisted_vine_bottom",
+				"material": "betterendforge:waving"
+			},
+			{
+				"sprite": "betterendforge:block/twisted_vine",
+				"material": "betterendforge:waving"
+			}
+		]
+	}
+}

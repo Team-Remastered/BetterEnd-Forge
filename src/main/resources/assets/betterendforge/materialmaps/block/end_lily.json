@@ -1,0 +1,14 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/end_lily_flower",
+				"material": "betterendforge:glow_inc"
+			},
+			{
+				"sprite": "betterendforge:block/end_lily_flower_small",
+				"material": "betterendforge:glow_inc"
+			}
+		]
+	}
+}

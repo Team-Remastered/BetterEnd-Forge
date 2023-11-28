@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:terminite_chain"
+    ]
+  },
+  "criteria": {
+    "has_terminite_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:terminite_ingot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_terminite_nugget": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:terminite_nugget"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:terminite_chain"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_terminite_ingot",
+      "has_terminite_nugget",
+      "has_the_recipe"
+    ]
+  ]
+}

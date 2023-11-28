@@ -1,0 +1,34 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/lumecorn_light_bottom",
+				"material": "betterendforge:glow_inc"
+			},
+			{
+				"sprite": "betterendforge:block/lumecorn_light_middle",
+				"material": "betterendforge:glow_inc"
+			},
+			{
+				"sprite": "betterendforge:block/lumecorn_light_top_middle",
+				"material": "betterendforge:glow_inc"
+			},
+			{
+				"sprite": "betterendforge:block/lumecorn_light_top",
+				"material": "betterendforge:glow_inc"
+			},
+			{
+				"sprite": "betterendforge:block/lumecorn_leaf_2",
+				"material": "betterendforge:waving_floor"
+			},
+			{
+				"sprite": "betterendforge:block/lumecorn_leaf_1",
+				"material": "betterendforge:waving_floor"
+			},
+			{
+				"sprite": "betterendforge:block/lumecorn_big_petal",
+				"material": "betterendforge:waving"
+			}
+		]
+	}
+}

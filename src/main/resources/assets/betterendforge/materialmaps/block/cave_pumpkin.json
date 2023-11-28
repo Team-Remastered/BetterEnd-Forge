@@ -1,0 +1,14 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/cave_pumpkin_lantern_side",
+				"material": "betterendforge:glow_inc"
+			},
+			{
+				"sprite": "betterendforge:block/cave_pumpkin_lantern_bottom",
+				"material": "betterendforge:glow_inc"
+			}
+		]
+	}
+}

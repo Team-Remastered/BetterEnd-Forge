@@ -1,0 +1,7 @@
+{   "parent": "betterendforge:block/path",
+    "textures": {
+        "top": "betterendforge:block/%top%",
+        "side": "betterendforge:block/%side%",
+        "bottom": "block/end_stone"
+    }
+}

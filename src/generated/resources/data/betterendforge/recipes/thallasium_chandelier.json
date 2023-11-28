@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "end_metal_chandelier",
+  "pattern": [
+    "I#I",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "betterendforge:thallasium_ingot"
+    },
+    "I": {
+      "item": "betterendforge:lumecorn_rod"
+    }
+  },
+  "result": {
+    "item": "betterendforge:thallasium_chandelier"
+  }
+}

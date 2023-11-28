@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:thallasium_tile"
+    ]
+  },
+  "criteria": {
+    "has_thallasium_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:thallasium_block"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:thallasium_tile"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_thallasium_block",
+      "has_the_recipe"
+    ]
+  ]
+}

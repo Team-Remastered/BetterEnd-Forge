@@ -1,0 +1,14 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/dense_vine_bottom",
+				"material": "betterendforge:wave_glow_50_half"
+			},
+			{
+				"sprite": "betterendforge:block/dense_vine",
+				"material": "betterendforge:waving"
+			}
+		]
+	}
+}

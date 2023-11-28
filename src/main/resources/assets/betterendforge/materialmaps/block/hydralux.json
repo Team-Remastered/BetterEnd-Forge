@@ -1,0 +1,46 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/hydralux_flower_petal",
+				"material": "betterendforge:waving_glow_inc"
+			},
+			{
+				"sprite": "betterendforge:block/hydralux_flower_bud_petal_side",
+				"material": "betterendforge:waving_glow_inc"
+			},
+			{
+				"sprite": "betterendforge:block/hydralux_flower_bud_petal_top",
+				"material": "betterendforge:waving_glow_inc"
+			},
+			{
+				"sprite": "betterendforge:block/hydralux_bloom_bottom",
+				"material": "betterendforge:waving"
+			},
+			{
+				"sprite": "betterendforge:block/hydralux_bloom_top",
+				"material": "betterendforge:waving"
+			},
+			{
+				"sprite": "betterendforge:block/hydralux_vine",
+				"material": "betterendforge:waving"
+			},
+			{
+				"sprite": "betterendforge:block/hydralux_flower_bottom",
+				"material": "betterendforge:waving_glow_inc"
+			},
+			{
+				"sprite": "betterendforge:block/hydralux_flower_bud",
+				"material": "betterendforge:waving"
+			},
+			{
+				"sprite": "betterendforge:block/hydralux_vine_bottom",
+				"material": "betterendforge:waving_floor"
+			},
+			{
+				"sprite": "betterendforge:block/hydralux_flower_bud_petal_bottom",
+				"material": "betterendforge:waving_glow_inc"
+			}
+		]
+	}
+}

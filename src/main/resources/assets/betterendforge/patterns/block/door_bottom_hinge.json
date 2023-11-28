@@ -1,0 +1,7 @@
+{
+	"parent": "betterendforge:block/sided_door_bottom_rh",
+	"textures": {
+		"facade": "betterendforge:block/%block%_bottom",
+		"side": "betterendforge:block/%block%_side"
+	}
+}

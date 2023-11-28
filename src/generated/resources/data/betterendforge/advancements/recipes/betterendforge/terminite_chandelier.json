@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:terminite_chandelier"
+    ]
+  },
+  "criteria": {
+    "has_terminite_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:terminite_ingot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_lumecorn_rod": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:lumecorn_rod"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:terminite_chandelier"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_terminite_ingot",
+      "has_lumecorn_rod",
+      "has_the_recipe"
+    ]
+  ]
+}

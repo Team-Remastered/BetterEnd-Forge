@@ -1,13 +1,13 @@
 {
 	"variants": {
 		"type=bottom": {
-			"model": "betterend:block/%name%_half_slab"
+			"model": "betterendforge:block/%name%_half_slab"
 		},
 		"type=double": {
-			"model": "betterend:block/%name%"
+			"model": "betterendforge:block/%name%"
 		},
 		"type=top": {
-			"model": "betterend:block/%name%_half_slab",
+			"model": "betterendforge:block/%name%_half_slab",
 			"uvlock": true,
 			"x": 180
 		}

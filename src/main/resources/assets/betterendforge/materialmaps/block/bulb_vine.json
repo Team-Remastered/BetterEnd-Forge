@@ -1,0 +1,18 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/bulb_vine",
+				"material": "betterendforge:waving_glow_inc"
+			},
+			{
+				"sprite": "betterendforge:block/bulb_vine_middle",
+				"material": "betterendforge:waving"
+			},
+			{
+				"sprite": "betterendforge:block/bulb_vine_fur",
+				"material": "betterendforge:waving"
+			}
+		]
+	}
+}

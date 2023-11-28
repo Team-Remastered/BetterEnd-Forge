@@ -1,3 +1,3 @@
 {
-	"parent": "betterend:block/%name%_tile"
+	"parent": "betterendforge:block/%name%_tile"
 }

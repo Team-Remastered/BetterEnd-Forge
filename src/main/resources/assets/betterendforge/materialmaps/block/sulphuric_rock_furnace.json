@@ -1,0 +1,10 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/sulphuric_rock_furnace_glow",
+				"material": "betterendforge:glow_all"
+			}
+		]
+	}
+}

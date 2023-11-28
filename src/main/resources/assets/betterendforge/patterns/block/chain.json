@@ -1,0 +1,7 @@
+{
+	"parent": "block/chain",
+	"textures": {
+		"particle": "betterendforge:block/%block%",
+		"all": "betterendforge:block/%block%"
+	}
+}

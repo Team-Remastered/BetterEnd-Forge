@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "end_metal_leggings",
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "betterendforge:terminite_forged_plate"
+    }
+  },
+  "result": {
+    "item": "betterendforge:terminite_leggings"
+  }
+}

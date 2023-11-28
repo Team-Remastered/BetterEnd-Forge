@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "end_metal_nuggets_ing",
+  "ingredients": [
+    {
+      "item": "betterendforge:thallasium_ingot"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:thallasium_nugget",
+    "count": 9
+  }
+}

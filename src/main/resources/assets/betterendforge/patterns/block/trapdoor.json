@@ -1,0 +1,7 @@
+{
+	"parent": "betterendforge:block/sided_trapdoor",
+	"textures": {
+		"texture": "betterendforge:block/%block%",
+		"side": "betterendforge:block/%texture%"
+	}
+}

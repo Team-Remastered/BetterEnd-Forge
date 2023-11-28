@@ -1,0 +1,10 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/large_amaranita_cap_bottom",
+				"material": "betterendforge:glow_green_2"
+			}
+		]
+	}
+}

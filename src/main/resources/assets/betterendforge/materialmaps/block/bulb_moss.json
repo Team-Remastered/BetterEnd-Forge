@@ -1,0 +1,14 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/bulb_moss_bulbs",
+				"material": "betterendforge:waving_wall_glow_inc"
+			},
+			{
+				"sprite": "betterendforge:block/bulb_moss_leaves",
+				"material": "betterendforge:waving_wall"
+			}
+		]
+	}
+}

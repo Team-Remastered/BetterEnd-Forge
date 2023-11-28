@@ -1,0 +1,60 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:thallasium_bulb_lantern"
+    ]
+  },
+  "criteria": {
+    "has_thallasium_chain": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:thallasium_chain"
+            ]
+          }
+        ]
+      }
+    },
+    "has_glowing_bulb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:glowing_bulb"
+            ]
+          }
+        ]
+      }
+    },
+    "has_thallasium_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:thallasium_ingot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:thallasium_bulb_lantern"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_thallasium_chain",
+      "has_glowing_bulb",
+      "has_thallasium_ingot",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -19,6 +19,10 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
 mixin {
     add sourceSets.main, "betterendforge.refmap.json"
+
+    config "${modid}.mixins.client.json"
+    config "${modid}.mixins.common.json"
+    config "${modid}.mixins.shadow.json"
 }
 
 repositories {
@@ -70,7 +74,7 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'betterendforge', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
             mods {
                 betterendforge { source sourceSets.main } }
         }
@@ -104,7 +108,7 @@ jar {
                 "Implementation-Version": "${version}",
                 "Implementation-Vendor" : author,
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs": "${modid}.mixins.json"
+                "MixinConfigs": "${modid}.mixins.client.json, ${modid}.mixins.common.json, ${modid}.mixins.shadow.json"
         ])
     }
 }

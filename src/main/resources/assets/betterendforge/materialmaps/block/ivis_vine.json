@@ -1,0 +1,14 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/ivis_vine",
+				"material": "betterendforge:waving"
+			},
+			{
+				"sprite": "betterendforge:block/ivis_vine_bottom",
+				"material": "betterendforge:waving"
+			}
+		]
+	}
+}

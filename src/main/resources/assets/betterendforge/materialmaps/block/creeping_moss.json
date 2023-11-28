@@ -1,0 +1,14 @@
+{
+	"defaultMap": {
+		"spriteMap": [
+			{
+				"sprite": "betterendforge:block/creeping_moss_spores",
+				"material": "betterendforge:waving_floor_glow_half"
+			},
+			{
+				"sprite": "betterendforge:block/creeping_moss_leaves",
+				"material": "betterendforge:waving_floor"
+			}
+		]
+	}
+}
