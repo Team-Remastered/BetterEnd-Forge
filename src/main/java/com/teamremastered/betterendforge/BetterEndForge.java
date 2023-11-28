@@ -3,6 +3,7 @@ package com.teamremastered.betterendforge;
 import com.teamremastered.betterendforge.bclib.BCLib;
 import com.teamremastered.betterendforge.bclib.api.WorldDataAPI;
 import com.teamremastered.betterendforge.bclib.client.BCLibClient;
+import com.teamremastered.betterendforge.bclib.recipes.BCLRecipeProvider;
 import com.teamremastered.betterendforge.bclib.util.Logger;
 import com.teamremastered.betterendforge.client.BetterEndClient;
 import com.teamremastered.betterendforge.config.EndConfig;
@@ -28,34 +29,6 @@ import com.teamremastered.betterendforge.registry.EndSounds;
 import com.teamremastered.betterendforge.registry.EndStatusEffects;
 import com.teamremastered.betterendforge.world.generator.GeneratorOptions;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
-import ru.betterend.bclib.BCLib;
-import ru.betterend.bclib.api.WorldDataAPI;
-import ru.betterend.bclib.api.biomes.BiomeAPI;
-import ru.betterend.bclib.recipes.BCLRecipeProvider;
-import ru.betterend.bclib.util.Logger;
-import ru.betterend.client.BetterEndClient;
-import ru.betterend.config.EndConfig;
-import ru.betterend.registry.EndPotions;
-import ru.betterend.integration.Integrations;
-import ru.betterend.recipe.AlloyingRecipes;
-import ru.betterend.recipe.AnvilRecipes;
-import ru.betterend.recipe.CraftingRecipes;
-import ru.betterend.recipe.FurnaceRecipes;
-import ru.betterend.recipe.InfusionRecipes;
-import ru.betterend.recipe.SmithingRecipes;
-import ru.betterend.registry.EndAttributes;
-import ru.betterend.registry.EndBlockEntities;
-import ru.betterend.registry.EndBlocks;
-import ru.betterend.registry.EndEnchantments;
-import ru.betterend.registry.EndEntities;
-import ru.betterend.registry.EndFeatures;
-import ru.betterend.registry.EndItems;
-import ru.betterend.registry.EndParticles;
-import ru.betterend.registry.EndPortals;
-import ru.betterend.registry.EndSounds;
-import ru.betterend.registry.EndStatusEffects;
-import ru.betterend.util.LootTableUtil;
-import ru.betterend.world.generator.GeneratorOptions;
 
 import java.io.IOException;
 
@@ -112,6 +85,7 @@ public class BetterEndForge {
 //		});
 
 		modEventBus.addListener(this::onClientSetup);
+		modEventBus.addListener(this::onServerSetup);
 		modEventBus.addListener(this::generateData);
 
 		// Register ourselves for server and other game events we are interested in

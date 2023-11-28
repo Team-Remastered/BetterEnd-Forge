@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "I",
+    "#"
+  ],
+  "key": {
+    "C": {
+      "item": "betterendforge:terminite_chain"
+    },
+    "#": {
+      "item": "betterendforge:glowing_bulb"
+    },
+    "I": {
+      "item": "betterendforge:terminite_ingot"
+    }
+  },
+  "result": {
+    "item": "betterendforge:terminite_bulb_lantern"
+  }
+}

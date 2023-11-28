@@ -19,7 +19,7 @@ public class BCLib {
 		BaseRegistry.register();
 		GeneratorOptions.init();
 	//	BaseBlockEntities.register();
-		BCLibEndBiomeSource.register();
+	//  BCLibEndBiomeSource.register();
 		TagAPI.init();
 		CraftingRecipes.init();
 		WorldDataAPI.registerModCache(MOD_ID);

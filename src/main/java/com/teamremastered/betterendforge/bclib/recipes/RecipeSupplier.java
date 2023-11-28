@@ -1,4 +1,4 @@
-package ru.betterend.bclib.recipes;
+package com.teamremastered.betterendforge.bclib.recipes;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.data.recipes.RecipeBuilder;

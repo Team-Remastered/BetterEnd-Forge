@@ -16,6 +16,8 @@ import com.teamremastered.betterendforge.bclib.items.tool.BaseAxeItem;
 import com.teamremastered.betterendforge.bclib.items.tool.BaseHoeItem;
 import com.teamremastered.betterendforge.bclib.items.tool.BaseShovelItem;
 import com.teamremastered.betterendforge.bclib.items.tool.BaseSwordItem;
+import com.teamremastered.betterendforge.bclib.recipes.BCLRecipeProvider;
+import com.teamremastered.betterendforge.bclib.recipes.RecipeSupplier;
 import com.teamremastered.betterendforge.bclib.util.BlocksHelper;
 import com.teamremastered.betterendforge.blocks.BulbVineLanternBlock;
 import com.teamremastered.betterendforge.blocks.ChandelierBlock;
@@ -25,7 +27,6 @@ import com.teamremastered.betterendforge.item.tool.EndHammerItem;
 import com.teamremastered.betterendforge.item.tool.EndPickaxe;
 import com.teamremastered.betterendforge.registry.EndBlocks;
 import com.teamremastered.betterendforge.registry.EndItems;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -38,40 +39,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.RegistryObject;
-import ru.betterend.bclib.api.tag.NamedBlockTags;
-import ru.betterend.bclib.api.tag.NamedCommonBlockTags;
-import ru.betterend.bclib.api.tag.NamedItemTags;
-import ru.betterend.bclib.api.tag.TagAPI;
-import ru.betterend.bclib.blocks.BaseBlock;
-import ru.betterend.bclib.blocks.BaseChainBlock;
-import ru.betterend.bclib.blocks.BaseDoorBlock;
-import ru.betterend.bclib.blocks.BaseMetalBarsBlock;
-import ru.betterend.bclib.blocks.BaseOreBlock;
-import ru.betterend.bclib.blocks.BaseSlabBlock;
-import ru.betterend.bclib.blocks.BaseStairsBlock;
-import ru.betterend.bclib.blocks.BaseTrapdoorBlock;
-import ru.betterend.bclib.util.BlocksHelper;
-import ru.betterend.bclib.blocks.WoodenPressurePlateBlock;
-import ru.betterend.bclib.items.ModelProviderItem;
-import ru.betterend.bclib.items.tool.BaseAxeItem;
-import ru.betterend.bclib.items.tool.BaseHoeItem;
-import ru.betterend.bclib.items.tool.BaseShovelItem;
-import ru.betterend.bclib.items.tool.BaseSwordItem;
-import ru.betterend.bclib.recipes.AnvilRecipe;
-import ru.betterend.bclib.recipes.FurnaceRecipe;
-import ru.betterend.bclib.recipes.GridRecipe;
-import ru.betterend.bclib.recipes.SmithingTableRecipe;
-import ru.betterend.BetterEndForge;
-import ru.betterend.blocks.BulbVineLanternBlock;
-import ru.betterend.blocks.BulbVineLanternColoredBlock;
-import ru.betterend.blocks.ChandelierBlock;
-import ru.betterend.blocks.basis.EndAnvilBlock;
-import ru.betterend.item.EndArmorItem;
-import ru.betterend.item.tool.EndHammerItem;
-import ru.betterend.item.tool.EndPickaxe;
-import ru.betterend.recipe.builders.AlloyingRecipe;
-import ru.betterend.registry.EndBlocks;
-import ru.betterend.registry.EndItems;
+
 
 public class MetalMaterial {
     public final RegistryObject<Block> ore;
@@ -250,10 +218,10 @@ public class MetalMaterial {
 
 
         BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_ingot_from_nuggets")
-                        .setOutput(ingot::get)
-                        .setShape("###", "###", "###")
-                        .addInput('#', nugget::get)
-                        .setGroup("end_metal_ingots_nug")
+                .setOutput(ingot::get)
+                .setShape("###", "###", "###")
+                .addInput('#', nugget::get)
+                .setGroup("end_metal_ingots_nug")
         );
 
         BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_nuggets_from_ingot")
@@ -263,97 +231,104 @@ public class MetalMaterial {
                 .setGroup("end_metal_nuggets_ing")
         );
 
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_block", block.get())
-//
-//				  .setShape("###", "###", "###")
-//				  .addMaterial('#', ingot.get())
-//				  .setGroup("end_metal_blocks")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_ingot_from_block", ingot.get())
-//
-//				  .setOutputCount(9)
-//				  .setList("#")
-//				  .addMaterial('#', block.get())
-//				  .setGroup("end_metal_ingots")
-//				  .build();
-//
-//		// Block recipes
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_tile", tile.get())
-//
-//				  .setOutputCount(4)
-//				  .setShape("##", "##")
-//				  .addMaterial('#', block.get())
-//				  .setGroup("end_metal_tiles")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bars", bars.get())
-//
-//				  .setOutputCount(16)
-//				  .setShape("###", "###")
-//				  .addMaterial('#', ingot.get())
-//				  .setGroup("end_metal_bars")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pressure_plate", pressurePlate.get())
-//
-//				  .setShape("##")
-//				  .addMaterial('#', ingot.get())
-//				  .setGroup("end_metal_plates")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_door", door.get())
-//
-//				  .setOutputCount(3)
-//				  .setShape("##", "##", "##")
-//				  .addMaterial('#', ingot.get())
-//				  .setGroup("end_metal_doors")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_trapdoor", trapdoor.get())
-//
-//				  .setShape("##", "##")
-//				  .addMaterial('#', ingot.get())
-//				  .setGroup("end_metal_trapdoors")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_stairs", stairs.get())
-//
-//				  .setOutputCount(4)
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_block")
+                .setOutput(block::get)
+                .setShape("###", "###", "###")
+                .addInput('#', ingot::get)
+                .setGroup("end_metal_blocks")
+        );
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_ingot_from_block")
+                .setOutput(ingot::get, 9)
+                .setShapeless("#")
+                .addInput('#', block::get)
+                .setGroup("end_metal_ingots")
+        );
+
+
+        // Block recipes
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_tile")
+                .setOutput(tile::get, 4)
+                .setShape("##", "##")
+                .addInput('#', block::get)
+                .setGroup("end_metal_tiles")
+        );
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_bars")
+                .setOutput(bars::get, 16)
+                .setShape("###", "###")
+                .addInput('#', ingot::get)
+                .setGroup("end_metal_bars")
+        );
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_pressure_plate")
+                .setOutput(pressurePlate::get)
+                .setShape("##")
+                .addInput('#', ingot::get)
+                .setGroup("end_metal_plates")
+        );
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_door")
+                .setOutput(door::get, 3)
+                .setShape("##", "##", "##")
+                .addInput('#', ingot::get)
+                .setGroup("end_metal_doors")
+        );
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_trapdoor")
+                .setOutput(trapdoor::get)
+                .setShape("##", "##")
+                .addInput('#', ingot::get)
+                .setGroup("end_metal_trapdoors")
+        );
+
+//		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_stairs")
+//				  .setOutput(stairs::get, 4)
 //				  .setShape("#  ", "## ", "###")
-//				  .addMaterial('#', block.get(), tile.get())
+//				   .addInput('#', block.get(), tile::get)
 //				  .setGroup("end_metal_stairs")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_slab", slab.get())
+//        );
 //
-//				  .setOutputCount(6)
+//		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_slab")
+//				  .setOutput(slab::get, 6)
 //				  .setShape("###")
-//				  .addMaterial('#', block.get(), tile.get())
+//				   .addInput('#', block.get(), tile::get)
 //				  .setGroup("end_metal_slabs")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_chain", chain.get())
-//
-//				  .setShape("N", "#", "N")
-//				  .addMaterial('#', ingot.get())
-//				  .addMaterial('N', nugget.get())
-//				  .setGroup("end_metal_chain")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_anvil", anvilBlock.get())
-//
+//        );
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_chain")
+                .setOutput(chain::get)
+                .setShape("N", "#", "N")
+                .addInput('#', ingot::get)
+                .addInput('N', nugget::get)
+                .setGroup("end_metal_chain")
+        );
+
+//		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_anvil")
+//                        .setOutput(anvilBlock::get)
 //				  .setShape("###", " I ", "III")
-//				  .addMaterial('#', block.get(), tile.get())
-//				  .addMaterial('I', ingot.get())
+//				   .addInput('#', block.get(), tile::get)
+//				   .addInput('I', ingot::get)
 //				  .setGroup("end_metal_anvil")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bulb_lantern", bulb_lantern.get())
-//
-//				  .setShape("C", "I", "#")
-//				  .addMaterial('C', chain.get())
-//				  .addMaterial('I', ingot.get())
-//				  .addMaterial('#', EndItems.GLOWING_BULB.get())
-//				  .build();
-//
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_chandelier", chandelier.get())
-//
-//				  .setShape("I#I", " # ")
-//				  .addMaterial('#', ingot.get())
-//				  .addMaterial('I', EndItems.LUMECORN_ROD.get())
-//				  .setGroup("end_metal_chandelier")
-//				  .build();
+//        );
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_bulb_lantern")
+                .setOutput(bulb_lantern::get)
+                .setShape("C", "I", "#")
+                .addInput('C', chain::get)
+                .addInput('I', ingot::get)
+                .addInput('#', EndItems.GLOWING_BULB::get)
+        );
+
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_chandelier")
+                .setOutput(chandelier::get)
+                .setShape("I#I", " # ")
+                .addInput('#', ingot::get)
+                .addInput('I', EndItems.LUMECORN_ROD::get)
+                .setGroup("end_metal_chandelier")
+        );
+
 //
 //		// Tools & armor into nuggets
 //		FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_axe_nugget", axe.get(), nugget.get())
@@ -491,31 +466,35 @@ public class MetalMaterial {
 //						   .build();
 //
 //		// Armor crafting
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_helmet", helmet.get())
-//
-//				  .setShape("###", "# #")
-//				  .addMaterial('#', forgedPlate.get())
-//				  .setGroup("end_metal_helmets")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_chestplate", chestplate.get())
-//
-//				  .setShape("# #", "###", "###")
-//				  .addMaterial('#', forgedPlate.get())
-//				  .setGroup("end_metal_chestplates")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_leggings", leggings.get())
-//
-//				  .setShape("###", "# #", "# #")
-//				  .addMaterial('#', forgedPlate.get())
-//				  .setGroup("end_metal_leggings")
-//				  .build();
-//		GridRecipe.make(BetterEndForge.MOD_ID, name + "_boots", boots.get())
-//
-//				  .setShape("# #", "# #")
-//				  .addMaterial('#', forgedPlate.get())
-//				  .setGroup("end_metal_boots")
-//				  .build();
-//
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_helmet")
+                .setOutput(helmet::get)
+                .setShape("###", "# #")
+                .addInput('#', forgedPlate::get)
+                .setGroup("end_metal_helmets")
+        );
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_chestplate")
+                .setOutput(chestplate::get)
+                .setShape("# #", "###", "###")
+                .addInput('#', forgedPlate::get)
+                .setGroup("end_metal_chestplates")
+        );
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_leggings")
+                .setOutput(leggings::get)
+                .setShape("###", "# #", "# #")
+                .addInput('#', forgedPlate::get)
+                .setGroup("end_metal_leggings")
+        );
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_boots")
+                .setOutput(boots::get)
+                .setShape("# #", "# #")
+                .addInput('#', forgedPlate::get)
+                .setGroup("end_metal_boots")
+        );
+
+
 //		TagAPI.addBlockTag(NamedBlockTags.ANVIL, anvilBlock.get());
 //		TagAPI.addBlockTag(NamedBlockTags.BEACON_BASE_BLOCKS, block.get());
 //		TagAPI.addItemTag(NamedItemTags.BEACON_PAYMENT_ITEMS, ingot.get());
