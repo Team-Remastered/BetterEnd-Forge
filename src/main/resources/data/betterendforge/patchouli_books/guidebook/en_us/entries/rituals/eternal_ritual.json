@@ -1,8 +1,8 @@
 {
     "name": "Eternal Ritual",
-    "icon": "betterend:eternal_pedestal",
+    "icon": "betterendforge:eternal_pedestal",
     "read_by_default": true,
-    "category": "betterend:rituals",
+    "category": "betterendforge:rituals",
     "pages": [
         {
             "type": "text",
@@ -13,7 +13,7 @@
             "text": "There is a destroyed (or not) frame of  $(bold)Runed Flavolite$() and six pedestals around it.",
             "border": false,
             "images": [
-                "betterend:textures/images/eternal_ritual/portal_structure.png"
+                "betterendforge:textures/images/eternal_ritual/portal_structure.png"
             ]
         },
         {
@@ -25,7 +25,7 @@
             "text": "And place 6 $(bold)Eternal Crystals$() to pedestals.",
             "border": false,
             "images": [
-                "betterend:textures/images/eternal_ritual/portal_frame_full.png"
+                "betterendforge:textures/images/eternal_ritual/portal_frame_full.png"
             ]
         },
         {
@@ -33,7 +33,7 @@
             "text": "After you'll place the last crystal, portal will be activated.",
             "border": false,
             "images": [
-                "betterend:textures/images/eternal_ritual/ritual_finished.png"
+                "betterendforge:textures/images/eternal_ritual/ritual_finished.png"
             ]
         },
         {

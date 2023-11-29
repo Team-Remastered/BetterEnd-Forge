@@ -1,6 +1,6 @@
 {
     "name": "영원한 의식",
-    "icon": "betterend:eternal_pedestal",
+    "icon": "betterendforge:eternal_pedestal",
     "read_by_default": true,
     "category": "rituals",
     "pages": [
@@ -13,7 +13,7 @@
             "text": "파괴된 (혹은 멀쩡한) $(bold)룬을 새긴 플라보라이트$() 포탈 틀과 주변에 6개의 받침대가 있습니다.",
             "border": false,
             "images": [
-                "betterend:textures/images/eternal_ritual/portal_structure.png"
+                "betterendforge:textures/images/eternal_ritual/portal_structure.png"
             ]
         },
         {
@@ -25,7 +25,7 @@
             "text": "그리고 6개의 $(bold)영원한 수정$()을 받침대에 놓습니다.",
             "border": false,
             "images": [
-                "betterend:textures/images/eternal_ritual/portal_frame_full.png"
+                "betterendforge:textures/images/eternal_ritual/portal_frame_full.png"
             ]
         },
         {
@@ -33,7 +33,7 @@
             "text": "마지막 수정을 놓으면 포탈이 활성화됩니다.",
             "border": false,
             "images": [
-                "betterend:textures/images/eternal_ritual/ritual_finished.png"
+                "betterendforge:textures/images/eternal_ritual/ritual_finished.png"
             ]
         },
         {
