@@ -16,14 +16,14 @@ public class CreativeTabs {
 	 * on the Fabric version in 1.18.2 AFAIK, so we just have to live with it.
     **/
 	static {
-		 TAB_BLOCKS = new CreativeModeTab(BetterEndForge.MOD_ID) {
+		 TAB_BLOCKS = new CreativeModeTab(BetterEndForge.MOD_ID + ".end_items") {
 			@Override
 			public @NotNull ItemStack makeIcon() {
 				return new ItemStack(EndBlocks.END_MYCELIUM.get());
 			}
 		};
 
-		 TAB_ITEMS = new CreativeModeTab(BetterEndForge.MOD_ID) {
+		 TAB_ITEMS = new CreativeModeTab(BetterEndForge.MOD_ID + ".end_blocks") {
 			@Override
 			public @NotNull ItemStack makeIcon() {
 				return new ItemStack(EndItems.ETERNAL_CRYSTAL.get());
