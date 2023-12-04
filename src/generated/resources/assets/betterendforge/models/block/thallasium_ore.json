@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/thallasium_ore",
+    "up": "betterendforge:block/thallasium_ore",
+    "north": "betterendforge:block/thallasium_ore",
+    "south": "betterendforge:block/thallasium_ore",
+    "east": "betterendforge:block/thallasium_ore",
+    "west": "betterendforge:block/thallasium_ore",
+    "down": "betterendforge:block/thallasium_ore"
+  }
+}

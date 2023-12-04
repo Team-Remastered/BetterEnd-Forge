@@ -2,6 +2,9 @@ package com.teamremastered.betterendforge.bclib.blocks;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.teamremastered.betterendforge.blocks.basis.EndAnvilBlock;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
+import net.minecraft.core.Direction;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.item.Item;
@@ -21,6 +24,9 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -36,7 +42,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
 
-public abstract class BaseAnvilBlock extends AnvilBlock implements BlockModelProvider, CustomItemProvider, LootProvider {
+public abstract class BaseAnvilBlock extends AnvilBlock implements BlockModelProvider, CustomItemProvider, LootProvider, IBCLBlockStateProvider {
 	public static final IntegerProperty DESTRUCTION = BlockProperties.DESTRUCTION;
 	public IntegerProperty durability;
 	
@@ -130,5 +136,53 @@ public abstract class BaseAnvilBlock extends AnvilBlock implements BlockModelPro
 	public BlockState damageAnvilFall(BlockState state) {
 		int destruction = state.getValue(DESTRUCTION);
 		return destruction < 2 ? state.setValue(DESTRUCTION, destruction + 1) : null;
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		//From Beethoven92's build
+
+		String materialName = block.getRegistryName().getPath().replace("_anvil", "");
+
+		stateProvider.getVariantBuilder(block)
+				.forAllStates(state -> {
+					int destruction = state.getValue(EndAnvilBlock.DESTRUCTION);
+					ModelFile anvil = stateProvider.models().withExistingParent(materialName + "_anvil_" + destruction, stateProvider.modLoc("patterns/block/anvil"))
+							.texture("front", stateProvider.modLoc("block/" + materialName + "_anvil_front"))
+							.texture("bottom", stateProvider.modLoc("block/" + materialName + "_anvil_bottom"))
+							.texture("back", stateProvider.modLoc("block/" + materialName + "_anvil_back"))
+							.texture("panel", stateProvider.modLoc("block/" + materialName + "_anvil_panel"))
+							.texture("top", stateProvider.modLoc("block/" + materialName + "_anvil_top_" + destruction));
+
+
+					Direction dir = state.getValue(AnvilBlock.FACING);
+					int x = 0;
+					int y = 0;
+					switch (dir)
+					{
+						case EAST:
+							y = 270;
+							break;
+						case NORTH:
+							y = 180;
+							break;
+						case SOUTH:
+							break;
+						case WEST:
+							y = 90;
+							break;
+						default:
+							break;
+					}
+
+					stateProvider.simpleBlockItem(block, anvil);
+
+					return ConfiguredModel.builder()
+							.modelFile(anvil)
+							.rotationX(x)
+							.rotationY(y)
+							.build();
+				});
+
 	}
 }

@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.teamremastered.betterendforge.bclib.client.render.BCLRenderLayer;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
+import net.minecraft.core.Direction;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -25,6 +27,9 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.blockentities.BaseFurnaceBlockEntity;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
@@ -38,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class BaseFurnaceBlock extends FurnaceBlock implements BlockModelProvider, RenderLayerProvider, LootProvider {
+public class BaseFurnaceBlock extends FurnaceBlock implements BlockModelProvider, RenderLayerProvider, LootProvider, IBCLBlockStateProvider {
 	public BaseFurnaceBlock(Block source) {
 		this(BlockBehaviour.Properties.copy(source).lightLevel(state -> state.getValue(LIT) ? 13 : 0));
 	}
@@ -128,5 +133,56 @@ public class BaseFurnaceBlock extends FurnaceBlock implements BlockModelProvider
 			blockEntityType2,
 			AbstractFurnaceBlockEntity::serverTick
 		);
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		//From Beethoven92's build
+		String materialName = block.getRegistryName().getPath().replace("_furnace", "");
+
+		ModelFile furnace = stateProvider.models().withExistingParent(materialName + "_furnace", stateProvider.mcLoc("block/orientable_with_bottom"))
+				.texture("top", stateProvider.modLoc("block/" + materialName + "_furnace_top"))
+				.texture("front", stateProvider.modLoc("block/" + materialName + "_furnace_front"))
+				.texture("side", stateProvider.modLoc("block/" + materialName + "_furnace_side"))
+				.texture("bottom", stateProvider.modLoc("block/" + materialName + "_furnace_top"));
+
+		ModelFile furnaceOn = stateProvider.models().withExistingParent(materialName + "_furnace_on", stateProvider.modLoc("patterns/block/furnace_glow"))
+				.texture("top", stateProvider.modLoc("block/" + materialName + "_furnace_top"))
+				.texture("front", stateProvider.modLoc("block/" + materialName + "_furnace_front_on"))
+				.texture("side", stateProvider.modLoc("block/" + materialName + "_furnace_side"))
+				.texture("glow", stateProvider.modLoc("block/" + materialName + "_furnace_glow"));
+
+		stateProvider.getVariantBuilder(block)
+				.forAllStates(state -> {
+					boolean isLit = state.getValue(FurnaceBlock.LIT);
+
+					Direction dir = state.getValue(FurnaceBlock.FACING);
+					int x = 0;
+					int y = 0;
+					switch (dir)
+					{
+						case EAST:
+							y = 90;
+							break;
+						case NORTH:
+							break;
+						case SOUTH:
+							y = 180;
+							break;
+						case WEST:
+							y = 270;
+							break;
+						default:
+							break;
+					}
+
+					return ConfiguredModel.builder()
+							.modelFile(isLit? furnaceOn : furnace)
+							.rotationX(x)
+							.rotationY(y)
+							.build();
+				});
+
+		stateProvider.simpleBlockItem(block, furnace);
 	}
 }

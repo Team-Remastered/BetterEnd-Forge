@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "minecraft:block/end_stone",
+    "up": "betterendforge:block/pallidium_thin_top",
+    "north": "betterendforge:block/pallidium_thin_side",
+    "south": "betterendforge:block/pallidium_thin_side",
+    "east": "betterendforge:block/pallidium_thin_side",
+    "west": "betterendforge:block/pallidium_thin_side",
+    "down": "minecraft:block/end_stone"
+  }
+}

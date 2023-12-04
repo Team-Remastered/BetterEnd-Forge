@@ -8,6 +8,7 @@ import com.teamremastered.betterendforge.bclib.interfaces.CustomColorProvider;
 import com.teamremastered.betterendforge.bclib.interfaces.RenderLayerProvider;
 import com.teamremastered.betterendforge.bclib.util.ColorUtil;
 import com.teamremastered.betterendforge.bclib.util.MHelper;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
 import com.teamremastered.betterendforge.noise.OpenSimplexNoise;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -27,13 +28,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.client.models.Patterns;
 
 import java.util.List;
 import java.util.Optional;
 
-public class JellyshroomCapBlock extends SlimeBlock implements RenderLayerProvider, BlockModelProvider, CustomColorProvider {
+public class JellyshroomCapBlock extends SlimeBlock implements RenderLayerProvider, BlockModelProvider, CustomColorProvider, IBCLBlockStateProvider {
 	public static final IntegerProperty COLOR = EndBlockProperties.COLOR;
 	private static final OpenSimplexNoise NOISE = new OpenSimplexNoise(0);
 	private final Vec3i colorStart;
@@ -100,5 +103,14 @@ public class JellyshroomCapBlock extends SlimeBlock implements RenderLayerProvid
 		return (stack, tintIndex) -> {
 			return coloritem;
 		};
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		ModelFile jelly = stateProvider.models().withExistingParent(block.getRegistryName().getPath(), Patterns.BLOCK_COLORED)
+				.texture("texture", stateProvider.modLoc("block/jellyshroom_cap"));
+
+		stateProvider.simpleBlockItem(block, jelly);
+		stateProvider.simpleBlockItem(block, jelly);
 	}
 }

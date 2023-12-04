@@ -16,6 +16,7 @@ import com.teamremastered.betterendforge.bclib.interfaces.PostInitable;
 import com.teamremastered.betterendforge.bclib.interfaces.RenderLayerProvider;
 import com.teamremastered.betterendforge.bclib.util.BlocksHelper;
 import com.teamremastered.betterendforge.bclib.util.JsonFactory;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -47,6 +48,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.fml.loading.FMLPaths;
 import com.teamremastered.betterendforge.blocks.basis.PottableLeavesBlock;
 import com.teamremastered.betterendforge.client.models.Patterns;
@@ -59,7 +62,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class EndFlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvider, PostInitable {
+public class EndFlowerPotBlock extends BaseBlockNotFull implements RenderLayerProvider, PostInitable, IBCLBlockStateProvider {
 	private static final IntegerProperty PLANT_ID = EndBlockProperties.PLANT_ID;
 	private static final IntegerProperty SOIL_ID = EndBlockProperties.SOIL_ID;
 	private static final IntegerProperty POT_LIGHT = EndBlockProperties.POT_LIGHT;
@@ -440,5 +443,12 @@ public class EndFlowerPotBlock extends BaseBlockNotFull implements RenderLayerPr
 	static {
 		SHAPE_EMPTY = Shapes.or(Block.box(4, 1, 4, 12, 8, 12), Block.box(5, 0, 5, 11, 1, 11));
 		SHAPE_FULL = Shapes.or(SHAPE_EMPTY, Block.box(3, 8, 3, 13, 16, 13));
+	}
+
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		ModelFile pot = stateProvider.models().withExistingParent("potted_" + block.getRegistryName().getPath(), Patterns.BLOCK_FLOWER_POT)
+				.texture("texture", stateProvider.modLoc("block/" + block.getRegistryName().getPath()));
+		stateProvider.simpleBlock(block, pot);
+		stateProvider.simpleBlockItem(block, pot);
 	}
 }

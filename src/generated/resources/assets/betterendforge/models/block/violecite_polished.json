@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/violecite_polished",
+    "up": "betterendforge:block/violecite_polished",
+    "north": "betterendforge:block/violecite_polished",
+    "south": "betterendforge:block/violecite_polished",
+    "east": "betterendforge:block/violecite_polished",
+    "west": "betterendforge:block/violecite_polished",
+    "down": "betterendforge:block/violecite_polished"
+  }
+}

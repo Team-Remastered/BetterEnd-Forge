@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "minecraft:block/end_stone",
+    "up": "betterendforge:block/chorus_nylium_top",
+    "north": "betterendforge:block/chorus_nylium_side",
+    "south": "betterendforge:block/chorus_nylium_side",
+    "east": "betterendforge:block/chorus_nylium_side",
+    "west": "betterendforge:block/chorus_nylium_side",
+    "down": "minecraft:block/end_stone"
+  }
+}

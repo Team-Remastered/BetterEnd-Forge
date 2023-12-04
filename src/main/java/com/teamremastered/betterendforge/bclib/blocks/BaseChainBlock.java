@@ -4,6 +4,8 @@ import com.teamremastered.betterendforge.bclib.client.models.PatternsHelper;
 import com.teamremastered.betterendforge.bclib.client.render.BCLRenderLayer;
 import com.teamremastered.betterendforge.bclib.interfaces.BlockModelProvider;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -15,6 +17,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ChainBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -23,7 +27,7 @@ import com.teamremastered.betterendforge.bclib.interfaces.RenderLayerProvider;
 import java.util.Map;
 import java.util.Optional;
 
-public class BaseChainBlock extends ChainBlock implements BlockModelProvider, RenderLayerProvider, LootProvider {
+public class BaseChainBlock extends ChainBlock implements BlockModelProvider, RenderLayerProvider, LootProvider, IBCLBlockStateProvider {
 	public BaseChainBlock(MaterialColor color) {
 		this(BlockBehaviour.Properties.copy(Blocks.CHAIN).color(color));
 	}
@@ -57,5 +61,24 @@ public class BaseChainBlock extends ChainBlock implements BlockModelProvider, Re
 	@Override
 	public BCLRenderLayer getRenderLayer() {
 		return BCLRenderLayer.CUTOUT;
+	}
+
+	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
+		String blockName = block.getRegistryName().getPath();
+		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + block.getRegistryName().getPath());
+		blockModel.parent(stateProvider.models().getExistingFile(stateProvider.modLoc("patterns/block/chain")));
+		blockModel.texture("particle", stateProvider.modLoc("block/" + blockName))
+				  .texture("all", stateProvider.modLoc("block/" + blockName));
+
+		return blockModel;
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		BaseChainBlock chainBlock = (BaseChainBlock) block;
+		BlockModelBuilder builder = getBlockModelBuilder(stateProvider, chainBlock);
+
+		stateProvider.simpleBlock(chainBlock, builder);
+		stateProvider.simpleBlockItem(chainBlock, stateProvider.models().getBuilder("block/" + chainBlock.getRegistryName().getPath()));
 	}
 }

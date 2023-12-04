@@ -2,6 +2,7 @@ package com.teamremastered.betterendforge.blocks;
 
 import com.teamremastered.betterendforge.bclib.util.BlocksHelper;
 import com.teamremastered.betterendforge.bclib.util.ColorUtil;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.item.ItemColor;
@@ -30,7 +31,14 @@ public class BulbVineLanternColoredBlock extends BulbVineLanternBlock implements
 		float[] hsv = ColorUtil.RGBtoHSB(r, g, b, new float[3]);
 		return ColorUtil.HSBtoRGB(hsv[0], hsv[1], hsv[1] > 0.2 ? 1 : hsv[2]);
 	}
-	
+
+	@Override
+	protected String getMetalTexture(ResourceLocation blockId) {
+		String name = blockId.getPath();
+		name = name.substring(0, name.indexOf('_'));
+		return name + "_bulb_vine_lantern_metal";
+	}
+
 	@Override
 	protected String getGlowTexture() {
 		return "bulb_vine_lantern_overlay";

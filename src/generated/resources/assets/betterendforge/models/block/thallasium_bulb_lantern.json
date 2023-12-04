@@ -1,0 +1,7 @@
+{
+  "parent": "betterendforge:patterns/block/bulb_lantern_ceil",
+  "textures": {
+    "glow": "betterendforge:block/bulb_vine_lantern_bulb",
+    "material": "betterendforge:block/thallasium_bulb_vine_lantern_metal"
+  }
+}

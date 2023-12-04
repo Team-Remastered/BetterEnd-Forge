@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/terminite_tile",
+    "up": "betterendforge:block/terminite_tile",
+    "north": "betterendforge:block/terminite_tile",
+    "south": "betterendforge:block/terminite_tile",
+    "east": "betterendforge:block/terminite_tile",
+    "west": "betterendforge:block/terminite_tile",
+    "down": "betterendforge:block/terminite_tile"
+  }
+}

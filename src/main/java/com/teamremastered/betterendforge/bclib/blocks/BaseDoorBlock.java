@@ -1,5 +1,6 @@
 package com.teamremastered.betterendforge.bclib.blocks;
 
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.api.tag.NamedBlockTags;
 import com.teamremastered.betterendforge.bclib.api.tag.NamedItemTags;
 import com.teamremastered.betterendforge.bclib.api.tag.TagAPI;
@@ -8,6 +9,7 @@ import com.teamremastered.betterendforge.bclib.client.render.BCLRenderLayer;
 import com.teamremastered.betterendforge.bclib.interfaces.BlockModelProvider;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
 import com.teamremastered.betterendforge.bclib.interfaces.TagProvider;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -25,6 +27,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -35,7 +38,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class BaseDoorBlock extends DoorBlock implements RenderLayerProvider, BlockModelProvider, TagProvider, LootProvider {
+public class BaseDoorBlock extends DoorBlock implements RenderLayerProvider, BlockModelProvider, TagProvider, LootProvider, IBCLBlockStateProvider {
 	public BaseDoorBlock(Block source) {
 		this(BlockBehaviour.Properties.copy(source).strength(3F, 3F).noOcclusion());
 	}
@@ -153,7 +156,21 @@ public class BaseDoorBlock extends DoorBlock implements RenderLayerProvider, Blo
 		blockTags.add(NamedBlockTags.DOORS);
 		itemTags.add(NamedItemTags.DOORS);
 	}
-	
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		BaseDoorBlock doorBlock = (BaseDoorBlock) block;
+
+
+		String blockName = doorBlock.getRegistryName().getPath();
+
+		stateProvider.doorBlock(doorBlock, BetterEndForge.makeID("block/" + blockName + "_bottom"), BetterEndForge.makeID("block/" + blockName + "_top"));
+		stateProvider.models().getBuilder("block/" + blockName).parent(stateProvider.models().getExistingFile(stateProvider.mcLoc("block/cube")));
+
+		stateProvider.itemModels().getBuilder("item/" + blockName).parent(stateProvider.models().getExistingFile(stateProvider.mcLoc("item/generated")))
+				.texture("layer0", BetterEndForge.makeID("item/" + blockName));
+	}
+
 	protected enum DoorType implements StringRepresentable {
 		BOTTOM_HINGE("bottom_hinge"), TOP_HINGE("top_hinge"), BOTTOM("bottom"), TOP("top");
 		

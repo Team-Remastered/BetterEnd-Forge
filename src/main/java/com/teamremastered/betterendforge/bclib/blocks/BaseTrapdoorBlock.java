@@ -1,8 +1,10 @@
 package com.teamremastered.betterendforge.bclib.blocks;
 
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.client.render.BCLRenderLayer;
 import com.teamremastered.betterendforge.bclib.interfaces.BlockModelProvider;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -14,6 +16,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Half;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -24,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class BaseTrapdoorBlock extends TrapDoorBlock implements RenderLayerProvider, BlockModelProvider, LootProvider {
+public class BaseTrapdoorBlock extends TrapDoorBlock implements RenderLayerProvider, BlockModelProvider, LootProvider, IBCLBlockStateProvider {
 	public BaseTrapdoorBlock(Block source) {
 		this(BlockBehaviour.Properties.copy(source).strength(3.0F, 3.0F).noOcclusion());
 	}
@@ -90,5 +93,15 @@ public class BaseTrapdoorBlock extends TrapDoorBlock implements RenderLayerProvi
 		}
 		BlockModelRotation rotation = BlockModelRotation.by(x, y);
 		return ModelsHelper.createMultiVariant(modelId, rotation.getRotation(), false);
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		BaseTrapdoorBlock trapdoorBlock = (BaseTrapdoorBlock) block;
+
+		String blockName = trapdoorBlock.getRegistryName().getPath();
+
+		stateProvider.trapdoorBlock(trapdoorBlock, BetterEndForge.makeID("block/" + blockName), true);
+		stateProvider.simpleBlockItem(trapdoorBlock, stateProvider.models().getBuilder("block/" + blockName + "_bottom"));
 	}
 }

@@ -7,7 +7,11 @@ import com.teamremastered.betterendforge.bclib.recipes.BCLRecipeProvider;
 import com.teamremastered.betterendforge.bclib.util.Logger;
 import com.teamremastered.betterendforge.client.BetterEndClient;
 import com.teamremastered.betterendforge.config.EndConfig;
+import com.teamremastered.betterendforge.registry.EndBlockEntities;
+import com.teamremastered.betterendforge.render.BCLBlockStateProvider;
+import com.teamremastered.betterendforge.render.BCLItemModelProvider;
 import com.teamremastered.betterendforge.util.LootTableUtil;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -44,7 +48,7 @@ public class BetterEndForge {
 
 		EndBlocks.initRegister(modEventBus);
 		EndItems.initRegister(modEventBus);
-//		EndBlockEntities.initRegister(modEventBus);
+		EndBlockEntities.initRegister(modEventBus);
 		EndAttributes.initregister(modEventBus);
 		EndSounds.initRegister(modEventBus);
 		EndParticles.initRegister(modEventBus);
@@ -94,9 +98,12 @@ public class BetterEndForge {
 	}
 
 	private void generateData(GatherDataEvent event) {
-		event.getGenerator().addProvider(new BCLRecipeProvider(event.getGenerator()));
+		DataGenerator generator = event.getGenerator();
+		generator.addProvider(new BCLRecipeProvider(generator));
+		generator.addProvider(new BCLBlockStateProvider(generator, event.getExistingFileHelper()));
+		generator.addProvider(new BCLItemModelProvider(generator, MOD_ID ,event.getExistingFileHelper()));
 		try {
-			event.getGenerator().run();
+			generator.run();
 		} catch (IOException ex) {
 			System.out.println("IO Error on generateData()");
 			ex.printStackTrace(System.out);

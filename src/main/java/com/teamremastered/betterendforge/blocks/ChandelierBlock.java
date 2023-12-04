@@ -20,6 +20,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
 import com.teamremastered.betterendforge.bclib.interfaces.RenderLayerProvider;
@@ -111,4 +114,53 @@ public class ChandelierBlock extends BaseAttachedBlock implements RenderLayerPro
 		BOUNDING_SHAPES.put(Direction.WEST, Shapes.box(0.5, 0.0, 0.0, 1.0, 1.0, 1.0));
 		BOUNDING_SHAPES.put(Direction.EAST, Shapes.box(0.0, 0.0, 0.0, 0.5, 1.0, 1.0));
 	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		//From Beethoven92's build
+
+		ModelFile ceil = stateProvider.models().withExistingParent(block.getRegistryName().getPath() + "_ceil",
+						Patterns.BLOCK_CHANDELIER_CEIL).
+				texture("rod", stateProvider.modLoc("block/" + block.getRegistryName().getPath() + "_floor")).
+				texture("texture", stateProvider.modLoc("block/" + block.getRegistryName().getPath() + "_ceil"));
+
+		ModelFile wall = stateProvider.models().withExistingParent(block.getRegistryName().getPath() + "_wall",
+						Patterns.BLOCK_CHANDELIER_WALL).
+				texture("texture", stateProvider.modLoc("block/" + block.getRegistryName().getPath() + "_wall"));
+
+		ModelFile floor = stateProvider.models().withExistingParent(block.getRegistryName().getPath() + "_floor",
+						Patterns.BLOCK_CHANDELIER_FLOOR).
+				texture("texture", stateProvider.modLoc("block/" + block.getRegistryName().getPath() + "_floor"));
+
+		stateProvider.getVariantBuilder(block)
+				.forAllStates(state -> {
+					Direction dir = state.getValue(FACING);
+					int y = 0;
+					switch (dir)
+					{
+						case DOWN:
+							break;
+						case EAST:
+							y = 270;
+							break;
+						case NORTH:
+							y = 180;
+							break;
+						case SOUTH:
+							break;
+						case UP:
+							break;
+						case WEST:
+							y = 90;
+							break;
+					}
+
+					return ConfiguredModel.builder()
+							.modelFile(dir == Direction.UP ? floor : dir == Direction.DOWN ? ceil : wall)
+							.rotationY(y)
+							.build();
+				});
+		stateProvider.simpleBlockItem(block, wall);
+	}
+
 }

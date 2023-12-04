@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/hydralux_petal_block",
+    "up": "betterendforge:block/hydralux_petal_block",
+    "north": "betterendforge:block/hydralux_petal_block",
+    "south": "betterendforge:block/hydralux_petal_block",
+    "east": "betterendforge:block/hydralux_petal_block",
+    "west": "betterendforge:block/hydralux_petal_block",
+    "down": "betterendforge:block/hydralux_petal_block"
+  }
+}

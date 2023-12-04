@@ -3,6 +3,7 @@ package com.teamremastered.betterendforge.bclib.blocks;
 import com.teamremastered.betterendforge.bclib.client.render.BCLRenderLayer;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
 import com.teamremastered.betterendforge.bclib.util.BlocksHelper;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -24,6 +25,8 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -35,7 +38,7 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.function.Function;
 
-public class FeatureSaplingBlock extends SaplingBlock implements RenderLayerProvider, BlockModelProvider, LootProvider {
+public class FeatureSaplingBlock extends SaplingBlock implements RenderLayerProvider, BlockModelProvider, LootProvider, IBCLBlockStateProvider {
 	private static final VoxelShape SHAPE = Block.box(4, 0, 4, 12, 14, 12);
 	private final Function<BlockState, Feature<?>> feature;
 	
@@ -127,5 +130,25 @@ public class FeatureSaplingBlock extends SaplingBlock implements RenderLayerProv
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter view, BlockPos pos, CollisionContext ePos) {
 		return SHAPE;
+	}
+
+	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
+		String blockName = block.getRegistryName().getPath();
+		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + blockName);
+		blockModel.parent(stateProvider.models().getExistingFile(stateProvider.mcLoc("block/cross")));
+
+		blockModel.texture("cross", stateProvider.modLoc("block/" + blockName));
+
+		return blockModel;
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		FeatureSaplingBlock saplingBlock = (FeatureSaplingBlock) block;
+
+
+		BlockModelBuilder builder = saplingBlock.getBlockModelBuilder(stateProvider, saplingBlock);
+		stateProvider.simpleBlock(saplingBlock, builder);
+		stateProvider.simpleBlockItem(saplingBlock, builder);
 	}
 }

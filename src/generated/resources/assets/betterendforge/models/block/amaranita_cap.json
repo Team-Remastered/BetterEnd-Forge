@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/amaranita_cap",
+    "up": "betterendforge:block/amaranita_cap",
+    "north": "betterendforge:block/amaranita_cap",
+    "south": "betterendforge:block/amaranita_cap",
+    "east": "betterendforge:block/amaranita_cap",
+    "west": "betterendforge:block/amaranita_cap",
+    "down": "betterendforge:block/amaranita_cap"
+  }
+}

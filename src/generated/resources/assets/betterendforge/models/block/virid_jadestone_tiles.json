@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/virid_jadestone_tiles",
+    "up": "betterendforge:block/virid_jadestone_tiles",
+    "north": "betterendforge:block/virid_jadestone_tiles",
+    "south": "betterendforge:block/virid_jadestone_tiles",
+    "east": "betterendforge:block/virid_jadestone_tiles",
+    "west": "betterendforge:block/virid_jadestone_tiles",
+    "down": "betterendforge:block/virid_jadestone_tiles"
+  }
+}

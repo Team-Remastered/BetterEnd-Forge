@@ -1,8 +1,11 @@
 package com.teamremastered.betterendforge.bclib.blocks;
 
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.client.models.PatternsHelper;
 import com.teamremastered.betterendforge.bclib.interfaces.BlockModelProvider;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
+import net.minecraft.server.packs.PackType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -15,6 +18,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WallSide;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -22,7 +27,7 @@ import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
 import java.util.Map;
 import java.util.Optional;
 
-public class BaseWallBlock extends WallBlock implements BlockModelProvider, LootProvider {
+public class BaseWallBlock extends WallBlock implements BlockModelProvider, LootProvider, IBCLBlockStateProvider {
 	private final Block parent;
 	
 	public BaseWallBlock(Block source) {
@@ -108,5 +113,21 @@ public class BaseWallBlock extends WallBlock implements BlockModelProvider, Loot
 		builder.part(postId).setCondition(state -> state.getValue(UP)).add();
 		
 		return builder.build();
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		BaseWallBlock wallBlock = (BaseWallBlock) block;
+		String blockName = wallBlock.getRegistryName().getPath();
+
+		ExistingFileHelper.ResourceType pathToBlockStates = new ExistingFileHelper.ResourceType(PackType.CLIENT_RESOURCES, ".png", "textures");
+		if (stateProvider.models().existingFileHelper.exists(BetterEndForge.makeID("block/" + blockName.replace("_wall", "_block")), pathToBlockStates)) {
+			blockName = blockName.replace("_wall", "_block");
+		} else {
+			blockName = blockName.replace("_wall", "");
+		}
+
+		stateProvider.wallBlock(wallBlock, BetterEndForge.makeID("block/" + blockName));
+		stateProvider.itemModels().wallInventory(wallBlock.getRegistryName().getPath(), BetterEndForge.makeID("block/" + blockName));
 	}
 }

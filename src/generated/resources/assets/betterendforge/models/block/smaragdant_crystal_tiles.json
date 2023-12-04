@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/smaragdant_crystal_tiles",
+    "up": "betterendforge:block/smaragdant_crystal_tiles",
+    "north": "betterendforge:block/smaragdant_crystal_tiles",
+    "south": "betterendforge:block/smaragdant_crystal_tiles",
+    "east": "betterendforge:block/smaragdant_crystal_tiles",
+    "west": "betterendforge:block/smaragdant_crystal_tiles",
+    "down": "betterendforge:block/smaragdant_crystal_tiles"
+  }
+}

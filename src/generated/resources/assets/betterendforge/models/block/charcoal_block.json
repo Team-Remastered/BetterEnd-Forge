@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/charcoal_block",
+    "up": "betterendforge:block/charcoal_block",
+    "north": "betterendforge:block/charcoal_block",
+    "south": "betterendforge:block/charcoal_block",
+    "east": "betterendforge:block/charcoal_block",
+    "west": "betterendforge:block/charcoal_block",
+    "down": "betterendforge:block/charcoal_block"
+  }
+}

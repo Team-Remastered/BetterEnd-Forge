@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/inflexia",
+    "up": "betterendforge:block/inflexia",
+    "north": "betterendforge:block/inflexia",
+    "south": "betterendforge:block/inflexia",
+    "east": "betterendforge:block/inflexia",
+    "west": "betterendforge:block/inflexia",
+    "down": "betterendforge:block/inflexia"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/aeternium_block",
+    "up": "betterendforge:block/aeternium_block",
+    "north": "betterendforge:block/aeternium_block",
+    "south": "betterendforge:block/aeternium_block",
+    "east": "betterendforge:block/aeternium_block",
+    "west": "betterendforge:block/aeternium_block",
+    "down": "betterendforge:block/aeternium_block"
+  }
+}

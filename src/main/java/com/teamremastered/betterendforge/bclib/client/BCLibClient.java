@@ -30,5 +30,5 @@ public class BCLibClient {
 //	public @Nullable UnbakedModel loadModelVariant(ModelResourceLocation modelId, ModelProviderContext context) throws ModelProviderException {
 //		return modelId.getVariant().equals("inventory") ? modelBakery.getItemModel( modelId) : modelBakery.getBlockModel(modelId);
 //	}
-	//FIXME: Related to items and block models, might be impossible to port to forge
+	//FIXME: Related to items and block models
 }

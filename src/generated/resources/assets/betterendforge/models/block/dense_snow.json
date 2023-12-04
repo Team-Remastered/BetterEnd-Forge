@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/dense_snow",
+    "up": "betterendforge:block/dense_snow",
+    "north": "betterendforge:block/dense_snow",
+    "south": "betterendforge:block/dense_snow",
+    "east": "betterendforge:block/dense_snow",
+    "west": "betterendforge:block/dense_snow",
+    "down": "betterendforge:block/dense_snow"
+  }
+}

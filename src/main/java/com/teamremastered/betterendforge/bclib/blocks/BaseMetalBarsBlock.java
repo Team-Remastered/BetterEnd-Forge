@@ -2,6 +2,7 @@ package com.teamremastered.betterendforge.bclib.blocks;
 
 import com.teamremastered.betterendforge.bclib.client.render.BCLRenderLayer;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -14,6 +15,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -24,7 +28,7 @@ import com.teamremastered.betterendforge.bclib.interfaces.RenderLayerProvider;
 import java.util.Map;
 import java.util.Optional;
 
-public class BaseMetalBarsBlock extends IronBarsBlock implements BlockModelProvider, RenderLayerProvider, LootProvider {
+public class BaseMetalBarsBlock extends IronBarsBlock implements BlockModelProvider, RenderLayerProvider, LootProvider, IBCLBlockStateProvider {
 	public BaseMetalBarsBlock(Block source) {
 		this(BlockBehaviour.Properties.copy(source).strength(5.0F, 6.0F).noOcclusion());
 	}
@@ -111,5 +115,31 @@ public class BaseMetalBarsBlock extends IronBarsBlock implements BlockModelProvi
 	@Override
 	public BCLRenderLayer getRenderLayer() {
 		return BCLRenderLayer.CUTOUT;
+	}
+
+
+	public BlockModelBuilder[] getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
+		String blockName = block.getRegistryName().getPath();
+
+		BlockModelBuilder blockModel_post = stateProvider.models().getBuilder("block/" + block.getRegistryName().getPath() + "_post");
+		blockModel_post.parent(stateProvider.models().getExistingFile(stateProvider.modLoc("patterns/block/bars_post")));
+		blockModel_post.texture("block_top", stateProvider.modLoc("block/" + blockName + "_top"));
+
+		BlockModelBuilder blockModel_side = stateProvider.models().getBuilder("block/" + block.getRegistryName().getPath() + "_side");
+		blockModel_post.parent(stateProvider.models().getExistingFile(stateProvider.modLoc("patterns/block/bars_side")));
+		blockModel_post.texture("block", stateProvider.modLoc("block/" + blockName));
+		blockModel_post.texture("block_top", stateProvider.modLoc("block/" + blockName + "_top"));
+
+        return new BlockModelBuilder[] {blockModel_post, blockModel_side};
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+			BaseMetalBarsBlock metalBarsBlock = (BaseMetalBarsBlock) block;
+
+			BlockModelBuilder[] builders = getBlockModelBuilder(stateProvider, metalBarsBlock);
+
+		stateProvider.simpleBlock(metalBarsBlock, builders[1]);
+		stateProvider.simpleBlockItem(metalBarsBlock, stateProvider.models().getBuilder("block/" + metalBarsBlock.getRegistryName().getPath() + "_side"));
 	}
 }

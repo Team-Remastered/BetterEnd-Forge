@@ -1,0 +1,6 @@
+{
+  "parent": "betterendforge:patterns/block/flower_pot",
+  "textures": {
+    "texture": "betterendforge:block/umbralith_flower_pot"
+  }
+}

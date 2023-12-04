@@ -4,11 +4,14 @@ import com.teamremastered.betterendforge.bclib.api.tag.NamedCommonBlockTags;
 import com.teamremastered.betterendforge.bclib.api.tag.TagAPI;
 import com.teamremastered.betterendforge.bclib.blocks.BaseTerrainBlock;
 import com.teamremastered.betterendforge.bclib.interfaces.TagProvider;
+import net.minecraft.server.packs.PackType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.MaterialColor;
 import com.teamremastered.betterendforge.interfaces.PottableTerrain;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 
 import java.util.List;
 
@@ -21,4 +24,6 @@ public class EndTerrainBlock extends BaseTerrainBlock implements PottableTerrain
 	public void addTags(List<TagAPI.TagLocation<Block>> blockTags, List<TagAPI.TagLocation<Item>> itemTags) {
 		blockTags.add(NamedCommonBlockTags.END_STONES);
 	}
+
+
 }

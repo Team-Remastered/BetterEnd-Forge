@@ -16,6 +16,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.client.models.Patterns;
 import com.teamremastered.betterendforge.registry.EndBlocks;
@@ -57,4 +60,34 @@ public class StoneLanternBlock extends EndLanternBlock implements CustomColorPro
 		) : Patterns.createJson(Patterns.BLOCK_STONE_LANTERN_CEIL, blockName, blockName);
 		return ModelsHelper.fromPattern(pattern);
 	}
+
+	//TODO: Make the stone lantern ModelBuilder
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		String materialName = block.getRegistryName().getPath().replace("_lantern", "");
+
+
+		ModelFile ceil = stateProvider.models().withExistingParent(materialName + "_lantern_ceil", stateProvider.modLoc("patterns/block/stone_lantern_ceil"))
+				.texture("particle", stateProvider.modLoc("block/" + materialName + "_lantern_side"))
+				.texture("texture", stateProvider.modLoc("block/" + materialName + "_lantern_side"))
+				.texture("top", stateProvider.modLoc("block/" + materialName + "_lantern_top"))
+				.texture("crystal", stateProvider.modLoc("block/aurora_crystal"))
+				.texture("bottom", stateProvider.modLoc("block/" + materialName + "_lantern_bottom"));
+		ModelFile floor = stateProvider.models().withExistingParent(materialName + "_lantern_floor", stateProvider.modLoc("patterns/block/stone_lantern_floor"))
+				.texture("particle", stateProvider.modLoc("block/" + materialName + "_lantern_side"))
+				.texture("texture", stateProvider.modLoc("block/" + materialName + "_lantern_side"))
+				.texture("top", stateProvider.modLoc("block/" + materialName + "_lantern_top"))
+				.texture("crystal", stateProvider.modLoc("block/aurora_crystal"))
+				.texture("bottom", stateProvider.modLoc("block/" + materialName + "_lantern_bottom"));
+		stateProvider.getVariantBuilder(block)
+				.forAllStates(state -> {
+					boolean isFloor = state.getValue(IS_FLOOR);
+					return ConfiguredModel.builder()
+							.modelFile(isFloor ? floor : ceil)
+							.build();
+				});
+		stateProvider.simpleBlockItem(block, floor);
+	}
+
 }

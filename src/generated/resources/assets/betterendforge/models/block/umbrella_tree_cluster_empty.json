@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/umbrella_tree_cluster_empty",
+    "up": "betterendforge:block/umbrella_tree_cluster_empty",
+    "north": "betterendforge:block/umbrella_tree_cluster_empty",
+    "south": "betterendforge:block/umbrella_tree_cluster_empty",
+    "east": "betterendforge:block/umbrella_tree_cluster_empty",
+    "west": "betterendforge:block/umbrella_tree_cluster_empty",
+    "down": "betterendforge:block/umbrella_tree_cluster_empty"
+  }
+}

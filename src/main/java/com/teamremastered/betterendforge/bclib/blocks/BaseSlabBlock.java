@@ -1,6 +1,9 @@
 package com.teamremastered.betterendforge.bclib.blocks;
 
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
+import net.minecraft.server.packs.PackType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.item.Item;
@@ -17,6 +20,8 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -29,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class BaseSlabBlock extends SlabBlock implements BlockModelProvider, CustomItemProvider, LootProvider {
+public class BaseSlabBlock extends SlabBlock implements BlockModelProvider, CustomItemProvider, LootProvider, IBCLBlockStateProvider {
 	private final Block parent;
 	public final boolean fireproof;
 
@@ -88,5 +93,22 @@ public class BaseSlabBlock extends SlabBlock implements BlockModelProvider, Cust
 	public BlockItem getCustomItem(ResourceLocation blockID, Item.Properties settings) {
 		if (fireproof) settings = settings.fireResistant();
 		return new BlockItem(this, settings);
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		BaseSlabBlock baseSlabBlock = (BaseSlabBlock) block;
+
+		String blockName = baseSlabBlock.getRegistryName().getPath();
+
+		ExistingFileHelper.ResourceType pathToBlockStates = new ExistingFileHelper.ResourceType(PackType.CLIENT_RESOURCES, ".png", "textures");
+		if (stateProvider.models().existingFileHelper.exists(BetterEndForge.makeID("block/" + blockName.replace("_slab", "_block")), pathToBlockStates)) {
+			blockName = blockName.replace("_slab", "_block");
+		} else {
+			blockName = blockName.replace("_slab", "");
+		}
+
+		stateProvider.slabBlock(baseSlabBlock, baseSlabBlock.getRegistryName(), BetterEndForge.makeID("block/" + blockName));
+		stateProvider.simpleBlockItem(baseSlabBlock, stateProvider.models().getBuilder("block/" + baseSlabBlock.getRegistryName().getPath()));
 	}
 }

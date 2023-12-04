@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "minecraft:block/end_stone",
+    "up": "betterendforge:block/sangnum_top",
+    "north": "betterendforge:block/sangnum_side",
+    "south": "betterendforge:block/sangnum_side",
+    "east": "betterendforge:block/sangnum_side",
+    "west": "betterendforge:block/sangnum_side",
+    "down": "minecraft:block/end_stone"
+  }
+}

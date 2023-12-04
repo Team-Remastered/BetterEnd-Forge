@@ -1,5 +1,8 @@
 package com.teamremastered.betterendforge.complexmaterials;
 
+import com.teamremastered.betterendforge.bclib.blocks.BaseBlock;
+import com.teamremastered.betterendforge.bclib.blocks.BaseRotatedPillarBlock;
+import com.teamremastered.betterendforge.bclib.blocks.StripableBarkBlock;
 import com.teamremastered.betterendforge.registry.EndBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
@@ -23,12 +26,12 @@ public class WoodMaterial {
     }
 
     private void makeWood(String name, MaterialColor topColor, MaterialColor barkColor) {
-        bark = EndBlocks.registerBlock(name + "_bark", () -> new Block(BlockBehaviour.Properties.copy(Blocks.ACACIA_WOOD)));
+        bark = EndBlocks.registerBlock(name + "_bark", () -> new StripableBarkBlock(barkColor, Blocks.ACACIA_WOOD)); //Temp block until we make the other wood blocks
         log = EndBlocks.registerBlock(name + "_log", () -> createLog(MaterialColor.WOOD, MaterialColor.PODZOL));
     }
 
-    private static RotatedPillarBlock createLog(MaterialColor pTopColor, MaterialColor pBarkColor) {
-        return new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, (p_152624_) -> {
+    private static BaseRotatedPillarBlock createLog(MaterialColor pTopColor, MaterialColor pBarkColor) {
+        return new BaseRotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, (p_152624_) -> {
             return p_152624_.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? pTopColor : pBarkColor;
         }).strength(2.0F).sound(SoundType.WOOD));
     }

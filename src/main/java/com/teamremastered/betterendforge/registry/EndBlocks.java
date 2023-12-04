@@ -42,6 +42,7 @@ import com.teamremastered.betterendforge.complexmaterials.StoneMaterial;
 import com.teamremastered.betterendforge.complexmaterials.WoodMaterial;
 import com.teamremastered.betterendforge.blocks.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
@@ -49,7 +50,7 @@ public class EndBlocks {
 	private static final BlockRegistry REGISTRY = new BlockRegistry(CreativeTabs.TAB_BLOCKS);
 	public static final Item.Properties BASE_ITEM_PROPERTIES = new Item.Properties().tab(CreativeTabs.TAB_BLOCKS);
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BetterEndForge.MOD_ID);
-
+	public static List<RegistryObject<Block>> registeredBetterEndBlocks = new ArrayList<>();
 	public static void initRegister(IEventBus eventBus) {
 		BLOCKS.register(eventBus);
 	}
@@ -403,15 +404,14 @@ public class EndBlocks {
 
 		RegistryObject<I> registeredBlock = BLOCKS.register(name, block);
 		registerBlockItem(name, registeredBlock);
-
+		registeredBetterEndBlocks.add((RegistryObject<Block>) registeredBlock);
 		return registeredBlock;
 	}
 
 	public static <I extends Block> RegistryObject<I> registerEndBlockOnly(String name, final Supplier<? extends I> block) {
 
 		RegistryObject<I> registeredBlock = BLOCKS.register(name, block);
-		registerBlockItem(name, registeredBlock);
-
+		registeredBetterEndBlocks.add((RegistryObject<Block>) registeredBlock);
 		return registeredBlock;
 	}
 
@@ -419,11 +419,11 @@ public class EndBlocks {
 
 		RegistryObject<Block> registeredBlock = BLOCKS.register(name, () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
 		registerBlockItem(name, registeredBlock);
-
+		registeredBetterEndBlocks.add(registeredBlock);
 		return registeredBlock;
 	}
 
-	/** How we register the block items, it is recommended to register the items inside another Item registry then the one in EndItems **/
+	/** How we register the block items, it is recommended to register the items inside another Item registry than the one in EndItems **/
 
 	public static  RegistryObject<Item> registerBlockItem(String name, final Supplier<? extends Block> blockItem) {
 

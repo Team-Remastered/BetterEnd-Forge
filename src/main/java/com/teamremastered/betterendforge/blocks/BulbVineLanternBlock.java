@@ -1,6 +1,7 @@
 package com.teamremastered.betterendforge.blocks;
 
 import com.google.common.collect.Maps;
+import com.teamremastered.betterendforge.bclib.blocks.BaseBlock;
 import com.teamremastered.betterendforge.bclib.client.render.BCLRenderLayer;
 import com.teamremastered.betterendforge.bclib.interfaces.BlockModelProvider;
 import com.teamremastered.betterendforge.bclib.util.BlocksHelper;
@@ -18,6 +19,8 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
 import com.teamremastered.betterendforge.bclib.interfaces.RenderLayerProvider;
@@ -69,7 +72,25 @@ public class BulbVineLanternBlock extends EndLanternBlock implements RenderLayer
 		) : Patterns.createJson(Patterns.BLOCK_BULB_LANTERN_CEIL, textures);
 		return ModelsHelper.fromPattern(pattern);
 	}
-	
+
+	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
+		String blockName = block.getRegistryName().getPath();
+		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + blockName);
+		blockModel.parent(stateProvider.models().getExistingFile(stateProvider.modLoc("patterns/block/bulb_lantern_ceil")));
+
+		blockModel.texture("glow",  stateProvider.modLoc("block/" + getGlowTexture()))
+				.texture("material", "block/" + getMetalTexture(block.getRegistryName()));
+
+		return blockModel;
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block lanternBlock) {
+		BlockModelBuilder builder = getBlockModelBuilder(stateProvider, lanternBlock);
+		stateProvider.simpleBlock(lanternBlock, builder);
+		stateProvider.simpleBlockItem(lanternBlock, builder);
+	}
+
 	protected String getMetalTexture(ResourceLocation blockId) {
 		String name = blockId.getPath();
 		name = name.substring(0, name.indexOf('_'));
@@ -79,5 +100,7 @@ public class BulbVineLanternBlock extends EndLanternBlock implements RenderLayer
 	protected String getGlowTexture() {
 		return "bulb_vine_lantern_bulb";
 	}
+
+
 	
 }

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/flavolite_tiles",
+    "up": "betterendforge:block/flavolite_tiles",
+    "north": "betterendforge:block/flavolite_tiles",
+    "south": "betterendforge:block/flavolite_tiles",
+    "east": "betterendforge:block/flavolite_tiles",
+    "west": "betterendforge:block/flavolite_tiles",
+    "down": "betterendforge:block/flavolite_tiles"
+  }
+}

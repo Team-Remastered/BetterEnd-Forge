@@ -1,0 +1,7 @@
+{
+  "parent": "betterendforge:patterns/block/bars_side",
+  "textures": {
+    "block_top": "betterendforge:block/terminite_bars_top",
+    "block": "betterendforge:block/terminite_bars"
+  }
+}

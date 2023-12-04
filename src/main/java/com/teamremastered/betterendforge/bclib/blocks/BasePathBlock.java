@@ -3,6 +3,7 @@ package com.teamremastered.betterendforge.bclib.blocks;
 import com.google.common.collect.Maps;
 import com.teamremastered.betterendforge.bclib.client.models.PatternsHelper;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
+import net.minecraft.core.Direction;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -22,14 +23,19 @@ import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelBuilder;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
+import org.lwjgl.system.CallbackI;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.BiConsumer;
 
 public class BasePathBlock extends BaseBlockNotFull implements LootProvider {
 	private static final VoxelShape SHAPE = box(0, 0, 0, 16, 15, 16);
@@ -72,7 +78,7 @@ public class BasePathBlock extends BaseBlockNotFull implements LootProvider {
 	public BlockModel getItemModel(ResourceLocation blockId) {
 		return getBlockModel(blockId, defaultBlockState());
 	}
-	
+
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public @Nullable BlockModel getBlockModel(ResourceLocation blockId, BlockState blockState) {
@@ -94,5 +100,38 @@ public class BasePathBlock extends BaseBlockNotFull implements LootProvider {
 		ResourceLocation modelId = new ResourceLocation(stateId.getNamespace(), "block/" + stateId.getPath());
 		registerBlockModel(stateId, modelId, blockState, modelCache);
 		return ModelsHelper.createRandomTopModel(modelId);
+	}
+
+	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
+		String blockName = block.getRegistryName().getPath();
+
+		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + blockName);
+		blockModel.parent(stateProvider.models().getExistingFile(stateProvider.mcLoc("block/block")));
+
+		blockModel.texture("particle", stateProvider.mcLoc("block/end_stone"));
+		blockModel.texture("top", stateProvider.modLoc("block/" + blockName + "_top"));
+
+		//Remove the "_path" from the block name since we are taking the side of the normal block
+		blockModel.texture("side", stateProvider.modLoc("block/" + blockName.replace("_path", "") + "_side"));
+		blockModel.texture("bottom", stateProvider.mcLoc("block/end_stone"));
+
+		blockModel.element().from(0, 0, 0).to(16,16,16)
+
+			//Down and Up uvs do not show in the block model because they represent base values I think
+			.face(Direction.DOWN).uvs(0, 0, 16, 16).texture("#bottom").cullface(Direction.DOWN).end()
+			.face(Direction.UP).uvs(0, 0, 16, 16).texture("#top").end()
+			.face(Direction.NORTH).uvs(0, 1, 16, 16).texture("#side").cullface(Direction.NORTH).end()
+			.face(Direction.SOUTH).uvs(0, 1, 16, 16).texture("#side").cullface(Direction.SOUTH).end()
+			.face(Direction.EAST).uvs(0, 1, 16, 16).texture("#side").cullface(Direction.EAST).end()
+			.face(Direction.WEST).uvs(0, 1, 16, 16).texture("#side").cullface(Direction.WEST).end();
+
+		return blockModel;
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block basePathBlock) {
+		BlockModelBuilder builder = getBlockModelBuilder(stateProvider, basePathBlock);
+		stateProvider.simpleBlock(basePathBlock, builder);
+		stateProvider.simpleBlockItem(basePathBlock, builder);
 	}
 }

@@ -26,6 +26,8 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 
 import java.util.Map;
 
@@ -135,4 +137,5 @@ public class EndLanternBlock extends BaseBlockNotFull implements SimpleWaterlogg
 		registerBlockModel(stateId, modelId, blockState, modelCache);
 		return ModelsHelper.createBlockSimple(modelId);
 	}
+
 }

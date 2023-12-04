@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "minecraft:block/end_stone",
+    "up": "betterendforge:block/jungle_moss_top",
+    "north": "betterendforge:block/jungle_moss_side",
+    "south": "betterendforge:block/jungle_moss_side",
+    "east": "betterendforge:block/jungle_moss_side",
+    "west": "betterendforge:block/jungle_moss_side",
+    "down": "minecraft:block/end_stone"
+  }
+}

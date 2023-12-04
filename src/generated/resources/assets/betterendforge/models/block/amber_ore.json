@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/amber_ore",
+    "up": "betterendforge:block/amber_ore",
+    "north": "betterendforge:block/amber_ore",
+    "south": "betterendforge:block/amber_ore",
+    "east": "betterendforge:block/amber_ore",
+    "west": "betterendforge:block/amber_ore",
+    "down": "betterendforge:block/amber_ore"
+  }
+}

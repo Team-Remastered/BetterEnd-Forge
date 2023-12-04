@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/azure_jadestone_bricks",
+    "up": "betterendforge:block/azure_jadestone_bricks",
+    "north": "betterendforge:block/azure_jadestone_bricks",
+    "south": "betterendforge:block/azure_jadestone_bricks",
+    "east": "betterendforge:block/azure_jadestone_bricks",
+    "west": "betterendforge:block/azure_jadestone_bricks",
+    "down": "betterendforge:block/azure_jadestone_bricks"
+  }
+}

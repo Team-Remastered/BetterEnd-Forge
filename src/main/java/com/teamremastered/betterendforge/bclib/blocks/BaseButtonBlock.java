@@ -1,8 +1,11 @@
 package com.teamremastered.betterendforge.bclib.blocks;
 
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.client.models.PatternsHelper;
 import com.teamremastered.betterendforge.bclib.interfaces.BlockModelProvider;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
+import net.minecraft.server.packs.PackType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.client.renderer.block.model.BlockModel;
@@ -14,6 +17,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -21,7 +26,7 @@ import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
 import java.util.Map;
 import java.util.Optional;
 
-public abstract class BaseButtonBlock extends ButtonBlock implements BlockModelProvider, LootProvider {
+public abstract class BaseButtonBlock extends ButtonBlock implements BlockModelProvider, LootProvider, IBCLBlockStateProvider {
 	private final Block parent;
 
 	protected BaseButtonBlock(Block parent, Properties properties, boolean sensitive) {
@@ -93,5 +98,23 @@ public abstract class BaseButtonBlock extends ButtonBlock implements BlockModelP
 		}
 		BlockModelRotation rotation = BlockModelRotation.by(x, y);
 		return ModelsHelper.createMultiVariant(modelId, rotation.getRotation(), face == AttachFace.WALL);
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		BaseButtonBlock buttonBlock = (BaseButtonBlock) block;
+
+
+		String blockMaterial = buttonBlock.getRegistryName().getPath();
+
+		ExistingFileHelper.ResourceType pathToBlockStates = new ExistingFileHelper.ResourceType(PackType.CLIENT_RESOURCES, ".png", "textures");
+		if (stateProvider.models().existingFileHelper.exists(BetterEndForge.makeID("block/" + blockMaterial.replace("_button", "_block")), pathToBlockStates)) {
+			blockMaterial = blockMaterial.replace("_button", "_block");
+		} else {
+			blockMaterial = blockMaterial.replace("_button", "");
+		}
+
+		stateProvider.buttonBlock(buttonBlock, BetterEndForge.makeID("block/" + blockMaterial));
+		stateProvider.itemModels().singleTexture(blockMaterial + "_button", stateProvider.mcLoc("block/button_inventory"), BetterEndForge.makeID("block/" + blockMaterial));
 	}
 }

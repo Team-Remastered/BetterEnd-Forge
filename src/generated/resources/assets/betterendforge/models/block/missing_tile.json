@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/missing_tile",
+    "up": "betterendforge:block/missing_tile",
+    "north": "betterendforge:block/missing_tile",
+    "south": "betterendforge:block/missing_tile",
+    "east": "betterendforge:block/missing_tile",
+    "west": "betterendforge:block/missing_tile",
+    "down": "betterendforge:block/missing_tile"
+  }
+}

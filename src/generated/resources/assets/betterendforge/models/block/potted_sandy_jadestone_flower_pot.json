@@ -1,0 +1,6 @@
+{
+  "parent": "betterendforge:patterns/block/flower_pot",
+  "textures": {
+    "texture": "betterendforge:block/sandy_jadestone_flower_pot"
+  }
+}

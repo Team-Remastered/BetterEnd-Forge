@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/umbralith_polished",
+    "up": "betterendforge:block/umbralith_polished",
+    "north": "betterendforge:block/umbralith_polished",
+    "south": "betterendforge:block/umbralith_polished",
+    "east": "betterendforge:block/umbralith_polished",
+    "west": "betterendforge:block/umbralith_polished",
+    "down": "betterendforge:block/umbralith_polished"
+  }
+}

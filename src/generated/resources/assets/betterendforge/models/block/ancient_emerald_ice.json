@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/ancient_emerald_ice",
+    "up": "betterendforge:block/ancient_emerald_ice",
+    "north": "betterendforge:block/ancient_emerald_ice",
+    "south": "betterendforge:block/ancient_emerald_ice",
+    "east": "betterendforge:block/ancient_emerald_ice",
+    "west": "betterendforge:block/ancient_emerald_ice",
+    "down": "betterendforge:block/ancient_emerald_ice"
+  }
+}

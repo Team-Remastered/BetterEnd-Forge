@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "is_floor=false,waterlogged=false": {
+      "model": "betterendforge:block/end_stone_lantern_ceil"
+    },
+    "is_floor=true,waterlogged=false": {
+      "model": "betterendforge:block/end_stone_lantern_floor"
+    },
+    "is_floor=false,waterlogged=true": {
+      "model": "betterendforge:block/end_stone_lantern_ceil"
+    },
+    "is_floor=true,waterlogged=true": {
+      "model": "betterendforge:block/end_stone_lantern_floor"
+    }
+  }
+}

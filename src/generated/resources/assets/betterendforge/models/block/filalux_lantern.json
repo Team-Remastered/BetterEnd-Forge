@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/filalux_lantern",
+    "up": "betterendforge:block/filalux_lantern",
+    "north": "betterendforge:block/filalux_lantern",
+    "south": "betterendforge:block/filalux_lantern",
+    "east": "betterendforge:block/filalux_lantern",
+    "west": "betterendforge:block/filalux_lantern",
+    "down": "betterendforge:block/filalux_lantern"
+  }
+}

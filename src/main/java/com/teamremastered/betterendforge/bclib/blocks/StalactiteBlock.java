@@ -34,6 +34,9 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -252,5 +255,24 @@ public class StalactiteBlock extends BaseBlockNotFull implements SimpleWaterlogg
 			int side = Mth.floor(Mth.lerp(i / 7F, start, end) * 8F + 0.5F);
 			SHAPES[i] = box(side, 0, side, 16 - side, 16, 16 - side);
 		}
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		//From Beethoven92's build
+		stateProvider.getVariantBuilder(block)
+				.forAllStates(state -> {
+					boolean isFloor = state.getValue(StalactiteBlock.IS_FLOOR);
+
+					int size = state.getValue(StalactiteBlock.SIZE);
+
+					ModelFile currentSize = stateProvider.models().withExistingParent(block.getRegistryName().getPath() + "_" + size, stateProvider.mcLoc("block/cross"))
+							.texture("cross", stateProvider.modLoc("block/" + block.getRegistryName().getPath() + "_" + size));
+
+					return ConfiguredModel.builder()
+							.modelFile(currentSize)
+							.rotationX(isFloor? 0 : 180)
+							.build();
+				});
 	}
 }

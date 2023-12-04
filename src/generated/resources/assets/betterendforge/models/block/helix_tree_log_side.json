@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/helix_tree_log_side",
+    "up": "betterendforge:block/helix_tree_log_side",
+    "north": "betterendforge:block/helix_tree_log_side",
+    "south": "betterendforge:block/helix_tree_log_side",
+    "east": "betterendforge:block/helix_tree_log_side",
+    "west": "betterendforge:block/helix_tree_log_side",
+    "down": "betterendforge:block/helix_tree_log_side"
+  }
+}

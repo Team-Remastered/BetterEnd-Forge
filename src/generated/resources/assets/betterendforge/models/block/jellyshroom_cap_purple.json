@@ -1,0 +1,6 @@
+{
+  "parent": "betterendforge:patterns/block/block_colored",
+  "textures": {
+    "texture": "betterendforge:block/jellyshroom_cap"
+  }
+}

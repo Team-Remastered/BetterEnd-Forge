@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/amaranita_hymenophore",
+    "up": "betterendforge:block/amaranita_hymenophore",
+    "north": "betterendforge:block/amaranita_hymenophore",
+    "south": "betterendforge:block/amaranita_hymenophore",
+    "east": "betterendforge:block/amaranita_hymenophore",
+    "west": "betterendforge:block/amaranita_hymenophore",
+    "down": "betterendforge:block/amaranita_hymenophore"
+  }
+}

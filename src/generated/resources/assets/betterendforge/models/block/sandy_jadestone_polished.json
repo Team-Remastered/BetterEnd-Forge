@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/sandy_jadestone_polished",
+    "up": "betterendforge:block/sandy_jadestone_polished",
+    "north": "betterendforge:block/sandy_jadestone_polished",
+    "south": "betterendforge:block/sandy_jadestone_polished",
+    "east": "betterendforge:block/sandy_jadestone_polished",
+    "west": "betterendforge:block/sandy_jadestone_polished",
+    "down": "betterendforge:block/sandy_jadestone_polished"
+  }
+}

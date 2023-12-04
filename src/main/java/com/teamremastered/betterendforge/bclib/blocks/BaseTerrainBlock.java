@@ -32,6 +32,8 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.api.tag.NamedMineableTags;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
@@ -151,5 +153,28 @@ public class BaseTerrainBlock extends BaseBlock {
 		ResourceLocation modelId = new ResourceLocation(stateId.getNamespace(), "block/" + stateId.getPath());
 		registerBlockModel(stateId, modelId, blockState, modelCache);
 		return ModelsHelper.createRandomTopModel(modelId);
+	}
+
+	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
+		String blockName = block.getRegistryName().getPath();
+		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + blockName);
+		blockModel.parent(stateProvider.models().getExistingFile(stateProvider.mcLoc("block/cube")));
+
+		blockModel.texture("particle", stateProvider.mcLoc("block/end_stone"));
+		blockModel.texture("up", stateProvider.modLoc("block/" + blockName + "_top"));
+		blockModel.texture("north", stateProvider.modLoc("block/" + blockName + "_side"));
+		blockModel.texture("south", stateProvider.modLoc("block/" + blockName + "_side"));
+		blockModel.texture("east", stateProvider.modLoc("block/" + blockName + "_side"));
+		blockModel.texture("west", stateProvider.modLoc("block/" + blockName + "_side"));
+		blockModel.texture("down", stateProvider.mcLoc("block/end_stone"));
+
+		return blockModel;
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		BlockModelBuilder builder = getBlockModelBuilder(stateProvider, block);
+		stateProvider.simpleBlock(block, builder);
+		stateProvider.simpleBlockItem(block, builder);
 	}
 }

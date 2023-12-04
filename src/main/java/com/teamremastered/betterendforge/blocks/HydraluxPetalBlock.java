@@ -30,4 +30,5 @@ public class HydraluxPetalBlock extends BaseBlock implements AddMineableAxe {
 	@Override
 	public void fallOn(Level level, BlockState blockState, BlockPos blockPos, Entity entity, float f) {
 	}
+
 }

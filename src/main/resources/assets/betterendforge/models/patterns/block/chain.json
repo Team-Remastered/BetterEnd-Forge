@@ -1,0 +1,7 @@
+{
+	"parent": "block/chain",
+	"textures": {
+		"particle": "#particle",
+		"all": "#all"
+	}
+}

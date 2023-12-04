@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/sulphuric_rock_bricks",
+    "up": "betterendforge:block/sulphuric_rock_bricks",
+    "north": "betterendforge:block/sulphuric_rock_bricks",
+    "south": "betterendforge:block/sulphuric_rock_bricks",
+    "east": "betterendforge:block/sulphuric_rock_bricks",
+    "west": "betterendforge:block/sulphuric_rock_bricks",
+    "down": "betterendforge:block/sulphuric_rock_bricks"
+  }
+}
