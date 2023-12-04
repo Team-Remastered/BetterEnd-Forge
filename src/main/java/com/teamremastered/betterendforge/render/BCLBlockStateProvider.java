@@ -26,7 +26,7 @@ public class BCLBlockStateProvider extends BlockStateProvider {
      **/
 
     private List<RegistryObject<Block>> filteredBlockList(List<RegistryObject<Block>> registeredBlockList) {
-        List<RegistryObject<Block>> filteredList = new ArrayList<RegistryObject<Block>>();
+        List<RegistryObject<Block>> filteredList = new ArrayList<>();
         ExistingFileHelper.ResourceType pathToBlockStates = new ExistingFileHelper.ResourceType(PackType.CLIENT_RESOURCES, ".json", "blockstates");
         for (RegistryObject<Block> registeredBlock : registeredBlockList) {
             if (!models().existingFileHelper.exists(registeredBlock.getId(), pathToBlockStates)) {

@@ -50,9 +50,12 @@ public class EndBlocks {
 	private static final BlockRegistry REGISTRY = new BlockRegistry(CreativeTabs.TAB_BLOCKS);
 	public static final Item.Properties BASE_ITEM_PROPERTIES = new Item.Properties().tab(CreativeTabs.TAB_BLOCKS);
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BetterEndForge.MOD_ID);
+	public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BetterEndForge.MOD_ID);
+
 	public static List<RegistryObject<Block>> registeredBetterEndBlocks = new ArrayList<>();
 	public static void initRegister(IEventBus eventBus) {
 		BLOCKS.register(eventBus);
+		BLOCK_ITEMS.register(eventBus);
 	}
 
 	// Terrain //
@@ -427,7 +430,7 @@ public class EndBlocks {
 
 	public static  RegistryObject<Item> registerBlockItem(String name, final Supplier<? extends Block> blockItem) {
 
-		return EndItems.ITEMS.register(name, () -> new BlockItem(blockItem.get(), BASE_ITEM_PROPERTIES));
+		return BLOCK_ITEMS.register(name, () -> new BlockItem(blockItem.get(), BASE_ITEM_PROPERTIES));
 	}
 
 }
