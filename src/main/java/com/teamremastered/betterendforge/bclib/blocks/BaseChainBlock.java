@@ -6,6 +6,7 @@ import com.teamremastered.betterendforge.bclib.interfaces.BlockModelProvider;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
 import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -19,6 +20,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -75,10 +77,10 @@ public class BaseChainBlock extends ChainBlock implements BlockModelProvider, Re
 
 	@Override
 	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
-		BaseChainBlock chainBlock = (BaseChainBlock) block;
-		BlockModelBuilder builder = getBlockModelBuilder(stateProvider, chainBlock);
-
-		stateProvider.simpleBlock(chainBlock, builder);
-		stateProvider.simpleBlockItem(chainBlock, stateProvider.models().getBuilder("block/" + chainBlock.getRegistryName().getPath()));
+		ModelFile chain = stateProvider.models().withExistingParent(block.getRegistryName().getPath(), stateProvider.mcLoc("block/chain"))
+				.texture("particle", stateProvider.modLoc("block/" + block.getRegistryName().getPath()))
+				.texture("all", stateProvider.modLoc("block/" + block.getRegistryName().getPath()));
+		stateProvider.axisBlock((RotatedPillarBlock)block, chain, chain);
+		stateProvider.simpleBlockItem(block, stateProvider.models().getBuilder("block/" + block.getRegistryName().getPath()));
 	}
 }
