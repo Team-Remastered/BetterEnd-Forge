@@ -1,1 +1,7 @@
-{}
+{
+  "parent": "betterendforge:patterns/block/bars_side",
+  "textures": {
+    "top": "betterendforge:block/thallasium_bars_top",
+    "side": "betterendforge:block/thallasium_bars"
+  }
+}
