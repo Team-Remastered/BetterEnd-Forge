@@ -8,6 +8,7 @@ import com.teamremastered.betterendforge.bclib.blocks.BaseFurnaceBlock;
 import com.teamremastered.betterendforge.bclib.blocks.BaseSignBlock;
 import com.teamremastered.betterendforge.bclib.interfaces.PostInitable;
 import com.teamremastered.betterendforge.bclib.interfaces.tools.AddMineableSword;
+import com.teamremastered.betterendforge.registry.EndBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -45,41 +46,23 @@ public class PostInitAPI {
 	 * @param isClient {@code boolean}, {@code true} for client, {@code false} for server.
 	 */
 	public static void postInit(boolean isClient) {
-		Registry.BLOCK.forEach(block -> {
-			processBlockCommon(block);
-			if (isClient) {
-			//	processBlockClient(block); //FIXME: No idea what this does
-			}
+		EndBlocks.BLOCKS.getEntries().forEach(block -> {
+			processBlockCommon(block.get());
 		});
-		
+
 		Registry.ITEM.forEach(item -> {
 			processItemCommon(item);
 		});
-		
+
 		if (postInitFunctions != null) {
 			postInitFunctions.forEach(function -> function.accept(isClient));
 			postInitFunctions = null;
 		}
-		
+
 		blockTags = null;
 		itemTags = null;
-		BiomeAPI.loadFabricAPIBiomes();
+//		BiomeAPI.loadFabricAPIBiomes();
 	}
-	
-//	@OnlyIn(Dist.CLIENT)
-//	private static void processBlockClient(Block block) {
-//		if (block instanceof RenderLayerProvider) {
-//			BCLRenderLayer layer = ((RenderLayerProvider) block).getRenderLayer();
-//			if (layer == BCLRenderLayer.CUTOUT) BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutout());
-//			else if (layer == BCLRenderLayer.TRANSLUCENT) BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.translucent());
-//		}
-//		if (block instanceof BaseChestBlock) {
-//			BaseChestBlockEntityRenderer.registerRenderLayer(block);
-//		}
-//		else if (block instanceof BaseSignBlock) {
-//			BaseSignBlockEntityRenderer.registerRenderLayer(block);
-//		}
-//	} //FIXME: No idea what this does 2
 
 	private static void processItemCommon(Item item) {
 		if (item instanceof TagProvider provider){

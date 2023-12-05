@@ -4,15 +4,21 @@ import com.teamremastered.betterendforge.bclib.BCLib;
 import com.teamremastered.betterendforge.bclib.api.WorldDataAPI;
 import com.teamremastered.betterendforge.bclib.client.BCLibClient;
 import com.teamremastered.betterendforge.bclib.recipes.BCLRecipeProvider;
+import com.teamremastered.betterendforge.bclib.server.BCLibServer;
 import com.teamremastered.betterendforge.bclib.util.Logger;
 import com.teamremastered.betterendforge.client.BetterEndClient;
 import com.teamremastered.betterendforge.config.EndConfig;
 import com.teamremastered.betterendforge.registry.EndBlockEntities;
 import com.teamremastered.betterendforge.render.BCLBlockStateProvider;
 import com.teamremastered.betterendforge.render.BCLItemModelProvider;
+import com.teamremastered.betterendforge.render.BCLRendLayerProvider;
 import com.teamremastered.betterendforge.util.LootTableUtil;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.scores.criteria.ObjectiveCriteria;
+import net.minecraftforge.client.ForgeRenderTypes;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
@@ -113,15 +119,15 @@ public class BetterEndForge {
 	private void onClientSetup(FMLClientSetupEvent event) {
 		BetterEndClient.initializeClient();
 		BCLibClient.onInitializeClient();
+		BCLRendLayerProvider.registerBlockRenderedLayer();
 	}
 
 	private void onServerSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
+			BCLibServer.onInitializeServer();
 			EndEntities.registerSpawnPlacement();
 		});
 	}
-
-
 
 	public static ResourceLocation makeID(String path) {
 		return new ResourceLocation(MOD_ID, path);
