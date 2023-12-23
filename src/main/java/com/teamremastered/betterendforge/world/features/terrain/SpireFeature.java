@@ -81,7 +81,7 @@ public class SpireFeature extends DefaultFeature {
 		}).fillRecursive(world, center);
 		
 		support.forEach((bpos) -> {
-			if (BiomeAPI.getFromBiome(world.getBiome(bpos)) == EndBiomes.BLOSSOMING_SPIRES) {
+			if (BiomeAPI.getFromBiome(world.getBiome(bpos)).getBiome() == EndBiomes.BLOSSOMING_SPIRES.get()) {
 				EndFeatures.TENANEA_BUSH.getFeature()
 										.place(new FeaturePlaceContext<>(Optional.empty(), world, chunkGenerator, random, bpos, null));
 			}

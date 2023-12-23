@@ -49,7 +49,7 @@ public class CubozoaEntity extends AbstractSchoolingFish {
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType spawnReason, SpawnGroupData entityData, CompoundTag entityTag) {
 		SpawnGroupData data = super.finalizeSpawn(world, difficulty, spawnReason, entityData, entityTag);
 		
-		if (BiomeAPI.getFromBiome(world.getBiome(blockPosition())) == EndBiomes.SULPHUR_SPRINGS) {
+		if (BiomeAPI.getFromBiome(world.getBiome(blockPosition())).getBiome() == EndBiomes.SULPHUR_SPRINGS.get()) {
 			this.entityData.set(VARIANT, (byte) 1);
 		}
 		

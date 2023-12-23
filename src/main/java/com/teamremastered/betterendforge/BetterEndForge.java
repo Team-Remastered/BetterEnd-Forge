@@ -8,6 +8,7 @@ import com.teamremastered.betterendforge.bclib.server.BCLibServer;
 import com.teamremastered.betterendforge.bclib.util.Logger;
 import com.teamremastered.betterendforge.client.BetterEndClient;
 import com.teamremastered.betterendforge.config.EndConfig;
+import com.teamremastered.betterendforge.registry.EndBiomes;
 import com.teamremastered.betterendforge.registry.EndBlockEntities;
 import com.teamremastered.betterendforge.render.BCLBlockStateProvider;
 import com.teamremastered.betterendforge.render.BCLItemModelProvider;
@@ -20,6 +21,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
 import net.minecraftforge.client.ForgeRenderTypes;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
@@ -67,7 +69,8 @@ public class BetterEndForge {
 		BCLib.loadBCLib();
 		WorldDataAPI.registerModCache(MOD_ID);
 		EndPortals.loadPortals();
-//		EndBiomes.register();
+		EndBiomes.initRegister(modEventBus);
+		EndBiomes.register();
 //		EndTags.register();
 //		CraftingRecipes.register();
 //		FurnaceRecipes.register();
@@ -124,7 +127,6 @@ public class BetterEndForge {
 
 	private void onServerSetup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			BCLibServer.onInitializeServer();
 			EndEntities.registerSpawnPlacement();
 		});
 	}
@@ -132,5 +134,5 @@ public class BetterEndForge {
 	public static ResourceLocation makeID(String path) {
 		return new ResourceLocation(MOD_ID, path);
 	}
-	
+
 }

@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import com.teamremastered.betterendforge.bclib.api.biomes.TheEndBiomeData;
 import com.teamremastered.betterendforge.bclib.world.biomes.FabricBiomesData;
 
-@Mixin(value =  TheEndBiomeData.class, remap = false)
+@Mixin(value = TheEndBiomeData.class, remap = false)
 public class TheEndBiomeDataMixin {
 	@Inject(method = "addEndBiomeReplacement", at = @At(value = "HEAD"))
 	private static void bclib_addEndBiomeReplacement(ResourceKey<Biome> replaced, ResourceKey<Biome> variant, double weight, CallbackInfo info) {

@@ -1,5 +1,5 @@
 package com.teamremastered.betterendforge.bclib.world.generator;
 
-public enum BiomeType {
+public enum BCLBiomeType {
 	LAND, VOID;
 }

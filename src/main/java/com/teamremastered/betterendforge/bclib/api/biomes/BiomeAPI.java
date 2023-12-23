@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.BCLib;
 import com.teamremastered.betterendforge.bclib.interfaces.BiomeSourceAccessor;
 import com.teamremastered.betterendforge.bclib.interfaces.NoiseGeneratorSettingsProvider;
@@ -14,6 +15,9 @@ import com.teamremastered.betterendforge.bclib.world.features.BCLFeature;
 import com.teamremastered.betterendforge.bclib.world.generator.BiomePicker;
 import com.teamremastered.betterendforge.mixin.client.bclib.MinecraftMixin;
 import com.teamremastered.betterendforge.mixin.common.bclib.BiomeGenerationSettingsAccessor;
+import com.teamremastered.betterendforge.registry.EndBiomes;
+import com.teamremastered.betterendforge.world.biome.land.FoggyMushroomlandBiome;
+import com.teamremastered.betterendforge.world.generator.BiomeType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.client.Minecraft;
@@ -53,6 +57,9 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.ConfiguredStructureFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.mutable.MutableInt;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.entity.BCLEntityWrapper;
@@ -75,16 +82,19 @@ import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+import static net.minecraft.data.BuiltinRegistries.NOISE_GENERATOR_SETTINGS;
+
 public class BiomeAPI {
+
 	/**
 	 * Empty biome used as default value if requested biome doesn't exist or linked. Shouldn't be registered anywhere to prevent bugs.
 	 * Have {@code Biomes.THE_VOID} as the reference biome.
 	 */
+
 	public static final BCLBiome EMPTY_BIOME = new BCLBiome(Biomes.THE_VOID.location());
 	public static final BiomePicker END_LAND_BIOME_PICKER = new BiomePicker();
 	public static final BiomePicker END_VOID_BIOME_PICKER = new BiomePicker();
-	
-	private static final Map<ResourceLocation, BCLBiome> ID_MAP = Maps.newHashMap();
+	public static final Map<ResourceLocation, BCLBiome> ID_MAP = Maps.newHashMap();
 	private static final Map<Biome, BCLBiome> CLIENT = Maps.newHashMap();
 	private static Registry<Biome> biomeRegistry;
 	
@@ -343,6 +353,7 @@ public class BiomeAPI {
 	 * @return {@link BCLBiome} or {@code BiomeAPI.EMPTY_BIOME}.
 	 */
 	public static BCLBiome getBiome(ResourceLocation biomeID) {
+
 		return ID_MAP.getOrDefault(biomeID, EMPTY_BIOME);
 	}
 
@@ -482,9 +493,9 @@ public class BiomeAPI {
 		// only use the default Setting for Nether/End if we were unable to find a settings object
 		if (noiseGeneratorSettings==null){
 			if (level.dimension() == Level.NETHER) {
-				noiseGeneratorSettings = BuiltinRegistries.NOISE_GENERATOR_SETTINGS.get(NoiseGeneratorSettings.NETHER);
+				noiseGeneratorSettings = NOISE_GENERATOR_SETTINGS.get(NoiseGeneratorSettings.NETHER);
 			} else if (level.dimension() == Level.END) {
-				noiseGeneratorSettings = BuiltinRegistries.NOISE_GENERATOR_SETTINGS.get(NoiseGeneratorSettings.END);
+				noiseGeneratorSettings = NOISE_GENERATOR_SETTINGS.get(NoiseGeneratorSettings.END);
 			}
 		}
 
@@ -650,7 +661,7 @@ public class BiomeAPI {
 	 */
 	public static void addSurfaceRule(ResourceLocation biomeID, RuleSource source) {
 		SURFACE_RULES.put(biomeID, source);
-		//NOISE_GENERATOR_SETTINGS.forEach(BiomeAPI::changeSurfaceRulesForGenerator);
+//		NOISE_GENERATOR_SETTINGS.forEach(BiomeAPI::changeSurfaceRulesForGenerator);
 	}
 	
 	/**

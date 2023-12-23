@@ -83,13 +83,13 @@ public class EndSlimeEntity extends Slime {
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType spawnReason, SpawnGroupData entityData, CompoundTag entityTag) {
 		SpawnGroupData data = super.finalizeSpawn(world, difficulty, spawnReason, entityData, entityTag);
 		BCLBiome biome = BiomeAPI.getFromBiome(world.getBiome(blockPosition()));
-		if (biome == EndBiomes.FOGGY_MUSHROOMLAND) {
+		if (biome.getBiome() == EndBiomes.FOGGY_MUSHROOMLAND.get()) {
 			this.setMossy();
 		}
-		else if (biome == EndBiomes.MEGALAKE || biome == EndBiomes.MEGALAKE_GROVE) {
+		else if (biome.getBiome() == EndBiomes.MEGALAKE.get() || biome.getBiome() == EndBiomes.MEGALAKE_GROVE.get()) {
 			this.setLake();
 		}
-		else if (biome == EndBiomes.AMBER_LAND) {
+		else if (biome.getBiome() == EndBiomes.AMBER_LAND.get()) {
 			this.setAmber(true);
 		}
 		this.refreshDimensions();
@@ -217,10 +217,10 @@ public class EndSlimeEntity extends Slime {
 			return false;
 		}
 		BCLBiome biome = BiomeAPI.getFromBiome(world.getBiome(pos));
-		if (biome == EndBiomes.CHORUS_FOREST || biome == EndBiomes.MEGALAKE) {
+		if (biome.getBiome() == EndBiomes.CHORUS_FOREST.get() || biome.getBiome() == EndBiomes.MEGALAKE.get()) {
 			return true;
 		}
-		if (biome == EndBiomes.MEGALAKE_GROVE && random.nextBoolean()) {
+		if (biome.getBiome() == EndBiomes.MEGALAKE_GROVE.get() && random.nextBoolean()) {
 			return true;
 		}
 		return random.nextInt(4) == 0 && isWaterNear(world, pos);

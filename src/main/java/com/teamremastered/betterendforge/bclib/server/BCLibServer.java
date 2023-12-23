@@ -6,7 +6,7 @@ import com.teamremastered.betterendforge.bclib.api.ModIntegrationAPI;
 public class BCLibServer {
 
 	public static void onInitializeServer() {
-		ModIntegrationAPI.registerAll();
-		PostInitAPI.postInit(false);
+//		ModIntegrationAPI.registerAll();
+//		PostInitAPI.postInit(false);
 	}
 }
