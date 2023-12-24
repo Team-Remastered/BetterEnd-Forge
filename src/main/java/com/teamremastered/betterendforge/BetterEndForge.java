@@ -14,8 +14,11 @@ import com.teamremastered.betterendforge.render.BCLBlockStateProvider;
 import com.teamremastered.betterendforge.render.BCLItemModelProvider;
 import com.teamremastered.betterendforge.render.BCLRendLayerProvider;
 import com.teamremastered.betterendforge.util.LootTableUtil;
+import com.teamremastered.betterendforge.world.biome.end.BEFEndBiomeSource;
+import com.teamremastered.betterendforge.world.biome.end.BEFForgeEndBiomeSource;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.Registry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.scores.criteria.ObjectiveCriteria;
@@ -126,6 +129,8 @@ public class BetterEndForge {
 	}
 
 	private void onServerSetup(FMLCommonSetupEvent event) {
+		Registry.register(Registry.BIOME_SOURCE, BEFEndBiomeSource.LOCATION, BEFForgeEndBiomeSource.CODEC);
+
 		event.enqueueWork(() -> {
 			EndEntities.registerSpawnPlacement();
 		});

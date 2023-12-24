@@ -15,6 +15,7 @@ import com.teamremastered.betterendforge.world.biome.cave.EndCaveBiome;
 import com.teamremastered.betterendforge.world.biome.cave.JadeCaveBiome;
 import com.teamremastered.betterendforge.world.biome.cave.LushAuroraCaveBiome;
 import com.teamremastered.betterendforge.world.biome.cave.LushSmaragdantCaveBiome;
+import com.teamremastered.betterendforge.world.biome.end.EndBiomeTest;
 import com.teamremastered.betterendforge.world.biome.land.AmberLandBiome;
 import com.teamremastered.betterendforge.world.biome.land.BlossomingSpiresBiome;
 import com.teamremastered.betterendforge.world.biome.land.ChorusForestBiome;
@@ -58,6 +59,8 @@ public class EndBiomes {
 	public static void initRegister(IEventBus eventBus) {
 		BIOMES.register(eventBus);
 	}
+
+	public final static RegistryObject<Biome> END_BIOME_TEST = BIOMES.register("end_biome_test", EndBiomeTest::EndMossBiome);
 
 	// Better End Land
 //	public static final EndBiome FOGGY_MUSHROOMLAND = registerBiome(new FoggyMushroomlandBiome(), BiomeType.LAND);
@@ -119,7 +122,6 @@ public class EndBiomes {
 
 	public static RegistryObject<Biome> registerBiomeForge(String name, final Supplier<? extends Biome> biome) {
 		RegistryObject<Biome> registeredBiome = BIOMES.register(name, biome);
-		BiomeAPI.ID_MAP.put(BetterEndForge.makeID(name), BiomeAPI.EMPTY_BIOME);
 		return registeredBiome;
 	}
 	
