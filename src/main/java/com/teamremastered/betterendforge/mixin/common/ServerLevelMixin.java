@@ -56,15 +56,15 @@ public abstract class ServerLevelMixin extends Level {
 	
 	@Inject(method = "<init>*", at = @At("TAIL"))
 	private void be_onServerWorldInit(MinecraftServer minecraftServer, Executor executor, LevelStorageAccess levelStorageAccess, ServerLevelData serverLevelData, ResourceKey resourceKey, Holder holder, ChunkProgressListener chunkProgressListener, ChunkGenerator chunkGenerator, boolean bl, long seed, List list, boolean bl2, CallbackInfo ci) {
-		ServerLevel level = ServerLevel.class.cast(this);
-		if (level.dimension() == Level.END) {
-			if (chunkGenerator instanceof NoiseBasedChunkGenerator) {
-				Holder<NoiseGeneratorSettings> sHolder = NoiseBasedChunkGeneratorAccessor.class.cast(chunkGenerator).be_getSettings();
-				BETargetChecker.class.cast(sHolder.value()).be_setTarget(true);
-				
-			}
-			TerrainGenerator.initNoise(seed, chunkGenerator.getBiomeSource(), chunkGenerator.climateSampler());
-		}
+//		ServerLevel level = ServerLevel.class.cast(this);
+//		if (level.dimension() == Level.END) {
+//			if (chunkGenerator instanceof NoiseBasedChunkGenerator) {
+//				Holder<NoiseGeneratorSettings> sHolder = NoiseBasedChunkGeneratorAccessor.class.cast(chunkGenerator).be_getSettings();
+//				BETargetChecker.class.cast(sHolder.value()).be_setTarget(true);
+//
+//			}
+//			TerrainGenerator.initNoise(seed, chunkGenerator.getBiomeSource(), chunkGenerator.climateSampler());
+//		}
 	}
 	
 	@Inject(method = "getSharedSpawnPos", at = @At("HEAD"), cancellable = true)

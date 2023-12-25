@@ -111,10 +111,6 @@ public class EndBiomes {
 //	public static final EndCaveBiome EMPTY_AURORA_CAVE = registerCaveBiome(new EmptyAuroraCaveBiome());
 //	public static final EndCaveBiome LUSH_AURORA_CAVE = registerCaveBiome(new LushAuroraCaveBiome());
 //	public static final EndCaveBiome JADE_CAVE = registerCaveBiome(new JadeCaveBiome());
-	
-	public static void register() {
-		LifeCycleAPI.onLevelLoad(EndBiomes::onWorldLoad);
-	}
 
 //	public static RegistryObject<Biome> registerBiome(String biomeID, Supplier<? extends Biome> biome) {
 //		BiomeAPI.ID_MAP.put()

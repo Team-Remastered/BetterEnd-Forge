@@ -69,11 +69,10 @@ public class BetterEndForge {
 		EndStatusEffects.initRegister(modEventBus);
 		EndPotions.initRegister(modEventBus);
 
-		BCLib.loadBCLib();
+//		BCLib.loadBCLib();
 		WorldDataAPI.registerModCache(MOD_ID);
 		EndPortals.loadPortals();
 		EndBiomes.initRegister(modEventBus);
-		EndBiomes.register();
 //		EndTags.register();
 //		CraftingRecipes.register();
 //		FurnaceRecipes.register();
