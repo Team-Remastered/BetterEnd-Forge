@@ -12,7 +12,8 @@ public class BEFSurfaceRules {
 
     protected static final SurfaceRules.RuleSource END_STONE = SurfaceRules.state(EndBiome.DefaultSurfaceMaterialProvider.END_STONE);
     protected static final SurfaceRules.RuleSource END_MOSS = SurfaceRules.state(EndBlocks.END_MOSS.get().defaultBlockState());
-    protected static final SurfaceRules.RuleSource END_MOSS_TEST = SurfaceRules.ifTrue(SurfaceRules.isBiome(EndBiomes.END_BIOME_TEST.getKey()), SurfaceRules.sequence(SurfaceRules.ifTrue(WATER_CHECK, SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.state(EndBlocks.END_MOSS.get().defaultBlockState())))));
+    protected static final SurfaceRules.RuleSource END_MOSS_TEST = SurfaceRules.ifTrue(SurfaceRules.isBiome(EndBiomes.FOGGY_MUSHROOMLAND.getKey()), SurfaceRules.sequence(SurfaceRules.ifTrue(WATER_CHECK, SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.state(EndBlocks.END_MOSS.get().defaultBlockState())))));
+    protected static final SurfaceRules.RuleSource END_OTHER_TEST = SurfaceRules.ifTrue(SurfaceRules.isBiome(EndBiomes.END_BIOME_TEST.getKey()), SurfaceRules.sequence(SurfaceRules.ifTrue(WATER_CHECK, SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.state(EndBlocks.END_MYCELIUM.get().defaultBlockState())))));
 
     protected static final SurfaceRules.RuleSource ENDSTONE_DUST = SurfaceRules.state(EndBlocks.ENDSTONE_DUST.get().defaultBlockState());
     protected static final SurfaceRules.RuleSource END_MYCELIUM = SurfaceRules.state(EndBlocks.END_MYCELIUM.get().defaultBlockState());
@@ -24,6 +25,6 @@ public class BEFSurfaceRules {
     protected static final SurfaceRules.RuleSource PALLIDIUM_THIN =SurfaceRules.state(EndBlocks.PALLIDIUM_THIN.get().defaultBlockState());
     protected static final SurfaceRules.RuleSource PALLIDIUM_TINY =SurfaceRules.state(EndBlocks.PALLIDIUM_TINY.get().defaultBlockState());
     protected static final SurfaceRules.RuleSource UMBRALITH =SurfaceRules.state(EndBlocks.UMBRALITH.stone.get().defaultBlockState());
-    public static final SurfaceRules.RuleSource END_SURFACE_RULES = SurfaceRules.sequence(END_STONE, END_MOSS, ENDSTONE_DUST, END_MYCELIUM, FLAVOLITE, SULPHURIC_ROCK, BRIMSTONE, PALLIDIUM_FULL, PALLIDIUM_HEAVY, PALLIDIUM_THIN, PALLIDIUM_TINY, UMBRALITH, END_MOSS_TEST);
+    public static final SurfaceRules.RuleSource END_SURFACE_RULES = SurfaceRules.sequence(END_MOSS_TEST, END_OTHER_TEST);
 
 }
