@@ -6,7 +6,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import com.teamremastered.betterendforge.blocks.basis.PottableFeatureSapling;
 import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.registry.EndFeatures;
+import com.teamremastered.betterendforge.registry.world.EndFeatures;
 
 public class TenaneaSaplingBlock extends PottableFeatureSapling {
 	public TenaneaSaplingBlock() {

@@ -4,12 +4,9 @@ import com.teamremastered.betterendforge.bclib.api.biomes.BCLBiomeBuilder;
 import com.teamremastered.betterendforge.bclib.interfaces.SurfaceMaterialProvider;
 import com.teamremastered.betterendforge.world.biome.EndBiome;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.registry.EndEntities;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndSounds;
 
 public class ShadowForestBiome extends EndBiome.Config {
@@ -42,7 +39,7 @@ public class ShadowForestBiome extends EndBiome.Config {
 //			.feature(EndFeatures.CHARNIA_PURPLE)
 //			.feature(EndFeatures.CHARNIA_RED_RARE)
 //			.structure(BiomeTags.HAS_END_CITY)
-			.spawn(EndEntities.SHADOW_WALKER.get(), 80, 2, 4)
+//			.spawn(EndEntities.SHADOW_WALKER.get(), 80, 2, 4)
 			.spawn(EntityType.ENDERMAN, 40, 1, 4)
 			.spawn(EntityType.PHANTOM, 1, 1, 2);
 	}

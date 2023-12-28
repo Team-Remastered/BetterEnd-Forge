@@ -3,23 +3,11 @@ package com.teamremastered.betterendforge.world.biome.land;
 import com.teamremastered.betterendforge.bclib.api.biomes.BCLBiomeBuilder;
 import com.teamremastered.betterendforge.bclib.interfaces.SurfaceMaterialProvider;
 import com.teamremastered.betterendforge.world.biome.EndBiome;
-import net.minecraft.data.worldgen.StructureFeatures;
-import net.minecraft.data.worldgen.features.NetherFeatures;
-import net.minecraft.data.worldgen.placement.NetherPlacements;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.registry.EndEntities;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndParticles;
 import com.teamremastered.betterendforge.registry.EndSounds;
-import com.teamremastered.betterendforge.registry.EndStructures;
-import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.ConfiguredStructureFeature;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class FoggyMushroomlandBiome extends EndBiome.Config {
 	public FoggyMushroomlandBiome() {
@@ -51,15 +39,7 @@ public class FoggyMushroomlandBiome extends EndBiome.Config {
 //			.feature(EndFeatures.CHARNIA_CYAN)
 //			.feature(EndFeatures.CHARNIA_LIGHT_BLUE)
 //			.feature(EndFeatures.CHARNIA_RED_RARE)
-			.feature(GenerationStep.Decoration.VEGETAL_DECORATION, NetherPlacements.GLOWSTONE)
-			.feature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BAMBOO)
-			.feature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_TAIGA)
-			.feature(GenerationStep.Decoration.VEGETAL_DECORATION, NetherPlacements.SMALL_BASALT_COLUMNS)
-			.feature(GenerationStep.Decoration.SURFACE_STRUCTURES, NetherPlacements.LARGE_BASALT_COLUMNS)
-
-			.structure(BiomeTags.HAS_IGLOO)
-			.structure(BiomeTags.HAS_DESERT_PYRAMID)
-			.structure(BiomeTags.HAS_END_CITY)
+//			.structure(BiomeTags.HAS_END_CITY)
 //			.spawn(EndEntities.DRAGONFLY.get(), 80, 2, 5)
 //			.spawn(EndEntities.END_FISH.get(), 20, 2, 5)
 //			.spawn(EndEntities.CUBOZOA.get(), 10, 3, 8)

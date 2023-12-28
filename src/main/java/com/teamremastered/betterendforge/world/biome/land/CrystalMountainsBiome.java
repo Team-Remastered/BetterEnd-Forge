@@ -6,9 +6,8 @@ import com.teamremastered.betterendforge.world.biome.EndBiome;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndSounds;
-import com.teamremastered.betterendforge.registry.EndStructures;
+import com.teamremastered.betterendforge.registry.world.EndStructures;
 
 public class CrystalMountainsBiome extends EndBiome.Config {
 	public CrystalMountainsBiome() {
@@ -21,7 +20,7 @@ public class CrystalMountainsBiome extends EndBiome.Config {
 			.structure(EndStructures.MOUNTAIN)
 			.plantsColor(255, 133, 211)
 			.music(EndSounds.MUSIC_OPENSPACE.get())
-			.feature(EndFeatures.CRYSTAL_GRASS)
+//			.feature(EndFeatures.CRYSTAL_GRASS)
 			.spawn(EntityType.ENDERMAN, 50, 1, 2);
 	}
 

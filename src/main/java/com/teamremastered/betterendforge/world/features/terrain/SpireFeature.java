@@ -22,8 +22,8 @@ import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.material.Material;
-import com.teamremastered.betterendforge.registry.EndBiomes;
-import com.teamremastered.betterendforge.registry.EndFeatures;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
+import com.teamremastered.betterendforge.registry.world.EndFeatures;
 
 import java.util.List;
 import java.util.Optional;

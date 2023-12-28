@@ -2,11 +2,9 @@ package com.teamremastered.betterendforge.world.biome.land;
 
 import com.teamremastered.betterendforge.bclib.api.biomes.BCLBiomeBuilder;
 import com.teamremastered.betterendforge.bclib.interfaces.SurfaceMaterialProvider;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndParticles;
 import com.teamremastered.betterendforge.registry.EndSounds;
 import com.teamremastered.betterendforge.world.biome.EndBiome;

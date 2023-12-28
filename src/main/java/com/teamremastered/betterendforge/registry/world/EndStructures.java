@@ -1,4 +1,4 @@
-package com.teamremastered.betterendforge.registry;
+package com.teamremastered.betterendforge.registry.world;
 
 import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.api.tag.TagAPI;

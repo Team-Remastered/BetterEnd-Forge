@@ -4,16 +4,12 @@ import com.teamremastered.betterendforge.bclib.util.ColorUtil;
 import com.teamremastered.betterendforge.mixin.common.VanillaBiomeAccess;
 import com.teamremastered.betterendforge.registry.EndParticles;
 import com.teamremastered.betterendforge.registry.EndSounds;
+import com.teamremastered.betterendforge.registry.world.EndPlacedFeatures;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.placement.EndPlacements;
-import net.minecraft.data.worldgen.placement.NetherPlacements;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.sounds.Musics;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.level.biome.AmbientAdditionsSettings;
-import net.minecraft.world.level.biome.AmbientMoodSettings;
 import net.minecraft.world.level.biome.AmbientParticleSettings;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
@@ -115,6 +111,7 @@ public class EndBiomeCreator {
                 .biomeCategory(Biome.BiomeCategory.THEEND)
                 .mobSpawnSettings(spawnSettings.build())
                 .generationSettings(generationSettings
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EndPlacements.CHORUS_PLANT)
                 .build()).build();
     }
 

@@ -8,7 +8,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import com.teamremastered.betterendforge.registry.EndBlocks;
 import com.teamremastered.betterendforge.registry.EndSounds;
-import com.teamremastered.betterendforge.registry.EndStructures;
+import com.teamremastered.betterendforge.registry.world.EndStructures;
 
 public class PaintedMountainsBiome extends EndBiome.Config {
 	public PaintedMountainsBiome() {

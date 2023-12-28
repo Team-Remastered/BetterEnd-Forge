@@ -7,7 +7,6 @@ import com.teamremastered.betterendforge.bclib.interfaces.SurfaceMaterialProvide
 import com.teamremastered.betterendforge.world.biome.EndBiome;
 import com.teamremastered.betterendforge.world.surface.SplitNoiseCondition;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -15,7 +14,6 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.SurfaceRules.RuleSource;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndSounds;
 
 import java.util.List;
@@ -35,14 +33,14 @@ public class NeonOasisBiome extends EndBiome.Config {
 			.particles(ParticleTypes.WHITE_ASH, 0.01F)
 			.loop(EndSounds.AMBIENT_DUST_WASTELANDS.get())
 			.music(EndSounds.MUSIC_OPENSPACE.get())
-			.feature(EndFeatures.DESERT_LAKE)
-			.feature(EndFeatures.NEON_CACTUS)
-			.feature(EndFeatures.UMBRELLA_MOSS)
-			.feature(EndFeatures.CREEPING_MOSS)
-			.feature(EndFeatures.CHARNIA_GREEN)
-			.feature(EndFeatures.CHARNIA_CYAN)
-			.feature(EndFeatures.CHARNIA_RED)
-			.structure(BiomeTags.HAS_END_CITY)
+//			.feature(EndFeatures.DESERT_LAKE)
+//			.feature(EndFeatures.NEON_CACTUS)
+//			.feature(EndFeatures.UMBRELLA_MOSS)
+//			.feature(EndFeatures.CREEPING_MOSS)
+//			.feature(EndFeatures.CHARNIA_GREEN)
+//			.feature(EndFeatures.CHARNIA_CYAN)
+//			.feature(EndFeatures.CHARNIA_RED)
+//			.structure(BiomeTags.HAS_END_CITY)
 			.spawn(EntityType.ENDERMAN, 50, 1, 2);
 	}
 

@@ -40,7 +40,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import com.teamremastered.betterendforge.interfaces.ISlime;
-import com.teamremastered.betterendforge.registry.EndBiomes;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
 
 import java.util.EnumSet;
 import java.util.Random;

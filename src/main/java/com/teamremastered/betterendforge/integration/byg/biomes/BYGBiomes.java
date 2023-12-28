@@ -1,10 +1,5 @@
 package com.teamremastered.betterendforge.integration.byg.biomes;
 
-import com.teamremastered.betterendforge.BetterEndForge;
-import com.teamremastered.betterendforge.registry.EndBiomes;
-import com.teamremastered.betterendforge.world.biome.EndBiome;
-import com.teamremastered.betterendforge.integration.Integrations;
-
 public class BYGBiomes {
 	//TODO: Add BYG biomes to our end biome source
 

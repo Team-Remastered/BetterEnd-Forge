@@ -9,7 +9,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndParticles;
 import com.teamremastered.betterendforge.registry.EndSounds;
 import com.teamremastered.betterendforge.world.surface.UmbraSurfaceNoiseCondition;
@@ -38,10 +37,11 @@ public class UmbraValleyBiome extends EndBiome.Config {
 			.particles(EndParticles.AMBER_SPHERE.get(), 0.0001F)
 			.loop(EndSounds.UMBRA_VALLEY.get())
 			.music(EndSounds.MUSIC_DARK.get())
-			.feature(EndFeatures.UMBRALITH_ARCH)
-			.feature(EndFeatures.THIN_UMBRALITH_ARCH)
-			.feature(EndFeatures.INFLEXIA)
-			.feature(EndFeatures.FLAMMALIX);
+//			.feature(EndFeatures.UMBRALITH_ARCH)
+//			.feature(EndFeatures.THIN_UMBRALITH_ARCH)
+//			.feature(EndFeatures.INFLEXIA)
+//			.feature(EndFeatures.FLAMMALIX)
+			;
 	}
 
 	@Override

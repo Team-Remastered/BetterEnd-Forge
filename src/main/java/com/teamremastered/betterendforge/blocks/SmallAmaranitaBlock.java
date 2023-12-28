@@ -16,7 +16,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import com.teamremastered.betterendforge.blocks.basis.EndPlantBlock;
 import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.registry.EndFeatures;
+import com.teamremastered.betterendforge.registry.world.EndFeatures;
 
 import java.util.Optional;
 import java.util.Random;

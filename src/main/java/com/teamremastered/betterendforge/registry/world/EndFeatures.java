@@ -1,11 +1,9 @@
-package com.teamremastered.betterendforge.registry;
+package com.teamremastered.betterendforge.registry.world;
 
 import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.teamremastered.betterendforge.BetterEndForge;
-import com.teamremastered.betterendforge.bclib.api.biomes.BCLBiomeBuilder;
-import com.teamremastered.betterendforge.bclib.api.biomes.BiomeAPI;
 import com.teamremastered.betterendforge.bclib.api.features.BCLCommonFeatures;
 import com.teamremastered.betterendforge.bclib.api.features.BCLFeatureBuilder;
 import com.teamremastered.betterendforge.bclib.util.JsonFactory;
@@ -14,7 +12,7 @@ import com.teamremastered.betterendforge.bclib.world.features.BCLFeature;
 import com.teamremastered.betterendforge.bclib.world.features.DefaultFeature;
 import com.teamremastered.betterendforge.bclib.world.features.ListFeature;
 import com.teamremastered.betterendforge.bclib.world.features.NBTStructureFeature;
-import com.teamremastered.betterendforge.world.biome.cave.EndCaveBiome;
+import com.teamremastered.betterendforge.registry.EndBlocks;
 import com.teamremastered.betterendforge.world.biome.land.UmbraValleyBiome;
 import com.teamremastered.betterendforge.world.features.bushes.BushFeature;
 import com.teamremastered.betterendforge.world.features.bushes.BushWithOuterFeature;
@@ -33,11 +31,9 @@ import com.teamremastered.betterendforge.world.features.trees.MossyGlowshroomFea
 import com.teamremastered.betterendforge.world.features.trees.PythadendronTreeFeature;
 import com.teamremastered.betterendforge.world.features.trees.TenaneaFeature;
 import com.teamremastered.betterendforge.world.features.trees.UmbrellaTreeFeature;
-import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -91,12 +87,17 @@ import com.teamremastered.betterendforge.world.features.terrain.SulphurHillFeatu
 import com.teamremastered.betterendforge.world.features.terrain.SulphuricCaveFeature;
 import com.teamremastered.betterendforge.world.features.terrain.SulphuricLakeFeature;
 import com.teamremastered.betterendforge.world.features.terrain.SurfaceVentFeature;
-import com.teamremastered.betterendforge.world.features.terrain.ThinArchFeature;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.io.InputStream;
 import java.util.List;
 
 public class EndFeatures {
+
+
 	// Trees //
 	public static final BCLFeature MOSSY_GLOWSHROOM = registerVegetation("mossy_glowshroom", new MossyGlowshroomFeature(), 2);
 	public static final BCLFeature PYTHADENDRON_TREE = registerVegetation("pythadendron_tree", new PythadendronTreeFeature(), 1);
@@ -108,7 +109,7 @@ public class EndFeatures {
 	public static final BCLFeature JELLYSHROOM = registerVegetation("jellyshroom", new JellyshroomFeature(), 2);
 	public static final BCLFeature GIGANTIC_AMARANITA = registerVegetation("gigantic_amaranita", new GiganticAmaranitaFeature(), 1);
 	public static final BCLFeature LUCERNIA = registerVegetation("lucernia", new LucerniaFeature(), 3);
-	
+
 	// Bushes //
 	public static final BCLFeature PYTHADENDRON_BUSH = registerVegetation("pythadendron_bush", new BushFeature(EndBlocks.PYTHADENDRON_LEAVES.get(), EndBlocks.PYTHADENDRON.getBark()), 3);
 	public static final BCLFeature DRAGON_TREE_BUSH = registerVegetation("dragon_tree_bush", new BushFeature(EndBlocks.DRAGON_TREE_LEAVES.get(), EndBlocks.DRAGON_TREE.getBark()), 5);
@@ -118,7 +119,7 @@ public class EndFeatures {
 	public static final BCLFeature LUCERNIA_BUSH = registerVegetation("lucernia_bush", new BushWithOuterFeature(EndBlocks.LUCERNIA_LEAVES.get(), EndBlocks.LUCERNIA_OUTER_LEAVES.get(), EndBlocks.LUCERNIA.getBark()), 10);
 	public static final BCLFeature LUCERNIA_BUSH_RARE = registerVegetation("lucernia_bush_rare", new BushWithOuterFeature(EndBlocks.LUCERNIA_LEAVES.get(), EndBlocks.LUCERNIA_OUTER_LEAVES.get(), EndBlocks.LUCERNIA.getBark()), 1);
 	public static final BCLFeature NEON_CACTUS = registerVegetation("neon_cactus", new NeonCactusFeature(), 2);
-	
+
 	// Plants //
 	public static final BCLFeature UMBRELLA_MOSS = registerVegetation("umbrella_moss", new DoublePlantFeature(EndBlocks.UMBRELLA_MOSS.get(), EndBlocks.UMBRELLA_MOSS_TALL.get(), 5), 3);
 	public static final BCLFeature CREEPING_MOSS = registerVegetation("creeping_moss", new SinglePlantFeature(EndBlocks.CREEPING_MOSS.get(), 5), 3);
@@ -158,19 +159,19 @@ public class EndFeatures {
 	//public static final BCLFeature PEARLBERRY = redisterVegetation("pearlberry", new SinglePlantFeature(EndBlocks.PEARLBERRY, 5, 5), 1);
 	public static final BCLFeature INFLEXIA = registerVegetation("inflexia", new SinglePlantFeature(EndBlocks.INFLEXIA.get(), 7, false, 3), 16);
 	public static final BCLFeature FLAMMALIX = registerVegetation("flammalix", new SinglePlantFeature(EndBlocks.FLAMMALIX.get(), 3, false, 7), 5);
-	
+
 	// Vines //
 	public static final BCLFeature DENSE_VINE = registerVegetation("dense_vine", new VineFeature(EndBlocks.DENSE_VINE.get(), 24), 3);
 	public static final BCLFeature TWISTED_VINE = registerVegetation("twisted_vine", new VineFeature(EndBlocks.TWISTED_VINE.get(), 24), 1);
 	public static final BCLFeature BULB_VINE = registerVegetation("bulb_vine", new VineFeature(EndBlocks.BULB_VINE.get(), 24), 3);
 	public static final BCLFeature JUNGLE_VINE = registerVegetation("jungle_vine", new VineFeature(EndBlocks.JUNGLE_VINE.get(), 24), 5);
-	
+
 	// Ceil plants
 	public static final BCLFeature SMALL_JELLYSHROOM_CEIL = registerVegetation("small_jellyshroom_ceil", new SingleInvertedScatterFeature(EndBlocks.SMALL_JELLYSHROOM.get(), 8), 8);
-	
+
 	// Wall Plants //
 	public static final BCLFeature PURPLE_POLYPORE = registerVegetation("purple_polypore", new WallPlantOnLogFeature(EndBlocks.PURPLE_POLYPORE.get(), 3), 5);
-	public static final BCLFeature AURANT_POLYPORE = registerVegetation("aurant_polypore", new WallPlantOnLogFeature(EndBlocks.AURANT_POLYPORE.get(), 3), 5);
+//	public static final BCLFeature AURANT_POLYPORE = registerVegetation("aurant_polypore", new WallPlantOnLogFeature(EndBlocks.AURANT_POLYPORE.get(), 3), 5);
 	public static final BCLFeature TAIL_MOSS = registerVegetation("tail_moss", new WallPlantFeature(EndBlocks.TAIL_MOSS.get(), 3), 15);
 	public static final BCLFeature CYAN_MOSS = registerVegetation("cyan_moss", new WallPlantFeature(EndBlocks.CYAN_MOSS.get(), 3), 15);
 	public static final BCLFeature TAIL_MOSS_WOOD = registerVegetation("tail_moss_wood", new WallPlantOnLogFeature(EndBlocks.TAIL_MOSS.get(), 4), 25);
@@ -184,12 +185,12 @@ public class EndFeatures {
 	public static final BCLFeature JUNGLE_FERN_WOOD = registerVegetation("jungle_fern_wood", new WallPlantOnLogFeature(EndBlocks.JUNGLE_FERN.get(), 3), 12);
 	public static final BCLFeature RUSCUS = registerVegetation("ruscus", new WallPlantFeature(EndBlocks.RUSCUS.get(), 6), 10);
 	public static final BCLFeature RUSCUS_WOOD = registerVegetation("ruscus_wood", new WallPlantOnLogFeature(EndBlocks.RUSCUS.get(), 6), 10);
-	
+
 	// Sky plants
 	public static final BCLFeature FILALUX = registerVegetation("filalux", new FilaluxFeature(), 1);
-	
+
 	// Water //
-	public static final BCLFeature BUBBLE_CORAL = registerVegetation("bubble_coral", new UnderwaterPlantFeature(EndBlocks.BUBBLE_CORAL.get(), 6), 10);
+//	public static final BCLFeature BUBBLE_CORAL = registerVegetation("bubble_coral", new UnderwaterPlantFeature(EndBlocks.BUBBLE_CORAL.get(), 6), 10);
 	public static final BCLFeature BUBBLE_CORAL_RARE = registerVegetation("bubble_coral_rare", new UnderwaterPlantFeature(EndBlocks.BUBBLE_CORAL.get(), 3), 4);
 	public static final BCLFeature END_LILY = registerVegetation("end_lily", new EndLilyFeature(6), 10);
 	public static final BCLFeature END_LILY_RARE = registerVegetation("end_lily_rare", new EndLilyFeature(3), 4);
@@ -197,7 +198,7 @@ public class EndFeatures {
 	public static final BCLFeature END_LOTUS_LEAF = registerVegetation("end_lotus_leaf", new EndLotusLeafFeature(20), 25);
 	public static final BCLFeature HYDRALUX = registerVegetation("hydralux", new HydraluxFeature(5), 5);
 	public static final BCLFeature POND_ANEMONE = registerVegetation("pond_anemone", new UnderwaterPlantFeature(EndBlocks.POND_ANEMONE.get(), 6), 10);
-	
+
 	public static final BCLFeature CHARNIA_RED = registerVegetation("charnia_red", new CharniaFeature(EndBlocks.CHARNIA_RED.get()), 10);
 	public static final BCLFeature CHARNIA_PURPLE = registerVegetation("charnia_purple", new CharniaFeature(EndBlocks.CHARNIA_PURPLE.get()), 10);
 	public static final BCLFeature CHARNIA_CYAN = registerVegetation("charnia_cyan", new CharniaFeature(EndBlocks.CHARNIA_CYAN.get()), 10);
@@ -208,7 +209,7 @@ public class EndFeatures {
 	public static final BCLFeature CHARNIA_RED_RARE = registerVegetation("charnia_red_rare", new CharniaFeature(EndBlocks.CHARNIA_RED.get()),2);
 	public static final BCLFeature BIOME_ISLAND = BCLFeatureBuilder.start(BetterEndForge.makeID("overworld_island"), new BiomeIslandFeature()).decoration(Decoration.RAW_GENERATION).build();
 	public static final BCLFeature FLAMAEA = registerVegetation("flamaea", new SinglePlantFeature(EndBlocks.FLAMAEA.get(), 12, false, 5), 20);
-	
+
 	// Terrain //
 	public static final BCLFeature END_LAKE = registerLake("end_lake", new EndLakeFeature(), 4);
 	public static final BCLFeature END_LAKE_NORMAL = registerLake("end_lake_normal", new EndLakeFeature(), 20);
@@ -232,8 +233,8 @@ public class EndFeatures {
 		EndBlocks.UMBRALITH.stone.get(),
 		pos -> UmbraValleyBiome.getSurface(pos.getX(), pos.getZ()).defaultBlockState()
 	), 10);
-	public static final BCLFeature THIN_UMBRALITH_ARCH = registerChanced("thin_umbralith_arch", new ThinArchFeature(EndBlocks.UMBRALITH.stone.get()), 15);
-	
+//	public static final BCLFeature THIN_UMBRALITH_ARCH = registerChanced("thin_umbralith_arch", new ThinArchFeature(EndBlocks.UMBRALITH.stone.get()), 15);
+
 	// Ores //
 	public static final BCLFeature THALLASIUM_ORE = registerOre("thallasium_ore", EndBlocks.THALLASIUM.ore.get(), 24, 8);
 	public static final BCLFeature ENDER_ORE = registerOre("ender_ore", EndBlocks.ENDER_ORE.get(), 12, 4);
@@ -241,13 +242,13 @@ public class EndFeatures {
 	public static final BCLFeature DRAGON_BONE_BLOCK_ORE = registerOre("dragon_bone_ore", EndBlocks.DRAGON_BONE_BLOCK.get(), 24, 8);
 	public static final BCLFeature VIOLECITE_LAYER = registerLayer("violecite_layer", EndBlocks.VIOLECITE, 15, 16, 128, 8);
 	public static final BCLFeature FLAVOLITE_LAYER = registerLayer("flavolite_layer", EndBlocks.FLAVOLITE, 12, 16, 128, 6);
-	
+
 	// Buildings
 	public static final BCLFeature CRASHED_SHIP = registerChanced("crashed_ship", new CrashedShipFeature(), 500);
-	
+
 	// Mobs
 	public static final BCLFeature SILK_MOTH_NEST = registerChanced("silk_moth_nest", new SilkMothNestFeature(), 2);
-	
+
 	// Caves
 	public static final DefaultFeature SMARAGDANT_CRYSTAL = new SmaragdantCrystalFeature();
 	public static final DefaultFeature SMARAGDANT_CRYSTAL_SHARD = new SingleBlockFeature(EndBlocks.SMARAGDANT_CRYSTAL_SHARD.get());
@@ -313,31 +314,6 @@ public class EndFeatures {
 		return registerLayer(name, material.stone.get(), radius, minY, maxY, count);
 	}
 	
-	public static void addBiomeFeatures(ResourceLocation id, Holder<Biome> biome) {
-		BiomeAPI.addBiomeFeature(biome, FLAVOLITE_LAYER);
-		BiomeAPI.addBiomeFeature(biome, THALLASIUM_ORE);
-		BiomeAPI.addBiomeFeature(biome, ENDER_ORE);
-		BiomeAPI.addBiomeFeature(biome, CRASHED_SHIP);
-
-		BCLBiome bclbiome = BiomeAPI.getBiome(id);
-		BCLFeature feature = getBiomeStructures(bclbiome);
-		if (feature != null) {
-			BiomeAPI.addBiomeFeature(biome, feature);
-		}
-		
-		if (id.getNamespace().equals(BetterEndForge.MOD_ID)) {
-			return;
-		}
-		
-		boolean hasCaves = bclbiome.getCustomData("has_caves", true) && !(bclbiome instanceof EndCaveBiome);
-		if (hasCaves && !BiomeAPI.END_VOID_BIOME_PICKER.containsImmutable(id)) {
-			if (true) { //FIXME: CONFIG
-				BiomeAPI.addBiomeFeature(biome, ROUND_CAVE);
-				BiomeAPI.addBiomeFeature(biome, TUNEL_CAVE);
-			}
-		}
-	}
-	
 	private static BCLFeature getBiomeStructures(BCLBiome biome) {
 		String ns = biome.getID().getNamespace();
 		String nm = biome.getID().getPath();
@@ -378,20 +354,6 @@ public class EndFeatures {
 			}
 		}
 		return null;
-	}
-	
-	public static BCLBiomeBuilder addDefaultFeatures(BCLBiomeBuilder builder, boolean hasCaves) {
-		builder.feature(FLAVOLITE_LAYER);
-		builder.feature(THALLASIUM_ORE);
-		builder.feature(ENDER_ORE);
-		builder.feature(CRASHED_SHIP);
-		
-		if (hasCaves) {
-			builder.feature(ROUND_CAVE);
-			builder.feature(TUNEL_CAVE);
-		}
-		
-		return builder;
 	}
 
 }

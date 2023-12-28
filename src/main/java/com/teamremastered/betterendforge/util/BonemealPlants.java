@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import com.teamremastered.betterendforge.bclib.api.BonemealAPI;
 import com.teamremastered.betterendforge.blocks.basis.EndTerrainBlock;
-import com.teamremastered.betterendforge.registry.EndBiomes;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
 import com.teamremastered.betterendforge.registry.EndBlocks;
 
 import java.util.List;

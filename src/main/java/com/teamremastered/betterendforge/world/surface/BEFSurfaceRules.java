@@ -1,9 +1,8 @@
 package com.teamremastered.betterendforge.world.surface;
 
-import com.teamremastered.betterendforge.registry.EndBiomes;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
 import com.teamremastered.betterendforge.registry.EndBlocks;
 import com.teamremastered.betterendforge.world.biome.EndBiome;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 
 public class BEFSurfaceRules {

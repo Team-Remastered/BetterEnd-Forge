@@ -1,9 +1,7 @@
 package com.teamremastered.betterendforge.mixin.client;
 
-import com.teamremastered.betterendforge.bclib.api.biomes.BiomeAPI;
 import com.teamremastered.betterendforge.client.ClientOptions;
-import com.teamremastered.betterendforge.registry.EndBiomes;
-import com.teamremastered.betterendforge.world.biome.cave.JadeCaveBiome;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.AbstractSoundInstance;
 import net.minecraft.client.resources.sounds.SoundInstance;
@@ -18,7 +16,6 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import com.teamremastered.betterendforge.world.biome.EndBiome;
 
 import java.util.Random;
 

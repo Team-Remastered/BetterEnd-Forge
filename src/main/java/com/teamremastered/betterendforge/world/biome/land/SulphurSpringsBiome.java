@@ -14,7 +14,6 @@ import net.minecraft.world.level.levelgen.SurfaceRules.RuleSource;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import com.teamremastered.betterendforge.registry.EndBlocks;
 import com.teamremastered.betterendforge.registry.EndEntities;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndParticles;
 import com.teamremastered.betterendforge.registry.EndSounds;
 

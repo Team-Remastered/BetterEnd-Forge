@@ -27,7 +27,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import com.teamremastered.betterendforge.bclib.api.biomes.BiomeAPI;
-import com.teamremastered.betterendforge.registry.EndBiomes;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
 import com.teamremastered.betterendforge.registry.EndItems;
 
 public class CubozoaEntity extends AbstractSchoolingFish {

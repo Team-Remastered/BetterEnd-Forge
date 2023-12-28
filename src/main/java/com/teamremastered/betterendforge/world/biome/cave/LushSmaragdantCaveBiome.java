@@ -6,7 +6,6 @@ import com.teamremastered.betterendforge.bclib.world.biomes.BCLBiomeSettings;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
 import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndParticles;
 import com.teamremastered.betterendforge.world.biome.EndBiome;
 
@@ -15,10 +14,10 @@ public class LushSmaragdantCaveBiome extends EndCaveBiome.Config {
 		public Biome(ResourceLocation biomeID, net.minecraft.world.level.biome.Biome biome, BCLBiomeSettings settings) {
 			super(biomeID, biome, settings);
 
-			this.addFloorFeature(EndFeatures.SMARAGDANT_CRYSTAL, 1);
-			this.addFloorFeature(EndFeatures.SMARAGDANT_CRYSTAL_SHARD, 20);
-
-			this.addCeilFeature(EndFeatures.END_STONE_STALACTITE, 1);
+//			this.addFloorFeature(EndFeatures.SMARAGDANT_CRYSTAL, 1);
+//			this.addFloorFeature(EndFeatures.SMARAGDANT_CRYSTAL_SHARD, 20);
+//
+//			this.addCeilFeature(EndFeatures.END_STONE_STALACTITE, 1);
 		}
 
 		@Override

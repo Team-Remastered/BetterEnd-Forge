@@ -7,10 +7,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import com.teamremastered.betterendforge.registry.EndBlocks;
 import com.teamremastered.betterendforge.registry.EndEntities;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndParticles;
 import com.teamremastered.betterendforge.registry.EndSounds;
-import com.teamremastered.betterendforge.registry.EndStructures;
 
 public class MegalakeGroveBiome extends EndBiome.Config {
 	public MegalakeGroveBiome() {

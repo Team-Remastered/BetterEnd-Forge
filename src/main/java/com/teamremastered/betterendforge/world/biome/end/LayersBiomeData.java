@@ -1,6 +1,6 @@
 package com.teamremastered.betterendforge.world.biome.end;
 
-import com.teamremastered.betterendforge.registry.EndBiomes;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.world.level.biome.Biome;

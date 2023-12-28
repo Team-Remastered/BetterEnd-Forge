@@ -6,7 +6,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import com.teamremastered.betterendforge.BetterEndForge;
-import com.teamremastered.betterendforge.registry.EndBiomes;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
 
 //FIXME: Use GLMS to inject inside loot tables
 

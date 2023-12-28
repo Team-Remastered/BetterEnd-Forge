@@ -35,7 +35,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import com.teamremastered.betterendforge.interfaces.PottablePlant;
-import com.teamremastered.betterendforge.registry.EndFeatures;
+import com.teamremastered.betterendforge.registry.world.EndFeatures;
 
 import java.util.EnumMap;
 import java.util.List;
