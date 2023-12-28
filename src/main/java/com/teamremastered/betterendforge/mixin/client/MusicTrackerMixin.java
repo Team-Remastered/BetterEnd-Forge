@@ -2,12 +2,16 @@ package com.teamremastered.betterendforge.mixin.client;
 
 import com.teamremastered.betterendforge.bclib.api.biomes.BiomeAPI;
 import com.teamremastered.betterendforge.client.ClientOptions;
+import com.teamremastered.betterendforge.registry.EndBiomes;
+import com.teamremastered.betterendforge.world.biome.cave.JadeCaveBiome;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.AbstractSoundInstance;
 import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.client.sounds.MusicManager;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
+import net.minecraft.world.level.biome.Biome;
+import net.minecraftforge.registries.RegistryObject;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -82,11 +86,23 @@ public abstract class MusicTrackerMixin {
 		}
 	}
 	
+//	private boolean be_isCorrectBiome() {
+//		if (minecraft.level == null) {
+//			return false;
+//		}
+//		return BiomeAPI.getRenderBiome(minecraft.level.getBiome(minecraft.player.blockPosition()).value()) instanceof EndBiome;
+//	}
+
 	private boolean be_isCorrectBiome() {
 		if (minecraft.level == null) {
 			return false;
 		}
-		return BiomeAPI.getRenderBiome(minecraft.level.getBiome(minecraft.player.blockPosition()).value()) instanceof EndBiome;
+		for(RegistryObject<Biome> biome : EndBiomes.BIOMES.getEntries().stream().toList()) {
+			if (minecraft.level.getBiome(minecraft.player.blockPosition()).value() == biome.get()) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	private boolean be_shouldChangeSound(Music musicSound) {

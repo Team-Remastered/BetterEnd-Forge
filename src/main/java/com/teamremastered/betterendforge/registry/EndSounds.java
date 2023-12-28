@@ -47,7 +47,6 @@ public class EndSounds {
 	public static final RegistryObject<SoundEvent> RECORD_GRASPING_AT_STARS = register("record", "grasping_at_stars");
 	public static final RegistryObject<SoundEvent> RECORD_ENDSEEKER = register("record", "endseeker");
 	public static final RegistryObject<SoundEvent> RECORD_EO_DRACONA = register("record", "eo_dracona");
-
 	
 //	private static SoundEvent register(String type, String id) {
 //		id = "betterend." + type + "." + id;
@@ -55,7 +54,7 @@ public class EndSounds {
 //	}
 
 	private static RegistryObject<SoundEvent> register(String type, String id) {
-		id = "betterend." + type + "." + id;
+		id = "betterendforge." + type + "." + id;
 		String finalId = id;
 		return SOUND_EVENTS.register(id, () -> new SoundEvent((BetterEndForge.makeID(finalId))));
 	}
