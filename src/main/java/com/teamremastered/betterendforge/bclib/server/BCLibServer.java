@@ -7,6 +7,6 @@ public class BCLibServer {
 
 	public static void onInitializeServer() {
 //		ModIntegrationAPI.registerAll();
-//		PostInitAPI.postInit(false);
+		PostInitAPI.postInit(false);
 	}
 }

@@ -1,11 +1,14 @@
 package com.teamremastered.betterendforge;
 
+import com.teamremastered.betterendforge.bclib.BCLib;
 import com.teamremastered.betterendforge.bclib.api.WorldDataAPI;
 import com.teamremastered.betterendforge.bclib.client.BCLibClient;
 import com.teamremastered.betterendforge.bclib.recipes.BCLRecipeProvider;
+import com.teamremastered.betterendforge.bclib.server.BCLibServer;
 import com.teamremastered.betterendforge.bclib.util.Logger;
 import com.teamremastered.betterendforge.client.BetterEndClient;
 import com.teamremastered.betterendforge.config.EndConfig;
+import com.teamremastered.betterendforge.registry.EndTags;
 import com.teamremastered.betterendforge.registry.world.EndBiomes;
 import com.teamremastered.betterendforge.registry.EndBlockEntities;
 import com.teamremastered.betterendforge.registry.world.EndFeatures;
@@ -64,7 +67,7 @@ public class BetterEndForge {
 		EndStatusEffects.initRegister(modEventBus);
 		EndPotions.initRegister(modEventBus);
 
-//		BCLib.loadBCLib();
+		BCLib.loadBCLib();
 		WorldDataAPI.registerModCache(MOD_ID);
 		EndPortals.loadPortals();
 		TempEndFeatures.initRegister(modEventBus);
@@ -125,7 +128,7 @@ public class BetterEndForge {
 
 	private void onServerSetup(FMLCommonSetupEvent event) {
 		Registry.register(Registry.BIOME_SOURCE, BEFEndBiomeSource.LOCATION, BEFForgeEndBiomeSource.CODEC);
-
+		BCLibServer.onInitializeServer();
 		event.enqueueWork(() -> {
 			EndEntities.registerSpawnPlacement();
 		});

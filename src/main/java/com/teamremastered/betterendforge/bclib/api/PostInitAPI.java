@@ -59,8 +59,9 @@ public class PostInitAPI {
 			postInitFunctions = null;
 		}
 
-		blockTags = null;
-		itemTags = null;
+		//FIXME: this returns a NPE
+//		blockTags = null;
+//		itemTags = null;
 //		BiomeAPI.loadFabricAPIBiomes();
 	}
 
@@ -80,47 +81,47 @@ public class PostInitAPI {
 		if (block instanceof PostInitable) {
 			((PostInitable) block).postInit();
 		}
-		if (block instanceof BaseChestBlock) {
-			BaseBlockEntities.CHEST.registerBlock(block);
-		}
-		else if (block instanceof BaseSignBlock) {
-			BaseBlockEntities.SIGN.registerBlock(block);
-		}
-		else if (block instanceof BaseBarrelBlock) {
-			BaseBlockEntities.BARREL.registerBlock(block);
-		}
-		else if (block instanceof BaseFurnaceBlock) {
-			BaseBlockEntities.FURNACE.registerBlock(block);
-		}
-//		if (!(block instanceof PreventMineableAdd)) {
-//			if (block instanceof AddMineableShears) {
-//				TagAPI.addBlockTags(block, NamedMineableTags.SHEARS);
-//			}
-//			if (block instanceof AddMineableAxe) {
-//				TagAPI.addBlockTags(block, NamedMineableTags.AXE);
-//			}
-//			if (block instanceof AddMineablePickaxe) {
-//				TagAPI.addBlockTags(block, NamedMineableTags.PICKAXE);
-//			}
-//			if (block instanceof AddMineableShovel) {
-//				TagAPI.addBlockTags(block, NamedMineableTags.SHOVEL);
-//			}
-//			if (block instanceof AddMineableHoe) {
-//				TagAPI.addBlockTags(block, NamedMineableTags.HOE);
-//			}
-//			if (block instanceof AddMineableSword) {
-//				TagAPI.addBlockTags(block, NamedMineableTags.SWORD);
-//			}
-//			if (block instanceof AddMineableHammer) {
-//				TagAPI.addBlockTags(block, NamedMineableTags.HAMMER);
-//			}
+//		if (block instanceof BaseChestBlock) {
+//			BaseBlockEntities.CHEST.registerBlock(block);
 //		}
-//		if (block instanceof TagProvider) {
-//			TagProvider.class.cast(block).addTags(blockTags, itemTags);
-//			blockTags.forEach(tag -> TagAPI.addBlockTag(tag, block));
-//			itemTags.forEach(tag -> TagAPI.addItemTag(tag, block));
-//			blockTags.clear();
-//			itemTags.clear();
+//		else if (block instanceof BaseSignBlock) {
+//			BaseBlockEntities.SIGN.registerBlock(block);
 //		}
+//		else if (block instanceof BaseBarrelBlock) {
+//			BaseBlockEntities.BARREL.registerBlock(block);
+//		}
+//		else if (block instanceof BaseFurnaceBlock) {
+//			BaseBlockEntities.FURNACE.registerBlock(block);
+//		}
+		if (!(block instanceof PreventMineableAdd)) {
+			if (block instanceof AddMineableShears) {
+				TagAPI.addBlockTags(block, NamedMineableTags.SHEARS);
+			}
+			if (block instanceof AddMineableAxe) {
+				TagAPI.addBlockTags(block, NamedMineableTags.AXE);
+			}
+			if (block instanceof AddMineablePickaxe) {
+				TagAPI.addBlockTags(block, NamedMineableTags.PICKAXE);
+			}
+			if (block instanceof AddMineableShovel) {
+				TagAPI.addBlockTags(block, NamedMineableTags.SHOVEL);
+			}
+			if (block instanceof AddMineableHoe) {
+				TagAPI.addBlockTags(block, NamedMineableTags.HOE);
+			}
+			if (block instanceof AddMineableSword) {
+				TagAPI.addBlockTags(block, NamedMineableTags.SWORD);
+			}
+			if (block instanceof AddMineableHammer) {
+				TagAPI.addBlockTags(block, NamedMineableTags.HAMMER);
+			}
+		}
+		if (block instanceof TagProvider taggedBlock) {
+			taggedBlock.addTags(blockTags, itemTags);
+			blockTags.forEach(tag -> TagAPI.addBlockTag(tag, block));
+			itemTags.forEach(tag -> TagAPI.addItemTag(tag, block));
+			blockTags.clear();
+			itemTags.clear();
+		}
 	}
 }

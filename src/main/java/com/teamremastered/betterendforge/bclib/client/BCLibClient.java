@@ -14,7 +14,7 @@ public class BCLibClient {
 
 	public static void onInitializeClient() {
 		ModIntegrationAPI.registerAll();
-//		PostInitAPI.postInit(true); //FIXME: Tries to register inside a locked registry, should use Forge Registry
+		PostInitAPI.postInit(true); //FIXME: Tries to register inside a locked registry, should use Forge Registry
 		modelBakery = new CustomModelBakery();
 //		ModelLoadingRegistry.INSTANCE.registerResourceProvider(rm -> this);
 //		ModelLoadingRegistry.INSTANCE.registerVariantProvider(rm -> this);

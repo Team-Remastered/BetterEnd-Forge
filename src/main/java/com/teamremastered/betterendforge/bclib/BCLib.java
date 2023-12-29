@@ -16,16 +16,16 @@ public class BCLib {
 	public static final Logger LOGGER = new Logger(MOD_ID);
 
 	public static void loadBCLib() {
-		BaseRegistry.register();
-		GeneratorOptions.init();
+//		BaseRegistry.register();
+//		GeneratorOptions.init();
 	//	BaseBlockEntities.register();
-	    BCLibEndBiomeSource.register();
+//	    BCLibEndBiomeSource.register();
 		TagAPI.init();
 		CraftingRecipes.init();
-		WorldDataAPI.registerModCache(MOD_ID);
+//		WorldDataAPI.registerModCache(MOD_ID);
 //		AnvilRecipe.register();
 		
-		BCLibPatch.register();
+//		BCLibPatch.register();
 	}
 
 	public static boolean isDevEnvironment() {
