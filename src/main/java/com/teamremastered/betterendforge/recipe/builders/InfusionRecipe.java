@@ -23,16 +23,17 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistryEntry;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.Arrays;
 
 public class InfusionRecipe implements Recipe<InfusionRitual>, UnknownReceipBookCategory {
 	public final static String GROUP = "infusion";
 	public final static RecipeType<InfusionRecipe> TYPE = BCLRecipeManager.registerType(BetterEndForge.MOD_ID, GROUP);
-	public final static Serializer SERIALIZER = BCLRecipeManager.registerSerializer(
+	public final static RegistryObject<Serializer> SERIALIZER = BCLRecipeManager.registerSerializer(
 		BetterEndForge.MOD_ID,
 		GROUP,
-		new Serializer()
+		Serializer::new
 	);
 	
 	private final ResourceLocation id;
@@ -104,7 +105,7 @@ public class InfusionRecipe implements Recipe<InfusionRitual>, UnknownReceipBook
 	
 	@Override
 	public RecipeSerializer<?> getSerializer() {
-		return SERIALIZER;
+		return SERIALIZER.get();
 	}
 	
 	@Override

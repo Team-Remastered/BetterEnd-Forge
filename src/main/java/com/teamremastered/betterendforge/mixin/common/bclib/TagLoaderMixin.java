@@ -1,6 +1,8 @@
 package com.teamremastered.betterendforge.mixin.common.bclib;
 
 import com.teamremastered.betterendforge.bclib.api.tag.TagAPI;
+import com.teamremastered.betterendforge.registry.EndTags;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.Tag;
 import net.minecraft.tags.TagLoader;
@@ -20,6 +22,7 @@ public class TagLoaderMixin {
 	
 	@ModifyArg(method = "loadAndBuild", at = @At(value = "INVOKE", target = "Lnet/minecraft/tags/TagLoader;build(Ljava/util/Map;)Ljava/util/Map;"))
 	public Map<ResourceLocation, Tag.Builder> be_modifyTags(Map<ResourceLocation, Tag.Builder> tagsMap) {
+		EndTags.register();
 		return TagAPI.apply(directory, tagsMap);
 	}
 }
