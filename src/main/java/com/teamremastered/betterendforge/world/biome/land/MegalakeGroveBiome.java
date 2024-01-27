@@ -7,10 +7,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import com.teamremastered.betterendforge.registry.EndBlocks;
 import com.teamremastered.betterendforge.registry.EndEntities;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndParticles;
 import com.teamremastered.betterendforge.registry.EndSounds;
-import com.teamremastered.betterendforge.registry.EndStructures;
 
 public class MegalakeGroveBiome extends EndBiome.Config {
 	public MegalakeGroveBiome() {
@@ -20,7 +18,7 @@ public class MegalakeGroveBiome extends EndBiome.Config {
 	@Override
 	protected void addCustomBuildData(BCLBiomeBuilder builder) {
 		builder
-			.structure(EndStructures.MEGALAKE_SMALL)
+//			.structure(EndStructures.MEGALAKE_SMALL)
 			.plantsColor(73, 210, 209)
 			.fogColor(178, 209, 248)
 			.waterAndFogColor(96, 163, 255)
@@ -29,18 +27,18 @@ public class MegalakeGroveBiome extends EndBiome.Config {
 			.music(EndSounds.MUSIC_WATER.get())
 			.loop(EndSounds.AMBIENT_MEGALAKE_GROVE.get())
 			.terrainHeight(0F)
-			.feature(EndFeatures.LACUGROVE)
-			.feature(EndFeatures.END_LOTUS)
-			.feature(EndFeatures.END_LOTUS_LEAF)
-			.feature(EndFeatures.BUBBLE_CORAL_RARE)
-			.feature(EndFeatures.END_LILY_RARE)
-			.feature(EndFeatures.UMBRELLA_MOSS)
-			//.feature(EndFeatures.PEARLBERRY)
-			.feature(EndFeatures.CREEPING_MOSS)
-			.feature(EndFeatures.CHARNIA_CYAN)
-			.feature(EndFeatures.CHARNIA_LIGHT_BLUE)
-			.feature(EndFeatures.CHARNIA_RED_RARE)
-			.feature(EndFeatures.MENGER_SPONGE)
+//			.feature(EndFeatures.LACUGROVE)
+//			.feature(EndFeatures.END_LOTUS)
+//			.feature(EndFeatures.END_LOTUS_LEAF)
+//			.feature(EndFeatures.BUBBLE_CORAL_RARE)
+//			.feature(EndFeatures.END_LILY_RARE)
+//			.feature(EndFeatures.UMBRELLA_MOSS)
+//			//.feature(EndFeatures.PEARLBERRY)
+//			.feature(EndFeatures.CREEPING_MOSS)
+//			.feature(EndFeatures.CHARNIA_CYAN)
+//			.feature(EndFeatures.CHARNIA_LIGHT_BLUE)
+//			.feature(EndFeatures.CHARNIA_RED_RARE)
+//			.feature(EndFeatures.MENGER_SPONGE)
 			.spawn(EndEntities.DRAGONFLY.get(), 20, 1, 3)
 			.spawn(EndEntities.END_FISH.get(), 20, 3, 8)
 			.spawn(EndEntities.CUBOZOA.get(), 50, 3, 8)

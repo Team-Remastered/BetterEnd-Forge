@@ -17,9 +17,9 @@ public abstract class PlayerRendererMixin extends LivingEntityRenderer<AbstractC
 	public PlayerRendererMixin(EntityRendererProvider.Context context, PlayerModel<AbstractClientPlayer> entityModel, float f) {
 		super(context, entityModel, f);
 	}
-	
-	@Inject(method = "<init>*", at = @At("TAIL"))
-	public void be_addCustomLayer(EntityRendererProvider.Context context, boolean bl, CallbackInfo ci) {
-		addLayer(new ArmoredElytraLayer<>(this, context.getModelSet()));
-	}
+	//FIXME: ArmoredElytra model crashes the game
+//	@Inject(method = "<init>*", at = @At("TAIL"))
+//	public void be_addCustomLayer(EntityRendererProvider.Context context, boolean bl, CallbackInfo ci) {
+//		addLayer(new ArmoredElytraLayer<>(this, context.getModelSet()));
+//	}
 }

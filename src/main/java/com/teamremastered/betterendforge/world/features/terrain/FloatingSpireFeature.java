@@ -16,8 +16,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import com.teamremastered.betterendforge.registry.EndBiomes;
-import com.teamremastered.betterendforge.registry.EndFeatures;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
+import com.teamremastered.betterendforge.registry.world.EndFeatures;
 
 import java.util.List;
 import java.util.Optional;
@@ -79,7 +79,7 @@ public class FloatingSpireFeature extends SpireFeature {
 		sdf.fillRecursive(world, center);
 		
 		support.forEach((bpos) -> {
-			if (BiomeAPI.getFromBiome(world.getBiome(bpos)) == EndBiomes.BLOSSOMING_SPIRES) {
+			if (BiomeAPI.getFromBiome(world.getBiome(bpos)).getBiome() == EndBiomes.BLOSSOMING_SPIRES.get()) {
 				EndFeatures.TENANEA_BUSH.getFeature()
 										.place(new FeaturePlaceContext<>(Optional.empty(), world, chunkGenerator, random, bpos, null));
 			}

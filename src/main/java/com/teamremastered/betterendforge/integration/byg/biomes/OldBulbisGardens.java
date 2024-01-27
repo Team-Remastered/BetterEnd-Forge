@@ -2,7 +2,7 @@ package com.teamremastered.betterendforge.integration.byg.biomes;
 
 import com.teamremastered.betterendforge.bclib.BCLib;
 import com.teamremastered.betterendforge.bclib.api.biomes.BCLBiomeBuilder;
-import com.teamremastered.betterendforge.registry.EndFeatures;
+import com.teamremastered.betterendforge.registry.world.EndFeatures;
 import com.teamremastered.betterendforge.world.biome.EndBiome;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;

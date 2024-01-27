@@ -645,21 +645,6 @@ public class BCLBiomeBuilder {
 		return build((id, biome, settings)->biomeConstructor.apply(id, biome));
 	}
 
-	private static BiomeGenerationSettings fixGenerationSettings(BiomeGenerationSettings settings){
-		//Fabric Biome Modification API can not handle an empty carver map, thus we will create one with
-		//an empty HolderSet for every possible step:
-		//https://github.com/FabricMC/fabric/issues/2079
-		//TODO: Remove, once fabric gets fixed
-		if (settings instanceof BiomeGenerationSettingsAccessor acc){
-			Map<GenerationStep.Carving, HolderSet<ConfiguredWorldCarver<?>>> carvers = CollectionsUtil.getMutable(acc.bclib_getCarvers());
-			for (GenerationStep.Carving step : GenerationStep.Carving.values()){
-				carvers.computeIfAbsent(step, __->HolderSet.direct(Lists.newArrayList()));
-			}
-			acc.bclib_setCarvers(carvers);
-		}
-		return  settings;
-	}
-
 	/**
 	 * Finalize biome creation.
 	 * @param biomeConstructor {@link BiomeSupplier} biome constructor.
@@ -670,13 +655,13 @@ public class BCLBiomeBuilder {
 			.precipitation(precipitation)
 			.biomeCategory(category)
 			.temperature(temperature)
+			.temperatureAdjustment(Biome.TemperatureModifier.NONE)
+			.generationSettings(BiomeGenerationSettings.EMPTY)
 			.downfall(downfall);
 		
 		builder.mobSpawnSettings(getSpawns().build());
 		builder.specialEffects(getEffects().build());
 
-		builder.generationSettings(fixGenerationSettings(getGeneration().build()));
-		
 		BCLBiomeSettings settings = BCLBiomeSettings.createBCL()
 			.setTerrainHeight(height)
 			.setFogDensity(fogDensity)

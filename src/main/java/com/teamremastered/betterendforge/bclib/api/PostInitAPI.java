@@ -59,8 +59,9 @@ public class PostInitAPI {
 			postInitFunctions = null;
 		}
 
-		blockTags = null;
-		itemTags = null;
+		//FIXME: this returns a NPE
+//		blockTags = null;
+//		itemTags = null;
 //		BiomeAPI.loadFabricAPIBiomes();
 	}
 
@@ -75,23 +76,23 @@ public class PostInitAPI {
 			itemTags.clear();
 		}
 	}
-	
+	//FIXME: Convert to forge registry
 	private static void processBlockCommon(Block block) {
 		if (block instanceof PostInitable) {
 			((PostInitable) block).postInit();
 		}
-		if (block instanceof BaseChestBlock) {
-			BaseBlockEntities.CHEST.registerBlock(block);
-		}
-		else if (block instanceof BaseSignBlock) {
-			BaseBlockEntities.SIGN.registerBlock(block);
-		}
-		else if (block instanceof BaseBarrelBlock) {
-			BaseBlockEntities.BARREL.registerBlock(block);
-		}
-		else if (block instanceof BaseFurnaceBlock) {
-			BaseBlockEntities.FURNACE.registerBlock(block);
-		}
+//		if (block instanceof BaseChestBlock) {
+//			BaseBlockEntities.CHEST.registerBlock(block);
+//		}
+//		else if (block instanceof BaseSignBlock) {
+//			BaseBlockEntities.SIGN.registerBlock(block);
+//		}
+//		else if (block instanceof BaseBarrelBlock) {
+//			BaseBlockEntities.BARREL.registerBlock(block);
+//		}
+//		else if (block instanceof BaseFurnaceBlock) {
+//			BaseBlockEntities.FURNACE.registerBlock(block);
+//		}
 		if (!(block instanceof PreventMineableAdd)) {
 			if (block instanceof AddMineableShears) {
 				TagAPI.addBlockTags(block, NamedMineableTags.SHEARS);
@@ -115,8 +116,8 @@ public class PostInitAPI {
 				TagAPI.addBlockTags(block, NamedMineableTags.HAMMER);
 			}
 		}
-		if (block instanceof TagProvider) {
-			TagProvider.class.cast(block).addTags(blockTags, itemTags);
+		if (block instanceof TagProvider taggedBlock) {
+			taggedBlock.addTags(blockTags, itemTags);
 			blockTags.forEach(tag -> TagAPI.addBlockTag(tag, block));
 			itemTags.forEach(tag -> TagAPI.addItemTag(tag, block));
 			blockTags.clear();

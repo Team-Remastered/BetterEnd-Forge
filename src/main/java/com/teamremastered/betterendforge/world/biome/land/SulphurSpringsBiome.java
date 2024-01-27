@@ -14,7 +14,6 @@ import net.minecraft.world.level.levelgen.SurfaceRules.RuleSource;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import com.teamremastered.betterendforge.registry.EndBlocks;
 import com.teamremastered.betterendforge.registry.EndEntities;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndParticles;
 import com.teamremastered.betterendforge.registry.EndSounds;
 
@@ -41,14 +40,14 @@ public class SulphurSpringsBiome extends EndBiome.Config {
 			.fogDensity(1.5F)
 			.terrainHeight(0F)
 			.particles(EndParticles.SULPHUR_PARTICLE.get(), 0.001F)
-			.feature(EndFeatures.GEYSER)
-			.feature(EndFeatures.SURFACE_VENT)
-			.feature(EndFeatures.SULPHURIC_LAKE)
-			.feature(EndFeatures.SULPHURIC_CAVE)
-			.feature(EndFeatures.HYDRALUX)
-			.feature(EndFeatures.CHARNIA_GREEN)
-			.feature(EndFeatures.CHARNIA_ORANGE)
-			.feature(EndFeatures.CHARNIA_RED_RARE)
+//			.feature(EndFeatures.GEYSER)
+//			.feature(EndFeatures.SURFACE_VENT)
+//			.feature(EndFeatures.SULPHURIC_LAKE)
+//			.feature(EndFeatures.SULPHURIC_CAVE)
+//			.feature(EndFeatures.HYDRALUX)
+//			.feature(EndFeatures.CHARNIA_GREEN)
+//			.feature(EndFeatures.CHARNIA_ORANGE)
+//			.feature(EndFeatures.CHARNIA_RED_RARE)
 			.spawn(EndEntities.END_FISH.get(), 50, 3, 8)
 			.spawn(EndEntities.CUBOZOA.get(), 50, 3, 8)
 			.spawn(EntityType.ENDERMAN, 50, 1, 4);

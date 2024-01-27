@@ -33,10 +33,10 @@ public class BCLFeature {
 		this.feature = feature;
 
 		if (!BuiltinRegistries.PLACED_FEATURE.containsKey(id)) {
-			Registry.register(BuiltinRegistries.PLACED_FEATURE, id, placedFeature.value());
+//			Registry.register(BuiltinRegistries.PLACED_FEATURE, id, placedFeature.value());
 		}
 		if (!Registry.FEATURE.containsKey(id) && !containsObj(Registry.FEATURE, feature)) {
-			Registry.register(Registry.FEATURE, id, feature);
+//			Registry.register(Registry.FEATURE, id, feature);
 		}
 	}
 

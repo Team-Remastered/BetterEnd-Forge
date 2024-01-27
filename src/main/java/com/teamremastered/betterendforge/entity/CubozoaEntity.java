@@ -27,7 +27,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import com.teamremastered.betterendforge.bclib.api.biomes.BiomeAPI;
-import com.teamremastered.betterendforge.registry.EndBiomes;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
 import com.teamremastered.betterendforge.registry.EndItems;
 
 public class CubozoaEntity extends AbstractSchoolingFish {
@@ -49,7 +49,7 @@ public class CubozoaEntity extends AbstractSchoolingFish {
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType spawnReason, SpawnGroupData entityData, CompoundTag entityTag) {
 		SpawnGroupData data = super.finalizeSpawn(world, difficulty, spawnReason, entityData, entityTag);
 		
-		if (BiomeAPI.getFromBiome(world.getBiome(blockPosition())) == EndBiomes.SULPHUR_SPRINGS) {
+		if (BiomeAPI.getFromBiome(world.getBiome(blockPosition())).getBiome() == EndBiomes.SULPHUR_SPRINGS.get()) {
 			this.entityData.set(VARIANT, (byte) 1);
 		}
 		

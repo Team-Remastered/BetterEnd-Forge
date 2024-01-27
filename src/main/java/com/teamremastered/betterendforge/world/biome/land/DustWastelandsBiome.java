@@ -29,7 +29,7 @@ public class DustWastelandsBiome extends EndBiome.Config {
 			.particles(ParticleTypes.WHITE_ASH, 0.01F)
 			.loop(EndSounds.AMBIENT_DUST_WASTELANDS.get())
 			.music(EndSounds.MUSIC_OPENSPACE.get())
-			.structure(BiomeTags.HAS_END_CITY)
+//			.structure(BiomeTags.HAS_END_CITY)
 			.spawn(EntityType.ENDERMAN, 50, 1, 2);
 	}
 

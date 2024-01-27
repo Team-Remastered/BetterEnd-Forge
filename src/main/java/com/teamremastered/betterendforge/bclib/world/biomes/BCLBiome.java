@@ -2,10 +2,13 @@ package com.teamremastered.betterendforge.bclib.world.biomes;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.BCLib;
 import com.teamremastered.betterendforge.bclib.api.biomes.BiomeAPI;
 import com.teamremastered.betterendforge.bclib.api.tag.TagAPI;
+import com.teamremastered.betterendforge.bclib.registry.BlockRegistry;
 import com.teamremastered.betterendforge.bclib.util.WeightedList;
+import com.teamremastered.betterendforge.tab.CreativeTabs;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
@@ -13,8 +16,11 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.SurfaceRules.RuleSource;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.api.biomes.BCLBiomeBuilder;
 
@@ -25,6 +31,7 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 public class BCLBiome extends BCLBiomeSettings {
+
 	private final Set<TagKey<Biome>> structureTags = Sets.newHashSet();
 	private final WeightedList<BCLBiome> subbiomes = new WeightedList<>();
 	private final Map<String, Object> customData = Maps.newHashMap();

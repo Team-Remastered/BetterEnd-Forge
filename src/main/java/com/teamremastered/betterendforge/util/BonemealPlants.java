@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import com.teamremastered.betterendforge.bclib.api.BonemealAPI;
 import com.teamremastered.betterendforge.blocks.basis.EndTerrainBlock;
-import com.teamremastered.betterendforge.registry.EndBiomes;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
 import com.teamremastered.betterendforge.registry.EndBlocks;
 
 import java.util.List;
@@ -29,28 +29,28 @@ public class BonemealPlants {
 		BonemealAPI.addLandGrass(EndBlocks.SMALL_JELLYSHROOM.get(), EndBlocks.JUNGLE_MOSS.get(), 0.1F);
 		
 		BonemealAPI.addLandGrass(
-			EndBiomes.GLOWING_GRASSLANDS.getID(),
+			EndBiomes.GLOWING_GRASSLANDS.getId(),
 			EndBlocks.BLOOMING_COOKSONIA.get(),
 			EndBlocks.END_MOSS.get()
 		);
-		BonemealAPI.addLandGrass(EndBiomes.GLOWING_GRASSLANDS.getID(), EndBlocks.VAIOLUSH_FERN.get(), EndBlocks.END_MOSS.get());
-		BonemealAPI.addLandGrass(EndBiomes.GLOWING_GRASSLANDS.getID(), EndBlocks.FRACTURN.get(), EndBlocks.END_MOSS.get());
-		BonemealAPI.addLandGrass(EndBiomes.GLOWING_GRASSLANDS.getID(), EndBlocks.SALTEAGO.get(), EndBlocks.END_MOSS.get());
+		BonemealAPI.addLandGrass(EndBiomes.GLOWING_GRASSLANDS.getId(), EndBlocks.VAIOLUSH_FERN.get(), EndBlocks.END_MOSS.get());
+		BonemealAPI.addLandGrass(EndBiomes.GLOWING_GRASSLANDS.getId(), EndBlocks.FRACTURN.get(), EndBlocks.END_MOSS.get());
+		BonemealAPI.addLandGrass(EndBiomes.GLOWING_GRASSLANDS.getId(), EndBlocks.SALTEAGO.get(), EndBlocks.END_MOSS.get());
 		
 		BonemealAPI.addLandGrass(
-			EndBiomes.GLOWING_GRASSLANDS.getID(),
+			EndBiomes.GLOWING_GRASSLANDS.getId(),
 			EndBlocks.CREEPING_MOSS.get(),
 			EndBlocks.END_MOSS.get(),
 			0.1F
 		);
 		BonemealAPI.addLandGrass(
-			EndBiomes.GLOWING_GRASSLANDS.getID(),
+			EndBiomes.GLOWING_GRASSLANDS.getId(),
 			EndBlocks.UMBRELLA_MOSS.get(),
 			EndBlocks.END_MOSS.get(),
 			0.1F
 		);
 		BonemealAPI.addLandGrass(
-			EndBiomes.GLOWING_GRASSLANDS.getID(),
+			EndBiomes.GLOWING_GRASSLANDS.getId(),
 			EndBlocks.TWISTED_UMBRELLA_MOSS.get(),
 			EndBlocks.END_MOSS.get(),
 			0.1F
@@ -61,9 +61,9 @@ public class BonemealPlants {
 		BonemealAPI.addLandGrass(EndBlocks.LUTEBUS.get(), EndBlocks.RUTISCUS.get(), 0.2F);
 		BonemealAPI.addLandGrass(EndBlocks.LAMELLARIUM.get(), EndBlocks.RUTISCUS.get());
 		
-		BonemealAPI.addLandGrass(EndBiomes.LANTERN_WOODS.getID(), EndBlocks.AERIDIUM.get(), EndBlocks.RUTISCUS.get(), 0.2F);
-		BonemealAPI.addLandGrass(EndBiomes.LANTERN_WOODS.getID(), EndBlocks.LAMELLARIUM.get(), EndBlocks.RUTISCUS.get());
-		BonemealAPI.addLandGrass(EndBiomes.LANTERN_WOODS.getID(), EndBlocks.BOLUX_MUSHROOM.get(), EndBlocks.RUTISCUS.get(), 0.05F);
+		BonemealAPI.addLandGrass(EndBiomes.LANTERN_WOODS.getId(), EndBlocks.AERIDIUM.get(), EndBlocks.RUTISCUS.get(), 0.2F);
+		BonemealAPI.addLandGrass(EndBiomes.LANTERN_WOODS.getId(), EndBlocks.LAMELLARIUM.get(), EndBlocks.RUTISCUS.get());
+		BonemealAPI.addLandGrass(EndBiomes.LANTERN_WOODS.getId(), EndBlocks.BOLUX_MUSHROOM.get(), EndBlocks.RUTISCUS.get(), 0.05F);
 		
 		BonemealAPI.addLandGrass(
 			EndBlocks.GLOBULAGUS.get(),

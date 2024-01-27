@@ -17,9 +17,10 @@ public abstract class ArmorStandRendererMixin extends LivingEntityRenderer<Armor
 	public ArmorStandRendererMixin(EntityRendererProvider.Context context, ArmorStandArmorModel entityModel, float f) {
 		super(context, entityModel, f);
 	}
-	
-	@Inject(method = "<init>*", at = @At("TAIL"))
-	public void be_addCustomLayer(EntityRendererProvider.Context context, CallbackInfo ci) {
-		addLayer(new ArmoredElytraLayer<>(this, context.getModelSet()));
-	}
+
+	//FIXME: ArmoredElytra model crashes the game
+//	@Inject(method = "<init>*", at = @At("TAIL"))
+//	public void be_addCustomLayer(EntityRendererProvider.Context context, CallbackInfo ci) {
+//		addLayer(new ArmoredElytraLayer<>(this, context.getModelSet()));
+//	}
 }

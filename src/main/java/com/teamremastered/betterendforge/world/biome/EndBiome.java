@@ -16,7 +16,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.SurfaceRules;
 import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndSounds;
 import com.teamremastered.betterendforge.registry.EndTags;
 
@@ -115,7 +114,7 @@ public class EndBiome extends BCLBiome implements SurfaceMaterialProvider {
 				.surface(biomeConfig.surfaceMaterial().surface().build());
 
 		biomeConfig.addCustomBuildData(builder);
-		EndFeatures.addDefaultFeatures(builder, biomeConfig.hasCaves());
+//		EndFeatures.addDefaultFeatures(builder, biomeConfig.hasCaves());
 
 
 		EndBiome biome = builder.build(biomeConfig.getSupplier());

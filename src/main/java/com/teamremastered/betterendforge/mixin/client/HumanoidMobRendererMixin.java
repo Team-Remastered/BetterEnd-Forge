@@ -17,9 +17,10 @@ public abstract class HumanoidMobRendererMixin<T extends Mob, M extends Humanoid
 	public HumanoidMobRendererMixin(EntityRendererProvider.Context context, M entityModel, float f) {
 		super(context, entityModel, f);
 	}
-	
-	@Inject(method = "<init>(Lnet/minecraft/client/renderer/entity/EntityRendererProvider$Context;Lnet/minecraft/client/model/HumanoidModel;FFFF)V", at = @At("TAIL"))
-	public void be_addCustomLayer(EntityRendererProvider.Context context, M humanoidModel, float f, float g, float h, float i, CallbackInfo ci) {
-		addLayer(new ArmoredElytraLayer<>(this, context.getModelSet()));
-	}
+
+	//FIXME: ArmoredElytra model crashes the game
+//	@Inject(method = "<init>(Lnet/minecraft/client/renderer/entity/EntityRendererProvider$Context;Lnet/minecraft/client/model/HumanoidModel;FFFF)V", at = @At("TAIL"))
+//	public void be_addCustomLayer(EntityRendererProvider.Context context, M humanoidModel, float f, float g, float h, float i, CallbackInfo ci) {
+//		addLayer(new ArmoredElytraLayer<>(this, context.getModelSet()));
+//	}
 }

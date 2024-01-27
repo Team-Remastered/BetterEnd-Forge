@@ -3,12 +3,10 @@ package com.teamremastered.betterendforge.world.biome.land;
 import com.teamremastered.betterendforge.bclib.api.biomes.BCLBiomeBuilder;
 import com.teamremastered.betterendforge.bclib.interfaces.SurfaceMaterialProvider;
 import com.teamremastered.betterendforge.world.biome.EndBiome;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import com.teamremastered.betterendforge.registry.EndBlocks;
 import com.teamremastered.betterendforge.registry.EndEntities;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndParticles;
 import com.teamremastered.betterendforge.registry.EndSounds;
 
@@ -27,18 +25,18 @@ public class AmberLandBiome extends EndBiome.Config {
 			.music(EndSounds.MUSIC_FOREST.get())
 			.loop(EndSounds.AMBIENT_AMBER_LAND.get())
 			.particles(EndParticles.AMBER_SPHERE.get(), 0.001F)
-			.feature(EndFeatures.AMBER_ORE)
-			.feature(EndFeatures.END_LAKE_RARE)
-			.feature(EndFeatures.HELIX_TREE)
-			.feature(EndFeatures.LANCELEAF)
-			.feature(EndFeatures.GLOW_PILLAR)
-			.feature(EndFeatures.AMBER_GRASS)
-			.feature(EndFeatures.AMBER_ROOT)
-			.feature(EndFeatures.BULB_MOSS)
-			.feature(EndFeatures.BULB_MOSS_WOOD)
-			.feature(EndFeatures.CHARNIA_ORANGE)
-			.feature(EndFeatures.CHARNIA_RED)
-			.structure(BiomeTags.HAS_END_CITY)
+//			.feature(EndFeatures.AMBER_ORE)
+//			.feature(EndFeatures.END_LAKE_RARE)
+//			.feature(EndFeatures.HELIX_TREE)
+//			.feature(EndFeatures.LANCELEAF)
+//			.feature(EndFeatures.GLOW_PILLAR)
+//			.feature(EndFeatures.AMBER_GRASS)
+//			.feature(EndFeatures.AMBER_ROOT)
+//			.feature(EndFeatures.BULB_MOSS)
+//			.feature(EndFeatures.BULB_MOSS_WOOD)
+//			.feature(EndFeatures.CHARNIA_ORANGE)
+//			.feature(EndFeatures.CHARNIA_RED)
+//			.structure(BiomeTags.HAS_END_CITY)
 			.spawn(EntityType.ENDERMAN, 50, 1, 4)
 			.spawn(EndEntities.END_SLIME.get(), 30, 1, 2);
 	}

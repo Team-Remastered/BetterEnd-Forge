@@ -3,9 +3,9 @@ package com.teamremastered.betterendforge.world.biome.air;
 import com.teamremastered.betterendforge.bclib.api.biomes.BCLBiomeBuilder;
 import com.teamremastered.betterendforge.world.biome.EndBiome;
 import net.minecraft.world.entity.EntityType;
-import com.teamremastered.betterendforge.registry.EndFeatures;
+import com.teamremastered.betterendforge.registry.world.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndParticles;
-import com.teamremastered.betterendforge.registry.EndStructures;
+import com.teamremastered.betterendforge.registry.world.EndStructures;
 
 public class BiomeIceStarfield extends EndBiome.Config {
 	public BiomeIceStarfield() {

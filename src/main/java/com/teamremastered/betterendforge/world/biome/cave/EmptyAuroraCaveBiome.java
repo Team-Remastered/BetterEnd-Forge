@@ -3,7 +3,6 @@ package com.teamremastered.betterendforge.world.biome.cave;
 import com.teamremastered.betterendforge.bclib.api.biomes.BCLBiomeBuilder;
 import com.teamremastered.betterendforge.bclib.world.biomes.BCLBiomeSettings;
 import net.minecraft.resources.ResourceLocation;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndParticles;
 import com.teamremastered.betterendforge.world.biome.EndBiome;
 
@@ -12,9 +11,9 @@ public class EmptyAuroraCaveBiome extends EndCaveBiome.Config {
 		public Biome(ResourceLocation biomeID, net.minecraft.world.level.biome.Biome biome, BCLBiomeSettings settings) {
 			super(biomeID, biome, settings);
 
-			this.addFloorFeature(EndFeatures.BIG_AURORA_CRYSTAL, 1);
-
-			this.addCeilFeature(EndFeatures.END_STONE_STALACTITE, 1);
+//			this.addFloorFeature(EndFeatures.BIG_AURORA_CRYSTAL, 1);
+//
+//			this.addCeilFeature(EndFeatures.END_STONE_STALACTITE, 1);
 		}
 
 		@Override

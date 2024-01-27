@@ -33,7 +33,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.material.Material;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.registry.EndFeatures;
+import com.teamremastered.betterendforge.registry.world.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndPortals;
 
 import java.awt.Point;

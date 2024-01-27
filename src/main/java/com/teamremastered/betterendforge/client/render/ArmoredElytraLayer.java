@@ -42,7 +42,7 @@ public class ArmoredElytraLayer<T extends LivingEntity, M extends EntityModel<T>
 					wingsTexture = abstractClientPlayer.getCloakTextureLocation();
 				}
 			}
-			
+
 			poseStack.pushPose();
 			poseStack.translate(0.0D, 0.0D, 0.125D);
 			getParentModel().copyPropertiesTo(elytraModel);

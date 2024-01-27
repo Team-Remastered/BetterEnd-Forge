@@ -30,6 +30,12 @@
 		"PlayerMixin",
 		"SlimeMixin",
 		"SpawnRestrictionAccessor",
+		"BiomeSourceAccess",
+		"MixinDimensionType",
+		"MixinMinecraftServer",
+		"NoiseGeneratorSettingsAccess",
+		"VanillaBiomeAccess",
+		"WeightedListAccess",
 
 		"bclib.BiomeGenerationSettingsAccessor",
 		"bclib.shears.DiggingEnchantmentMixin",

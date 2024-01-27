@@ -6,7 +6,6 @@ import com.teamremastered.betterendforge.world.biome.EndBiome;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.registry.EndFeatures;
 import com.teamremastered.betterendforge.registry.EndParticles;
 import com.teamremastered.betterendforge.registry.EndSounds;
 
@@ -26,15 +25,15 @@ public class DragonGraveyardsBiome extends EndBiome.Config {
 			.loop(EndSounds.AMBIENT_GLOWING_GRASSLANDS.get())
 			.waterAndFogColor(203, 59, 167)
 			.plantsColor(244, 46, 79)
-			.feature(EndFeatures.OBSIDIAN_PILLAR_BASEMENT)
-			.feature(EndFeatures.DRAGON_BONE_BLOCK_ORE)
-			.feature(EndFeatures.FALLEN_PILLAR)
-			.feature(EndFeatures.OBSIDIAN_BOULDER)
-			.feature(EndFeatures.GIGANTIC_AMARANITA)
-			.feature(EndFeatures.LARGE_AMARANITA)
-			.feature(EndFeatures.SMALL_AMARANITA)
-			.feature(EndFeatures.GLOBULAGUS)
-			.feature(EndFeatures.CLAWFERN)
+//			.feature(EndFeatures.OBSIDIAN_PILLAR_BASEMENT)
+//			.feature(EndFeatures.DRAGON_BONE_BLOCK_ORE)
+//			.feature(EndFeatures.FALLEN_PILLAR)
+//			.feature(EndFeatures.OBSIDIAN_BOULDER)
+//			.feature(EndFeatures.GIGANTIC_AMARANITA)
+//			.feature(EndFeatures.LARGE_AMARANITA)
+//			.feature(EndFeatures.SMALL_AMARANITA)
+//			.feature(EndFeatures.GLOBULAGUS)
+//			.feature(EndFeatures.CLAWFERN)
 			.spawn(EntityType.ENDERMAN, 50, 1, 2);
 	}
 

@@ -8,17 +8,20 @@ import com.teamremastered.betterendforge.bclib.server.BCLibServer;
 import com.teamremastered.betterendforge.bclib.util.Logger;
 import com.teamremastered.betterendforge.client.BetterEndClient;
 import com.teamremastered.betterendforge.config.EndConfig;
+import com.teamremastered.betterendforge.registry.EndTags;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
 import com.teamremastered.betterendforge.registry.EndBlockEntities;
+import com.teamremastered.betterendforge.registry.world.EndFeatures;
+import com.teamremastered.betterendforge.registry.world.TempEndFeatures;
 import com.teamremastered.betterendforge.render.BCLBlockStateProvider;
 import com.teamremastered.betterendforge.render.BCLItemModelProvider;
 import com.teamremastered.betterendforge.render.BCLRendLayerProvider;
 import com.teamremastered.betterendforge.util.LootTableUtil;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
+import com.teamremastered.betterendforge.world.biome.end.BEFEndBiomeSource;
+import com.teamremastered.betterendforge.world.biome.end.BEFForgeEndBiomeSource;
+import net.minecraft.core.Registry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.scores.criteria.ObjectiveCriteria;
-import net.minecraftforge.client.ForgeRenderTypes;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
@@ -67,7 +70,8 @@ public class BetterEndForge {
 		BCLib.loadBCLib();
 		WorldDataAPI.registerModCache(MOD_ID);
 		EndPortals.loadPortals();
-//		EndBiomes.register();
+		TempEndFeatures.initRegister(modEventBus);
+		EndBiomes.initRegister(modEventBus);
 //		EndTags.register();
 //		CraftingRecipes.register();
 //		FurnaceRecipes.register();
@@ -123,8 +127,9 @@ public class BetterEndForge {
 	}
 
 	private void onServerSetup(FMLCommonSetupEvent event) {
+		Registry.register(Registry.BIOME_SOURCE, BEFEndBiomeSource.LOCATION, BEFForgeEndBiomeSource.CODEC);
+		BCLibServer.onInitializeServer();
 		event.enqueueWork(() -> {
-			BCLibServer.onInitializeServer();
 			EndEntities.registerSpawnPlacement();
 		});
 	}
@@ -132,5 +137,5 @@ public class BetterEndForge {
 	public static ResourceLocation makeID(String path) {
 		return new ResourceLocation(MOD_ID, path);
 	}
-	
+
 }

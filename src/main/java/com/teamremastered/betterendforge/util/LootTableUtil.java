@@ -6,7 +6,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import com.teamremastered.betterendforge.BetterEndForge;
-import com.teamremastered.betterendforge.registry.EndBiomes;
+import com.teamremastered.betterendforge.registry.world.EndBiomes;
 
 //FIXME: Use GLMS to inject inside loot tables
 
@@ -85,19 +85,19 @@ public class LootTableUtil {
 
 	public static ResourceLocation getTable(Holder<Biome> biome) {
 		BCLBiome bclBiome = BiomeAPI.getBiome(biome.value());
-		if (bclBiome == EndBiomes.FOGGY_MUSHROOMLAND) {
+		if (bclBiome.getBiome() == EndBiomes.FOGGY_MUSHROOMLAND.get()) {
 			return FOGGY_MUSHROOMLAND;
 		}
-		else if (bclBiome == EndBiomes.CHORUS_FOREST) {
+		else if (bclBiome.getBiome() == EndBiomes.CHORUS_FOREST.get()) {
 			return CHORUS_FOREST;
 		}
-		else if (bclBiome == EndBiomes.SHADOW_FOREST) {
+		else if (bclBiome.getBiome() == EndBiomes.SHADOW_FOREST.get()) {
 			return SHADOW_FOREST;
 		}
-		else if (bclBiome == EndBiomes.LANTERN_WOODS) {
+		else if (bclBiome.getBiome() == EndBiomes.LANTERN_WOODS.get()) {
 			return LANTERN_WOODS;
 		}
-		else if (bclBiome == EndBiomes.UMBRELLA_JUNGLE) {
+		else if (bclBiome.getBiome() == EndBiomes.UMBRELLA_JUNGLE.get()) {
 			return UMBRELLA_JUNGLE;
 		}
 		return COMMON;

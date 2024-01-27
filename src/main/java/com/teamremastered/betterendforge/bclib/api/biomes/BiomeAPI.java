@@ -75,18 +75,19 @@ import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+import static net.minecraft.data.BuiltinRegistries.NOISE_GENERATOR_SETTINGS;
+
 public class BiomeAPI {
+
 	/**
 	 * Empty biome used as default value if requested biome doesn't exist or linked. Shouldn't be registered anywhere to prevent bugs.
 	 * Have {@code Biomes.THE_VOID} as the reference biome.
 	 */
+
 	public static final BCLBiome EMPTY_BIOME = new BCLBiome(Biomes.THE_VOID.location());
-	
-	public static final BiomePicker NETHER_BIOME_PICKER = new BiomePicker();
 	public static final BiomePicker END_LAND_BIOME_PICKER = new BiomePicker();
 	public static final BiomePicker END_VOID_BIOME_PICKER = new BiomePicker();
-	
-	private static final Map<ResourceLocation, BCLBiome> ID_MAP = Maps.newHashMap();
+	public static final Map<ResourceLocation, BCLBiome> ID_MAP = Maps.newHashMap();
 	private static final Map<Biome, BCLBiome> CLIENT = Maps.newHashMap();
 	private static Registry<Biome> biomeRegistry;
 	
@@ -97,12 +98,6 @@ public class BiomeAPI {
 	private static final Map<ResourceLocation, RuleSource> SURFACE_RULES = Maps.newHashMap();
 	private static final Set<SurfaceRuleProvider> MODIFIED_SURFACE_PROVIDERS = new HashSet<>(8);
 
-	public static final BCLBiome NETHER_WASTES_BIOME = registerNetherBiome(getFromRegistry(Biomes.NETHER_WASTES).value());
-	public static final BCLBiome CRIMSON_FOREST_BIOME = registerNetherBiome(getFromRegistry(Biomes.CRIMSON_FOREST).value());
-	public static final BCLBiome WARPED_FOREST_BIOME = registerNetherBiome(getFromRegistry(Biomes.WARPED_FOREST).value());
-	public static final BCLBiome SOUL_SAND_VALLEY_BIOME = registerNetherBiome(getFromRegistry(Biomes.SOUL_SAND_VALLEY).value());
-	public static final BCLBiome BASALT_DELTAS_BIOME = registerNetherBiome(getFromRegistry(Biomes.BASALT_DELTAS).value());
-	
 	public static final BCLBiome THE_END = registerEndLandBiome(getFromRegistry(Biomes.THE_END));
 	public static final BCLBiome END_MIDLANDS = registerSubBiome(THE_END, getFromRegistry(Biomes.END_MIDLANDS).value(), 0.5F);
 	public static final BCLBiome END_HIGHLANDS = registerSubBiome(THE_END, getFromRegistry(Biomes.END_HIGHLANDS).value(), 0.5F);
@@ -162,7 +157,7 @@ public class BiomeAPI {
 		if (BuiltinRegistries.BIOME.get(bclbiome.getID()) == null) {
 			final Biome biome = bclbiome.getBiome();
 			ResourceLocation loc = bclbiome.getID();
-			Registry.register(BuiltinRegistries.BIOME, loc, biome);
+		//	Registry.register(BuiltinRegistries.BIOME, loc, biome);
 		}
 		ID_MAP.put(bclbiome.getID(), bclbiome);
 		return bclbiome;
@@ -177,20 +172,6 @@ public class BiomeAPI {
 	public static BCLBiome registerSubBiome(BCLBiome parent, Biome biome, float genChance) {
 		BCLBiome subBiome = new BCLBiome(biome, VanillaBiomeSettings.createVanilla().setGenChance(genChance).build());
 		return registerSubBiome(parent, subBiome);
-	}
-	
-	/**
-	 * Register {@link BCLBiome} instance and its {@link Biome} if necessary.
-	 * After that biome will be added to BCLib Nether Biome Generator and into Fabric Biome API.
-	 * @param biome {@link BCLBiome}
-	 * @return {@link BCLBiome}
-	 */
-	public static BCLBiome registerNetherBiome(Biome biome) {
-		BCLBiome bclBiome = new BCLBiome(biome, null);
-		
-		NETHER_BIOME_PICKER.addBiome(bclBiome);
-		registerBiome(bclBiome);
-		return bclBiome;
 	}
 	
 	/**
@@ -365,6 +346,7 @@ public class BiomeAPI {
 	 * @return {@link BCLBiome} or {@code BiomeAPI.EMPTY_BIOME}.
 	 */
 	public static BCLBiome getBiome(ResourceLocation biomeID) {
+
 		return ID_MAP.getOrDefault(biomeID, EMPTY_BIOME);
 	}
 
@@ -399,15 +381,7 @@ public class BiomeAPI {
 	 * Load biomes from Fabric API. For internal usage only.
 	 */
 	public static void loadFabricAPIBiomes() {
-		FabricBiomesData.NETHER_BIOMES.forEach((key) -> {
-			if (!hasBiome(key.location())) {
-				Optional<Holder<Biome>> optional = BuiltinRegistries.BIOME.getHolder(key);
-				if (optional.isPresent()) {
-					registerNetherBiome(optional.get().value());
-				}
-			}
-		});
-		
+
 		FabricBiomesData.END_LAND_BIOMES.forEach((key, weight) -> {
 			if (!hasBiome(key.location())) {
 				Optional<Holder<Biome>> optional = BuiltinRegistries.BIOME.getHolder(key);
@@ -441,10 +415,6 @@ public class BiomeAPI {
 		return getFromRegistry(biomeID) == null;
 	}
 	
-	public static boolean isNetherBiome(ResourceLocation biomeID) {
-		return pickerHasBiome(NETHER_BIOME_PICKER, biomeID);
-	}
-	
 	public static boolean isEndBiome(ResourceLocation biomeID) {
 		return pickerHasBiome(END_LAND_BIOME_PICKER, biomeID) || pickerHasBiome(END_VOID_BIOME_PICKER, biomeID);
 	}
@@ -469,14 +439,6 @@ public class BiomeAPI {
 	 */
 	public static void registerOverworldBiomeModification(BiConsumer<ResourceLocation, Holder<Biome>> modification) {
 		registerBiomeModification(Level.OVERWORLD, modification);
-	}
-	
-	/**
-	 * Registers new biome modification for the Nether. Will work both for mod and datapack biomes.
-	 * @param modification {@link BiConsumer} with {@link ResourceLocation} biome ID and {@link Biome} parameters.
-	 */
-	public static void registerNetherBiomeModification(BiConsumer<ResourceLocation, Holder<Biome>> modification) {
-		registerBiomeModification(Level.NETHER, modification);
 	}
 	
 	/**
@@ -524,9 +486,9 @@ public class BiomeAPI {
 		// only use the default Setting for Nether/End if we were unable to find a settings object
 		if (noiseGeneratorSettings==null){
 			if (level.dimension() == Level.NETHER) {
-				noiseGeneratorSettings = BuiltinRegistries.NOISE_GENERATOR_SETTINGS.get(NoiseGeneratorSettings.NETHER);
+				noiseGeneratorSettings = NOISE_GENERATOR_SETTINGS.get(NoiseGeneratorSettings.NETHER);
 			} else if (level.dimension() == Level.END) {
-				noiseGeneratorSettings = BuiltinRegistries.NOISE_GENERATOR_SETTINGS.get(NoiseGeneratorSettings.END);
+				noiseGeneratorSettings = NOISE_GENERATOR_SETTINGS.get(NoiseGeneratorSettings.END);
 			}
 		}
 
@@ -692,7 +654,7 @@ public class BiomeAPI {
 	 */
 	public static void addSurfaceRule(ResourceLocation biomeID, RuleSource source) {
 		SURFACE_RULES.put(biomeID, source);
-		//NOISE_GENERATOR_SETTINGS.forEach(BiomeAPI::changeSurfaceRulesForGenerator);
+//		NOISE_GENERATOR_SETTINGS.forEach(BiomeAPI::changeSurfaceRulesForGenerator);
 	}
 	
 	/**
