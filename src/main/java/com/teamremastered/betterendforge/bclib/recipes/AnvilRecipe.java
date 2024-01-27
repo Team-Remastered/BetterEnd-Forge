@@ -28,6 +28,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistryEntry;
+import net.minecraftforge.registries.RegistryObject;
+
 import com.teamremastered.betterendforge.bclib.util.ItemUtil;
 import com.teamremastered.betterendforge.bclib.util.RecipeHelper;
 
@@ -36,10 +38,10 @@ import java.util.Objects;
 public class AnvilRecipe implements Recipe<Container>, UnknownReceipBookCategory {
 	public final static String GROUP = "smithing";
 	public final static RecipeType<AnvilRecipe> TYPE = BCLRecipeManager.registerType(BCLib.MOD_ID, GROUP);
-	public final static Serializer SERIALIZER = BCLRecipeManager.registerSerializer(
+	public final static RegistryObject<Serializer> SERIALIZER = BCLRecipeManager.registerSerializer(
 			BCLib.MOD_ID,
 			GROUP,
-			new Serializer()
+			Serializer::new
 	);
 	public final static ResourceLocation ID = BCLib.makeID(GROUP);
 
@@ -85,7 +87,7 @@ public class AnvilRecipe implements Recipe<Container>, UnknownReceipBookCategory
 
 	@Override
 	public RecipeSerializer<?> getSerializer() {
-		return SERIALIZER;
+		return SERIALIZER.get();
 	}
 
 	@Override

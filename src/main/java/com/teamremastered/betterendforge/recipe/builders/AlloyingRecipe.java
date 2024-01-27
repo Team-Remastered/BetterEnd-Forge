@@ -24,15 +24,17 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistryEntry;
+import net.minecraftforge.registries.RegistryObject;
+
 import com.teamremastered.betterendforge.registry.EndBlocks;
 
 public class AlloyingRecipe implements Recipe<Container>, UnknownReceipBookCategory {
 	public final static String GROUP = "alloying";
 	public final static RecipeType<AlloyingRecipe> TYPE = BCLRecipeManager.registerType(BetterEndForge.MOD_ID, GROUP);
-	public final static Serializer SERIALIZER = BCLRecipeManager.registerSerializer(
+	public final static RegistryObject<Serializer> SERIALIZER = BCLRecipeManager.registerSerializer(
 		BetterEndForge.MOD_ID,
 		GROUP,
-		new Serializer()
+		Serializer::new
 	);
 	
 	protected final RecipeType<?> type;
@@ -100,7 +102,7 @@ public class AlloyingRecipe implements Recipe<Container>, UnknownReceipBookCateg
 	
 	@Override
 	public RecipeSerializer<?> getSerializer() {
-		return SERIALIZER;
+		return SERIALIZER.get();
 	}
 	
 	@Override

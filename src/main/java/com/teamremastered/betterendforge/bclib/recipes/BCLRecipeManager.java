@@ -2,6 +2,7 @@ package com.teamremastered.betterendforge.bclib.recipes;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
+
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
@@ -11,6 +12,8 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.util.CollectionsUtil;
 
 import java.util.ArrayList;
@@ -20,11 +23,18 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.function.Function;
+import java.util.function.Supplier;
+
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class BCLRecipeManager {
 	private static final Map<RecipeType<?>, Map<ResourceLocation, Recipe<?>>> RECIPES = Maps.newHashMap();
 	private static final Map<RecipeType<?>, Object> SORTED = Maps.newHashMap();
 	private static final String MINECRAFT = "minecraft";
+	public static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, BetterEndForge.MOD_ID);
+
 	
 	public static <C extends Container, T extends Recipe<C>> Optional<T> getSortedRecipe(RecipeType<T> type, C inventory, Level level, Function<RecipeType<T>, Map<ResourceLocation, Recipe<C>>> getter) {
 		List<Recipe<C>> recipes = (List<Recipe<C>>) SORTED.computeIfAbsent(type, t -> {
@@ -79,8 +89,8 @@ public class BCLRecipeManager {
 		return result;
 	}
 	
-	public static <S extends RecipeSerializer<T>, T extends Recipe<?>> S registerSerializer(String modID, String id, S serializer) {
-		return Registry.register(Registry.RECIPE_SERIALIZER, modID + ":" + id, serializer);
+	public static <S extends RecipeSerializer<T>, T extends Recipe<?>> RegistryObject<S> registerSerializer(String modID, String id, Supplier<S> serializer) {
+		return RECIPE_SERIALIZERS.register(id, serializer);
 	}
 	
 	public static <T extends Recipe<?>> RecipeType<T> registerType(String modID, String type) {

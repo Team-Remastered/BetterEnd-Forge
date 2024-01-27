@@ -1,6 +1,7 @@
 package com.teamremastered.betterendforge.complexmaterials;
 
 import com.teamremastered.betterendforge.BetterEndForge;
+import com.teamremastered.betterendforge.bclib.api.tag.NamedBlockTags;
 import com.teamremastered.betterendforge.bclib.api.tag.TagAPI;
 import com.teamremastered.betterendforge.bclib.blocks.BaseBlock;
 import com.teamremastered.betterendforge.bclib.blocks.BaseChainBlock;
@@ -499,8 +500,8 @@ public class MetalMaterial {
         );
 
 
-//		TagAPI.addBlockTag(NamedBlockTags.ANVIL, anvilBlock.get());
-//		TagAPI.addBlockTag(NamedBlockTags.BEACON_BASE_BLOCKS, block.get());
+		TagAPI.addBlockTag(NamedBlockTags.ANVIL, anvilBlock.getId());
+		TagAPI.addBlockTag(NamedBlockTags.BEACON_BASE_BLOCKS, block.getId());
 //		TagAPI.addItemTag(NamedItemTags.BEACON_PAYMENT_ITEMS, ingot.get());
 //		TagAPI.addBlockTag(NamedCommonBlockTags.DRAGON_IMMUNE, ore.get(), bars.get());
     } //FIXME: Fix the recipes, they return NPE
