@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Blocks;
 import com.teamremastered.betterendforge.bclib.api.biomes.BiomeAPI;
 import com.teamremastered.betterendforge.mixin.common.bclib.DiggerItemAccessor;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.BiConsumer;
@@ -193,6 +194,10 @@ public class TagAPI {
 	public static void addBlockTag(TagLocation<Block> tagID, Block... blocks) {
 		addBlockTagUntyped(tagID, blocks);
 	}
+	
+	public static void addBlockTag(TagLocation<Block> tagID, ResourceLocation... blocks) {
+		addBlockTagUntyped(tagID, blocks);
+	}
 
 	/**
 	 * Adds one Tag to multiple Blocks.
@@ -209,11 +214,14 @@ public class TagAPI {
 	 * @param blocks array of {@link Block} to add into tag.
 	 */
 	protected static void addBlockTagUntyped(ResourceLocation tagID, Block... blocks) {
+		addBlockTagUntyped(tagID, Arrays.stream(blocks).map(b -> Registry.BLOCK.getKey(b)).toArray(ResourceLocation[]::new));
+	}
+	
+	protected static void addBlockTagUntyped(ResourceLocation tagID, ResourceLocation... blocks) {
 		Set<ResourceLocation> set = TAGS_BLOCK.computeIfAbsent(tagID, k -> Sets.newHashSet());
-		for (Block block : blocks) {
-			ResourceLocation id = Registry.BLOCK.getKey(block);
-			if (id != Registry.BLOCK.getDefaultKey()) {
-				set.add(id);
+		for (var block : blocks) {
+			if (block != Registry.BLOCK.getDefaultKey()) {
+				set.add(block);
 			}
 		}
 	}
