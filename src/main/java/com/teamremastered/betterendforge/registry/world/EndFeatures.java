@@ -109,7 +109,6 @@ public class EndFeatures {
 	public static final BCLFeature LUCERNIA = registerVegetation("lucernia", new LucerniaFeature(), 3);
 
 	// Bushes //
-	public static final BCLFeature PYTHADENDRON_BUSH = registerVegetation("pythadendron_bush", new BushFeature(EndBlocks.PYTHADENDRON_LEAVES.get(), EndBlocks.PYTHADENDRON.getBark()), 3);
 	public static final BCLFeature DRAGON_TREE_BUSH = registerVegetation("dragon_tree_bush", new BushFeature(EndBlocks.DRAGON_TREE_LEAVES.get(), EndBlocks.DRAGON_TREE.getBark()), 5);
 	public static final BCLFeature TENANEA_BUSH = registerVegetation("tenanea_bush", new TenaneaBushFeature(), 6);
 	public static final BCLFeature LUMECORN = registerVegetation("lumecorn", new Lumecorn(), 5);
@@ -119,41 +118,6 @@ public class EndFeatures {
 	public static final BCLFeature NEON_CACTUS = registerVegetation("neon_cactus", new NeonCactusFeature(), 2);
 
 	// Plants //
-	public static final BCLFeature CHORUS_GRASS = registerVegetation("chorus_grass", new SinglePlantFeature(EndBlocks.CHORUS_GRASS.get(), 4), 3);
-	public static final BCLFeature CRYSTAL_GRASS = registerVegetation("crystal_grass", new SinglePlantFeature(EndBlocks.CRYSTAL_GRASS.get(), 8, false), 5);
-	public static final BCLFeature SHADOW_PLANT = registerVegetation("shadow_plant", new SinglePlantFeature(EndBlocks.SHADOW_PLANT.get(), 6), 5);
-	public static final BCLFeature MURKWEED = registerVegetation("murkweed", new SinglePlantFeature(EndBlocks.MURKWEED.get(), 3), 2);
-	public static final BCLFeature NEEDLEGRASS = registerVegetation("needlegrass", new SinglePlantFeature(EndBlocks.NEEDLEGRASS.get(), 3), 1);
-	public static final BCLFeature SHADOW_BERRY = registerVegetation("shadow_berry", new SinglePlantFeature(EndBlocks.SHADOW_BERRY.get(), 2), 1);
-	public static final BCLFeature BUSHY_GRASS = registerVegetation("bushy_grass", new SinglePlantFeature(EndBlocks.BUSHY_GRASS.get(), 8, false), 10);
-	public static final BCLFeature BUSHY_GRASS_WG = registerVegetation("bushy_grass_wg", new SinglePlantFeature(EndBlocks.BUSHY_GRASS.get(), 5), 8);
-	public static final BCLFeature AMBER_GRASS = registerVegetation("amber_grass", new SinglePlantFeature(EndBlocks.AMBER_GRASS.get(), 6), 7);
-	public static final BCLFeature LANCELEAF = registerVegetation("lanceleaf", new LanceleafFeature(), 2);
-	public static final BCLFeature GLOW_PILLAR = registerVegetation("glow_pillar", new GlowPillarFeature(), 1);
-	public static final BCLFeature TWISTED_UMBRELLA_MOSS = registerVegetation("twisted_umbrella_moss", new DoublePlantFeature(EndBlocks.TWISTED_UMBRELLA_MOSS.get(), EndBlocks.TWISTED_UMBRELLA_MOSS_TALL.get(), 6), 3);
-	public static final BCLFeature JUNGLE_GRASS = registerVegetation("jungle_grass", new SinglePlantFeature(EndBlocks.JUNGLE_GRASS.get(), 7, 3), 6);
-	public static final BCLFeature SMALL_JELLYSHROOM_FLOOR = registerVegetation("small_jellyshroom_floor", new SinglePlantFeature(EndBlocks.SMALL_JELLYSHROOM.get(), 5, 5), 2);
-	public static final BCLFeature BLOSSOM_BERRY = registerVegetation("blossom_berry", new SinglePlantFeature(EndBlocks.BLOSSOM_BERRY.get(), 3, 3), 2);
-	public static final BCLFeature BLOOMING_COOKSONIA = registerVegetation("blooming_cooksonia", new SinglePlantFeature(EndBlocks.BLOOMING_COOKSONIA.get(), 5), 5);
-	public static final BCLFeature SALTEAGO = registerVegetation("salteago", new SinglePlantFeature(EndBlocks.SALTEAGO.get(), 5), 5);
-	public static final BCLFeature VAIOLUSH_FERN = registerVegetation("vaiolush_fern", new SinglePlantFeature(EndBlocks.VAIOLUSH_FERN.get(), 5), 5);
-	public static final BCLFeature FRACTURN = registerVegetation("fracturn", new SinglePlantFeature(EndBlocks.FRACTURN.get(), 5), 5);
-	public static final BCLFeature UMBRELLA_MOSS_RARE = registerVegetation("umbrella_moss_rare", new SinglePlantFeature(EndBlocks.UMBRELLA_MOSS.get(), 3), 2);
-	public static final BCLFeature CREEPING_MOSS_RARE = registerVegetation("creeping_moss_rare", new SinglePlantFeature(EndBlocks.CREEPING_MOSS.get(), 3), 2);
-	public static final BCLFeature TWISTED_UMBRELLA_MOSS_RARE = registerVegetation("twisted_umbrella_moss_rare", new SinglePlantFeature(EndBlocks.TWISTED_UMBRELLA_MOSS.get(), 3), 2);
-	public static final BCLFeature ORANGO = registerVegetation("orango", new SinglePlantFeature(EndBlocks.ORANGO.get(), 5), 6);
-	public static final BCLFeature AERIDIUM = registerVegetation("aeridium", new SinglePlantFeature(EndBlocks.AERIDIUM.get(), 5, 4), 5);
-	public static final BCLFeature LUTEBUS = registerVegetation("lutebus", new SinglePlantFeature(EndBlocks.LUTEBUS.get(), 5, 2), 5);
-	public static final BCLFeature LAMELLARIUM = registerVegetation("lamellarium", new SinglePlantFeature(EndBlocks.LAMELLARIUM.get(), 5), 6);
-	public static final BCLFeature SMALL_AMARANITA = registerVegetation("small_amaranita", new SinglePlantFeature(EndBlocks.SMALL_AMARANITA_MUSHROOM.get(), 5, 5), 4);
-	public static final BCLFeature GLOBULAGUS = registerVegetation("globulagus", new SinglePlantFeature(EndBlocks.GLOBULAGUS.get(), 5, 3), 6);
-	public static final BCLFeature CLAWFERN = registerVegetation("clawfern", new SinglePlantFeature(EndBlocks.CLAWFERN.get(), 5, 4), 5);
-	public static final BCLFeature BOLUX_MUSHROOM = registerVegetation("bolux_mushroom", new SinglePlantFeature(EndBlocks.BOLUX_MUSHROOM.get(), 5, 5), 2);
-	public static final BCLFeature CHORUS_MUSHROOM = registerVegetation("chorus_mushroom", new SinglePlantFeature(EndBlocks.CHORUS_MUSHROOM.get(), 3, 5), 1);
-	public static final BCLFeature AMBER_ROOT = registerVegetation("amber_root", new SinglePlantFeature(EndBlocks.AMBER_ROOT.get(), 5, 5), 1);
-	//public static final BCLFeature PEARLBERRY = redisterVegetation("pearlberry", new SinglePlantFeature(EndBlocks.PEARLBERRY, 5, 5), 1);
-	public static final BCLFeature INFLEXIA = registerVegetation("inflexia", new SinglePlantFeature(EndBlocks.INFLEXIA.get(), 7, false, 3), 16);
-	public static final BCLFeature FLAMMALIX = registerVegetation("flammalix", new SinglePlantFeature(EndBlocks.FLAMMALIX.get(), 3, false, 7), 5);
 
 	// Vines //
 	public static final BCLFeature TWISTED_VINE = registerVegetation("twisted_vine", new VineFeature(EndBlocks.TWISTED_VINE.get(), 24), 1);
@@ -164,10 +128,7 @@ public class EndFeatures {
 	public static final BCLFeature SMALL_JELLYSHROOM_CEIL = registerVegetation("small_jellyshroom_ceil", new SingleInvertedScatterFeature(EndBlocks.SMALL_JELLYSHROOM.get(), 8), 8);
 
 	// Wall Plants //
-	public static final BCLFeature PURPLE_POLYPORE = registerVegetation("purple_polypore", new WallPlantOnLogFeature(EndBlocks.PURPLE_POLYPORE.get(), 3), 5);
 //	public static final BCLFeature AURANT_POLYPORE = registerVegetation("aurant_polypore", new WallPlantOnLogFeature(EndBlocks.AURANT_POLYPORE.get(), 3), 5);
-	public static final BCLFeature TAIL_MOSS = registerVegetation("tail_moss", new WallPlantFeature(EndBlocks.TAIL_MOSS.get(), 3), 15);
-	public static final BCLFeature TAIL_MOSS_WOOD = registerVegetation("tail_moss_wood", new WallPlantOnLogFeature(EndBlocks.TAIL_MOSS.get(), 4), 25);
 	public static final BCLFeature TWISTED_MOSS = registerVegetation("twisted_moss", new WallPlantFeature(EndBlocks.TWISTED_MOSS.get(), 6), 15);
 	public static final BCLFeature TWISTED_MOSS_WOOD = registerVegetation("twisted_moss_wood", new WallPlantOnLogFeature(EndBlocks.TWISTED_MOSS.get(), 6), 25);
 	public static final BCLFeature BULB_MOSS = registerVegetation("bulb_moss", new WallPlantFeature(EndBlocks.BULB_MOSS.get(), 6), 1);
@@ -182,24 +143,9 @@ public class EndFeatures {
 	public static final BCLFeature FILALUX = registerVegetation("filalux", new FilaluxFeature(), 1);
 
 	// Water //
-	public static final BCLFeature BUBBLE_CORAL_RARE = registerVegetation("bubble_coral_rare", new UnderwaterPlantFeature(EndBlocks.BUBBLE_CORAL.get(), 3), 4);
-	public static final BCLFeature END_LILY_RARE = registerVegetation("end_lily_rare", new EndLilyFeature(3), 4);
-	public static final BCLFeature END_LOTUS = registerVegetation("end_lotus", new EndLotusFeature(7), 5);
-	public static final BCLFeature END_LOTUS_LEAF = registerVegetation("end_lotus_leaf", new EndLotusLeafFeature(20), 25);
-	public static final BCLFeature HYDRALUX = registerVegetation("hydralux", new HydraluxFeature(5), 5);
-	public static final BCLFeature POND_ANEMONE = registerVegetation("pond_anemone", new UnderwaterPlantFeature(EndBlocks.POND_ANEMONE.get(), 6), 10);
-
-	public static final BCLFeature CHARNIA_RED = registerVegetation("charnia_red", new CharniaFeature(EndBlocks.CHARNIA_RED.get()), 10);
-	public static final BCLFeature CHARNIA_PURPLE = registerVegetation("charnia_purple", new CharniaFeature(EndBlocks.CHARNIA_PURPLE.get()), 10);
-	public static final BCLFeature CHARNIA_ORANGE = registerVegetation("charnia_orange", new CharniaFeature(EndBlocks.CHARNIA_ORANGE.get()), 10);
-	public static final BCLFeature CHARNIA_GREEN = registerVegetation("charnia_green", new CharniaFeature(EndBlocks.CHARNIA_GREEN.get()), 10);
-	public static final BCLFeature MENGER_SPONGE = registerVegetation("menger_sponge", new MengerSpongeFeature(5), 1);
-	public static final BCLFeature BIOME_ISLAND = BCLFeatureBuilder.start(BetterEndForge.makeID("overworld_island"), new BiomeIslandFeature()).decoration(Decoration.RAW_GENERATION).build();
-	public static final BCLFeature FLAMAEA = registerVegetation("flamaea", new SinglePlantFeature(EndBlocks.FLAMAEA.get(), 12, false, 5), 20);
 
 	// Terrain //
 	public static final BCLFeature END_LAKE_NORMAL = registerLake("end_lake_normal", new EndLakeFeature(), 20);
-	public static final BCLFeature END_LAKE_RARE = registerLake("end_lake_rare", new EndLakeFeature(), 40);
 	public static final BCLFeature DESERT_LAKE = registerLake("desert_lake", new DesertLakeFeature(), 8);
 	public static final BCLFeature ROUND_CAVE = registerRawGen("round_cave", new RoundCaveFeature(), 2);
 	public static final BCLFeature SPIRE = registerRawGen("spire", new SpireFeature(), 4);
