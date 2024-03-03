@@ -3,6 +3,7 @@ package com.teamremastered.betterendforge.integration.byg.biomes;
 import com.teamremastered.betterendforge.bclib.BCLib;
 import com.teamremastered.betterendforge.bclib.api.biomes.BCLBiomeBuilder;
 import com.teamremastered.betterendforge.registry.world.EndFeatures;
+import com.teamremastered.betterendforge.registry.world.TempEndFeatures;
 import com.teamremastered.betterendforge.world.biome.EndBiome;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
@@ -43,7 +44,7 @@ public class NightshadeRedwoods extends EndBiome.Config {
 //							   .get())
 			   .grassColor(48, 13, 89)
 			   .plantsColor(200, 125, 9)
-			   .feature(EndFeatures.END_LAKE_RARE)
+//			   .feature(TempEndFeatures.END_LAKE_RARE.get()) //FIXME: asks for a BCLFeature, convert to a vanilla feature
 			   .feature(BYGFeatures.NIGHTSHADE_REDWOOD_TREE)
 			   .feature(BYGFeatures.NIGHTSHADE_MOSS_WOOD)
 			   .feature(BYGFeatures.NIGHTSHADE_MOSS);

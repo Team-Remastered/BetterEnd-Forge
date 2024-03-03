@@ -3,6 +3,7 @@ package com.teamremastered.betterendforge.integration.byg.biomes;
 import com.teamremastered.betterendforge.bclib.BCLib;
 import com.teamremastered.betterendforge.bclib.api.biomes.BCLBiomeBuilder;
 import com.teamremastered.betterendforge.registry.world.EndFeatures;
+import com.teamremastered.betterendforge.registry.world.TempEndFeatures;
 import com.teamremastered.betterendforge.world.biome.EndBiome;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
@@ -49,7 +50,7 @@ public class OldBulbisGardens extends EndBiome.Config {
 			   )
 			   //TODO: 1.18 surface rules
 			   //.surface(ivis, origin)
-			   .feature(EndFeatures.END_LAKE_RARE)
+//			   .feature(TempEndFeatures.END_LAKE_RARE.get())
 			   .feature(BYGFeatures.OLD_BULBIS_TREE);
 
 		if (BCLib.isClient()) {
@@ -110,10 +111,10 @@ public class OldBulbisGardens extends EndBiome.Config {
 //			}
 		}
 
-		builder.feature(EndFeatures.PURPLE_POLYPORE)
-			   .feature(BYGFeatures.IVIS_MOSS_WOOD)
-			   .feature(BYGFeatures.IVIS_MOSS)
-			   .feature(BYGFeatures.IVIS_VINE)
-			   .feature(BYGFeatures.IVIS_SPROUT);
+//		builder.feature(TempEndFeatures.PURPLE_POLYPORE.get())
+//			   .feature(BYGFeatures.IVIS_MOSS_WOOD)
+//			   .feature(BYGFeatures.IVIS_MOSS)
+//			   .feature(BYGFeatures.IVIS_VINE)
+//			   .feature(BYGFeatures.IVIS_SPROUT);
 	}
 }

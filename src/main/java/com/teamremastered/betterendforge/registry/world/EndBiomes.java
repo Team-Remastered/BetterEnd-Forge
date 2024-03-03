@@ -29,7 +29,7 @@ public class EndBiomes {
 	public static final RegistryObject<Biome> FOGGY_MUSHROOMLAND = registerBiome("foggy_mushroomland", EndBiomeCreator::FoggyMushroomlandBiome);
 	public static final RegistryObject<Biome> CHORUS_FOREST = registerBiome("chorus_forest", EndBiomeCreator::ChorusForestBiome);
 
-		public static final RegistryObject<Biome> DUST_WASTELANDS = registerBiome("dust_wastelands", EndBiomeCreator::DustWastelands);
+	public static final RegistryObject<Biome> DUST_WASTELANDS = registerBiome("dust_wastelands", EndBiomeCreator::DustWastelands);
 	public static final RegistryObject<Biome> MEGALAKE = registerBiome("megalake", EndBiomeCreator::MegalakeBiome);
 
 	//FIXME: Convert to sub biome

@@ -1,25 +1,10 @@
 package com.teamremastered.betterendforge.registry;
 
 import com.teamremastered.betterendforge.BetterEndForge;
-import com.teamremastered.betterendforge.bclib.blocks.BaseFurnaceBlock;
-import com.teamremastered.betterendforge.bclib.blocks.BaseOreBlock;
-import com.teamremastered.betterendforge.bclib.blocks.BasePathBlock;
-import com.teamremastered.betterendforge.bclib.blocks.BaseRotatedPillarBlock;
-import com.teamremastered.betterendforge.bclib.blocks.BaseSlabBlock;
-import com.teamremastered.betterendforge.bclib.blocks.BaseStairsBlock;
-import com.teamremastered.betterendforge.bclib.blocks.BaseVineBlock;
-import com.teamremastered.betterendforge.bclib.blocks.SimpleLeavesBlock;
-import com.teamremastered.betterendforge.bclib.blocks.StalactiteBlock;
+import com.teamremastered.betterendforge.bclib.blocks.*;
 import com.teamremastered.betterendforge.bclib.registry.BlockRegistry;
 import com.teamremastered.betterendforge.blocks.*;
-import com.teamremastered.betterendforge.blocks.basis.EndTerrainBlock;
-import com.teamremastered.betterendforge.blocks.basis.EndTripleTerrain;
-import com.teamremastered.betterendforge.blocks.basis.EndUnderwaterWallPlantBlock;
-import com.teamremastered.betterendforge.blocks.basis.EndWallMushroom;
-import com.teamremastered.betterendforge.blocks.basis.EndWallPlantBlock;
-import com.teamremastered.betterendforge.blocks.basis.FurBlock;
-import com.teamremastered.betterendforge.blocks.basis.PottableLeavesBlock;
-import com.teamremastered.betterendforge.blocks.basis.StoneLanternBlock;
+import com.teamremastered.betterendforge.blocks.basis.*;
 import com.teamremastered.betterendforge.item.material.EndArmorMaterial;
 import com.teamremastered.betterendforge.item.material.EndToolMaterial;
 import com.teamremastered.betterendforge.tab.CreativeTabs;
@@ -277,10 +262,12 @@ public class EndBlocks {
 	public static final RegistryObject<Block> NEON_CACTUS_BLOCK_SLAB = registerBlock("neon_cactus_slab",  () -> new BaseSlabBlock(NEON_CACTUS_BLOCK.get()));
 	
 	// Crops
-	public static final RegistryObject<Block> SHADOW_BERRY = registerFixLaterBlock("shadow_berry");
-	public static final RegistryObject<Block> BLOSSOM_BERRY = registerFixLaterBlock("blossom_berry_seed");
-	public static final RegistryObject<Block> AMBER_ROOT = registerFixLaterBlock("amber_root_seed");
-	public static final RegistryObject<Block> CHORUS_MUSHROOM = registerFixLaterBlock("chorus_mushroom_seed");
+	//FIXME: Make the crops usable
+	public static final RegistryObject<Block> SHADOW_BERRY = registerBlock("shadow_berry", () -> new EndPlantBlock());
+	public static final RegistryObject<Block> BLOSSOM_BERRY = registerBlock("blossom_berry_seed", () -> new EndPlantBlock());
+	public static final RegistryObject<Block> AMBER_ROOT = registerBlock("amber_root_seed", () -> new EndPlantBlock());
+	public static final RegistryObject<Block> CHORUS_MUSHROOM = registerBlock("chorus_mushroom_seed",  () -> new EndPlantBlock());
+
 
 	//public static final RegistryObject<Block> PEARLBERRY = registerBlock("pearlberry_seed",  () -> new PottableCropBlock(EndItems.BLOSSOM_BERRY, END_MOSS, END_MYCELIUM));
 	public static final RegistryObject<Block> CAVE_PUMPKIN_SEED = registerBlock("cave_pumpkin_seed",  () -> new CavePumpkinVineBlock());
