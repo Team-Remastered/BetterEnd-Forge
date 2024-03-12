@@ -26,8 +26,8 @@ public class BiomeIceStarfield extends EndBiome.Config {
 			   .foliageColor(193, 244, 244)
 			   .genChance(0.25F)
 			   .particles(EndParticles.SNOWFLAKE.get(), 0.002F)
-			   .feature(EndFeatures.ICE_STAR)
-			   .feature(EndFeatures.ICE_STAR_SMALL)
+//			   .feature(EndFeatures.ICE_STAR)
+//			   .feature(EndFeatures.ICE_STAR_SMALL)
 			   .spawn(EntityType.ENDERMAN, 20, 1, 4);
 	}
 }

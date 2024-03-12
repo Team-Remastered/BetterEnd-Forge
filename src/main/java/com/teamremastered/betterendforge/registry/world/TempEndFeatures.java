@@ -1,15 +1,18 @@
 package com.teamremastered.betterendforge.registry.world;
 
 import com.teamremastered.betterendforge.BetterEndForge;
+import com.teamremastered.betterendforge.bclib.api.features.BCLCommonFeatures;
 import com.teamremastered.betterendforge.bclib.api.features.BCLFeatureBuilder;
 import com.teamremastered.betterendforge.bclib.world.features.BCLFeature;
 import com.teamremastered.betterendforge.bclib.world.features.DefaultFeature;
 import com.teamremastered.betterendforge.registry.EndBlocks;
+import com.teamremastered.betterendforge.world.biome.land.UmbraValleyBiome;
 import com.teamremastered.betterendforge.world.features.*;
-import com.teamremastered.betterendforge.world.features.bushes.BushFeature;
-import com.teamremastered.betterendforge.world.features.terrain.EndLakeFeature;
-import com.teamremastered.betterendforge.world.features.trees.MossyGlowshroomFeature;
-import com.teamremastered.betterendforge.world.features.trees.PythadendronTreeFeature;
+import com.teamremastered.betterendforge.world.features.bushes.*;
+import com.teamremastered.betterendforge.world.features.terrain.*;
+import com.teamremastered.betterendforge.world.features.terrain.caves.RoundCaveFeature;
+import com.teamremastered.betterendforge.world.features.terrain.caves.TunelCaveFeature;
+import com.teamremastered.betterendforge.world.features.trees.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -28,6 +31,15 @@ public class TempEndFeatures {
     /** TREES **/
     public static final RegistryObject<DefaultFeature> MOSSY_GLOWSHROOM = FEATURES.register("mossy_glowshroom", MossyGlowshroomFeature::new);
     public static final RegistryObject<DefaultFeature> PYTHADENDRON_TREE = FEATURES.register("pythadendron_tree", PythadendronTreeFeature::new);
+
+    public static final RegistryObject<DefaultFeature> LACUGROVE = FEATURES.register("lacugrove", LacugroveFeature::new);
+    public static final RegistryObject<DefaultFeature> DRAGON_TREE = FEATURES.register("dragon_tree", DragonTreeFeature::new);
+    public static final RegistryObject<DefaultFeature> TENANEA = FEATURES.register("tenanea", TenaneaFeature::new);
+    public static final RegistryObject<DefaultFeature> HELIX_TREE = FEATURES.register("helix_tree", HelixTreeFeature::new);
+    public static final RegistryObject<DefaultFeature> UMBRELLA_TREE = FEATURES.register("umbrella_tree", UmbrellaTreeFeature::new);
+    public static final RegistryObject<DefaultFeature> JELLYSHROOM = FEATURES.register("jellyshroom", JellyshroomFeature::new);
+    public static final RegistryObject<DefaultFeature> GIGANTIC_AMARANITA = FEATURES.register("gigantic_amaranita", GiganticAmaranitaFeature::new);
+    public static final RegistryObject<DefaultFeature> LUCERNIA = FEATURES.register("lucernia", LucerniaFeature::new);
 
     /** FLOWERS **/
     public static final RegistryObject<ScatterFeature> CREEPING_MOSS = FEATURES.register("creeping_moss", () -> new SinglePlantFeature(EndBlocks.CREEPING_MOSS.get(), 5));
@@ -71,6 +83,13 @@ public class TempEndFeatures {
 
     /** BUSHES **/
     public static final RegistryObject<BushFeature> PYTHADENDRON_BUSH = FEATURES.register("pythadendron_bush", () -> new BushFeature(EndBlocks.PYTHADENDRON_LEAVES.get(), EndBlocks.PYTHADENDRON.getBark()));
+    public static final RegistryObject<BushFeature> DRAGON_TREE_BUSH = FEATURES.register("dragon_tree_bush", () -> new BushFeature(EndBlocks.DRAGON_TREE_LEAVES.get(), EndBlocks.DRAGON_TREE.getBark()));
+    public static final RegistryObject<TenaneaBushFeature> TENANEA_BUSH = FEATURES.register("tenanea_bush", TenaneaBushFeature::new);
+    public static final RegistryObject<Lumecorn> LUMECORN = FEATURES.register("lumecorn", Lumecorn::new);
+    public static final RegistryObject<LargeAmaranitaFeature> LARGE_AMARANITA = FEATURES.register("large_amaranita", LargeAmaranitaFeature::new);
+    public static final RegistryObject<BushWithOuterFeature> LUCERNIA_BUSH = FEATURES.register("lucernia_bush", () -> new BushWithOuterFeature(EndBlocks.LUCERNIA_LEAVES.get(), EndBlocks.LUCERNIA_OUTER_LEAVES.get(), EndBlocks.LUCERNIA.getBark()));
+    public static final RegistryObject<BushWithOuterFeature> LUCERNIA_BUSH_RARE = FEATURES.register("lucernia_bush_rare", () -> new BushWithOuterFeature(EndBlocks.LUCERNIA_LEAVES.get(), EndBlocks.LUCERNIA_OUTER_LEAVES.get(), EndBlocks.LUCERNIA.getBark()));
+    public static final RegistryObject<NeonCactusFeature> NEON_CACTUS = FEATURES.register("neon_cactus", NeonCactusFeature::new);
 
     /** WALL PLANTS **/
     public static final RegistryObject<WallPlantFeature>  TAIL_MOSS = FEATURES.register("tail_moss", () -> new WallPlantFeature(EndBlocks.TAIL_MOSS.get(), 3));
@@ -79,6 +98,15 @@ public class TempEndFeatures {
     public static final RegistryObject<WallPlantFeature> PURPLE_POLYPORE = FEATURES.register("purple_polypore", () -> new WallPlantOnLogFeature(EndBlocks.PURPLE_POLYPORE.get(), 3));
     public static final RegistryObject<WallPlantFeature> CYAN_MOSS = FEATURES.register("cyan_moss", () -> new WallPlantFeature(EndBlocks.CYAN_MOSS.get(), 3));
     public static final RegistryObject<WallPlantFeature> CYAN_MOSS_WOOD = FEATURES.register("cyan_moss_wood", () -> new WallPlantOnLogFeature(EndBlocks.CYAN_MOSS.get(), 4));
+    public static final RegistryObject<WallPlantFeature> TWISTED_MOSS = FEATURES.register("twisted_moss", () -> new WallPlantFeature(EndBlocks.TWISTED_MOSS.get(), 6));
+    public static final RegistryObject<WallPlantOnLogFeature> TWISTED_MOSS_WOOD = FEATURES.register("twisted_moss_wood", () -> new WallPlantOnLogFeature(EndBlocks.TWISTED_MOSS.get(), 6));
+    public static final RegistryObject<WallPlantFeature> BULB_MOSS = FEATURES.register("bulb_moss", () -> new WallPlantFeature(EndBlocks.BULB_MOSS.get(), 6));
+    public static final RegistryObject<WallPlantOnLogFeature> BULB_MOSS_WOOD = FEATURES.register("bulb_moss_wood", () -> new WallPlantOnLogFeature(EndBlocks.BULB_MOSS.get(), 6));
+    public static final RegistryObject<WallPlantFeature> SMALL_JELLYSHROOM_WALL = FEATURES.register("small_jellyshroom_wall",  () ->new WallPlantFeature(EndBlocks.SMALL_JELLYSHROOM.get(), 4));
+    public static final RegistryObject<WallPlantOnLogFeature> SMALL_JELLYSHROOM_WOOD = FEATURES.register("small_jellyshroom_wood", () -> new WallPlantOnLogFeature(EndBlocks.SMALL_JELLYSHROOM.get(), 4));
+    public static final RegistryObject<WallPlantOnLogFeature> JUNGLE_FERN_WOOD = FEATURES.register("jungle_fern_wood", () -> new WallPlantOnLogFeature(EndBlocks.JUNGLE_FERN.get(), 3));
+    public static final RegistryObject<WallPlantFeature> RUSCUS = FEATURES.register("ruscus", () -> new WallPlantFeature(EndBlocks.RUSCUS.get(), 6));
+    public static final RegistryObject<WallPlantOnLogFeature> RUSCUS_WOOD = FEATURES.register("ruscus_wood", () -> new WallPlantOnLogFeature(EndBlocks.RUSCUS.get(), 6));
 
     /** WATER **/
     public static final RegistryObject<EndLotusFeature> END_LOTUS = FEATURES.register("end_lotus", () -> new EndLotusFeature(7));
@@ -106,10 +134,45 @@ public class TempEndFeatures {
     /** VINES **/
     public static final RegistryObject<BlueVineFeature> BLUE_VINE = FEATURES.register("blue_vine", () -> new BlueVineFeature());
     public static final RegistryObject<VineFeature> DENSE_VINE = FEATURES.register("dense_vine", () -> new VineFeature(EndBlocks.DENSE_VINE.get(),24));
+    public static final RegistryObject<VineFeature> TWISTED_VINE = FEATURES.register("twisted_vine", () -> new VineFeature(EndBlocks.TWISTED_VINE.get(), 24));
+    public static final RegistryObject<VineFeature> BULB_VINE = FEATURES.register("bulb_vine", () -> new VineFeature(EndBlocks.BULB_VINE.get(), 24));
+    public static final RegistryObject<VineFeature> JUNGLE_VINE = FEATURES.register("jungle_vine", () -> new VineFeature(EndBlocks.JUNGLE_VINE.get(), 24));
 
     /** LAKES **/
     public static final RegistryObject<EndLakeFeature> END_LAKE = FEATURES.register("end_lake", () -> new EndLakeFeature());
     public static final RegistryObject<EndLakeFeature> END_LAKE_RARE = FEATURES.register("end_lake_rare", () -> new EndLakeFeature());
+
+    /** TERRAIN **/
+    public static final RegistryObject<EndLakeFeature> END_LAKE_NORMAL = FEATURES.register("end_lake_normal", EndLakeFeature::new);
+    public static final RegistryObject<DesertLakeFeature> DESERT_LAKE = FEATURES.register("desert_lake", DesertLakeFeature::new);
+    public static final RegistryObject<RoundCaveFeature> ROUND_CAVE = FEATURES.register("round_cave", RoundCaveFeature::new);
+    public static final RegistryObject<SpireFeature> SPIRE = FEATURES.register("spire", SpireFeature::new);
+    public static final RegistryObject<FloatingSpireFeature> FLOATING_SPIRE = FEATURES.register("floating_spire", FloatingSpireFeature::new);
+    public static final RegistryObject<GeyserFeature> GEYSER = FEATURES.register("geyser", GeyserFeature::new);
+    public static final RegistryObject<SulphuricLakeFeature> SULPHURIC_LAKE = FEATURES.register("sulphuric_lake", SulphuricLakeFeature::new);
+//    public static final RegistryObject<SulphuricCaveFeature> SULPHURIC_CAVE = BCLCommonFeatures.makeCountFeature(BetterEndForge.makeID("sulphuric_cave"), GenerationStep.Decoration.RAW_GENERATION, new SulphuricCaveFeature());
+    public static final RegistryObject<IceStarFeature> ICE_STAR = FEATURES.register("ice_star", () -> new IceStarFeature(5, 15, 10, 25));
+    public static final RegistryObject<IceStarFeature> ICE_STAR_SMALL = FEATURES.register("ice_star_small", () -> new IceStarFeature(3, 5, 7, 12));
+    public static final RegistryObject<SurfaceVentFeature> SURFACE_VENT = FEATURES.register("surface_vent", SurfaceVentFeature::new);
+    public static final RegistryObject<SulphurHillFeature> SULPHUR_HILL = FEATURES.register("sulphur_hill", SulphurHillFeature::new);
+    public static final RegistryObject<ObsidianPillarBasementFeature> OBSIDIAN_PILLAR_BASEMENT = FEATURES.register("obsidian_pillar_basement", ObsidianPillarBasementFeature::new);
+    public static final RegistryObject<ObsidianBoulderFeature> OBSIDIAN_BOULDER = FEATURES.register("obsidian_boulder", ObsidianBoulderFeature::new);
+    public static final RegistryObject<FallenPillarFeature> FALLEN_PILLAR = FEATURES.register("fallen_pillar", FallenPillarFeature::new);
+    // public static final RegistryObject<TunelCaveFeature> TUNEL_CAVE = BCLCommonFeatures.makeChunkFeature(BetterEndForge.makeID("tunel_cave"), GenerationStep.Decoration.RAW_GENERATION, new TunelCaveFeature());
+    public static final RegistryObject<ArchFeature> UMBRALITH_ARCH = FEATURES.register("umbralith_arch", () -> new ArchFeature(
+            EndBlocks.UMBRALITH.stone.get(), pos -> UmbraValleyBiome.getSurface(pos.getX(), pos.getZ()).defaultBlockState()));
+
+    /** CEIL PLANTS **/
+    public static final RegistryObject<SingleInvertedScatterFeature> SMALL_JELLYSHROOM_CEIL = FEATURES.register("small_jellyshroom_ceil", () -> new SingleInvertedScatterFeature(EndBlocks.SMALL_JELLYSHROOM.get(), 8));
+
+    /** SKY PLANTS **/
+    public static final RegistryObject<FilaluxFeature> FILALUX = FEATURES.register("filalux", FilaluxFeature::new);
+
+    /** BUILDING **/
+    public static final RegistryObject<CrashedShipFeature> CRASHED_SHIP = FEATURES.register("crashed_ship", CrashedShipFeature::new);
+
+    /** MOBS **/
+    public static final RegistryObject<SilkMothNestFeature> SILK_MOTH_NEST = FEATURES.register("silk_moth_nest", SilkMothNestFeature::new);
 
     /** ORES **/
 

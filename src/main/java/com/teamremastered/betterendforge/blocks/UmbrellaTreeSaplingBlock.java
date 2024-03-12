@@ -1,6 +1,7 @@
 package com.teamremastered.betterendforge.blocks;
 
 import com.teamremastered.betterendforge.bclib.client.render.BCLRenderLayer;
+import com.teamremastered.betterendforge.registry.world.TempEndFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -11,7 +12,7 @@ import com.teamremastered.betterendforge.registry.world.EndFeatures;
 
 public class UmbrellaTreeSaplingBlock extends PottableFeatureSapling {
 	public UmbrellaTreeSaplingBlock() {
-		super((state)-> EndFeatures.UMBRELLA_TREE.getFeature());
+		super((state)-> TempEndFeatures.UMBRELLA_TREE.get());
 	}
 
 	@Override

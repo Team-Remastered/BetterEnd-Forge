@@ -32,6 +32,30 @@ public class EndConfiguredFeatures {
     public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> PYTHADENDRON_TREE =
             registerNoneFeatureConfiguration("pythadendron_tree_spawn", TempEndFeatures.PYTHADENDRON_TREE.get());
 
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> LACUGROVE =
+            registerNoneFeatureConfiguration("lacugrove_tree_spawn", TempEndFeatures.LACUGROVE.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> DRAGON_TREE =
+            registerNoneFeatureConfiguration("dragon_tree_spawn", TempEndFeatures.DRAGON_TREE.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TENANEA =
+            registerNoneFeatureConfiguration("tenanea_tree_spawn", TempEndFeatures.TENANEA.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> HELIX_TREE =
+            registerNoneFeatureConfiguration("helix_tree_spawn", TempEndFeatures.HELIX_TREE.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> UMBRELLA_TREE =
+            registerNoneFeatureConfiguration("umbrella_tree_spawn", TempEndFeatures.UMBRELLA_TREE.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> JELLYSHROOM =
+            registerNoneFeatureConfiguration("jellyshroom_tree_spawn", TempEndFeatures.JELLYSHROOM.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> GIGANTIC_AMARANITA =
+            registerNoneFeatureConfiguration("gigantic_amaranita_tree_spawn", TempEndFeatures.GIGANTIC_AMARANITA.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> LUCERNIA =
+            registerNoneFeatureConfiguration("lucernia_tree_spawn", TempEndFeatures.LUCERNIA.get());
+
     /** FLOWERS **/
 
     public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> CREEPING_MOSS =
@@ -146,6 +170,27 @@ public class EndConfiguredFeatures {
     public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> PYTHADENDRON_BUSH =
             registerNoneFeatureConfiguration("pythadendron_bush_spawn", TempEndFeatures.PYTHADENDRON_BUSH.get());
 
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> DRAGON_TREE_BUSH =
+            registerNoneFeatureConfiguration("dragon_tree_bush_spawn", TempEndFeatures.DRAGON_TREE_BUSH.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TENANEA_BUSH =
+            registerNoneFeatureConfiguration("tenanea_bush_spawn", TempEndFeatures.TENANEA_BUSH.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> LUMECORN =
+            registerNoneFeatureConfiguration("lumecorn_spawn", TempEndFeatures.LUMECORN.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> LARGE_AMARANITA =
+            registerNoneFeatureConfiguration("large_amaranita_spawn", TempEndFeatures.LARGE_AMARANITA.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> LUCERNIA_BUSH =
+            registerNoneFeatureConfiguration("lucernia_bush_spawn", TempEndFeatures.LUCERNIA_BUSH.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> LUCERNIA_BUSH_RARE =
+            registerNoneFeatureConfiguration("lucernia_bush_rare_spawn", TempEndFeatures.LUCERNIA_BUSH_RARE.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> NEON_CACTUS =
+            registerNoneFeatureConfiguration("neon_cactus_spawn", TempEndFeatures.NEON_CACTUS.get());
+
     /** WALL PLANTS **/
 
     public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TAIL_MOSS =
@@ -163,6 +208,32 @@ public class EndConfiguredFeatures {
     public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> CYAN_MOSS_WOOD =
             registerNoneFeatureConfiguration("cyan_moss_wood_spawn", TempEndFeatures.CYAN_MOSS_WOOD.get());
 
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TWISTED_MOSS =
+            registerNoneFeatureConfiguration("twisted_moss_spawn", TempEndFeatures.TWISTED_MOSS.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TWISTED_MOSS_WOOD =
+            registerNoneFeatureConfiguration("twisted_moss_wood_spawn", TempEndFeatures.TWISTED_MOSS_WOOD.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> BULB_MOSS =
+            registerNoneFeatureConfiguration("bulb_moss_spawn", TempEndFeatures.BULB_MOSS.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> BULB_MOSS_WOOD =
+            registerNoneFeatureConfiguration("bulb_moss_wood_spawn", TempEndFeatures.BULB_MOSS_WOOD.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> SMALL_JELLYSHROOM_WALL =
+            registerNoneFeatureConfiguration("small_jellyshroom_wall_spawn", TempEndFeatures.SMALL_JELLYSHROOM_WALL.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> SMALL_JELLYSHROOM_WOOD =
+            registerNoneFeatureConfiguration("small_jellyshroom_wood_spawn", TempEndFeatures.SMALL_JELLYSHROOM_WOOD.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> JUNGLE_FERN_WOOD =
+            registerNoneFeatureConfiguration("jungle_fern_wood_spawn", TempEndFeatures.JUNGLE_FERN_WOOD.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> RUSCUS =
+            registerNoneFeatureConfiguration("ruscus_spawn", TempEndFeatures.RUSCUS.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> RUSCUS_WOOD =
+            registerNoneFeatureConfiguration("ruscus_wood_spawn", TempEndFeatures.RUSCUS_WOOD.get());
     /** WATER **/
     public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> END_LOTUS =
             registerNoneFeatureConfiguration("end_lotus_spawn", TempEndFeatures.END_LOTUS.get());
@@ -222,6 +293,15 @@ public class EndConfiguredFeatures {
     public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> BLUE_VINE =
             registerNoneFeatureConfiguration("blue_vine_spawn", TempEndFeatures.BLUE_VINE.get());
 
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> TWISTED_VINE =
+            registerNoneFeatureConfiguration("twisted_vine_spawn", TempEndFeatures.TWISTED_VINE.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> BULB_VINE =
+            registerNoneFeatureConfiguration("bulb_vine_spawn", TempEndFeatures.BULB_VINE.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> JUNGLE_VINE =
+            registerNoneFeatureConfiguration("jungle_vine_spawn", TempEndFeatures.JUNGLE_VINE.get());
+
 
     /** LAKES **/
     public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> END_LAKE =
@@ -230,7 +310,70 @@ public class EndConfiguredFeatures {
     public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> END_LAKE_RARE =
             registerNoneFeatureConfiguration("end_lake_rare_spawn", TempEndFeatures.END_LAKE_RARE.get());
 
+    /** TERRAIN **/
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> END_LAKE_NORMAL =
+            registerNoneFeatureConfiguration("end_lake_normal_spawn", TempEndFeatures.END_LAKE_NORMAL.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> DESERT_LAKE =
+            registerNoneFeatureConfiguration("desert_lake_spawn", TempEndFeatures.DESERT_LAKE.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> ROUND_CAVE =
+            registerNoneFeatureConfiguration("round_cave_spawn", TempEndFeatures.ROUND_CAVE.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> SPIRE =
+            registerNoneFeatureConfiguration("spire_spawn", TempEndFeatures.SPIRE.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> FLOATING_SPIRE =
+            registerNoneFeatureConfiguration("floating_spire_spawn", TempEndFeatures.FLOATING_SPIRE.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> GEYSER =
+            registerNoneFeatureConfiguration("geyser_spawn", TempEndFeatures.GEYSER.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> SULPHURIC_LAKE =
+            registerNoneFeatureConfiguration("sulphuric_lake_spawn", TempEndFeatures.SULPHURIC_LAKE.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> ICE_STAR =
+            registerNoneFeatureConfiguration("ice_star_spawn", TempEndFeatures.ICE_STAR.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> ICE_STAR_SMALL =
+            registerNoneFeatureConfiguration("ice_star_small_spawn", TempEndFeatures.ICE_STAR_SMALL.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> SURFACE_VENT =
+            registerNoneFeatureConfiguration("surface_vent_spawn", TempEndFeatures.SURFACE_VENT.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> SULPHUR_HILL =
+            registerNoneFeatureConfiguration("sulphur_hill_spawn", TempEndFeatures.SULPHUR_HILL.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> OBSIDIAN_PILLAR_BASEMENT =
+            registerNoneFeatureConfiguration("obsidian_pillar_basement_spawn", TempEndFeatures.OBSIDIAN_PILLAR_BASEMENT.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> OBSIDIAN_BOULDER =
+            registerNoneFeatureConfiguration("obsidian_boulder_spawn", TempEndFeatures.OBSIDIAN_BOULDER.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> FALLEN_PILLAR =
+            registerNoneFeatureConfiguration("fallen_pillar_spawn", TempEndFeatures.FALLEN_PILLAR.get());
+
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> UMBRALITH_ARCH =
+            registerNoneFeatureConfiguration("umbralith_arch_spawn", TempEndFeatures.UMBRALITH_ARCH.get());
+
+    /** CEIL PLANTS **/
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> SMALL_JELLYSHROOM_CEIL =
+            registerNoneFeatureConfiguration("small_jellyshroom_ceil_spawn", TempEndFeatures.SMALL_JELLYSHROOM_CEIL.get());
+
+    /** SKY PLANTS **/
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> FILALUX =
+            registerNoneFeatureConfiguration("filalux_spawn", TempEndFeatures.FILALUX.get());
+
+    /** BUILDING **/
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> CRASHED_SHIP =
+            registerNoneFeatureConfiguration("crashed_ship_spawn", TempEndFeatures.CRASHED_SHIP.get());
+
+    /** MOBS **/
+    public static final Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> SILK_MOTH_NEST =
+            registerNoneFeatureConfiguration("silk_moth_spawn", TempEndFeatures.SILK_MOTH_NEST.get());
+
     private static Holder<ConfiguredFeature<NoneFeatureConfiguration, ?>> registerNoneFeatureConfiguration(String id, Feature feature) {
         return FeatureUtils.register(id, feature, new NoneFeatureConfiguration());
     }
+
 }

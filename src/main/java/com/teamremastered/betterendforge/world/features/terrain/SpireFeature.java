@@ -11,6 +11,7 @@ import com.teamremastered.betterendforge.bclib.sdf.primitive.SDFSphere;
 import com.teamremastered.betterendforge.bclib.util.MHelper;
 import com.teamremastered.betterendforge.bclib.world.features.DefaultFeature;
 import com.teamremastered.betterendforge.noise.OpenSimplexNoise;
+import com.teamremastered.betterendforge.registry.world.TempEndFeatures;
 import com.teamremastered.betterendforge.world.biome.EndBiome;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -82,7 +83,7 @@ public class SpireFeature extends DefaultFeature {
 		
 		support.forEach((bpos) -> {
 			if (BiomeAPI.getFromBiome(world.getBiome(bpos)).getBiome() == EndBiomes.BLOSSOMING_SPIRES.get()) {
-				EndFeatures.TENANEA_BUSH.getFeature()
+				TempEndFeatures.TENANEA_BUSH.get()
 										.place(new FeaturePlaceContext<>(Optional.empty(), world, chunkGenerator, random, bpos, null));
 			}
 		});

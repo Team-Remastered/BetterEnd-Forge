@@ -1,5 +1,6 @@
 package com.teamremastered.betterendforge.blocks;
 
+import com.teamremastered.betterendforge.registry.world.TempEndFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -10,7 +11,7 @@ import com.teamremastered.betterendforge.registry.world.EndFeatures;
 
 public class HelixTreeSaplingBlock extends PottableFeatureSapling {
 	public HelixTreeSaplingBlock() {
-		super((state)->EndFeatures.HELIX_TREE.getFeature());
+		super((state)-> TempEndFeatures.HELIX_TREE.get());
 	}
 
 	@Override

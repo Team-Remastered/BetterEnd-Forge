@@ -1,5 +1,6 @@
 package com.teamremastered.betterendforge.blocks;
 
+import com.teamremastered.betterendforge.registry.world.TempEndFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -18,7 +19,7 @@ public class LumecornSeedBlock extends EndPlantWithAgeBlock {
 
 	@Override
 	public void growAdult(WorldGenLevel world, Random random, BlockPos pos) {
-		((Feature<NoneFeatureConfiguration>) (EndFeatures.LUMECORN.getFeature())).place(new FeaturePlaceContext<>(
+		((Feature<NoneFeatureConfiguration>) (TempEndFeatures.LUMECORN.get())).place(new FeaturePlaceContext<>(
 				Optional.empty(),
 				world,
 				null,

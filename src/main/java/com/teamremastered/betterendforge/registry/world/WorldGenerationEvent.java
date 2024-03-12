@@ -14,7 +14,7 @@ public class WorldGenerationEvent {
     public static void BiomeLoadingEvent(final BiomeLoadingEvent event) {
         if (event.getName().equals(EndBiomes.FOGGY_MUSHROOMLAND.getId())) {
             event.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EndPlacedFeatures.MOSSY_GLOWSHROOM_PLACED);
-            event.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EndPlacedFeatures.DENSE_VINES_PLACED);
+            event.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EndPlacedFeatures.DENSE_VINE_PLACED);
             event.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EndPlacedFeatures.CREEPING_MOSS_PLACED);
             event.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EndPlacedFeatures.UMBRELLA_MOSS_PLACED);
             event.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EndPlacedFeatures.BLUE_VINE_PLACED);

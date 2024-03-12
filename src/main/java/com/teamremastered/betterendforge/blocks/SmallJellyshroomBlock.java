@@ -8,6 +8,7 @@ import com.teamremastered.betterendforge.bclib.client.render.BCLRenderLayer;
 import com.teamremastered.betterendforge.bclib.interfaces.RenderLayerProvider;
 import com.teamremastered.betterendforge.bclib.items.tool.BaseShearsItem;
 import com.teamremastered.betterendforge.bclib.util.BlocksHelper;
+import com.teamremastered.betterendforge.registry.world.TempEndFeatures;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -104,7 +105,7 @@ public class SmallJellyshroomBlock extends BaseAttachedBlock implements RenderLa
 	@Override
 	public void performBonemeal(ServerLevel world, Random random, BlockPos pos, BlockState state) {
 		BlocksHelper.setWithUpdate(world, pos, Blocks.AIR);
-		((Feature<NoneFeatureConfiguration>)EndFeatures.JELLYSHROOM.getFeature()).place(new FeaturePlaceContext<>(Optional.empty(), world, null, random, pos, null));
+		((Feature<NoneFeatureConfiguration>) TempEndFeatures.JELLYSHROOM.get()).place(new FeaturePlaceContext<>(Optional.empty(), world, null, random, pos, null));
 	}
 	
 	@Override

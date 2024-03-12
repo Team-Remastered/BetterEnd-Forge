@@ -7,6 +7,7 @@ import com.teamremastered.betterendforge.bclib.blocks.BlockProperties;
 import com.teamremastered.betterendforge.blocks.EndPortalBlock;
 import com.teamremastered.betterendforge.blocks.RunedFlavolite;
 import com.teamremastered.betterendforge.blocks.entities.EternalPedestalEntity;
+import com.teamremastered.betterendforge.registry.world.TempEndFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
@@ -451,14 +452,15 @@ public class EternalRitual {
 		else if (targetWorld.dimension() == Level.OVERWORLD) {
 			basePos.setY(targetWorld.getChunk(basePos).getHeight(Heightmap.Types.WORLD_SURFACE, basePos.getX(), basePos.getZ()) + 1);
 		}
-		EndFeatures.BIOME_ISLAND
-			.getPlacedFeature()
-			.value()
-			.place(targetWorld,
-				targetWorld.getChunkSource().getGenerator(),
-				new Random(basePos.asLong()),
-				basePos.below()
-			);
+		//FIXME: Not sure what this does but needs to be ported
+//		EndFeatures.BIOME_ISLAND
+//			.getPlacedFeature()
+//			.value()
+//			.place(targetWorld,
+//				targetWorld.getChunkSource().getGenerator(),
+//				new Random(basePos.asLong()),
+//				basePos.below()
+//			);
 		generatePortal(targetWorld, basePos, portalAxis, portalId);
 		return basePos.immutable();
 	}

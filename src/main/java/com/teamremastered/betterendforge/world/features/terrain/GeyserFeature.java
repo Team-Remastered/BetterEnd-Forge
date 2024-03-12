@@ -20,6 +20,7 @@ import com.teamremastered.betterendforge.bclib.util.BlocksHelper;
 import com.teamremastered.betterendforge.bclib.util.MHelper;
 import com.teamremastered.betterendforge.bclib.world.features.DefaultFeature;
 import com.teamremastered.betterendforge.noise.OpenSimplexNoise;
+import com.teamremastered.betterendforge.registry.world.TempEndFeatures;
 import com.teamremastered.betterendforge.util.BlockFixer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.BlockPos.MutableBlockPos;
@@ -259,7 +260,7 @@ public class GeyserFeature extends DefaultFeature {
 			}
 		}
 		
-		EndFeatures.SULPHURIC_LAKE.getFeature()
+		TempEndFeatures.SULPHURIC_LAKE.get()
 								  .place(new FeaturePlaceContext<>(Optional.empty(), world, chunkGenerator, random, pos, null));
 		
 		double distance = radius1 * 1.7;

@@ -1,6 +1,7 @@
 package com.teamremastered.betterendforge.blocks;
 
 import com.teamremastered.betterendforge.bclib.util.BlocksHelper;
+import com.teamremastered.betterendforge.registry.world.TempEndFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.BlockGetter;
@@ -33,7 +34,7 @@ public class SmallAmaranitaBlock extends EndPlantBlock {
 	public void performBonemeal(ServerLevel world, Random random, BlockPos pos, BlockState state) {
 		BlockPos bigPos = growBig(world, pos);
 		if (bigPos != null) {
-			if (((Feature<NoneFeatureConfiguration>)EndFeatures.GIGANTIC_AMARANITA.getFeature())
+			if (((Feature<NoneFeatureConfiguration>)TempEndFeatures.GIGANTIC_AMARANITA.get())
 																				  .place(new FeaturePlaceContext<>(Optional.empty(), world, null, random, bigPos, null))) {
 				replaceMushroom(world, bigPos);
 				replaceMushroom(world, bigPos.south());
@@ -42,7 +43,7 @@ public class SmallAmaranitaBlock extends EndPlantBlock {
 			}
 			return;
 		}
-		((Feature<NoneFeatureConfiguration>)EndFeatures.LARGE_AMARANITA.getFeature()).place( new FeaturePlaceContext<>(Optional.empty(), world, null, random, pos, null));
+		((Feature<NoneFeatureConfiguration>)TempEndFeatures.LARGE_AMARANITA.get()).place( new FeaturePlaceContext<>(Optional.empty(), world, null, random, pos, null));
 	}
 	
 	@Override
