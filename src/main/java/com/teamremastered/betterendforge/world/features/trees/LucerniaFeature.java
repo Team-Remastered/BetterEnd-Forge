@@ -46,7 +46,7 @@ public class LucerniaFeature extends DefaultFeature {
 		final BlockPos pos = featureConfig.origin();
 		final WorldGenLevel world = featureConfig.level();
 		final NoneFeatureConfiguration config = featureConfig.config();
-		if (!world.getBlockState(pos.below()).is(BlockTags.NYLIUM)) return false;
+			if (!world.getBlockState(pos.below()).is(BlockTags.NYLIUM)) return false;
 		
 		float size = MHelper.randRange(12, 20, random);
 		int count = (int) (size * 0.3F);

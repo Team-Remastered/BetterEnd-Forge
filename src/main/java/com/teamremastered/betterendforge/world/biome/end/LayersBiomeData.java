@@ -31,6 +31,7 @@ public record LayersBiomeData(SimpleWeightedRandomList<ResourceKey<Biome>> biome
             .add(EndBiomes.DRY_SHRUBLAND.getKey(), 3)
             .add(EndBiomes.NEON_OASIS.getKey(), 1)
             .add(EndBiomes.UMBRA_VALLEY.getKey(), 3)
+            .add(EndBiomes.ICE_STARFIELD.getKey(), 3)
             .add(Biomes.THE_END, 0)
             .build(), 3);
 

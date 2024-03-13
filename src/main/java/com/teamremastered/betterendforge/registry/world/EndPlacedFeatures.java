@@ -1,15 +1,9 @@
 package com.teamremastered.betterendforge.registry.world;
 
-import com.teamremastered.betterendforge.bclib.world.features.BCLFeature;
-import com.teamremastered.betterendforge.registry.EndBlocks;
-import com.teamremastered.betterendforge.world.features.NeonCactusFeature;
-import com.teamremastered.betterendforge.world.features.bushes.*;
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.placement.*;
 
 public class EndPlacedFeatures {
@@ -323,49 +317,49 @@ public class EndPlacedFeatures {
             CountOnEveryLayerPlacement.of(UniformInt.of(0, 3)),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> DRAGON_TREE_BUSH = PlacementUtils.register("dragon_tree_bush_placed",
+    public static final Holder<PlacedFeature> DRAGON_TREE_BUSH_PLACED = PlacementUtils.register("dragon_tree_bush_placed",
             EndConfiguredFeatures.DRAGON_TREE_BUSH,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             InSquarePlacement.spread(),
             CountOnEveryLayerPlacement.of(UniformInt.of(0, 5)),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> TENANEA_BUSH = PlacementUtils.register("tenanea_bush_placed",
+    public static final Holder<PlacedFeature> TENANEA_BUSH_PLACED = PlacementUtils.register("tenanea_bush_placed",
             EndConfiguredFeatures.TENANEA_BUSH,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             InSquarePlacement.spread(),
             CountOnEveryLayerPlacement.of(UniformInt.of(0, 6)),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> LUMECORN = PlacementUtils.register("lumecorn_placed",
+    public static final Holder<PlacedFeature> LUMECORN_PLACED = PlacementUtils.register("lumecorn_placed",
             EndConfiguredFeatures.LUMECORN,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             InSquarePlacement.spread(),
             CountOnEveryLayerPlacement.of(UniformInt.of(0, 5)),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> LARGE_AMARANITA = PlacementUtils.register("large_amaranita_placed",
+    public static final Holder<PlacedFeature> LARGE_AMARANITA_PLACED = PlacementUtils.register("large_amaranita_placed",
             EndConfiguredFeatures.LARGE_AMARANITA,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             InSquarePlacement.spread(),
             CountOnEveryLayerPlacement.of(UniformInt.of(0, 5)),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> LUCERNIA_BUSH = PlacementUtils.register("lucernia_bush_placed",
+    public static final Holder<PlacedFeature> LUCERNIA_BUSH_PLACED = PlacementUtils.register("lucernia_bush_placed",
             EndConfiguredFeatures.LUCERNIA_BUSH,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             InSquarePlacement.spread(),
             CountOnEveryLayerPlacement.of(UniformInt.of(0, 10)),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> LUCERNIA_BUSH_RARE = PlacementUtils.register("lucernia_bush_rare_placed",
+    public static final Holder<PlacedFeature> LUCERNIA_BUSH_RARE_PLACED = PlacementUtils.register("lucernia_bush_rare_placed",
             EndConfiguredFeatures.LUCERNIA_BUSH_RARE,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             InSquarePlacement.spread(),
             CountOnEveryLayerPlacement.of(UniformInt.of(0, 1)),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> NEON_CACTUS = PlacementUtils.register("neon_cactus_placed",
+    public static final Holder<PlacedFeature> NEON_CACTUS_PLACED = PlacementUtils.register("neon_cactus_placed",
             EndConfiguredFeatures.NEON_CACTUS,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             InSquarePlacement.spread(),
@@ -647,7 +641,7 @@ public class EndPlacedFeatures {
 
     /** TERRAIN **/
 
-    public static final Holder<PlacedFeature> END_LAKE_NORMAL = PlacementUtils.register("end_lake_normal",
+    public static final Holder<PlacedFeature> END_LAKE_NORMAL_PLACED = PlacementUtils.register("end_lake_normal",
             EndConfiguredFeatures.END_LAKE_NORMAL,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(20),
@@ -665,73 +659,73 @@ public class EndPlacedFeatures {
             RarityFilter.onAverageOnceEvery(2),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> SPIRE = PlacementUtils.register("spire",
+    public static final Holder<PlacedFeature> SPIRE_PLACED = PlacementUtils.register("spire",
             EndConfiguredFeatures.SPIRE,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(4),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> FLOATING_SPIRE = PlacementUtils.register("floating_spire",
+    public static final Holder<PlacedFeature> FLOATING_SPIRE_PLACED = PlacementUtils.register("floating_spire",
             EndConfiguredFeatures.FLOATING_SPIRE,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(8),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> GEYSER = PlacementUtils.register("geyser",
+    public static final Holder<PlacedFeature> GEYSER_PLACED = PlacementUtils.register("geyser",
             EndConfiguredFeatures.GEYSER,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(8),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> SULPHURIC_LAKE = PlacementUtils.register("sulphuric_lake",
+    public static final Holder<PlacedFeature> SULPHURIC_LAKE_PLACED = PlacementUtils.register("sulphuric_lake",
             EndConfiguredFeatures.SULPHURIC_LAKE,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(8),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> ICE_STAR = PlacementUtils.register("ice_star",
+    public static final Holder<PlacedFeature> ICE_STAR_PLACED = PlacementUtils.register("ice_star",
             EndConfiguredFeatures.ICE_STAR,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(15),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> ICE_STAR_SMALL = PlacementUtils.register("ice_star_small",
+    public static final Holder<PlacedFeature> ICE_STAR_SMALL_PLACED = PlacementUtils.register("ice_star_small",
             EndConfiguredFeatures.ICE_STAR_SMALL,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(8),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> SURFACE_VENT = PlacementUtils.register("surface_vent",
+    public static final Holder<PlacedFeature> SURFACE_VENT_PLACED = PlacementUtils.register("surface_vent",
             EndConfiguredFeatures.SURFACE_VENT,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(4),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> SULPHUR_HILL = PlacementUtils.register("sulphur_hill",
+    public static final Holder<PlacedFeature> SULPHUR_HILL_PLACED = PlacementUtils.register("sulphur_hill",
             EndConfiguredFeatures.SULPHUR_HILL,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(8),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> OBSIDIAN_PILLAR_BASEMENT = PlacementUtils.register("obsidian_pillar_basement",
+    public static final Holder<PlacedFeature> OBSIDIAN_PILLAR_BASEMENT_PLACED = PlacementUtils.register("obsidian_pillar_basement",
             EndConfiguredFeatures.OBSIDIAN_PILLAR_BASEMENT,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(8),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> OBSIDIAN_BOULDER = PlacementUtils.register("obsidian_boulder",
+    public static final Holder<PlacedFeature> OBSIDIAN_BOULDER_PLACED = PlacementUtils.register("obsidian_boulder",
             EndConfiguredFeatures.OBSIDIAN_BOULDER,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(10),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> FALLEN_PILLAR = PlacementUtils.register("fallen_pillar",
+    public static final Holder<PlacedFeature> FALLEN_PILLAR_PLACED = PlacementUtils.register("fallen_pillar",
             EndConfiguredFeatures.FALLEN_PILLAR,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(20),
             BiomeFilter.biome());
 
-    public static final Holder<PlacedFeature> UMBRALITH_ARCH = PlacementUtils.register("umbralith_arch",
+    public static final Holder<PlacedFeature> UMBRALITH_ARCH_PLACED = PlacementUtils.register("umbralith_arch",
             EndConfiguredFeatures.UMBRALITH_ARCH,
             PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
             RarityFilter.onAverageOnceEvery(10),

@@ -52,10 +52,10 @@ public class EndBiomes {
 
 	public static final RegistryObject<Biome> NEON_OASIS = registerSubBiome("neon_oasis", EndBiomeCreator::NeonOasis);
 	public static final RegistryObject<Biome> UMBRA_VALLEY = registerBiome("umbra_valley", EndBiomeCreator::UmbraValley);
-//
-//	// Better End Void
-//	public static final EndBiome ICE_STARFIELD = registerBiome(new BiomeIceStarfield(), BiomeType.VOID);
-//
+
+	// Better End Void
+	public static final RegistryObject<Biome> ICE_STARFIELD = registerBiome("ice_starfield", EndBiomeCreator::IceStarfield);
+
 //	// Better End Caves
 //	public static final EndCaveBiome EMPTY_END_CAVE = registerCaveBiome(new EmptyEndCaveBiome());
 //	public static final EndCaveBiome EMPTY_SMARAGDANT_CAVE = registerCaveBiome(new EmptySmaragdantCaveBiome());

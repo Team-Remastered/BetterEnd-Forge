@@ -446,4 +446,25 @@ public class EndBiomeCreator {
                 .generationSettings(generationSettings
                 .build()).build();
     }
+
+    public static Biome IceStarfield() {
+        MobSpawnSettings.Builder spawnSettings = new MobSpawnSettings.Builder();
+        BiomeGenerationSettings.Builder generationSettings = new BiomeGenerationSettings.Builder();
+        spawnSettings.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.ENDERMAN, 60, 1, 3));
+        return new Biome.BiomeBuilder()
+                .specialEffects((new BiomeSpecialEffects.Builder())
+                        .fogColor(ColorUtil.color(224, 245, 254))
+                        .foliageColorOverride(ColorUtil.color(193, 244, 244))
+                        .waterColor(ColorUtil.color(224, 245, 254))
+                        .waterFogColor(ColorUtil.color(224, 245, 254))
+                        .skyColor(VanillaBiomeAccess.bef_invokeCalculateSkyColor(0.0F))
+                        .ambientParticle(new AmbientParticleSettings(EndParticles.SNOWFLAKE.get(), 0.002F)).build())
+                .precipitation(Biome.Precipitation.NONE)
+                .temperature(0F)
+                .downfall(0.0F)
+                .biomeCategory(Biome.BiomeCategory.THEEND)
+                .mobSpawnSettings(spawnSettings.build())
+                .generationSettings(generationSettings
+                .build()).build();
+    }
 }
