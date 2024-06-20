@@ -398,17 +398,8 @@ public class EndBlocks {
 	}
 
 	public static <I extends Block> RegistryObject<I> registerEndBlockOnly(String name, final Supplier<? extends I> block) {
-
 		RegistryObject<I> registeredBlock = BLOCKS.register(name, block);
 		registeredBetterEndBlocks.add((RegistryObject<Block>) registeredBlock);
-		return registeredBlock;
-	}
-
-	public static RegistryObject<Block> registerFixLaterBlock(String name) {
-
-		RegistryObject<Block> registeredBlock = BLOCKS.register(name, () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
-		registerBlockItem(name, registeredBlock);
-		registeredBetterEndBlocks.add(registeredBlock);
 		return registeredBlock;
 	}
 
