@@ -13,6 +13,7 @@ import net.minecraft.world.entity.EntityType.EntityFactory;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.animal.Bee;
 import net.minecraft.world.level.levelgen.Heightmap.Types;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -100,8 +101,9 @@ public class EndEntities {
 		//TODO: review the spawn placement to match the one form BetterEnd Fabric
 
 		// Air //
-		SpawnPlacements.register(DRAGONFLY.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Types.MOTION_BLOCKING, DragonflyEntity::checkAnimalSpawnRules);
-		SpawnPlacements.register(SILK_MOTH.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Types.MOTION_BLOCKING, SilkMothEntity::checkAnimalSpawnRules);
+		SpawnPlacements.register(DRAGONFLY.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Types.MOTION_BLOCKING, DragonflyEntity::checkMobSpawnRules);
+		SpawnPlacements.register(SILK_MOTH.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Types.MOTION_BLOCKING, SilkMothEntity::checkMobSpawnRules);
+
 		
 		// Land //
 		SpawnPlacements.register(END_SLIME.get(), SpawnPlacements.Type.ON_GROUND, Types.MOTION_BLOCKING, EndSlimeEntity::checkMobSpawnRules);
@@ -147,15 +149,4 @@ public class EndEntities {
 		EndItems.ITEMS.register("spawn_egg_" + name, () -> new ForgeSpawnEggItem(reg, eggColor, dotsColor, EndItems.makeEndItemSettings()));
 		return reg;
 	}
-
-	@SubscribeEvent
-	public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
-		event.put(DRAGONFLY.get(), DragonflyEntity.createMobAttributes().build());
-		event.put(END_SLIME.get(), EndSlimeEntity.createMobAttributes().build());
-		event.put(END_FISH.get(), EndFishEntity.createMobAttributes().build());
-		event.put(SHADOW_WALKER.get(), ShadowWalkerEntity.createMobAttributes().build());
-		event.put(CUBOZOA.get(), CubozoaEntity.createMobAttributes().build());
-		event.put(SILK_MOTH.get(), SilkMothEntity.createMobAttributes().build());
-	}
-
 }
