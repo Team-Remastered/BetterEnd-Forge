@@ -28,25 +28,23 @@ import com.teamremastered.betterendforge.bclib.util.MHelper;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Supplier;
 
 public class BaseCropBlock extends BasePlantBlock implements LootProvider {
 	public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 3);
 	private static final VoxelShape SHAPE = box(2, 0, 2, 14, 14, 14);
 	
-	private final Block[] terrain;
-	private final Item drop;
+	private Supplier<? extends Block>[] terrain;
+	private Supplier<? extends Item> drop;
 	
-	public BaseCropBlock(Item drop, Block... terrain) {
+	public BaseCropBlock(final Supplier<? extends Item> drop, final Supplier<? extends Block>... terrain) {
 		this(
-			BlockBehaviour.Properties.of(Material.PLANT)
-				.sound(SoundType.GRASS)
-				.randomTicks()
-				.noCollission(),
+			BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).randomTicks().noCollission(),
 			drop, terrain
 		);
 	}
 	
-	public BaseCropBlock(Properties properties, Item drop, Block... terrain) {
+	public BaseCropBlock(Properties properties, final Supplier<? extends Item> drop, final Supplier<? extends Block>... terrain) {
 		super(properties);
 		this.drop = drop;
 		this.terrain = terrain;
@@ -60,8 +58,8 @@ public class BaseCropBlock extends BasePlantBlock implements LootProvider {
 	
 	@Override
 	protected boolean isTerrain(BlockState state) {
-		for (Block block : terrain) {
-			if (state.is(block)) {
+		for (Supplier<? extends Block> block : terrain) {
+			if (state.is(block.get())) {
 				return true;
 			}
 		}
@@ -79,12 +77,12 @@ public class BaseCropBlock extends BasePlantBlock implements LootProvider {
 			if (enchantment > 0) {
 				int countSeeds = MHelper.randRange(Mth.clamp(1 + enchantment, 1, 3), 3, MHelper.RANDOM);
 				int countDrops = MHelper.randRange(Mth.clamp(1 + enchantment, 1, 2), 2, MHelper.RANDOM);
-				return Lists.newArrayList(new ItemStack(this, countSeeds), new ItemStack(drop, countDrops));
+				return Lists.newArrayList(new ItemStack(this, countSeeds), new ItemStack(drop.get(), countDrops));
 			}
 		}
 		int countSeeds = MHelper.randRange(1, 3, MHelper.RANDOM);
 		int countDrops = MHelper.randRange(1, 2, MHelper.RANDOM);
-		return Lists.newArrayList(new ItemStack(this, countSeeds), new ItemStack(drop, countDrops));
+		return Lists.newArrayList(new ItemStack(this, countSeeds), new ItemStack(drop.get(), countDrops));
 	}
 	
 	@Override

@@ -5,18 +5,20 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import com.teamremastered.betterendforge.interfaces.PottablePlant;
 
+import java.util.function.Supplier;
+
 public class PottableCropBlock extends BaseCropBlock implements PottablePlant {
-	private final Block[] terrain;
+	private final Supplier<? extends Block>[] terrain;
 	
-	public PottableCropBlock(Item drop, Block... terrain) {
+	public PottableCropBlock(final Supplier<? extends Item> drop, final Supplier<? extends Block>... terrain) {
 		super(drop, terrain);
 		this.terrain = terrain;
 	}
 	
 	@Override
 	public boolean canPlantOn(Block block) {
-		for (Block ter : terrain) {
-			if (block == ter) {
+		for (Supplier<? extends Block> ter : terrain) {
+			if (block == ter.get()) {
 				return true;
 			}
 		}

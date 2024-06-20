@@ -260,13 +260,12 @@ public class EndBlocks {
 	public static final RegistryObject<Block> NEON_CACTUS_BLOCK = registerBlock("neon_cactus_block",  () -> new NeonCactusBlock());
 	public static final RegistryObject<Block> NEON_CACTUS_BLOCK_STAIRS = registerBlock("neon_cactus_stairs",  () -> new BaseStairsBlock(NEON_CACTUS_BLOCK.get()));
 	public static final RegistryObject<Block> NEON_CACTUS_BLOCK_SLAB = registerBlock("neon_cactus_slab",  () -> new BaseSlabBlock(NEON_CACTUS_BLOCK.get()));
-	
+
 	// Crops
-	//FIXME: Make the crops usable
-	public static final RegistryObject<Block> SHADOW_BERRY = registerBlock("shadow_berry", () -> new EndPlantBlock());
-	public static final RegistryObject<Block> BLOSSOM_BERRY = registerBlock("blossom_berry_seed", () -> new EndPlantBlock());
-	public static final RegistryObject<Block> AMBER_ROOT = registerBlock("amber_root_seed", () -> new EndPlantBlock());
-	public static final RegistryObject<Block> CHORUS_MUSHROOM = registerBlock("chorus_mushroom_seed",  () -> new EndPlantBlock());
+	public static final RegistryObject<Block> SHADOW_BERRY = registerBlock("shadow_berry", () -> new ShadowBerryBlock());
+	public static final RegistryObject<Block> BLOSSOM_BERRY = registerBlock("blossom_berry_seed", () -> new PottableCropBlock(EndItems.BLOSSOM_BERRY, PINK_MOSS));
+	public static final RegistryObject<Block> AMBER_ROOT = registerBlock("amber_root_seed", () -> new PottableCropBlock(EndItems.AMBER_ROOT_RAW, AMBER_MOSS));
+	public static final RegistryObject<Block> CHORUS_MUSHROOM = registerBlock("chorus_mushroom_seed",  () -> new PottableCropBlock(EndItems.CHORUS_MUSHROOM_RAW, CHORUS_NYLIUM));
 
 
 	//public static final RegistryObject<Block> PEARLBERRY = registerBlock("pearlberry_seed",  () -> new PottableCropBlock(EndItems.BLOSSOM_BERRY, END_MOSS, END_MYCELIUM));
