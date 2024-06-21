@@ -110,7 +110,7 @@ public class JellyshroomCapBlock extends SlimeBlock implements RenderLayerProvid
 		ModelFile jelly = stateProvider.models().withExistingParent(block.getRegistryName().getPath(), Patterns.BLOCK_COLORED)
 				.texture("texture", stateProvider.modLoc("block/jellyshroom_cap"));
 
-		stateProvider.simpleBlockItem(block, jelly);
+		stateProvider.simpleBlock(block, jelly);
 		stateProvider.simpleBlockItem(block, jelly);
 	}
 }
