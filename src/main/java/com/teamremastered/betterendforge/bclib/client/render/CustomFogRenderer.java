@@ -1,6 +1,7 @@
 package com.teamremastered.betterendforge.bclib.client.render;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.teamremastered.betterendforge.world.biome.cave.EmptyEndCaveBiome;
 import net.minecraft.client.Camera;
 import net.minecraft.core.BlockPos.MutableBlockPos;
 import net.minecraft.util.Mth;
@@ -21,8 +22,8 @@ public class CustomFogRenderer {
 	private static final MutableBlockPos MUT_POS = new MutableBlockPos();
 	private static final float[] FOG_DENSITY = new float[8];
 	private static final int GRID_SIZE = 32;
-	private static float fogStart = 0;
-	private static float fogEnd = 192;
+	public static float fogStart = 0;
+	public static float fogEnd = 192;
 	
 	public static boolean applyFogDensity(Camera camera, float viewDistance, boolean thickFog) {
 		if (false) { //FIXME: CONFIG
@@ -43,7 +44,7 @@ public class CustomFogRenderer {
 		
 		float fog = getFogDensity(entity.level, entity.getX(), entity.getEyeY(), entity.getZ());
 		BackgroundInfo.fogDensity = fog;
-		
+
 		if (thickFog(thickFog, entity.level)) {
 			fogStart = viewDistance * 0.05F / fog;
 			fogEnd = Math.min(viewDistance, 192.0F) * 0.5F / fog;
@@ -68,16 +69,14 @@ public class CustomFogRenderer {
 					BackgroundInfo.blindness = delta;
 					fogStart = Mth.lerp(delta, fogStart, 0);
 					fogEnd = Mth.lerp(delta, fogEnd, fogEnd * 0.03F);
+					// Behavior implementation of fogStart and fogEnd inside ClientRenderingEvent
 				}
 			}
 			else {
 				BackgroundInfo.blindness = 0;
 			}
 		}
-		
-		RenderSystem.setShaderFogStart(fogStart);
-		RenderSystem.setShaderFogEnd(fogEnd);
-		
+
 		return true;
 	}
 	
@@ -108,11 +107,32 @@ public class CustomFogRenderer {
 		Biome biome = level.getBiome(MUT_POS.set(x, y, z)).value();
 		return BiomeAPI.getRenderBiome(biome) == BiomeAPI.EMPTY_BIOME;
 	}
-	
+
+	//TODO: Encapsulate the fog density inside a custom biome builder
 	private static float getFogDensityI(Level level, int x, int y, int z) {
 		Biome biome = level.getBiome(MUT_POS.set(x, y, z)).value();
-		BCLBiome renderBiome = BiomeAPI.getRenderBiome(biome);
-		return renderBiome.getFogDensity();
+		float fogDensity = switch (biome.getRegistryName().getPath()) {
+            case "amber_land" -> 2.0f;
+			case "blossoming_spires" -> 1.7f;
+			case "chorus_forest" -> 1.5f;
+			case "dragon_graveyards" -> 1.3f;
+			case "dry_shrubland" -> 1.2f;
+			case "dust_wastelands" -> 2.0f;
+			case "foggy_mushroomland" -> 3.0f;
+			case "glowing_grasslands" -> 1.3f;
+			case "lantern_woods" -> 1.1f;
+			case "painted_mountains" -> 2.0f;
+			case "megalake" -> 1.75f;
+			case "megalake_grove" -> 2.0f;
+			case "neon_oasis" -> 2.0f;
+			case "shadow_forest" -> 2.5f;
+			case "sulphur_springs" -> 1.5f;
+			case "umbrella_jungle" -> 2.3f;
+			case "ice_starfield" -> 2.2f;
+            default -> 1.0f;
+        };
+
+        return fogDensity;
 	}
 	
 	private static float getFogDensity(Level level, double x, double y, double z) {

@@ -10,6 +10,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.FogType;
+import net.minecraftforge.client.event.EntityViewRenderEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -47,11 +48,12 @@ public class FogRendererMixin {
 		BackgroundInfo.fogColorGreen = fogGreen;
 		BackgroundInfo.fogColorBlue = fogBlue;
 	}
-	
-	@Inject(method = "setupFog", at = @At("HEAD"), cancellable = true)
-	private static void bclib_fogDensity(Camera camera, FogRenderer.FogMode fogMode, float viewDistance, boolean thickFog, CallbackInfo info) {
-		if (CustomFogRenderer.applyFogDensity(camera, viewDistance, thickFog)) {
-			info.cancel();
-		}
-	}
+
+	//Use Forge Event
+//	@Inject(method = "setupFog", at = @At("HEAD"), cancellable = true)
+//	private static void bclib_fogDensity(Camera pActiveRenderInfo, FogRenderer.FogMode pFogType, float pFarPlaneDistance, boolean pNearFog, float partialTicks, CallbackInfo info) {
+//		if (CustomFogRenderer.applyFogDensity(pActiveRenderInfo, pFarPlaneDistance, pNearFog)) {
+//			info.cancel();
+//		}
+//	}
 }
