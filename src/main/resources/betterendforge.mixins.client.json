@@ -15,6 +15,7 @@
 		"ModelLoaderMixin",
 		"EndEffectsMixin",
 		"CapeLayerMixin",
+		"BetterEndSkyRendererMixin",
 		"HelloWorldMixin",
 
 		"bclib.ClientRecipeBookMixin",

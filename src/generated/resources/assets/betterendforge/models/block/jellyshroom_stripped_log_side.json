@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/jellyshroom_stripped_log_side",
+    "up": "betterendforge:block/jellyshroom_stripped_log_side",
+    "north": "betterendforge:block/jellyshroom_stripped_log_side",
+    "south": "betterendforge:block/jellyshroom_stripped_log_side",
+    "east": "betterendforge:block/jellyshroom_stripped_log_side",
+    "west": "betterendforge:block/jellyshroom_stripped_log_side",
+    "down": "betterendforge:block/jellyshroom_stripped_log_side"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/pythadendron_planks",
+    "up": "betterendforge:block/pythadendron_planks",
+    "north": "betterendforge:block/pythadendron_planks",
+    "south": "betterendforge:block/pythadendron_planks",
+    "east": "betterendforge:block/pythadendron_planks",
+    "west": "betterendforge:block/pythadendron_planks",
+    "down": "betterendforge:block/pythadendron_planks"
+  }
+}

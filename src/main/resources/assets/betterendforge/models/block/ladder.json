@@ -1,5 +1,9 @@
 {
 	"__comment": "Designed by Paulevs with Cubik Studio - https://cubik.studio",
+	"textures": {
+		"particle": "#texture",
+		"texture": "#texture"
+	},
 	"elements": [
 		{
 				"__comment": "Box1",
@@ -433,9 +437,5 @@
 					15.5
 				]
 		}
-	],
-	"parent": "block/ladder",
-	"textures": {
-		"particle": "#texture"
-	}
+	]
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "betterendforge:block/block_bottom_top",
+  "textures": {
+    "end": "betterendforge:block/helix_tree_planks",
+    "side": "betterendforge:block/helix_tree_bookshelf"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "betterendforge:block/block_bottom_top",
+  "textures": {
+    "end": "betterendforge:block/jellyshroom_planks",
+    "side": "betterendforge:block/jellyshroom_bookshelf"
+  }
+}

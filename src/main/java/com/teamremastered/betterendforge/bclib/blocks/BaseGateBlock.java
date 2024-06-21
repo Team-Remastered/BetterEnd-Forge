@@ -1,8 +1,11 @@
 package com.teamremastered.betterendforge.bclib.blocks;
 
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.client.models.PatternsHelper;
 import com.teamremastered.betterendforge.bclib.interfaces.BlockModelProvider;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
+import net.minecraft.world.level.block.FenceBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -13,6 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -20,7 +24,7 @@ import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
 import java.util.Map;
 import java.util.Optional;
 
-public class BaseGateBlock extends FenceGateBlock implements BlockModelProvider, LootProvider {
+public class BaseGateBlock extends FenceGateBlock implements BlockModelProvider, LootProvider, IBCLBlockStateProvider {
 	private final Block parent;
 	
 	public BaseGateBlock(Block source) {
@@ -65,5 +69,14 @@ public class BaseGateBlock extends FenceGateBlock implements BlockModelProvider,
 		ResourceLocation modelId = new ResourceLocation(stateId.getNamespace(), "block/" + stateId.getPath() + state);
 		registerBlockModel(stateId, modelId, blockState, modelCache);
 		return ModelsHelper.createFacingModel(modelId, blockState.getValue(FACING), true, false);
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		FenceGateBlock gate = (FenceGateBlock) block;
+		String blockName = gate.getRegistryName().getPath();
+		String blockParent = blockName.replace("gate", "planks");
+		stateProvider.fenceGateBlock(gate, BetterEndForge.makeID("block/" + blockParent));
+		stateProvider.itemModels().fenceInventory(blockName, BetterEndForge.makeID("block/" + blockParent));
 	}
 }

@@ -66,7 +66,6 @@ public class BasePressurePlateBlock extends PressurePlateBlock implements BlockM
 	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
 		BasePressurePlateBlock pressurePlateBlock = (BasePressurePlateBlock) block;
 
-
 		String blockName = pressurePlateBlock.getRegistryName().getPath();
 
 		ExistingFileHelper.ResourceType pathToBlockStates = new ExistingFileHelper.ResourceType(PackType.CLIENT_RESOURCES, ".png", "textures");

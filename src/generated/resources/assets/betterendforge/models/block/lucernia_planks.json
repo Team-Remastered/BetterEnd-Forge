@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/lucernia_planks",
+    "up": "betterendforge:block/lucernia_planks",
+    "north": "betterendforge:block/lucernia_planks",
+    "south": "betterendforge:block/lucernia_planks",
+    "east": "betterendforge:block/lucernia_planks",
+    "west": "betterendforge:block/lucernia_planks",
+    "down": "betterendforge:block/lucernia_planks"
+  }
+}

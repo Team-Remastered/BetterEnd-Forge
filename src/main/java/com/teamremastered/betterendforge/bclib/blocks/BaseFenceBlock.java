@@ -1,6 +1,8 @@
 package com.teamremastered.betterendforge.bclib.blocks;
 
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -12,6 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -22,7 +25,7 @@ import com.teamremastered.betterendforge.bclib.interfaces.BlockModelProvider;
 import java.util.Map;
 import java.util.Optional;
 
-public class BaseFenceBlock extends FenceBlock implements BlockModelProvider, LootProvider {
+public class BaseFenceBlock extends FenceBlock implements BlockModelProvider, LootProvider, IBCLBlockStateProvider {
 	private final Block parent;
 	
 	public BaseFenceBlock(Block source) {
@@ -81,5 +84,14 @@ public class BaseFenceBlock extends FenceBlock implements BlockModelProvider, Lo
 		builder.part(postId).add();
 		
 		return builder.build();
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		FenceBlock fence = (FenceBlock) block;
+		String blockName = fence.getRegistryName().getPath();
+		String blockParent = blockName.replace("fence", "planks");
+		stateProvider.fenceBlock(fence, BetterEndForge.makeID("block/" + blockParent));
+		stateProvider.itemModels().fenceInventory(blockName, BetterEndForge.makeID("block/" + blockParent));
 	}
 }

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/jellyshroom_planks",
+    "up": "betterendforge:block/jellyshroom_planks",
+    "north": "betterendforge:block/jellyshroom_planks",
+    "south": "betterendforge:block/jellyshroom_planks",
+    "east": "betterendforge:block/jellyshroom_planks",
+    "west": "betterendforge:block/jellyshroom_planks",
+    "down": "betterendforge:block/jellyshroom_planks"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "betterendforge:block/pythadendron_plate"
+    },
+    "powered=true": {
+      "model": "betterendforge:block/pythadendron_plate_down"
+    }
+  }
+}

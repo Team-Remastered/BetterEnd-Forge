@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/tenanea_planks",
+    "up": "betterendforge:block/tenanea_planks",
+    "north": "betterendforge:block/tenanea_planks",
+    "south": "betterendforge:block/tenanea_planks",
+    "east": "betterendforge:block/tenanea_planks",
+    "west": "betterendforge:block/tenanea_planks",
+    "down": "betterendforge:block/tenanea_planks"
+  }
+}

@@ -37,7 +37,7 @@ public class EndBlocks {
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BetterEndForge.MOD_ID);
 	public static final DeferredRegister<Item> BLOCK_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BetterEndForge.MOD_ID);
 
-	public static List<RegistryObject<Block>> registeredBetterEndBlocks = new ArrayList<>();
+	public static List<RegistryObject<Block>> registeredBetterEndBlocks = new ArrayList<>(); //Useless, use forge list instead
 	public static void initRegister(IEventBus eventBus) {
 		BLOCKS.register(eventBus);
 		BLOCK_ITEMS.register(eventBus);

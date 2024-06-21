@@ -1,7 +1,10 @@
 package com.teamremastered.betterendforge.bclib.blocks;
 
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.client.render.BCLRenderLayer;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
+import net.minecraft.server.packs.PackType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -11,6 +14,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LadderBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -21,7 +27,7 @@ import com.teamremastered.betterendforge.bclib.interfaces.RenderLayerProvider;
 import java.util.Map;
 import java.util.Optional;
 
-public class BaseLadderBlock extends LadderBlock implements RenderLayerProvider, BlockModelProvider, LootProvider {
+public class BaseLadderBlock extends LadderBlock implements RenderLayerProvider, BlockModelProvider, LootProvider, IBCLBlockStateProvider {
 	public BaseLadderBlock(Block block) {
 		this(BlockBehaviour.Properties.copy(block).noOcclusion());
 	}
@@ -54,5 +60,20 @@ public class BaseLadderBlock extends LadderBlock implements RenderLayerProvider,
 		ResourceLocation modelId = new ResourceLocation(stateId.getNamespace(), "block/" + stateId.getPath());
 		registerBlockModel(stateId, modelId, blockState, modelCache);
 		return ModelsHelper.createFacingModel(modelId, blockState.getValue(FACING), false, true);
+	}
+
+	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
+		String blockName = block.getRegistryName().getPath();
+		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + blockName);
+		blockModel.parent(stateProvider.models().getExistingFile(stateProvider.modLoc("block/ladder")));
+		blockModel.texture("texture", stateProvider.modLoc("block/" + blockName));
+		return blockModel;
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
+		BlockModelBuilder builder = getBlockModelBuilder(stateProvider, block);
+		stateProvider.simpleBlock(block, builder);
+		stateProvider.simpleBlockItem(block, stateProvider.models().getBuilder("block/" + block.getRegistryName().getPath()));
 	}
 }

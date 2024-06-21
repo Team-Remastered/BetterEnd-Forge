@@ -1,6 +1,8 @@
 package com.teamremastered.betterendforge.bclib.blocks;
 
 import com.teamremastered.betterendforge.BetterEndForge;
+import com.teamremastered.betterendforge.bclib.registry.BlockRegistry;
+import com.teamremastered.betterendforge.complexmaterials.WoodMaterial;
 import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
 import net.minecraft.server.packs.PackType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -20,6 +22,9 @@ import net.minecraft.world.level.block.state.properties.Half;
 import net.minecraft.world.level.block.state.properties.StairsShape;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -28,6 +33,7 @@ import com.teamremastered.betterendforge.bclib.interfaces.BlockModelProvider;
 import com.teamremastered.betterendforge.bclib.interfaces.CustomItemProvider;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Optional;
 
@@ -124,5 +130,6 @@ public class BaseStairsBlock extends StairBlock implements BlockModelProvider, C
 
 		stateProvider.stairsBlock(baseStairsBlock, BetterEndForge.makeID("block/" + blockName));
 		stateProvider.simpleBlockItem(baseStairsBlock, stateProvider.models().getBuilder("block/" + baseStairsBlock.getRegistryName().getPath()));
+
 	}
 }

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/end_lotus_stripped_log_side",
+    "up": "betterendforge:block/end_lotus_stripped_log_side",
+    "north": "betterendforge:block/end_lotus_stripped_log_side",
+    "south": "betterendforge:block/end_lotus_stripped_log_side",
+    "east": "betterendforge:block/end_lotus_stripped_log_side",
+    "west": "betterendforge:block/end_lotus_stripped_log_side",
+    "down": "betterendforge:block/end_lotus_stripped_log_side"
+  }
+}

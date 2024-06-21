@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/mossy_glowshroom_planks",
+    "up": "betterendforge:block/mossy_glowshroom_planks",
+    "north": "betterendforge:block/mossy_glowshroom_planks",
+    "south": "betterendforge:block/mossy_glowshroom_planks",
+    "east": "betterendforge:block/mossy_glowshroom_planks",
+    "west": "betterendforge:block/mossy_glowshroom_planks",
+    "down": "betterendforge:block/mossy_glowshroom_planks"
+  }
+}

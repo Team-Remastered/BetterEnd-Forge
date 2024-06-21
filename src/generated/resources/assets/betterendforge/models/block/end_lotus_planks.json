@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "betterendforge:block/end_lotus_planks",
+    "up": "betterendforge:block/end_lotus_planks",
+    "north": "betterendforge:block/end_lotus_planks",
+    "south": "betterendforge:block/end_lotus_planks",
+    "east": "betterendforge:block/end_lotus_planks",
+    "west": "betterendforge:block/end_lotus_planks",
+    "down": "betterendforge:block/end_lotus_planks"
+  }
+}

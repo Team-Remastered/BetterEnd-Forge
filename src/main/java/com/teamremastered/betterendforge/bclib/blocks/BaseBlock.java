@@ -84,6 +84,5 @@ public class BaseBlock extends Block implements BlockModelProvider, LootProvider
 
 		stateProvider.simpleBlock(block, cubeAll(stateProvider, blockName));
 		stateProvider.simpleBlockItem(block, cubeAll(stateProvider, blockName));
-
 	}
 }

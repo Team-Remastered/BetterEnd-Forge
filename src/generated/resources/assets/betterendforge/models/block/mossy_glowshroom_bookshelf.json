@@ -1,0 +1,7 @@
+{
+  "parent": "betterendforge:block/block_bottom_top",
+  "textures": {
+    "end": "betterendforge:block/mossy_glowshroom_planks",
+    "side": "betterendforge:block/mossy_glowshroom_bookshelf"
+  }
+}

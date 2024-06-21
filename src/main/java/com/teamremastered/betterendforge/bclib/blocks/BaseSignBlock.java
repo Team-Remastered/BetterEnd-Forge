@@ -1,6 +1,9 @@
 package com.teamremastered.betterendforge.bclib.blocks;
 
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.util.BlocksHelper;
+import com.teamremastered.betterendforge.interfaces.IBCLBlockStateProvider;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.world.item.Item;
@@ -22,11 +25,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.Rotation;
-import net.minecraft.world.level.block.SignBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -39,6 +37,8 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.blockentities.BaseSignBlockEntity;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -47,7 +47,7 @@ import com.teamremastered.betterendforge.bclib.interfaces.CustomItemProvider;
 import com.teamremastered.betterendforge.bclib.interfaces.LootProvider;
 
 @SuppressWarnings("deprecation")
-public class BaseSignBlock extends SignBlock implements BlockModelProvider, CustomItemProvider, LootProvider {
+public class BaseSignBlock extends SignBlock implements BlockModelProvider, CustomItemProvider, LootProvider, IBCLBlockStateProvider {
 	public static final IntegerProperty ROTATION = BlockStateProperties.ROTATION_16;
 	public static final BooleanProperty FLOOR = BooleanProperty.create("floor");
 	private static final VoxelShape[] WALL_SHAPES = new VoxelShape[] {
@@ -180,5 +180,17 @@ public class BaseSignBlock extends SignBlock implements BlockModelProvider, Cust
 	@Override
 	public BlockItem getCustomItem(ResourceLocation blockID, Item.Properties settings) {
 		return new BlockItem(this, settings.stacksTo(16));
+	}
+
+	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
+		String blockName = block.getRegistryName().getPath();
+		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + blockName);
+		blockModel.parent(stateProvider.models().getExistingFile(stateProvider.mcLoc("block/signs")));
+		blockModel.texture("texture", stateProvider.modLoc("block/" + blockName));
+		return blockModel;
+	}
+
+	@Override
+	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
 	}
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "betterendforge:block/block_bottom_top",
+  "textures": {
+    "end": "betterendforge:block/dragon_tree_planks",
+    "side": "betterendforge:block/dragon_tree_bookshelf"
+  }
+}
