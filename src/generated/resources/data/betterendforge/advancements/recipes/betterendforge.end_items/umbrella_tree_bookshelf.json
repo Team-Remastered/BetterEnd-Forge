@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:umbrella_tree_bookshelf"
+    ]
+  },
+  "criteria": {
+    "has_book": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:book"
+            ]
+          }
+        ]
+      }
+    },
+    "has_umbrella_tree_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:umbrella_tree_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:umbrella_tree_bookshelf"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_book",
+      "has_umbrella_tree_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:pythadendron_stairs"
+    ]
+  },
+  "criteria": {
+    "has_pythadendron_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:pythadendron_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:pythadendron_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pythadendron_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,5 +1,6 @@
 package com.teamremastered.betterendforge.complexmaterials;
 
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.blocks.BaseBlock;
 import com.teamremastered.betterendforge.bclib.blocks.BaseFurnaceBlock;
 import com.teamremastered.betterendforge.bclib.blocks.BaseRotatedPillarBlock;
@@ -8,10 +9,15 @@ import com.teamremastered.betterendforge.bclib.blocks.BaseStairsBlock;
 import com.teamremastered.betterendforge.bclib.blocks.BaseStoneButtonBlock;
 import com.teamremastered.betterendforge.bclib.blocks.BaseWallBlock;
 import com.teamremastered.betterendforge.bclib.blocks.StonePressurePlateBlock;
+import com.teamremastered.betterendforge.bclib.recipes.BCLRecipeProvider;
+import com.teamremastered.betterendforge.bclib.recipes.GridRecipe;
+import com.teamremastered.betterendforge.bclib.recipes.RecipeSupplier;
 import com.teamremastered.betterendforge.blocks.EndFlowerPotBlock;
 import com.teamremastered.betterendforge.blocks.EndPedestal;
 import com.teamremastered.betterendforge.blocks.basis.StoneLanternBlock;
+import com.teamremastered.betterendforge.recipe.CraftingRecipes;
 import com.teamremastered.betterendforge.registry.EndBlocks;
+import com.teamremastered.betterendforge.registry.EndItems;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -62,6 +68,98 @@ public class StoneMaterial {
 		flowerPot = EndBlocks.registerBlock(name + "_flower_pot",  () -> new EndFlowerPotBlock(bricks.get()));
 		
 		// Recipes //
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_bricks")
+				.setOutput(bricks::get, 4)
+				.setShape("##", "##")
+				.addInput('#', stone::get)
+				.setGroup("end_bricks"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_polished")
+				.setOutput(polished::get, 4)
+				.setShape("##", "##")
+				.addInput('#', bricks::get)
+				.setGroup("end_tile"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_tiles")
+				.setOutput(tiles::get, 4)
+				.setShape("##", "##")
+				.addInput('#', polished::get)
+				.setGroup("end_small_tile"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_pillar")
+				.setOutput(pillar::get)
+				.setShape("#", "#")
+				.addInput('#', slab::get)
+				.setGroup("end_pillar"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_stairs")
+				.setOutput(stairs::get, 4)
+				.setShape("#  ", "## ", "###")
+				.addInput('#', stone::get)
+				.setGroup("end_stone_stairs"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_slab")
+				.setOutput(slab::get, 6)
+				.setShape("###")
+				.addInput('#', stone::get)
+				.setGroup("end_stone_slabs"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_bricks_stairs")
+				.setOutput(brickStairs::get, 4)
+				.setShape("#  ", "## ", "###")
+				.addInput('#', bricks::get)
+				.setGroup("end_stone_stairs"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_bricks_slab")
+				.setOutput(brickSlab::get, 6)
+				.setShape("###")
+				.addInput('#', bricks::get)
+				.setGroup("end_stone_slabs"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_wall")
+				.setOutput(wall::get, 6)
+				.setShape("###", "###")
+				.addInput('#', stone::get)
+				.setGroup("end_wall"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_bricks_wall")
+				.setOutput(brickWall::get, 6)
+				.setShape("###", "###")
+				.addInput('#', bricks::get)
+				.setGroup("end_wall"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_button")
+				.setOutput(button::get)
+				.setShapeless("#")
+				.addInput('#', stone::get)
+				.setGroup("end_stone_buttons"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_pressure_plate")
+				.setOutput(pressurePlate::get)
+				.setShapeless("##")
+				.addInput('#', stone::get)
+				.setGroup("end_stone_plates"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_lantern")
+				.setOutput(lantern::get)
+				.setShapeless("S", "#", "S")
+				.addInput('#', EndItems.CRYSTAL_SHARDS::get)
+				.addInput('#', slab::get /*, brickSlab::get*/)
+				.setGroup("end_stone_plates"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_furnace")
+				.setOutput(furnace::get)
+				.setShape("###", "# #", "###")
+				.addInput('#', stone::get)
+				.setGroup("end_stone_ITEM_FURNACES"));
+
+		BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_flower_pot")
+				.setOutput(flowerPot::get)
+				.setShapeless("# #", " # ")
+				.addInput('#', bricks::get)
+				.setGroup("end_pots"));
+
 //		GridRecipe.make(BetterEndForge.MOD_ID, name + "_bricks", bricks.get())
 //
 //				  .setOutputCount(4)
@@ -69,6 +167,7 @@ public class StoneMaterial {
 //				  .addMaterial('#', stone.get())
 //				  .setGroup("end_bricks")
 //				  .build();
+//
 //		GridRecipe.make(BetterEndForge.MOD_ID, name + "_polished", polished.get())
 //
 //				  .setOutputCount(4)
@@ -76,6 +175,7 @@ public class StoneMaterial {
 //				  .addMaterial('#', bricks.get())
 //				  .setGroup("end_tile")
 //				  .build();
+//
 //		GridRecipe.make(BetterEndForge.MOD_ID, name + "_tiles", tiles.get())
 //
 //				  .setOutputCount(4)
@@ -83,6 +183,7 @@ public class StoneMaterial {
 //				  .addMaterial('#', polished.get())
 //				  .setGroup("end_small_tile")
 //				  .build();
+
 //		GridRecipe.make(BetterEndForge.MOD_ID, name + "_pillar", pillar.get())
 //
 //				  .setShape("#", "#")
@@ -133,7 +234,7 @@ public class StoneMaterial {
 //				  .addMaterial('#', bricks.get())
 //				  .setGroup("end_wall")
 //				  .build();
-//
+
 //		GridRecipe.make(BetterEndForge.MOD_ID, name + "_button", button.get())
 //
 //				  .setList("#")

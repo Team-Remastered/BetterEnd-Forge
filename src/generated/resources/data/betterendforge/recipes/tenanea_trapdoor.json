@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "trapdoors",
+  "ingredients": [
+    {
+      "item": "betterendforge:tenanea_planks"
+    },
+    {
+      "item": "betterendforge:tenanea_planks"
+    },
+    {
+      "item": "betterendforge:tenanea_planks"
+    },
+    {
+      "item": "betterendforge:tenanea_planks"
+    },
+    {
+      "item": "betterendforge:tenanea_planks"
+    },
+    {
+      "item": "betterendforge:tenanea_planks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:tenanea_trapdoor",
+    "count": 2
+  }
+}

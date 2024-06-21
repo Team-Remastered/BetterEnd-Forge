@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:mossy_glowshroom_stairs"
+    ]
+  },
+  "criteria": {
+    "has_mossy_glowshroom_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:mossy_glowshroom_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:mossy_glowshroom_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mossy_glowshroom_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

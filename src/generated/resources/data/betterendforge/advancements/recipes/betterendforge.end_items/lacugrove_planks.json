@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:lacugrove_planks"
+    ]
+  },
+  "criteria": {
+    "has_lacugrove_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:lacugrove_log"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:lacugrove_planks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lacugrove_log",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:violecite_wall"
+    ]
+  },
+  "criteria": {
+    "has_violecite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:violecite"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:violecite_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_violecite",
+      "has_the_recipe"
+    ]
+  ]
+}

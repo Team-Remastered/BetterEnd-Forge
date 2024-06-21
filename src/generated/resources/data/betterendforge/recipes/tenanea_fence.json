@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "planks_fences",
+  "pattern": [
+    "#I#",
+    "#I#"
+  ],
+  "key": {
+    "#": {
+      "item": "betterendforge:tenanea_planks"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "betterendforge:tenanea_fence",
+    "count": 3
+  }
+}

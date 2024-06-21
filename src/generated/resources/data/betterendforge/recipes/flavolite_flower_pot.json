@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "end_pots",
+  "ingredients": [
+    {
+      "item": "betterendforge:flavolite_bricks"
+    },
+    {
+      "item": "betterendforge:flavolite_bricks"
+    },
+    {
+      "item": "betterendforge:flavolite_bricks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:flavolite_flower_pot"
+  }
+}

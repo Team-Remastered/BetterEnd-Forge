@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "end_pots",
+  "ingredients": [
+    {
+      "item": "betterendforge:virid_jadestone_bricks"
+    },
+    {
+      "item": "betterendforge:virid_jadestone_bricks"
+    },
+    {
+      "item": "betterendforge:virid_jadestone_bricks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:virid_jadestone_flower_pot"
+  }
+}

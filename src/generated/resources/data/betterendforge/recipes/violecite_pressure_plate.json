@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "end_stone_plates",
+  "ingredients": [
+    {
+      "item": "betterendforge:violecite"
+    },
+    {
+      "item": "betterendforge:violecite"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:violecite_plate"
+  }
+}

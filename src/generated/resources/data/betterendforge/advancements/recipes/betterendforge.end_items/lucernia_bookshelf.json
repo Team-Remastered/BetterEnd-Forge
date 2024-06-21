@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:lucernia_bookshelf"
+    ]
+  },
+  "criteria": {
+    "has_book": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:book"
+            ]
+          }
+        ]
+      }
+    },
+    "has_lucernia_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:lucernia_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:lucernia_bookshelf"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_book",
+      "has_lucernia_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

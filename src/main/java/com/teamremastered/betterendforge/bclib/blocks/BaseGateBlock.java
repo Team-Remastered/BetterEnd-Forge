@@ -16,7 +16,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import org.jetbrains.annotations.Nullable;
 import com.teamremastered.betterendforge.bclib.client.models.BasePatterns;
 import com.teamremastered.betterendforge.bclib.client.models.ModelsHelper;
@@ -71,12 +73,24 @@ public class BaseGateBlock extends FenceGateBlock implements BlockModelProvider,
 		return ModelsHelper.createFacingModel(modelId, blockState.getValue(FACING), true, false);
 	}
 
+	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
+		String blockName = block.getRegistryName().getPath();
+		String parentName = blockName.replace("gate", "planks"); //get the parent block
+		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + block.getRegistryName().getPath());
+		blockModel.parent(stateProvider.models().getExistingFile(stateProvider.modLoc("block/block_bottom_top")));
+
+		blockModel.texture("end", stateProvider.modLoc("block/" + parentName))
+				.texture("side", stateProvider.modLoc("block/" + blockName));
+
+		return blockModel;
+	}
+
 	@Override
 	public void createGeneratedData(BlockStateProvider stateProvider, Block block) {
 		FenceGateBlock gate = (FenceGateBlock) block;
 		String blockName = gate.getRegistryName().getPath();
 		String blockParent = blockName.replace("gate", "planks");
 		stateProvider.fenceGateBlock(gate, BetterEndForge.makeID("block/" + blockParent));
-		stateProvider.itemModels().fenceInventory(blockName, BetterEndForge.makeID("block/" + blockParent));
+		stateProvider.simpleBlockItem(gate, stateProvider.models().fenceGate(blockName, BetterEndForge.makeID("block/" + blockParent)));
 	}
 }

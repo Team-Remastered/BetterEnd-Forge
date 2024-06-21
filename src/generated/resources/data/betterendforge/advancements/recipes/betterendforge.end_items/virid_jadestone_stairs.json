@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:virid_jadestone_stairs"
+    ]
+  },
+  "criteria": {
+    "has_virid_jadestone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:virid_jadestone"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:virid_jadestone_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_virid_jadestone",
+      "has_the_recipe"
+    ]
+  ]
+}

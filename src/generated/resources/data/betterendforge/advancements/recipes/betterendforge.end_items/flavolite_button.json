@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:flavolite_button"
+    ]
+  },
+  "criteria": {
+    "has_flavolite": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:flavolite"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:flavolite_button"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_flavolite",
+      "has_the_recipe"
+    ]
+  ]
+}

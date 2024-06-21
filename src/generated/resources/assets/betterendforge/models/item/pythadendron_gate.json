@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/fence_inventory",
-  "textures": {
-    "texture": "betterendforge:block/pythadendron_planks"
-  }
+  "parent": "betterendforge:block/pythadendron_gate"
 }

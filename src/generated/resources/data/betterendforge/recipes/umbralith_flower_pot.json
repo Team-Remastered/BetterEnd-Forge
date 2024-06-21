@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "end_pots",
+  "ingredients": [
+    {
+      "item": "betterendforge:umbralith_bricks"
+    },
+    {
+      "item": "betterendforge:umbralith_bricks"
+    },
+    {
+      "item": "betterendforge:umbralith_bricks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:umbralith_flower_pot"
+  }
+}

@@ -1,11 +1,15 @@
 package com.teamremastered.betterendforge.complexmaterials;
 
+import com.teamremastered.betterendforge.BetterEndForge;
 import com.teamremastered.betterendforge.bclib.blocks.*;
+import com.teamremastered.betterendforge.bclib.recipes.BCLRecipeProvider;
+import com.teamremastered.betterendforge.bclib.recipes.RecipeSupplier;
 import com.teamremastered.betterendforge.registry.EndBlocks;
 import com.teamremastered.betterendforge.registry.EndItems;
 import com.teamremastered.betterendforge.tab.CreativeTabs;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -66,6 +70,78 @@ public class WoodMaterial {
         slab = EndBlocks.registerBlock(name + "_slab", () -> new BaseWoodenSlabBlock(planks.get()));
         bark = EndBlocks.registerBlock(name + "_bark", () -> new StripableBarkBlock(barkColor, Blocks.ACACIA_WOOD)); //Temp block until we make the other wood blocks
         log = EndBlocks.registerBlock(name + "_log", () -> createLog(MaterialColor.WOOD, MaterialColor.PODZOL));
+
+        //TODO: review groups
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_planks")
+                .setOutput(planks::get, 4)
+                .setShapeless("#")
+                .addInput('#', log::get)
+                .setGroup("planks"));
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_plate")
+                .setOutput(plate::get)
+                .setShapeless("##")
+                .addInput('#', planks::get)
+                .setGroup("planks_plates"));
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_bookshelf")
+                .setOutput(bookshelf::get)
+                .setShape("###", "PPP", "###")
+                .addInput('#', planks::get)
+                .addInput('P', () -> Items.BOOK)
+                .setGroup("bookshelves"));
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_trapdoor")
+                .setOutput(trapdoor::get, 2)
+                .setShapeless("###", "###")
+                .addInput('#', planks::get)
+                .setGroup("trapdoors"));
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_button")
+                .setOutput(button::get)
+                .setShapeless("#")
+                .addInput('#', planks::get)
+                .setGroup("planks_buttons"));
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_ladder")
+                .setOutput(ladder::get, 3)
+                .setShape("I I", "I#I", "I I")
+                .addInput('#', planks::get)
+                .addInput('I', () -> Items.STICK)
+                .setGroup("ladders"));
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_stairs")
+                .setOutput(stairs::get, 4)
+                .setShape("#  ", "## ", "###")
+                .addInput('#', planks::get)
+                .setGroup("planks_stairs"));
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_fence")
+                .setOutput(fence::get, 3)
+                .setShape("#I#", "#I#")
+                .addInput('#', planks::get)
+                .addInput('I', () -> Items.STICK)
+                .setGroup("planks_fences"));
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_door")
+                .setOutput(door::get)
+                .setShape("##", "##", "##")
+                .addInput('#', planks::get)
+                .setGroup("doors"));
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_gate")
+                .setOutput(gate::get)
+                .setShape("I#I", "I#I")
+                .addInput('#', planks::get)
+                .addInput('I', () -> Items.STICK)
+                .setGroup("planks_gates"));
+
+        BCLRecipeProvider.addRecipe(new RecipeSupplier(BetterEndForge.MOD_ID, name + "_slab")
+                .setOutput(slab::get, 6)
+                .setShapeless("###")
+                .addInput('#', planks::get)
+                .setGroup("planks_slabs"));
+
     }
 
     private static BaseRotatedPillarBlock createLog(MaterialColor pTopColor, MaterialColor pBarkColor) {

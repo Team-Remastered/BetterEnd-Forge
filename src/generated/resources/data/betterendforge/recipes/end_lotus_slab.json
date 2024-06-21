@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks_slabs",
+  "ingredients": [
+    {
+      "item": "betterendforge:end_lotus_planks"
+    },
+    {
+      "item": "betterendforge:end_lotus_planks"
+    },
+    {
+      "item": "betterendforge:end_lotus_planks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:end_lotus_slab",
+    "count": 6
+  }
+}

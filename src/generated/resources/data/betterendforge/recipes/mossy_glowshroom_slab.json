@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks_slabs",
+  "ingredients": [
+    {
+      "item": "betterendforge:mossy_glowshroom_planks"
+    },
+    {
+      "item": "betterendforge:mossy_glowshroom_planks"
+    },
+    {
+      "item": "betterendforge:mossy_glowshroom_planks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:mossy_glowshroom_slab",
+    "count": 6
+  }
+}

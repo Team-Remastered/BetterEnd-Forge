@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:jellyshroom_stairs"
+    ]
+  },
+  "criteria": {
+    "has_jellyshroom_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:jellyshroom_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:jellyshroom_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_jellyshroom_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "trapdoors",
+  "ingredients": [
+    {
+      "item": "betterendforge:pythadendron_planks"
+    },
+    {
+      "item": "betterendforge:pythadendron_planks"
+    },
+    {
+      "item": "betterendforge:pythadendron_planks"
+    },
+    {
+      "item": "betterendforge:pythadendron_planks"
+    },
+    {
+      "item": "betterendforge:pythadendron_planks"
+    },
+    {
+      "item": "betterendforge:pythadendron_planks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:pythadendron_trapdoor",
+    "count": 2
+  }
+}

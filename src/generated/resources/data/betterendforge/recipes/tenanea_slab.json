@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks_slabs",
+  "ingredients": [
+    {
+      "item": "betterendforge:tenanea_planks"
+    },
+    {
+      "item": "betterendforge:tenanea_planks"
+    },
+    {
+      "item": "betterendforge:tenanea_planks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:tenanea_slab",
+    "count": 6
+  }
+}

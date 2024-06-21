@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/fence_inventory",
-  "textures": {
-    "texture": "betterendforge:block/umbrella_tree_planks"
-  }
+  "parent": "betterendforge:block/umbrella_tree_gate"
 }

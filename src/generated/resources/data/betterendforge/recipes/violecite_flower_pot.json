@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "end_pots",
+  "ingredients": [
+    {
+      "item": "betterendforge:violecite_bricks"
+    },
+    {
+      "item": "betterendforge:violecite_bricks"
+    },
+    {
+      "item": "betterendforge:violecite_bricks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:violecite_flower_pot"
+  }
+}

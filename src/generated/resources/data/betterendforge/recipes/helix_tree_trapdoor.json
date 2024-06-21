@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "trapdoors",
+  "ingredients": [
+    {
+      "item": "betterendforge:helix_tree_planks"
+    },
+    {
+      "item": "betterendforge:helix_tree_planks"
+    },
+    {
+      "item": "betterendforge:helix_tree_planks"
+    },
+    {
+      "item": "betterendforge:helix_tree_planks"
+    },
+    {
+      "item": "betterendforge:helix_tree_planks"
+    },
+    {
+      "item": "betterendforge:helix_tree_planks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:helix_tree_trapdoor",
+    "count": 2
+  }
+}

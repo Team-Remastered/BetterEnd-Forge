@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:end_lotus_bookshelf"
+    ]
+  },
+  "criteria": {
+    "has_book": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:book"
+            ]
+          }
+        ]
+      }
+    },
+    "has_end_lotus_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:end_lotus_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:end_lotus_bookshelf"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_book",
+      "has_end_lotus_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

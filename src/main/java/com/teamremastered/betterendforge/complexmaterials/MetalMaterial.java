@@ -334,7 +334,7 @@ public class MetalMaterial {
                 .setGroup("end_metal_chandelier")
         );
 
-//
+
 //		// Tools & armor into nuggets
 //		FurnaceRecipe.make(BetterEndForge.MOD_ID, name + "_axe_nugget", axe.get(), nugget.get())
 //

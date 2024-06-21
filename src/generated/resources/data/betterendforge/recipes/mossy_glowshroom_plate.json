@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks_plates",
+  "ingredients": [
+    {
+      "item": "betterendforge:mossy_glowshroom_planks"
+    },
+    {
+      "item": "betterendforge:mossy_glowshroom_planks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:mossy_glowshroom_plate"
+  }
+}

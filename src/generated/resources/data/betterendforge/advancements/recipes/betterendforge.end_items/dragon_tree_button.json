@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:dragon_tree_button"
+    ]
+  },
+  "criteria": {
+    "has_dragon_tree_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:dragon_tree_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:dragon_tree_button"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dragon_tree_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

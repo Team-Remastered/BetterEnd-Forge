@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "trapdoors",
+  "ingredients": [
+    {
+      "item": "betterendforge:jellyshroom_planks"
+    },
+    {
+      "item": "betterendforge:jellyshroom_planks"
+    },
+    {
+      "item": "betterendforge:jellyshroom_planks"
+    },
+    {
+      "item": "betterendforge:jellyshroom_planks"
+    },
+    {
+      "item": "betterendforge:jellyshroom_planks"
+    },
+    {
+      "item": "betterendforge:jellyshroom_planks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:jellyshroom_trapdoor",
+    "count": 2
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks_slabs",
+  "ingredients": [
+    {
+      "item": "betterendforge:jellyshroom_planks"
+    },
+    {
+      "item": "betterendforge:jellyshroom_planks"
+    },
+    {
+      "item": "betterendforge:jellyshroom_planks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:jellyshroom_slab",
+    "count": 6
+  }
+}

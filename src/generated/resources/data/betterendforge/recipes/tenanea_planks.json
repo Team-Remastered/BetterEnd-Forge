@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "betterendforge:tenanea_log"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:tenanea_planks",
+    "count": 4
+  }
+}

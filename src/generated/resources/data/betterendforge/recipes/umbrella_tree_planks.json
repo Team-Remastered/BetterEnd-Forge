@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "betterendforge:umbrella_tree_log"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:umbrella_tree_planks",
+    "count": 4
+  }
+}

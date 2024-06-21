@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:lucernia_plate"
+    ]
+  },
+  "criteria": {
+    "has_lucernia_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:lucernia_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:lucernia_plate"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_lucernia_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:tenanea_planks"
+    ]
+  },
+  "criteria": {
+    "has_tenanea_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:tenanea_log"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:tenanea_planks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tenanea_log",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "end_pots",
+  "ingredients": [
+    {
+      "item": "betterendforge:azure_jadestone_bricks"
+    },
+    {
+      "item": "betterendforge:azure_jadestone_bricks"
+    },
+    {
+      "item": "betterendforge:azure_jadestone_bricks"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:azure_jadestone_flower_pot"
+  }
+}

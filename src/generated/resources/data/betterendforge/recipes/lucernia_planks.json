@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "betterendforge:lucernia_log"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:lucernia_planks",
+    "count": 4
+  }
+}

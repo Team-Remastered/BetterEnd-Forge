@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "planks_gates",
+  "pattern": [
+    "I#I",
+    "I#I"
+  ],
+  "key": {
+    "#": {
+      "item": "betterendforge:tenanea_planks"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "betterendforge:tenanea_gate"
+  }
+}

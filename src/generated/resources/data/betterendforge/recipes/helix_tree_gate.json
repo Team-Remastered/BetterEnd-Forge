@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "planks_gates",
+  "pattern": [
+    "I#I",
+    "I#I"
+  ],
+  "key": {
+    "#": {
+      "item": "betterendforge:helix_tree_planks"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "betterendforge:helix_tree_gate"
+  }
+}

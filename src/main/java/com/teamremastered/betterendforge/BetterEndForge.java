@@ -8,6 +8,7 @@ import com.teamremastered.betterendforge.bclib.server.BCLibServer;
 import com.teamremastered.betterendforge.bclib.util.Logger;
 import com.teamremastered.betterendforge.client.BetterEndClient;
 import com.teamremastered.betterendforge.config.EndConfig;
+import com.teamremastered.betterendforge.recipe.*;
 import com.teamremastered.betterendforge.registry.EndTags;
 import com.teamremastered.betterendforge.registry.world.EndBiomes;
 import com.teamremastered.betterendforge.registry.EndBlockEntities;
@@ -73,12 +74,6 @@ public class BetterEndForge {
 		TempEndFeatures.initRegister(modEventBus);
 		EndBiomes.initRegister(modEventBus);
 //		EndTags.register();
-//		CraftingRecipes.register();
-//		FurnaceRecipes.register();
-//		AlloyingRecipes.register();
-//		AnvilRecipes.register();
-//		SmithingRecipes.register();
-//		InfusionRecipes.register();
 //		BonemealPlants.init();
 		GeneratorOptions.init();
 		LootTableUtil.init();
@@ -131,6 +126,13 @@ public class BetterEndForge {
 		BCLibServer.onInitializeServer();
 		event.enqueueWork(() -> {
 			EndEntities.registerSpawnPlacement();
+			// Register recipes after block and item registration
+			CraftingRecipes.register();
+			FurnaceRecipes.register();
+			AlloyingRecipes.register();
+			AnvilRecipes.register();
+			SmithingRecipes.register();
+			InfusionRecipes.register();
 		});
 	}
 

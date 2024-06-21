@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bookshelves",
+  "pattern": [
+    "###",
+    "PPP",
+    "###"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:book"
+    },
+    "#": {
+      "item": "betterendforge:dragon_tree_planks"
+    }
+  },
+  "result": {
+    "item": "betterendforge:dragon_tree_bookshelf"
+  }
+}

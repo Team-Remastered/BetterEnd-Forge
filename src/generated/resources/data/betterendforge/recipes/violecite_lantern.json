@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "end_stone_plates",
+  "ingredients": [
+    {
+      "item": "betterendforge:crystal_shards"
+    }
+  ],
+  "result": {
+    "item": "betterendforge:violecite_lantern"
+  }
+}

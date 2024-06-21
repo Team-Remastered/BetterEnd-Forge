@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "betterendforge:pythadendron_planks"
+    ]
+  },
+  "criteria": {
+    "has_pythadendron_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "betterendforge:pythadendron_log"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "betterendforge:pythadendron_planks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pythadendron_log",
+      "has_the_recipe"
+    ]
+  ]
+}
