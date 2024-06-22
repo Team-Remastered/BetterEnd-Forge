@@ -3,6 +3,7 @@
 	"minVersion": "0.8",
 	"package": "com.teamremastered.betterendforge.mixin.client",
 	"compatibilityLevel": "JAVA_16",
+	"refmap": "betterendforge.refmap.json",
 	"client": [
 		"AbstractSoundInstanceAccessor",
 		"HumanoidMobRendererMixin",
