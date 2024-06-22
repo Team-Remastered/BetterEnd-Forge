@@ -11,7 +11,7 @@ issueTrackerURL="https://github.com/Team-Remastered/BetterEndForge/issues"
 [[mods]]
 ## MANDATORY ##
 modId="betterendforge"
-version="1.18.2-3.0" # Mod Version Number
+version="1.18.2-1.0" # Mod Version Number
 displayName="BetterEnd Forge"
 description='''This mod adds new content to the end dimension that vastly improves and expands your end game. Now in parity with Fabric'''
 ################
