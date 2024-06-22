@@ -8,6 +8,8 @@ import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 
@@ -38,6 +40,7 @@ public class BaseBlock extends Block implements BlockModelProvider, LootProvider
 	 * This implementation will load the Block-Model and return it as the Item-Model
 	 */
 	@Override
+	@OnlyIn(Dist.CLIENT)
 	public BlockModel getItemModel(ResourceLocation blockId) {
 		return getBlockModel(blockId, defaultBlockState());
 	}
@@ -61,6 +64,7 @@ public class BaseBlock extends Block implements BlockModelProvider, LootProvider
 
 	/** Used to generate blockstates and models **/
 
+	@OnlyIn(Dist.CLIENT)
 	public static BlockModelBuilder cubeAll(BlockStateProvider stateProvider, String blockName) {
 
 		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + blockName);

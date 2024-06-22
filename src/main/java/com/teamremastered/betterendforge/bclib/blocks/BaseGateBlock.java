@@ -73,6 +73,7 @@ public class BaseGateBlock extends FenceGateBlock implements BlockModelProvider,
 		return ModelsHelper.createFacingModel(modelId, blockState.getValue(FACING), true, false);
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
 		String blockName = block.getRegistryName().getPath();
 		String parentName = blockName.replace("gate", "planks"); //get the parent block

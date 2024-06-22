@@ -22,7 +22,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class EndstoneDustBlock extends FallingBlock implements TagProvider, AddMineableShovel {
-	@OnlyIn(Dist.CLIENT)
+//	@OnlyIn(Dist.CLIENT)
 	private static final int COLOR = ColorUtil.color(226, 239, 168);
 	
 	public EndstoneDustBlock() {

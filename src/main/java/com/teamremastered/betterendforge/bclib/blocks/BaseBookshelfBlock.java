@@ -58,6 +58,7 @@ public class BaseBookshelfBlock extends BaseRotatedPillarBlock implements LootPr
 		return ModelsHelper.fromPattern(pattern);
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
 		String blockName = block.getRegistryName().getPath();
 		String parentName = blockName.replace("bookshelf", "planks"); //get the parent block

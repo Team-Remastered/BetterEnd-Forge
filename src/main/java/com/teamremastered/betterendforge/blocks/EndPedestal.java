@@ -8,6 +8,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.world.level.block.Block;
 import com.teamremastered.betterendforge.blocks.basis.PedestalBlock;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
@@ -34,6 +36,7 @@ public class EndPedestal extends PedestalBlock {
 		return textures;
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
 		String blockName = block.getRegistryName().getPath().replace("_pedestal", ""); //get the parent block
 		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + block.getRegistryName().getPath());

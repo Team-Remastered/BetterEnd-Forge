@@ -62,6 +62,7 @@ public class BaseLadderBlock extends LadderBlock implements RenderLayerProvider,
 		return ModelsHelper.createFacingModel(modelId, blockState.getValue(FACING), false, true);
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
 		String blockName = block.getRegistryName().getPath();
 		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + blockName);

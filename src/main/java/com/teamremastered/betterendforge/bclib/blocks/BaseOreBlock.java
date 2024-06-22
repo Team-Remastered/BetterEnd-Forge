@@ -22,6 +22,8 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import com.teamremastered.betterendforge.bclib.util.MHelper;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Collections;
 import java.util.List;
@@ -100,6 +102,7 @@ public class BaseOreBlock extends OreBlock implements BlockModelProvider, LootPr
 	}
 	
 	@Override
+	@OnlyIn(Dist.CLIENT)
 	public BlockModel getItemModel(ResourceLocation resourceLocation) {
 		return getBlockModel(resourceLocation, defaultBlockState());
 	}

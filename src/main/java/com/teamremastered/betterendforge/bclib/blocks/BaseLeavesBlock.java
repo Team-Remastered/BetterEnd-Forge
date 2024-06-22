@@ -29,6 +29,8 @@ import com.teamremastered.betterendforge.bclib.interfaces.tools.AddMineableHoe;
 import com.teamremastered.betterendforge.bclib.interfaces.tools.AddMineableShears;
 import com.teamremastered.betterendforge.bclib.items.tool.BaseShearsItem;
 import com.teamremastered.betterendforge.bclib.util.MHelper;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.Collections;
 import java.util.List;
@@ -96,6 +98,7 @@ public class BaseLeavesBlock extends LeavesBlock implements BlockModelProvider, 
     }
 
     @Override
+    @OnlyIn(Dist.CLIENT)
     public BlockModel getItemModel(ResourceLocation resourceLocation) {
         return getBlockModel(resourceLocation, defaultBlockState());
     }

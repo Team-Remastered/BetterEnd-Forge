@@ -102,6 +102,7 @@ public class BasePathBlock extends BaseBlockNotFull implements LootProvider {
 		return ModelsHelper.createRandomTopModel(modelId);
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
 		String blockName = block.getRegistryName().getPath();
 

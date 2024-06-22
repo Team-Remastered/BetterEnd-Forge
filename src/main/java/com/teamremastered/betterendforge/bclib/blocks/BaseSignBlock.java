@@ -182,6 +182,7 @@ public class BaseSignBlock extends SignBlock implements BlockModelProvider, Cust
 		return new BlockItem(this, settings.stacksTo(16));
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
 		String blockName = block.getRegistryName().getPath();
 		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + blockName);

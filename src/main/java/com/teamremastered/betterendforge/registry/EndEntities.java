@@ -27,7 +27,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-@Mod.EventBusSubscriber(modid = BetterEndForge.MOD_ID, value = Dist.DEDICATED_SERVER)
 public class EndEntities {
 
 	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, BetterEndForge.MOD_ID);

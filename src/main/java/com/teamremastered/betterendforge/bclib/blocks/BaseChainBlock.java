@@ -65,6 +65,7 @@ public class BaseChainBlock extends ChainBlock implements BlockModelProvider, Re
 		return BCLRenderLayer.CUTOUT;
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	public BlockModelBuilder getBlockModelBuilder(BlockStateProvider stateProvider, Block block) {
 		String blockName = block.getRegistryName().getPath();
 		BlockModelBuilder blockModel = stateProvider.models().getBuilder("block/" + block.getRegistryName().getPath());
